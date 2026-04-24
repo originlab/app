@@ -1,0 +1,47 @@
+<h1 class="firstHeading">2.5.3.1 Tutorial for Warranty Analysis</h1><p class='urlname' style='display: none'>Tutorial-Warranty-Analysis</p>
+<p>In this example, a factory is planning to produce 1000 units per month, and needs to decide how many spare-parts should be prepared. Engineers collect 12 months of post-sale claim data, fit a Weibull distribution to the observed failures, and use the model to forecast expected failures - and thus spare-part demand - over the future 5 months.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Warranty_Analysis_Tutorial/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Warranty Analysis</b></i>:
+</p>
+<ul><li> <i><a href="../../App/App/SA_Warranty_Analysis_Algorithm.html" title="App:SA Warranty Analysis Algorithm">Algorithm</a></i></li></ul>
+</td></tr></table>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/Warranty_Analysis_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the <b>Apps Gallery</b> and choose <b>Show Samples Folder</b>. Double-click to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>3. 'Warranty Analysis</i>. 
+</p><p>Origin’s Warranty Analysis requires the input data arranged in "interval-censor" format, such as the one shown in <i>[Book1]Sheet1</i>: 
+</p>
+<ul><li> Start time: beginning of the interval (months, weeks, seasons, etc.), </li>
+<li> End time: end of the interval (same unit as Start time), </li>
+<li> Frequencies: count of failures in the interval. </li></ul>
+<p>For right-censored units (the last 12 entries in this example), the End time is missing.
+</p>
+<dl><dd><a  class="image"><img alt="Warranty Analysis Tutorial 00.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_00.png?v=77609" width="423"  /></a></dd></dl>
+<p>The "Frequencies" column is optional. If omitted, you can duplicate the interval and each duplicate represents one failure.
+</p>
+<dl><dd><a  class="image"><img alt="Warranty Analysis Tutorial 00a.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_00a.png?v=77610" width="692"  /></a></dd></dl>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book1]Sheet1 active, click the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/Warranty_Analysis_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the <b>App Gallery</b> . In the opened panel, choose <b>Warranty Analysis</b>.
+<dl><dd><a  class="image"><img alt="Warranty Analysis Tutorial 01.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_01.png?v=77612" width="565"  /></a></dd></dl>
+<li>In the <b>WarrantyAnalysis</b> dialog, specify the settings as follow:
+<ul>
+<li>On Input tab, select column A for <b>Start Time</b>, column B for <b>End Time</b>, and column C for <b>Frequency</b>, respectively.
+<dl><dd><a  class="image"><img alt="Warranty Analysis Tutorial 02 Input.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_02_Input.png?v=77613" width="448"  /></a></dd></dl>
+<li>On Settings tab, <b>Estimation Method</b> uses <b>Maximum Likelihood</b> by default. 
+<dl><dd> <a  class="image"><img alt="Warranty Analysis Tutorial 02 Settings.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_02_Settings.png?v=77614" width="409"  /></a></dd></dl>
+<li>On Prediction tab, set <b>Predict for future periods</b> to <i>5</i>. Select <b>Value</b> for <b>Production Quantity for each time period</b> and enter <i>1000</i> for <b>Production Quantity Value(s)</b>. <b>Note</b> that if monthly production quantity varies, enter the quantities separated by space, or select <b>Column</b> for <b>Production Quantity for each time period</b> and specify the quantity column. 
+<dl><dd> <a  class="image"><img alt="Warranty Analysis Tutorial 02 Prediction.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_02_Prediction.png?v=77620" width="576"  /></a></dd></dl>
+<li>On Plots tab, make sure <b>Predict number of failures plot</b> is checked.
+<dl><dd> <a  class="image"><img alt="Warranty Analysis Tutorial 02 Plot.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_02_Plot.png?v=77616" width="295"  /></a></dd></dl>
+</ul></li>
+<li>Click <b>OK</b> button to generate report sheets.
+</ol>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<p><a  class="image"><img alt="Warranty Analysis Tutorial 03.png" src="../images/Warranty_Analysis_Tutorial/Warranty_Analysis_Tutorial_03.png?v=77807" width="818"  /></a>
+</p>
+<ul><li> The Distribution table reports the two Weibull parameters, “Shape” and “Scale” estimated by the Maximum likelihood method. All subsequent calculations and forecasts derive from this model.</li>
+<li> The Summary table provides an overview of the post-sale claim data. The “Observed number of failures” lies in the “95% Poisson Confidence Interval” of the “Expected number of failures”, indicating that the observation and expectation are not significant different. This result also confirms that the Weibull model adequately describes the current data.</li>
+<li> The Predicted number of Failures and Cost table gives the future 5-month forecast. The predicted number of failures is 225, within a 95% CI of 196 – 256. This also confirms in the Prediction Plot. Managers can use this prediction to set aside reserves and schedule spare-part orders.</li></ul>
+<p> 
+</p>
+

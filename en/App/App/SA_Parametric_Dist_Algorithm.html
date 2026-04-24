@@ -1,0 +1,671 @@
+<h1 class="firstHeading">2.5.1.2 Algorithm: Parametric Distribution Analysis (Right Censoring)</h1><p class='urlname' style='display: none'>SA-Parametric-Dist-Algorithm</p>
+<p><br />
+Data are input in time and censoring indicator pairs <img src="../images/SA_Parametric_Dist_Algorithm/math-aa9b5b369c02eea26effdbfa2b9277d4.png?v=0" title=" (t_i, c_i) " alt=" (t_i, c_i) " class="tex"/>.
+</p><p>The <b>MLE</b> (maximum likelihood estimation) and <b>LS</b> (least squares) methods are used to estimate parameters for each distribution.
+</p><p>Under the <b>MLE</b> method:
+</p>
+<ol><li> First calculate the likelihood function <img src="../images/SA_Parametric_Dist_Algorithm/math-6d0a4b81323e13ab86127b4038e01af5.png?v=0" title="\mathcal{L}( \theta )" alt="\mathcal{L}( \theta )" class="tex"/> for the distribution, which is the product of Probability Density Function for failure time data and the Survival Density Function for censored time data.</li>
+<li> Then maximize the logarithm of the likelihood function <img src="../images/SA_Parametric_Dist_Algorithm/math-3932c2e4cb782cee137192241bbef821.png?v=0" title="\ell ( \theta  )" alt="\ell ( \theta  )" class="tex"/> by setting its partial derivatives equal to zero with respect to parameters.</li>
+<li> Use Newton-Raphson method to solve these parameters in step 2.</li></ol>
+<p>Under the <b>LS</b> method:
+</p>
+<ol><li> First plot the failure times (or log failure times) against the transformed cumulative probabilities on a probability plot.</li>
+<li> Then fit a straight line by minimizing the sum of squared deviations</li>
+<li> Use the slope and scale from the fitted line to calculate parameter estimates</li></ol>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Distributions"><span class="tocnumber">1</span> <span class="toctext">Distributions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Hazard_Function"><span class="tocnumber">2</span> <span class="toctext">Hazard Function</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Estimate_Parameter_Standard_Errors"><span class="tocnumber">3</span> <span class="toctext">Estimate Parameter Standard Errors</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Quantities_of_Distribution"><span class="tocnumber">4</span> <span class="toctext">Quantities of Distribution</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Percentiles"><span class="tocnumber">5</span> <span class="toctext">Percentiles</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Survival_Probabilities"><span class="tocnumber">6</span> <span class="toctext">Survival Probabilities</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Probability_Plot"><span class="tocnumber">7</span> <span class="toctext">Probability Plot</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Goodness_of_Fit"><span class="tocnumber">8</span> <span class="toctext">Goodness of Fit</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Anderson-Darling_Test"><span class="tocnumber">8.1</span> <span class="toctext">Anderson-Darling Test</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Pearson_Correlation_Coefficient"><span class="tocnumber">8.2</span> <span class="toctext">Pearson Correlation Coefficient</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Reference"><span class="tocnumber">9</span> <span class="toctext">Reference</span></a></li>
+</ul>
+</div>
+
+<h1><a name="Distributions"></a><span class="mw-headline">Distributions</span></h1>
+<p>Supported distributions include:
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> Parameters
+</th>
+<th> Probability density function (PDF)
+</th>
+<th> Cumulative distribution function (CDF)
+</th>
+<th> Inverse cumulative distribution function
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> location: <img src="../images/SA_Parametric_Dist_Algorithm/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-dd0b4503231b3d96841234da78d1c8d5.png?v=0" title="f(x)=\frac{1}{ \sqrt{2 \pi} \sigma } e^{ -\frac{( x - \mu )^2}{2 \sigma^2} }, \; \sigma &gt; 0" alt="f(x)=\frac{1}{ \sqrt{2 \pi} \sigma } e^{ -\frac{( x - \mu )^2}{2 \sigma^2} }, \; \sigma &gt; 0" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0ecfa2eaf628d5f8570f0f5735e63bed.png?v=0" title="P(x) = \Phi \left( \frac{x - \mu}{\sigma} \right)" alt="P(x) = \Phi \left( \frac{x - \mu}{\sigma} \right)" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-f320a88c837b20c83dccf72c6ef93ede.png?v=0" title="x = \mu + \sigma \Phi^{-1}(p)" alt="x = \mu + \sigma \Phi^{-1}(p)" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>Lognormal</b>
+</td>
+<td> location: <img src="../images/SA_Parametric_Dist_Algorithm/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-97af0b3d9ff969dedee52abf2c10dedf.png?v=0" title="f(x)=\frac{1}{ \sqrt{2 \pi} \sigma x } e^{ -\frac{( \text{ln}(x) - \mu )^2}{2 \sigma^2} }, " alt="f(x)=\frac{1}{ \sqrt{2 \pi} \sigma x } e^{ -\frac{( \text{ln}(x) - \mu )^2}{2 \sigma^2} }, " class="tex"/>
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-2584193c841be1b6c8109e46bdd8f1af.png?v=0" title=" x&gt;0 , \; \sigma &gt; 0" alt=" x&gt;0 , \; \sigma &gt; 0" class="tex"/>
+</p>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-b163b3708f2b48c7add12eaceb796ad2.png?v=0" title="P(x) = \Phi \left( \frac{\text{ln}(x) - \mu}{\sigma} \right)" alt="P(x) = \Phi \left( \frac{\text{ln}(x) - \mu}{\sigma} \right)" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-af9c4f1d32b5945cc292a35c3d9512b7.png?v=0" title="\text{ln}(x) = \mu + \sigma \Phi^{-1}(p)" alt="\text{ln}(x) = \mu + \sigma \Phi^{-1}(p)" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-b493f44c68a9f05c00458b5e0bcee4f2.png?v=0" title="f(x) = \frac{ 1 }{ \theta } e^{-\frac{x}{\theta}}, \; x &gt; 0, \; \theta &gt; 0" alt="f(x) = \frac{ 1 }{ \theta } e^{-\frac{x}{\theta}}, \; x &gt; 0, \; \theta &gt; 0" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-3d45d0cd9cca2f2751ab3e526cebd042.png?v=0" title="P(x) = 1- e^{ -\frac{x}{\theta} }" alt="P(x) = 1- e^{ -\frac{x}{\theta} }" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-6de03f88391fb1bc9fe6d70b530b18d4.png?v=0" title=" x = \theta ( - \text{ln}(1-p) ) " alt=" x = \theta ( - \text{ln}(1-p) ) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> location: <img src="../images/SA_Parametric_Dist_Algorithm/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/> <br /> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-4acbf7fc65918d40c06c09fa0a97df1a.png?v=0" title="f(x) = \frac{1}{\beta } e^{ \frac{x- \alpha}{\beta}} e^{ - e^{ \frac{x- \alpha}{\beta} } }, " alt="f(x) = \frac{1}{\beta } e^{ \frac{x- \alpha}{\beta}} e^{ - e^{ \frac{x- \alpha}{\beta} } }, " class="tex"/>
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-959608edfbfa8f188b3603c664aecb17.png?v=0" title="\beta &gt; 0" alt="\beta &gt; 0" class="tex"/>
+</p>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-31937787d6a372fd064cbbe718d1f9af.png?v=0" title="P(x) = 1- e^{-e^{\frac{x-\alpha}{\beta}}}" alt="P(x) = 1- e^{-e^{\frac{x-\alpha}{\beta}}}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-14ace0bfb2ef9d225c5aef20625c6d86.png?v=0" title=" x = \alpha + \beta \text{ln}( - \text{ln}(1-p) ) " alt=" x = \alpha + \beta \text{ln}( - \text{ln}(1-p) ) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/> <br /> shape: <img src="../images/SA_Parametric_Dist_Algorithm/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-7f412102a48b942e9603f7d5e48bb3e9.png?v=0" title="f(x) = \frac{b}{a} \left(\frac{ x }{ a }\right)^{b - 1} e^{ -(\frac{ x }{ a })^b }, " alt="f(x) = \frac{b}{a} \left(\frac{ x }{ a }\right)^{b - 1} e^{ -(\frac{ x }{ a })^b }, " class="tex"/>
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-6a7b89ae48a6490a7689e126ef4f2a44.png?v=0" title="x &gt; 0, \; a &gt; 0, \; b &gt; 0" alt="x &gt; 0, \; a &gt; 0, \; b &gt; 0" class="tex"/>
+</p>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-7c920efa4c5e03eae7cde4aeb4f8bbf7.png?v=0" title="P(x) = 1 - e^{ -(\frac{ x }{ a })^b }" alt="P(x) = 1 - e^{ -(\frac{ x }{ a })^b }" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-3e3a1a2a5f0893e2a5dee99459b85c72.png?v=0" title=" \text{ln}(x) = \text{ln}(a) + \frac{1}{b} \text{ln}( - \text{ln}(1-p) ) " alt=" \text{ln}(x) = \text{ln}(a) + \frac{1}{b} \text{ln}( - \text{ln}(1-p) ) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> location: <img src="../images/SA_Parametric_Dist_Algorithm/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-89865729c7d780680d4adef0c01e71a4.png?v=0" title="f(x) =  \frac{e^{\frac{x- \mu}{\sigma}}}{\sigma(1+e^{\frac{x- \mu}{\sigma}})^2 },\sigma &gt; 0" alt="f(x) =  \frac{e^{\frac{x- \mu}{\sigma}}}{\sigma(1+e^{\frac{x- \mu}{\sigma}})^2 },\sigma &gt; 0" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-c6bb3dc6debfeaa99b4314e06a8b24f4.png?v=0" title="P(x) =  \frac{1}{1+e^{-\frac{x- \mu}{\sigma}}} " alt="P(x) =  \frac{1}{1+e^{-\frac{x- \mu}{\sigma}}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-c437ff773fba50e00e33e6f22c83a707.png?v=0" title="x =\mu+  \sigma\text{ln}(\frac{p}{1-p}) " alt="x =\mu+  \sigma\text{ln}(\frac{p}{1-p}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> location: <img src="../images/SA_Parametric_Dist_Algorithm/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-9b0a3b30d5c4f3f4269584fc03851e1f.png?v=0" title="\begin{array}{l}f(x) =  \frac{e^{\frac{\text{ln}(x)- \mu}{\sigma}}}{x\sigma(1+e^{\frac{\text{ln}(x)- \mu}{\sigma}})^2 } , \\ x&gt;0, \sigma &gt; 0\end{array}" alt="\begin{array}{l}f(x) =  \frac{e^{\frac{\text{ln}(x)- \mu}{\sigma}}}{x\sigma(1+e^{\frac{\text{ln}(x)- \mu}{\sigma}})^2 } , \\ x&gt;0, \sigma &gt; 0\end{array}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-b0f7e273ee5fedfd0edd81cabde12954.png?v=0" title="P(x) =  \frac{1}{1+e^{-\frac{\text{ln}(x)- \mu}{\sigma}}} " alt="P(x) =  \frac{1}{1+e^{-\frac{\text{ln}(x)- \mu}{\sigma}}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0c8c6ff2ecc5df5a07607b43cbc7972a.png?v=0" title="x =e^{\mu+  \sigma\text{ln}(\frac{p}{1-p})} " alt="x =e^{\mu+  \sigma\text{ln}(\frac{p}{1-p})} " class="tex"/>
+</td></tr>
+</table>
+<p>where &#934; is the CDF function for the standard normal distribution.
+</p>
+<h1><a name="Hazard_Function"></a><span class="mw-headline">Hazard Function</span></h1>
+<p>The hazard function is calculated as follows:
+</p>
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-a29285c35937ba0e7c5cb93d4873f6cc.png?v=0" title=" h(x) = \frac{f(x)}{1 - P(x)} " alt=" h(x) = \frac{f(x)}{1 - P(x)} " class="tex"/>
+</p>
+</div>
+<dl><dd> where <img src="../images/SA_Parametric_Dist_Algorithm/math-50bbd36e1fd2333108437a2ca378be62.png?v=0" title="f(x)" alt="f(x)" class="tex"/> is the PDF function and <img src="../images/SA_Parametric_Dist_Algorithm/math-c19f6b6a7bae1fd5b14f578c6edc3454.png?v=0" title="P(x)" alt="P(x)" class="tex"/> is the CDF function.</dd></dl>
+<h1><a name="Estimate_Parameter_Standard_Errors"></a><span class="mw-headline">Estimate Parameter Standard Errors</span></h1>
+<p>Once parameters are estimated by <b>MLE</b> method, the <b>Fisher information matrix</b> (FIM) can be calculated by <b>Hessian</b> matrix:
+</p>
+<div align="center"><img src="../images/SA_Parametric_Dist_Algorithm/math-6570a497242843315319018ce522ae59.png?v=0" title=" [\mathcal{I}(\theta)]_{i,j} = - E\left[ \frac{\partial^2}{\partial \theta_i \, \partial \theta_j} \text{ln}\left( f(Y; \theta) \right) \, \Big| \, \theta \right] " alt=" [\mathcal{I}(\theta)]_{i,j} = - E\left[ \frac{\partial^2}{\partial \theta_i \, \partial \theta_j} \text{ln}\left( f(Y; \theta) \right) \, \Big| \, \theta \right] " class="tex"/></div>
+<p><b>Covariance</b> matrix of parameters can be expressed as:<br />
+</p>
+<div align="center"><img src="../images/SA_Parametric_Dist_Algorithm/math-3cfd72a2f45e25e64a7ecf4bced12d4c.png?v=0" title="C = (n \mathcal{I} )^{-1}" alt="C = (n \mathcal{I} )^{-1}" class="tex"/></div>
+<p>where <i>n</i> is the number of points.
+</p><p>Parameter's standard error is the square root of the diagonal elements in the covariance matrix <i>C</i>.
+</p><p><br />
+</p>
+<table style="width:100%" class="simple">
+<tr>
+<th style="width:25%"> Distribution
+</th>
+<th style="width:25%"> Parameters
+</th>
+<th style="width:25%">Lower Confidence Limit
+</th>
+<th style="width:25%">Upper Confidence Limit
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0;" rowspan="2"> <b>Normal, Lognormal, Smallest Extreme Value, Logistic, Loglogistic</b>
+</td>
+<td> location: <img src="../images/SA_Parametric_Dist_Algorithm/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-100963d5f76c24da951109bcc83f1b02.png?v=0" title=" \hat{\mu} - Z_{\alpha}{SE_{\hat{\mu}}} " alt=" \hat{\mu} - Z_{\alpha}{SE_{\hat{\mu}}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-93472d353486c0e8e7aca198a2f7c86f.png?v=0" title=" \hat{\mu} + Z_{\alpha}{SE_{\hat{\mu}}} " alt=" \hat{\mu} + Z_{\alpha}{SE_{\hat{\mu}}} " class="tex"/>
+</td></tr>
+<tr>
+<td> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-22e9981dbec04d62d66d308448bf7d84.png?v=0" title=" \frac{\hat{\sigma}}{\exp\!\left(\dfrac{Z_{\alpha}\,SE_{\hat{\sigma}}}{\hat{\sigma}}\right)} " alt=" \frac{\hat{\sigma}}{\exp\!\left(\dfrac{Z_{\alpha}\,SE_{\hat{\sigma}}}{\hat{\sigma}}\right)} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-7e0c146473cbd98b707751566a93c0a5.png?v=0" title=" \hat{\sigma}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{\sigma}}}{\hat{\sigma}} \right)} " alt=" \hat{\sigma}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{\sigma}}}{\hat{\sigma}} \right)} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ad527863bc3254285f2a586a728f8be6.png?v=0" title="\frac{ \hat{\theta} }{ \exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{\theta}}}{\hat{\theta}} \right) }" alt="\frac{ \hat{\theta} }{ \exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{\theta}}}{\hat{\theta}} \right) }" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-68d100a1262ab5663d5760ab594648a5.png?v=0" title=" \hat{\theta}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{\theta}}}{\hat{\theta}} \right)}" alt=" \hat{\theta}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{\theta}}}{\hat{\theta}} \right)}" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0" rowspan="2"> <b>Weibull</b>
+</td>
+<td> scale: <img src="../images/SA_Parametric_Dist_Algorithm/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ffdb593910a3892e7c9c97150fef9657.png?v=0" title=" \frac{\hat{a}}{\exp\!\left(\dfrac{Z_{\alpha}\,SE_{\hat{a}}}{\hat{a}}\right)} " alt=" \frac{\hat{a}}{\exp\!\left(\dfrac{Z_{\alpha}\,SE_{\hat{a}}}{\hat{a}}\right)} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-d262e161018332448d205880adccf28c.png?v=0" title=" \hat{a}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{a}}}{\hat{a}} \right)} " alt=" \hat{a}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{a}}}{\hat{a}} \right)} " class="tex"/>
+</td></tr>
+<tr>
+<td> shape: <img src="../images/SA_Parametric_Dist_Algorithm/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-8c10c8470e922b296922c8f5629671d0.png?v=0" title=" \frac{\hat{b}}{\exp\!\left(\dfrac{Z_{\alpha}\,SE_{\hat{b}}}{\hat{b}}\right)} " alt=" \frac{\hat{b}}{\exp\!\left(\dfrac{Z_{\alpha}\,SE_{\hat{b}}}{\hat{b}}\right)} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-28471a68773c3a0ee760e0e606b883c4.png?v=0" title=" \hat{b}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{b}}}{\hat{b}} \right)} " alt=" \hat{b}{\exp\!\left(  \, \frac{Z_{\alpha}SE_{\hat{b}}}{\hat{b}} \right)} " class="tex"/>
+</td></tr>
+</table>
+<p>where <img src="../images/SA_Parametric_Dist_Algorithm/math-1ff1cd6d020bc51e2c9c5dfa4c2dc522.png?v=0" title="  Z_\alpha = Z_{1-\alpha/2} = \Phi^{-1}(1 - \tfrac{\alpha}{2}) " alt="  Z_\alpha = Z_{1-\alpha/2} = \Phi^{-1}(1 - \tfrac{\alpha}{2}) " class="tex"/>
+</p>
+<h1><a name="Quantities_of_Distribution"></a><span class="mw-headline">Quantities of Distribution</span></h1>
+<p>Once parameters are estimated using either the <b>MLE</b> or <b>LS</b> method, quantities of interest can be calculated
+</p>
+<ol><li> Mean</li>
+<li> Standard Deviation</li>
+<li> Q1, Median, Q3</li>
+<li> IQR = Q3 - Q1</li></ol>
+<p>Formulas to calculate the distribution Mean
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> Mean
+</th>
+<th> Lower Confidence Level
+</th>
+<th> Upper Confidence Level
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-73fd5834457fce872faf1a487ea05f3d.png?v=0" title="\hat{\mu}" alt="\hat{\mu}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0bc7b03be770ce9bbcdd2563b065017a.png?v=0" title="\hat{\mu} - Z_{\alpha}SE_{\hat{\mu}}" alt="\hat{\mu} - Z_{\alpha}SE_{\hat{\mu}}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ca87a874cc509f02f7f0675a193c27d1.png?v=0" title="\hat{\mu} + Z_{\alpha}SE_{\hat{\mu}}" alt="\hat{\mu} + Z_{\alpha}SE_{\hat{\mu}}" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Lognormal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-582aeb63deb230de484725df78aa98c7.png?v=0" title=" \exp(\mu + \frac{1}{2}\sigma^2)" alt=" \exp(\mu + \frac{1}{2}\sigma^2)" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-765f3757dd10d9b5dbea24b36f4a7775.png?v=0" title="\hat{(Mean)} / {\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}})" alt="\hat{(Mean)} / {\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}})" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-b0fe2b1ecba5a8fb9942b5d74a617963.png?v=0" title="\hat{(Mean)}{\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}}) " alt="\hat{(Mean)}{\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0678caa04da34220a4e8dc041488b618.png?v=0" title="\hat{\theta}" alt="\hat{\theta}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-681cd8cef5fd31221b27aed537dfa503.png?v=0" title="\hat{\theta} / \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" alt="\hat{\theta} / \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-cd1c27e2c0c5024aa8f37f5782d43d34.png?v=0" title="\hat{\theta} \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" alt="\hat{\theta} \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-6bb762f15f07ebd1708773bf712f5fde.png?v=0" title="\hat{\mu} - EC\,\hat{\sigma}" alt="\hat{\mu} - EC\,\hat{\sigma}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-c115bf62acf60c394674725a24fb1ade.png?v=0" title="\hat{(Mean)} - Z_{\alpha}SE_{\hat{(Mean)}}" alt="\hat{(Mean)} - Z_{\alpha}SE_{\hat{(Mean)}}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-a33651ca55d54ae28e6f2cc712059fc3.png?v=0" title="\hat{(Mean)} + Z_{\alpha}SE_{\hat{(Mean)}}" alt="\hat{(Mean)} + Z_{\alpha}SE_{\hat{(Mean)}}" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-9f1d8a9a64b3509c232cb3b002019f03.png?v=0" title="\hat{a}\,\Gamma\!\left(1+\tfrac{1}{\hat{b}}\right)" alt="\hat{a}\,\Gamma\!\left(1+\tfrac{1}{\hat{b}}\right)" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-a5bcfc7d3c9208815cb8a93766be90d5.png?v=0" title=" \exp\!\left( \log(\hat{\text{Mean}}) - Z_{\alpha}\, SE_{\log(\hat{\text{Mean}})} \right) " alt=" \exp\!\left( \log(\hat{\text{Mean}}) - Z_{\alpha}\, SE_{\log(\hat{\text{Mean}})} \right) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-9c8e6736185d082165af36ffc6c4f595.png?v=0" title=" \exp\!\left( \log(\hat{\text{Mean}}) + Z_{\alpha}\, SE_{\log(\hat{\text{Mean}})} \right) " alt=" \exp\!\left( \log(\hat{\text{Mean}}) + Z_{\alpha}\, SE_{\log(\hat{\text{Mean}})} \right) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-73fd5834457fce872faf1a487ea05f3d.png?v=0" title="\hat{\mu}" alt="\hat{\mu}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0bc7b03be770ce9bbcdd2563b065017a.png?v=0" title="\hat{\mu} - Z_{\alpha}SE_{\hat{\mu}}" alt="\hat{\mu} - Z_{\alpha}SE_{\hat{\mu}}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ca87a874cc509f02f7f0675a193c27d1.png?v=0" title="\hat{\mu} + Z_{\alpha}SE_{\hat{\mu}}" alt="\hat{\mu} + Z_{\alpha}SE_{\hat{\mu}}" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-6c083ba4b11c17ffaa3d3e6792524082.png?v=0" title=" \exp(\hat{\mu})\Gamma(1+\hat{\sigma})\Gamma(1-\hat{\sigma}) " alt=" \exp(\hat{\mu})\Gamma(1+\hat{\sigma})\Gamma(1-\hat{\sigma}) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-765f3757dd10d9b5dbea24b36f4a7775.png?v=0" title="\hat{(Mean)} / {\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}})" alt="\hat{(Mean)} / {\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}})" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-b0fe2b1ecba5a8fb9942b5d74a617963.png?v=0" title="\hat{(Mean)}{\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}}) " alt="\hat{(Mean)}{\exp}(Z_{\alpha}{SE_{\hat{(Mean)}}}) " class="tex"/>
+</td></tr></table>
+<p>where <img src="../images/SA_Parametric_Dist_Algorithm/math-3fd6b696867d70225deda7868308679b.png?v=0" title="EC" alt="EC" class="tex"/> is Euler's constant and <img src="../images/SA_Parametric_Dist_Algorithm/math-1ff1cd6d020bc51e2c9c5dfa4c2dc522.png?v=0" title="  Z_\alpha = Z_{1-\alpha/2} = \Phi^{-1}(1 - \tfrac{\alpha}{2}) " alt="  Z_\alpha = Z_{1-\alpha/2} = \Phi^{-1}(1 - \tfrac{\alpha}{2}) " class="tex"/>
+</p><p><br />
+</p><p>Formulas to calculate the distribution Standard Deviation
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> Standard Deviation
+</th>
+<th> Lower Confidence Level
+</th>
+<th> Upper Confidence Level
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-86f07e149891702b24e6c04bcb41b5e7.png?v=0" title="\hat{\sigma}" alt="\hat{\sigma}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-b866c407bc7dd06fd10267bf96a46d3e.png?v=0" title="\hat{\sigma}/\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{\sigma}SE_{\hat{\sigma}}} \right) " alt="\hat{\sigma}/\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{\sigma}SE_{\hat{\sigma}}} \right) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0d96787034d6e50b9acd607b2b988b30.png?v=0" title="\hat{\sigma}\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{\sigma}SE_{\hat{\sigma}}} \right)" alt="\hat{\sigma}\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{\sigma}SE_{\hat{\sigma}}} \right)" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Lognormal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-58869591c382145d0fa98227992e428d.png?v=0" title=" \sqrt{ \exp\left( \hat{\mu} + \tfrac{1}{2}\hat{\sigma}^{2} \right) \left[ \exp\left( \hat{\sigma}^{2} \right) - 1 \right] } " alt=" \sqrt{ \exp\left( \hat{\mu} + \tfrac{1}{2}\hat{\sigma}^{2} \right) \left[ \exp\left( \hat{\sigma}^{2} \right) - 1 \right] } " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-9d3de0ef815c05510602abc149afcee0.png?v=0" title="\hat{(SD)} / {\exp}(Z_{\alpha}{SE_{\hat{(SD)}}})" alt="\hat{(SD)} / {\exp}(Z_{\alpha}{SE_{\hat{(SD)}}})" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-917cf66efa36eae3cb3ddbf7a6dff285.png?v=0" title="\hat{(SD)}{\exp}(Z_{\alpha}{SE_{\hat{(SD)}}}) " alt="\hat{(SD)}{\exp}(Z_{\alpha}{SE_{\hat{(SD)}}}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-0678caa04da34220a4e8dc041488b618.png?v=0" title="\hat{\theta}" alt="\hat{\theta}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-681cd8cef5fd31221b27aed537dfa503.png?v=0" title="\hat{\theta} / \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" alt="\hat{\theta} / \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-cd1c27e2c0c5024aa8f37f5782d43d34.png?v=0" title="\hat{\theta} \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" alt="\hat{\theta} \exp({\frac{Z_{\alpha} SE_{\hat{\theta}}}{\hat{\theta}}})" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-a271f4091d72bd85a4c3cf2b4190b7ad.png?v=0" title="\hat{\sigma}\sqrt{\tfrac{\pi^{2}}{6}}" alt="\hat{\sigma}\sqrt{\tfrac{\pi^{2}}{6}}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-983d23a901cf11ce563e4fc880c117cb.png?v=0" title="\hat{(SD)}/\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right) " alt="\hat{(SD)}/\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-763447871b66ef09d2437a4d6d684bad.png?v=0" title="\hat{(SD)}\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right)" alt="\hat{(SD)}\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right)" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-7994829baa82f386f2c99a1f8124e4b0.png?v=0" title="\hat{a}\sqrt{\!\left[\Gamma\!\left(1+\tfrac{2}{\hat{b}}\right)-\Gamma^{2}\!\left(1+\tfrac{1}{\hat{b}}\right)\right]}" alt="\hat{a}\sqrt{\!\left[\Gamma\!\left(1+\tfrac{2}{\hat{b}}\right)-\Gamma^{2}\!\left(1+\tfrac{1}{\hat{b}}\right)\right]}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-14100b752db787b160dbb7e2b37beada.png?v=0" title=" \exp\!\Big(\log \hat{\sigma} - Z_{\alpha}\,SE_{\log \hat{\sigma}}\Big) " alt=" \exp\!\Big(\log \hat{\sigma} - Z_{\alpha}\,SE_{\log \hat{\sigma}}\Big) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-d9754be2bc7cb19db79bbd3e9629ce3c.png?v=0" title=" \exp\!\Big(\log \hat{\sigma} + Z_{\alpha}\,SE_{\log \hat{\sigma}}\Big) " alt=" \exp\!\Big(\log \hat{\sigma} + Z_{\alpha}\,SE_{\log \hat{\sigma}}\Big) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-52d2d61ae8756b6da891eb20c7a92d69.png?v=0" title="\hat{\sigma}\sqrt{\tfrac{\pi^{2}}{3}}" alt="\hat{\sigma}\sqrt{\tfrac{\pi^{2}}{3}}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-983d23a901cf11ce563e4fc880c117cb.png?v=0" title="\hat{(SD)}/\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right) " alt="\hat{(SD)}/\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-763447871b66ef09d2437a4d6d684bad.png?v=0" title="\hat{(SD)}\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right)" alt="\hat{(SD)}\exp\!\left( \,\dfrac{Z_{\alpha}}{\hat{(SD)}SE_{\hat{(SD)}}} \right)" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-4ece6e7ae0e3b146b009ccfbc7594dab.png?v=0" title="\sqrt{\,\exp(2\hat{\mu})\Big[\Gamma(1+2\hat{\sigma})\,\Gamma(1-2\hat{\sigma}) - \Gamma^2(1+\hat{\sigma})\,\Gamma^2(1-\hat{\sigma})\Big]\,}" alt="\sqrt{\,\exp(2\hat{\mu})\Big[\Gamma(1+2\hat{\sigma})\,\Gamma(1-2\hat{\sigma}) - \Gamma^2(1+\hat{\sigma})\,\Gamma^2(1-\hat{\sigma})\Big]\,}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-9d3de0ef815c05510602abc149afcee0.png?v=0" title="\hat{(SD)} / {\exp}(Z_{\alpha}{SE_{\hat{(SD)}}})" alt="\hat{(SD)} / {\exp}(Z_{\alpha}{SE_{\hat{(SD)}}})" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-917cf66efa36eae3cb3ddbf7a6dff285.png?v=0" title="\hat{(SD)}{\exp}(Z_{\alpha}{SE_{\hat{(SD)}}}) " alt="\hat{(SD)}{\exp}(Z_{\alpha}{SE_{\hat{(SD)}}}) " class="tex"/>
+</td></tr></table>
+<p>where <img src="../images/SA_Parametric_Dist_Algorithm/math-1ff1cd6d020bc51e2c9c5dfa4c2dc522.png?v=0" title="  Z_\alpha = Z_{1-\alpha/2} = \Phi^{-1}(1 - \tfrac{\alpha}{2}) " alt="  Z_\alpha = Z_{1-\alpha/2} = \Phi^{-1}(1 - \tfrac{\alpha}{2}) " class="tex"/>
+</p>
+<h1><a name="Percentiles"></a><span class="mw-headline">Percentiles</span></h1>
+<p>Calculate the time at which a prespecified percent of the population fails.
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> Percentile (<img src="../images/SA_Parametric_Dist_Algorithm/math-0159a12f6e1d9b34b8bcaff2dd560413.png?v=0" title=" \hat{x_p} " alt=" \hat{x_p} " class="tex"/>)
+</th>
+<th> Variance <img src="../images/SA_Parametric_Dist_Algorithm/math-d74a63081879d747ced70fee09d41320.png?v=0" title=" \left( \text{Var} \left( \hat{x_p} \right ) \right )" alt=" \left( \text{Var} \left( \hat{x_p} \right ) \right )" class="tex"/>
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-cc6500912a56f1a9e7458cf58067a46a.png?v=0" title=" \hat{\mu} + Z_p\hat{\sigma} " alt=" \hat{\mu} + Z_p\hat{\sigma} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-c3aa7eaebc7acaf51d0ecf39992b9850.png?v=0" title=" \text{Var}(\hat{\mu}) + 2Z_{p} \text{Cov}(\hat{\mu}, \hat{\sigma}) + Z_{p}^{2} \text{Var}(\hat{\sigma}) " alt=" \text{Var}(\hat{\mu}) + 2Z_{p} \text{Cov}(\hat{\mu}, \hat{\sigma}) + Z_{p}^{2} \text{Var}(\hat{\sigma}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>Lognormal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-101d8052ec2c77e841d8bb35b4ed4dff.png?v=0" title=" \exp(\hat{\mu} + Z_p\hat{\sigma}) " alt=" \exp(\hat{\mu} + Z_p\hat{\sigma}) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-5db757b8269e9cb6fdc3c7fdc68c4f56.png?v=0" title=" {\hat{x_p}}^2(\text{Var}(\hat{\mu}) + 2Z_{p} \text{Cov}(\hat{\mu}, \hat{\sigma})) + Z_{p}^{2} \text{Var}(\hat{\sigma})) " alt=" {\hat{x_p}}^2(\text{Var}(\hat{\mu}) + 2Z_{p} \text{Cov}(\hat{\mu}, \hat{\sigma})) + Z_{p}^{2} \text{Var}(\hat{\sigma})) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ce87451918fb7faded9cdb6cac7677ee.png?v=0" title=" -\ln(1-p)\hat{\theta}" alt=" -\ln(1-p)\hat{\theta}" class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-77902e053f95120fe8a0d3edee3ceebf.png?v=0" title=" (-\ln(1-p))^2 \text{Var}(\hat{\theta}) " alt=" (-\ln(1-p))^2 \text{Var}(\hat{\theta}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-cc6500912a56f1a9e7458cf58067a46a.png?v=0" title=" \hat{\mu} + Z_p\hat{\sigma} " alt=" \hat{\mu} + Z_p\hat{\sigma} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-5741ea4ea8fb003e7c9c66f788a829ce.png?v=0" title=" \text{Var}(\hat{\mu}) + 2z_p\, \text{Cov}(\hat{\mu},\hat{\sigma}) + z_p^2\, \text{Var}(\hat{\sigma}) " alt=" \text{Var}(\hat{\mu}) + 2z_p\, \text{Cov}(\hat{\mu},\hat{\sigma}) + z_p^2\, \text{Var}(\hat{\sigma}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-d09bb6c91161bb97a664937234d2c9bd.png?v=0" title=" \hat{a} \,\big[-\ln(1-p)\big]^{1/\hat{b}} " alt=" \hat{a} \,\big[-\ln(1-p)\big]^{1/\hat{b}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-dd5fb97e2f56f715e367dbdc0ef9e146.png?v=0" title="&#10;\left(\frac{\hat{x}_p^{2}}{\hat{a}^{2}}\right)\, \text{Var}(\hat{a})&#10;\;-\;&#10;2\left(\frac{Z_{p}\,\hat{x}_p^{2}}{\hat{a}\,\hat{b}^2}\right)\, \text{Cov}(\hat{a},\hat{b})&#10;\;+\;&#10;\left(\frac{\hat{x}_p^{2}}{\hat{b}^{4}}\right) Z_{p}^{2}\, \text{Var}(\hat{b})&#10;" alt="&#10;\left(\frac{\hat{x}_p^{2}}{\hat{a}^{2}}\right)\, \text{Var}(\hat{a})&#10;\;-\;&#10;2\left(\frac{Z_{p}\,\hat{x}_p^{2}}{\hat{a}\,\hat{b}^2}\right)\, \text{Cov}(\hat{a},\hat{b})&#10;\;+\;&#10;\left(\frac{\hat{x}_p^{2}}{\hat{b}^{4}}\right) Z_{p}^{2}\, \text{Var}(\hat{b})&#10;" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-e928511331a954264c4fc0ab179a33dc.png?v=0" title=" \hat{\mu} + z_p\hat{\sigma}\ " alt=" \hat{\mu} + z_p\hat{\sigma}\ " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-9078daee112e505857795079d0037211.png?v=0" title=" \text{Var} (\hat{\mu}) + 2z_p\, \text{Cov}(\hat{\mu},\hat{\sigma}) + z_p^2\, \text{Var}(\hat{\sigma}) " alt=" \text{Var} (\hat{\mu}) + 2z_p\, \text{Cov}(\hat{\mu},\hat{\sigma}) + z_p^2\, \text{Var}(\hat{\sigma}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-47e3edb2b9d7e38ce24d6166a1782a08.png?v=0" title=" \exp\!\big(\hat{\mu} + Z_p\hat{\sigma}\big) " alt=" \exp\!\big(\hat{\mu} + Z_p\hat{\sigma}\big) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-fe248d4bd3429932a2790e89eb9952cf.png?v=0" title=" \hat{x}_p^{\,2}\!\left[&#10;\text{Var}(\hat{\mu}) + 2z_p\, \text{Cov}(\hat{\mu},\hat{\sigma}) + z_p^2\, \text{Var}(\hat{\sigma})&#10;\right] " alt=" \hat{x}_p^{\,2}\!\left[&#10;\text{Var}(\hat{\mu}) + 2z_p\, \text{Cov}(\hat{\mu},\hat{\sigma}) + z_p^2\, \text{Var}(\hat{\sigma})&#10;\right] " class="tex"/>
+</td></tr>
+</table>
+<p><br />
+For <b>Normal, Smallest Extreme Value, and Logistic</b> distributions:
+</p><p>Lower confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-7ce88c8bde3898d1ce97cca97412ad79.png?v=0" title=" \hat{x}_p - Z_{\alpha}\sqrt{ \text{Var}(\hat{x}_p)} " alt=" \hat{x}_p - Z_{\alpha}\sqrt{ \text{Var}(\hat{x}_p)} " class="tex"/>
+</p><p>Upper confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-f122237352de3d7bc2a3518e4f4d761c.png?v=0" title=" \hat{x}_p + Z_{\alpha}\sqrt{ \text{Var}(\hat{x}_p)} " alt=" \hat{x}_p + Z_{\alpha}\sqrt{ \text{Var}(\hat{x}_p)} " class="tex"/>
+</p><p><br />
+For <b>Lognormal, Exponential, Weibull, Loglogistic</b> distributions:
+</p><p>Lower confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-2891ce14d7dc10e02360b22fb5a8ea75.png?v=0" title=" \exp\!\left( \ln(\hat{x}_p) \;-\; Z_{\alpha}\,\frac{\sqrt{\, \text{Var}(\hat{x}_p)\,}}{\hat{x}_p} \right)&#10; " alt=" \exp\!\left( \ln(\hat{x}_p) \;-\; Z_{\alpha}\,\frac{\sqrt{\, \text{Var}(\hat{x}_p)\,}}{\hat{x}_p} \right)&#10; " class="tex"/>
+</p><p>Upper confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-5bdf5fba3fab092f08382d790dc1530d.png?v=0" title=" \exp\!\left( \ln(\hat{x}_p) \;+\; Z_{\alpha}\,\frac{\sqrt{\, \text{Var}(\hat{x}_p)\,}}{\hat{x}_p} \right)&#10;" alt=" \exp\!\left( \ln(\hat{x}_p) \;+\; Z_{\alpha}\,\frac{\sqrt{\, \text{Var}(\hat{x}_p)\,}}{\hat{x}_p} \right)&#10;" class="tex"/>
+</p>
+<h1><a name="Survival_Probabilities"></a><span class="mw-headline">Survival Probabilities</span></h1>
+<p>Calculate the percent of the population that has not yet failed at a pre-specified time point.
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> Survival Probability (<img src="../images/SA_Parametric_Dist_Algorithm/math-5bb83d61d823f946139029f08a5ce643.png?v=0" title=" \hat{z} " alt=" \hat{z} " class="tex"/>)
+</th>
+<th> Variance of Survival Probability (<img src="../images/SA_Parametric_Dist_Algorithm/math-30808a9c6dbba49afc2a6f1cc69f5fb6.png?v=0" title="  Var(\hat{z})  " alt="  Var(\hat{z})  " class="tex"/>)
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-af1ce680507356ad9f753beb2550595f.png?v=0" title=" \frac{x - \hat{\mu}}{\hat{\sigma}} " alt=" \frac{x - \hat{\mu}}{\hat{\sigma}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-57308349c9a1f78b59a8980fe3246c2d.png?v=0" title=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " alt=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>Lognormal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ea17e5c0bac1089e8a571c11b15e0a9b.png?v=0" title=" \frac{ln(x) - \hat{\mu}}{\hat{\sigma}} " alt=" \frac{ln(x) - \hat{\mu}}{\hat{\sigma}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-57308349c9a1f78b59a8980fe3246c2d.png?v=0" title=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " alt=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-4c15f140446b6268685fe653ae8a68dc.png?v=0" title=" ln(x) - ln(\hat{\theta}) " alt=" ln(x) - ln(\hat{\theta}) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-3e3105d7db18d010d3682d5c06b52b54.png?v=0" title=" \frac{Var(\hat{\theta})}{\hat{\theta}^2} " alt=" \frac{Var(\hat{\theta})}{\hat{\theta}^2} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-af1ce680507356ad9f753beb2550595f.png?v=0" title=" \frac{x - \hat{\mu}}{\hat{\sigma}} " alt=" \frac{x - \hat{\mu}}{\hat{\sigma}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-57308349c9a1f78b59a8980fe3246c2d.png?v=0" title=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " alt=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-aa962530891d0d11a88c47eb26f44d99.png?v=0" title=" \hat{b}\,(\ln x - \ln a) " alt=" \hat{b}\,(\ln x - \ln a) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-8fdfef3e87bacf9d9000473f2e067c5f.png?v=0" title="&#10;\frac{\hat{z}^{2}\,Var(\hat{b})}{\hat{b}^{2}}&#10;\;-\;&#10;2\,\frac{\hat{z}\,Cov(\hat{a},\hat{b})}{\hat{a}}&#10;\;+\;&#10;\frac{\hat{b}^{2}\,Var(\hat{a})}{\hat{a}^{2}}&#10;" alt="&#10;\frac{\hat{z}^{2}\,Var(\hat{b})}{\hat{b}^{2}}&#10;\;-\;&#10;2\,\frac{\hat{z}\,Cov(\hat{a},\hat{b})}{\hat{a}}&#10;\;+\;&#10;\frac{\hat{b}^{2}\,Var(\hat{a})}{\hat{a}^{2}}&#10;" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-af1ce680507356ad9f753beb2550595f.png?v=0" title=" \frac{x - \hat{\mu}}{\hat{\sigma}} " alt=" \frac{x - \hat{\mu}}{\hat{\sigma}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-57308349c9a1f78b59a8980fe3246c2d.png?v=0" title=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " alt=" \frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-ea17e5c0bac1089e8a571c11b15e0a9b.png?v=0" title=" \frac{ln(x) - \hat{\mu}}{\hat{\sigma}} " alt=" \frac{ln(x) - \hat{\mu}}{\hat{\sigma}} " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-f3a6ae122f337c2ead698857bc54a898.png?v=0" title="\frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " alt="\frac{Var(\hat{\mu}) + 2\hat{z} Cov(\hat{\mu}, \hat{\sigma}) + \hat{z}^{2} Var(\hat{\sigma})}{\sigma^2} " class="tex"/>
+</td></tr>
+</table>
+<p><br />
+Lower bound = <img src="../images/SA_Parametric_Dist_Algorithm/math-0115bacb02637a8a175ebbbd60de8cc0.png?v=0" title=" \hat{z} - Z_{\alpha}\sqrt{Var(\hat{z})} " alt=" \hat{z} - Z_{\alpha}\sqrt{Var(\hat{z})} " class="tex"/>
+</p><p>Upper bound = <img src="../images/SA_Parametric_Dist_Algorithm/math-6f1d948cc31724c8995d409aaed9774f.png?v=0" title=" \hat{z} + Z_{\alpha}\sqrt{Var(\hat{z})} " alt=" \hat{z} + Z_{\alpha}\sqrt{Var(\hat{z})} " class="tex"/>
+</p><p><br />
+For <b>Normal and Lognormal</b> distributions:
+</p><p>Lower confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-95f6d0a3b241c72b0371f5ec9da88011.png?v=0" title=" 1 - \frac{1}{2}\left(1 + \mathrm{erf}\left(\frac{UB}{\sqrt{2}}\right)\right) " alt=" 1 - \frac{1}{2}\left(1 + \mathrm{erf}\left(\frac{UB}{\sqrt{2}}\right)\right) " class="tex"/>
+</p><p>Upper confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-62afffea9a19455bb32a2cffa1c486d0.png?v=0" title=" 1 - \frac{1}{2}\left(1 + \mathrm{erf}\left(\frac{LB}{\sqrt{2}}\right)\right) " alt=" 1 - \frac{1}{2}\left(1 + \mathrm{erf}\left(\frac{LB}{\sqrt{2}}\right)\right) " class="tex"/>
+</p><p><br />
+For <b>Exponential, Smallest Extreme Value, and Weibull</b> distributions:
+</p><p>Lower confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-ebd372f924fad6c7844f01553fcb48ac.png?v=0" title=" \exp(-\exp(UB)) " alt=" \exp(-\exp(UB)) " class="tex"/>
+</p><p>Upper confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-d018ec56299f3161a40a2f2965c5f878.png?v=0" title=" \exp(-\exp(LB)) " alt=" \exp(-\exp(LB)) " class="tex"/>
+</p><p><br />
+</p><p>For <b>Logistic and Loglogistic</b> distributions:
+</p><p>Lower confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-073cb6ce48d36c6109a18724ab59bae2.png?v=0" title=" \frac{1}{1 + \exp(UB)} " alt=" \frac{1}{1 + \exp(UB)} " class="tex"/>
+</p><p>Upper confidence limit: <img src="../images/SA_Parametric_Dist_Algorithm/math-bdb5de2337795ebfc7b539be1b424b15.png?v=0" title=" \frac{1}{1 + \exp(LB)} " alt=" \frac{1}{1 + \exp(LB)} " class="tex"/>
+</p>
+<h1><a name="Probability_Plot"></a><span class="mw-headline">Probability Plot</span></h1>
+<p>Points in the probability plot are sorted in ascending order, for the <i>i</i>th point, its probability is calculated by the median rank (Benard's method):
+</p>
+<div align="center"><img src="../images/SA_Parametric_Dist_Algorithm/math-0a8b5adcd69409f0e96c35ce4ffec01f.png?v=0" title="P = \frac{i - 0.3}{n + 0.4}" alt="P = \frac{i - 0.3}{n + 0.4}" class="tex"/></div>
+<p>The middle line is the expected percentiles for given probabilities in terms of <a href="#Distributions"> the inverse cumulative distribution function</a> using parameters from the <b>MLE</b> or <b>LS</b> method.
+</p><p>To estimate confidence limits of percentiles, variance of percentiles is calculated by propagation of error:
+</p>
+<div align="center"><img src="../images/SA_Parametric_Dist_Algorithm/math-aa57591709c3821a7a029fcd7548c46d.png?v=0" title="\sigma^2_{x_p} = \left( \frac{\partial x_p}{\partial \theta} \right)^T C \left( \frac{\partial x_p}{\partial \theta} \right)" alt="\sigma^2_{x_p} = \left( \frac{\partial x_p}{\partial \theta} \right)^T C \left( \frac{\partial x_p}{\partial \theta} \right)" class="tex"/></div>
+<p>where <i>x<sub>p</sub></i> is the percentile for a given probability <i>p</i>, and (.)<sup><i>T</i></sup> denotes the transpose of a vector.
+</p>
+<ul><li> Confidence limits of percentiles can be calculated as below:</li></ul>
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-9e85b4b0dd8a64e3f6e9ff42f5196c09.png?v=0" title="x_{pL} = x_p - Z_{\alpha} \sigma_{x_p}" alt="x_{pL} = x_p - Z_{\alpha} \sigma_{x_p}" class="tex"/>
+</p><p><img src="../images/SA_Parametric_Dist_Algorithm/math-19271d42d85941c01b491a2b0d6e4f60.png?v=0" title="x_{pU} = x_p + Z_{\alpha} \sigma_{x_p}" alt="x_{pU} = x_p + Z_{\alpha} \sigma_{x_p}" class="tex"/>
+</p>
+</div>
+<p>where <img src="../images/SA_Parametric_Dist_Algorithm/math-2bbe5c188bbbcef2af97b3989c60ec92.png?v=0" title="Z_{\alpha} = \Phi^{-1}(1- \alpha / 2)" alt="Z_{\alpha} = \Phi^{-1}(1- \alpha / 2)" class="tex"/> .
+</p>
+<ul><li> For some positive random variables, e.g. in <b>Lognormal</b>, <b>Exponential</b>, <b>Weibull</b>, and <b>Loglogistic</b> distributions, confidence limits are:</li></ul>
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-22018614b3fe041b7946fea48b62d87b.png?v=0" title="x_{pL} = e^{ \text{ln}(x_p) - Z_{\alpha} \frac{\sigma_{x_p}}{x_p} }" alt="x_{pL} = e^{ \text{ln}(x_p) - Z_{\alpha} \frac{\sigma_{x_p}}{x_p} }" class="tex"/>
+</p><p><img src="../images/SA_Parametric_Dist_Algorithm/math-4a37f192aa56efc83eeed215104ef9d9.png?v=0" title="x_{pU} = e^{ \text{ln}(x_p) + Z_{\alpha} \frac{\sigma_{x_p}}{x_p} }" alt="x_{pU} = e^{ \text{ln}(x_p) + Z_{\alpha} \frac{\sigma_{x_p}}{x_p} }" class="tex"/>
+</p>
+</div>
+<p>The fitted line is constructed as follows for each distribution:
+</p><p><br />
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> x-axis
+</th>
+<th> y-axis
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-6f23925f5473b7ef6eda226893c43edb.png?v=0" title=" t_p " alt=" t_p " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-11e1fea180b8ec1a3c61007cb7acd4ab.png?v=0" title=" \phi^{-1}(p) " alt=" \phi^{-1}(p) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>Lognormal</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-f0b614e189b32a916c860e9ca68c15a0.png?v=0" title=" ln(t_p) " alt=" ln(t_p) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-11e1fea180b8ec1a3c61007cb7acd4ab.png?v=0" title=" \phi^{-1}(p) " alt=" \phi^{-1}(p) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-f0b614e189b32a916c860e9ca68c15a0.png?v=0" title=" ln(t_p) " alt=" ln(t_p) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-4c706e2e2511731732e6332d4ae658e8.png?v=0" title=" ln(-ln(1-p)) " alt=" ln(-ln(1-p)) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-6f23925f5473b7ef6eda226893c43edb.png?v=0" title=" t_p " alt=" t_p " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-4c706e2e2511731732e6332d4ae658e8.png?v=0" title=" ln(-ln(1-p)) " alt=" ln(-ln(1-p)) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-f0b614e189b32a916c860e9ca68c15a0.png?v=0" title=" ln(t_p) " alt=" ln(t_p) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-4c706e2e2511731732e6332d4ae658e8.png?v=0" title=" ln(-ln(1-p)) " alt=" ln(-ln(1-p)) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-6f23925f5473b7ef6eda226893c43edb.png?v=0" title=" t_p " alt=" t_p " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-57967d33890453a0e5bb2cea0144512d.png?v=0" title=" ln(\frac{p}{1-p}) " alt=" ln(\frac{p}{1-p}) " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-f0b614e189b32a916c860e9ca68c15a0.png?v=0" title=" ln(t_p) " alt=" ln(t_p) " class="tex"/>
+</td>
+<td> <img src="../images/SA_Parametric_Dist_Algorithm/math-57967d33890453a0e5bb2cea0144512d.png?v=0" title=" ln(\frac{p}{1-p}) " alt=" ln(\frac{p}{1-p}) " class="tex"/>
+</td></tr>
+</table>
+<p>where &#934; is the CDF function for the standard normal distribution.
+</p><p>The probability plot is another tool that can be used to assess fit. The probability plot shows an approximately straight line if the assumed distribution is a good fit.
+</p>
+<h1><a name="Goodness_of_Fit"></a><span class="mw-headline">Goodness of Fit</span></h1>
+<h2><a name="Anderson-Darling_Test"></a><span class="mw-headline">Anderson-Darling Test</span></h2>
+<p>The hypotheses for the Anderson-Darling test are:<br />
+</p>
+<dl><dd> H<sub>0</sub>: Input data follows the distribution.</dd>
+<dd> H<sub>1</sub>: Input data doesn't follow the distribution.</dd></dl>
+<ul><li> Anderson-Darling Statistic</li></ul>
+<dl><dd> Input data are sorted first. The CDF function is used to calculate the probability Z<sub>i</sub> for each point, and <img src="../images/SA_Parametric_Dist_Algorithm/math-31cdb7e20a9f3f31e7cde7c10c329dac.png?v=0" title="F_n(Z_i)" alt="F_n(Z_i)" class="tex"/> is the probability for the <i>i</i>th point calculated by Benard method or Kaplan-Meier method. The Anderson-Darling statistic A<sup>2</sup> is calculated using two methods:</dd></dl>
+<ol>
+<li>Benard method
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-bd5ee6f514a4ca4a509c6124f0ca29d2.png?v=0" title=" A^2 = n \sum_{i=1}^{n+1} \Bigl[ \text{PartA}_i + \text{PartB}_i + \text{PartC}_i \Bigr]" alt=" A^2 = n \sum_{i=1}^{n+1} \Bigl[ \text{PartA}_i + \text{PartB}_i + \text{PartC}_i \Bigr]" class="tex"/>,
+</p>
+</div>
+<p>where <img src="../images/SA_Parametric_Dist_Algorithm/math-a19a2a96f4896caefd07029461586d31.png?v=0" title=" \text{PartA}_i = (Z_{i-1} - Z_i) \; + \; \ln\! \left(\frac{1 - Z_{i-1}}{1 - Z_i} \right) " alt=" \text{PartA}_i = (Z_{i-1} - Z_i) \; + \; \ln\! \left(\frac{1 - Z_{i-1}}{1 - Z_i} \right) " class="tex"/>, <img src="../images/SA_Parametric_Dist_Algorithm/math-4c239ad0b515cc0a63ecda77a311fd1f.png?v=0" title=" \text{PartB}_i = 2 F_n(Z_{i-1}) \, \ln \! \left(\dfrac{1 - Z_i}{1 - Z_{i-1}} \right) " alt=" \text{PartB}_i = 2 F_n(Z_{i-1}) \, \ln \! \left(\dfrac{1 - Z_i}{1 - Z_{i-1}} \right) " class="tex"/>,
+</p>
+<dl><dd> &#160;&#160;&#160;&#160;<img src="../images/SA_Parametric_Dist_Algorithm/math-128696f01472fef7138073e5f7b7844d.png?v=0" title=" \text{PartC}_i = F_n(Z_{i-1})^2 \, \ln \! \left(\dfrac{Z_i(1 - Z_{i-1})}{Z_{i-1}(1 - Z_i)}\right) " alt=" \text{PartC}_i = F_n(Z_{i-1})^2 \, \ln \! \left(\dfrac{Z_i(1 - Z_{i-1})}{Z_{i-1}(1 - Z_i)}\right) " class="tex"/>, <img src="../images/SA_Parametric_Dist_Algorithm/math-39d281cb5137c2b90e384c81f9ac5dd3.png?v=0" title="Z_0 = 0, \, F_n(Z_0) = 0, \, \ln(Z_0) = 0, Z_{n+1} = 1 - 10^{-12}" alt="Z_0 = 0, \, F_n(Z_0) = 0, \, \ln(Z_0) = 0, Z_{n+1} = 1 - 10^{-12}" class="tex"/>.</dd></dl>
+</li>
+<li>Kaplan-Meier method</li>
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-0ee03a01db2bf30fe5f294d4cd813f7a.png?v=0" title=" A^2 = n \Bigl [ -1 - \ln(Z_n) -\ln(1 - Z_n) + \sum_{i=2}^n \bigl( \text{PartB}_i + \text{PartC}_i \bigr)  \; \Bigr ]" alt=" A^2 = n \Bigl [ -1 - \ln(Z_n) -\ln(1 - Z_n) + \sum_{i=2}^n \bigl( \text{PartB}_i + \text{PartC}_i \bigr)  \; \Bigr ]" class="tex"/>,
+</p>
+</div>
+<li>When there is no right censoring in maximum likelihood estimation method,
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-bc3ca8ce800a10c55de4a8d722d5dc82.png?v=0" title=" A^2 = -n -(1/n) \sum_{i=1}^n \Bigl[ (2i-1) \text{ln} (Z_i) + ( 2n+1-i ) \text{ln} (1 - Z_i) \Bigr]" alt=" A^2 = -n -(1/n) \sum_{i=1}^n \Bigl[ (2i-1) \text{ln} (Z_i) + ( 2n+1-i ) \text{ln} (1 - Z_i) \Bigr]" class="tex"/>
+</p>
+</div>
+<p>A<sup>2</sup> value can be used to assess the fit. The smaller the value is, the better the model will be.
+</p>
+</li>
+<p><br />
+</p>
+</ol>
+<ul><li> P-value can be calculated for the Anderson-Darling Test using the Kaplan-Meier method</li></ul>
+<dl><dd> P-value is calculated using a bootstrap resampling approach. And the value can be compared with other software. Events are drawn from a distribution using the estimated parameters. Censoring indicators from the input data are retained. If P-value is less than the critical value, e.g. 0.05, H<sub>0</sub> will be rejected.</dd></dl>
+<p><br />
+</p>
+<dl><dd> The P-value is the proportion of bootstrap samples whose A<sup>2</sup> statistic values are greater than or equal to input data's [<a href="#Ref4">4</a>]. i.e.</dd></dl>
+<div align="center">
+<p><img src="../images/SA_Parametric_Dist_Algorithm/math-5aafe4961d846b5d8b54682361add61a.png?v=0" title="\text{P-value} = \frac{b + 1}{N + 1}" alt="\text{P-value} = \frac{b + 1}{N + 1}" class="tex"/> ,
+</p>
+</div>
+<dl><dd> where <i>b</i> is the number of test statistic values that are greater than or equal to input data's test statistic, and <i>N</i> is the number of bootstrap samples.</dd></dl>
+<dl><dd> When there is no right censoring, we use another method [<a href="#Ref2">2</a>] to calculate the P-value like <b>Statistical Process Control</b> app.</dd></dl>
+<h2><a name="Pearson_Correlation_Coefficient"></a><span class="mw-headline">Pearson Correlation Coefficient</span></h2>
+<p>The Pearson correlation coefficient is calculated under the Least Squares estimation method. It measures how well the straight line fits the input data. A high value indicates the least squares regression lines explains most of the variation in Y through X.
+</p><p><br />
+</p>
+<h1><a name="Reference"></a><span class="mw-headline">Reference</span></h1>
+<ol><li> <span id="Ref1"><span> R.A. Lockhart and M.A. Stephens (1994). "Estimation and Tests of Fit for the Three-parameter Weibull Distribution". <i>Journal of the Royal Statistical Society</i>, Vol. 56, No. 3, pp. 491-500.</li>
+<li> <span id="Ref2"><span> Ralph B. D'Agostino, Michael A. Stephens (Eds.) (1986). <i>Goodness-of-Fit Techniques</i>. New York: Marcel Dekker</li>
+<li> Hartigan J A (1975). <i>Clustering Algorithms</i>. Wiley</li>
+<li> <span id="Ref4"><span> W. Stute, W. G. Manteiga, and M. P. Quindimil (1993). “Bootstrap based goodness-of-fit-tests”. <i>Metrika</i>, 40.1: pp. 243-256.</li>
+<li> <span id="Ref5"><span> W. Q. Meeker, L. A. Escobar, and F. G. Pascual (2021). <i>Statistical Methods for Reliability Data, 2nd Edition</i>. New York: John Wiley &amp; Sons.</span></li></ol>
+<p></span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</p>
+
+
+
+
+

@@ -1,0 +1,101 @@
+<h1 class="firstHeading">2.5.2.2 Algorithm: Nonparametric Distribution Analysis (Arbitrary Censoring)</h1><p class='urlname' style='display: none'>SA-Nonparametric-Dist-Algorithm</p>
+<p>The <b>Uncensor/Arbitrary Censor data</b> are represented as time intervals <img src="../images/SA_Nonparametric_Dist_Algorithm/math-29ba7906659ab2cedd5a5be2aee9dad9.png?v=0" title="(tl_i, tr_i)" alt="(tl_i, tr_i)" class="tex"/>:
+</p>
+<dl><dd><ul><li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-d604b01acf23506a7e38f6046e2b7368.png?v=0" title="tl_i" alt="tl_i" class="tex"/>: lower bound (time of last inspection or last known survival)</li>
+<li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-37a0c5f38570b6331eb91c82ab866980.png?v=0" title="tr_i" alt="tr_i" class="tex"/>: upper bound (time when failure was first detected)</li>
+<li> If <img src="../images/SA_Nonparametric_Dist_Algorithm/math-dd9977f86586fdd2d98c8e532ecafd57.png?v=0" title="tr_i = \infty" alt="tr_i = \infty" class="tex"/>, it represents right-censoring.</li>
+<li> If <img src="../images/SA_Nonparametric_Dist_Algorithm/math-56245822575101ed40c107004fb2adb3.png?v=0" title="tl_i = tr_i" alt="tl_i = tr_i" class="tex"/>, it represents exact failure (uncensored).</li></ul></dd></dl>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Turnbull_estimation_method"><span class="tocnumber">1</span> <span class="toctext">Turnbull estimation method</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Actuarial_estimation_method"><span class="tocnumber">2</span> <span class="toctext">Actuarial estimation method</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Actuarial_Table"><span class="tocnumber">2.1</span> <span class="toctext">Actuarial Table</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Survival_Probabilities"><span class="tocnumber">2.2</span> <span class="toctext">Survival Probabilities</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Hazards_and_Densities"><span class="tocnumber">2.3</span> <span class="toctext">Hazards and Densities</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Characteristics_of_Variable"><span class="tocnumber">2.4</span> <span class="toctext">Characteristics of Variable</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Additional_Time_from_Time_T_until_Half_of_Units_Fail"><span class="tocnumber">2.5</span> <span class="toctext">Additional Time from Time T until Half of Units Fail</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Confidence_Interval"><span class="tocnumber">3</span> <span class="toctext">Confidence Interval</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Reference"><span class="tocnumber">4</span> <span class="toctext">Reference</span></a></li>
+</ul>
+</div>
+
+<h1><a name="Turnbull_estimation_method"></a><span class="mw-headline">Turnbull estimation method</span></h1>
+<p>Time intervals and the probabilities of each interval are calculated by the Turbull estimation[<a href="#Ref1">1</a>]. Turnbull developed an iterative algorithm to obtain the nonparametric maximum likelihood estimate (NPMLE) of the cumulative distribution function for censored data. This approach is applicable to more general cases, including situations where the observation intervals overlap.
+</p><p>The covariance of the constrained MLE is computed via the <b>Observed Fisher information matrix</b> in the reduced parameter space[<a href="#Ref2">2</a>] with the constraint <img src="../images/SA_Nonparametric_Dist_Algorithm/math-b15bc78007d450075b3ffb66d9f30ddf.png?v=0" title="\sum p_j=1" alt="\sum p_j=1" class="tex"/>.
+</p>
+<h1><a name="Actuarial_estimation_method"></a><span class="mw-headline">Actuarial estimation method</span></h1>
+<p>First, a clinical life table is constructed, with each interval <img src="../images/SA_Nonparametric_Dist_Algorithm/math-47765fc8f7bc36d43033b1c4521e14bb.png?v=0" title="[t_i,t_{i+1})" alt="[t_i,t_{i+1})" class="tex"/> representing the range into which survival times and times to loss or withdrawal are distributed. Each interval spans from <img src="../images/SA_Nonparametric_Dist_Algorithm/math-f406db9a09c0430f7e54c1a3bb217c3e.png?v=0" title="t_i" alt="t_i" class="tex"/> up to, but not including <img src="../images/SA_Nonparametric_Dist_Algorithm/math-db354cc9bc4e1aa1836bbbf64e33024f.png?v=0" title="t_{i+1} " alt="t_{i+1} " class="tex"/> for <img src="../images/SA_Nonparametric_Dist_Algorithm/math-1e9fb79b66da693bdfa4dd9a26f807f2.png?v=0" title="i=1,2,...,s" alt="i=1,2,...,s" class="tex"/>. The final interval extends to infinity. These intervals are considered fixed.
+Using the input censoring information, we can tabulate the basic data required for the calculation.
+</p>
+<ul><li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-18405d1d3f1cd88a1ed15ae1d134a818.png?v=0" title="t_{mi}" alt="t_{mi}" class="tex"/> The midpoint of the <img src="../images/SA_Nonparametric_Dist_Algorithm/math-865c0c0b4ab0e063e5caa3387c1a8741.png?v=0" title="i" alt="i" class="tex"/>th interval.</li>
+<li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-e8edf64d1657e725cbf5cad36381f749.png?v=0" title=" b_i=t_{i+1}-t_i " alt=" b_i=t_{i+1}-t_i " class="tex"/> The width of the <img src="../images/SA_Nonparametric_Dist_Algorithm/math-865c0c0b4ab0e063e5caa3387c1a8741.png?v=0" title="i" alt="i" class="tex"/>th interval.</li>
+<li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-b39335b6584e8455ab4de3c86b439e21.png?v=0" title="l_i" alt="l_i" class="tex"/> Number lost or withdrawn alive in the <img src="../images/SA_Nonparametric_Dist_Algorithm/math-865c0c0b4ab0e063e5caa3387c1a8741.png?v=0" title="i" alt="i" class="tex"/>th interval.</li>
+<li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-d247f594c78d0d2be10fc6d82512cc4e.png?v=0" title="d_i" alt="d_i" class="tex"/> Number die in the <img src="../images/SA_Nonparametric_Dist_Algorithm/math-865c0c0b4ab0e063e5caa3387c1a8741.png?v=0" title="i" alt="i" class="tex"/>th interval.</li>
+<li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-98887d3aa30a6a094157cb5b406923d7.png?v=0" title=" n_i&#39;=n_{i-1}&#39; - l_{i-1} - d_{i-1} " alt=" n_i&#39;=n_{i-1}&#39; - l_{i-1} - d_{i-1} " class="tex"/> Number entering the ith interval </li>
+<li> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-42c7972c01cc71acdab67718905c83ef.png?v=0" title=" n_i=n_i&#39; - \frac{1}{2}l_{i} " alt=" n_i=n_i&#39; - \frac{1}{2}l_{i} " class="tex"/> Number exposed to risk in the <img src="../images/SA_Nonparametric_Dist_Algorithm/math-865c0c0b4ab0e063e5caa3387c1a8741.png?v=0" title="i" alt="i" class="tex"/>th interval.</li></ul>
+<h2><a name="Actuarial_Table"></a><span class="mw-headline">Actuarial Table</span></h2>
+<p>Conditional Probability of Failure
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-7c9cc8f531c939e064b59effbba039ad.png?v=0" title=" \hat{q}_{i}=d_i/n_i " alt=" \hat{q}_{i}=d_i/n_i " class="tex"/></dd></dl>
+<p>Varaince of Conditional Probability of Failure
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-c829e89da580329b943d81ce9242197b.png?v=0" title=" Var[\hat{q}_{i}]=\frac{\hat{q}_{i}(1-\hat{q}_{i})}{n_i} " alt=" Var[\hat{q}_{i}]=\frac{\hat{q}_{i}(1-\hat{q}_{i})}{n_i} " class="tex"/></dd></dl>
+<h2><a name="Survival_Probabilities"></a><span class="mw-headline">Survival Probabilities</span></h2>
+<p>Cumulative Survival Probabilities
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-a6d3f515a19243bf86faf9f2c1afd5ee.png?v=0" title="\hat{S}(t_i)= &#10;\begin{cases}&#10;  1 &amp; \text{if } i = 1, \\&#10;  \hat{p}_{i-1}\hat{S}(t_{i-1}) &amp; \text{if } i = 2,...,k&#10;\end{cases}&#10;" alt="\hat{S}(t_i)= &#10;\begin{cases}&#10;  1 &amp; \text{if } i = 1, \\&#10;  \hat{p}_{i-1}\hat{S}(t_{i-1}) &amp; \text{if } i = 2,...,k&#10;\end{cases}&#10;" class="tex"/></dd></dl>
+<p>Variance of Cumulative Survival Probabilities
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-2f967fd68cc2ee95b4febdf5574ad9b2.png?v=0" title="Var[\hat{S}(t_i)] = [\hat{S}(t_i)]^2\sum_{j=1}^{i-1}\frac{\hat{q}_j}{n_j\hat{p}_j} " alt="Var[\hat{S}(t_i)] = [\hat{S}(t_i)]^2\sum_{j=1}^{i-1}\frac{\hat{q}_j}{n_j\hat{p}_j} " class="tex"/></dd></dl>
+<h2><a name="Hazards_and_Densities"></a><span class="mw-headline">Hazards and Densities</span></h2>
+<p>Hazard Estimates
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-178df7466bcba53702cc63e2f6e1ca72.png?v=0" title="\hat{h}(t_{mi})=\frac{2\hat{q}_i}{b_i(1+\hat{p}_i)}" alt="\hat{h}(t_{mi})=\frac{2\hat{q}_i}{b_i(1+\hat{p}_i)}" class="tex"/></dd></dl>
+<p>Variance of Hazards
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-ef2fbe1889f433cb1bc2f60be63f7550.png?v=0" title="Var[\hat{h}(t_{mi})] = \frac{(\hat{h}(t_{mi}))^2}{n_i\hat{q}_i}(1-(\frac{1}{2}\hat{h}(t_{mi})b_i)^2)" alt="Var[\hat{h}(t_{mi})] = \frac{(\hat{h}(t_{mi}))^2}{n_i\hat{q}_i}(1-(\frac{1}{2}\hat{h}(t_{mi})b_i)^2)" class="tex"/></dd></dl>
+<p>Probability Density Estimates
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-56034309459a5c301abc64b8d05731d9.png?v=0" title="\hat{f}(t_{mi})=\frac{\hat{S}(t_i)\hat{q}_i}{b_i}" alt="\hat{f}(t_{mi})=\frac{\hat{S}(t_i)\hat{q}_i}{b_i}" class="tex"/></dd></dl>
+<p>Variance of Probability Densities
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-3316826d5e335ec292def4f9b228d6c5.png?v=0" title="Var[\hat{f}(t_{mi})] = \frac{(\hat{S}(t_i)\hat{q}_i)^2}{b_i}\sum_{j=1}^{i-1}(\frac{\hat{q}_j}{n_j\hat{p}_j} + \frac{\hat{p}_j}{n_j\hat{q}_j})" alt="Var[\hat{f}(t_{mi})] = \frac{(\hat{S}(t_i)\hat{q}_i)^2}{b_i}\sum_{j=1}^{i-1}(\frac{\hat{q}_j}{n_j\hat{p}_j} + \frac{\hat{p}_j}{n_j\hat{q}_j})" class="tex"/></dd></dl>
+<h2><a name="Characteristics_of_Variable"></a><span class="mw-headline">Characteristics of Variable</span></h2>
+<p>Median
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-9dae7d6b39d5f65ed1cf11aa5642e959.png?v=0" title=" \hat{t}_{m}=t_j + \frac{\hat{S}(t_j) - 0.5}{\hat{f}(t_{mj})} " alt=" \hat{t}_{m}=t_j + \frac{\hat{S}(t_j) - 0.5}{\hat{f}(t_{mj})} " class="tex"/></dd></dl>
+<p>Variance of Median
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-c3756195c735a00a966e9c645acc76e9.png?v=0" title=" Var[\hat{t}_{m}] = \frac{\hat{S}(t_0)^2}{4n_0\hat{f}(t_{mj})} " alt=" Var[\hat{t}_{m}] = \frac{\hat{S}(t_0)^2}{4n_0\hat{f}(t_{mj})} " class="tex"/></dd></dl>
+<h2><a name="Additional_Time_from_Time_T_until_Half_of_Units_Fail"></a><span class="mw-headline">Additional Time from Time T until Half of Units Fail</span></h2>
+<p>First find time interval <img src="../images/SA_Nonparametric_Dist_Algorithm/math-0524fc7e3b396a976de8097743ce9f08.png?v=0" title="(t_j, t_{j+1})" alt="(t_j, t_{j+1})" class="tex"/> so that <img src="../images/SA_Nonparametric_Dist_Algorithm/math-d278c8754a9d918e9e9036ac86da3d00.png?v=0" title="\hat{S}(t_j)\le\frac{1}{2}\hat{S}(t_i)" alt="\hat{S}(t_j)\le\frac{1}{2}\hat{S}(t_i)" class="tex"/> and <img src="../images/SA_Nonparametric_Dist_Algorithm/math-66573e6c298eb31b5a0a9e57efeb39a1.png?v=0" title="\hat{S}(t_{j+1}) &gt; \frac{1}{2}\hat{S}(t_i)" alt="\hat{S}(t_{j+1}) &gt; \frac{1}{2}\hat{S}(t_i)" class="tex"/>. Then
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-d1200459ee7726e441dbfcb99d3d36dd.png?v=0" title="\hat{t}_{mr}(i) = (t_j-t_i)+\frac{b_j(\hat{S}(t_j)-1/2\hat{S}(t_i))}{\hat{S}(t_j)-\hat{S}(t_{j+1})}" alt="\hat{t}_{mr}(i) = (t_j-t_i)+\frac{b_j(\hat{S}(t_j)-1/2\hat{S}(t_i))}{\hat{S}(t_j)-\hat{S}(t_{j+1})}" class="tex"/></dd></dl>
+<p>Variance of <img src="../images/SA_Nonparametric_Dist_Algorithm/math-8c51c135a092127f3299409fa5c407c9.png?v=0" title="\hat{t}_{mr}(i)" alt="\hat{t}_{mr}(i)" class="tex"/>
+</p>
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-d4e73a38c969afc4f1a7372f5985b9f2.png?v=0" title="Var[\hat{t}_{mr}(i)] = \frac{(\hat{S}(t_i))^2}{4n_i(\hat{f}(t_{mj}))^2}" alt="Var[\hat{t}_{mr}(i)] = \frac{(\hat{S}(t_i))^2}{4n_i(\hat{f}(t_{mj}))^2}" class="tex"/></dd></dl>
+<h1><a name="Confidence_Interval"></a><span class="mw-headline">Confidence Interval</span></h1>
+<p>The confidence intervals are calculated using a normal approximation:
+</p>
+<dl><dd><ul><li> Two-sided <img src="../images/SA_Nonparametric_Dist_Algorithm/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> confidence interval
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-d4158fb54fc6bf75f07a37a34157918f.png?v=0" title="x_{L} = \hat{x} - z_{1-\alpha/2}\times SE " alt="x_{L} = \hat{x} - z_{1-\alpha/2}\times SE " class="tex"/></dd>
+<dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-22d2e9d718160efd26deebff4f302601.png?v=0" title="x_{U} = \hat{x} + z_{1-\alpha/2}\times SE" alt="x_{U} = \hat{x} + z_{1-\alpha/2}\times SE" class="tex"/></dd></dl></li>
+<li> One-sided <img src="../images/SA_Nonparametric_Dist_Algorithm/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> lower confidence bound
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-a67f99765a7935f556aa8de49b7a057f.png?v=0" title="x_{L} = \hat{x} - z_{1-\alpha}\times SE" alt="x_{L} = \hat{x} - z_{1-\alpha}\times SE" class="tex"/></dd></dl></li>
+<li> One-sided <img src="../images/SA_Nonparametric_Dist_Algorithm/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> upper confidence bound
+<dl><dd> <img src="../images/SA_Nonparametric_Dist_Algorithm/math-2df67623584a6140b1b3ee6d400b2f38.png?v=0" title="x_{U} = \hat{x} + z_{1-\alpha}\times SE" alt="x_{U} = \hat{x} + z_{1-\alpha}\times SE" class="tex"/></dd></dl></li></ul></dd></dl>
+<h1><a name="Reference"></a><span class="mw-headline">Reference</span></h1>
+<ol><li> <span id="Ref1"><span> B.W. Turnbull (1976). "The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data". <i>Journal of the Royal Statistical Society</i>, 38: pp. 290-295.</li>
+<li> <span id="Ref2"><span> A. P. Dawid (1979). "Conditional independence in statistical theory." Journal of the Royal Statistical Society, Series B 41(1):1–31.</span></li></ol>
+<p></span>
+</span>
+</span>
+</p>
+
+
+
+
+

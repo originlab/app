@@ -1,0 +1,74 @@
+<h1 class="firstHeading">2.5.4.1 Tutorial for Accelerated Life Testing</h1><p class='urlname' style='display: none'>Tutorial-Accelerated-Life-Testing</p>
+<p>In this example, an electric vehicle factory wants to test the battery lifetime (capacity drops below 70&#160;%). Tracking this under normal conditions can take years and is both time-consuming and costly. To compress the timeline to several months, the engineers accelerate wear-and-tear by elevated temperatures (40, 60 and 80 °C), record the failures every month, and then use Accelerated Life Testing to predict lifetimes at normal operating temperature (30 and 50 °C).
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/SA_Accelerated_Life_Testingt_Tutorial/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Warranty Analysis</b></i>:
+</p>
+<ul><li> <i><a href="../../App/App/SA_Accelerated_Life_Testingt_Algorithm.html" title="App:SA Accelerated Life Testingt Algorithm">Algorithm</a></i></li></ul>
+</td></tr></table>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>4. Accelerated Life Testing </i>.
+</p><p>ALT tool supports two types of data arrangement. 
+</p>
+<ul>
+<li> <b>Arbitrary Censored</b><br />
+[Book4]Sheet1 shows an example of arbitrary censored dataset for ALT - a mixture of right- and interval-censored observations. The censored data is arranged in the following format: 
+<ul><li> Start time (column A): beginning of the interval (months, weeks, seasons, etc.). </li>
+<li> End time (column B): end of the interval (same unit as Start time). If Start time = End time, the unit failed at the exact time. </li>
+<li> Frequencies (column C): count of failures in the interval. Optional. See below for details.</li>
+<li> For left-censored units, the Start Time is missing. Frequencies counts units already failed by the End Time</li>
+<li> For right-censored units (7th, 14th and 21st rows), the End Time is missing. Frequencies counts units still surviving at the Start Time.</li>
+<li> Accelerating variable (column D): corresponding stress level for each unit.</li></ul>
+<dl><dd><a  class="image"><img alt="ALT Tutorial 00 Arbitrary Censored.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_00_Arbitrary_Censored.png?v=77781" width="466"  /></a></dd></dl>
+
+The "Frequencies" column is optional. If omitted, you can duplicate the interval and each duplicate represents one failure.
+<dl><dd><a  class="image"><img alt="ALT Tutorial 00a Arbitrary Censored.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_00a_Arbitrary_Censored.png?v=77782" width="612"  /></a></dd></dl>
+</li>
+<li> <b>Right Censored</b><br />
+The right-censored data is arranged in the following format:
+<ul><li> "Time " (column A): the failure time or the last recorded time if the unit is still working (right-censored). </li>
+<li> "Censor " (column B): the censoring values.</li>
+<li> Frequencies (column C in the left): count of units. Optional. If the "Frequencies" column is omitted, you can duplicate the entry and each duplicate represents one unit.</li>
+<li> Accelerating variable (column D in the left/column C in the right): corresponding stress level for each unit.</li></ul>
+<dl><dd><a  class="image"><img alt="ALT Tutorial 00 Right Censored.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_00_Right_Censored.png?v=77785" width="699"  /></a></dd></dl>
+</li></ul>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book4]Sheet1 active, click the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the <b>App Gallery</b> . In the opened panel, choose <b>Accelerated Life Testing</b>.
+<dl><dd><a  class="image"><img alt="ALT Tutorial 01.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_01.png?v=77784" width="565"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings as follow:
+<ul>
+<li>On Input tab, select <b>Arbitrary Censored</b> for <b>Data Type</b>. Choose column A for <b>Start Time</b>, column B for <b>End Time</b>, column C for <b>Frequency</b>, and column D for <b>Accelerating variable</b>, respectively. Since the accelerating variable is temperature in this example, select <b>Arrhenius</b> from <b>Relationship</b> dropdown list. Refer to <a href="../../App/App/SA_Accelerated_Life_Testingt_Algorithm.html#Regression_Table" title="App:SA Accelerated Life Testingt Algorithm">this page</a> for details of relationship. 
+<dl><dd><a  class="image"><img alt="ALT Tutorial 02 Input.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_02_Input.png?v=77800" width="743"  /></a></dd></dl>
+<li>On Settings tab, <b>Distribution</b> is set to <b>Weibull</b> and <b>Distribution Estimates</b> to <b>Optimal estimates</b> by default. Keep these settings unchanged.
+<dl><dd> <a  class="image"><img alt="ALT Tutorial 02 Settings.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_02_Settings.png?v=77788" width="399"  /></a></dd></dl>
+<li>On Prediction tab, type <code>30 50</code> in <b>Prediction value</b> edit box to extrapolate lifetime at these two temperatures. Check <b>Estimate percentitles for percents</b> checkbox, and type percentiles <code>10 50 90</code> in <b>Percents</b> edit box. Check <b>Estimate Probabilities for times</b>, type <code>30 45</code> in <b>Time</b> edit box and select <b>Survival Probability</b> for <b>Estimate</b>. 
+<dl><dd> <a  class="image"><img alt="ALT Tutorial 02 Prediction.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_02_Prediction.png?v=77792" width="556"  /></a></dd></dl>
+<li>On Plots tab, under <b>Display Plots</b> branch, check <b>Probability Plot for each accelerating level by fitted model</b>, and enter <code>30</code> to <b>Design value to include on plots</b> edit box. Check <b>Relation Plot</b> and enter <code>10 50 90</code> to <b>Percents</b> edit box. Check <b>Probability Plot for each accelerating level by individual fit</b>.
+<dl><dd> <a  class="image"><img alt="ALT Tutorial 02 Plots.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_02_Plots.png?v=77793" width="726"  /></a></dd></dl>
+</ul></li>
+<li>Click <b>OK</b> button to generate report sheets.
+</ol>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<dl><dd><a  class="image"><img alt="ALT Tutorial 03 Regression.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_03_Regression.png?v=77794" width="738"  /></a></dd></dl>
+<ul>
+<li> The Regression table reports the key parameters of the fitted Arrhenius-Weibull model. 
+<ul>
+<li> Intercept -7.782 and Temp 0.276 (slope) versus the transformed temperature determine the characteristic life at any design temperature. Refer to <a href="../../App/App/SA_Accelerated_Life_Testingt_Algorithm.html#Regression_Table" title="App:SA Accelerated Life Testingt Algorithm">this page</a> for equations and detailed algorithm. 
+<li> Shape of the Weibull distribution (calculated by MLE) help you understand the failure mode. 
+<li> The activation energy and acceleration factor are also derived from Temp, understand how strongly temperature accelerates the failure. 
+</ul></li>
+</ul>
+<dl><dd><a  class="image"><img alt="ALT Tutorial 03 Anderson Darling.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_03_Anderson_Darling.png?v=77795" width="797"  /></a></dd></dl>
+<ul><li> Origin calculates the difference between the empirical distribution (by Kaplan-Meier) and fitted distribution, and outputs the Anderson-Darling statistics for individual fit under each temperature ("Individual Fit" column) and overall model of all temperatures ("Fit Model" column). </li>
+<li> The near-equal A-D values for individual and global fits show that a single Arrhenius-Weibull model is good enough for all temperature levels. </li>
+<li> A-D statistics provide a quantitative gauge of the fit: smaller value indicates a better fit; but the final conclusion should always come from the Probability Plot.</li>
+<li> The Model Probability Plot (global model) shows that almost all points lie close to the fitted line, despite slight down warping in the tail of 40 °C (yet it remains in the 95% confidence interval if you choose to turn on CI on the Plots tab of the dialog). The Probability Plot (Individual Fit) gives the same picture: 60 °C and 80 °C lines are essentially parallel, while 40 °C line shows a small angle. Both P-P plots confirm the adequacy of the global Arrhenius-Weibull model across the accelerating temperatures, with only minor bias at lower temperature.</li>
+<li> A 30 °C reference line is superimposed on the Model P-P plot to display the predicted cumulative failure probabilities under the use-condition temperature, providing a direct benchmark for future validation data and warranty policy.</li></ul>
+<dl><dd><a  class="image"><img alt="ALT Tutorial 03 Survival Probabilities.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_03_Survival_Probabilities.png?v=77796" width="604"  /></a></dd></dl>
+<ul><li> The Percentiles table estimates the elapsed months at which the specified percentages of batteries will fail, and the Survival Probabilities table gives the probability that a unit is still working at each specified time point. Both can be used to verify reliability requirements. For example, at 30 °C, 10% of batteries will fail by 2.48 months and 90% by 33.11 months. After 30 months (about 2.5 years) about 12.9% of batteries can still work at 30 °C, whereas at 50 °C the survival probability fails below 1.2% - an order-of-magnitude drop indicates how rapidly battery capacity is lost as temperature increases. </li></ul>
+<dl><dd><a  class="image"><img alt="ALT Tutorial 03 Relation Plot.png" src="../images/SA_Accelerated_Life_Testingt_Tutorial/ALT_Tutorial_03_Relation_Plot.png?v=77797" width="504"  /></a></dd></dl>
+<ul><li> Relation plot shows the percentile lines (the 10%, 50%, and 90% in this example) predicted by Arrhenius-Weibull model described in Regression table, and censoring data (exact failure time and interval censored) are added on the plot for visual comparison. It is used to get a general idea whether there is systematic bias between predicted and observed lifetimes.</li>
+<li> If a large proportion of the observations is censored, just like this example, all data are interval-censored or right-censored data, the Relation plot cannot validate the life-stress relationship. Instead, Anderson-Darling statistics and P-P plot should be used for a decision.</li></ul>
+
+

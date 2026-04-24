@@ -1,0 +1,178 @@
+<h1 class="firstHeading">2.16 Compare NLFit Parameters/Datasets</h1><p class='urlname' style='display: none'>Compare-NLFit-Parameters-Datasets</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Examples"><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Dialog_Settings"><span class="tocnumber">2</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Input_Data"><span class="tocnumber">2.1</span> <span class="toctext">Input Data</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Fitting_Function"><span class="tocnumber">2.2</span> <span class="toctext">Fitting Function</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Compare"><span class="tocnumber">2.3</span> <span class="toctext">Compare</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Parameters_to_Compare"><span class="tocnumber">2.4</span> <span class="toctext">Parameters to Compare</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Method"><span class="tocnumber">2.5</span> <span class="toctext">Method</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Additional_Outputs"><span class="tocnumber">2.6</span> <span class="toctext">Additional Outputs</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Results"><span class="tocnumber">2.7</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Fit_Control_button"><span class="tocnumber">2.8</span> <span class="toctext">Fit Control button</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Fit_Control_Dialog"><span class="tocnumber">2.9</span> <span class="toctext">Fit Control Dialog</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Parameters_tab"><span class="tocnumber">2.9.1</span> <span class="toctext">Parameters tab</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Fit_Control_tab"><span class="tocnumber">2.9.2</span> <span class="toctext">Fit Control tab</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Buttons_below_the_Panel"><span class="tocnumber">2.9.3</span> <span class="toctext">Buttons below the Panel</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Algorithm"><span class="tocnumber">3</span> <span class="toctext">Algorithm</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Akaike_Information_Criteria.28AIC.29"><span class="tocnumber">3.1</span> <span class="toctext">Akaike Information Criteria(AIC)</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#F-test"><span class="tocnumber">3.2</span> <span class="toctext">F-test</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<p><br />
+</p><p>This <a class="external text" href="https://www.originlab.com/FileExchange/details.aspx?fid=302" target="_blank">app Compare Datasets and Fit Parameters</a> is used to compare NLFit parameters for multiple datasets, and determine whether they are different. This tool can also be used to compare datasets using a fitting function.
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
+<ol><li> Import <i>Dose Response - Inhibitor.dat</i> in <i>\\Samples\Curve Fitting</i> folder to a new worksheet.</li>
+<li> Right click on column A, select <b>Set Column Values</b> from the shortcut menu, in the opened dialog, type <i>log(col(A))</i> in the box.</li>
+<li> Highlight columns B, C and D, click <b>Scatter</b> button. The graph will look like as below.<br /><a  class="image"><img alt="NLFitCmpData.png" src="../images/Compare_NLFit_Parameters_Datasets/NLFitCmpData.png?v=76020" width="425"  /></a><br /></li>
+<li> Click the <b>Compare NLFit Parameters/Datasets</b> button in <b>Apps</b> docked toolbar. In the opened dialog, choose <b>Growth/Sigmoidal</b> from <b>Category</b> drop-down list in <b>Fitting Function</b> branch, and select <b>DoseResp</b> from <b>Function</b> drop-down list. Choose <b>Compare</b> <b>Parameters</b>. Click <b>Fit Control</b> button, you can modify initial values and see the preview for fitting function at given initial values. In <b>Parameters to Compare</b> branch, select <b>LOGx0</b>. The dialog setting is shown as below:<br /><a  class="image"><img alt="NLFitCmpDlg.png" src="../images/Compare_NLFit_Parameters_Datasets/NLFitCmpDlg.png?v=76021" width="489"  /></a><br /></li>
+<li> Click <b>OK</b> button. The report should look like as below:<br /><a  class="image"><img alt="NLFitCmpRep.png" src="../images/Compare_NLFit_Parameters_Datasets/NLFitCmpRep.png?v=76022" width="488"  /></a><br />It can be seen that for this example, <b>LOGx0</b> is same in both methods.</li></ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="Input_Data"></a><span class="mw-headline">Input Data</span></h3>
+<p>Specify datasets for nonlinear curve fit comparison of parameters/datasets.
+</p>
+<h3><a name="Fitting_Function"></a><span class="mw-headline">Fitting Function</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Category
+</th>
+<td>Specify the category for fitting functions. <b>Function</b> drop-down list will list all functions in the category.
+</td></tr>
+<tr>
+<th>Function
+</th>
+<td>Specify the fitting function for nonlinear curve fit comparison.
+</td></tr></table>
+<h3><a name="Compare"></a><span class="mw-headline">Compare</span></h3>
+<p>Specify whether to compare <b>Datasets</b> or <b>Parameters</b>.
+</p>
+<ul><li> Datasets</li></ul>
+<p>Compare datasets and see whether they are same.
+</p>
+<ul><li> Parameters</li></ul>
+<p>Compare parameters and see whether specified parameters in the fitting functions for all datasets are same.
+</p>
+<h3><a name="Parameters_to_Compare"></a><span class="mw-headline">Parameters to Compare</span></h3>
+<p>Choose parameters in the fitting function to compare. Note that parameters fixed or shared are not listed here.
+</p>
+<h3><a name="Method"></a><span class="mw-headline">Method</span></h3>
+<p>Specify the comparison algorithm.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Akaike Information Criteria(AIC)
+</th>
+<td>Comparison conclusion is made according to Akaike's weight.
+</td></tr>
+<tr>
+<th>F-test
+</th>
+<td>Comparison conclusion is made according to P-value in F-test.
+</td></tr></table>
+<h3><a name="Additional_Outputs"></a><span class="mw-headline">Additional Outputs</span></h3>
+<p>Specify whether to output fitting tables.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Fit Parameters
+</th>
+<td>Decide whether to output <b>Fit Parameters</b> table for each dataset.
+</td></tr>
+<tr>
+<th>Fit Statistics
+</th>
+<td>Decide whether to output <b>Fit Statistics</b> table for each dataset.
+</td></tr></table>
+<h3><a name="Results"></a><span class="mw-headline">Results</span></h3>
+<p>Specify the output report worksheet for the comparison result.
+</p>
+<h3><a name="Fit_Control_button"></a><span class="mw-headline">Fit Control button</span></h3>
+<p>Click this button, it will open the <b>Fit Control</b> dialog, which allows you to control the fitting for datasets.
+</p>
+<h3><a name="Fit_Control_Dialog"></a><span class="mw-headline">Fit Control Dialog</span></h3>
+<h4><a name="Parameters_tab"></a><span class="mw-headline">Parameters tab</span></h4>
+<p>The <b>Parameters</b> tab lists all the parameters of the chosen function for all datasets. The columns that are shown in the tab contain check boxes to control whether a parameter should be varied or fixed during the iterative fitting process. You can also use this tab to specify which parameters should be shared, and define initial values and bounds.<br /><a  class="image"><img alt="NLFitCmpParatab.png" src="../images/Compare_NLFit_Parameters_Datasets/NLFitCmpParatab.png?v=76023" width="801"  /></a><br />
+</p>
+<h4><a name="Fit_Control_tab"></a><span class="mw-headline">Fit Control tab</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Max Number of Iterations
+</th>
+<td>Specify the max number of iterations performed in fitting
+</td></tr>
+<tr>
+<th>Tolerance
+</th>
+<td>Specify the tolerance in this combo-box. Fitting will be viewed as success if the reduced chi-square between two successive iterations is less than this tolerance value.
+</td></tr>
+<tr>
+<th>Enable Constraints
+</th>
+<td>Specify whether to enable the constraints during fitting.
+</td></tr>
+<tr>
+<th>Constraints
+</th>
+<td>Specify linear constraints for the fit parameters. The syntax for specifying constraints is same as with global fitting in the NLFit dialog. To refer to the parameters in the nth dataset, the "ParaName_n" notation should be used.
+</td></tr></table>
+<p><br /><a  class="image"><img alt="NLFitCmpControltab.png" src="../images/Compare_NLFit_Parameters_Datasets/NLFitCmpControltab.png?v=76024" width="801"  /></a><br />
+</p>
+<h4><a name="Buttons_below_the_Panel"></a><span class="mw-headline">Buttons below the Panel</span></h4>
+<p><a  class="image"><img alt="NLFitCmpButton.png" src="../images/Compare_NLFit_Parameters_Datasets/NLFitCmpButton.png?v=76025" width="375"  /></a><br />
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Init
+</th>
+<td>Initialize the parameters with the parameter initialization codes (or initial values) in fdf file.
+</td></tr>
+<tr>
+<th>Preview
+</th>
+<td>Update the preview graph using initial values in <b>Parameters</b> tab.
+</td></tr></table>
+<h2><a name="Algorithm"></a><span class="mw-headline">Algorithm</span></h2>
+<p>When comparing one specific parameter (or datasets), we are actually comparing two models. For one model, the parameter value can vary among different datasets, this is the more complicated model. For the other, the parameter values are assumed to be same for all datasets, this is the simpler model. When comparing a parameter, the more complicated model corresponds to independent fit for each dataset and the simpler model corresponds to global fit with the parameter shared.
+</p><p>When comparing datasets using a fit model, the more complicated model corresponds to independent fit for each dataset while the simpler model corresponds to a function with all parameters shared in all datasets.
+</p>
+<h3><a name="Akaike_Information_Criteria.28AIC.29"></a><span class="mw-headline">Akaike Information Criteria(AIC)</span></h3>
+<p>For each model, Origin calculates the AIC value by:<br />
+<img src="../images/Compare_NLFit_Parameters_Datasets/math-bdbc5a9be5df21b56c7b2b2772711748.png?v=0" title="AIC=\left\{\begin{matrix}&#10;N\ln(\frac{RSS}{N})+2K &amp; \mbox{when} \ \frac{N}{K}\geq 40\\ &#10;N\ln(\frac{RSS}{N})+2K+ \frac{2K(K+1)}{N-K-1} &amp; \mbox{when} \ \frac{N}{K}&lt; 40&#10;\end{matrix}\right." alt="AIC=\left\{\begin{matrix}&#10;N\ln(\frac{RSS}{N})+2K &amp; \mbox{when} \ \frac{N}{K}\geq 40\\ &#10;N\ln(\frac{RSS}{N})+2K+ \frac{2K(K+1)}{N-K-1} &amp; \mbox{when} \ \frac{N}{K}&lt; 40&#10;\end{matrix}\right." class="tex"/>
+</p><p>where RSS is residual sum of squares for that model, N is the number of data points, K is the number of parameters.
+</p><p>For two fitting models, the one with the smaller AIC value is suggested to be a better model for the datasets, and then we can determine whether parameter values to be compared are same.
+</p><p>We can also make decisions based on the Akaike's weight value, which can be computed as:<br />
+<img src="../images/Compare_NLFit_Parameters_Datasets/math-45255b18755fdb85e8e0562365e36f9e.png?v=0" title="w_{i}=\frac{e^{-0.5AIC_{i}}}{e^{-0.5AIC_{1}}+e^{-0.5AIC_{2}}} \ \ \ i=1,2" alt="w_{i}=\frac{e^{-0.5AIC_{i}}}{e^{-0.5AIC_{1}}+e^{-0.5AIC_{2}}} \ \ \ i=1,2" class="tex"/><br />
+<img src="../images/Compare_NLFit_Parameters_Datasets/math-e2d4b6408bf03c8b34101869a4b26d40.png?v=0" title="w_{1}+w_{2}=1 \qquad 0&lt;w_{1},w_{2}&lt;1" alt="w_{1}+w_{2}=1 \qquad 0&lt;w_{1},w_{2}&lt;1" class="tex"/><br />
+Here i=1 represents the simpler model and i=2 represents the more complicated model. <img src="../images/Compare_NLFit_Parameters_Datasets/math-b664d4a19326a5cfc1eb081bd13c8552.png?v=0" title="AIC_{1}" alt="AIC_{1}" class="tex"/> and <img src="../images/Compare_NLFit_Parameters_Datasets/math-bcc97f077dd6c229511a7ca5d2c8bc02.png?v=0" title="AIC_{2}" alt="AIC_{2}" class="tex"/> are the AIC values of the two fitting models, respectively.<br />
+If <img src="../images/Compare_NLFit_Parameters_Datasets/math-4cc4c6c3e516ed7c3fdc29080c4b8098.png?v=0" title="w_{1}" alt="w_{1}" class="tex"/> is larger than <img src="../images/Compare_NLFit_Parameters_Datasets/math-f51f8ab0633de0bd2b7657aab48a28de.png?v=0" title="w_{2}" alt="w_{2}" class="tex"/>, we can conclude that parameter values to be compared are same, otherwise parameter values are different.
+</p>
+<h3><a name="F-test"></a><span class="mw-headline">F-test</span></h3>
+<p>Suppose the sum of RSS and the sum of df (degrees of freedom) of the simpler model fit are <img src="../images/Compare_NLFit_Parameters_Datasets/math-e79ccbe0ffb7bcc987bf5710236b05b5.png?v=0" title="RSS_{1}, df_{1}" alt="RSS_{1}, df_{1}" class="tex"/> and those of the more complicated model fit are <img src="../images/Compare_NLFit_Parameters_Datasets/math-74633c2d9db49cd5fa906b7051e6f6b7.png?v=0" title="RSS_{2}, df_{2}" alt="RSS_{2}, df_{2}" class="tex"/>.
+</p><p>We can compute the F value by:<br />
+<img src="../images/Compare_NLFit_Parameters_Datasets/math-8419ece7e663fd0993ec70186fc85afc.png?v=0" title="F=\frac{(RSS_{1}-RSS_{2})/(df_{1}-df_{2})}{RSS_{2}/df_{2}}" alt="F=\frac{(RSS_{1}-RSS_{2})/(df_{1}-df_{2})}{RSS_{2}/df_{2}}" class="tex"/>
+</p><p>Once the F value is computed, Origin calculates the P-value by:
+</p><p><img src="../images/Compare_NLFit_Parameters_Datasets/math-8cdf0e0b34be00a7f6f3b840384e9084.png?v=0" title="P=1-fcdf(F,df_{1}-df_{2},df_{2})" alt="P=1-fcdf(F,df_{1}-df_{2},df_{2})" class="tex"/>
+</p><p>This P-value can be used to determine whether parameter values to be compared are different. If the P-value is greater than 0.05, we can conclude that parameter values to be compared are not significantly different.
+</p>
+
+
+
+
+

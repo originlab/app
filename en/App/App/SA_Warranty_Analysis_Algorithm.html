@@ -1,0 +1,76 @@
+<h1 class="firstHeading">2.5.3.2 Algorithm: Warranty Analysis</h1><p class='urlname' style='display: none'>SA-Warranty-Analysis-Algorithm</p>
+<p>The data of the app are start and end times in the form <img src="../images/SA_Warranty_Analysis_Algorithm/math-982bfe23774dc38eb7a4bbb6806d809d.png?v=0" title="(tl_1, tr_1), (tl_1, tr_2),...,(tl_k, tr_k)" alt="(tl_1, tr_1), (tl_1, tr_2),...,(tl_k, tr_k)" class="tex"/> and each interval <img src="../images/SA_Warranty_Analysis_Algorithm/math-29ba7906659ab2cedd5a5be2aee9dad9.png?v=0" title="(tl_i, tr_i)" alt="(tl_i, tr_i)" class="tex"/> contains <img src="../images/SA_Warranty_Analysis_Algorithm/math-584a81dbf5bf6aa737ba43567ad6307b.png?v=0" title="n_i" alt="n_i" class="tex"/> failures (if <img src="../images/SA_Warranty_Analysis_Algorithm/math-60ab8844cb521e2a16781c4b96cf4a54.png?v=0" title="tr_i &lt; \infty" alt="tr_i &lt; \infty" class="tex"/>) or <img src="../images/SA_Warranty_Analysis_Algorithm/math-584a81dbf5bf6aa737ba43567ad6307b.png?v=0" title="n_i" alt="n_i" class="tex"/> suspensions (if <img src="../images/SA_Warranty_Analysis_Algorithm/math-4608ae873090e6bd577c829e08ff956d.png?v=0" title="tri = \infty" alt="tri = \infty" class="tex"/>), <img src="../images/SA_Warranty_Analysis_Algorithm/math-10d48572c52657cecc79a8cbba8678e7.png?v=0" title="i = 1, 2,..., k " alt="i = 1, 2,..., k " class="tex"/>. 
+This arbitrarily censored dataset is first fitted with a weibull distribution using either the <b>MLE</b>(<a href="../../App/App/Algorithm_IDD.html" title="App:Algorithm IDD">maximum likelihood estimation</a>) or <b>LS</b> (least squares) method to obtain the parameters <img src="../images/SA_Warranty_Analysis_Algorithm/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/> and <img src="../images/SA_Warranty_Analysis_Algorithm/math-ffe9f913124f345732e9f00fa258552e.png?v=0" title="\eta" alt="\eta" class="tex"/>. The results shown below are then computed based on the fitted model. 
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary_of_the_warranty_claims"><span class="tocnumber">1</span> <span class="toctext">Summary of the warranty claims</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Expected_Number_of_Failures"><span class="tocnumber">1.1</span> <span class="toctext">Expected Number of Failures</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Confidence_intervals_for_the_expected_number_of_failures"><span class="tocnumber">1.2</span> <span class="toctext">Confidence intervals for the expected number of failures</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Number_of_units_at_risk_for_future_time_periods"><span class="tocnumber">1.3</span> <span class="toctext">Number of units at risk for future time periods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Predicted_number_of_future_failures"><span class="tocnumber">2</span> <span class="toctext">Predicted number of future failures</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Predicted_cost_of_future_failures"><span class="tocnumber">3</span> <span class="toctext">Predicted cost of future failures</span></a></li>
+</ul>
+</div>
+
+<h1><a name="Summary_of_the_warranty_claims"></a><span class="mw-headline">Summary of the warranty claims</span></h1>
+<dl><dd> Total number of units: <img src="../images/SA_Warranty_Analysis_Algorithm/math-c4f88c7d9ef645cdbf54d084b8230d32.png?v=0" title="\sum_{i=1}^k n_i" alt="\sum_{i=1}^k n_i" class="tex"/></dd>
+<dd> Observed number of failures: <img src="../images/SA_Warranty_Analysis_Algorithm/math-15c6a39ac21c8ccae88061934daa150d.png?v=0" title="\sum_{i=1}^l n_i" alt="\sum_{i=1}^l n_i" class="tex"/></dd></dl>
+<p>where
+</p>
+<dl><dd><ul><li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-8ce4b16b22b58894aa86c421e8759df3.png?v=0" title="k" alt="k" class="tex"/>: total times.</li>
+<li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-2db95e8e1a9267b7a1188556b2013b33.png?v=0" title="l" alt="l" class="tex"/>: the number of distinct interval censored times.</li></ul></dd></dl>
+<h2><a name="Expected_Number_of_Failures"></a><span class="mw-headline">Expected Number of Failures</span></h2>
+<dl><dd><ul><li> Reliability Function:
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-904189c62ffd946115a92a42450e41e5.png?v=0" title="R(t) = 1 - F(t;\beta,\eta) " alt="R(t) = 1 - F(t;\beta,\eta) " class="tex"/> where <img src="../images/SA_Warranty_Analysis_Algorithm/math-64ced758b68e0bd11f77f9b898c22d9e.png?v=0" title="F(t;\beta,\eta)" alt="F(t;\beta,\eta)" class="tex"/> is the CDF of weibull distribution.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li> Expected number of failures without known warranty length (L):
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-a370b0af962f2af6421c7b5d47433372.png?v=0" title="ENF = \sum n_i\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i ) " alt="ENF = \sum n_i\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i ) " class="tex"/> </dd>
+<dd>if <img src="../images/SA_Warranty_Analysis_Algorithm/math-447a4ec3eb35fa88040274520a96dbe8.png?v=0" title="tl_i &lt; tr_i" alt="tl_i &lt; tr_i" class="tex"/>, then <img src="../images/SA_Warranty_Analysis_Algorithm/math-8375ab7d1b5c1527de5f3adfb81735ec.png?v=0" title="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = R(tl_i)-R(tr_i)" alt="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = R(tl_i)-R(tr_i)" class="tex"/> </dd>
+<dd>if <img src="../images/SA_Warranty_Analysis_Algorithm/math-56245822575101ed40c107004fb2adb3.png?v=0" title="tl_i = tr_i" alt="tl_i = tr_i" class="tex"/> or <img src="../images/SA_Warranty_Analysis_Algorithm/math-dd9977f86586fdd2d98c8e532ecafd57.png?v=0" title="tr_i = \infty" alt="tr_i = \infty" class="tex"/>, then <img src="../images/SA_Warranty_Analysis_Algorithm/math-4594ec7232f835b04488950d615ba39a.png?v=0" title="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = 1-R(tl_i)" alt="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = 1-R(tl_i)" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li> Expected number of gailures with known warranty length (L):
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-a370b0af962f2af6421c7b5d47433372.png?v=0" title="ENF = \sum n_i\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i ) " alt="ENF = \sum n_i\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i ) " class="tex"/> </dd>
+<dd>if <img src="../images/SA_Warranty_Analysis_Algorithm/math-447a4ec3eb35fa88040274520a96dbe8.png?v=0" title="tl_i &lt; tr_i" alt="tl_i &lt; tr_i" class="tex"/>, then <img src="../images/SA_Warranty_Analysis_Algorithm/math-b18966ff987d141c623590775608d202.png?v=0" title="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = R(tl_i)-R(min(L,tr_i))" alt="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = R(tl_i)-R(min(L,tr_i))" class="tex"/> </dd>
+<dd>if <img src="../images/SA_Warranty_Analysis_Algorithm/math-56245822575101ed40c107004fb2adb3.png?v=0" title="tl_i = tr_i" alt="tl_i = tr_i" class="tex"/> or <img src="../images/SA_Warranty_Analysis_Algorithm/math-dd9977f86586fdd2d98c8e532ecafd57.png?v=0" title="tr_i = \infty" alt="tr_i = \infty" class="tex"/>, then <img src="../images/SA_Warranty_Analysis_Algorithm/math-873541c8705a9c9ce61ed3ca62ff088d.png?v=0" title="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = 1-R(min(L,tl_i))" alt="\mathcal{L}_{i}( \beta, \eta \,;tl_i, tr_i) = 1-R(min(L,tl_i))" class="tex"/></dd></dl></li></ul></dd></dl>
+<h2><a name="Confidence_intervals_for_the_expected_number_of_failures"></a><span class="mw-headline">Confidence intervals for the expected number of failures</span></h2>
+<dl><dd><ul><li> Two-sided <img src="../images/SA_Warranty_Analysis_Algorithm/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> confidence interval
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-500ffb027b29965bdd14be7c01221a1d.png?v=0" title="x_{L} = \frac{1}{2}\chi^2_{2s, 1-\alpha/2}" alt="x_{L} = \frac{1}{2}\chi^2_{2s, 1-\alpha/2}" class="tex"/></dd>
+<dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-98477c46de9b6472b53681fa61c4332f.png?v=0" title="x_{U} = \frac{1}{2}\chi^2_{2(s+1), \alpha/2}" alt="x_{U} = \frac{1}{2}\chi^2_{2(s+1), \alpha/2}" class="tex"/></dd></dl></li>
+<li> One-sided <img src="../images/SA_Warranty_Analysis_Algorithm/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> lower confidence bound
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-07c90ec90f636dc1fb8a8fe2452e3427.png?v=0" title="x_{L} = \frac{1}{2}\chi^2_{2s, 1-\alpha}" alt="x_{L} = \frac{1}{2}\chi^2_{2s, 1-\alpha}" class="tex"/></dd></dl></li>
+<li> One-sided <img src="../images/SA_Warranty_Analysis_Algorithm/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> upper confidence bound
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-6085e24c8c54ddc00f42bc12209f099f.png?v=0" title="x_{U}= \frac{1}{2}\chi^{2}_{2(s+1),\alpha}" alt="x_{U}= \frac{1}{2}\chi^{2}_{2(s+1),\alpha}" class="tex"/></dd></dl></li></ul></dd>
+<dd> where
+<ul><li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-03c7c0ace395d80182db07ae2c30f034.png?v=0" title="s" alt="s" class="tex"/> is the predicted number of future failures <img src="../images/SA_Warranty_Analysis_Algorithm/math-22a1d3b54c4cf205d7142ef56018ebbb.png?v=0" title="PNF" alt="PNF" class="tex"/>.</li></ul></dd></dl>
+<h2><a name="Number_of_units_at_risk_for_future_time_periods"></a><span class="mw-headline">Number of units at risk for future time periods</span></h2>
+<dl><dd><ul><li> Without known warranty length (L):  <img src="../images/SA_Warranty_Analysis_Algorithm/math-56c3a4855d864d62873ce598b940dc10.png?v=0" title="\sum_{i=1}^m n_i" alt="\sum_{i=1}^m n_i" class="tex"/></li>
+<li> With known warranty length (L):  <img src="../images/SA_Warranty_Analysis_Algorithm/math-341b38594d298913c00704cc67910ecf.png?v=0" title="\sum_{i=1}^{m, tl_i &lt; L} n_i" alt="\sum_{i=1}^{m, tl_i &lt; L} n_i" class="tex"/></li>
+<li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-6f8f57715090da2632453988d9a1501b.png?v=0" title="m" alt="m" class="tex"/>: the number of distinct right censored times.</li></ul></dd></dl>
+<h1><a name="Predicted_number_of_future_failures"></a><span class="mw-headline">Predicted number of future failures</span></h1>
+<p>Predicted Number of failures without known warranty length (L):
+</p>
+<dl><dd><ul><li> If production quantity for each future period <img src="../images/SA_Warranty_Analysis_Algorithm/math-d247f594c78d0d2be10fc6d82512cc4e.png?v=0" title="d_i" alt="d_i" class="tex"/> is not provided: 
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-1cdc1388d0f1668922f75d6d744e99ad.png?v=0" title=" PNF(\Delta) = \sum_{i=1}^{m} n_i(1-\frac{R(tl_i + \Delta)}{R(tl_i)})" alt=" PNF(\Delta) = \sum_{i=1}^{m} n_i(1-\frac{R(tl_i + \Delta)}{R(tl_i)})" class="tex"/> </dd></dl></li>
+<li> If production quantity for each future period <img src="../images/SA_Warranty_Analysis_Algorithm/math-d247f594c78d0d2be10fc6d82512cc4e.png?v=0" title="d_i" alt="d_i" class="tex"/> is provided: 
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-ff67587419976ebde586b61fa009ab5e.png?v=0" title=" PNF(\Delta) = \sum_{i=1}^{m} n_i(1-\frac{R(tl_i + \Delta)}{R(tl_i)}) + \sum_{i=1}^{q}d_j(1-R(\Delta+1-i))" alt=" PNF(\Delta) = \sum_{i=1}^{m} n_i(1-\frac{R(tl_i + \Delta)}{R(tl_i)}) + \sum_{i=1}^{q}d_j(1-R(\Delta+1-i))" class="tex"/> </dd></dl></li></ul></dd></dl>
+<p>Predicted Number of failures without known warranty length (L):
+</p>
+<dl><dd><ul><li> If production quantity for each future period <img src="../images/SA_Warranty_Analysis_Algorithm/math-d247f594c78d0d2be10fc6d82512cc4e.png?v=0" title="d_i" alt="d_i" class="tex"/> is not provided:
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-ff86a81aa3a86315ed8ad6786a3c8952.png?v=0" title=" PNF(\Delta) = \sum_{i=1}^{m, tl_i&lt;L} n_i(1-\frac{R(tl_i + \min(\Delta, L-tl_i)}{R(tl_i)})" alt=" PNF(\Delta) = \sum_{i=1}^{m, tl_i&lt;L} n_i(1-\frac{R(tl_i + \min(\Delta, L-tl_i)}{R(tl_i)})" class="tex"/></dd></dl></li>
+<li> If production quantity for each future period <img src="../images/SA_Warranty_Analysis_Algorithm/math-d247f594c78d0d2be10fc6d82512cc4e.png?v=0" title="d_i" alt="d_i" class="tex"/> is provided:
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-2b6b899e52ebfe360868d683cbd29b46.png?v=0" title=" PNF(\Delta) = \sum_{i=1}^{m, tl_i&lt;L} n_i(1-\frac{R(tl_i + \min(\Delta, L-tl_i)}{R(tl_i)})+\sum_{i=1}^{q}d_j(1-R(\min(\Delta+1-i,L))" alt=" PNF(\Delta) = \sum_{i=1}^{m, tl_i&lt;L} n_i(1-\frac{R(tl_i + \min(\Delta, L-tl_i)}{R(tl_i)})+\sum_{i=1}^{q}d_j(1-R(\min(\Delta+1-i,L))" class="tex"/></dd></dl></li></ul></dd>
+<dd> where
+<ul><li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-d247f594c78d0d2be10fc6d82512cc4e.png?v=0" title="d_i" alt="d_i" class="tex"/> is the production quantities <img src="../images/SA_Warranty_Analysis_Algorithm/math-94b41cee22e12baa954463c17b983dde.png?v=0" title="d_1, d_2,...,d_r" alt="d_1, d_2,...,d_r" class="tex"/> for future periods <img src="../images/SA_Warranty_Analysis_Algorithm/math-7ce50106919d187e6291546a0c51d9d4.png?v=0" title="1, 2,...,r" alt="1, 2,...,r" class="tex"/></li>
+<li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-0039da308e6afd49d973e277fe74e765.png?v=0" title="q = \min(r, \Delta) " alt="q = \min(r, \Delta) " class="tex"/></li></ul></dd></dl>
+<h1><a name="Predicted_cost_of_future_failures"></a><span class="mw-headline">Predicted cost of future failures</span></h1>
+<dl><dd> <img src="../images/SA_Warranty_Analysis_Algorithm/math-db4d30c64ed656186ad7540e1bc9019a.png?v=0" title=" PCF = PNF \times C" alt=" PCF = PNF \times C" class="tex"/></dd>
+<dd> where
+<ul><li> <img src="../images/SA_Warranty_Analysis_Algorithm/math-0d61f8370cad1d412f80b84d143e1257.png?v=0" title="C" alt="C" class="tex"/> is the provided cost per failure</li></ul></dd></dl>
+
+
+
+
+
+

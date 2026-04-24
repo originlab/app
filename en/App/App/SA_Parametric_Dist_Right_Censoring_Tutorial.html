@@ -1,0 +1,64 @@
+<h1 class="firstHeading">2.5.1.1 Tutorial for Parametric Distribution Analysis (Right Censoring)</h1><p class='urlname' style='display: none'>Tutorial-Parametric-Distribution-Analysis-Right-Censoring</p>
+<p>In this example, a battery factory collected the battery lifetime from after-sales service data, defining lifetime as the elapsed time until capacity drops below 70&#160;% (i.e., a 30&#160;% loss). Using these right-censored data, engineers will run Parametric Distribution Analysis to obtain survival plots and key quantities (such as the ages at which 0.1&#160;% and 99.9&#160;% of batteries fail, and the proportions still running after 0.5, 1 and 1.5 years), providing the quantitative basis for future warranty policy.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Parametric Distribution Analysis for Right Censoring: </b></i>
+</p>
+<ul><li><a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">Algorithm</a></li></ul>
+</td></tr></table>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the Reliability and Survival app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>1. Parametric Distribution Analysis (Right Censoring)</i>.
+</p><p>[Book1]Sheet1 shows a typical right-censored dataset.
+</p>
+<ul><li> Each row represents one unit. </li>
+<li> "Time " column contains the exact failure time or the last recorded time if the unit is still working. </li>
+<li> "Event " column contains the censoring values: in this example, 0 = right-censored (unit still working at the record time); 1 = failure.</li></ul>
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 00.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_00.png?v=77712" width="656"  /></a></dd></dl>
+<p>If your data contains multiple groups (e.g., different types or conditions), you can 
+</p>
+<ul><li> separate each group in its own time &amp; censoring column pair, or</li>
+<li> stack all groups in one pair of time &amp; censoring columns, and have a separate grouping column. </li></ul>
+<p>The tool will process each group in sequence, and export all results in a single report.
+</p>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book2]Sheet1 active, click the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the <b>App Gallery</b> . In the opened panel, choose <b>Parametric Distribution Analysis for Right Censoring</b>.
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 01.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_01.png?v=77711" width="565"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings as follow:
+<ul>
+<li>On Input tab, select column A for <b>Time</b>. Make sure <b>Define Censoring by</b> is set to <b>Censoring Columns</b> and select column B for <b>Censoring Columns</b>. Origin will scan column B and populate the <b>Censoring Value</b> drop-down. Select 0 from it.
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 02 Input.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_02_Input.png?v=77713" width="708"  /></a></dd></dl>
+<li>On Settings tab, choose <b>Weibull</b> as <b>Distribution Type</b>. <b>Estimation Method</b> defaults to <b>Maximum Likelihood</b>. For more information about all 7 distributions and 2 estimation methods, refer to <a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">this page</a>. Leave all other settings unchanged.
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 02 Settings.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_02_Settings.png?v=77714" width="693"  /></a></dd></dl>
+<li>On Quantities tab, expand <b>Prediction</b> branch. To estimate ellipse lifetimes at extra percentiles, check <b>Estimate Extra Percentiles</b> and then choose column C as <b>Percents</b>. To estimate survival percentiles at key moments, select <b>Survival Probability</b> for <b>Estimate</b>, and choose column D for <b>Time</b>.
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 02 Quantities.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_02_Quantities.png?v=77715" width="702"  /></a></dd></dl>
+<li>On Plots tab, make sure all plots are checked.
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 02 Plots.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_02_Plots.png?v=77716" width="295"  /></a></dd></dl>
+</ul></li>
+<li>Click <b>OK</b> button to generate report sheets.
+</ol>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 03 Parameters.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_03_Parameters.png?v=77726" width="448"  /></a></dd></dl>
+<ul><li> The Parameters table reports the fitted Scale and Shape of Weibull distribution. All survival probabilities and plots derive from this model. We can examine the fit by the Goodness of Fit table and Probability plot below.</li>
+<li> Origin by default uses the Kaplan-Meier method to calculate the empirical distribution and outputs the Anderson-Darling statistic and p-value. p = 0.18388 &gt; 0.05, indicates that the chosen model is acceptable.</li>
+<li> The P-P plot shows almost all points fall between 95% confidence bands, despite slight down warping in the tail, confirming the adequacy of the model.</li></ul>
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 03 Quantities of Distribution.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_03_Quantities_of_Distribution.png?v=77718" width="781"  /></a></dd></dl>
+<ul><li> The Quantities of Distribution table describes the fitted Weibull distribution characteristics by its centre and spread. </li></ul>
+<ul>
+<li> Mean (MTTF) and Median locate the distribution centre. 
+<ul>
+<li>Median is the time by which 50&#160;% of units have failed. Median = 21.943 months, indicates that 50&#160;% of batteries have failed by this age. 
+<li>Mean is the arithmetic average of all failure times. Mean = 22.020 months, which is pulled higher by the right tail and therefore slightly larger than Median. Since Mean &gt; Median (22.020 &gt; 21.943), the distribution shows a mild right-skew: a tail of batteries that survives considerably longer than the typical lifetime.
+</ul></li>
+<li> Standard Deviation and IQR measures the distribution spread. 
+<ul>
+<li>SD = 7.463 months, quantifies overall variability. 
+<li>IQR = Q3 – Q1, covers the middle of 50% population and is robust against extreme long-tail values. With IQR = 10.44 months vs. SD = 7.463 months, we can tell that the bulk of failures concentrates in a window of about 10 months with a moderate right tail.
+</ul></li>
+</ul>
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 03 PDARCPred.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_03_PDARCPred.png?v=77719" width="744"  /></a></dd></dl>
+<ul><li> Refer to the PDARCPred worksheet for the estimated time at each failure rate (increasing by 1%). It also exports the times at the extra percents and the survival probabilities at the extra times we specified in Quantities tab. For example, 0.1% of batteries are estimated to fail by 2.92 months, and about 90.675% (0.90675) are still working after hours.</li></ul>
+<ul><li> Besides P-P plot, parametric distribution analysis exports the Survival Plot, Cumulative Failure Plot, and Hazard Plot, giving you an immediate visual overview of your data based on the chosen Weibull model.</li></ul>
+<dl><dd><a  class="image"><img alt="Parametric Dist Analysis Right Censoring Tutorial 03 Plots.png" src="../images/SA_Parametric_Dist_Right_Censoring_Tutorial/Parametric_Dist_Analysis_Right_Censoring_Tutorial_03_Plots.png?v=77721" width="864"  /></a></dd></dl>
+
+

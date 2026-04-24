@@ -1,0 +1,88 @@
+<h1 class="firstHeading">3.2 Hysteresis</h1><p class='urlname' style='display: none'>Hysteresis</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Dialog_Setting"><span class="tocnumber">3</span> <span class="toctext">Dialog Setting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Data_Tab"><span class="tocnumber">3.1</span> <span class="toctext">Data Tab</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Settings_Tab"><span class="tocnumber">3.2</span> <span class="toctext">Settings Tab</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=264" target="_blank">Hysteresis</a> app is used to create and plot separate datasets for each segment of hysteresis data.
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol>
+<li> Open the sample project <i>example.opju</i> in Origin Apps folder <i>\\Apps\Hysteresis\samples</i>.</li>
+<li> Activate Graph1. Click on the <b>Hysteresis</b> App icon in <b>Apps</b> Gallery window.</li>
+<li> In the <b>Hysteresis Curve Splitter</b> dialog, go to <b>Data</b> tab. Enable <b>Output Graph</b> and set Output as <b>Unstacked Data</b>.</li> 
+<li> In <b>Settings</b> tab, check <b>Combine Connected Head and Tail to One Segment</b>.<br />
+<a  class="image"><img alt="Addtool hysteresis preview.png" src="../images/Hysteresis/Addtool_hysteresis_preview.png?v=76381" width="626"  /></a></li>
+<li> Click on the <b>OK</b> button.<br />
+<a  class="image"><img alt="Addtool hysteresis output graph.png" src="../images/Hysteresis/Addtool_hysteresis_output_graph.png?v=76382" width="808"  /></a>
+</li></ol>
+<h2><a name="Dialog_Setting"></a><span class="mw-headline">Dialog Setting</span></h2>
+<h3><a name="Data_Tab"></a><span class="mw-headline">Data Tab</span></h3>
+<p><a  class="image"><img alt="Addtool hysteresis data tab.png" src="../images/Hysteresis/Addtool_hysteresis_data_tab.png?v=76540" width="320"  /></a>
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Input
+</th>
+<td> By default, the app takes all plots in the graph as input. You can remove one by clicking on the close button. The button next to Input allow you to specify the input data as well.
+<p><br />
+<a  class="image"><img alt="Addtool hysteresis Input.png" src="../images/Hysteresis/Addtool_hysteresis_Input.png?v=76539" width="330"  /></a>
+</p>
+</td></tr>
+<tr>
+<th> Output Graph
+</th>
+<td> If checked, it will output graph
+</td></tr>
+<tr>
+<th> Output as
+</th>
+<td>
+<ul><li> Stacked Data
+<dl><dd> Data will be output as stacked data.</dd></dl></li>
+<li> Unstacked Data
+<dl><dd> Output data will be unstacked by direction with Group label row.</dd></dl></li>
+<li> Unstacked Data(by Direction)
+<dl><dd> Output data will be unstacked by direction with Group column.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Output to
+</th>
+<td> Specify where to output data. By default it will create new workbook.
+</td></tr></table>
+<h3><a name="Settings_Tab"></a><span class="mw-headline">Settings Tab</span></h3>
+<p><a  class="image"><img alt="Addtool hysteresis preview.png" src="../images/Hysteresis/Addtool_hysteresis_preview.png?v=76381" width="626"  /></a>
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Tolerance of X Data (%)
+</th>
+<td> It specifies the range of X data to identify each segment. When set to <i>0</i>, it will identify each segment by the local extreme point in x direction.
+</td></tr>
+<tr>
+<th> Combine Connected Head and Tail to One Segment
+</th>
+<td> When checked, if the head of the first segment is connected with the tail of the last one, they will be combined to one segment. It's considered "connected", when the X distance between the head and the tail is less than the average step size of the last segment.
+</td></tr>
+<tr>
+<th> Quantities
+</th>
+<td> Specify the quantities to show in bottom table and output.
+</td></tr></table>
+
+
+
+
+
+

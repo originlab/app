@@ -1,0 +1,265 @@
+<h1 class="firstHeading">2.7 Baseline with Asymmetric Least Squares (Pro)</h1><p class='urlname' style='display: none'>Baseline-with-ALS</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Use_as_X-Function_Dialog"><span class="tocnumber">2.1</span> <span class="toctext">Use as X-Function Dialog</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Steps"><span class="tocnumber">2.1.1</span> <span class="toctext">Steps</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Use_as_Theme_in_Peak_Analyzer"><span class="tocnumber">2.2</span> <span class="toctext">Use as Theme in Peak Analyzer</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Steps_2"><span class="tocnumber">2.2.1</span> <span class="toctext">Steps</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Detect_Baseline_with_Asymmetric_Least_Squares_Smoothing_Method_Dialog_Box"><span class="tocnumber">3</span> <span class="toctext">Detect Baseline with Asymmetric Least Squares Smoothing Method Dialog Box</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Input_Data"><span class="tocnumber">3.1</span> <span class="toctext">Input Data</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Settings"><span class="tocnumber">3.2</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Baseline"><span class="tocnumber">3.3</span> <span class="toctext">Baseline</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Baseline_Subtracted"><span class="tocnumber">3.4</span> <span class="toctext">Baseline Subtracted</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Preview"><span class="tocnumber">3.5</span> <span class="toctext">Preview</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#baseline_als_X-Function_.28Pro.29"><span class="tocnumber">4</span> <span class="toctext">baseline_als X-Function (Pro)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Command_Line_Usage"><span class="tocnumber">4.1</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Variables"><span class="tocnumber">4.2</span> <span class="toctext">Variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Algorithm"><span class="tocnumber">5</span> <span class="toctext">Algorithm</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Reference"><span class="tocnumber">5.1</span> <span class="toctext">Reference</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>The tool <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=170" target="_blank">Baseline with Asymmetric Least Squares</a> can be used to find baseline using asymmetric least squares smoothing (ALS) method.
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
+<p>This tool requires OriginPro. It can be used as an X-Function dialog, or as a theme in Peak Analyzer.
+</p>
+<h3><a name="Use_as_X-Function_Dialog"></a><span class="mw-headline">Use as X-Function Dialog</span></h3>
+<p>This example shows how to find baseline using X-Function.
+</p>
+<h4><a name="Steps"></a><span class="mw-headline">Steps</span></h4>
+<ol><li> Open a new workbook. Click the <b>Import Single ASCII</b> button <a  class="image"><img alt="Import Single ASCII.png" src="../images/Baseline_with_ALS/Import_Single_ASCII.png?v=331" width="26"  /></a>, select the file <i>Raman Baseline.dat</i> in Origin installation folder <i>\\Samples\Spectroscopy</i>.</li>
+<li> Highlight column B, click the <b>Baseline with ALS Method</b> button <a  class="image"><img alt="BaselineALSBtn.png" src="../images/Baseline_with_ALS/BaselineALSBtn.png?v=76353" width="22"  /></a>. In the opened dialog, set <b>Threshold</b> 0.02, <b>Smoothing Factor</b> 5.5, and click <b>Preview</b> button. The preview graph will look like as below:<br /><a  class="image"><img alt="BaselineALSDlg.png" src="../images/Baseline_with_ALS/BaselineALSDlg.png?v=76354" width="868"  /></a><br /></li>
+<li> Click <b>OK</b> button, and two columns for baseline data will be created.</li></ol>
+<h3><a name="Use_as_Theme_in_Peak_Analyzer"></a><span class="mw-headline">Use as Theme in Peak Analyzer</span></h3>
+<p>This example shows how to find baseline using <b>ALS</b> method in <b>Peak Analyzer</b>.
+</p>
+<h4><a name="Steps_2"></a><span class="mw-headline">Steps</span></h4>
+<ol><li> Use same data in the above example. Highlight column B, and select <b>Analysis: Peaks and Baseline: Peak Analyzer</b> from Origin menu. Click right button on the right of <b>Dialog Theme</b> in the dialog, and choose <b>ALS Baseline</b>.</li>
+<li> Click <b>Next</b> button. In the <b>Baseline Mode</b> page, LabTalk script is used to call <b>baseline_als</b> X-Function in <b>Before Formula Script</b> box in the theme. Parameters for <b>baseline_als</b> X-function can be adjusted in <b>Before Formula Script</b> box.<br /><a  class="image"><img alt="BaselineALSPA.png" src="../images/Baseline_with_ALS/BaselineALSPA.png?v=76355" width="529"  /></a><br /></li>
+<li> Click <b>Next</b> button twice, and click <b>Finish</b> button. Four columns for baseline data and baseline subtracted data will be created.</li></ol>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Baseline_with_ALS/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p>You can also use this theme or custom a theme in Peak Analyzer for batch analysis if your data have similar baselines.
+</p></td></tr></table>
+<h2><a name="Detect_Baseline_with_Asymmetric_Least_Squares_Smoothing_Method_Dialog_Box"></a><span class="mw-headline">Detect Baseline with Asymmetric Least Squares Smoothing Method Dialog Box</span></h2>
+<h3><a name="Input_Data"></a><span class="mw-headline">Input Data</span></h3>
+<p>Select data to find baseline.
+</p>
+<h3><a name="Settings"></a><span class="mw-headline">Settings</span></h3>
+<p>Specify parameters for <b>Asymmetric Least Squares Smoothing (ALS)</b> method.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Asymmetric Factor [0-1]
+</th>
+<td>Specify weight of points above the baseline in each iteration.
+<p>For positive peaks it should be close to 0, and close to 1 for negative peaks. The asymmetric factor must be between 0 and 1.
+</p><p>The smaller the asymmetric factor is, the less effect points above the baseline have on baseline in next iteration.
+</p>
+</td></tr>
+<tr>
+<th>Threshold (%)
+</th>
+<td>Specify the threshold to determine points above the baseline (for positive peaks) or below the baseline (for negative peaks).
+<p>The threshold is defined by the ratio of a critical distance of point to baseline to that of peak to baseline.  A point whose distance to baseline is greater than the threshold will be considered above the baseline (for positive peaks). And the threshold must be between 0 and 1 (not equal to 1).
+</p><p>The smaller the threshold is, the more points above the baseline (for positive peaks) will be excluded to determine the baseline in next iteration.
+</p>
+</td></tr>
+<tr>
+<th>Smoothing Factor
+</th>
+<td>Specify the smoothness of the baseline.
+<p>The smoothing factor must be greater than 0, and the typical value is 2 and 9.
+</p><p>The larger the smoothing factor is, the smoother the baseline will be.
+</p>
+</td></tr>
+<tr>
+<th>Number of Iterations
+</th>
+<td>Specify number of iterations.
+<p>The typical value is 10. In each iteration, it will find a baseline, and determine which points will be considered as points above the baseline for next iteration.
+</p>
+</td></tr></table>
+<h3><a name="Baseline"></a><span class="mw-headline">Baseline</span></h3>
+<p>Specify whether to output baseline and columns for baseline output.
+</p>
+<h3><a name="Baseline_Subtracted"></a><span class="mw-headline">Baseline Subtracted</span></h3>
+<p>Specify whether to output baseline subtracted data and columns for output.
+</p>
+<h3><a name="Preview"></a><span class="mw-headline">Preview</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Auto Preview
+</th>
+<td>Specify whether to auto preview once settings are changed.
+</td></tr>
+<tr>
+<th>Preview
+</th>
+<td>Click it to update the preview manually.
+</td></tr>
+<tr>
+<th>Show/Hide Preview
+</th>
+<td>Specify whether to show preview panel.
+</td></tr></table>
+<h2><a name="baseline_als_X-Function_.28Pro.29"></a><span class="mw-headline">baseline_als X-Function (Pro)</span></h2>
+<h3><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h3>
+<p><code>
+</p>
+<ol><li> baseline_als iy:=2 loglam:=5;</li>
+<li> baseline_als iy:=2 loglam:=5 oy:=&lt;optional&gt; oys:=&lt;new&gt;;</li></ol>
+<p></code>
+</p>
+<h3><a name="Variables"></a><span class="mw-headline">Variables</span></h3>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Input Data
+</td>
+<td>iy
+</td>
+<td>
+<p>Input
+</p><p>XYRange
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> Select data to find baseline.
+</td></tr>
+<tr>
+<td>Asymmetric Factor [0-1]
+</td>
+<td>p
+</td>
+<td>
+<p>Input
+</p><p>double
+</p>
+</td>
+<td> <center>1e-3</center>
+</td>
+<td> Specify weight of points above the baseline in each iteration.
+</td></tr>
+<tr>
+<td>Threshold (%)
+</td>
+<td>th
+</td>
+<td>
+<p>Input
+</p><p>double
+</p>
+</td>
+<td> <center>0.05</center>
+</td>
+<td> Specify the threshold to determine points above the baseline (for positive peaks) or below the baseline (for negative peaks).
+</td></tr>
+<tr>
+<td>Smoothing Factor
+</td>
+<td>loglam
+</td>
+<td>
+<p>Input
+</p><p>double
+</p>
+</td>
+<td> <center>4</center>
+</td>
+<td> Specify the smoothness of the baseline.
+</td></tr>
+<tr>
+<td>Number of Iterations
+</td>
+<td>iter
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>10</center>
+</td>
+<td> Specify number of iterations.
+</td></tr>
+<tr>
+<td>Baseline
+</td>
+<td>oy
+</td>
+<td>
+<p>Output
+</p><p>XYRange
+</p>
+</td>
+<td> <center>&lt;new&gt;</center>
+</td>
+<td> Specify columns for baseline output.
+</td></tr>
+<tr>
+<td>Baseline Substracted
+</td>
+<td>oys
+</td>
+<td>
+<p>Output
+</p><p>XYRange
+</p>
+</td>
+<td> <center>&lt;new&gt;</center>
+</td>
+<td> Specify columns for baseline subtracted data.
+</td></tr></table>
+<h2><a name="Algorithm"></a><span class="mw-headline">Algorithm</span></h2>
+<p>Asymmetric least squares smoothing (<b>ALS</b>) method is used to find the baseline so that:
+</p>
+<ol><li> Baseline is smooth.</li>
+<li> Baseline is faithful to the original curve.</li></ol>
+<p>It is implemented by minimizing the sum of two terms: distances between points and baseline, 2nd derivatives of baseline. The sum can be expressed as:
+</p>
+<dl><dd><img src="../images/Baseline_with_ALS/math-4ffed4d6b92df8a5bf711cefa2039f56.png?v=0" title="S=\sum_{i=1}^n w_i(y_i-{y_b}_i)^2 + \lambda \sum_{i=2}^{n-1} [ {(y_b}_{i+1}-{y_b}_i) - ({y_b}_i-{y_b}_{i-1}) ]^2" alt="S=\sum_{i=1}^n w_i(y_i-{y_b}_i)^2 + \lambda \sum_{i=2}^{n-1} [ {(y_b}_{i+1}-{y_b}_i) - ({y_b}_i-{y_b}_{i-1}) ]^2" class="tex"/></dd></dl>
+<p>where y is original data, <img src="../images/Baseline_with_ALS/math-7f3121d5be753123b397f22e2a1fb3e3.png?v=0" title="y_b" alt="y_b" class="tex"/> is calculated baseline, <img src="../images/Baseline_with_ALS/math-aa38f107289d4d73d516190581397349.png?v=0" title="w_i" alt="w_i" class="tex"/> is weight for each point, <img src="../images/Baseline_with_ALS/math-c6a6eb61fd9c6c913da73b3642ca147d.png?v=0" title="\lambda" alt="\lambda" class="tex"/> is a factor to balance the residual and the 2nd derivative, and smoothing factor in X-Function is the log of this value.
+</p><p>Iteration procedures are introduced as below:
+</p>
+<ol><li> In the first iteration, <img src="../images/Baseline_with_ALS/math-ddb823a593bbbb3dfaf0d602adc5e422.png?v=0" title="w_i=1" alt="w_i=1" class="tex"/> is used, and once baseline is calculated, asymmetric factor p will be applied on points above baseline (for positive peaks) as the weight, and weight for remaining points is 1-p.</li>
+<li> In the next iteration, use calculated weights in the last iteration to calculate the new baseline and update weight.</li>
+<li> Repeat the above procedure until the specified number of iterations reaches.</li></ol>
+<h3><a name="Reference"></a><span class="mw-headline">Reference</span></h3>
+<ol><li> P.H.C. Eilers and H.F.M. Boelens. Baseline correction with asymmetric least squares smoothing, Leiden University Medical Centre Report, 2005.</li></ol>
+
+

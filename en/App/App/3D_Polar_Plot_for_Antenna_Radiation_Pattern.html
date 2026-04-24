@@ -1,0 +1,100 @@
+<h1 class="firstHeading">1.1 3D Polar Plot for Antenna Radiation Pattern</h1><p class='urlname' style='display: none'>3D-Polar-Plot-for-Antenna-Radiation-Pattern</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Examples"><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Dialog_Controls_of_the_plotresp_X-Function_Dialog"><span class="tocnumber">2</span> <span class="toctext">Dialog Controls of the plotresp X-Function Dialog</span></a></li>
+</ul>
+</div>
+
+<p><br />
+The aim of this <a class="external text" href="https://www.originlab.com/FileExchange/details.aspx?fid=160" target="_blank">app, 3D Polar Plot for Antenna Radiation Pattern</a> is to provide an easy way to plot 3D polar antenna radiation pattern. A radiation pattern defines the variation of the power radiated by an antenna as a function of the direction away from the antenna. Direction away from the antenna can be described by two angles: Elevation/Inclination and Azimuth. The radiation pattern data can be represented by a virtual matrix in Origin: the value of one angle is laid along the first column of the worksheet, the other angle is laid along the first row or column label row. For angle in the i-th row of the first column and angle in the j-th column of the first row(or column label row), the radiation pattern value in the direction defined by these two angles is put into the cell located at the i-th row and j-th column.
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
+<p>The following is a simple example to show you how to create an antenna radiation pattern graph from a virtual matrix.
+</p>
+<ol><li>Create a new workbook, fill your data in the worksheet in the format suggested by the graph below.<br /><a  class="image"><img alt="Plot Antenna Pattern Data.jpg" src="../images/3D_Polar_Plot_for_Antenna_Radiation_Pattern/Plot_Antenna_Pattern_Data.jpg?v=76043" width="579"  /></a><br /><br /></li>
+<li>Click the icon <a  class="image"><img alt="Plot Antenna Pattern Button.png" src="../images/3D_Polar_Plot_for_Antenna_Radiation_Pattern/Plot_Antenna_Pattern_Button.png?v=76044" width="16"  /></a> from Apps panel to bring up the <b>plotresp</b> X-Function dialog, make settings as suggested by the graph below.<br /><a  class="image"><img alt="Plot Antenna Pattern Diglog setting.jpg" src="../images/3D_Polar_Plot_for_Antenna_Radiation_Pattern/Plot_Antenna_Pattern_Diglog_setting.jpg?v=76045" width="426"  /></a><br /><br /></li>
+<li>Click OK, a graph will show. Rotate it to get the graph below.<br /><a  class="image"><img alt="Plot Antenna Pattern Graph.jpg" src="../images/3D_Polar_Plot_for_Antenna_Radiation_Pattern/Plot_Antenna_Pattern_Graph.jpg?v=76046" width="600"  /></a><br /><br /></li></ol>
+<p>You should make different settings in the <b>plotresp</b> X-Function dialog according to the type of your data and how you fill it in the worksheet. You can also change parameter by clicking green lock in the result matrix. Details of the options in the dialog are explained below.
+</p>
+<h2><a name="Dialog_Controls_of_the_plotresp_X-Function_Dialog"></a><span class="mw-headline">Dialog Controls of the plotresp X-Function Dialog</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Input
+</th>
+<td>Specify the radiation pattern for plotting. You can simply select the whole worksheet.
+</td></tr>
+<tr>
+<th>Angle System
+</th>
+<td>Specify the coordinate system used to describe the radiation pattern. Available options include:
+<ul><li><b>Elevation-Azimuth system</b></li></ul>
+<dl><dd>This coordinate system is used in phased array system. The azimuth angle is measured off the x-axis, its value is between -180 and 180 degrees. The elevation angle is measured from the x-y plane, its value is between -90 and 90 degrees.</dd></dl>
+<ul><li><b>Inclination-Azimuth system</b></li></ul>
+<dl><dd>This is the commonly-used spherical coordinate system in mathematics. The azimuth angle is measured counterclockwise off the x-axis, its value is between 0 and 360 degrees. The inclination angle is measured off the z-axis, its value is between 0 and 180 degrees.</dd></dl>
+</td></tr>
+<tr>
+<th>Data Format
+</th>
+<td>Specify which way to set the Azimuth angle values and Elevation/Inclination angle values for the graph. Available options include:
+<ul><li><b>Azimuth across columns</b> </li></ul>
+<dl><dd>Use the values in a row as the Azimuth angle values and the values in a column as the Elevation/Inclination angle values. </dd></dl>
+<ul><li><b>Elevation / Inclination across columns</b> </li></ul>
+<dl><dd>Use the values in a row as the Elevation/Inclination angle values and the values in a column as the Azimuth angle values. </dd></dl>
+</td></tr>
+<tr>
+<th>Azimuth Values in(or Elevation Values in or Inclination Values in)
+</th>
+<td>Specify where the Azimuth (or Elevation/Inclination) angle values are. The following options are available when <b>Azimuth Across Columns</b> (or <b>Elevation/Inclination Across Columns</b>) has been selected for Data Format.
+<ul><li><b>First Data Row</b></li></ul>
+<dl><dd>Uses the values of the first row in the worksheet as the Azimuth (Elevation or Inclination) angle values.</dd></dl>
+<ul><li><b>Column label</b></li></ul>
+<dl><dd>Uses the values of the column labels in the worksheet as the Azimuth (Elevation or Inclination) angle values. It will allow you to select a column label row from the <b>Column Label</b> drop-down list.</dd></dl>
+</td></tr>
+<tr>
+<th>Column Label
+</th>
+<td>This is available only when <b>Column Label</b> has been selected from the <b>Azimuth Values in</b>, <b>Elevation Value in</b> or <b>Inclination Values in</b> drop-down list. It allows you to use the values in the Long Name, Units or Comments row as Azimuth, Elevation or Inclination angle values.
+</td></tr>
+<tr>
+<th>Angular Unit
+</th>
+<td>Specify unit of the input angle. Available options include:
+<ul><li><b>Radian</b></li>
+<li><b>Degree</b> </li></ul>
+</td></tr>
+<tr>
+<th>Response Type
+</th>
+<td>Specify type of radiation pattern. Available options include:
+<ul><li><b>dB</b></li></ul>
+<dl><dd>radiation power in decibel scale </dd></dl>
+<ul><li><b>Magnitude</b></li></ul>
+<dl><dd>magnitude of radiation field</dd></dl>
+<ul><li><b>Power</b></li></ul>
+<dl><dd>radiation power</dd></dl>
+</td></tr>
+<tr>
+<th>Normalize Response
+</th>
+<td>Specify whether the input pattern should be normalized before further processing. Assume maxResponse is the maximum response value.
+<dl><dd>response = response - maxResponse     (If response type is dB)</dd>
+<dd>response = response / maxResponse     (If response type is magnitude or power)</dd></dl>
+</td></tr>
+<tr>
+<th>dB Range
+</th>
+<td>Adjust response dynamic range according to the specified value. This option is available when <b>dB</b> has been selected in <b>Response Type</b>.
+</td></tr>
+<tr>
+<th>Output
+</th>
+<td>This includes four result matrix objects: x, y, z and response. They should be in the same matrixsheet. You can simply keep the default setting.
+</td></tr></table>
+
+
+
+
+
+

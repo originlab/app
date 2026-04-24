@@ -1,0 +1,76 @@
+<h1 class="firstHeading">2.14 Constrained Multiple Regression (Pro)</h1><p class='urlname' style='display: none'>Constrained-Multiple-Regression</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Input_Data"><span class="tocnumber">3.1</span> <span class="toctext">Input Data</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Bounds"><span class="tocnumber">3.2</span> <span class="toctext">Bounds</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#General_Linear_Constraints"><span class="tocnumber">3.3</span> <span class="toctext">General Linear Constraints</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Quantities_to_Compute"><span class="tocnumber">3.4</span> <span class="toctext">Quantities to Compute</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Plots"><span class="tocnumber">3.5</span> <span class="toctext">Plots</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Algorithm"><span class="tocnumber">4</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>The app <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=286" target="_blank">Constrained Multiple Regression</a> is used to perform constrained multiple regression and solve constrained linear least-squares problems.
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol><li> Start this tutorial with the app <b>Constrained Multiple Regression</b> installed. If you have not installed this app, please click <b>Add Apps</b> button in <b>Apps Gallery</b> to open <b>App Center</b> to search and install the app.
+<dl><dd><a  class="image"><img alt="Constrained Multiple Regression 00.jpg" src="../images/Constrained_Multiple_Regression/Constrained_Multiple_Regression_00.jpg?v=72461" width="368"  /></a></dd></dl></li>
+<li> With a new worksheet, select <b>Data&gt;Connect To File: Text/CSV</b> to import the sample file "&lt;<i>Origin Program Folder</i>&gt;\Samples\Curve Fitting\Multiple Linear Regression.dat" into the worksheet with the default import settings.
+<dl><dd><a  class="image"><img alt="Constrained Multiple Regression 01.jpg" src="../images/Constrained_Multiple_Regression/Constrained_Multiple_Regression_01.jpg?v=72462" width="389"  /></a></dd></dl></li>
+<li> Click the app icon <b>Constrained Multiple Regression</b> in <b>App Gallery</b> to open the app dialog. Select <b>col(D)</b> as <b>Dependent Data</b> and <b>col(A)~col(C)</b> as <b>Independent Data</b>.
+<dl><dd><a  class="image"><img alt="Constrained Multiple Regression 02.jpg" src="../images/Constrained_Multiple_Regression/Constrained_Multiple_Regression_02.jpg?v=72463" width="783"  /></a></dd></dl></li>
+<li> Now, we are going to  specify the bounds and linear constraints:
+<ul><li>Expand the branch <b>Bounds</b>, click the check box <b>Same for All Bounds</b> to set same bound for all parameters. Enter <i>-0.5</i> for <b>Lower Bound</b> and <i>2.5</i> for <b>Upper Bound</b>.</li>
+<li>Expand the branch <b>General Linear Constraints</b>, set <b>Number of Constraints</b> to <i>1</i>; in the <b>Constraints No.1</b> sub-branch, enter the expression <i>0.5*a0+3*a1-0.9*a2+1.5*a3</i> into <b>Constraints Expression</b> and set <i>6</i> for the following <b>Upper Bound</b>.</li></ul>
+<dl><dd><a  class="image"><img alt="Constrained Multiple Regression 03.jpg" src="../images/Constrained_Multiple_Regression/Constrained_Multiple_Regression_03.jpg?v=72464" width="459"  /></a></dd></dl></li>
+<li> Click OK button to perfrom the regression. You will get a report sheet "CMR1" and a result sheet "CMRCurve1".
+<dl><dd><a  class="image"><img alt="Constrained Multiple Regression 04.jpg" src="../images/Constrained_Multiple_Regression/Constrained_Multiple_Regression_04.jpg?v=72465" width="810"  /></a></dd></dl></li></ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="Input_Data"></a><span class="mw-headline">Input Data</span></h3>
+<p>Specify datasets for constrained multiple regression, including one dependent data, and multiple independent data.
+</p>
+<h3><a name="Bounds"></a><span class="mw-headline">Bounds</span></h3>
+<p>Specify bounds for each parameter. The number of parameters will be the number of independents plus 1. If no independent data specified, this branch will be hidden. For each parameter, you can specify <b>Lower Bound</b> and <b>Upper Bound</b>, which by default are <i>&lt;Optional&gt;</i>, which means negative infinity and positive infinity respectively. If all bounds are the same, just check <b>Same for All Bounds</b> to specify the corresponding values.
+</p>
+<h3><a name="General_Linear_Constraints"></a><span class="mw-headline">General Linear Constraints</span></h3>
+<p>Specify the linear constraints for the least-squares problems.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Number of Constraints
+</th>
+<td> Specify how many linear constraints.
+</td></tr>
+<tr>
+<th> Constraint No.#
+</th>
+<td> Setting for each constraint. For each constraint, the expression looks like: l &lt;= a0*x0 + a1*x1 + a2*x2 + ... &lt;= u, where l is lower bound, u is upper bound, and a0*x0 + a1*x1 + a2*x2 + ... is the constraint expression.
+<ul><li> <b>Constraint Expression</b>
+<dl><dd> Specify the constraint expression, which will be the form mentioned above, such as 0.5*a0+3*a1-0.9*a2+1.5*a3.</dd></dl></li>
+<li> <b>Lower Bound for Constraint</b>
+<dl><dd> Specify the lower bound of the constraint. By default, it is <i>&lt;Optional&gt;</i> for negative infinity. </dd></dl></li>
+<li> <b>Upper Bound for Constraint</b>
+<dl><dd> Specify the upper bound of the constraint. By default, it is <i>&lt;Optional&gt;</i> for positive infinity.</dd></dl></li></ul>
+</td></tr></table>
+<h3><a name="Quantities_to_Compute"></a><span class="mw-headline">Quantities to Compute</span></h3>
+<p>Please refer to Multiple Linear Regression's <a class="external text" href="https://www.originlab.com/doc/Origin-Help/Multi-Regression-Dialog#Quantities_to_Compute" target="_blank">Quantities to Compute</a>.
+</p>
+<h3><a name="Plots"></a><span class="mw-headline">Plots</span></h3>
+<p>Please refer to Multiple Linear Regression's <a class="external text" href="https://www.originlab.com/doc/Origin-Help/Multi-Regression-Dialog#Plots" target="_blank">Plots</a>.
+</p>
+<h2><a name="Algorithm"></a><span class="mw-headline">Algorithm</span></h2>
+<p>This tool solves linearly constrained linear least-squares problems by using the NAG function, <a class="external text" href="https://www.originlab.com/pdfs/nagcl09/manual/pdf/e04/e04ncc.pdf" target="_blank">e04ncc</a> (<a class="external text" href="https://www.originlab.com/pdfs/nagcl09/manual/pdf/e04/e04ncc.pdf" target="_blank">nag_opt_lin_lsq</a>). And the calculations for other quantities are using the same algorithm as <a class="external text" href="https://www.originlab.com/doc/Origin-Help/Multi-Regression-Algorithm" target="_blank">Multiple Regression Results</a>.
+</p>
+
+
+
+
+

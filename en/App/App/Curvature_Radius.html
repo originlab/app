@@ -1,0 +1,151 @@
+<h1 class="firstHeading">2.10 Curvature Radius App</h1><p class='urlname' style='display: none'>Curvature-Radius</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Examples"><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Dialog_Settings"><span class="tocnumber">2</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#ROI_Box_Tab"><span class="tocnumber">2.1</span> <span class="toctext">ROI Box Tab</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Output_Tab"><span class="tocnumber">2.2</span> <span class="toctext">Output Tab</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Fly-out_Menu"><span class="tocnumber">3</span> <span class="toctext">Fly-out Menu</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Algorithm"><span class="tocnumber">4</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</div>
+
+<p>This <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=226" target="_blank">Curvature Radius App</a> can be used to calculate the radius of curvature at a specified point. After install this app, there should be an app icon named <b>Curvature Radius</b> in <b>Apps</b> panel. 
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
+<ol><li> Make an empty worksheet active, then select menu item <b>File: Import: Single ASCII...</b> to import the Gaussian.dat file, which is under <i>&lt;Origin Installation Directory&gt;\Samples\Curve Fitting\</i>, using the default settings.</li>
+<li> Select column B, then choose menu item <b>Plot: Symbol: Scatter</b> to make a graph one plot.
+<dl><dd><a  class="image"><img alt="Curvature Radius Graph Create.png" src="../images/Curvature_Radius/Curvature_Radius_Graph_Create.png?v=76215" width="538"  /></a></dd></dl></li>
+<li> Make this graph to be the active window, Click <b>Curvature Radius</b> icon from Apps panel to bring up the Curvature Radius app.</li>
+<li> Use the default settings and click OK button to add ROI to graph.
+<dl><dd><a  class="image"><img alt="Curvature Radius Graph Add ROI.png" src="../images/Curvature_Radius/Curvature_Radius_Graph_Add_ROI.png?v=76216" width="538"  /></a></dd></dl></li>
+<li> Move the vertical line to the highest point, and then you can see the corresponding curvature radius is shown on the top of the vertical line.
+<dl><dd><a  class="image"><img alt="Curvature Radius Graph Move Line.png" src="../images/Curvature_Radius/Curvature_Radius_Graph_Move_Line.png?v=76217" width="538"  /></a></dd></dl></li>
+<li> Click the <a  class="image"><img alt="ROI menu.png" src="../images/Curvature_Radius/ROI_menu.png?v=70237" width="21"  /></a> button, and then select <b>New Output (O)</b>, then the result will be printed to Script Window.
+<dl><dd><a  class="image"><img alt="Curvature Radius New Output.png" src="../images/Curvature_Radius/Curvature_Radius_New_Output.png?v=76218" width="578"  /></a></dd></dl></li></ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="ROI_Box_Tab"></a><span class="mw-headline">ROI Box Tab</span></h3>
+<dl><dd><a  class="image"><img alt="Curvature Radius ROI Box Dialog.png" src="../images/Curvature_Radius/Curvature_Radius_ROI_Box_Dialog.png?v=76219" width="288"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Show Tool Name
+</th>
+<td> Specify whether to show the tool's name near the top of the layer.
+</td></tr>
+<tr>
+<th> Show on Graph
+</th>
+<td> Specify what to show on the graph.
+<ul><li> XY Coordinate
+<dl><dd> Specify whether to show the XY coordinate of the point on the graph.</dd></dl></li>
+<li> Radius of Curvature
+<dl><dd> Specify whether to show the radius of curvature on the graph.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Color Setting
+</th>
+<td> Specify the displaying color.
+<ul><li> Vertical Line Color
+<dl><dd> Specify the color of the vertical line, which is used to select a point.</dd></dl></li></ul>
+</td></tr></table>
+<h3><a name="Output_Tab"></a><span class="mw-headline">Output Tab</span></h3>
+<dl><dd><a  class="image"><img alt="Curvature Radius Output Dialog.png" src="../images/Curvature_Radius/Curvature_Radius_Output_Dialog.png?v=76220" width="417"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Output Quantities To
+</th>
+<td> Customize the output results
+<ul><li> Script Window
+<dl><dd> Specify whether to output the results to Script Window.</dd></dl></li>
+<li> Results Log
+<dl><dd> Specify whether to output the results to Results Log.</dd></dl></li>
+<li> Append to Worksheet
+<dl><dd> Specify whether to append the results to a worksheet.</dd></dl></li>
+<li> Result Worksheet Name
+<dl><dd> This is only available when <b>Append to Worksheet</b> is checked. It is used to specify the name of the worksheet.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Quantities
+</th>
+<td> Specify the quantities to be outputted.
+<ul><li> Dataset Identifier
+<dl><dd> Specify dataset identifier for the output quantities.</dd></dl></li>
+<li> XY Coordinate of Current
+<dl><dd> Specify whether to output the XY coordinate of the specified point.</dd></dl></li>
+<li> Current Radius of Curvature
+<dl><dd> Specify whether to output the radius of curvature of the specified point.</dd></dl></li>
+<li> XY Coordinate of Minimum Radius
+<dl><dd> Specify whether to output the XY Coordinate of the minimum radius point.</dd></dl></li>
+<li> Minimum Radius of Curvature
+<dl><dd> Specify whether to output the minimum radius.</dd></dl></li>
+<li> X Coordinate of All Radius
+<dl><dd> Specify whether to output the X Coordinate of all radius.</dd></dl></li>
+<li> All Radius of Curvature
+<dl><dd> Specify whether to output all radius.</dd></dl></li></ul>
+</td></tr></table>
+<h2><a name="Fly-out_Menu"></a><span class="mw-headline">Fly-out Menu</span></h2>
+<p>Click the button <a  class="image"><img alt="ROI menu.png" src="../images/Curvature_Radius/ROI_menu.png?v=70237" width="21"  /></a> at the upper-right corner of the layer to expand the fly-out menu, which includes the following options.
+</p>
+<dl><dd><a  class="image"><img alt="Curvature Radius Flyout menu.png" src="../images/Curvature_Radius/Curvature_Radius_Flyout_menu.png?v=76221" width="191"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> New Output (O)
+</th>
+<td> Output the results to the specified windows (Script Window or Results Log), and the specified worksheet (if not empty, append the results).
+</td></tr>
+<tr>
+<th> Go to Report Worksheet
+</th>
+<td> Activate the report worksheet.
+</td></tr>
+<tr>
+<th> Go to Source Worksheet
+</th>
+<td> Activate the source data worksheet.
+</td></tr>
+<tr>
+<th> Find Minimum Radius
+</th>
+<td> Find the minimum radius in a specified x range and move the vertical line to that place.
+</td></tr>
+<tr>
+<th> Change Data
+</th>
+<td> Select the source data set. This is applicable only when there are multiple curves on the graph.
+</td></tr>
+<tr>
+<th> Save Theme
+</th>
+<td> Save the settings as a theme.
+</td></tr>
+<tr>
+<th> Save as &lt;default&gt;
+</th>
+<td> Save the settings as default theme.
+</td></tr>
+<tr>
+<th> Load Theme
+</th>
+<td> Load theme settings.
+</td></tr>
+<tr>
+<th> Preferences
+</th>
+<td> Open the <b>Curvature Radius Preferences</b> dialog.
+</td></tr></table>
+<h2><a name="Algorithm"></a><span class="mw-headline">Algorithm</span></h2>
+<p>In this gadget, the calculation for radius of curvature is assuming the curve is written in the form <img src="../images/Curvature_Radius/math-fd91c508f91c2c84498680bd337c1d7a.png?v=0" title="y = f(x)" alt="y = f(x)" class="tex"/>, and then the radius of curvature is given by:
+</p><p><img src="../images/Curvature_Radius/math-52864529a7655400d1bd6f7a185c5fb8.png?v=0" title="&#10;R = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2y}{dx^2}|}&#10;" alt="&#10;R = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2y}{dx^2}|}&#10;" class="tex"/>
+</p><p>If the first order derivative or the second order derivative does not exist, the radius of curvature at that point does also not exist.
+</p>
+
+
+
+
+

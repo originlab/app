@@ -1,0 +1,256 @@
+<h1 class="firstHeading">2.9 Level Crossing</h1><p class='urlname' style='display: none'>Level-Crossing</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#ROI_Box_Tab"><span class="tocnumber">3.1</span> <span class="toctext">ROI Box Tab</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Settings_Tab"><span class="tocnumber">3.2</span> <span class="toctext">Settings Tab</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Output_Tab"><span class="tocnumber">3.3</span> <span class="toctext">Output Tab</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Fly-out_Menu"><span class="tocnumber">4</span> <span class="toctext">Fly-out Menu</span></a></li>
+</ul>
+</div>
+</div> 
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>This <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=225" target="_blank">Level Crossing app</a> can be used to find X values at <b>level crossings</b> (a specific Y value), over a region of interest within a data plot.
+<br />Multiple data plots in the layer is also supported.
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol>
+
+<li>Download <a class="external text" href="https://blog.originlab.com/wp-content/uploads/2023/05/Level_Crossing_App.zip" target="_blank"><b>Level_Crossing_App.zip</b></a> zip file. Unzip the file, and open the workbook <b>Sample Data.ogw</b> in Origin.
+<dl><dd><a  class="image"><img alt="Level Crossing 01.png" src="../images/Level_Crossing/Level_Crossing_01.png?v=72864" width="480"  /></a> </dd></dl>
+
+<li>Highlight Column B, C and D, then select <b>Plot: Basic 2D: Line</b> to create lines plot.
+<dl><dd><a  class="image"><img alt="Level Crossing 02.png" src="../images/Level_Crossing/Level_Crossing_02.png?v=72865" width="548"  /></a> </dd></dl>
+
+<li>Active the Line graph window, and then click on <b>Level Crossing</b> icon <a  class="image"><img alt="Level Crossing icon.png" src="../images/Level_Crossing/50px-Level_Crossing_icon.png?v=72874" width="50"   /></a> from the Apps panel. It will open the <b>addtool_levelcrossing</b> dialog.
+<dl><dd><a  class="image"><img alt="Level Crossing 03.png" src="../images/Level_Crossing/Level_Crossing_03.png?v=72866" width="404"  /></a> </dd></dl>
+ 
+<li>Click <b>OK</b> button with default setting. You will see that a yellow rectangle (ROI box) and a horizontal red line are added to the plot.
+<dl><dd><a  class="image"><img alt="Level Crossing 04.png" src="../images/Level_Crossing/Level_Crossing_04.png?v=72868" width="548"  /></a> </dd></dl>
+
+<li>Resize the ROI box to cover all signals.
+<dl><dd><a  class="image"><img alt="Level Crossing 05.png" src="../images/Level_Crossing/Level_Crossing_05.png?v=72867" width="548"  /></a> </dd></dl>
+
+<li>Moving the horizontal red line can change the crossing level value. 
+<dl><dd><a  class="image"><img alt="Level Crossing 06.png" src="../images/Level_Crossing/Level_Crossing_06.png?v=72869" width="548"  /></a> </dd></dl>
+
+<br />If you want to set a precise threshold, you can click the triangle button <a  class="image"><img alt="Triangle button.png" src="../images/Level_Crossing/Triangle_button.png?v=12017" width="15"  /></a> and select <b>Preference</b> from the fly-out menu to reopen the dialog. Go to the <b>Setting</b> tab and enter <b>50</b> in <b>Crossing Level</b> box.
+<dl><dd><a  class="image"><img alt="Level Crossing 07.png" src="../images/Level_Crossing/Level_Crossing_07.png?v=72871" width="290"  /></a> </dd></dl>
+
+<li>Go to <b>Output</b> tab, uncheck <b>Script Window</b> and check <b>Append to Worksheet</b>.
+<dl><dd><a  class="image"><img alt="Level Crossing 08.png" src="../images/Level_Crossing/Level_Crossing_08.png?v=72872" width="365"  /></a> </dd></dl>
+
+<li>Click the triangle button again and select <b>New Output for All Curves</b>. Then the quantities of the crossing points for three plots will be output in a new workbook.
+<dl><dd><a  class="image"><img alt="Level Crossing 09.png" src="../images/Level_Crossing/830px-Level_Crossing_09.png?v=72873" width="830"   /></a> </dd></dl>
+
+</ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="ROI_Box_Tab"></a><span class="mw-headline">ROI Box Tab</span></h3>
+<p><a  class="image"><img alt="Level Crossing ROI Box Tab.png" src="../images/Level_Crossing/Level_Crossing_ROI_Box_Tab.png?v=76333" width="387"  /></a>
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> X Scale
+</th>
+<td> Define the position of ROI box by giving values for X coordinates.
+<ul><li> From
+<dl><dd> The X coordinate for the leftmost line of the ROI box.</dd></dl></li>
+<li> To
+<dl><dd> The X coordinate for the rightmost line of the ROI box.</dd></dl></li>
+<li> Fixed(Prevent moving by ROI)
+<dl><dd> Specify whether to fix the position and size of the ROI box.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Show Tool Name
+</th>
+<td> Specify whether to show the tool's name near the top of the layer.
+</td></tr>
+<tr>
+<th> Show on Graph
+</th>
+<td> Specify what to show on the graph.
+<ul><li> No. of Crossing Points on Center-Top
+<dl><dd> Specify whether to show how many crossing points found on center top of the ROI box.</dd></dl></li>
+<li> Crossing Point Marker
+<ul><li> Color: Set marker's edge color.</li>
+<li> Fill Color: Set marker's fill color.</li>
+<li> Symbol: Set marker symbol.</li>
+<li> Size: Set marker's size.</li></ul></li>
+<li> Crossing Point Label
+<ul><li> Color: Set label color.</li>
+<li> Size: Set label size.</li>
+<li> Type: Set what to show as label, including three options, X, Y, and (X, Y).</li>
+<li> Rotate(deg.): Set rotate angle of the label, in unit of degree.</li></ul></li></ul>
+<p>Note: If both X and Y coordinates are shown, it will show in the form of "(x, y)".
+</p>
+</td></tr>
+<tr>
+<th> Color Setting
+</th>
+<td> Specify the displaying color.
+<ul><li> ROI Fill Color
+<dl><dd> Specify the fill color for the ROI box.</dd></dl></li>
+<li> Horizontal Line Color
+<dl><dd> Specify the color of the horizontal level line.</dd></dl></li></ul>
+</td></tr></table>
+<h3><a name="Settings_Tab"></a><span class="mw-headline">Settings Tab</span></h3>
+<p><a  class="image"><img alt="Level Crossing Settings Tab.png" src="../images/Level_Crossing/Level_Crossing_Settings_Tab.png?v=76334" width="290"  /></a>
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Crossing Level
+</th>
+<td> Specify the Y value for the crossing level, so to find the X values at this level for the covered data curve in the ROI box.
+</td></tr>
+<tr>
+<th> Nearest Type
+</th>
+<td> Specify how to output the X index of the crossing point when the crossing point is interpolated but not the point of the original data.
+<p>Option list:
+</p>
+<ul><li> Any
+<dl><dd> The index of the point is closest to the crossing point.</dd></dl></li>
+<li> Left
+<dl><dd> The index of the point is to the "left" side of the crossing point.</dd></dl></li>
+<li> Right
+<dl><dd> The index of the point is to the "right" side of the crossing point.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Duration Points
+</th>
+<td> It is used to control the output of a pair of level crossing points. The distance (indices) of the pair of points should not be less than the specified duration, or both crossing points will be discarded. Only integer is acceptable.
+</td></tr>
+<tr>
+<th> Deadtime Points
+</th>
+<td> This variable is only available for version higher than Origin 2019b (not included). It determines how a level crossing point is treated as valid and output.
+<ul><li> The first found level crossing point will be treated as "valid".</li>
+<li> If other crossing points are found in the deadtime distance (indices) following the first point, they will be considered as "invalid" and thus ignored.</li>
+<li> If the next found crossing point is out of the deadtime distance (indices),
+<ul><li> If the point falls in the duration (indices) following the first point, both this point and the first will be considered as "invalid" and thus ignored.</li>
+<li> If the point locates out of the duration (indices) following the first point, this point will be considered as "valid" and output.</li></ul></li></ul>
+<p>Only positive integer is acceptable. 
+</p>
+</td></tr></table>
+<h3><a name="Output_Tab"></a><span class="mw-headline">Output Tab</span></h3>
+<p><a  class="image"><img alt="Level Crossing Output Tab.png" src="../images/Level_Crossing/Level_Crossing_Output_Tab.png?v=76335" width="366"  /></a>
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Output Quantities To
+</th>
+<td> Customize the output results
+<ul><li> Script Window
+<dl><dd> Specify whether to output the results to Script Window.</dd></dl></li>
+<li> Results Log
+<dl><dd> Specify whether to output the results to Results Log.</dd></dl></li>
+<li> Append to Worksheet
+<dl><dd> Specify whether to append the results to a worksheet.</dd></dl></li>
+<li> Result Worksheet Name
+<dl><dd> This is only available when <b>Append to Worksheet</b> is checked. It is used to specify the name of the worksheet.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Quantities
+</th>
+<td> Specify the quantities to be outputted.
+<ul><li> Crossing Point ID
+<dl><dd> Specify whether to output the ID of crossing points.</dd></dl></li>
+<li> X Value
+<dl><dd> Specify whether to output the X coordinates of the crossing point.</dd></dl></li>
+<li> Crossing Level
+<dl><dd> Specify whether to output the Y coordinates (level) of the crossing point.</dd></dl></li>
+<li> Direction
+<dl><dd> Specify whether to output the directions of the crossing behaviors, 1 for upward, -1 for downward, and 0 for differentiation is 0.</dd></dl></li>
+<li> X Index
+<dl><dd> Specify whether to output the X indices of the crossing points.</dd></dl></li>
+<li> Nearest Type
+<dl><dd> When the crossing point is interpolated but not the point of the original data, the output of X index of the crossing point can be the one closest to the crossing point (it is any), the one to the "left" side of the crossing point, or the one to the "right". This is used to specify whether to output these nearest type, any, left, and right.</dd></dl></li>
+<li> Duration Points
+<dl><dd> Specify whether to output the variable used to control the output of a pair of level crossing points.</dd></dl></li>
+<li> Deadtime Points
+<dl><dd> Specify whether to output the variable of deadtime points. This option is only available for version higher than Origin 2019b (not included).</dd></dl></li>
+<li> No. of Crossings
+<dl><dd> Specify whether to output the number of crossing points.</dd></dl></li></ul>
+</td></tr></table>
+<h2><a name="Fly-out_Menu"></a><span class="mw-headline">Fly-out Menu</span></h2>
+<p>Click the button <a  class="image"><img alt="ROI menu.png" src="../images/Level_Crossing/ROI_menu.png?v=70237" width="21"  /></a> at the upper-right corner of the layer to expand the fly-out menu, which includes the following options.
+</p>
+<dl><dd><a  class="image"><img alt="Level Crossing Flyout Menu.png" src="../images/Level_Crossing/Level_Crossing_Flyout_Menu.png?v=76336" width="217"  /></a></dd></dl>
+<p><br />
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> New Output (O)
+</th>
+<td> Output the results to the specified windows (Script Window or Results Log), and the specified worksheet (if not empty, append the results).
+</td></tr>
+<tr>
+<th> New Output for All Curves (N)
+</th>
+<td> Output the results for all plots in the layer.
+</td></tr>
+<tr>
+<th> Go to Report Worksheet
+</th>
+<td> Activate the report worksheet.
+</td></tr>
+<tr>
+<th> Go to Source Worksheet
+</th>
+<td> Activate the source data worksheet.
+</td></tr>
+<tr>
+<th> Output to Clipboard
+</th>
+<td> Specify whether to output Quantities result to clipboard
+</td></tr>
+<tr>
+<th> Change Data
+</th>
+<td> Select the source data set. This is applicable only when there are multiple curves on the graph.
+</td></tr>
+<tr>
+<th> Expand to Full Plot(s) Range
+</th>
+<td> Expand the ROI to cover the whole plot(s).
+</td></tr>
+<tr>
+<th> Fix ROI Position
+</th>
+<td> If checked, the ROI position is fixed and not allow to be moved around or change size.
+</td></tr>
+<tr>
+<th> Save Theme
+</th>
+<td> Save the settings as a theme.
+</td></tr>
+<tr>
+<th> Save as &lt;default&gt;
+</th>
+<td> Save the settings as default theme.
+</td></tr>
+<tr>
+<th> Load Theme
+</th>
+<td> Load theme settings.
+</td></tr>
+<tr>
+<th> Preferences
+</th>
+<td> Open the <b>Level Crossing Preferences</b> dialog.
+</td></tr></table>
+
+
+
+
+
+

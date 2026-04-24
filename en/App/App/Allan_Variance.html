@@ -1,0 +1,121 @@
+<h1 class="firstHeading">2.12 Allan Variance</h1><p class='urlname' style='display: none'>Allan-Variance</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tutorial"><span class="tocnumber">1</span> <span class="toctext">Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Dialog_Settings"><span class="tocnumber">2</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Input"><span class="tocnumber">2.1</span> <span class="toctext">Input</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Graph"><span class="tocnumber">2.2</span> <span class="toctext">Graph</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Output"><span class="tocnumber">2.3</span> <span class="toctext">Output</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<p><br />
+This <a class="external text" href="https://www.originlab.com/FileExchange/details.aspx?fid=231" target="_blank">app, Allan Variance</a> is used to calculate Allan variance for a time series signal with fixed tau estimators. The output includes：
+</p>
+<ol><li> Allan deviation</li>
+<li> Allan variance</li>
+<li> Log-Log plot for Allan deviation</li>
+<li> Angle random walk plot</li>
+<li> Overlapping Allan deviation, modified Allan deviation, time Allan deviation, Hadamard  Allan deviation, overlapping Hadamard  Allan deviation</li></ol>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol><li> Import data "fftfilter3.dat" from <i>&lt;Origin Installation Directory&gt;\Samples\Signal Processing\</i> into an empty worksheet.</li>
+<li> With this worksheet active, select the imported data (Column A and B) and click the "Allan Variance" icon from Apps panel to bring up the dialog for Allan Variance.
+<dl><dd> <a  class="image"><img alt="Allan Variance 1.png" src="../images/Allan_Variance/Allan_Variance_1.png?v=76544" width="402"  /></a></dd></dl></li>
+<li> Keep the default settings and click the OK button to get the result, together with a log-log plot of Allan variance.
+<dl><dd> <a  class="image"><img alt="Allan Variance 2.png" src="../images/Allan_Variance/Allan_Variance_2.png?v=76545" width="741"  /></a></dd>
+<dd> <a  class="image"><img alt="Allan Variance 3.png" src="../images/Allan_Variance/Allan_Variance_3.png?v=76546" width="705"  /></a></dd></dl></li></ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="Input"></a><span class="mw-headline">Input</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Recalculate
+</th>
+<td> Specify recalculate mode.
+<ul><li> <b>None</b>: No recalculation.</li>
+<li> <b>Auto</b>: Auto recalculate the result when input data change.</li>
+<li> <b>Manual</b>: Recalculate the result manually when input data change.</li></ul>
+</td></tr>
+<tr>
+<th> Data Type
+</th>
+<td> Specify whether input data is Phase or Frequency
+</td></tr>
+<tr>
+<th> Input Data
+</th>
+<td> Specify the input data for Allan variance calculation.
+</td></tr>
+<tr>
+<th> Sampling Interval
+</th>
+<td> Specify sampling interval or use the automatically calculated value according to your X data.
+</td></tr>
+<tr>
+<th> tau Values Type
+</th>
+<td>
+<ul><li> <b>All</b>: calculate the result for tau values from 1 to one-half of the number of input points. </li>
+<li> <b>Octave</b>: define tau values by an exponent of base 2.</li>
+<li> <b>Custom</b>: choose tau Values from the worksheet.</li></ul>
+</td></tr></table>
+<h3><a name="Graph"></a><span class="mw-headline">Graph</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Log-Log Plot
+</th>
+<td> Specify if to make a log-log plot for Allan variance result data.
+</td></tr>
+<tr>
+<th> Add Angle Random Walk Plot
+</th>
+<td> If check it will add Angle Random Walk Plot. Available if Log-Log Plot is checked.
+</td></tr></table>
+<h3><a name="Output"></a><span class="mw-headline">Output</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Allan Deviation
+</th>
+<td> Specify where to output Allan deviation.
+</td></tr>
+<tr>
+<th> Allan Variance
+</th>
+<td> Specify whether to output Allan Variance, and if yes, where to output.
+</td></tr>
+<tr>
+<th> Overlapping Allan Deviation
+</th>
+<td> Specify whether to output Overlapping Allan Deviation, and if yes, where to output.
+</td></tr>
+<tr>
+<th> Modified Allan Deviation
+</th>
+<td> Specify whether to output Modified Allan Deviation, and if yes, where to output.
+</td></tr>
+<tr>
+<th> Time Allan Deviation
+</th>
+<td> Specify whether to output Time Allan Deviation, and if yes, where to output.
+</td></tr>
+<tr>
+<th> Hadamard Allan Deviation
+</th>
+<td> Specify whether to output Hadamard Allan Deviation, and if yes, where to output.
+</td></tr>
+<tr>
+<th> Overlapping Hadamard Allan Deviation
+</th>
+<td> Specify whether to output Overlapping Hadamard Allan Deviation, and if yes, where to output.
+</td></tr></table>
+
+
+
+
+
+

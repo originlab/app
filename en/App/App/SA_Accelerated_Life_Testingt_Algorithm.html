@@ -1,0 +1,55 @@
+<h1 class="firstHeading">2.5.4.2 Algorithm: Accelerated Life Testing</h1><p class='urlname' style='display: none'>SA-Accelerated-Life-Testing-Algorithm</p>
+<p>This tool supports two types of input. 
+</p><p><b>Uncensor/Right Censor data</b>: 
+The data are represented as time and censoring indicator pairs <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-812b99dbb32ab9a16f2b71170cc9bfd6.png?v=0" title="(t_i, censoring)" alt="(t_i, censoring)" class="tex"/>:
+</p>
+<dl><dd><ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-f406db9a09c0430f7e54c1a3bb217c3e.png?v=0" title="t_i" alt="t_i" class="tex"/>: The observed time for each unit. This could be <b>Exact failure time</b> (if the unit failed) or <b>Time to censoring</b> (if the unit did not fail within the observation period)</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-f99e26b89c3bccea4488dde3213fb617.png?v=0" title="censoring" alt="censoring" class="tex"/>:  Indicates whether the unitis a failure or censored. e.g. 1 = failure (uncensored), 0 = censored</li></ul></dd></dl>
+<p><b>Uncensor/Arbitrary Censor data</b>: 
+The data are represented as time intervals <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-29ba7906659ab2cedd5a5be2aee9dad9.png?v=0" title="(tl_i, tr_i)" alt="(tl_i, tr_i)" class="tex"/>:
+</p>
+<dl><dd><ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-d604b01acf23506a7e38f6046e2b7368.png?v=0" title="tl_i" alt="tl_i" class="tex"/>: lower bound (time of last inspection or last known survival)</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-37a0c5f38570b6331eb91c82ab866980.png?v=0" title="tr_i" alt="tr_i" class="tex"/>: upper bound (time when failure was first detected)</li>
+<li> If <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-dd9977f86586fdd2d98c8e532ecafd57.png?v=0" title="tr_i = \infty" alt="tr_i = \infty" class="tex"/>, it represents right-censoring.</li>
+<li> If <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-56245822575101ed40c107004fb2adb3.png?v=0" title="tl_i = tr_i" alt="tl_i = tr_i" class="tex"/>, it represents exact failure (uncensored).</li></ul></dd></dl>
+<h1><a name="Regression_Table"></a><span class="mw-headline">Regression Table</span></h1>
+<p>The lifetime regression function can be derived from the <a href="../../App/App/Algorithm_IDD.html#Distributions" title="App:Algorithm IDD"> inverse cumulative distribution</a> function. For weibull distribution:
+</p>
+<dl><dd> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-6f1d0fa9f9fe35a4e4d039dafa4f0371.png?v=0" title="\ln(t) = \ln(\eta) + \frac{1}{\beta}\ln(-\ln(1-p))" alt="\ln(t) = \ln(\eta) + \frac{1}{\beta}\ln(-\ln(1-p))" class="tex"/></dd></dl>
+<ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>: time to failure</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>: cumulative probability <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-775caad45308a2ae46fe3a6a4cf15f91.png?v=0" title="P(T\le t)" alt="P(T\le t)" class="tex"/></li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-ffe9f913124f345732e9f00fa258552e.png?v=0" title="\eta" alt="\eta" class="tex"/>: scale parameter (characteristic life)</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>: shape parameter</li></ul>
+<p>In Accelerated Life Testing, the logarithm of scale (<img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-262227f0b70b952fa568396352b53b36.png?v=0" title="ln(\eta)" alt="ln(\eta)" class="tex"/>) is linearly correlated to the transformed accelerating variable (<img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-5b61a1b298a0d06efa6933a97e68d763.png?v=0" title="AR" alt="AR" class="tex"/>). We can then write the inverse cumulative distribution function as follows:
+</p>
+<dl><dd> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-120d2a7a5c1deb0803beca46fe1eb152.png?v=0" title=" y = ax + b + \sigma\Phi^{-1}(p) " alt=" y = ax + b + \sigma\Phi^{-1}(p) " class="tex"/></dd></dl>
+<p>where
+</p>
+<ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-1ea04e222f899f5c94dd6661f5ffe6d2.png?v=0" title="y = \ln(t)" alt="y = \ln(t)" class="tex"/> .</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-9dd4e461268c8034f5c8564e155c67a6.png?v=0" title="x" alt="x" class="tex"/>: the transformed <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-5b61a1b298a0d06efa6933a97e68d763.png?v=0" title="AR" alt="AR" class="tex"/>.</li></ul>
+<dl><dd> Linear:   <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-c282990723c27c8cbc87426712b5f17e.png?v=0" title="x = AR" alt="x = AR" class="tex"/></dd>
+<dd> Arrhenius:   <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-9fad9186e92588a23477df96f745ac7f.png?v=0" title="x = \frac{11604.53}{AR+273.16}" alt="x = \frac{11604.53}{AR+273.16}" class="tex"/></dd>
+<dd> Inverse temp:   <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-4ff91510572467d081b6ef306a704055.png?v=0" title="x = \frac{1}{AR+273.16}" alt="x = \frac{1}{AR+273.16}" class="tex"/></dd>
+<dd> Ln (Power):   <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-050363518eb81e92bdd0f3503236942c.png?v=0" title="x = \ln(AR)" alt="x = \ln(AR)" class="tex"/></dd></dl>
+<ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/>: coefficient of <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-9dd4e461268c8034f5c8564e155c67a6.png?v=0" title="x" alt="x" class="tex"/>.</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/>: intercept</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: for weibull distribution, it is <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-1385f3702529ee9df22538ac2d334df5.png?v=0" title="1/\beta" alt="1/\beta" class="tex"/>.</li>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-d7c1415601e7787706053f726d1823e2.png?v=0" title="\Phi^{-1}(p)" alt="\Phi^{-1}(p)" class="tex"/>: the pth quantile of the standardized ditribution. For weibull distribution, it is <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-72c511e03943617c944646da3b1fe0b4.png?v=0" title="(-ln(1-p))" alt="(-ln(1-p))" class="tex"/></li></ul>
+<p><b>MLE</b> (<a href="../../App/App/Algorithm_IDD.html" title="App:Algorithm IDD">maximum likelihood estimation</a>) method is then used to estimate parameters <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/>, <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/> and <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>. For <b>MLE</b>, the standard error of the fitting parameters can be calculated by <a href="../../App/App/Algorithm_IDD.html#Estimate_Parameter.27s_Standard_Error" title="App:Algorithm IDD"> <b>Fisher information matrix</b></a> (FIM).
+</p>
+<h1><a name="Probability_Plot"></a><span class="mw-headline">Probability Plot</span></h1>
+<p><b>Uncensor/Right Censor data</b>
+</p>
+<dl><dd> Points on the plot is calculated by the <a href="../../App/App/Algorithm_IDD.html#Probability_Plot" title="App:Algorithm IDD"> Benard's method</a>.</dd></dl>
+<p><b>Uncensor/Arbitrary Censor data</b>
+</p>
+<dl><dd> Points on the plot is calculated by the Turbull estimation[<a href="#Ref1">1</a>]. Turnbull developed an iterative algorithm to obtain the nonparametric maximum likelihood estimate (NPMLE) of the cumulative distribution function for censored data. This approach is applicable to more general cases, including situations where the observation intervals overlap.</dd></dl>
+<h1><a name="Reference"></a><span class="mw-headline">Reference</span></h1>
+<ol><li> <span id="Ref1"><span> B.W. Turnbull (1976). "The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data". <i>Journal of the Royal Statistical Society</i>, 38: pp. 290-295.</span></li></ol>
+<p></span>
+</p>
+
+
+
+
+

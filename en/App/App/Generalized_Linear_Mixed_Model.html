@@ -1,0 +1,80 @@
+<h1 class="firstHeading">2.76 Generalized Linear Mixed Model(Pro)</h1><p class='urlname' style='display: none'>GLMM</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Sample_File"><span class="tocnumber">2.1</span> <span class="toctext">Sample File</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps"><span class="tocnumber">2.2</span> <span class="toctext">Steps</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Results_and_Explanations"><span class="tocnumber">2.3</span> <span class="toctext">Results and Explanations</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>The <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=956" target="_blank">Generalized Linear Mixed Model</a> app is used to fit a generalized linear mixed model, which drops the normality and identity-link assumptions of <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=567" target="_blank">Linear Mixed Effects Model</a> and extend it to non-Gaussian and non-linear data.
+</p>
+<table class="note">
+
+<tr>
+<td><b>Note:</b>
+<p>The app requires R software (recommended version 4.4.1) and package (lme4). If R is not yet installed on your computer, please follow the steps in <i><b>Description</b></i> &gt; <i><b>Installation</b></i> section on <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=956" target="_blank">this page</a> to install it.
+</p>
+</td></tr></table>
+<p><br />
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Generalized_Linear_Mixed_Model/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Relative Topics: </b></i>
+</p>
+<ul><li><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=567" target="_blank">Linear Mixed Effects Model</a> </li>
+<li><a href="../../App/App/General_Linear_Regression.html" title="App:General Linear Regression">General Linear Model</a></li></ul>
+</td></tr></table>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<h3><a name="Sample_File"></a><span class="mw-headline">Sample File</span></h3>
+<p>This tutorial uses the sample OPJU file shipped with the app. Right click the <b>Generalized Linear Mixed Model</b> app icon <a  class="image"><img alt="GLMM Icon.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Icon.png?v=77929" width="31"  /></a>  in the <b>Apps Gallery</b> (docked at the right side of Origin workspace), and choose <b>Show Samples Folder</b> from the context menu. In the folder that opens, drag-and-drop the project file <i><b>Generalized Linear Mixed Model Sample.opju</b></i> into Origin.
+</p><p><b>Note:</b> If you want to save the OPJU after changing, it is recommended saving it to a different folder location (e.g. User Files Folder) or with a different name.
+</p>
+<dl><dd><a  class="image"><img alt="GLMM Sample Data.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Sample_Data.png?v=77921" width="663"  /></a></dd></dl>
+<p>To study the begging behaviour of barn-owl nestlings, researchers collected negotiation calls during the 30s before a parent returned (column E in [Book1]Sheet1), and recorded the potential effecting factors including the nest locations (column A), food treatment - satiated or food-deprived (column B), sex of the feeding parent (column C), and brood size (column D). Generalized Linear Mixed Model is used to examine how these factors relate to the call rate.
+</p>
+<h3><a name="Steps"></a><span class="mw-headline">Steps</span></h3>
+<ol>
+<li> Click the <b>Generalized Linear Mixed Model</b> app icon in the <b>Apps Gallery</b> to open the dialog.
+<li> In the Input tab, set as follow:
+<ul>
+<li> <b>Dependent Variable</b> = <i>Col(E)"SiblingNegotiation"</i> 
+<li> <b>Continuous Variables</b> = <i>Col(D)"BroodSize"</i> 
+<li> <b>Categorical Variables</b> = <i>Col(B)"FoodTreatment"</i> and <i>Col(C)"SexParent"</i>
+<ul><li> Specify <b>Deprived</b> and <b>Female</b> for <b>Reference Factor Level</b> of <b>FoodTreatment</b> and <b>SexParenet</b>, respectively.</li> </li></ul>
+<li> <b>1st Subject Variable</b> = <i>Col(A)"Nest"</i> 
+<dl><dd><a  class="image"><img alt="GLMM Tutorial Input Tab.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Tutorial_Input_Tab.png?v=77922" width="725"  /></a></ul></li></dd></dl>
+<li> In the Settings tab, set as follow:
+<ul><li> <b>Family Function</b> = <b>Poisson</b> </li>
+<li> Under <b>Fixed Effects</b> group, choose <b>Custom Model</b> for <b>Model Type</b>, and then choose <i><b>BroodSize, FoodTreatment, SexParent, FoodTreatment*SexParent</b></i> in the popped-up dialog for <b>Model</b>. </li>
+<li> Check <b>Include Intercept</b> checkbox for both <b>Fixed</b> and <b>Random Effects</b>.</li></ul>
+<dl><dd><a  class="image"><img alt="GLMM Tutorial Settings Tab.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Tutorial_Settings_Tab.png?v=77927" width="794"  /></a></li></dd></dl>
+<li> In the Quantities tab, check to output all the quantities.
+<dl><dd><a  class="image"><img alt="GLMM Tutorial Quantities Tab.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Tutorial_Quantities_Tab.png?v=77924" width="295"  /></a></li></dd></dl>
+<li> In the Plots tab, check all plots.
+<dl><dd><a  class="image"><img alt="GLMM Tutorial Plots Tab.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Tutorial_Plots_Tab.png?v=77925" width="295"  /></a></li></dd></dl>
+<li> Click <b>OK</b>.
+</ol>
+<h3><a name="Results_and_Explanations"></a><span class="mw-headline">Results and Explanations</span></h3>
+<ul>
+<li><b>Fixed Effect Parameters</b> Table
+<dl><dd><a  class="image"><img alt="GLMM Tutorial Fixed Effect Parameters.png" src="../images/Generalized_Linear_Mixed_Model/GLMM_Tutorial_Fixed_Effect_Parameters.png?v=77926" width="534"  /></a></dd></dl>
+<ul>
+<li> <b>Intercept</b> 1.21135 represents the predicted calls (in Log scale) which is used as a "reference" - supposing a brood of food-deprived nestlings fed by a female parent with brood size = 0 (a purely mathematical zero). That is, <code>exp(1.21135) = 3.358</code> calls in 30s immediately before the adult arrives. This <i>Intercept</i> is considered the "baseline" and all the effects listed below (<i>BroodSize, FoodTreament, SexParent</i>) are calculated as deviations from it. 
+<li> <b>BroodSize</b>: <code>exp(0.19407) = 1.214</code> shows the call increment along with each additional nestling. That is, the call rate increases by 21.4% when every new nestling adds to the same nest, indicating intensified sibling negotiation as the brood size grows.
+<li> Similar, <b>FoodTreatment</b> = Satiated: <code>exp(-0.65544) =  0.519</code>. Satiated nestlings produce 48.1&#160;% fewer calls than deprived ones, reflecting that hunger strongly amplifies begging.
+<li> <b>SexParent</b> = Male: <code>exp(-0.03568) = 0.965</code> tells that calls are 3.5% lower when the father feeds. However, p = 0.42813 &gt; 0.05 indicates no significant difference between male and female parents.
+<li> The last row is an interaction item, <b>FoodTreatment*SexParent</b>. p = 0.06437 &gt; 0.05, therefore we drop the interaction term and keep the additive model only. </ul></li>
+<li><b>Random Effect</b> Summary
+<ul>
+<li> The <b>Random Effect Parameter</b> table quantifies how much call rates differ among nests after accounting for fixed effects.
+<li> The <b>Random Effects Variance</b> table calculates the variance of the nest-location intercept (<b>Variance</b> = 0.17188, <b>SD</b> = 0.41459). Using the latent-scale approximation for a Poisson-log, we roughly calculate <code>ICC ≈ Variance / (Variance + 1) ≈ 0.172 / 1.172 ≈ 0.15</code>, indicating that roughly 15&#160;% of the residual variation is attributable to between-nest differences, while most variation rises within nest (the fixed effects).
+</ul></li>
+</ul>
+
+

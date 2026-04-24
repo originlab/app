@@ -1,0 +1,146 @@
+<h1 class="firstHeading">3.4 Onset Of Slope</h1><p class='urlname' style='display: none'>Onset-Of-Slope</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Onset_of_Slope_Tab"><span class="tocnumber">3.1</span> <span class="toctext">Onset of Slope Tab</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Fly-out_Menu"><span class="tocnumber">4</span> <span class="toctext">Fly-out Menu</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=288" target="_blank">Onset Of Slope</a> app is used to estimate the onset of slope change in a graph curve. This app allows you to place up to four Region-of-Interest (ROI) objects on a graph, and perform a linear regression on data points within each ROI.  Each ROI should delineate a line segment of uniform slope. The app then calculates the intersection points of adjacent linear regression lines.
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol>
+<li> Create a new workbook by clicking <b>New WorkBook</b> button <a  class="image"><img alt="New Workbook button.png" src="../images/Onset_Of_Slope/New_Workbook_button.png?v=72714" width="19"  /></a> on the <b>Standard</b> toolbar. With the empty worksheet activated, select menu <b>Data: Connect to File: Text/CSV</b>. Browse to the folder <i>&lt;Origin Installation Directory&gt;\Samples\Curve Fitting\</i> and select the data file <i>Polynomial Fit.dat</i>. Accept default settings to import.
+<li>Click column C's header to select this column. Choose menu <b>Plot&gt; 2D Basic: Scatter</b> to make a scatter plot.
+<dl><dd><a  class="image"><img alt="Onset Of Slope 00.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_00.png?v=75873" width="734"  /></a></dd></dl>
+<li>Click the <b>Onset Of Slope</b> icon <a  class="image"><img alt="Onset Of Slope icon.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_icon.png?v=75874" width="32"  /></a> in the <b>Apps Gallery</b>.
+<li> In the opened dialog, 
+<ul><li> set <b>No. of Rects</b> to 3, which will put 3 ROI boxes to the graph </li>
+<li> set the <b>From</b> and <b>To</b> for each ROI as follow:</li></ul>
+<dl><dd><ul><li><b>Rect 1</b> from 0 to 5, </li>
+<li><b>Rect 2</b> from 5 to 15, </li>
+<li> <b>Rect 3</b> from 15 to 23.</li></ul></dd>
+<dd>Note that after ROI boxes are added to the graph, you can always move or resize the rectangle boxes to adjust their ranges.</dd>
+<dd><a  class="image"><img alt="Onset Of Slope 01.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_01.png?v=75876" width="303"  /></a></dd></dl>
+<li> Keep other settings as default and click <b>OK</b> button. 3 ROI boxes are added to the graph. Linear regression is performed to fit the data inside each section, and the intersection point of fitted lines of adjacent sections are found and tagged to the graph.
+<dl><dd><a  class="image"><img alt="Onset Of Slope 02.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_02.png?v=75878" width="470"  /></a></dd></dl>
+<li>Click the triangle button at the top-right corner of the 3rd ROI to bring up the context menu. Choose <b>Tag Lines</b>. After clicking the <b>X</b> button to remove ROI boxes, the fitted lines and tagged intersection points remains on the graph. 
+<dl><dd><a  class="image"><img alt="Onset Of Slope 03.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_03.png?v=75880" width="702"  /></a></dd></dl>
+<br />Also, the related result data is put to a new worksheet.
+<dl><dd><a  class="image"><img alt="Onset Of Slope 06.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_06.png?v=75884" width="739"  /></a></dd></dl>
+<li>Finally let’s customize the text labels a bit. Double click on the label to open the <b>Plot Details</b> dialog. On Label tab, change <b>Color</b> to blue, and <b>Size</b> to 22, then click <b>OK</b>.
+<dl><dd><a  class="image"><img alt="Onset Of Slope 04.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_04.png?v=75881" width="746"  /></a></dd></dl>
+<br />And get the final result as below picture shows.
+<dl><dd><a  class="image"><img alt="Onset Of Slope 05.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_05.png?v=75883" width="390"  /></a></dd></dl>
+</ol> 
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="Onset_of_Slope_Tab"></a><span class="mw-headline">Onset of Slope Tab</span></h3>
+<p><a  class="image"><img alt="Onset Of Slope 8.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_8.png?v=76350" width="330"  /></a>
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th> No. of Rects
+</th>
+<td> Specify how many rectangles to add to the graph for section of data.
+</td></tr>
+<tr>
+<th> Rect 1
+</th>
+<td> Settings for the 1st rectangle.
+<ul><li> Fill Color: Fill color of the 1st rectangle.</li>
+<li> From: Specify the X coordinate of leftmost line of the 1st rectangle.</li>
+<li> To: Specify the X coordinate of rightmost line of the 1st rectangle.</li></ul>
+</td></tr>
+<tr>
+<th> Rect 2
+</th>
+<td> Same as Rect 1.
+</td></tr>
+<tr>
+<th> Rect 3
+</th>
+<td> Same as Rect 1. It is available when <b>No. of Rects</b> is 3 or 4.
+</td></tr>
+<tr>
+<th> Rect 4
+</th>
+<td> Same as Rect 1. It is available when <b>No. of Rects</b> is 4.
+</td></tr>
+<tr>
+<th> Fit Line Color
+</th>
+<td> Specify the color of each section's fit line.
+</td></tr>
+<tr>
+<th> Intersection Point Marker
+</th>
+<td> Settings for the marker of intersection point.
+<ul><li> Color: Set marker's edge color.</li>
+<li> Fill Color: Set marker's fill color.</li>
+<li> Symbol: Set marker's symbol.</li>
+<li> Size: Set marker's size.</li></ul>
+</td></tr>
+<tr>
+<th> Intersection Point Label
+</th>
+<td> Settings for the label of intersection point.
+<ul><li> Color: Set label color.</li>
+<li> Size: Set label size.</li>
+<li> Type: Set what to show as label, including three options, X, Y, and (X, Y).</li>
+<li> Rotate(deg.): Set rotate angle of the label, in unit of degree.</li></ul>
+</td></tr></table>
+<h2><a name="Fly-out_Menu"></a><span class="mw-headline">Fly-out Menu</span></h2>
+<p>Click the button <a  class="image"><img alt="ROI menu.png" src="../images/Onset_Of_Slope/ROI_menu.png?v=70237" width="21"  /></a> at the upper-right corner of the layer to expand the fly-out menu, which includes the following options.
+</p>
+<dl><dd><a  class="image"><img alt="Onset Of Slope 10.png" src="../images/Onset_Of_Slope/Onset_Of_Slope_10.png?v=76351" width="172"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Output to Clipboard
+</th>
+<td> Output results to clipboard
+</td></tr>
+<tr>
+<th> Tag Lines
+</th>
+<td> Tag the current results (fit line and intersection point info) to the graph.
+</td></tr>
+<tr>
+<th> Change Data
+</th>
+<td> Select the source data set. This is applicable only when there are multiple curves on the graph.
+</td></tr>
+<tr>
+<th> Save Theme
+</th>
+<td> Save the settings as a theme.
+</td></tr>
+<tr>
+<th> Save as &lt;default&gt;
+</th>
+<td> Save the settings as default theme.
+</td></tr>
+<tr>
+<th> Load Theme
+</th>
+<td> Load theme settings.
+</td></tr>
+<tr>
+<th> Preferences
+</th>
+<td> Open the <b>Onset Of Slope Preferences</b> dialog.
+</td></tr></table>
+
+
+
+
+
+

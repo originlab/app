@@ -1,0 +1,34 @@
+<h1 class="firstHeading">1.25 Chebyshev Polynomial Fit</h1><p class='urlname' style='display: none'>Chebyshev-Polynomial-Fit</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a></li>
+</ul>
+</div>
+</div> 
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>This <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=465" target="_blank">Chebyshev Polynomial Fit App</a> can be used to fit data to Chebyshev polynomial series of the first kind.
+<img src="../images/Chebyshev_Polynomial_Fit/math-9508b4a22d31286415120186bec02606.png?v=0" title="f( x ) = A_{0} *T_{0}( \overline{x} ) + A_{1}*T_{1}( \overline{x} )+....+A_{n}*T_{n}( \overline{x} )" alt="f( x ) = A_{0} *T_{0}( \overline{x} ) + A_{1}*T_{1}( \overline{x} )+....+A_{n}*T_{n}( \overline{x} )" class="tex"/>
+</p><p>Each polynomial is represented with normalized argument <img src="../images/Chebyshev_Polynomial_Fit/math-90d79af00b1e8a4722f418bd2fa0a839.png?v=0" title="\overline{x}" alt="\overline{x}" class="tex"/> by the recurrence relation<br />
+<img src="../images/Chebyshev_Polynomial_Fit/math-b1bcc5ba5e23c1a831bdbaf2b1825d70.png?v=0" title="T_{0}( \overline{x} )=1" alt="T_{0}( \overline{x} )=1" class="tex"/><br />
+<img src="../images/Chebyshev_Polynomial_Fit/math-5a0c9bf7a8809683428a0e4059779805.png?v=0" title="T_{1}( \overline{x} )=\overline{x}" alt="T_{1}( \overline{x} )=\overline{x}" class="tex"/><br />
+<img src="../images/Chebyshev_Polynomial_Fit/math-086fa439847daea9bf928999006f9117.png?v=0" title="T_{n+1}( \overline{x} ) = 2\overline{x}T_{n}( \overline{x} )-T_{n-1}( \overline{x} )" alt="T_{n+1}( \overline{x} ) = 2\overline{x}T_{n}( \overline{x} )-T_{n-1}( \overline{x} )" class="tex"/>
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol>
+<li> New a workbook and import ..\Samples\Curve Fitting\Gaussian.dat. Set Col(C) as Y Error.
+<li> Select the whole sheet and open Chebyshev Polynomial Fit.
+<li> You can choose No Weighting, Direct Weighting or Instrumental as how you want to treat errors as weight.
+<li> Choose polynomial order.
+<li> Click Preview or check Auto Preview to view fitted curve.
+<dl><dd><a  class="image"><img alt="Cheb poly fit.png" src="../images/Chebyshev_Polynomial_Fit/Cheb_poly_fit.png?v=76209" width="864"  /></a></dd></dl>
+<li> Specify Quantities and Plots to output. Click OK.
+<dl><dd><a  class="image"><img alt="Cheb poly fit repo.png" src="../images/Chebyshev_Polynomial_Fit/Cheb_poly_fit_repo.png?v=76210" width="664"  /></a></dd>
+<dd><a  class="image"><img alt="Cheb poly fit plot.png" src="../images/Chebyshev_Polynomial_Fit/Cheb_poly_fit_plot.png?v=76211" width="516"  /></a></dd></dl>
+</ol>
+
+
+
+
+
+

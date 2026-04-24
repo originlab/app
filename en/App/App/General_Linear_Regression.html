@@ -1,0 +1,96 @@
+<h1 class="firstHeading">2.26 General Linear Regression (Pro)</h1><p class='urlname' style='display: none'>GLR</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Sample_Data"><span class="tocnumber">2.1</span> <span class="toctext">Sample Data</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps"><span class="tocnumber">2.2</span> <span class="toctext">Steps</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Results_and_Explanations"><span class="tocnumber">2.3</span> <span class="toctext">Results and Explanations</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Post-process:_Optimize"><span class="tocnumber">2.4</span> <span class="toctext">Post-process: Optimize</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>The <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=336" target="_blank">General Linear Regression app</a> is used to fit the classical linear model to a set of continuous, normally-distributed, homoscedastic, and independent observations (dependent variable) against any combination of categorical or continuous predictors (independent variables), estimating the linear relationship between them via ordinary least squares.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/General_Linear_Regression/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Relative Topics: </b></i>
+</p>
+<ul><li><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=567" target="_blank">Linear Mixed Effects Model</a> </li>
+<li><a href="../../App/App/Generalized_Linear_Mixed_Model.html" title="App:Generalized Linear Mixed Model">Generalized Linear Mixed Model</a></li></ul>
+</td></tr></table>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<h3><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h3>
+<p>This tutorial uses an online .csv file. Please use <b>Web Connector</b> to import the sample data:
+</p>
+<ol>
+<li> Select menu <b>Data: Connect to Web</b>.
+<li> Copy the following link and paste it to the <b>URL</b> edit box of the <b>Connect to Web</b> dialog.  
+<pre class="lt" style="font-family:monospace;">https<span style="color: #000000;">:</span><span style="color: #008000;">//blog.originlab.com/wp-content/uploads/2026/01/GLRSampleData.csv</span></pre>
+<dl><dd><a  class="image"><img alt="GLR Connector.png" src="../images/General_Linear_Regression/GLR_Connector.png?v=78005" width="535"  /></a></li></dd></dl>
+<li> Click <b>OK</b> to import.
+</ol>
+<dl><dd><a  class="image"><img alt="GLR Sample Data.png" src="../images/General_Linear_Regression/GLR_Sample_Data.png?v=78006" width="578"  /></a></dd></dl>
+<p><br />To identify the most effective levers for boosting torque, power-train engineers ran bench tests that combined two fuels (column A), two aspiration types (column B), five valve-train architectures (column C), and a continuous sweep of bore diameters (column D) and stroke lengths (column E). They then use <b>General Linear Regression</b> to fit the data to quantify each factor's marginal contribution to peak torque.
+</p>
+<h3><a name="Steps"></a><span class="mw-headline">Steps</span></h3>
+<ol>
+<li> Click the <b>General Linear Regression</b> icon <a  class="image"><img alt="GLMApp.png" src="../images/General_Linear_Regression/GLMApp.png?v=78007" width="32"  /></a> in the <b>Apps Gallery</b> (docked at the right side of workspace) to open the dialog.
+<li> In the Input tab, set as follow:
+<ul>
+<li> <b>Dependent Variables</b> = col(F)"Torque", 
+<li> <b>Continuous</b> = col(D)"Bore Diameter" and col(E)"Stroke" 
+<li> <b>Categorical</b> = col(A)"Fuel", col(B)"Aspiration", and col(C)"Engine".
+<ul><li> Under <b>Reference Factor Level</b> sub-branch, make sure "GAS" is set for <b>Fuel</b>, “TURBO” for <b>Aspiration</b>, and "OHCV" for <b>Engine</b>, respectively. </li></ul>
+<dl><dd><a  class="image"><img alt="GLM Input.png" src="../images/General_Linear_Regression/GLM_Input.png?v=78008" width="460"  /></a></ul></li></dd></dl>
+<li> In the Settings tab, 
+<ul><li> make sure <b>Model Type</b> is set to <b>Main Effects</b> to fit only the main effects (Bore Diameter, Stroke, Fuel, Aspiration, Engine) and omit all interactions. </li>
+<li> leave <b>Coding Type</b> as <b>(1,0)</b> to estimate the mean difference between each level and the <b>Reference Factor Level</b>. </li></ul>
+<dl><dd><a  class="image"><img alt="GLM Settings.png" src="../images/General_Linear_Regression/GLM_Settings.png?v=78010" width="802"  /></a></li></dd></dl>
+<li> Accept all other default settings and click <b>OK</b>.
+<dl><dd><a  class="image"><img alt="GLM Custom Model.png" src="../images/General_Linear_Regression/GLM_Custom_Model.png?v=78011" width="751"  /></a></dd></dl>
+</ol>
+<h3><a name="Results_and_Explanations"></a><span class="mw-headline">Results and Explanations</span></h3>
+<dl><dd><a  class="image"><img alt="GLR Report.png" src="../images/General_Linear_Regression/GLR_Report.png?v=78014" width="653"  /></a></dd></dl>
+<ul>
+<li><b>Parameters</b> Table
+<ul>
+<li> <b>Intercept</b> <code>-88.68576</code> N·m represents the predicted mean Torque used as "reference", when Fuel = GAS, Aspiration = TURBO, Engine = OHCV, Bore Diameter = 0 mm, and Stroke = 0 mm (0 is a purely mathematical zero). This <b>Intercept</b> is considered the "baseline" and all other effects listed below are deviations from it.
+<li> All <code>p &lt; 0.05</code>. At the level of 0.05, all variables significant influence torque. This can also be confirmed by the <b>Effect Tests</b> table.
+<li> For continuous variables, <b>Bore_Diameter</b>: <code>2.54975</code>, each 1 mm increase in bore diameter raises mean torque by 2.55 N·m; similarly, each 1 mm increase in stroke raises it by 0.68 N·m.
+<li> For categorical variables, <b>Fuel = DIESEL</b>: <code>–33.4472</code>, indicating diesel reduces torque mean by -33.45 N·m; similarly, all non-reference levels of <b>Aspiration</b> (= STD) and <b>Engine</b> (= OHC, OHCF, DOHC and L) show negative coefficients versus reference level. Thus, the reference level combination, Fuel =GAS, Aspiration = TURBO, Engine = OHCV, gives the highest predicted torque.
+</ul>
+<li> <b>Effect Tests</b> Tables 
+<ul><li> The <b>Parameters</b> table quantifies torque gain per 1 mm bore diameter/stroke length and the large drop when switching fuel, aspiration, or engine types. Together with the <b>F Value</b> in the <b>Effect Tests</b> table, bore diameter gives the steepest marginal increase, while categorical variables shift torque by roughly the same magnitude. This would provide a worthy reference on future design tuning.</li></ul>
+</li></ul>
+<h3><a name="Post-process:_Optimize"></a><span class="mw-headline">Post-process: Optimize</span></h3>
+<p>After the GLR analysis, Origin provides an <b>Optimizer</b> tool to find the best factor settings for the target response, based on the fitted model. 
+</p><p>For example, engineers want to find the combination of bore diameter and stroke length that maximizes torque while keeping the engine GAS-Turbo-OHCV.
+</p>
+<ol>
+<li>Activate the <i><b>GLR Report</b></i> sheet. Move the mouse to the page edge until the cursor changes into <a  class="image"><img alt="Mini toolbar cursor icon.png" src="../images/General_Linear_Regression/Mini_toolbar_cursor_icon.png?v=78016" width="30"  /></a>. Left-click and from the popped-up mini-toolbar, select the <b>Optimizer</b> button.
+<dl><dd><a  class="image"><img alt="GLR Optimizer mini toolbar.png" src="../images/General_Linear_Regression/GLR_Optimizer_mini_toolbar.png?v=78017" width="510"  /></a></dd></dl>
+<li>In the <b>Optimize Responese</b> dialog, set as follow:
+<ul>
+<li>In Goal tab, set <b>Torque Goal</b> to <b>Maximize</b>. Specify <b>Lower Limit</b> = 50, <b>Upper Limit</b> = 220.
+<dl><dd><a  class="image"><img alt="GLR Optimizer Goal tab.png" src="../images/General_Linear_Regression/GLR_Optimizer_Goal_tab.png?v=78019" width="715"  /></a></dd></dl>
+<li>In Settings tab, lock or bound each factor:
+<ul><li> <b>Fuel&#160;: Constrain values</b> = GAS</li>
+<li> <b>Aspiration&#160;: Constrain values</b> = TURBO</li>
+<li> <b>Engine&#160;: Constrain values</b> = OHCV</li>
+<li> <b>Bore_Diameter&#160;: Constrain to region</b> = [75, 95]</li>
+<li> <b>Stroke&#160;: Constrain to region</b> = [55, 80]</li></ul>
+<dl><dd><a  class="image"><img alt="GLR Optimizer Settings tab.png" src="../images/General_Linear_Regression/GLR_Optimizer_Settings_tab.png?v=78020" width="675"  /></a></li></ul></dd></dl>
+<li>Click <b>OK</b> to generate report.
+<dl><dd><a  class="image"><img alt="GLR Optimizer Report.png" src="../images/General_Linear_Regression/GLR_Optimizer_Report.png?v=78021" width="559"  /></a></dd></dl>
+<ul>
+<li><b>Solution</b> table: within the specified feasible window (Bore 75–95 mm, Stroke 55–80 mm, Fuel = GAS, Aspiration = TURBO, Engine = OHCV), torque peaks at the upper-right corner of the response surface: Bore = 90 mm, Stroke = 80 mm.<br />
+Because both continuous factors show positive, nearly linear coefficients (which can be confirmed in the <b>Optimization Plot</b>), the algorithm simply rides the gradient until it hits the data-extent boundary at 90 mm bore (limited by the boundary of Torque we specified, even though the bore upper limit we set is 95 mm).
+<li><b>Prediction</b> table gives the maximum fitted Torque value <code>195.34575</code> N·m under the <b>Solution</b> configuration. 
+<li>Double-clicking on the <b>Optimization Plot</b> to open it in a separate window. Drag the red slider in each factor panel to see how torque changes in real time. 
+</ul></li></ol>
+
+

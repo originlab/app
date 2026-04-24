@@ -1,0 +1,552 @@
+<h1 class="firstHeading">1.3 Heat Map with Dendrogram(Pro)</h1><p class='urlname' style='display: none'>Heat-Map-Dendrogram-Intro</p>
+<p><br />
+<i><b>More information:</b></i>
+</p>
+<ul><li> <a href="../../App/App/Heat_Map_with_Dendrogram.html" title="App:Heat Map with Dendrogram">Tutorial: Heat Map with Dendrogram</a></li></ul>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Heatmap_with_Dendrogram_Dialog_Box"><span class="tocnumber">2</span> <span class="toctext">Heatmap with Dendrogram Dialog Box</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Input_Data"><span class="tocnumber">2.1</span> <span class="toctext">Input Data</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Transform"><span class="tocnumber">2.2</span> <span class="toctext">Transform</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Settings"><span class="tocnumber">2.3</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Side_Colors_for_Column.2FRow"><span class="tocnumber">2.4</span> <span class="toctext">Side Colors for Column/Row</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Plot_Data"><span class="tocnumber">2.5</span> <span class="toctext">Plot Data</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Recalculate"><span class="tocnumber">2.6</span> <span class="toctext">Recalculate</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#HeatmapDendrogram_X-Function_.28Pro.29"><span class="tocnumber">3</span> <span class="toctext">HeatmapDendrogram X-Function (Pro)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Brief_Information"><span class="tocnumber">3.1</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Command_Line_Usage"><span class="tocnumber">3.2</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Variables"><span class="tocnumber">3.3</span> <span class="toctext">Variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#trcol"><span class="tocnumber">3.3.1</span> <span class="toctext">trcol</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#trrow"><span class="tocnumber">3.3.2</span> <span class="toctext">trrow</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<p>The <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=223" target="_blank">Heat Map with Dendrogram app</a> can be used to 
+</p>
+<ol><li> Impute missing values, standardize data and perform log2 transform</li>
+<li> Perform hierarchical cluster analysis along columns and rows</li>
+<li> Plot heat map with dendrogram</li></ol>
+<dl><dd><a  class="image"><img alt="Intro Heat Map with Dendrogram 01.png" src="../images/Heat_Map_with_Dendrogram(App)/Intro_Heat_Map_with_Dendrogram_01.png?v=78359" width="493"  /></a></dd></dl>
+<h2><a name="Heatmap_with_Dendrogram_Dialog_Box"></a><span class="mw-headline">Heatmap with Dendrogram Dialog Box</span></h2>
+<h3><a name="Input_Data"></a><span class="mw-headline">Input Data</span></h3>
+<p>Select data in the worksheet to plot heatmap with dendrogram.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Input
+</th>
+<td>Specify the input data to plot.
+</td></tr>
+<tr>
+<th>Exchange Column Row
+</th>
+<td>Specify whether exchange the column and row of input data to plot the heatmap.
+</td></tr>
+<tr>
+<th>Column Labels in
+</th>
+<td>Specify column labels for heatmap's x axis.
+<ul><li> None</li></ul>
+<p>Use row number as heatmap's x axis tick labels.
+</p>
+<ul><li> 1st Row</li></ul>
+<p>Use 1st row in the worksheet as heatmap's x axis tick labels.
+</p>
+<ul><li> Long Name</li></ul>
+<p>Use column's long Name in the worksheet as heatmap's x axis tick labels.
+</p>
+<ul><li> Units</li></ul>
+<p>Use column's Units in the worksheet as heatmap's x axis tick labels.
+</p>
+<ul><li> Comments</li></ul>
+<p>Use column's Comments in the worksheet as heatmap's x axis tick labels.
+</p>
+</td></tr>
+<tr>
+<th>Row Labels in
+</th>
+<td>Specify row labels for heatmap's y axis.
+<ul><li> None</li></ul>
+<p>Use row number as heatmap's y axis tick labels.
+</p>
+<ul><li> 1st Column</li></ul>
+<p>Use 1st column in the worksheet as heatmap's y axis tick labels.
+</p>
+</td></tr></table>
+<h3><a name="Transform"></a><span class="mw-headline">Transform</span></h3>
+<p>Transform data before plotting.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Impute Missing Value
+</th>
+<td>Specify the way to handle missing values.
+<ul><li> None</li></ul>
+<p>Keep missing values
+</p>
+<ul><li> with Row Mean</li></ul>
+<p>Replace missing value with row mean.
+</p>
+<ul><li> with Column Mean</li></ul>
+<p>Replace missing value with column mean
+</p>
+</td></tr>
+<tr>
+<th>Standardize
+</th>
+<td>Specify the method to standardize variables.
+<ul><li> None</li></ul>
+<p>Data are not standardized.
+</p>
+<ul><li> Columns</li></ul>
+<p>Columns are standardized with zero mean and unit standard deviation. 
+</p>
+<ul><li> Rows</li></ul>
+<p>Rows are standardized with zero mean and unit standard deviation.
+</p>
+</td></tr>
+<tr>
+<th>Log2 Transform
+</th>
+<td>Specify whether to perform log2 transform.
+</td></tr></table>
+<h3><a name="Settings"></a><span class="mw-headline">Settings</span></h3>
+<p>Specify settings for the <b>Hierarchical Cluster Analysis</b> along columns and rows.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Cluster
+</th>
+<td>Specify the dimension to cluster data.
+<ul><li> Columns</li></ul>
+<p>Perform <b>Hierarchical Cluster Analysis</b> along rows and cluster columns.
+</p>
+<ul><li> Rows</li></ul>
+<p>Perform <b>Hierarchical Cluster Analysis</b> along columns and cluster rows.
+</p>
+<ul><li> Both</li></ul>
+<p>Perform <b>Hierarchical Cluster Analysis</b> along rows and cluster columns, then along columns and cluster rows.
+</p>
+</td></tr>
+<tr>
+<th>Cluster Columns
+</th>
+<td>Specify settings to cluster columns.
+<ul><li> Cluster Method</li></ul>
+<p>Specify the linkage method to calculate the distance between a cluster and a new cluster. See cluster method options in <a class="external text" href="https://www.originlab.com/doc/Origin-Help/HCA-Dialog" target="_blank">Hierarchical Cluster Analysis</a>
+</p>
+<ul><li> Distance Type</li></ul>
+<p>Specify a distance type to calculate the distance between two columns. See distance type options in <a class="external text" href="https://www.originlab.com/doc/Origin-Help/HCA-Dialog" target="_blank">Hierarchical Cluster Analysis</a>
+</p>
+<ul><li> Number of Clusters</li></ul>
+<p>Specify the number of clusters. The value should be greater than 0 and no more than the number of columns.
+</p>
+<ul><li> Gap between Clusters</li></ul>
+<p>Specify the gap between clusters. 
+</p>
+</td></tr>
+<tr>
+<th>Cluster Rows
+</th>
+<td>Specify settings to cluster rows.
+<ul><li> Cluster Method</li></ul>
+<p>Specify the linkage method to calculate the distance between a cluster and a new cluster. See cluster method options in <a class="external text" href="https://www.originlab.com/doc/Origin-Help/HCA-Dialog" target="_blank">Hierarchical Cluster Analysis</a>
+</p>
+<ul><li> Distance Type</li></ul>
+<p>Specify a distance type to calculate the distance between two rows. See distance type options in <a class="external text" href="https://www.originlab.com/doc/Origin-Help/HCA-Dialog" target="_blank">Hierarchical Cluster Analysis</a>
+</p>
+<ul><li> Number of Clusters</li></ul>
+<p>Specify the number of clusters. The value should be greater than 0 and no more than the number of rows.
+</p>
+<ul><li> Gap between Clusters</li></ul>
+<p>Specify the gap between clusters. 
+</p>
+</td></tr></table>
+<h3><a name="Side_Colors_for_Column.2FRow"></a><span class="mw-headline">Side Colors for Column/Row</span></h3>
+<p>Specify whether and how to show side colors for columns and rows of heatmap.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Side Colors
+</th>
+<td>
+</td></tr>
+<tr>
+<th>Position
+</th>
+<td>
+</td></tr>
+<tr>
+<th>Width
+</th>
+<td>
+</td></tr>
+<tr>
+<th>Gap
+</th>
+<td>
+</td></tr></table>
+<h3><a name="Plot_Data"></a><span class="mw-headline">Plot Data</span></h3>
+<p>Specify the worksheet for heatmap plot data.
+</p>
+<h3><a name="Recalculate"></a><span class="mw-headline">Recalculate</span></h3>
+<p>Specify the way to recalculate and update the result if there is any change in the input data or settings.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>None
+</th>
+<td>The output will not be connected to the source data, and any change will not result in an update of the result. And you can't change settings to recalculate the result.
+</td></tr>
+<tr>
+<th>Auto
+</th>
+<td>The result automatically updates when source data change. You can also change settings to recalculate the result.
+</td></tr>
+<tr>
+<th>Manual
+</th>
+<td>The result will not automatically update when the source data changes. You must manually activate the update by clicking the Recalculate button <a  class="image"><img alt="Button Recalculate Manual.png" src="../images/Heat_Map_with_Dendrogram(App)/Button_Recalculate_Manual.png?v=8174" width="22"  /></a> in the Standard toolbar. You can also change settings to recalculate the result.
+</td></tr></table>
+<h2><a name="HeatmapDendrogram_X-Function_.28Pro.29"></a><span class="mw-headline">HeatmapDendrogram X-Function (Pro)</span></h2>
+<h3><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h3>
+<p>Perform hierarchical cluster analysis, and plot heatmap with dendrogram.
+</p>
+<h3><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h3>
+<p><code>
+HeatMapDendrogram iw:=[Book1]Sheet1 -r 2 impute:=0 std:=2;
+</code>
+</p>
+<h3><a name="Variables"></a><span class="mw-headline">Variables</span></h3>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Input Worksheet
+</td>
+<td>iw
+</td>
+<td>
+<p>Input
+</p><p>Worksheet
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> Specify the worksheet for data to plot.
+</td></tr>
+<tr>
+<td>Column Labels in
+</td>
+<td>clabel
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> Specify column labels for heatmap's x axis.
+<p>Option list:
+</p>
+<ul><li> 0:None</li></ul>
+<p>Use row number as heatmap's x axis tick labels.
+</p>
+<ul><li> 1:1st Row</li></ul>
+<p>Use 1st row in the worksheet as heatmap's x axis tick labels.
+</p>
+<ul><li> 2:Long Name</li></ul>
+<p>Use column's long Name in the worksheet as heatmap's x axis tick labels.
+</p>
+<ul><li> 3:Units</li></ul>
+<p>Use column's Units in the worksheet as heatmap's x axis tick labels.
+</p>
+<ul><li> 4:Comments</li></ul>
+<p>Use column's Comments in the worksheet as heatmap's x axis tick labels.
+</p>
+</td></tr>
+<tr>
+<td>Row Labels in
+</td>
+<td>rlabel
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> Specify row labels for heatmap's y axis.
+<p>Option list:
+</p>
+<ul><li> 0:None</li></ul>
+<p>Use row number as heatmap's y axis tick labels.
+</p>
+<ul><li> 1:1st Column</li></ul>
+<p>Use 1st column in the worksheet as heatmap's y axis tick labels.
+</p>
+</td></tr>
+<tr>
+<td>Impute Missing Value
+</td>
+<td>impute
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> Specify the way to handle missing values.
+<p>Option list:
+</p>
+<ul><li> 0:None</li></ul>
+<p>Keep missing values
+</p>
+<ul><li> 1:with Row Mean</li></ul>
+<p>Replace missing value with row mean.
+</p>
+<ul><li> 2:with Column Mean</li></ul>
+<p>Replace missing value with column mean
+</p>
+</td></tr>
+<tr>
+<td>Standardize
+</td>
+<td>std
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>None</center>
+</td>
+<td> Specify the method to standardize variables.
+<p>Option list:
+</p>
+<ul><li> 0:None</li></ul>
+<p>Data are not standardized.
+</p>
+<ul><li> 1:Columns</li></ul>
+<p>Columns are standardized with zero mean and unit standard deviation. 
+</p>
+<ul><li> 2:Rows</li></ul>
+<p>Rows are standardized with zero mean and unit standard deviation.
+</p>
+</td></tr>
+<tr>
+<td>Log2 Transform
+</td>
+<td>log2
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> Specify whether to perform log2 transform.
+</td></tr>
+<tr>
+<td>Cluster
+</td>
+<td>cluster
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> Specify the dimension to cluster data.
+<p>Option list:
+</p>
+<ul><li> 0:Columns</li></ul>
+<p>Perform <b>Hierarchical Cluster Analysis</b> along rows and cluster columns.
+</p>
+<ul><li> 1:Rows</li></ul>
+<p>Perform <b>Hierarchical Cluster Analysis</b> along columns and cluster rows.
+</p>
+<ul><li> 2:Both</li></ul>
+<p>Perform <b>Hierarchical Cluster Analysis</b> along rows and cluster columns, then along columns and cluster rows.
+</p>
+</td></tr>
+<tr>
+<td>Cluster Columns
+</td>
+<td>trcol
+</td>
+<td>
+<p>Input
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> Specify settings to cluster columns.
+</td></tr>
+<tr>
+<td>Cluster Rows
+</td>
+<td>trrow
+</td>
+<td>
+<p>Input
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> Specify settings to cluster rows.
+</td></tr>
+<tr>
+<td>Plot Data
+</td>
+<td>od
+</td>
+<td>
+<p>Output
+</p><p>Worksheet
+</p>
+</td>
+<td> <center>[&lt;new&gt;]&lt;new&gt;!</center>
+</td>
+<td> Specify the worksheet for heatmap plot data.
+</td></tr></table>
+<h4><a name="trcol"></a><span class="mw-headline">trcol</span></h4>
+<p>The <b>trcol</b> treenode specifies settings to cluster columns.
+</p><p>Syntax: <b>trcol.<i>Treenode:= &lt;value&gt;</i></b>
+</p><p>Example: <b>trcol.nc:=2</b>
+</p>
+<table class="xfvar">
+<tr>
+<th> Treenode
+</th>
+<th> Label
+</th>
+<th> Type
+</th>
+<th> Default
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>link
+</td>
+<td>Cluster Method
+</td>
+<td>int
+</td>
+<td>2
+</td>
+<td>Specify the linkage method to calculate the distance between a cluster and a new cluster. See cluster method options in <a class="external text" href="../../XFunction/X-Function/Hcluster.html">hcluster X-Function</a>.
+</td></tr>
+<tr>
+<td>dist
+</td>
+<td>Distance Type
+</td>
+<td>int
+</td>
+<td>0
+</td>
+<td>Specify a distance type to calculate the distance between two columns. See distance type options in <a class="external text" href="../../XFunction/X-Function/Hcluster.html">hcluster X-Function</a>.
+</td></tr>
+<tr>
+<td>nc
+</td>
+<td>Number of Clusters
+</td>
+<td>int
+</td>
+<td>1
+</td>
+<td>Specify the number of clusters. The value should be greater than 0 and no more than the number of columns.
+</td></tr></table>
+<h4><a name="trrow"></a><span class="mw-headline">trrow</span></h4>
+<p>The <b>trrow</b> treenode specifies settings to cluster rows.
+</p><p>Syntax: <b>trrow.<i>Treenode:= &lt;value&gt;</i></b>
+</p><p>Example: <b>trrow.nc:=2</b>
+</p>
+<table class="xfvar">
+<tr>
+<th> Treenode
+</th>
+<th> Label
+</th>
+<th> Type
+</th>
+<th> Default
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>link
+</td>
+<td>Cluster Method
+</td>
+<td>int
+</td>
+<td>2
+</td>
+<td>Specify the linkage method to calculate the distance between a cluster and a new cluster. See cluster method options in <a class="external text" href="../../XFunction/X-Function/Hcluster.html">hcluster X-Function</a>.
+</td></tr>
+<tr>
+<td>dist
+</td>
+<td>Distance Type
+</td>
+<td>int
+</td>
+<td>0
+</td>
+<td>Specify a distance type to calculate the distance between two rows. See distance type options in <a class="external text" href="../../XFunction/X-Function/Hcluster.html">hcluster X-Function</a>.
+</td></tr>
+<tr>
+<td>nc
+</td>
+<td>Number of Clusters
+</td>
+<td>int
+</td>
+<td>1
+</td>
+<td>Specify the number of clusters. The value should be greater than 0 and no more than the number of rows.
+</td></tr></table>
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<h1 class="firstHeading">2.5.2.1 Tutorial for Nonparametric Distribution Analysis (Arbitrary Censoring)</h1><p class='urlname' style='display: none'>Tutorial-Nonparametric-Distribution-Analysis-Arbitrary-Censoring</p>
+<p>In this example, a factory has two types of high-lift pumps and want to investigate their service life. To control costs, engineers shut down, disassembled, and inspected the pumps every 1,000 hours, recording arbitrarily censored data up to 8500 hours. They will now use Nonparametric Distribution Analysis to obtain and compare the survival-probability plots of the two types.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/SA_Nonparametric_Dist_Tutorial/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Nonparametric Distribution Analysis for Arbitrary Censoring</b></i>:
+</p>
+<ul><li> <i><a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html" title="App:SA Nonparametric Dist Algorithm">Algorithm</a></i></li></ul>
+</td></tr></table>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the Reliability and Survival app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Nonparametric_Dist_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose Show Sample Folder to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>2. Nonparametric Distribution Analysis (Arbitrary Censoring) </i>.
+</p><p>[Book2]Sheet1 shows a typical censored data for nonparametric distribution analysis - a combination of left-, right-, and interval censored observations. This example includes two groups, each group begins with a left-censored entry, continues with several interval censored entries, and end with a right-censored line.
+</p><p>Origin’s right-censoring analysis requires the censored data arranged in the following format: 
+</p>
+<ul><li> Start time: beginning of the interval (months, weeks, seasons, etc.), </li>
+<li> End time: end of the interval (same unit as Start time), </li>
+<li> Frequencies: count of failures in the interval. </li>
+<li> For left-censored units (1st and 11th row in this example), the Start Time is missing. Frequencies counts units already failed by the End Time</li>
+<li> For right-censored units (10th and20th row), the End Time is missing. Frequencies counts units still surviving  at the Start Time.</li></ul>
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 00.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_00.png?v=77673" width="636"  /></a></dd></dl>
+<p>The Frequencies column is optional. If omitted, you can duplicate the interval and each duplicate represents one failure.
+</p>
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 00a.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_00a.png?v=77672" width="651"  /></a></dd></dl>
+<p><b>Note:</b> If your data contain only exact failure times or right censored observations, please use <a href="../../App/Category/Parametric_Distribution_Analysis(App).html" title="Category:Parametric Distribution Analysis(App)">Parametric Distribution Analysis for Right Censoring</a> instead.
+</p>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book2]Sheet1 active, click the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Nonparametric_Dist_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the <b>App Gallery</b> . In the opened panel, choose <b>Nonparametric Distribution Analysis for Arbitrary Censoring</b>.
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 01.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_01.png?v=77674" width="565"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings as follow:
+<ul>
+<li>On Input tab, select column A for <b>Start Time</b>, column B for <b>End Time</b>, column C for <b>Frequency</b>, and column D for <b>Group</b>, respectively.
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 02 Input.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_02_Input.png?v=77671" width="448"  /></a></dd></dl>
+<li>On Estimate Method tab, <b>Estimation Method</b> uses <b>Turnbull</b> by default. For more information about the two estimation methods, refer to <a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html" title="App:SA Nonparametric Dist Algorithm">this page</a>. Keep these settings unchanged.
+<dl><dd> <a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 02 Estimate Method.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_02_Estimate_Method.png?v=77670" width="606"  /></a></dd></dl>
+<li>On Survival Tables tab, check <b>Turnbull Survival Probabilities</b> checkbox.
+<dl><dd> <a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 02 Survival Tables.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_02_Survival_Tables.png?v=77669" width="514"  /></a></dd></dl>
+<li>On Survival Plots tab, select <b>Cumulative Failure Plot</b> and <b>Display Confidence Band</b> checkboxes.
+<dl><dd> <a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 02 Survival Plot.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_02_Survival_Plot.png?v=77668" width="452"  /></a></dd></dl>
+</ul></li>
+<li>Click <b>OK</b> button to generate report sheets.
+</ol>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 03 Estimates.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_03_Estimates.png?v=77676" width="496"  /></a></dd></dl>
+<ul><li> The Turnbull Estimates table reports the failure timing. We can see that for type 1, the failure peak, 20.513% (0.20513), failed between 3500-4500 hours, while for type 2, the failures peak happened in two intervals, 25.253% (0.25253) in 6800-7500 h and 23.232% (0.23232) in 7500-8500 h.  Peak of type 2 shifted more than 3000 h later.</li></ul>
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 03 Survval Probabilities.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_03_Survval_Probabilities.png?v=77675" width="786"  /></a></dd></dl>
+<ul><li> The Survival Probabilities table gives the probability that a unit is still working at each specific time point and is used to check reliability requirement. From it we can tell that in the confidence interval of 95%, the pumps of type 1 can be used about 500 hours but drops below 95% soon after, whereas type 2 remains until at least 4500 h. This order-of-magnitude difference, which is also visible in both the Survival Analysis Plots and Cumulative Failure Plots, confirms that type 2 pumps are significantly more reliable than type 1. </li></ul>
+<p>From this report we can conclud that without a specific parametric distribution assumption, pumps of type 2 demonstrate significantly higher reliability. Engineers should focus on improvements in materials and processes for type 2 to push failures even further out.
+</p>
+

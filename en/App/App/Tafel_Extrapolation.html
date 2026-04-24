@@ -1,0 +1,194 @@
+<h1 class="firstHeading">3.1 Tafel Extrapolation</h1><p class='urlname' style='display: none'>Tafel-Extrapolation</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#ROI_Box_Tab"><span class="tocnumber">3.1</span> <span class="toctext">ROI Box Tab</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Output_Tab"><span class="tocnumber">3.2</span> <span class="toctext">Output Tab</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Fly-out_Menu"><span class="tocnumber">4</span> <span class="toctext">Fly-out Menu</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#More_Info"><span class="tocnumber">5</span> <span class="toctext">More Info</span></a></li>
+</ul>
+</div>
+</div> 
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=219" target="_blank">Tafel Extrapolation app</a> is capable of calculating corrosion potential and corrosion current from a corrosion process curve which shows anodic and cathodic components of current.
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol>
+<li> Activate an empty worksheet, then run the following script in the <b>Script Window</b> to import the data for this example.
+<pre class="oc" style="font-family:monospace;">fname$ <span style="color: #000080;">=</span> <span style="color: #ff00ff;">&quot;%@ATafel Extrapolation<span style="color: #666666; font-weight: bold;">\T</span>afelData.dat&quot;</span>;
+impasc;</pre>
+<li> Select Y column, and then select <b>Plot: Basic 2D: Scatter</b> menu to make a Scatter plot.</li>
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation 1.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_1.png?v=70231" width="642"  /></a></dd></dl>
+<li> Make this newly created graph as the active window, then select the <b>Tafel Extrapolation</b> app icon <a  class="image"><img alt="Tafel Extrapolation icon.png" src="../images/Tafel_Extrapolation/50px-Tafel_Extrapolation_icon.png?v=70232" width="50"   /></a> from the Apps panel to bring up the dialog.
+
+
+<li> Keep the default settings for <b>ROI Box</b> tab, and check <b>Append to Worksheet</b> checkbox in <b>Output</b> tab.
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation 2.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_2.png?v=70233" width="306"  /></a></dd></dl>
+
+<li> Click <b>OK</b> button and go back to the graph. 
+
+<li> Drag the red and cyan cursor at the bottom/ top of X Axis to move the two vertical lines to the positions as the following image shows. And you can see the corresponding results are updated on the graph.
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation 3.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_3.png?v=70234" width="758"  /></a></dd></dl>
+
+<li> Click the <a  class="image"><img alt="ROI menu.png" src="../images/Tafel_Extrapolation/ROI_menu.png?v=70237" width="21"  /></a> button, and then select <b>New Output (O)</b>, then the result will be printed to Script Window.
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation 4.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_4.png?v=70235" width="821"  /></a></dd></dl>
+
+<li> Click the <a  class="image"><img alt="ROI menu.png" src="../images/Tafel_Extrapolation/ROI_menu.png?v=70237" width="21"  /></a> button, and then select <b>Go to Report Worksheet</b>, then the report worksheet will be the active window to show the output results.
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation 5.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_5.png?v=70236" width="900"  /></a></dd></dl>
+</ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="ROI_Box_Tab"></a><span class="mw-headline">ROI Box Tab</span></h3>
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation ROI Box.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_ROI_Box.png?v=76340" width="331"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Show Tool Name
+</th>
+<td> Specify whether to show the tool's name near the top left corner of the layer.
+</td></tr>
+<tr>
+<th> Show on Graph
+</th>
+<td> Specify what to show on the graph.
+<ul><li> Tangent Point Coordinates
+<dl><dd> Specify whether to show the XY coordinate of the tangent point on the graph.</dd></dl></li>
+<li> Anodic Tafel Slope
+<dl><dd> Specify whether to show the anodic Tafel slope of anodic curve on the graph.</dd></dl></li>
+<li> Anodic Tafel Angle
+<dl><dd> Specify whether to show the anodic Tafel angle of anodic curve on the graph.</dd></dl></li>
+<li> Anodic Curve Function
+<dl><dd> Specify whether to show the expression of anodic curve function on the graph.</dd></dl></li>
+<li> Cathodic Tafel Slope
+<dl><dd> Specify whether to show the cathodic Tafel slope of cathodic curve on the graph.</dd></dl></li>
+<li> Cathodic Tafel Angle
+<dl><dd> Specify whether to show the cathodic Tafel angle of cathodic curve on the graph.</dd></dl></li>
+<li> Cathodic Curve Function
+<dl><dd> Specify whether to show the expression of cathodic curve function on the graph.</dd></dl></li>
+<li> Ecorr and Icorr
+<dl><dd> Specify whether to show the corrosion potential and corrosion current on the graph.</dd></dl></li>
+<li> E0, Icorr,a and Icorr,c
+<dl><dd> Specify whether to show E0, Icorr,a and Icorr,c on the graph.</dd></dl></li>
+<li> Icorr in Nonlogarithmic Form
+<dl><dd> Specify whether Icorr in Nonlogarithmic Form</dd></dl></li>
+<li> Logarithmic Base
+<dl><dd> Specify Logarithmic Base. Available if above checkbox is checked.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Color Setting
+</th>
+<td> Specify the corresponding object's displaying color, of which:
+<ul><li> Vertical Anodic Line Color
+<dl><dd> Specify the color of the vertical line, which is used to select a point from the curve of graph, so to get the tangent line through this point as anodic curve.</dd></dl></li>
+<li> Vertical Cathodic Line Color
+<dl><dd> Specify the color of the vertical line, which is used to select a point from the curve of graph, so to get the tangent line through this point as cathodic curve.</dd></dl></li></ul>
+</td></tr></table>
+<h3><a name="Output_Tab"></a><span class="mw-headline">Output Tab</span></h3>
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation Output Tab.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_Output_Tab.png?v=76341" width="380"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Output Quantities To
+</th>
+<td> Customize the output results
+<ul><li> Script Window
+<dl><dd> Specify whether to output the results to Script Window.</dd></dl></li>
+<li> Results Log
+<dl><dd> Specify whether to output the results to Results Log.</dd></dl></li>
+<li> Append to Worksheet
+<dl><dd> Specify whether to append the results to a worksheet.</dd></dl></li>
+<li> Result Worksheet Name
+<dl><dd> This is only available when <b>Append to Worksheet</b> is checked. It is used to specify the name of the worksheet.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th> Quantities
+</th>
+<td> Specify the quantities to be outputted.
+<ul><li> Dataset Identifier
+<dl><dd> Specify a dataset identifier.</dd></dl></li>
+<li> Tangent Point Coordinates
+<dl><dd> Specify whether to output the XY coordinate of the tangent point.</dd></dl></li>
+<li> Anodic Tafel Slope
+<dl><dd> Specify whether to output the anodic Tafel slope of anodic curve.</dd></dl></li>
+<li> Anodic Tafel Angle
+<dl><dd> Specify whether to output the anodic Tafel angle of anodic curve.</dd></dl></li>
+<li> Anodic Curve Function
+<dl><dd> Specify whether to output the expression of anodic curve function.</dd></dl></li>
+<li> Cathodic Tafel Slope
+<dl><dd> Specify whether to output the cathodic Tafel slope of cathodic curve.</dd></dl></li>
+<li> Cathodic Tafel Angle
+<dl><dd> Specify whether to output the cathodic Tafel angle of cathodic curve.</dd></dl></li>
+<li> Cathodic Curve Function
+<dl><dd> Specify whether to output the expression of cathodic curve function.</dd></dl></li>
+<li> Ecorr and Icorr
+<dl><dd> Specify whether to output the corrosion potential and corrosion current.</dd></dl></li>
+<li> E0, Icorr,a and Icorr,c
+<dl><dd> Specify whether to output E0, Icorr,a and Icorr,c</dd></dl></li>
+<li> Keep Tangent Line
+<dl><dd> Specify whether to keep Tangent Line after remove the Tafel Extrapolation gadget.</dd></dl></li></ul>
+</td></tr></table>
+<h2><a name="Fly-out_Menu"></a><span class="mw-headline">Fly-out Menu</span></h2>
+<p>Click the button <a  class="image"><img alt="ROI menu.png" src="../images/Tafel_Extrapolation/ROI_menu.png?v=70237" width="21"  /></a> at the upper-right corner of the layer to expand the fly-out menu, which includes the following options.
+</p>
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation Context Menu.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_Context_Menu.png?v=76342" width="191"  /></a></dd></dl>
+<table class="dialogcontroltable">
+
+<tr>
+<th> New Output (O)
+</th>
+<td> Output the results to the specified windows (Script Window or Results Log), and the specified worksheet (if not empty, append the results).
+</td></tr>
+<tr>
+<th> Go to Report Worksheet
+</th>
+<td> Activate the report worksheet.
+</td></tr>
+<tr>
+<th> Go to Source Worksheet
+</th>
+<td> Activate the source data worksheet.
+</td></tr>
+<tr>
+<th> Output to Clipboard
+</th>
+<td> Output the results to clipboard.
+</td></tr>
+<tr>
+<th> Fix ROI Position
+</th>
+<td> Specify whether to fix ROI position.
+</td></tr>
+<tr>
+<th> Save Theme
+</th>
+<td> Save the settings as a theme.
+</td></tr>
+<tr>
+<th> Save as &lt;default&gt;
+</th>
+<td> Save the settings as default theme.
+</td></tr>
+<tr>
+<th> Load Theme
+</th>
+<td> Load theme settings.
+</td></tr>
+<tr>
+<th> Preferences
+</th>
+<td> Open the <b>TafelExtrapolation Preferences</b> dialog.
+</td></tr></table>
+<h2><a name="More_Info"></a><span class="mw-headline">More Info</span></h2>
+<p>The following image shows the relationships about the calculating options.
+</p>
+<dl><dd><a  class="image"><img alt="Tafel Extrapolation Illustration.png" src="../images/Tafel_Extrapolation/Tafel_Extrapolation_Illustration.png?v=76344" width="1024"  /></a></dd></dl>
+
+
+
+
+
+

@@ -1,0 +1,280 @@
+<h1 class="firstHeading">1.4 Tangent</h1><p class='urlname' style='display: none'>Tangent</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Create_the_Tangent_Line"><span class="tocnumber">2.1</span> <span class="toctext">Create the Tangent Line</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Modify_the_Smooth_method"><span class="tocnumber">2.2</span> <span class="toctext">Modify the Smooth method</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Output_the_result"><span class="tocnumber">2.3</span> <span class="toctext">Output the result</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Tangent_tab"><span class="tocnumber">3.1</span> <span class="toctext">Tangent tab</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Derivative_tab"><span class="tocnumber">3.2</span> <span class="toctext">Derivative tab</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Output_tab"><span class="tocnumber">3.3</span> <span class="toctext">Output tab</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Output_Quantities_to"><span class="tocnumber">3.3.1</span> <span class="toctext">Output Quantities to</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Quantities"><span class="tocnumber">3.3.2</span> <span class="toctext">Quantities</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Tangent_Line"><span class="tocnumber">3.3.3</span> <span class="toctext">Tangent Line</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Fly-out_Menu"><span class="tocnumber">4</span> <span class="toctext">Fly-out Menu</span></a></li>
+</ul>
+</div>
+</div> 
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>This <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=227" target="_blank"><b>Tangent</b> app</a> is for plotting the tangent line along a curve. When using this app, Origin adds a vertical line to the graph, allowing you to move the vertical line to select a point from curve. 
+</p><p>A <b>Tangent Preferences</b> dialog is available from the fly out menu. You can save tool settings to a theme file for later use.
+</p><p><br />
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<h3><a name="Create_the_Tangent_Line"></a><span class="mw-headline">Create the Tangent Line</span></h3>
+<ol>
+<li> Import <b>Exponential Decay.dat</b> in the <i>&lt;Origin EXE Folder&gt;\Samples\Curve Fitting\</i> folder. Select Column B, and then select <b>Plot: Basic 2D: Line+Symbol</b> menu to make a Scatter plot.
+
+
+<li>When the graph is active, click <b>Tangent</b> icon <a  class="image"><img alt="Tangent icon.png" src="../images/Tangent/50px-Tangent_icon.png?v=70581" width="50"   /></a> from the Apps panel of Origin to open the app's dialog box. When the dialog is open, you can click <b>F1</b> key open the help file for it.
+<dl><dd><a  class="image"><img alt="Tangent App 01.png" src="../images/Tangent/Tangent_App_01.png?v=70582" width="294"  /></a></dd></dl>
+
+<li>Click <b>OK</b>. You will see that a red vertical line and a blue tangent line are added to the plot. The value of slope is shown at the top. The tangent point is intersected point of the two lines. 
+<table class="note">
+
+<tr>
+<td><b>Note:</b>  The tangent point will be a data point on the graph.
+</td></tr></table>
+<dl><dd><a  class="image"><img alt="Tangent App 02.png" src="../images/Tangent/Tangent_App_02.png?v=70583" width="583"  /></a></dd></dl>
+<li>To select the tangent point, drag the red vertical line to select the data point on the curve. As you do this, displayed information regarding the tangent point, is updated.
+<dl><dd><a  class="image"><img alt="Tangent App 04.png" src="../images/Tangent/900px-Tangent_App_04.png?v=70585" width="900"   /></a></dd></dl>
+</ol>
+<p><br />
+</p>
+<h3><a name="Modify_the_Smooth_method"></a><span class="mw-headline">Modify the Smooth method</span></h3>
+<p>When the curve is not smooth, the tangent line may not be well-fitted to the curve. In such cases, we can use smoothing to affect the calculated derivatives. This tool supply the <b>Smooth</b> method, On the <b>Derivative</b> tab of the <b>Tangent Preferences</b> dialog box, choose <b>B-Spline</b> or <b>Savitzky-Golay</b> from the <b>Smooth</b> list.
+</p>
+<ol>
+<li>Click the <a  class="image"><img alt="Triangle button.png" src="../images/Tangent/Triangle_button.png?v=12017" width="15"  /></a> triangle button at the top right corner of the layer, and select <b>Preferences...</b> from the context menu to reopen Tangent app's settings dialog.
+<dl><dd><a  class="image"><img alt="Tangent App 03.png" src="../images/Tangent/Tangent_App_03.png?v=76347" width="862"  /></a></dd></dl>
+
+<li>
+Go to the <b>Derivative</b> tab, choose B-Spline as smoothing method
+<dl><dd><a  class="image"><img alt="Tangent App 05.png" src="../images/Tangent/Tangent_App_05.png?v=70589" width="274"  /></a></dd>
+<dd><a  class="image"><img alt="Tangent App 06.png" src="../images/Tangent/900px-Tangent_App_06.png?v=70591" width="900"   /></a></dd></dl>
+
+</ol>
+<h3><a name="Output_the_result"></a><span class="mw-headline">Output the result</span></h3>
+<p>You can update output for the tangent line using the fly-out menu of the app. Also, you can customize the output data and position on the <b>Output</b> tab of <b>Tangent Preferences</b> dialog.
+</p>
+<dl><dd><a  class="image"><img alt="Tangent App 07.png" src="../images/Tangent/Tangent_App_07.png?v=76348" width="217"  /></a></dd></dl>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="Tangent_tab"></a><span class="mw-headline">Tangent tab</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Show Tool Name (toolname)
+</th>
+<td>Specify whether to show the tool name in the top-left corner of the layer in the graph. The tool name can be specified in Preferences.
+</td></tr>
+<tr>
+<th>Show on Center-Top
+</th>
+<td>Customize the information that is displayed at the center-top of graph.
+<ul><li><b>Tangent Point Info</b></li></ul>
+<dl><dd>By default, the Curve and Index are listed at the center-top of graph. </dd></dl>
+<ul><li><b>Slope</b></li></ul>
+<dl><dd>By default, the slope is shown at the center-top of graph.</dd></dl>
+<ul><li><b>Angle</b></li></ul>
+<dl><dd>Angle is calculated form the slope, and its range is between 0 and 180.</dd>
+<dd>If slope &gt;0, <img src="../images/Tangent/math-6245c41ac9c4e90e6e0d381d05e76126.png?v=0" title=" angle =180 * \frac{arctan(slope)}{pi}" alt=" angle =180 * \frac{arctan(slope)}{pi}" class="tex"/></dd>
+<dd>If slope &lt;0, <img src="../images/Tangent/math-4cd184f4ec5cb73305920dd924b38e4e.png?v=0" title=" angle =180 * \frac{arctan(slope)}{pi} +180" alt=" angle =180 * \frac{arctan(slope)}{pi} +180" class="tex"/></dd></dl>
+<ul><li><b>Tangent Line Function</b></li></ul>
+<dl><dd><img src="../images/Tangent/math-18422fd2a25aa0db09a2cce9934aec40.png?v=0" title=" y =y0 + slope * (x-x0) " alt=" y =y0 + slope * (x-x0) " class="tex"/>  </dd>
+<dd>(x0, y0) is the value of tangent point.</dd></dl>
+</td></tr>
+<tr>
+<th>Color Setting
+</th>
+<td>
+<ul><li><b>Vertical Line Color</b></li></ul>
+<dl><dd>Specify the intersecting vertical line color. </dd></dl>
+<ul><li><b>Tangent Line Color</b></li></ul>
+<dl><dd>Specify the tangent line color. </dd></dl>
+</td></tr></table>
+<h3><a name="Derivative_tab"></a><span class="mw-headline">Derivative tab</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Smooth
+</th>
+<td>
+<ul><li><b>None</b></li></ul>
+<dl><dd>Do not use any smoothing method.</dd></dl>
+<ul><li><b>B-Spline</b></li></ul>
+<dl><dd>Specify the <b>B-Spline</b> method to get smoothed derivative. This method performs spline interpolation and calculates the derivative from the interpolation function.</dd></dl>
+<ul><li><b>Savitzky-Golay Smooth</b></li></ul>
+<dl><dd>Specify the <b>Savitzky-Golay</b> method to get smoothed derivative. This method performs a local polynomial regression around each point, to find the derivative.</dd></dl>
+</td></tr>
+<tr>
+<th>B-Spline Type
+</th>
+<td>This drop-down list is only available when <b>B-Spline</b> is selected as the smoothing method.
+<ul><li><b>Auto</b></li></ul>
+<dl><dd> This method uses the <b>B-Spline</b> method to interpolate. It automatically attempts to find a satisfactory value as the smoothing factor in the <b>B-Spline</b> interpolation.</dd></dl>
+<ul><li><b>Interpolating Spline</b></li></ul>
+<dl><dd> This method uses <b>Cubic Spline</b> interpolation to calculate the derivative. It splits the input data into a given number of pieces, and fits each segment with a cubic polynomial. </dd></dl>
+<ul><li><b>Fit Cubic Polynomial</b></li></ul>
+<dl><dd> This method performs cubic polynomial fitting and calculates the derivative from the cubic polynomial function.</dd></dl>
+<ul><li><b>Custom</b></li></ul>
+<dl><dd> This method uses the <b>B-Spline</b> method to interpolate. The smoothness of the cubic B-Spline is determined by the <b>Smoothing Factor</b>.</dd></dl>
+</td></tr>
+<tr>
+<th>Smoothing Factor
+</th>
+<td>This parameter is only available when the <b>B-Spline Type</b>  is <b>Custom</b>. <b>Smoothness Factor</b> should be a positive number. The factor helps the user control the balance between smoothing and fidelity to the actual data. Larger values will result in smoother curves.
+</td></tr>
+<tr>
+<th>Polynomial Order
+</th>
+<td>This parameter is only available when <b>Savitzky-Golay</b> is selected as the smoothing method. It specifies the polynomial order.
+</td></tr>
+<tr>
+<th>Points of Window
+</th>
+<td>This parameter is only available when <b>Savitzky-Golay</b> is selected as the smoothing method. It specifies the number of points in the moving window.
+</td></tr></table>
+<h3><a name="Output_tab"></a><span class="mw-headline">Output tab</span></h3>
+<h4><a name="Output_Quantities_to"></a><span class="mw-headline">Output Quantities to</span></h4>
+<p>Customize the output. 
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Script Window
+</th>
+<td> Output results to the Script window.
+</td></tr>
+<tr>
+<th>Results Log
+</th>
+<td>Output results to the Results Log.
+</td></tr>
+<tr>
+<th>Append to Worksheet
+</th>
+<td>Append results to a worksheet.
+</td></tr>
+<tr>
+<th>Add Label to Graph
+</th>
+<td>Output results to a label object on the graph.
+</td></tr></table>
+<h4><a name="Quantities"></a><span class="mw-headline">Quantities</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Dataset Identifier (name)
+</th>
+<td>Specify a dataset identifier.
+</td></tr>
+<tr>
+<th> Tangent Point Index (tangentpoint_i)
+</th>
+<td>Output the index of the Tangent Point.
+</td></tr>
+<tr>
+<th> Tangent Point(tangentpoint)
+</th>
+<td>Output the coordinates of the Tangent Point.
+</td></tr>
+<tr>
+<th> Slope (slope)
+</th>
+<td>Output the slope value.
+</td></tr>
+<tr>
+<th> Angle (angle)
+</th>
+<td>Output the angle value.
+</td></tr>
+<tr>
+<th> Tangent Line Function (function)
+</th>
+<td>Output the function of the tangent line.
+</td></tr></table>
+<h4><a name="Tangent_Line"></a><span class="mw-headline">Tangent Line</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th> Outout To
+</th>
+<td>Output Tangent Line data to Source Sheet/Source Book New Sheet/New Book
+</td></tr></table>
+<h2><a name="Fly-out_Menu"></a><span class="mw-headline">Fly-out Menu</span></h2>
+<p>Click the button <a  class="image"><img alt="ROI menu.png" src="../images/Tangent/ROI_menu.png?v=70237" width="21"  /></a> at the upper-right corner of the layer to expand the fly-out menu.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>New Output
+</th>
+<td>Output results to the specified worksheet (if not empty, append the results).
+</td></tr>
+<tr>
+<th>New Output for All Curves (N)
+</th>
+<td>Output the results for all curves in the current layer to the specified worksheet (if not empty, append the results).
+</td></tr>
+<tr>
+<th>New Output for All Layers (L)
+</th>
+<td>Output the results for all curves in all layers within the current graph to the specified worksheet (if not empty, append the results).
+</td></tr>
+<tr>
+<th>Go to Report Worksheet
+</th>
+<td>Activate the report worksheet, if it exists.
+</td></tr>
+<tr>
+<th>Go to Source Worksheet
+</th>
+<td>Activate the source worksheet.
+</td></tr>
+<tr>
+<th>Output to Clipboard
+</th>
+<td>Output results to clipboard.
+</td></tr>
+<tr>
+<th>Change Data
+</th>
+<td>Change the source dataset. This is applicable only when there are multiple curves on the current graph layer.
+</td></tr>
+<tr>
+<th>Save Theme
+</th>
+<td>Save dialog settings to a Theme.
+</td></tr>
+<tr>
+<th>Save as &lt;default&gt;
+</th>
+<td>Save current settings as the default dialog box Theme.
+</td></tr>
+<tr>
+<th>Load Theme
+</th>
+<td>Load the existing dialog box Theme and apply Theme settings.
+</td></tr>
+<tr>
+<th>Preferences
+</th>
+<td>Open the <b>Tangent Preferences</b> dialog box.
+</td></tr></table>
+
+
+
+
+
+

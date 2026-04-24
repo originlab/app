@@ -1,0 +1,204 @@
+<h1 class="firstHeading">2.8 ODE Solver</h1><p class='urlname' style='display: none'>ODE-Solver</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Ordinary_Differential_Equation"><span class="tocnumber">2.1</span> <span class="toctext">Ordinary Differential Equation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#System_of_Ordinary_Differential_Equations"><span class="tocnumber">2.2</span> <span class="toctext">System of Ordinary Differential Equations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Equation.28s.29"><span class="tocnumber">3.1</span> <span class="toctext">Equation(s)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Integration_Interval"><span class="tocnumber">3.2</span> <span class="toctext">Integration Interval</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Initial_Conditions"><span class="tocnumber">3.3</span> <span class="toctext">Initial Conditions</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Settings"><span class="tocnumber">3.4</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Output_Derivatives"><span class="tocnumber">3.5</span> <span class="toctext">Output Derivatives</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#ODE_Solution"><span class="tocnumber">3.6</span> <span class="toctext">ODE Solution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Algorithm"><span class="tocnumber">4</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=222" target="_blank">ODE Solver</a> app is used to provide arithmetic solution for ordinary differential equations (ODE). It is widely used in mathematics and engineering.
+</p><p>ODE Solver app can solve a single ordinary differential equation or a system of equations. In this tutorial, we will show you both cases. For more examples, please click &#9072; button at the top-right corner of the app dialog or press <b>F1</b> to open document.
+</p>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<h3><a name="Ordinary_Differential_Equation"></a><span class="mw-headline">Ordinary Differential Equation</span></h3>
+<p>Here we consider a nonlinear damped vibration system, that is, the object vibrates under the elastic force of a spring and a nonlinear damping force. The dynamic equation described this system can be written as follow, in which the damping force is in proportion to the square of the velocity:
+</p><p><img src="../images/ODE_Solver/math-cec0f7a92bae81c0a32760cdbf1bfda9.png?v=0" title="\frac {d^{2}y}{d^{2}x}= -2\beta\frac{dy}{dx}- \omega^{2}y- \gamma (\frac{dy}{dx})^{2} " alt="\frac {d^{2}y}{d^{2}x}= -2\beta\frac{dy}{dx}- \omega^{2}y- \gamma (\frac{dy}{dx})^{2} " class="tex"/>
+</p><p>where <i>x</i> is time, <i>y</i> is the displacement of the object, <i>y' </i> is the velocity, <i>y''</i> is acceleration, &#969;, &#946;, &#947; are parameters. In this example, we take their values as follow:
+</p>
+<pre class="lt" style="font-family:monospace;">omega <span style="color: #000080;">=</span> <span style="color: #0000dd;">1.0</span> <span style="color: #008000;">// the natural frequency of the system,</span>
+beta <span style="color: #000080;">=</span> <span style="color: #0000dd;">0.1</span> <span style="color: #008000;">// the linear damping coefficient</span>
+gamma <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span> <span style="color: #008000;">// the nonlinear damping coefficient</span></pre>
+<p>The initial conditions at x0 = 0 are:
+</p><p><img src="../images/ODE_Solver/math-f5ef0f661b3b0d909f28d54ad0d18bfa.png?v=0" title="{y|_{x=x_0} \choose y&#39;|_{x=x_0}} = {1 \choose 0}" alt="{y|_{x=x_0} \choose y&#39;|_{x=x_0}} = {1 \choose 0}" class="tex"/>
+</p><p>We want to integrate the equation in the interval of [0,100]. 
+</p>
+<ol>
+<li>Click the <b>ODE Solver</b> icon <a  class="image"><img alt="ODE Solver icon.png" src="../images/ODE_Solver/ODE_Solver_icon.png?v=75929" width="32"  /></a> in the <b>Apps Gallery</b>.
+<li> In the opened dialog, 
+<ul><li> choose <b>Equation</b>,</li>
+<li> enter 2 in the <b>Order</b> edit box, </li>
+<li> enter the 2nd derivative expression as follow in <b>y''=</b> edit box:<br /><code> -y-2*0.1*y'-0.1*y'^2 </code> </li>
+<li> in <b>Integration Interval</b> branch, enter <b>Start Value</b> = 0 and <b>End Value</b> = 100.</li>
+<li> in <b>Initial Conditions</b> branch, enter <b>y|x=x0</b> = 1 and <b>y'|x=x0</b> = 0.</li>
+<li> in <b>Settings</b> branch, make sure <b>Method</b> is set to <b>Runge-Kutta</b> and <b>RK Order</b> and <b>Relative Tolerance</b> are set as default.</li>
+<li> check <b>Output Derivatives</b> and then check <i>y'</i> since we want to output object's velocity.</li></ul>
+<dl><dd><a  class="image"><img alt="ODE Solver 01.png" src="../images/ODE_Solver/ODE_Solver_01.png?v=75935" width="461"  /></a></dd></dl>
+<br />Click <b>OK</b> button.
+<li>A worksheet named <i>ODE Solution</i> and a graph window are created. 
+<ul><li>The worksheet contains a XY pair solved from the ordinary differential equation we specified above. The third column contains the first derivative.</li>
+<li>The graph visualizes the output results in the worksheet, that is, displacement and velocity versus time. We can tell from it how nonlinear damping force effects on a vibrating system.</li></ul>
+<dl><dd><a  class="image"><img alt="ODE Solver 02.png" src="../images/ODE_Solver/ODE_Solver_02.png?v=75931" width="647"  /></a></dd></dl>
+</ol> 
+<h3><a name="System_of_Ordinary_Differential_Equations"></a><span class="mw-headline">System of Ordinary Differential Equations</span></h3>
+<p>In the second example, we consider a classic ecological model: the Lotka-Volterra competition model:
+</p><p><img src="../images/ODE_Solver/math-ff2fe2bcbf93b2d12a8f4101165d86fc.png?v=0" title="\left( \begin{matrix}\frac{dN_1}{dt} \\\\ \frac{dN_2}{dt} \end{matrix}\right)&#10;= \left( \begin{matrix} r_1N_1\left(1-\frac{N_1+a_{12}N_2}{K_1}\right) \\\\&#10;r_2N_2\left(1-\frac{N_2+a_{21}N_1}{K_2}\right)\end{matrix}\right)" alt="\left( \begin{matrix}\frac{dN_1}{dt} \\\\ \frac{dN_2}{dt} \end{matrix}\right)&#10;= \left( \begin{matrix} r_1N_1\left(1-\frac{N_1+a_{12}N_2}{K_1}\right) \\\\&#10;r_2N_2\left(1-\frac{N_2+a_{21}N_1}{K_2}\right)\end{matrix}\right)" class="tex"/>
+</p><p>This equation system describes the competition between two species under limited resources. <i>N1</i> and <i>N2</i> are the population size of two species, <i>r1</i>, <i>r2</i>, <i>K1</i>, <i>K2</i>, <i>a12</i> and <i>a21</i> are parameters. In this example, we take their values as follow:
+</p>
+<pre class="lt" style="font-family:monospace;">r1 <span style="color: #000080;">=</span> <span style="color: #0000dd;">1.0</span>  <span style="color: #008000;">// intrinsic growth rate of species 1</span>
+r2 <span style="color: #000080;">=</span> <span style="color: #0000dd;">1.5</span>  <span style="color: #008000;">// intrinsic growth rate of species 2</span>
+K1 <span style="color: #000080;">=</span> <span style="color: #0000dd;">10.0</span>  <span style="color: #008000;">// population size of species 1</span>
+K2 <span style="color: #000080;">=</span> <span style="color: #0000dd;">10.0</span>  <span style="color: #008000;">// population size of species 2</span>
+a12 <span style="color: #000080;">=</span> <span style="color: #0000dd;">0.3</span>  <span style="color: #008000;">// competition coefficient of species 1</span>
+a21 <span style="color: #000080;">=</span> <span style="color: #0000dd;">0.6</span>  <span style="color: #008000;">// competition coefficient of species 2</span></pre>
+<p>The initial conditions at x0 = 0 are:
+</p><p><img src="../images/ODE_Solver/math-59a25a4aa39281502107ef38eb636182.png?v=0" title="{N_1|_{t=t_0} \choose N_2|_{t=t_0}} = {10 \choose 5}" alt="{N_1|_{t=t_0} \choose N_2|_{t=t_0}} = {10 \choose 5}" class="tex"/>
+</p><p>We want to integrate the equation in the interval of [0,50]. 
+</p>
+<ol>
+<li>Click the <b>ODE Solver</b> icon <a  class="image"><img alt="ODE Solver icon.png" src="../images/ODE_Solver/ODE_Solver_icon.png?v=75929" width="32"  /></a> in the <b>Apps Gallery</b>.
+<li> In the opened dialog, 
+<ul><li> choose <b>System of Equations</b>,</li>
+<li> enter 2 for <b>Number of Equations</b>, </li>
+<li> enter equations as follow: <br /><b>dy1/dx =</b> <code>y1*(1-(y1+0.3*y2)/10) </code>, <br /><b>dy2/dx =</b> <code>1.5*y2*(1-(y2+0.6*y1)/10) </code>, </li>
+<li> in <b>Integration Interval</b> branch, enter <b>Start Value</b> = 0 and <b>End Value</b> = 50,</li>
+<li> in <b>Initial Conditions</b> branch, enter <b>y1|x=x0</b> = 10 and <b>y2|x=x0</b> = 5,</li>
+<li> in <b>Settings</b> branch, make sure <b>Method</b> is set to <b>Runge-Kutta</b> and <b>RK Order</b> and <b>Relative Tolerance</b> is set as default.</li></ul>
+<dl><dd><a  class="image"><img alt="ODE Solver 03.png" src="../images/ODE_Solver/ODE_Solver_03.png?v=75932" width="436"  /></a></dd></dl>
+<br />Click <b>OK</b> button.
+<li>A worksheet named <i>ODE Solution</i> and a graph window are created. 
+<ul><li>The worksheet contains XY1Y2 datasets solved from the equation system we specified above. </li>
+<li>The graph visualizes the output results in the worksheet. That is, the changes in the population size of two species over time. We can tell from it that after years of competition for resources, the two species may reach a relatively stable "coexistence state".</li></ul>
+<dl><dd><a  class="image"><img alt="ODE Solver 04.png" src="../images/ODE_Solver/ODE_Solver_04.png?v=75933" width="788"  /></a></dd></dl>
+</ol> 
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Type
+</th>
+<td>
+<ul><li><b>Equation</b></li></ul>
+<dl><dd>Solve ordinary differential equation</dd></dl>
+<ul><li><b>System of Equations</b></li></ul>
+<dl><dd>Solve system of first order differential equations</dd></dl>
+</td></tr>
+<tr>
+<th>Order/Number of Equations
+</th>
+<td>If <b>Equation</b> is selected for <b>Type</b>, this specifies order of the differential equation.
+<p>If <b>System of Equations</b> is selected for <b>Type</b>, this specifies number of equations of the system.
+</p>
+</td></tr></table>
+<h3><a name="Equation.28s.29"></a><span class="mw-headline">Equation(s)</span></h3>
+<p>For differential equation, valid variables are <img src="../images/ODE_Solver/math-15cc43c85295a5394dae6c637ac75f22.png?v=0" title="x, y, y&#39;, y&#39;&#39;,...,y^{(\text{Order}-1)}" alt="x, y, y&#39;, y&#39;&#39;,...,y^{(\text{Order}-1)}" class="tex"/>.
+</p><p>For system of differential equations, valid variables are <img src="../images/ODE_Solver/math-abd68053e895145616911ea4822ebbc4.png?v=0" title="x, y_1, y_2, ..., y_{\text{neq}}" alt="x, y_1, y_2, ..., y_{\text{neq}}" class="tex"/> where neq is the number of equations.
+</p>
+<h3><a name="Integration_Interval"></a><span class="mw-headline">Integration Interval</span></h3>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Start Value
+</th>
+<td>Specify start value of integration interval. This is the initial value of the independent variable.
+</td></tr>
+<tr>
+<th>End Value
+</th>
+<td>Specify end value of integration interval. End value should be different from start value.
+</td></tr>
+<tr>
+<th>Number of Points
+</th>
+<td>Specify number of points to output. The points are evenly sampled from the integration interval.
+</td></tr></table>
+<h3><a name="Initial_Conditions"></a><span class="mw-headline">Initial Conditions</span></h3>
+<p>Specify initial conditions at the initial value of the independent variable. For differential equation, specify initial conditions for <img src="../images/ODE_Solver/math-99798416501800dd3b3ad14e48b4bb73.png?v=0" title="y, y&#39;, y&#39;&#39;,...,y^{(\text{Order}-1)}" alt="y, y&#39;, y&#39;&#39;,...,y^{(\text{Order}-1)}" class="tex"/>. For system of differential equations, specify initial conditions for <img src="../images/ODE_Solver/math-7a4a18accf5e01e5d160e9b5dcedf8d8.png?v=0" title="y_1, y_2, ..., y_{\text{neq}}" alt="y_1, y_2, ..., y_{\text{neq}}" class="tex"/>.
+</p>
+<h3><a name="Settings"></a><span class="mw-headline">Settings</span></h3>
+<p>Specify integration algorithm and error control
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Method
+</th>
+<td>Specify integration algorithm. Available options include:
+<ul><li><b>Runge-Kutta</b></li></ul>
+<dl><dd>Usually this is your first choice.</dd></dl>
+<ul><li><b>Adams</b></li></ul>
+<dl><dd>Adams method.</dd></dl>
+<ul><li><b>BDF(Stiff)</b></li></ul>
+<dl><dd>Backward Differentiation Formulae. This algorithm is suitable for stiff problems.</dd></dl>
+</td></tr>
+<tr>
+<th>RK Order
+</th>
+<td>This is available only when <b>Runge-Kutta</b> has been selected for <b>Method</b>. Experience suggests:
+<table align="center">
+<tr>
+<td><b>RK Order</b> </td>
+<td> <b>Relative Tolerance</b>
+</td></tr>
+<tr>
+<td align="center">RK23
+</td>
+<td align="center"><img src="../images/ODE_Solver/math-6de4fb30caf58087bb270b5928b49f4e.png?v=0" title="10^{-2}-10^{-4}" alt="10^{-2}-10^{-4}" class="tex"/>
+</td></tr>
+<tr>
+<td align="center">RK45
+</td>
+<td align="center"><img src="../images/ODE_Solver/math-e77193c2b3d808441b802adbb7bceda9.png?v=0" title="10^{-3}-10^{-6}" alt="10^{-3}-10^{-6}" class="tex"/>
+</td></tr>
+<tr>
+<td align="center">RK78
+</td>
+<td align="center"><img src="../images/ODE_Solver/math-2d007223ef810cdcf4c3b3c37a1200fd.png?v=0" title="10^{-5}-" alt="10^{-5}-" class="tex"/>
+</td></tr></table>
+</td></tr>
+<tr>
+<th>Relative Tolerance
+</th>
+<td>Specify a relative tolerance for controlling the error in the integration. It is available for <b>Runge-Kutta</b> and <b>BDF(Stiff)</b> methods.
+</td></tr>
+<tr>
+<th>Mixed Tolerance
+</th>
+<td>Specify a mixed tolerance for controlling the error in the integration. A mixed tolerance is defined as:
+<dl><dd><img src="../images/ODE_Solver/math-9a6d1b023107c15256862e2e463406f3.png?v=0" title="\sum_{i=1}^{neq} ( \frac{e_i}{ \tau|z_i| + \tau } )^2 \le 1" alt="\sum_{i=1}^{neq} ( \frac{e_i}{ \tau|z_i| + \tau } )^2 \le 1" class="tex"/></dd></dl>
+<p>where neq is number of equations (system of equations) or order of the equation (ordinary differential equation), <img src="../images/ODE_Solver/math-5a5ae0760dc3dac91e546c0ea25586b0.png?v=0" title="z_i" alt="z_i" class="tex"/> is dependent variables (system of equations) or dependent variable and its derivatives (ordinary differential equation), <img src="../images/ODE_Solver/math-8dec559e201a7b6a0f99baeaa1731051.png?v=0" title="e_i" alt="e_i" class="tex"/> is an estimate of the local error at <img src="../images/ODE_Solver/math-5a5ae0760dc3dac91e546c0ea25586b0.png?v=0" title="z_i" alt="z_i" class="tex"/> and <img src="../images/ODE_Solver/math-a6f317b268ae825d94f832f970af607c.png?v=0" title="\tau" alt="\tau" class="tex"/> is the specified mixed tolerance.
+</p><p>This option is available only in <b>Adams</b> method.
+</p>
+</td></tr></table>
+<h3><a name="Output_Derivatives"></a><span class="mw-headline">Output Derivatives</span></h3>
+<p>Specify derivatives to output. This branch is available only when <b>Equation</b> has been selected for <b>Type</b> and <b>Order</b> is larger than 1. User can choose whether to output derivatives <img src="../images/ODE_Solver/math-ac26a036eb17ce96ccdeccd4d013695a.png?v=0" title="y&#39;, y&#39;&#39;,...,y^{(\text{Order}-1)}" alt="y&#39;, y&#39;&#39;,...,y^{(\text{Order}-1)}" class="tex"/>.
+</p>
+<h3><a name="ODE_Solution"></a><span class="mw-headline">ODE Solution</span></h3>
+<p>Specify output worksheet for ODE solution.
+</p>
+<h2><a name="Algorithm"></a><span class="mw-headline">Algorithm</span></h2>
+<ol><li> Algorithm for <b>Runge-Kutta</b>: <a class="external text" href="https://www.originlab.com/pdfs/nagcl09/manual/pdf/d02/d02pvc.pdf" target="_blank">nag_ode_ivp_rk_setup (d02pvc)</a>, <a class="external text" href="https://www.originlab.com/pdfs/nagcl09/manual/pdf/d02/d02pcc.pdf" target="_blank">nag_ode_ivp_rk_range (d02pcc)</a>.</li>
+<li> Algorithm for <b>Adams</b>: <a class="external text" href="https://www.originlab.com/pdfs/nagcl09/manual/pdf/d02/d02cjc.pdf" target="_blank">nag_ode_ivp_adams_gen (d02cjc)</a>.</li>
+<li> Algorithm for <b>BDF(Stiff)</b>: <a class="external text" href="https://www.originlab.com/pdfs/nagcl09/manual/pdf/d02/d02ejc.pdf" target="_blank">nag_ode_ivp_bdf_gen (d02ejc)</a>.</li></ol>
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+<h1 class="firstHeading">2.17 Probability Distribution Calculator (Pro)</h1><p class='urlname' style='display: none'>Probability-Distribution-Calculator</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Dialog_Settings"><span class="tocnumber">3</span> <span class="toctext">Dialog Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Distribution"><span class="tocnumber">3.1</span> <span class="toctext">Distribution</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Calculation"><span class="tocnumber">3.2</span> <span class="toctext">Calculation</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Parameter_Settings"><span class="tocnumber">3.3</span> <span class="toctext">Parameter Settings</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Input"><span class="tocnumber">3.4</span> <span class="toctext">Input</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Options"><span class="tocnumber">3.5</span> <span class="toctext">Options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Formulas"><span class="tocnumber">4</span> <span class="toctext">Formulas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Normal_distribution"><span class="tocnumber">4.1</span> <span class="toctext">Normal distribution</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Lognormal_distribution"><span class="tocnumber">4.2</span> <span class="toctext">Lognormal distribution</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#t_distribution"><span class="tocnumber">4.3</span> <span class="toctext">t distribution</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#F_distribution"><span class="tocnumber">4.4</span> <span class="toctext">F distribution</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Chi-squared_distribution"><span class="tocnumber">4.5</span> <span class="toctext">Chi-squared distribution</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Hypergeometric_distribution"><span class="tocnumber">4.6</span> <span class="toctext">Hypergeometric distribution</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Geometric_distribution"><span class="tocnumber">4.7</span> <span class="toctext">Geometric distribution</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Beta_distribution"><span class="tocnumber">4.8</span> <span class="toctext">Beta distribution</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Exponential_distribution"><span class="tocnumber">4.9</span> <span class="toctext">Exponential distribution</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Gamma_distribution"><span class="tocnumber">4.10</span> <span class="toctext">Gamma distribution</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Weibull_distribution"><span class="tocnumber">4.11</span> <span class="toctext">Weibull distribution</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Uniform_distribution"><span class="tocnumber">4.12</span> <span class="toctext">Uniform distribution</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Binomial_distribution"><span class="tocnumber">4.13</span> <span class="toctext">Binomial distribution</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Poisson_distribution"><span class="tocnumber">4.14</span> <span class="toctext">Poisson distribution</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>The tool <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=304" target="_blank">Critical Value of Distributions</a> is used to calculate critical values of common distributions, such as Normal, LogNormal, t, F, Chi-squared, Hypergeometric, Geometric, Beta, Exponential, Gamma, Weibull, Uniform, Binomial and Poisson. The critical values can be (1) probability density, (2) cumulative probability, and (3) values of inverse cumulative probabliity. 
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
+<p>We want to calculate cumulative probability of Normal distribution at <img src="../images/Probability_Distribution_Calculator/math-566162f3afaf9f5f67e7d7ca7a4b424e.png?v=0" title="x=2" alt="x=2" class="tex"/> with parameters mean = 4 and standard deviation = 1.
+</p>
+<ol><li>Install the tool if you haven't, then run script:<pre class="lt" style="font-family:monospace;">prob_dist_cal <span style="color: #000080;">-</span>d;</pre> or click the app icon Constrained Multiple Regression in App Gallery to open the app dialog</li>
+<li>Choose <b>Normal</b> for the Distribution;</li>
+<li>Choose <b>Cumulative Probability</b> for the Calculation;</li>
+<li>In the part of Parameter Settings: let <b>Mean</b> = 4 and <b>Standard Deviation</b>=1, and then choose <b>Lower Tail</b> for the Tail Type;</li>
+<li>In the part of Input: type 2. And we get the result is 0.0227501 below.
+<dl><dd><a  class="image"><img alt="PDC1.png" src="../images/Probability_Distribution_Calculator/PDC1.png?v=76549" width="486"  /></a></dd></dl></li>
+<li>Click <b>OK</b> to get the report table.
+<dl><dd><a  class="image"><img alt="PDC2.png" src="../images/Probability_Distribution_Calculator/PDC2.png?v=76550" width="306"  /></a></dd></dl></li></ol>
+<h2><a name="Dialog_Settings"></a><span class="mw-headline">Dialog Settings</span></h2>
+<h3><a name="Distribution"></a><span class="mw-headline">Distribution</span></h3>
+<p>Specify which distribution to concern. Normal, LogNormal, t, F, Chi-squared, Hypergeometric, Geometric, Beta, Exponential, Gamma, Weibull, Uniform, Binomial and Poisson distributions are available now.
+</p><p><a  class="image"><img alt="PDC5.png" src="../images/Probability_Distribution_Calculator/PDC5.png?v=76551" width="342"  /></a>
+</p>
+<h3><a name="Calculation"></a><span class="mw-headline">Calculation</span></h3>
+<p>Specify which type of critical values to calculate.
+</p>
+<ol><li>For continuous probability distributions such as Normal, LogNormal, t, F, Chi-squared, Beta, Exponential, Gamma, Weibull and Uniform, the values of <b>probability density</b>, <b>cumulative probability</b>, and <b>inverse cumulative probability</b> can be calculated.</li>
+<li>For discrete probability distributions such as Hypergeometric, Geometric, Binomial and Poisson, the values of <b>probability density</b> and <b>cumulative probability</b> can be calculated.</li></ol>
+<p><a  class="image"><img alt="PDC6.png" src="../images/Probability_Distribution_Calculator/PDC6.png?v=76552" width="482"  /></a>
+</p>
+<h3><a name="Parameter_Settings"></a><span class="mw-headline">Parameter Settings</span></h3>
+<p>Set the values of parameters for the specific distribution chosen already.
+</p><p>For <b>Cumulative Probability</b> and <b>Inverse Cumulative Probability</b> settings, <b>Tail Type</b> option is available to specify which tail type to calculate. The meaning of <b>Lower Tail</b> and <b>Upper Tail</b> is obvious by seeing the figure in the <b>Preview </b> window right to the setting dialog.
+</p><p><a  class="image"><img alt="PDC3.png" src="../images/Probability_Distribution_Calculator/PDC3.png?v=76553" width="352"  /></a><a  class="image"><img alt="PDC4.png" src="../images/Probability_Distribution_Calculator/PDC4.png?v=76554" width="351"  /></a>
+</p>
+<h3><a name="Input"></a><span class="mw-headline">Input</span></h3>
+<p>Specify values at which the critical values of distribution are calculated. Several values can be input at the same time, separating by a space.
+</p><p><a  class="image"><img alt="PDC7.png" src="../images/Probability_Distribution_Calculator/PDC7.png?v=76555" width="467"  /></a>
+</p>
+<h3><a name="Options"></a><span class="mw-headline">Options</span></h3>
+<p>Input more values from Worksheet and output the results.
+</p><p><a  class="image"><img alt="PDC8.png" src="../images/Probability_Distribution_Calculator/PDC8.png?v=76556" width="467"  /></a>
+</p>
+<h2><a name="Formulas"></a><span class="mw-headline">Formulas</span></h2>
+<h3><a name="Normal_distribution"></a><span class="mw-headline">Normal distribution</span></h3>
+<p>The Normal distribution is also called Gaussian distribution. The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-af4a686ae9405d38bf7123b6341f795e.png?v=0" title="f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}," alt="f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> is the mean parameter; <img src="../images/Probability_Distribution_Calculator/math-e647edd3b71de1dfee66e0f60c131a13.png?v=0" title="\sigma&gt;0" alt="\sigma&gt;0" class="tex"/> is standard deviation parameter; and <img src="../images/Probability_Distribution_Calculator/math-982ba133caf1fa101f22472a03e9ad50.png?v=0" title="-\infty &lt; x &lt; \infty" alt="-\infty &lt; x &lt; \infty" class="tex"/>.
+</p>
+<h3><a name="Lognormal_distribution"></a><span class="mw-headline">Lognormal distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-a61cfeaa0dab914597ceec289d17fb70.png?v=0" title="f(x)=\frac{1}{\sqrt{2\pi}\sigma(x-\theta)}e^{-\frac{(\ln(x-\theta)-\mu)^2}{2\sigma^2}}," alt="f(x)=\frac{1}{\sqrt{2\pi}\sigma(x-\theta)}e^{-\frac{(\ln(x-\theta)-\mu)^2}{2\sigma^2}}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> is the scale parameter; <img src="../images/Probability_Distribution_Calculator/math-e647edd3b71de1dfee66e0f60c131a13.png?v=0" title="\sigma&gt;0" alt="\sigma&gt;0" class="tex"/> is location parameter; <img src="../images/Probability_Distribution_Calculator/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/> is threshold parameter; and <img src="../images/Probability_Distribution_Calculator/math-fe82b5113741420c68e314ffebb46581.png?v=0" title="x &gt; \theta" alt="x &gt; \theta" class="tex"/>.
+</p>
+<h3><a name="t_distribution"></a><span class="mw-headline">t distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-d70211ac7cc02d705e5201785e9d5afd.png?v=0" title="f(x)=\frac{\Gamma[(v+1)/2]}{\Gamma(v/2)\sqrt{\pi v}}\left(1+\frac{x^2}{v}\right)^{-(v+1)/2}," alt="f(x)=\frac{\Gamma[(v+1)/2]}{\Gamma(v/2)\sqrt{\pi v}}\left(1+\frac{x^2}{v}\right)^{-(v+1)/2}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-9e3669d19b675bd57058fd4664205d2a.png?v=0" title="v" alt="v" class="tex"/> is degree of freedom; and <img src="../images/Probability_Distribution_Calculator/math-982ba133caf1fa101f22472a03e9ad50.png?v=0" title="-\infty &lt; x &lt; \infty" alt="-\infty &lt; x &lt; \infty" class="tex"/>. <img src="../images/Probability_Distribution_Calculator/math-07710b5c43702a8bb7b9104eacc6ba71.png?v=0" title="\Gamma" alt="\Gamma" class="tex"/> is the Gamma function.
+</p>
+<h3><a name="F_distribution"></a><span class="mw-headline">F distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-d8a78d34fca977798fac234e57b244da.png?v=0" title="f(x)=\frac{\Gamma[(v+u)/2]}{\Gamma(v/2)\Gamma(u/2)} \left(\frac{u}{v}\right)^{u/2} x^{\frac{u}{2}-1} \left(1+\frac{u}{v}x\right)^{-(v+u)/2}," alt="f(x)=\frac{\Gamma[(v+u)/2]}{\Gamma(v/2)\Gamma(u/2)} \left(\frac{u}{v}\right)^{u/2} x^{\frac{u}{2}-1} \left(1+\frac{u}{v}x\right)^{-(v+u)/2}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-268066e471c5bbf7fc3eee31d5284f4f.png?v=0" title="u&gt;0" alt="u&gt;0" class="tex"/> is numerator degree of freedom; <img src="../images/Probability_Distribution_Calculator/math-3a945e7b381fd17f91bf549f78896fe8.png?v=0" title="v&gt;0" alt="v&gt;0" class="tex"/> is denominator degree of freedom; and <img src="../images/Probability_Distribution_Calculator/math-887fb68a10cbd4369b27c90bee0334d8.png?v=0" title="x&gt;0" alt="x&gt;0" class="tex"/>.
+</p>
+<h3><a name="Chi-squared_distribution"></a><span class="mw-headline">Chi-squared distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-b008c5ba9c9893ee25ea6451ba1fe9e4.png?v=0" title="f(x)=\frac{x^{(v-2)/2}e^{-x/2}}{2^{v/2}\Gamma(v/2)}," alt="f(x)=\frac{x^{(v-2)/2}e^{-x/2}}{2^{v/2}\Gamma(v/2)}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-3a945e7b381fd17f91bf549f78896fe8.png?v=0" title="v&gt;0" alt="v&gt;0" class="tex"/> is degree of freedom;  and <img src="../images/Probability_Distribution_Calculator/math-887fb68a10cbd4369b27c90bee0334d8.png?v=0" title="x&gt;0" alt="x&gt;0" class="tex"/>.
+</p>
+<h3><a name="Hypergeometric_distribution"></a><span class="mw-headline">Hypergeometric distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-e7758066a5c1a39640f75d5ed7968785.png?v=0" title="f(x)=\frac{\binom{N_1}{x}\binom{N_2}{n-x}}{\binom{N}{n}}," alt="f(x)=\frac{\binom{N_1}{x}\binom{N_2}{n-x}}{\binom{N}{n}}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-2cae6dda85c63bbda577879ca6c15626.png?v=0" title="N = N_1+N_2" alt="N = N_1+N_2" class="tex"/> is population size;  <img src="../images/Probability_Distribution_Calculator/math-865adb153c19640c27383f3fc1ee7e8a.png?v=0" title="N_1" alt="N_1" class="tex"/> is number of events in the population; <img src="../images/Probability_Distribution_Calculator/math-0bf75941d6426e5efc12c0a20858452b.png?v=0" title="N_2" alt="N_2" class="tex"/> is number of nonevents in the population; <img src="../images/Probability_Distribution_Calculator/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> is sample size; and <img src="../images/Probability_Distribution_Calculator/math-9dd4e461268c8034f5c8564e155c67a6.png?v=0" title="x" alt="x" class="tex"/> is number of events in the sample, s.t. <img src="../images/Probability_Distribution_Calculator/math-503ee1d865c749878234232d670e925f.png?v=0" title="\max\{0,n-N_2\}&lt;x&lt;\min\{n,N_1\}" alt="\max\{0,n-N_2\}&lt;x&lt;\min\{n,N_1\}" class="tex"/>.
+</p>
+<h3><a name="Geometric_distribution"></a><span class="mw-headline">Geometric distribution</span></h3>
+<p>If the domain is <img src="../images/Probability_Distribution_Calculator/math-40446d337348b22b382a1c3cbcbd90e5.png?v=0" title="\{1,2,3,\cdots\}" alt="\{1,2,3,\cdots\}" class="tex"/>, then the probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-f23f4bc5290e6cbd793485252d0afcde.png?v=0" title="f(x)=p(1-p)^{x-1}," alt="f(x)=p(1-p)^{x-1}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/> is event probability; and <img src="../images/Probability_Distribution_Calculator/math-84696b5838aa68b084a3cc7fc5282c9f.png?v=0" title="x\in \{1,2,3,\cdots\}" alt="x\in \{1,2,3,\cdots\}" class="tex"/> is the total number of trials.
+</p><p>If the domain is <img src="../images/Probability_Distribution_Calculator/math-7535ec267f20adce99442466863466db.png?v=0" title="\{0,1,2,3,\cdots\}" alt="\{0,1,2,3,\cdots\}" class="tex"/>, then the probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-0088ba753ab0af28cc6584fe72b08f22.png?v=0" title="f(x)=p(1-p)^{x}," alt="f(x)=p(1-p)^{x}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/> is event probability; and <img src="../images/Probability_Distribution_Calculator/math-dc36747fd87ed70de422f497252335e4.png?v=0" title="x\in \{0,1,2,3,\cdots\}" alt="x\in \{0,1,2,3,\cdots\}" class="tex"/> is the total number of nonevents occured before the first event is observed.
+</p>
+<h3><a name="Beta_distribution"></a><span class="mw-headline">Beta distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-e58731e90ded309ff0efc104b9444cbb.png?v=0" title="f(x)=\frac{\Gamma[\alpha+\beta]}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1}(1-x)^{\beta-1}," alt="f(x)=\frac{\Gamma[\alpha+\beta]}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1}(1-x)^{\beta-1}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-315c82a57164f0e70880d5170b94a4d4.png?v=0" title="\alpha&gt;0" alt="\alpha&gt;0" class="tex"/> is first shape parameter; <img src="../images/Probability_Distribution_Calculator/math-6797b9a52fc2538f72ece40cdd7e11d7.png?v=0" title="\beta&gt;0" alt="\beta&gt;0" class="tex"/> is second shape parameter; and <img src="../images/Probability_Distribution_Calculator/math-19887bba7c8859661eff1ac90a4306bf.png?v=0" title="0 \leq  x \leq  1 " alt="0 \leq  x \leq  1 " class="tex"/>.
+</p>
+<h3><a name="Exponential_distribution"></a><span class="mw-headline">Exponential distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-cd5f8b88ec3f01879181f5ca3b82932e.png?v=0" title="f(x)=\frac{1}{\mu}e^{-(x-\theta)/\mu}," alt="f(x)=\frac{1}{\mu}e^{-(x-\theta)/\mu}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-957400a6370307d8c7c9f6e696f307d9.png?v=0" title="\mu&gt;0" alt="\mu&gt;0" class="tex"/> is scale parameter; <img src="../images/Probability_Distribution_Calculator/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/> is threshold parameter; and <img src="../images/Probability_Distribution_Calculator/math-7c78c8693f8929b96f70290e954c4862.png?v=0" title="x &gt;\theta " alt="x &gt;\theta " class="tex"/>.
+</p>
+<h3><a name="Gamma_distribution"></a><span class="mw-headline">Gamma distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-d43774ab1123abca303d613ab95169e2.png?v=0" title="f(x)=\frac{(x-\theta)^{\alpha-1}}{\Gamma(a)b^a} e^{-(x-\theta)/b}," alt="f(x)=\frac{(x-\theta)^{\alpha-1}}{\Gamma(a)b^a} e^{-(x-\theta)/b}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-323c5f97105643bc61e288fe596194ca.png?v=0" title="a&gt;0" alt="a&gt;0" class="tex"/> is shape parameter; <img src="../images/Probability_Distribution_Calculator/math-539fa66a54d60fdbd6278ccebed13ddd.png?v=0" title="b&gt;0" alt="b&gt;0" class="tex"/> is scale parameter; <img src="../images/Probability_Distribution_Calculator/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/> is threshold parameter; and <img src="../images/Probability_Distribution_Calculator/math-7c78c8693f8929b96f70290e954c4862.png?v=0" title="x &gt;\theta " alt="x &gt;\theta " class="tex"/>.
+</p>
+<h3><a name="Weibull_distribution"></a><span class="mw-headline">Weibull distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-8649c0d0680893260acb29491e301b1c.png?v=0" title="f(x)=\frac{\beta (x-\theta)^{\beta-1}}{\alpha^\beta} e^{-\left(\frac{x-\theta}{\alpha}\right)^\beta}," alt="f(x)=\frac{\beta (x-\theta)^{\beta-1}}{\alpha^\beta} e^{-\left(\frac{x-\theta}{\alpha}\right)^\beta}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-315c82a57164f0e70880d5170b94a4d4.png?v=0" title="\alpha&gt;0" alt="\alpha&gt;0" class="tex"/> is scale parameter; <img src="../images/Probability_Distribution_Calculator/math-6797b9a52fc2538f72ece40cdd7e11d7.png?v=0" title="\beta&gt;0" alt="\beta&gt;0" class="tex"/> is shape parameter; <img src="../images/Probability_Distribution_Calculator/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/> is threshold parameter; and <img src="../images/Probability_Distribution_Calculator/math-7c78c8693f8929b96f70290e954c4862.png?v=0" title="x &gt;\theta " alt="x &gt;\theta " class="tex"/>.
+</p>
+<h3><a name="Uniform_distribution"></a><span class="mw-headline">Uniform distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-26b474f7047676b58ff63e49366206ce.png?v=0" title="f(x)=\frac{1}{b-a}," alt="f(x)=\frac{1}{b-a}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/> is lower endpoint; <img src="../images/Probability_Distribution_Calculator/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/> is upper endpoint; and <img src="../images/Probability_Distribution_Calculator/math-03160494d776b036aa725f89fd4ea847.png?v=0" title="a\leq x \leq b " alt="a\leq x \leq b " class="tex"/>.
+</p>
+<h3><a name="Binomial_distribution"></a><span class="mw-headline">Binomial distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-3d1c4f9b8cd0950bf869730b77d31af6.png?v=0" title="f(x)=\binom{n}{x}p^x(1-p)^{n-x}," alt="f(x)=\binom{n}{x}p^x(1-p)^{n-x}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> is number of trials; <img src="../images/Probability_Distribution_Calculator/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/> is event probability; and <img src="../images/Probability_Distribution_Calculator/math-0f3c8f0d6a00d5b4b67ba333bd38d007.png?v=0" title="x \in \{0,1,2,\cdots,n\} " alt="x \in \{0,1,2,\cdots,n\} " class="tex"/>.
+</p>
+<h3><a name="Poisson_distribution"></a><span class="mw-headline">Poisson distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-3836b4c8d5a96110e672c477f4c5372e.png?v=0" title="f(x)=\frac{\theta^x}{x!}e^{-\theta}," alt="f(x)=\frac{\theta^x}{x!}e^{-\theta}," class="tex"/>
+</p><p>where <img src="../images/Probability_Distribution_Calculator/math-195eaa6f24ce8f721729d5115bae0fd2.png?v=0" title="\theta&gt;0" alt="\theta&gt;0" class="tex"/> is mean; and <img src="../images/Probability_Distribution_Calculator/math-3bc9933ae854b4bd708e8bfab8c589e2.png?v=0" title="x \in \{0,1,2,\cdots\} " alt="x \in \{0,1,2,\cdots\} " class="tex"/>.
+<a class="external text" href="http://www.example.com" target="_blank">link title</a>
+</p>
+
+
+
+
+
