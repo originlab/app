@@ -1,4 +1,4 @@
-name: Build and deploy the book to Pages
+name: Publish the book to Pages
 
 on:
   push:
@@ -7,5 +7,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  make_book:
-    uses: originlab/originlab.github.io/.github/workflows/make_book.yml@main
+  publish_book:
+    uses: originlab/originlab.github.io/.github/workflows/publish_book.yml@main
