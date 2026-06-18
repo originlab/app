@@ -1,0 +1,64 @@
+<h1 class="firstHeading">2.5.3.2 Algorithm: Regression with Life Data</h1><p class='urlname' style='display: none'>SA-RLD-Algorithm</p>
+<p><br />
+<b>Uncensor/Right Censor data</b>: 
+The data are represented as time and censoring indicator pairs <img src="../images/SA_RLD_Algorithm/math-94dc518624111527c1048a8e047fa15e.png?v=0" title="(t_i, c_i)" alt="(t_i, c_i)" class="tex"/>:
+</p>
+<dl><dd><ul><li> <img src="../images/SA_RLD_Algorithm/math-f406db9a09c0430f7e54c1a3bb217c3e.png?v=0" title="t_i" alt="t_i" class="tex"/>: The observed time for each unit. This could be <b>Exact failure time</b> (if the unit failed) or <b>Time to censoring</b> (if the unit did not fail within the observation period)</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-96fafac0c054b9eb47d3f630ed02c289.png?v=0" title="c_i" alt="c_i" class="tex"/>:  Indicates whether the unitis a failure or censored. e.g. 1 = failure (uncensored), 0 = censored</li></ul></dd></dl>
+<p><b>Uncensor/Arbitrary Censor data</b>: 
+The data are represented as time intervals <img src="../images/SA_RLD_Algorithm/math-29ba7906659ab2cedd5a5be2aee9dad9.png?v=0" title="(tl_i, tr_i)" alt="(tl_i, tr_i)" class="tex"/>:
+</p>
+<dl><dd><ul><li> <img src="../images/SA_RLD_Algorithm/math-d604b01acf23506a7e38f6046e2b7368.png?v=0" title="tl_i" alt="tl_i" class="tex"/>: lower bound (time of last inspection or last known survival)</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-37a0c5f38570b6331eb91c82ab866980.png?v=0" title="tr_i" alt="tr_i" class="tex"/>: upper bound (time when failure was first detected)</li>
+<li> If <img src="../images/SA_RLD_Algorithm/math-dd9977f86586fdd2d98c8e532ecafd57.png?v=0" title="tr_i = \infty" alt="tr_i = \infty" class="tex"/>, it represents right-censoring.</li>
+<li> If <img src="../images/SA_RLD_Algorithm/math-56245822575101ed40c107004fb2adb3.png?v=0" title="tl_i = tr_i" alt="tl_i = tr_i" class="tex"/>, it represents exact failure (uncensored).</li></ul></dd></dl>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Regression_Table"><span class="tocnumber">1</span> <span class="toctext">Regression Table</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Anderson-Darling_Test"><span class="tocnumber">2</span> <span class="toctext">Anderson-Darling Test</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Probability_Plots"><span class="tocnumber">3</span> <span class="toctext">Probability Plots</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Probability_Plot_for_Standardized_Residuals"><span class="tocnumber">3.1</span> <span class="toctext">Probability Plot for Standardized Residuals</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Probability_Plot_for_Cox-Snell_Residuals"><span class="tocnumber">3.2</span> <span class="toctext">Probability Plot for Cox-Snell Residuals</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Regression_Table"></a><span class="mw-headline">Regression Table</span></h2>
+<p>The lifetime regression function can be derived from the <a href="../../App/App/SA_Parametric_Dist_Algorithm.html#Distributions" title="App:SA Parametric Dist Algorithm">inverse cumulative distribution</a> function:
+</p>
+<dl><dd> <img src="../images/SA_RLD_Algorithm/math-54512174262d55e3537ae4630abe0434.png?v=0" title="Y_p = b_0 + b_1x_1 + b_2x_2 + ... + b_kx_k + \sigma\Phi^{-1}(p)" alt="Y_p = b_0 + b_1x_1 + b_2x_2 + ... + b_kx_k + \sigma\Phi^{-1}(p)" class="tex"/></dd></dl>
+<ul><li> <img src="../images/SA_RLD_Algorithm/math-6a68c96e79ad44ca04595c70c8abbc4e.png?v=0" title="Y_p" alt="Y_p" class="tex"/>: failure time (Normal, Logistic, Smallest Extreme Value) or log failure time (Lognormal, Loglogistic, Exponential, Weibull)</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>: cumulative probability <img src="../images/SA_RLD_Algorithm/math-775caad45308a2ae46fe3a6a4cf15f91.png?v=0" title="P(T\le t)" alt="P(T\le t)" class="tex"/></li>
+<li> <img src="../images/SA_RLD_Algorithm/math-d7c1415601e7787706053f726d1823e2.png?v=0" title="\Phi^{-1}(p)" alt="\Phi^{-1}(p)" class="tex"/>: standardized inverse cumulative distribution</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-1ba8aaab47179b3d3e24b0ccea9f4e30.png?v=0" title="x_i" alt="x_i" class="tex"/>: predictor values, where <img src="../images/SA_RLD_Algorithm/math-747e6d15c46ec722f311b060dd9bf5d7.png?v=0" title="i = 1,2,...,k" alt="i = 1,2,...,k" class="tex"/></li>
+<li> <img src="../images/SA_RLD_Algorithm/math-fe3e01a305f27284ff5115f4c5ea0fa4.png?v=0" title="b_i" alt="b_i" class="tex"/>: coefficient of <img src="../images/SA_RLD_Algorithm/math-1ba8aaab47179b3d3e24b0ccea9f4e30.png?v=0" title="x_i" alt="x_i" class="tex"/>, where <img src="../images/SA_RLD_Algorithm/math-747e6d15c46ec722f311b060dd9bf5d7.png?v=0" title="i = 1,2,...,k" alt="i = 1,2,...,k" class="tex"/></li>
+<li> <img src="../images/SA_RLD_Algorithm/math-2e426000b92cfbc7286b0e2cc2a37482.png?v=0" title="b_0" alt="b_0" class="tex"/>: intercept</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: <img src="../images/SA_RLD_Algorithm/math-9b04e9c34e199f184ddb49f0665c1adb.png?v=0" title="1/shape" alt="1/shape" class="tex"/> for weibull distribution or <img src="../images/SA_RLD_Algorithm/math-0cb47aeb6e5f9323f0969e628c4e59f5.png?v=0" title="scale" alt="scale" class="tex"/> for other distributioln.</li></ul>
+<p><b>MLE</b> (<a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">maximum likelihood estimation</a>) method is then used to estimate parameters <img src="../images/SA_RLD_Algorithm/math-2e426000b92cfbc7286b0e2cc2a37482.png?v=0" title="b_0" alt="b_0" class="tex"/>, <img src="../images/SA_RLD_Algorithm/math-fe3e01a305f27284ff5115f4c5ea0fa4.png?v=0" title="b_i" alt="b_i" class="tex"/> and <img src="../images/SA_RLD_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>. For <b>MLE</b>, the standard error of the fitting parameters can be calculated by <a href="../../App/App/SA_Parametric_Dist_Algorithm.html#Estimate_Parameter_Standard_Errors" title="App:SA Parametric Dist Algorithm"> <b>Fisher information matrix</b></a> (FIM).
+</p>
+<h2><a name="Anderson-Darling_Test"></a><span class="mw-headline">Anderson-Darling Test</span></h2>
+<p>Refer to <a href="../../App/App/Algorithm_IDD.html#Anderson-Darling_Test" title="App:Algorithm IDD"> Anderson-Darling Test Page</a> for calculation.
+</p>
+<h2><a name="Probability_Plots"></a><span class="mw-headline">Probability Plots</span></h2>
+<h3><a name="Probability_Plot_for_Standardized_Residuals"></a><span class="mw-headline">Probability Plot for Standardized Residuals</span></h3>
+<p>Standardized Residuals: <img src="../images/SA_RLD_Algorithm/math-e3e2e5f27c3648b50fcf61b265ce3190.png?v=0" title="\frac{y_i-x_i\hat{b}}{\hat{\sigma}}" alt="\frac{y_i-x_i\hat{b}}{\hat{\sigma}}" class="tex"/>
+</p>
+<ul><li> <img src="../images/SA_RLD_Algorithm/math-8d62e469fb30ed435a668eb5c035b1f6.png?v=0" title="y_i" alt="y_i" class="tex"/>: the <img src="../images/SA_RLD_Algorithm/math-97361f12a3555fc4fc4e2ffce1799ac3.png?v=0" title="i^{th}" alt="i^{th}" class="tex"/> response value</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-1ba8aaab47179b3d3e24b0ccea9f4e30.png?v=0" title="x_i" alt="x_i" class="tex"/>: the <img src="../images/SA_RLD_Algorithm/math-97361f12a3555fc4fc4e2ffce1799ac3.png?v=0" title="i^{th}" alt="i^{th}" class="tex"/> predictor values</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-dbe3a02527cf97320e118d9ffa031ba1.png?v=0" title="\hat{b}" alt="\hat{b}" class="tex"/>: estimated regression coefficients</li>
+<li> <img src="../images/SA_RLD_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: estimated scale parameter</li></ul>
+<p>The P-P plot is to check if standardized residuals follow Smallest Extreme Value distribution.
+</p>
+<h3><a name="Probability_Plot_for_Cox-Snell_Residuals"></a><span class="mw-headline">Probability Plot for Cox-Snell Residuals</span></h3>
+<p>Cox-Snell residuals: <img src="../images/SA_RLD_Algorithm/math-48200705b8a70da41f4accd7167441b5.png?v=0" title="-ln(\hat{R}(y_i))" alt="-ln(\hat{R}(y_i))" class="tex"/>
+</p>
+<ul><li> <img src="../images/SA_RLD_Algorithm/math-22c4bdcc023671209ab8dfd8d8d9d23c.png?v=0" title="\hat{R}(y_i)" alt="\hat{R}(y_i)" class="tex"/>: estimated survival probability for the response <img src="../images/SA_RLD_Algorithm/math-8d62e469fb30ed435a668eb5c035b1f6.png?v=0" title="y_i" alt="y_i" class="tex"/>.</li></ul>
+<p>The P-P plot is to check if Cox-Snell residuals follow Exponential distribution.
+</p>
+
+
+
+
+

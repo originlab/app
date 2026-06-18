@@ -1,10 +1,10 @@
-<h1 class="firstHeading">2.5.4.2 Algorithm: Accelerated Life Testing</h1><p class='urlname' style='display: none'>SA-Accelerated-Life-Testing-Algorithm</p>
+<h1 class="firstHeading">2.5.7.2 Algorithm: Accelerated Life Testing</h1><p class='urlname' style='display: none'>SA-Accelerated-Life-Testing-Algorithm</p>
 <p>This tool supports two types of input. 
 </p><p><b>Uncensor/Right Censor data</b>: 
-The data are represented as time and censoring indicator pairs <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-812b99dbb32ab9a16f2b71170cc9bfd6.png?v=0" title="(t_i, censoring)" alt="(t_i, censoring)" class="tex"/>:
+The data are represented as time and censoring indicator pairs <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-94dc518624111527c1048a8e047fa15e.png?v=0" title="(t_i, c_i)" alt="(t_i, c_i)" class="tex"/>:
 </p>
 <dl><dd><ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-f406db9a09c0430f7e54c1a3bb217c3e.png?v=0" title="t_i" alt="t_i" class="tex"/>: The observed time for each unit. This could be <b>Exact failure time</b> (if the unit failed) or <b>Time to censoring</b> (if the unit did not fail within the observation period)</li>
-<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-f99e26b89c3bccea4488dde3213fb617.png?v=0" title="censoring" alt="censoring" class="tex"/>:  Indicates whether the unitis a failure or censored. e.g. 1 = failure (uncensored), 0 = censored</li></ul></dd></dl>
+<li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-96fafac0c054b9eb47d3f630ed02c289.png?v=0" title="c_i" alt="c_i" class="tex"/>:  Indicates whether the unitis a failure or censored. e.g. 1 = failure (uncensored), 0 = censored</li></ul></dd></dl>
 <p><b>Uncensor/Arbitrary Censor data</b>: 
 The data are represented as time intervals <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-29ba7906659ab2cedd5a5be2aee9dad9.png?v=0" title="(tl_i, tr_i)" alt="(tl_i, tr_i)" class="tex"/>:
 </p>
@@ -13,7 +13,7 @@ The data are represented as time intervals <img src="../images/SA_Accelerated_Li
 <li> If <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-dd9977f86586fdd2d98c8e532ecafd57.png?v=0" title="tr_i = \infty" alt="tr_i = \infty" class="tex"/>, it represents right-censoring.</li>
 <li> If <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-56245822575101ed40c107004fb2adb3.png?v=0" title="tl_i = tr_i" alt="tl_i = tr_i" class="tex"/>, it represents exact failure (uncensored).</li></ul></dd></dl>
 <h1><a name="Regression_Table"></a><span class="mw-headline">Regression Table</span></h1>
-<p>The lifetime regression function can be derived from the <a href="../../App/App/Algorithm_IDD.html#Distributions" title="App:Algorithm IDD"> inverse cumulative distribution</a> function. For weibull distribution:
+<p>The lifetime regression function can be derived from the <a href="../../App/App/SA_Parametric_Dist_Algorithm.html#Distributions" title="App:SA Parametric Dist Algorithm"> inverse cumulative distribution</a> function. For weibull distribution:
 </p>
 <dl><dd> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-6f1d0fa9f9fe35a4e4d039dafa4f0371.png?v=0" title="\ln(t) = \ln(\eta) + \frac{1}{\beta}\ln(-\ln(1-p))" alt="\ln(t) = \ln(\eta) + \frac{1}{\beta}\ln(-\ln(1-p))" class="tex"/></dd></dl>
 <ul><li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>: time to failure</li>
@@ -35,12 +35,12 @@ The data are represented as time intervals <img src="../images/SA_Accelerated_Li
 <li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/>: intercept</li>
 <li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: for weibull distribution, it is <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-1385f3702529ee9df22538ac2d334df5.png?v=0" title="1/\beta" alt="1/\beta" class="tex"/>.</li>
 <li> <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-d7c1415601e7787706053f726d1823e2.png?v=0" title="\Phi^{-1}(p)" alt="\Phi^{-1}(p)" class="tex"/>: the pth quantile of the standardized ditribution. For weibull distribution, it is <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-72c511e03943617c944646da3b1fe0b4.png?v=0" title="(-ln(1-p))" alt="(-ln(1-p))" class="tex"/></li></ul>
-<p><b>MLE</b> (<a href="../../App/App/Algorithm_IDD.html" title="App:Algorithm IDD">maximum likelihood estimation</a>) method is then used to estimate parameters <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/>, <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/> and <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>. For <b>MLE</b>, the standard error of the fitting parameters can be calculated by <a href="../../App/App/Algorithm_IDD.html#Estimate_Parameter.27s_Standard_Error" title="App:Algorithm IDD"> <b>Fisher information matrix</b></a> (FIM).
+<p><b>MLE</b> (<a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">maximum likelihood estimation</a>) method is then used to estimate parameters <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-2e426000b92cfbc7286b0e2cc2a37482.png?v=0" title="b_0" alt="b_0" class="tex"/>, <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-fe3e01a305f27284ff5115f4c5ea0fa4.png?v=0" title="b_i" alt="b_i" class="tex"/> and <img src="../images/SA_Accelerated_Life_Testingt_Algorithm/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>. For <b>MLE</b>, the standard error of the fitting parameters can be calculated by <a href="../../App/App/SA_Parametric_Dist_Algorithm.html#Estimate_Parameter_Standard_Errors" title="App:SA Parametric Dist Algorithm"> <b>Fisher information matrix</b></a> (FIM).
 </p>
 <h1><a name="Probability_Plot"></a><span class="mw-headline">Probability Plot</span></h1>
 <p><b>Uncensor/Right Censor data</b>
 </p>
-<dl><dd> Points on the plot is calculated by the <a href="../../App/App/Algorithm_IDD.html#Probability_Plot" title="App:Algorithm IDD"> Benard's method</a>.</dd></dl>
+<dl><dd> Points on the plot is calculated by the <a href="../../App/App/SA_Parametric_Dist_Algorithm.html#Probability_Plot" title="App:SA Parametric Dist Algorithm"> Benard's method</a>.</dd></dl>
 <p><b>Uncensor/Arbitrary Censor data</b>
 </p>
 <dl><dd> Points on the plot is calculated by the Turbull estimation[<a href="#Ref1">1</a>]. Turnbull developed an iterative algorithm to obtain the nonparametric maximum likelihood estimate (NPMLE) of the cumulative distribution function for censored data. This approach is applicable to more general cases, including situations where the observation intervals overlap.</dd></dl>

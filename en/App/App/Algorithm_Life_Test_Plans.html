@@ -1,0 +1,441 @@
+<h1 class="firstHeading">2.5.11.2 Algorithm for Life Test Plans</h1><p class='urlname' style='display: none'>RSA-LTP-Algorithm</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Demonstration_Test_Plan"><span class="tocnumber">1</span> <span class="toctext">Demonstration Test Plan</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Calculate_testing_time_from_sample_size"><span class="tocnumber">1.1</span> <span class="toctext">Calculate testing time from sample size</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Calculate_sample_size_from_testing_time"><span class="tocnumber">1.2</span> <span class="toctext">Calculate sample size from testing time</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Probability_of_passing_a_test_plan"><span class="tocnumber">1.3</span> <span class="toctext">Probability of passing a test plan</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Estimation_Test_Plan"><span class="tocnumber">2</span> <span class="toctext">Estimation Test Plan</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Estimate_percentile_for_percent"><span class="tocnumber">2.1</span> <span class="toctext">Estimate percentile for percent</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Estimated_value_of_percentile"><span class="tocnumber">2.1.1</span> <span class="toctext">Estimated value of percentile</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Asymptotic_variance_of_percentile"><span class="tocnumber">2.1.2</span> <span class="toctext">Asymptotic variance of percentile</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Sample_size_to_estimate_percentile"><span class="tocnumber">2.1.3</span> <span class="toctext">Sample size to estimate percentile</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Estimate_reliability_for_time"><span class="tocnumber">2.2</span> <span class="toctext">Estimate reliability for time</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Estimated_value_of_reliability"><span class="tocnumber">2.2.1</span> <span class="toctext">Estimated value of reliability</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Asymptotic_variance_of_Z"><span class="tocnumber">2.2.2</span> <span class="toctext">Asymptotic variance of Z</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Sample_size_to_estimate_reliability"><span class="tocnumber">2.2.3</span> <span class="toctext">Sample size to estimate reliability</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Accelerated_Life_Test_Plan"><span class="tocnumber">3</span> <span class="toctext">Accelerated Life Test Plan</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Location_parameter_at_accelerating_variable"><span class="tocnumber">3.1</span> <span class="toctext">Location parameter at accelerating variable</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Estimate_percentile_for_percent_2"><span class="tocnumber">3.2</span> <span class="toctext">Estimate percentile for percent</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Estimated_value_of_percentile_2"><span class="tocnumber">3.2.1</span> <span class="toctext">Estimated value of percentile</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Best_allocation_for_each_stress_level"><span class="tocnumber">3.2.2</span> <span class="toctext">Best allocation for each stress level</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Sample_size_to_estimate_percentile_2"><span class="tocnumber">3.2.3</span> <span class="toctext">Sample size to estimate percentile</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Standard_error_of_percentile_for_sample_size"><span class="tocnumber">3.2.4</span> <span class="toctext">Standard error of percentile  for sample size</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Estimate_reliability_for_time_2"><span class="tocnumber">3.3</span> <span class="toctext">Estimate reliability for time</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Estimated_value_of_reliability_2"><span class="tocnumber">3.3.1</span> <span class="toctext">Estimated value of reliability</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Best_allocation_for_each_stress_level_2"><span class="tocnumber">3.3.2</span> <span class="toctext">Best allocation for each stress level</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Sample_size_to_estimate_reliability_2"><span class="tocnumber">3.3.3</span> <span class="toctext">Sample size to estimate reliability</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#Standard_error_of_reliability_for_sample_size"><span class="tocnumber">3.3.4</span> <span class="toctext">Standard error of reliability  for sample size</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Reference"><span class="tocnumber">4</span> <span class="toctext">Reference</span></a></li>
+</ul>
+</div>
+
+<h1><a name="Demonstration_Test_Plan"></a><span class="mw-headline">Demonstration Test Plan</span></h1>
+<dl><dt> Minimum Value to be Demonstrated ---- Goal</dt></dl>
+<ol><li> Scale (weibull or Exponential distribution) or Location (other distribution) </li>
+<li> Percentile (<img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>) at Percent (<img src="../images/Algorithm_Life_Test_Plans/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>)</li>
+<li> Reliability (<img src="../images/Algorithm_Life_Test_Plans/math-41e34dd11d4a51ff40cb7147c3f3d87a.png?v=0" title="R(t_0)" alt="R(t_0)" class="tex"/>) at Time (<img src="../images/Algorithm_Life_Test_Plans/math-d81584f09e174eec259979ae8f92eb09.png?v=0" title="t_0" alt="t_0" class="tex"/>) </li>
+<li> MTTF (Mean time to failure)</li></ol>
+<p>The distribution parameter is first calculated （table below) if the chosen goal of the test plan is either 2, 3 or 4. 
+</p>
+<table class="simple">
+<tr>
+<th> Distribution
+</th>
+<th> Parameters
+</th>
+<th> Percentile (<img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>) is provided
+</th>
+<th> Reliability (<img src="../images/Algorithm_Life_Test_Plans/math-41e34dd11d4a51ff40cb7147c3f3d87a.png?v=0" title="R(t_0)" alt="R(t_0)" class="tex"/>) is provided
+</th>
+<th> MTTF is provided
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Normal</b>
+</td>
+<td> location: <img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-dc34d45f78bd2102ff71910873a490c9.png?v=0" title="\mu = t_p - \sigma \Phi_{nor}^{-1}(p/100)" alt="\mu = t_p - \sigma \Phi_{nor}^{-1}(p/100)" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-7a1e8b20600ae13fa2bb897f08a5b521.png?v=0" title="\mu = t_0 - \sigma \Phi_{nor}^{-1}(1 - R(t_0))" alt="\mu = t_0 - \sigma \Phi_{nor}^{-1}(1 - R(t_0))" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-e42e7d7fce3860445bfcd8d2597de6c6.png?v=0" title="\mu = MTTF" alt="\mu = MTTF" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>Lognormal</b>
+</td>
+<td> location: <img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-cfb95a2f14009d289805eabaf75fb785.png?v=0" title="\mu = \text{ln}(t_p) - \sigma \Phi_{nor}^{-1}(p/100)" alt="\mu = \text{ln}(t_p) - \sigma \Phi_{nor}^{-1}(p/100)" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-1af2d295301bdea2d3514b3315988f68.png?v=0" title="\mu = \text{ln}(t_0) - \sigma \Phi_{nor}^{-1}(1 - R(t_0))" alt="\mu = \text{ln}(t_0) - \sigma \Phi_{nor}^{-1}(1 - R(t_0))" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-8692719a2215245a5ad85f1530995603.png?v=0" title="\mu = \text{ln}(MTTF)-\sigma^2/2" alt="\mu = \text{ln}(MTTF)-\sigma^2/2" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Exponential</b>
+</td>
+<td> scale: <img src="../images/Algorithm_Life_Test_Plans/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-6e6a8b37c241c380422cf8a13b7a59f9.png?v=0" title="\theta = \frac{t_p}{-\text{ln}(1-p/100)}" alt="\theta = \frac{t_p}{-\text{ln}(1-p/100)}" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-0726977d1b6271c3dff9840b90051581.png?v=0" title="\theta = \frac{t_0}{-\text{ln}(R(t_0))}" alt="\theta = \frac{t_0}{-\text{ln}(R(t_0))}" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-d8586f39a51addf99b3a31b5a1e45c40.png?v=0" title="\theta = MTTF" alt="\theta = MTTF" class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Smallest Extreme Value</b>
+</td>
+<td> location: <img src="../images/Algorithm_Life_Test_Plans/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/> <br /> scale: <img src="../images/Algorithm_Life_Test_Plans/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-127ef230fb7ffe0c435cb0f20b3c5e5d.png?v=0" title="\alpha = t_p - \beta \text{ln}( - \text{ln}(1-p/100) )" alt="\alpha = t_p - \beta \text{ln}( - \text{ln}(1-p/100) )" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-86961b5fb9a70f01b36c5168249292c3.png?v=0" title="\alpha = t_0 - \beta \text{ln}( - \text{ln}(R(t_0)) )" alt="\alpha = t_0 - \beta \text{ln}( - \text{ln}(R(t_0)) )" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-50baed70ab238410ac142752cfa0df76.png?v=0" title="\alpha = MTTF + c\sigma " alt="\alpha = MTTF + c\sigma " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Weibull</b>
+</td>
+<td> scale: <img src="../images/Algorithm_Life_Test_Plans/math-0cc175b9c0f1b6a831c399e269772661.png?v=0" title="a" alt="a" class="tex"/> <br /> shape: <img src="../images/Algorithm_Life_Test_Plans/math-92eb5ffee6ae2fec3ad71c777531578f.png?v=0" title="b" alt="b" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-924e4e4f62f235fd9054e84034cc2f58.png?v=0" title="a= \frac{t_p}{(-\text{ln}(1-p/100))^{1/b}}" alt="a= \frac{t_p}{(-\text{ln}(1-p/100))^{1/b}}" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-ca38b4c1fe212c71dccbca572f05fd17.png?v=0" title="a= \frac{t_0}{(-\text{ln}(R(t_0)))^{1/b}}" alt="a= \frac{t_0}{(-\text{ln}(R(t_0)))^{1/b}}" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-3b94f5ab64bdc4a2020b6b805eae687d.png?v=0" title="a = \frac{MTTF}{\Gamma(1+b)} " alt="a = \frac{MTTF}{\Gamma(1+b)} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Logistic</b>
+</td>
+<td> location: <img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-efe40314d03db376b19a7dea990a3f51.png?v=0" title="\mu = t_p -  \sigma\text{ln}(\frac{p/100}{1-p/100}) " alt="\mu = t_p -  \sigma\text{ln}(\frac{p/100}{1-p/100}) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-6bd017a1de373853dd5bec85a879f02e.png?v=0" title="\mu = t_0 -  \sigma\text{ln}(\frac{1-R(t_0)}{R(t_0)}) " alt="\mu = t_0 -  \sigma\text{ln}(\frac{1-R(t_0)}{R(t_0)}) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-3597ad126ed39b4895368c5ee001250f.png?v=0" title="\mu = MTTF " alt="\mu = MTTF " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>Loglogistic</b>
+</td>
+<td> location: <img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> <br /> scale: <img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-d17f395f8ac20281f9fcd3205175ed24.png?v=0" title="\mu = \text{ln}(t_p) -  \sigma\text{ln}(\frac{p/100}{1-p/100}) " alt="\mu = \text{ln}(t_p) -  \sigma\text{ln}(\frac{p/100}{1-p/100}) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-6bd349bff66c57aee46daef8b2c218c7.png?v=0" title="\mu = \text{ln}(t_0) -  \sigma\text{ln}(\frac{1-R(t_0)}{R(t_0)}) " alt="\mu = \text{ln}(t_0) -  \sigma\text{ln}(\frac{1-R(t_0)}{R(t_0)}) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-705499696c6dfd4f04ac61ee72f21a13.png?v=0" title="\mu = \text{ln}(\frac{MTTF}{\Gamma(1+\sigma)\Gamma(1-\sigma)}) " alt="\mu = \text{ln}(\frac{MTTF}{\Gamma(1+\sigma)\Gamma(1-\sigma)}) " class="tex"/>
+</td></tr>
+</table>
+<p>where 
+</p>
+<dl><dd> <img src="../images/Algorithm_Life_Test_Plans/math-20b58a06e67dace7ad7c4eb4c8429a41.png?v=0" title="\Phi_{nor}" alt="\Phi_{nor}" class="tex"/>: the CDF function for the standard normal distribution.</dd>
+<dd> c: Euler's constant</dd>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-07710b5c43702a8bb7b9104eacc6ba71.png?v=0" title="\Gamma" alt="\Gamma" class="tex"/>: gamma function</dd></dl>
+<h2><a name="Calculate_testing_time_from_sample_size"></a><span class="mw-headline">Calculate testing time from sample size</span></h2>
+<dl><dt> The probability of failure <img src="../images/Algorithm_Life_Test_Plans/math-0c39998f20890f453c04daac4baf8722.png?v=0" title="p(t)" alt="p(t)" class="tex"/> for a <img src="../images/Algorithm_Life_Test_Plans/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> confidence level is first calculated</dt>
+<dd></dd>
+<dt><img src="../images/Algorithm_Life_Test_Plans/math-3e05d852acd688957cabc500692711cd.png?v=0" title="p(t) = \text{Beta}^{-1}(1 - \alpha, m + 1, N - m)" alt="p(t) = \text{Beta}^{-1}(1 - \alpha, m + 1, N - m)" class="tex"/></dt>
+<dt>Then <img src="../images/Algorithm_Life_Test_Plans/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/> can be calculated by inverting <img src="../images/Algorithm_Life_Test_Plans/math-0c39998f20890f453c04daac4baf8722.png?v=0" title="p(t)" alt="p(t)" class="tex"/></dt>
+<dd></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-0fdf49a5516ba98923008dcf757186ec.png?v=0" title="t = \exp(\sigma \Phi^{-1}(p) + \mu)" alt="t = \exp(\sigma \Phi^{-1}(p) + \mu)" class="tex"/> for log-location-scale family</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-274862c3d7a4b03de59a3d76ebe03daa.png?v=0" title="t = \sigma \Phi^{-1}(p) + \mu" alt="t = \sigma \Phi^{-1}(p) + \mu" class="tex"/> for location-scale family</dd>
+<dt>where</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-23e09b0954980c5ef63176dd4b962589.png?v=0" title="\text{Beta}" alt="\text{Beta}" class="tex"/>: the CDF of <a class="external text" href="https://docs.originlab.com/originc/ref/betacdf/" target="_blank">beta distribution</a></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6f8f57715090da2632453988d9a1501b.png?v=0" title="m" alt="m" class="tex"/>: maximum number of failures allowed</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/>: sample size</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>: testing time</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: significance level</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6961e78be39c8a325c23ee3b4b5bf3ca.png?v=0" title="\Phi^{-1}" alt="\Phi^{-1}" class="tex"/>: inverse CDF of the standard distriubtion of the selected distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>: location parameter of the distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: scale parameter of the distribution</dd></dl>
+<h2><a name="Calculate_sample_size_from_testing_time"></a><span class="mw-headline">Calculate sample size from testing time</span></h2>
+<dl><dt>The probability of failure <img src="../images/Algorithm_Life_Test_Plans/math-0c39998f20890f453c04daac4baf8722.png?v=0" title="p(t)" alt="p(t)" class="tex"/> for a <img src="../images/Algorithm_Life_Test_Plans/math-9807dc0616cdc68a5cfde390fdcdd860.png?v=0" title="100(1-\alpha)\%" alt="100(1-\alpha)\%" class="tex"/> confidence level is first calculated</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-b5a05891e8600c24f60a2e6dfa273369.png?v=0" title=" p(t) = \Phi(\frac{\text{ln}(t)-\mu}{\sigma})" alt=" p(t) = \Phi(\frac{\text{ln}(t)-\mu}{\sigma})" class="tex"/> for log-location-scale distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-dafcdf0e1960ecb9bfc4880036a02d38.png?v=0" title=" p(t) = \Phi(\frac{t-\mu}{\sigma})" alt=" p(t) = \Phi(\frac{t-\mu}{\sigma})" class="tex"/> for location-scale distribution</dd>
+<dt> Then <img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/> can be calculated numerically by solving the following equation</dt>
+<dd></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6756886f2389b1e337f39dccd9eac026.png?v=0" title=" binocdf(m, N, p(t)) = \alpha" alt=" binocdf(m, N, p(t)) = \alpha" class="tex"/></dd></dl>
+<p>where
+</p>
+<dl><dd><img src="../images/Algorithm_Life_Test_Plans/math-aefa04c35264567ab11cf2f260d2b706.png?v=0" title="binocdf" alt="binocdf" class="tex"/>: <a class="external text" href="https://docs.originlab.com/labtalk/ref/binocdf-func/" target="_blank">Binomial distribution</a></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-2f51310acab41649af988ccebfe4186d.png?v=0" title="\Phi" alt="\Phi" class="tex"/>: CDF of the standard distriubtion of the selected distribution</dd></dl>
+<h2><a name="Probability_of_passing_a_test_plan"></a><span class="mw-headline">Probability of passing a test plan</span></h2>
+<p>The probability of passing a test plan <img src="../images/Algorithm_Life_Test_Plans/math-c4ef66685ebe96259b4077d1885b11fa.png?v=0" title="\text{prob}(r)" alt="\text{prob}(r)" class="tex"/> as a function of improvement (<img src="../images/Algorithm_Life_Test_Plans/math-4b43b0aee35624cd95b910189b3dc231.png?v=0" title="r" alt="r" class="tex"/>) can be calculated:
+</p>
+<dl><dd><img src="../images/Algorithm_Life_Test_Plans/math-451e0d6c8a5ae038bb544dec6d7ef59b.png?v=0" title="\text{prob}(r) = binocdf(m, N, p(t,r))" alt="\text{prob}(r) = binocdf(m, N, p(t,r))" class="tex"/></dd>
+<dt>where</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-a43173529c5c0f3d585f4c83438ac04a.png?v=0" title="p(t,r)" alt="p(t,r)" class="tex"/>: the probability of failure in terms of <img src="../images/Algorithm_Life_Test_Plans/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/> and <img src="../images/Algorithm_Life_Test_Plans/math-4b43b0aee35624cd95b910189b3dc231.png?v=0" title="r" alt="r" class="tex"/>. It depends on the distribution family:
+<dl><dd><ul><li><img src="../images/Algorithm_Life_Test_Plans/math-e0e57fcfd44a10c2134b43578adc3a1c.png?v=0" title="p(t,r) = \Phi(\frac{\text{ln}(t)-\mu_G-C(r)}{\sigma})" alt="p(t,r) = \Phi(\frac{\text{ln}(t)-\mu_G-C(r)}{\sigma})" class="tex"/> for log-location-scale distribution</li>
+<li><img src="../images/Algorithm_Life_Test_Plans/math-568b8be4fe101d635205b5f1bd1bff8f.png?v=0" title="p(t,r) = \Phi(\frac{t-\mu_G-C(r)}{\sigma})" alt="p(t,r) = \Phi(\frac{t-\mu_G-C(r)}{\sigma})" class="tex"/> for log-location-scale distribution</li></ul></dd></dl></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-4b43b0aee35624cd95b910189b3dc231.png?v=0" title="r" alt="r" class="tex"/>: ratio of improvement for log-location-scale family; amount of improvement for a location-scale family. </dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-c512cd483413fae57d60ebc3ec2e342f.png?v=0" title="C(r)" alt="C(r)" class="tex"/>: calculation of <img src="../images/Algorithm_Life_Test_Plans/math-c512cd483413fae57d60ebc3ec2e342f.png?v=0" title="C(r)" alt="C(r)" class="tex"/> is listed in the table below:</dd></dl>
+<table class="simple">
+<tr>
+<th> Distribution Family
+</th>
+<th> Parameters
+</th>
+<th> Percentile (<img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>) is provided
+</th>
+<th> Reliability (<img src="../images/Algorithm_Life_Test_Plans/math-41e34dd11d4a51ff40cb7147c3f3d87a.png?v=0" title="R(t_0)" alt="R(t_0)" class="tex"/>) is provided
+</th>
+<th> MTTF is provided
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>log-location-scale</b>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-0a4f6b921d1d56a8ca5df2a0c74946bb.png?v=0" title="C(r) = \text{ln}(r) " alt="C(r) = \text{ln}(r) " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-b9633fdb55d7062cdc18ec297b2d5de4.png?v=0" title="r = \text{exp}(\mu_1)/\text{exp}(\mu) " alt="r = \text{exp}(\mu_1)/\text{exp}(\mu) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-0a4f6b921d1d56a8ca5df2a0c74946bb.png?v=0" title="C(r) = \text{ln}(r) " alt="C(r) = \text{ln}(r) " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-77220177d35a0994e07c8cda97e958df.png?v=0" title=" r = t_{p1}/t_p " alt=" r = t_{p1}/t_p " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-114a24e33220ede205ea47718e3e413e.png?v=0" title="C(r) = A(r) " alt="C(r) = A(r) " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-72a3c88a4df4d1df643b958a48c809a0.png?v=0" title="r = R_1(t_0)/R(t_0) " alt="r = R_1(t_0)/R(t_0) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-0a4f6b921d1d56a8ca5df2a0c74946bb.png?v=0" title="C(r) = \text{ln}(r) " alt="C(r) = \text{ln}(r) " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-6cd1ad21ef3c73c371d242c1e56fd35f.png?v=0" title="r = MTTF_1/MTTF " alt="r = MTTF_1/MTTF " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>location-scale</b>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-45b8069c0e708386bd75011d3a32a7da.png?v=0" title="C(r) = r " alt="C(r) = r " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-86d6041d906d5768fe459e209b7d6fc9.png?v=0" title="r = \mu_1-\mu " alt="r = \mu_1-\mu " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-de7ea838ae17977d320efa2b46065893.png?v=0" title="C(r) = r" alt="C(r) = r" class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-2164e4d3436f0eecf7ccc615f54ed5b7.png?v=0" title=" r = t_{p1}-t_{p} " alt=" r = t_{p1}-t_{p} " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-c4ffcbf038fa5227be5e1ff1aa2cbe80.png?v=0" title="C(r) = B(r) " alt="C(r) = B(r) " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-d8ad6b961736d3920f6248273501cfe8.png?v=0" title="r = R_1(t_0)-R(t_0) " alt="r = R_1(t_0)-R(t_0) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-45b8069c0e708386bd75011d3a32a7da.png?v=0" title="C(r) = r " alt="C(r) = r " class="tex"/> <br /><br /> <img src="../images/Algorithm_Life_Test_Plans/math-658664322dc4927183b086a93f4b1c9c.png?v=0" title="r = MTTF_1-MTTF " alt="r = MTTF_1-MTTF " class="tex"/>
+</td></tr>
+</table>
+<p>where
+</p>
+<dl><dd><img src="../images/Algorithm_Life_Test_Plans/math-f67d0427c469dc8fb6e31fccb9541803.png?v=0" title="A(r) = \sigma(\Phi^{-1}(1-R_G)-\Phi^{-1}(1-rR_G))" alt="A(r) = \sigma(\Phi^{-1}(1-R_G)-\Phi^{-1}(1-rR_G))" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-402d192691ebde8597744b34f09f103a.png?v=0" title="B(r) = \sigma(\Phi^{-1}(1-R_G)-\Phi^{-1}(1-r-R_G))" alt="B(r) = \sigma(\Phi^{-1}(1-R_G)-\Phi^{-1}(1-r-R_G))" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/>: provided sample size or the sample size calculated from testing time</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>: provided testing time or the testing time calculated from sample size</dd></dl>
+<h1><a name="Estimation_Test_Plan"></a><span class="mw-headline">Estimation Test Plan</span></h1>
+<dl><dt> Specify planning values</dt></dl>
+<ol><li> Two distribution parameters (<img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>)</li>
+<li> Percentile and scale (<img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>)</li>
+<li> Percentile and location (<img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>)</li>
+<li> Two percentiles (<img src="../images/Algorithm_Life_Test_Plans/math-3fb025ad7c813f46fa45e34cbc00eadd.png?v=0" title="t_{p_1}" alt="t_{p_1}" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-03b632315ee5bee654b60a6bd902a249.png?v=0" title="p_1" alt="p_1" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-b1beef495cbba771c1b0d7752f4318a4.png?v=0" title="t_{p_2}" alt="t_{p_2}" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-6fe97b358b528edc477ba63d50b652af.png?v=0" title="p_2" alt="p_2" class="tex"/>)</li></ol>
+<p>The distribution parameters (<img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>) are first calculated （table below) if the specified planning value type of the test plan is either 2, 3 or 4. 
+</p>
+<table class="simple">
+<tr>
+<th> Distribution Family
+</th>
+<th> Percentile and scale
+</th>
+<th> Percentile and location
+</th>
+<th> Two percentiles
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>log-location-scale</b>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-cf6947d3f31d17bae90a2aaa59434a8c.png?v=0" title="\mu = \text{ln}(t_p) - \sigma\Phi^{-1}(p) " alt="\mu = \text{ln}(t_p) - \sigma\Phi^{-1}(p) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-cdd71be7140855079ab93e30c65b032f.png?v=0" title="\sigma = \frac{\text{ln}(t_p) - \mu}{\Phi^{-1}(p)}  " alt="\sigma = \frac{\text{ln}(t_p) - \mu}{\Phi^{-1}(p)}  " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-9d97435d47a49e89028b900e8531509e.png?v=0" title="\mu = \frac{\text{ln}(t_{p_1})\Phi^{-1}(p_2)-\text{ln}(t_{p_2})\Phi^{-1}(p_1)}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " alt="\mu = \frac{\text{ln}(t_{p_1})\Phi^{-1}(p_2)-\text{ln}(t_{p_2})\Phi^{-1}(p_1)}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " class="tex"/>  <br /><br />  <img src="../images/Algorithm_Life_Test_Plans/math-7d3b5d7396a637eb55d3a0dc1a89625f.png?v=0" title="\sigma = \frac{\text{ln}(t_{p_2})-\text{ln}(t_{p_1})}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " alt="\sigma = \frac{\text{ln}(t_{p_2})-\text{ln}(t_{p_1})}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>location-scale</b>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-38e42978871ae5b38872e2f43f64a938.png?v=0" title="\mu = t_p - \sigma\Phi^{-1}(p) " alt="\mu = t_p - \sigma\Phi^{-1}(p) " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-8eeb75476a73f0423fdf7078733a42dc.png?v=0" title="\sigma = \frac{t_p - \mu}{\Phi^{-1}(p)} " alt="\sigma = \frac{t_p - \mu}{\Phi^{-1}(p)} " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-95981b55a6f4580640a8106791ddb1b2.png?v=0" title="\mu = \frac{t_{p_1}\Phi^{-1}(p_2)-t_{p_2}\Phi^{-1}(p_1)}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " alt="\mu = \frac{t_{p_1}\Phi^{-1}(p_2)-t_{p_2}\Phi^{-1}(p_1)}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " class="tex"/>  <br /><br /><img src="../images/Algorithm_Life_Test_Plans/math-2189145975297de116a195b1b78dda18.png?v=0" title="  \sigma = \frac{t_{p_2}-t_{p_1}}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " alt="  \sigma = \frac{t_{p_2}-t_{p_1}}{\Phi^{-1}(p_2)-\Phi^{-1}(p_1)} " class="tex"/>
+</td></tr></table>
+<h2><a name="Estimate_percentile_for_percent"></a><span class="mw-headline">Estimate percentile for percent</span></h2>
+<h3><a name="Estimated_value_of_percentile"></a><span class="mw-headline">Estimated value of percentile</span></h3>
+<dl><dt> For log-location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-39d9c4a93abe889c049bce2df4efbee2.png?v=0" title="t_p = \text{exp}(\mu + \sigma\Phi^{-1}(p)) " alt="t_p = \text{exp}(\mu + \sigma\Phi^{-1}(p)) " class="tex"/> </li></ul></dt></dl>
+<dl><dt> For location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-9d668141edf9a194d62c56aa7f360d04.png?v=0" title="t_p = \mu + \sigma\Phi^{-1}(p) " alt="t_p = \mu + \sigma\Phi^{-1}(p) " class="tex"/></li></ul></dt></dl>
+<h3><a name="Asymptotic_variance_of_percentile"></a><span class="mw-headline">Asymptotic variance of percentile</span></h3>
+<dl><dt> Asymptotic covariance of the MLEs of <img src="../images/Algorithm_Life_Test_Plans/math-fc0b3b765772e7e3393d483d44fa8cad.png?v=0" title="\mu, \sigma" alt="\mu, \sigma" class="tex"/> is first calculated based on the chosen censoring type (uncensored, right censored, interval censored)[<a href="#Ref1">1</a>]. Then the asymptotic variance of percentile can be calculated</dt>
+<dd></dd>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-56ece0a6e7cda7896fd3b1ed8c427a6a.png?v=0" title="\text{Avar}(t_{p}) = \text{Avar}(\mu) + (\Phi^{-1}(p))^2\text{Avar}(\sigma)+2\Phi^{-1}(p)\text{Acov}(\mu, \sigma)" alt="\text{Avar}(t_{p}) = \text{Avar}(\mu) + (\Phi^{-1}(p))^2\text{Avar}(\sigma)+2\Phi^{-1}(p)\text{Acov}(\mu, \sigma)" class="tex"/></dd></dl>
+<h3><a name="Sample_size_to_estimate_percentile"></a><span class="mw-headline">Sample size to estimate percentile <img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/></span></h3>
+<dl><dt> For log-location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-3b37bb9ee3234ae302e3994c997a94f2.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" class="tex"/>, for two-sided confidence interval</li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-b9dc826fd6e2c1bd6d8cdf4c8b1bd806.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" class="tex"/>, for one-sided confidence interval</li></ul></dt></dl>
+<dl><dt> For location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-8b6b66fd646b33a55addecaed8cc0628.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" class="tex"/>, for two-sided confidence interval</li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-1d8088ab0234c407728f8e0a680069c1.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" class="tex"/>, for one-sided confidence interval</li></ul></dt></dl>
+<dl><dt>where</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-5965eb90b97091e4c04c3e63c8cadc82.png?v=0" title="D_T" alt="D_T" class="tex"/>: precision as distance from bound to estimate</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-9b53120fb2128d01ff21b42cf4160292.png?v=0" title="R_T" alt="R_T" class="tex"/>: <img src="../images/Algorithm_Life_Test_Plans/math-23f47b4a5ef4490422472ded23cd94bf.png?v=0" title="1 + D_T/t_p" alt="1 + D_T/t_p" class="tex"/> for upper bound, <img src="../images/Algorithm_Life_Test_Plans/math-63add7def5c4f558b64516657666fa66.png?v=0" title="1/(1-D_T/t_p)" alt="1/(1-D_T/t_p)" class="tex"/> for lower bound</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/>: sample size</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>: estimated percentile</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: significance level</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6961e78be39c8a325c23ee3b4b5bf3ca.png?v=0" title="\Phi^{-1}" alt="\Phi^{-1}" class="tex"/>: inverse CDF of the standard distriubtion of the selected distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-03b09b61edecb0a01d8fa75a147ccb34.png?v=0" title="\Phi_{nor}^{-1}" alt="\Phi_{nor}^{-1}" class="tex"/>: inverse CDF of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>: location parameter of the distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: scale parameter of the distribution</dd></dl>
+<h2><a name="Estimate_reliability_for_time"></a><span class="mw-headline">Estimate reliability for time</span></h2>
+<h3><a name="Estimated_value_of_reliability"></a><span class="mw-headline">Estimated value of reliability</span></h3>
+<dl><dd><ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-f1d7be489b74e04d95bf65175592cee9.png?v=0" title="R(t) = 1-\Phi(Z)" alt="R(t) = 1-\Phi(Z)" class="tex"/> </li></ul></dd></dl>
+<dl><dt>where</dt>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-21c2e59531c8710156d34a3c30ac81d5.png?v=0" title="Z" alt="Z" class="tex"/>: <img src="../images/Algorithm_Life_Test_Plans/math-9be2895894b896e979c2b0667758fd7a.png?v=0" title="\frac{\text{ln}(t)-\mu}{\sigma}" alt="\frac{\text{ln}(t)-\mu}{\sigma}" class="tex"/> for log-location-scale family; <img src="../images/Algorithm_Life_Test_Plans/math-feb6d582625aac44c7b8590a9ba75beb.png?v=0" title="\frac{t-\mu}{\sigma}" alt="\frac{t-\mu}{\sigma}" class="tex"/>,  for location-scale family</dd>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-2f51310acab41649af988ccebfe4186d.png?v=0" title="\Phi" alt="\Phi" class="tex"/>: CDF of standard distribution of the selected function</dd></dl>
+<h3><a name="Asymptotic_variance_of_Z"></a><span class="mw-headline">Asymptotic variance of Z</span></h3>
+<dl><dt> Asymptotic covariance of the MLEs of <img src="../images/Algorithm_Life_Test_Plans/math-fc0b3b765772e7e3393d483d44fa8cad.png?v=0" title="\mu, \sigma" alt="\mu, \sigma" class="tex"/> is first calculated based on the chosen censoring type (uncensored, right censored, interval censored)[<a href="#Ref1">1</a>]. Then the asymptotic variance of <img src="../images/Algorithm_Life_Test_Plans/math-21c2e59531c8710156d34a3c30ac81d5.png?v=0" title="Z" alt="Z" class="tex"/> can be calculated</dt>
+<dd></dd>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-290ab43ebdf618bebb7bcd346ec30642.png?v=0" title="\text{Avar}(Z) = \frac{1}{\sigma^2} (\text{Avar}(\mu) + Z^2\text{Avar}(\sigma)+2Z\text{Acov}(\mu, \sigma))" alt="\text{Avar}(Z) = \frac{1}{\sigma^2} (\text{Avar}(\mu) + Z^2\text{Avar}(\sigma)+2Z\text{Acov}(\mu, \sigma))" class="tex"/></dd></dl>
+<h3><a name="Sample_size_to_estimate_reliability"></a><span class="mw-headline">Sample size to estimate reliability <img src="../images/Algorithm_Life_Test_Plans/math-233c0ffc8923672a3fbb1b236ff4b2bf.png?v=0" title="R(t)" alt="R(t)" class="tex"/></span></h3>
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-9095c5e670be62f747f0559ee6af55f2.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" class="tex"/>, for two-sided confidence interval</li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-243d2f323f0f05c51781cf0ce376a05c.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" class="tex"/>, for one-sided confidence interval</li></ul>
+<dl><dt>where</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-5965eb90b97091e4c04c3e63c8cadc82.png?v=0" title="D_T" alt="D_T" class="tex"/>: <img src="../images/Algorithm_Life_Test_Plans/math-b34e8ae4faf0e9178f31c06eed2a594c.png?v=0" title="\Phi^{-1}(D_{lower} + \Phi(Z)) - Z" alt="\Phi^{-1}(D_{lower} + \Phi(Z)) - Z" class="tex"/> for the lower bound; <img src="../images/Algorithm_Life_Test_Plans/math-61de6beb47dea9922723b00635208d74.png?v=0" title="Z - \Phi^{-1}(D_{upper} + \Phi(Z)) " alt="Z - \Phi^{-1}(D_{upper} + \Phi(Z)) " class="tex"/> for the upper bound</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-49a5849983fbe25b23a380cba1cddab7.png?v=0" title="D_{lower}, D_{upper}" alt="D_{lower}, D_{upper}" class="tex"/>: precision as distance from bound to estimate</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/>: sample size</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: significance level</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6961e78be39c8a325c23ee3b4b5bf3ca.png?v=0" title="\Phi^{-1}" alt="\Phi^{-1}" class="tex"/>: inverse CDF of the standard distriubtion of the selected distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-03b09b61edecb0a01d8fa75a147ccb34.png?v=0" title="\Phi_{nor}^{-1}" alt="\Phi_{nor}^{-1}" class="tex"/>: inverse CDF of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>: location parameter of the distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: scale parameter of the distribution</dd></dl>
+<h1><a name="Accelerated_Life_Test_Plan"></a><span class="mw-headline">Accelerated Life Test Plan</span></h1>
+<dl><dt> Specify planning values</dt></dl>
+<ol><li> Intercept and slope (<img src="../images/Algorithm_Life_Test_Plans/math-2e426000b92cfbc7286b0e2cc2a37482.png?v=0" title="b_0" alt="b_0" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-bda0411e4b6129d514dcbfa5810fb14a.png?v=0" title="b_1" alt="b_1" class="tex"/>)</li>
+<li> (Percentile, percent, stress) and slope (<img src="../images/Algorithm_Life_Test_Plans/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-9dd4e461268c8034f5c8564e155c67a6.png?v=0" title="x" alt="x" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-bda0411e4b6129d514dcbfa5810fb14a.png?v=0" title="b_1" alt="b_1" class="tex"/>)</li>
+<li> (Percentile, percent, stress) and intercept (<img src="../images/Algorithm_Life_Test_Plans/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-9dd4e461268c8034f5c8564e155c67a6.png?v=0" title="x" alt="x" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-2e426000b92cfbc7286b0e2cc2a37482.png?v=0" title="b_0" alt="b_0" class="tex"/>)</li>
+<li> Two percentiles (<img src="../images/Algorithm_Life_Test_Plans/math-69ac49315fb75559bc7125a373ed5735.png?v=0" title="t_1" alt="t_1" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-03b632315ee5bee654b60a6bd902a249.png?v=0" title="p_1" alt="p_1" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-aa687da0086c1ea060a8838e24611319.png?v=0" title="x_1" alt="x_1" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-76a9c0f8e913d97ec097e88ed8232da5.png?v=0" title="t_2" alt="t_2" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-6fe97b358b528edc477ba63d50b652af.png?v=0" title="p_2" alt="p_2" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-8732099f74d777a67257cb2f04ead3d8.png?v=0" title="x_2" alt="x_2" class="tex"/>)</li></ol>
+<dl><dt> The intercept and slope (<img src="../images/Algorithm_Life_Test_Plans/math-2e426000b92cfbc7286b0e2cc2a37482.png?v=0" title="b_0" alt="b_0" class="tex"/>,<img src="../images/Algorithm_Life_Test_Plans/math-bda0411e4b6129d514dcbfa5810fb14a.png?v=0" title="b_1" alt="b_1" class="tex"/>) are first calculated （table below) if the specified planning value type of the test plan is either 2, 3 or 4.</dt></dl>
+<table class="simple">
+<tr>
+<th> Distribution Family
+</th>
+<th> Percentile and slope
+</th>
+<th> Percentile and intercept
+</th>
+<th> Two percentiles
+</th></tr>
+<tr>
+<td style="background-color: #F0F0F0"> <b>log-location-scale</b>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-eb8c15588d2b4f320585430a21c47240.png?v=0" title="b_0 = \text{ln}(t) - \sigma\Phi^{-1}(p) - b_1x " alt="b_0 = \text{ln}(t) - \sigma\Phi^{-1}(p) - b_1x " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-4cdc96b02f2268726228e8a9de9cd8ca.png?v=0" title="b_1 = \frac{\text{ln}(t)-\sigma\Phi^{-1}(p)-b_0}{x}  " alt="b_1 = \frac{\text{ln}(t)-\sigma\Phi^{-1}(p)-b_0}{x}  " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-50913e5f7d749ab82c8e8c48cdd98d95.png?v=0" title="b_0 = \frac{x_2\text{ln}(t_1)-x_1\text{ln}(t_2)+\sigma(x_1\Phi^{-1}(p_2)-x_2\Phi^{-1}(p_1))}{x_2-x_1} " alt="b_0 = \frac{x_2\text{ln}(t_1)-x_1\text{ln}(t_2)+\sigma(x_1\Phi^{-1}(p_2)-x_2\Phi^{-1}(p_1))}{x_2-x_1} " class="tex"/>  <br /><br />  <img src="../images/Algorithm_Life_Test_Plans/math-5c45b77cb0870e8940e48df5bd497f0e.png?v=0" title="b_1 = \frac{\text{ln}(t_2)-\text{ln}(t_1)+\sigma(\Phi^{-1}(p_1)-\Phi^{-1}(p_2))}{x_2-x_1} " alt="b_1 = \frac{\text{ln}(t_2)-\text{ln}(t_1)+\sigma(\Phi^{-1}(p_1)-\Phi^{-1}(p_2))}{x_2-x_1} " class="tex"/>
+</td></tr>
+<tr>
+<td style="background-color: #F0F0F0"><b>location-scale</b>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-fd7ab3b5761fb8d592810d86f653c8c2.png?v=0" title="b_0 = t - \sigma\Phi^{-1}(p) - b_1x  " alt="b_0 = t - \sigma\Phi^{-1}(p) - b_1x  " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-369a97b04bd4153c378275e8685d556a.png?v=0" title="b_1 = \frac{t-\sigma\Phi^{-1}(p)-b_0}{x}  " alt="b_1 = \frac{t-\sigma\Phi^{-1}(p)-b_0}{x}  " class="tex"/>
+</td>
+<td> <img src="../images/Algorithm_Life_Test_Plans/math-47b90433281c2de6f7277d5bc9caeffb.png?v=0" title="b_0 = \frac{x_2t_1-x_1t_2+\sigma(x_1\Phi^{-1}(p_2)-x_2\Phi^{-1}(p_1))}{x_2-x_1} " alt="b_0 = \frac{x_2t_1-x_1t_2+\sigma(x_1\Phi^{-1}(p_2)-x_2\Phi^{-1}(p_1))}{x_2-x_1} " class="tex"/>  <br /><br />  <img src="../images/Algorithm_Life_Test_Plans/math-086532f643d1a48cb85168f521cdcb67.png?v=0" title="b_1 = \frac{t_2-t_1+\sigma(\Phi^{-1}(p_1)-\Phi^{-1}(p_2))}{x_2-x_1} " alt="b_1 = \frac{t_2-t_1+\sigma(\Phi^{-1}(p_1)-\Phi^{-1}(p_2))}{x_2-x_1} " class="tex"/>
+</td></tr></table>
+<h2><a name="Location_parameter_at_accelerating_variable"></a><span class="mw-headline">Location parameter at accelerating variable</span></h2>
+<dl><dd><ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-3562a40376ee321e6ba318a5ff62209c.png?v=0" title=" \mu = b_0 + b_1\times x " alt=" \mu = b_0 + b_1\times x " class="tex"/></li></ul></dd></dl>
+<dl><dt>where
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-9dd4e461268c8034f5c8564e155c67a6.png?v=0" title="x" alt="x" class="tex"/>: the transformed accelerating variable <img src="../images/Algorithm_Life_Test_Plans/math-5b61a1b298a0d06efa6933a97e68d763.png?v=0" title="AR" alt="AR" class="tex"/>.</li></ul></dt>
+<dd> Linear:   <img src="../images/Algorithm_Life_Test_Plans/math-c282990723c27c8cbc87426712b5f17e.png?v=0" title="x = AR" alt="x = AR" class="tex"/></dd>
+<dd> Arrhenius:   <img src="../images/Algorithm_Life_Test_Plans/math-9fad9186e92588a23477df96f745ac7f.png?v=0" title="x = \frac{11604.53}{AR+273.16}" alt="x = \frac{11604.53}{AR+273.16}" class="tex"/></dd>
+<dd> Inverse temp:   <img src="../images/Algorithm_Life_Test_Plans/math-4ff91510572467d081b6ef306a704055.png?v=0" title="x = \frac{1}{AR+273.16}" alt="x = \frac{1}{AR+273.16}" class="tex"/></dd>
+<dd> Ln (Power):   <img src="../images/Algorithm_Life_Test_Plans/math-050363518eb81e92bdd0f3503236942c.png?v=0" title="x = \ln(AR)" alt="x = \ln(AR)" class="tex"/></dd></dl>
+<h2><a name="Estimate_percentile_for_percent_2"></a><span class="mw-headline">Estimate percentile for percent</span></h2>
+<h3><a name="Estimated_value_of_percentile_2"></a><span class="mw-headline">Estimated value of percentile</span></h3>
+<dl><dt> For log-location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-39d9c4a93abe889c049bce2df4efbee2.png?v=0" title="t_p = \text{exp}(\mu + \sigma\Phi^{-1}(p)) " alt="t_p = \text{exp}(\mu + \sigma\Phi^{-1}(p)) " class="tex"/> </li></ul></dt></dl>
+<dl><dt> For location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-9d668141edf9a194d62c56aa7f360d04.png?v=0" title="t_p = \mu + \sigma\Phi^{-1}(p) " alt="t_p = \mu + \sigma\Phi^{-1}(p) " class="tex"/></li></ul></dt></dl>
+<h3><a name="Best_allocation_for_each_stress_level"></a><span class="mw-headline">Best allocation for each stress level</span></h3>
+<dl><dt> Asymptotic covariance of the MLEs of <img src="../images/Algorithm_Life_Test_Plans/math-fc0b3b765772e7e3393d483d44fa8cad.png?v=0" title="\mu, \sigma" alt="\mu, \sigma" class="tex"/> is first calculated  for each accelerating variable (refer to <a href="../../App/App/Algorithm_Life_Test_Plans.html#Asymptotic_variance_of_percentile" title="App:Algorithm Life Test Plans">section</a>). Then it can be converted to the asymptotic covariance of the MLEs of <img src="../images/Algorithm_Life_Test_Plans/math-085065b18ab23144b6eb031a6370c18e.png?v=0" title="\sigma, b_0, b_1" alt="\sigma, b_0, b_1" class="tex"/>[<a href="#Ref1">1</a>]. The overall asymptotic covariance is a weighted sum of the asymptotic covariances associated with each accelerating variable, where the weights are determined by the allocation at each stress level. </dt>
+<dt>The asymptotic covariance of <img src="../images/Algorithm_Life_Test_Plans/math-01e7826c476a8204a405e23eec871b35.png?v=0" title="t_{p}" alt="t_{p}" class="tex"/> at designed stress <img src="../images/Algorithm_Life_Test_Plans/math-3e0d691f3a530e6c7e079636f20c111b.png?v=0" title="x_0" alt="x_0" class="tex"/> can be calculated by the following equations</dt>
+<dd> 
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-c15cccdce59ddc9a3635f76385b10e69.png?v=0" title=" \text{Avar}(\mu) = \text{Avar}(b_0) + 2x_0\text{Acov}(b_0, b_1) + x_0^2\text{Avar}(b_1) " alt=" \text{Avar}(\mu) = \text{Avar}(b_0) + 2x_0\text{Acov}(b_0, b_1) + x_0^2\text{Avar}(b_1) " class="tex"/></li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-6e1eb4f00e5145ae6c35a0bd9d0945ed.png?v=0" title=" \text{Acov}(\mu, \sigma) = \text{Acov}(b_0, \sigma) +  x_0\text{Acov}(b_1, \sigma)" alt=" \text{Acov}(\mu, \sigma) = \text{Acov}(b_0, \sigma) +  x_0\text{Acov}(b_1, \sigma)" class="tex"/></li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-56ece0a6e7cda7896fd3b1ed8c427a6a.png?v=0" title="\text{Avar}(t_{p}) = \text{Avar}(\mu) + (\Phi^{-1}(p))^2\text{Avar}(\sigma)+2\Phi^{-1}(p)\text{Acov}(\mu, \sigma)" alt="\text{Avar}(t_{p}) = \text{Avar}(\mu) + (\Phi^{-1}(p))^2\text{Avar}(\sigma)+2\Phi^{-1}(p)\text{Acov}(\mu, \sigma)" class="tex"/></li></ul></dd></dl>
+<dl><dt>The optimal allocation is obtained via a numerical search that minimizes <img src="../images/Algorithm_Life_Test_Plans/math-7946872b01f9bd3ed4af9cd87b52e06e.png?v=0" title="\text{Avar}(t_{p})" alt="\text{Avar}(t_{p})" class="tex"/>.</dt></dl>
+<h3><a name="Sample_size_to_estimate_percentile_2"></a><span class="mw-headline">Sample size to estimate percentile <img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/></span></h3>
+<dl><dt> For log-location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-3b37bb9ee3234ae302e3994c997a94f2.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" class="tex"/>, for two-sided confidence interval</li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-b9dc826fd6e2c1bd6d8cdf4c8b1bd806.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{(\text{ln}(R_T))^{2}}" class="tex"/>, for one-sided confidence interval</li></ul></dt></dl>
+<dl><dt> For location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-8b6b66fd646b33a55addecaed8cc0628.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" class="tex"/>, for two-sided confidence interval</li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-1d8088ab0234c407728f8e0a680069c1.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(t_{p})}{D_T^{2}}" class="tex"/>, for one-sided confidence interval</li></ul></dt></dl>
+<dl><dt>where</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-5965eb90b97091e4c04c3e63c8cadc82.png?v=0" title="D_T" alt="D_T" class="tex"/>: precision as distance from bound to estimate</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-9b53120fb2128d01ff21b42cf4160292.png?v=0" title="R_T" alt="R_T" class="tex"/>: <img src="../images/Algorithm_Life_Test_Plans/math-23f47b4a5ef4490422472ded23cd94bf.png?v=0" title="1 + D_T/t_p" alt="1 + D_T/t_p" class="tex"/> for upper bound, <img src="../images/Algorithm_Life_Test_Plans/math-63add7def5c4f558b64516657666fa66.png?v=0" title="1/(1-D_T/t_p)" alt="1/(1-D_T/t_p)" class="tex"/> for lower bound</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/>: sample size</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/>: estimated percentile</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: significance level</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6961e78be39c8a325c23ee3b4b5bf3ca.png?v=0" title="\Phi^{-1}" alt="\Phi^{-1}" class="tex"/>: inverse CDF of the standard distriubtion of the selected distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-03b09b61edecb0a01d8fa75a147ccb34.png?v=0" title="\Phi_{nor}^{-1}" alt="\Phi_{nor}^{-1}" class="tex"/>: inverse CDF of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>: location parameter of the distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: scale parameter of the distribution</dd></dl>
+<h3><a name="Standard_error_of_percentile_for_sample_size"></a><span class="mw-headline">Standard error of percentile <img src="../images/Algorithm_Life_Test_Plans/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/> for sample size</span></h3>
+<dl><dt>When the specifications include the sample size, then</dt>
+<dt> For log-location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-b5c33c93f038796c52778c38be9e5d5a.png?v=0" title="SE = \sqrt{\text{Avar}(t_p)/N} * t_p" alt="SE = \sqrt{\text{Avar}(t_p)/N} * t_p" class="tex"/></li></ul></dt></dl>
+<dl><dt> For location-scale family
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-9a8f45cc250496b3d3ab7a4a4cd10819.png?v=0" title="SE = \sqrt{\text{Avar}(t_p)/N} " alt="SE = \sqrt{\text{Avar}(t_p)/N} " class="tex"/></li></ul></dt></dl>
+<h2><a name="Estimate_reliability_for_time_2"></a><span class="mw-headline">Estimate reliability for time</span></h2>
+<h3><a name="Estimated_value_of_reliability_2"></a><span class="mw-headline">Estimated value of reliability</span></h3>
+<dl><dd><ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-f1d7be489b74e04d95bf65175592cee9.png?v=0" title="R(t) = 1-\Phi(Z)" alt="R(t) = 1-\Phi(Z)" class="tex"/> </li></ul></dd></dl>
+<dl><dt>where</dt>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-21c2e59531c8710156d34a3c30ac81d5.png?v=0" title="Z" alt="Z" class="tex"/>: <img src="../images/Algorithm_Life_Test_Plans/math-9be2895894b896e979c2b0667758fd7a.png?v=0" title="\frac{\text{ln}(t)-\mu}{\sigma}" alt="\frac{\text{ln}(t)-\mu}{\sigma}" class="tex"/> for log-location-scale family; <img src="../images/Algorithm_Life_Test_Plans/math-feb6d582625aac44c7b8590a9ba75beb.png?v=0" title="\frac{t-\mu}{\sigma}" alt="\frac{t-\mu}{\sigma}" class="tex"/>,  for location-scale family</dd>
+<dd> <img src="../images/Algorithm_Life_Test_Plans/math-2f51310acab41649af988ccebfe4186d.png?v=0" title="\Phi" alt="\Phi" class="tex"/>: CDF of standard distribution of the selected function</dd></dl>
+<h3><a name="Best_allocation_for_each_stress_level_2"></a><span class="mw-headline">Best allocation for each stress level</span></h3>
+<dl><dt> Asymptotic covariance of the MLEs of <img src="../images/Algorithm_Life_Test_Plans/math-fc0b3b765772e7e3393d483d44fa8cad.png?v=0" title="\mu, \sigma" alt="\mu, \sigma" class="tex"/> is first calculated  for each accelerating variable (refer to <a href="../../App/App/Algorithm_Life_Test_Plans.html#Asymptotic_variance_of_percentile" title="App:Algorithm Life Test Plans">section</a>). Then it can be converted to the asymptotic covariance of the MLEs of <img src="../images/Algorithm_Life_Test_Plans/math-085065b18ab23144b6eb031a6370c18e.png?v=0" title="\sigma, b_0, b_1" alt="\sigma, b_0, b_1" class="tex"/>[<a href="#Ref1">1</a>]. The overall asymptotic covariance is a weighted sum of the asymptotic covariances associated with each accelerating variable, where the weights are determined by the allocation at each stress level. </dt>
+<dt>The asymptotic covariance of reliability <img src="../images/Algorithm_Life_Test_Plans/math-7ffc4d510260a8544e5550e62ec56bc1.png?v=0" title="rel" alt="rel" class="tex"/> at designed stress <img src="../images/Algorithm_Life_Test_Plans/math-3e0d691f3a530e6c7e079636f20c111b.png?v=0" title="x_0" alt="x_0" class="tex"/> can be calculated by the following equations</dt>
+<dd> 
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-c15cccdce59ddc9a3635f76385b10e69.png?v=0" title=" \text{Avar}(\mu) = \text{Avar}(b_0) + 2x_0\text{Acov}(b_0, b_1) + x_0^2\text{Avar}(b_1) " alt=" \text{Avar}(\mu) = \text{Avar}(b_0) + 2x_0\text{Acov}(b_0, b_1) + x_0^2\text{Avar}(b_1) " class="tex"/></li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-6e1eb4f00e5145ae6c35a0bd9d0945ed.png?v=0" title=" \text{Acov}(\mu, \sigma) = \text{Acov}(b_0, \sigma) +  x_0\text{Acov}(b_1, \sigma)" alt=" \text{Acov}(\mu, \sigma) = \text{Acov}(b_0, \sigma) +  x_0\text{Acov}(b_1, \sigma)" class="tex"/></li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-f52f3cae6e0876beedad0919877472a0.png?v=0" title="\text{Avar}(rel) = \frac{\phi(Z)^2}{\sigma^2} \text{Avar}(\mu) + Z^2\text{Avar}(\sigma)+2Z(p)\text{Acov}(\mu, \sigma)" alt="\text{Avar}(rel) = \frac{\phi(Z)^2}{\sigma^2} \text{Avar}(\mu) + Z^2\text{Avar}(\sigma)+2Z(p)\text{Acov}(\mu, \sigma)" class="tex"/></li></ul></dd></dl>
+<p>where
+</p>
+<dl><dd> <img src="../images/Algorithm_Life_Test_Plans/math-371e54dd69a34f4e1282ee595cf847f0.png?v=0" title=" \phi " alt=" \phi " class="tex"/>: PDF of the selected distribution</dd>
+<dt>The optimal allocation is obtained via a numerical search that minimizes <img src="../images/Algorithm_Life_Test_Plans/math-08c091f7b60bc97a8acae454a26167cf.png?v=0" title="\text{Avar}(rel)" alt="\text{Avar}(rel)" class="tex"/>.</dt></dl>
+<h3><a name="Sample_size_to_estimate_reliability_2"></a><span class="mw-headline">Sample size to estimate reliability <img src="../images/Algorithm_Life_Test_Plans/math-233c0ffc8923672a3fbb1b236ff4b2bf.png?v=0" title="R(t)" alt="R(t)" class="tex"/></span></h3>
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-9095c5e670be62f747f0559ee6af55f2.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha/2))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" class="tex"/>, for two-sided confidence interval</li>
+<li> <img src="../images/Algorithm_Life_Test_Plans/math-243d2f323f0f05c51781cf0ce376a05c.png?v=0" title="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" alt="N=(\Phi_{\text{nor}}^{-1}(1-\alpha))^2 \frac{\text{Avar}(Z)}{D_T^{2}}" class="tex"/>, for one-sided confidence interval</li></ul>
+<dl><dt>where</dt>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-5965eb90b97091e4c04c3e63c8cadc82.png?v=0" title="D_T" alt="D_T" class="tex"/>: <img src="../images/Algorithm_Life_Test_Plans/math-b34e8ae4faf0e9178f31c06eed2a594c.png?v=0" title="\Phi^{-1}(D_{lower} + \Phi(Z)) - Z" alt="\Phi^{-1}(D_{lower} + \Phi(Z)) - Z" class="tex"/> for the lower bound; <img src="../images/Algorithm_Life_Test_Plans/math-61de6beb47dea9922723b00635208d74.png?v=0" title="Z - \Phi^{-1}(D_{upper} + \Phi(Z)) " alt="Z - \Phi^{-1}(D_{upper} + \Phi(Z)) " class="tex"/> for the upper bound</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-49a5849983fbe25b23a380cba1cddab7.png?v=0" title="D_{lower}, D_{upper}" alt="D_{lower}, D_{upper}" class="tex"/>: precision as distance from bound to estimate</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/>: sample size</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: significance level</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-6961e78be39c8a325c23ee3b4b5bf3ca.png?v=0" title="\Phi^{-1}" alt="\Phi^{-1}" class="tex"/>: inverse CDF of the standard distriubtion of the selected distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-03b09b61edecb0a01d8fa75a147ccb34.png?v=0" title="\Phi_{nor}^{-1}" alt="\Phi_{nor}^{-1}" class="tex"/>: inverse CDF of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/>: location parameter of the distribution</dd>
+<dd><img src="../images/Algorithm_Life_Test_Plans/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: scale parameter of the distribution</dd></dl>
+<h3><a name="Standard_error_of_reliability_for_sample_size"></a><span class="mw-headline">Standard error of reliability <img src="../images/Algorithm_Life_Test_Plans/math-7ffc4d510260a8544e5550e62ec56bc1.png?v=0" title="rel" alt="rel" class="tex"/> for sample size</span></h3>
+<dl><dt> When the specifications include the sample size, then
+<ul><li> <img src="../images/Algorithm_Life_Test_Plans/math-24378e4c659d5acde9d00eba2f112607.png?v=0" title="SE = \sqrt{\text{Avar}(rel)/N}" alt="SE = \sqrt{\text{Avar}(rel)/N}" class="tex"/></li></ul></dt></dl>
+<h1><a name="Reference"></a><span class="mw-headline">Reference</span></h1>
+<ol><li> <span id="Ref1"><span> W.Q. Meeker and L.A. Escobar (1998). "Statistical Methods for Reliability Data". <i>ohn Wiley &amp; Sons, Inc</i></span></li></ol>
+<p></span>
+</p>
+
+
+
+
+

@@ -27,7 +27,7 @@
   <toc>
     <toc_name>Apps &gt; Graphing &gt; Heat Map with Dendrogram(Pro)</toc_name>
     <toc_link>Category/Heat_Map_with_Dendrogram(App).html</toc_link>
-    <toc_url>App/Heat-Map-Dendrogram</toc_url>
+    <toc_url>App/Heat-Map-Dendrogram-Intro</toc_url>
     <toc_src>Category:Heat_Map_with_Dendrogram(App)</toc_src>
   </toc>
   <toc>
@@ -595,22 +595,52 @@
     <toc_src>App:SA_Parametric_Dist_Algorithm</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro)</toc_name>
-    <toc_link>Category/Nonparametric_Distribution_Analysis(App).html</toc_link>
-    <toc_url>App/SA-Nonparametric-Dist</toc_url>
-    <toc_src>Category:Nonparametric_Distribution_Analysis(App)</toc_src>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Right Censoring) (Pro)</toc_name>
+    <toc_link>Category/NPDA_Right_Censoring(App).html</toc_link>
+    <toc_url>App/NPDA-RC</toc_url>
+    <toc_src>Category:NPDA_Right_Censoring(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro) &gt; Tutorial for Nonparametric Distribution Analysis (Arbitrary Censoring)</toc_name>
-    <toc_link>App/SA_Nonparametric_Dist_Tutorial.html</toc_link>
-    <toc_url>App/Tutorial-Nonparametric-Distribution-Analysis-Arbitrary-Censoring</toc_url>
-    <toc_src>App:SA_Nonparametric_Dist_Tutorial</toc_src>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Right Censoring) (Pro) &gt; Tutorial: Non-Parametric Distribution Analysis (Right Censoring)</toc_name>
+    <toc_link>App/NPDA_Right_Censoring_Tutorial.html</toc_link>
+    <toc_url>App/SA-NPDA-Right-Censoring-Tutorial</toc_url>
+    <toc_src>App:NPDA_Right_Censoring_Tutorial</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro) &gt; Algorithm: Nonparametric Distribution Analysis (Arbitrary Censoring)</toc_name>
-    <toc_link>App/SA_Nonparametric_Dist_Algorithm.html</toc_link>
-    <toc_url>App/SA-Nonparametric-Dist-Algorithm</toc_url>
-    <toc_src>App:SA_Nonparametric_Dist_Algorithm</toc_src>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Right Censoring) (Pro) &gt; Algorithm: Non-Parametric Distribution Analysis (Right Censoring)</toc_name>
+    <toc_link>App/NPDA_Right_Censoring_Algorithm.html</toc_link>
+    <toc_url>App/SA-NPDA-Right-Censoring-Algorithm</toc_url>
+    <toc_src>App:NPDA_Right_Censoring_Algorithm</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Regression with Life Data</toc_name>
+    <toc_link>Category/Regression_with_Life_Data(App).html</toc_link>
+    <toc_url>App/SA-RLD</toc_url>
+    <toc_src>Category:Regression_with_Life_Data(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Regression with Life Data &gt; Tutorial for Regression with Life Data</toc_name>
+    <toc_link>App/SA_RLD_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-SA-RLD</toc_url>
+    <toc_src>App:SA_RLD_Tutorial</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Regression with Life Data &gt; Algorithm: Regression with Life Data</toc_name>
+    <toc_link>App/SA_RLD_Algorithm.html</toc_link>
+    <toc_url>App/SA-RLD-Algorithm</toc_url>
+    <toc_src>App:SA_RLD_Algorithm</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Identify Distribution for Right Censoring(Pro)</toc_name>
+    <toc_link>Category/Identify_Distribution_for_Right_Censoring(APP).html</toc_link>
+    <toc_url>App/ID-RC</toc_url>
+    <toc_src>Category:Identify_Distribution_for_Right_Censoring(APP)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Transform Warranty Data</toc_name>
+    <toc_link>Category/Transform_Warranty_Data(App).html</toc_link>
+    <toc_url>App/SA-Transform-Warranty</toc_url>
+    <toc_src>Category:Transform_Warranty_Data(App)</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Warranty Analysis</toc_name>
@@ -647,6 +677,66 @@
     <toc_link>App/SA_Accelerated_Life_Testingt_Algorithm.html</toc_link>
     <toc_url>App/SA-Accelerated-Life-Testing-Algorithm</toc_url>
     <toc_src>App:SA_Accelerated_Life_Testingt_Algorithm</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Distribution Overview for Right Censoring (Pro)</toc_name>
+    <toc_link>Category/Distribution_Overview_for_Right_Censoring(APP).html</toc_link>
+    <toc_url>App/RC-Dist-Overview</toc_url>
+    <toc_src>Category:Distribution_Overview_for_Right_Censoring(APP)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro)</toc_name>
+    <toc_link>Category/Nonparametric_Distribution_Analysis(App).html</toc_link>
+    <toc_url>App/SA-Nonparametric-Dist</toc_url>
+    <toc_src>Category:Nonparametric_Distribution_Analysis(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro) &gt; Tutorial for Nonparametric Distribution Analysis (Arbitrary Censoring)</toc_name>
+    <toc_link>App/SA_Nonparametric_Dist_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-Nonparametric-Distribution-Analysis-Arbitrary-Censoring</toc_url>
+    <toc_src>App:SA_Nonparametric_Dist_Tutorial</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro) &gt; Algorithm: Nonparametric Distribution Analysis (Arbitrary Censoring)</toc_name>
+    <toc_link>App/SA_Nonparametric_Dist_Algorithm.html</toc_link>
+    <toc_url>App/SA-Nonparametric-Dist-Algorithm</toc_url>
+    <toc_src>App:SA_Nonparametric_Dist_Algorithm</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Parametric Distribution Analysis (Arbitrary Censoring)</toc_name>
+    <toc_link>Category/Parametric_Distribution_Analysis_AC(App).html</toc_link>
+    <toc_url>App/SA-Parametric-Dist-Arbitrary-Censoring</toc_url>
+    <toc_src>Category:Parametric_Distribution_Analysis_AC(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Parametric Distribution Analysis (Arbitrary Censoring) &gt; Tutorial for Parametric Distribution Analysis (Arbitrary Censoring)</toc_name>
+    <toc_link>App/SA_Parametric_Dist_Arbitrary_Censoring_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-Parametric-Distribution-Analysis-Arbitrary-Censoring</toc_url>
+    <toc_src>App:SA_Parametric_Dist_Arbitrary_Censoring_Tutorial</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Parametric Distribution Analysis (Arbitrary Censoring) &gt; Algorithm: Parametric Distribution Analysis (Arbitrary Censoring)</toc_name>
+    <toc_link>App/SA_Parametric_Dist_AC_Algorithm.html</toc_link>
+    <toc_url>App/SA-Parametric-Dist-AC-Algorithm</toc_url>
+    <toc_src>App:SA_Parametric_Dist_AC_Algorithm</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Life Test Plans</toc_name>
+    <toc_link>Category/Life_Test_Plans(App).html</toc_link>
+    <toc_url>App/RSA-LTP</toc_url>
+    <toc_src>Category:Life_Test_Plans(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Life Test Plans &gt; Tutorial for Life Test Plans</toc_name>
+    <toc_link>App/Tutorial_Life_Test_Plans.html</toc_link>
+    <toc_url>App/RSA-LTP-Tutorial</toc_url>
+    <toc_src>App:Tutorial_Life_Test_Plans</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Life Test Plans &gt; Algorithm for Life Test Plans</toc_name>
+    <toc_link>App/Algorithm_Life_Test_Plans.html</toc_link>
+    <toc_url>App/RSA-LTP-Algorithm</toc_url>
+    <toc_src>App:Algorithm_Life_Test_Plans</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Plant Physiology Fitting Functions</toc_name>
@@ -1181,6 +1271,24 @@
     <toc_link>App/Sparse_Principal_Components_Analysis.html</toc_link>
     <toc_url>App/Sparse-PCA</toc_url>
     <toc_src>App:Sparse_Principal_Components_Analysis</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Acceptance Sampling Analysis</toc_name>
+    <toc_link>Category/Acceptance_Sampling_Analysis(App).html</toc_link>
+    <toc_url>App/ASA</toc_url>
+    <toc_src>Category:Acceptance_Sampling_Analysis(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Acceptance Sampling Analysis &gt; Tutorial for Acceptance Sampling Analysis</toc_name>
+    <toc_link>App/Tutorial_Acceptance_Sampling_Analysis.html</toc_link>
+    <toc_url>App/ASA-Tutorial</toc_url>
+    <toc_src>App:Tutorial_Acceptance_Sampling_Analysis</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Acceptance Sampling Analysis &gt; Algorithm for Acceptance Sampling Analysis</toc_name>
+    <toc_link>App/Algorithm_Acceptance_Sampling_Analysis.html</toc_link>
+    <toc_url>App/ASA-Algorithm</toc_url>
+    <toc_src>App:Algorithm_Acceptance_Sampling_Analysis</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Handling</toc_name>

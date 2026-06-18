@@ -75,7 +75,7 @@
 <h4><a name="Create_Design_2"></a><span class="mw-headline">Create Design</span></h4>
 <ol><li> Click the <b>Design of Experiments</b> icon <a  class="image"><img alt="DOEAPP.png" src="../images/Design_of_Experiments/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b></li>
 <li> Click the <b>Create Design</b> button and select <b>Response Surface Design</b>.
-<dl><dd> <a  class="image"><img alt="DOE RSD.png" src="../images/Design_of_Experiments/500px-DOE_RSD.png?v=70739" width="500"   /></a></dd></dl></li>
+<dl><dd> <a  class="image"><img alt="DOE RSD.png" src="../images/Design_of_Experiments/700px-DOE_RSD.png?v=78055" width="700"   /></a></dd></dl></li>
 <li> Choose <b>Central Composite</b>. In  the <b>Factors</b> tab, select 3 from <b>Number of Continuous Factors</b> drop-down list. Enter factor names (Time, Temp and Catalyst). Then enter low and high values (40-50, 80-90, and 0.02-0.03 respectively). Select 1 from the <b>Number of Categorical Factors</b>  drop-down list. Enter Reagent in factor name. Then Enter level values (TypeA, TypeB).
 <dl><dd> <a  class="image"><img alt="DOE RSD Factors.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Factors.png?v=74010" width="600"   /></a></dd></dl></li>
 <li> In the the <b>Settings</b> tab, select second design(Blocks=2). 
@@ -84,17 +84,31 @@
 <li> Click <b>OK</b> to output the design table.
 <dl><dd><a  class="image"><img alt="DOE RSD Results.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Results.png?v=70742" width="600"   /></a></dd></dl></li></ol>
 <h4><a name="Analyze_Design_2"></a><span class="mw-headline">Analyze Design</span></h4>
-<ol><li> Add two new columns on the design table and fill in response data. Use PH and Conductivity as Long Name.
-<dl><dd><a  class="image"><img alt="DOE RSD Analyze Input.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Input.png?v=75087" width="600"   /></a></dd></dl></li>
-<li> Click the <b>Design of Experiments</b> icon <a  class="image"><img alt="DOEAPP.png" src="../images/Design_of_Experiments/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b></li>
-<li> Activate the design table and click Analyze Design button <a  class="image"><img alt="DOE RSD Analyze Button.png" src="../images/Design_of_Experiments/80px-DOE_RSD_Analyze_Button.png?v=70745" width="80"   /></a></li>
-<li> In the the <b>Model</b> tab, select PH and Conductivity for <b>Response</b>. Then select <b>Linear + Squares</b> from <b>Model Type</b> drop-down list. Turn on <b>Include Blocks in the Model</b> button.
-<dl><dd><a  class="image"><img alt="DOE RSD Analyze Model.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Model.png?v=70757" width="600"   /></a></dd></dl></li>
-<li> In the <b>Quantities</b> tab, select Coefficients, Standard Error, Confidence Limits, t-Value and Prob&gt;|t| from <b>Coefficients Table</b> drop-down list</li>
-<li> In the <b>Plots</b> tab, select <b>Contour Plot</b>, <b>Surface Plot</b>.  In the <b>Settings of Contour and Surface Plots</b> group, select Time and Temp as factors for X and Y axis. In the row for Catalyst, under Value, enter 0.02. In the row for Reagent, under Value, select TypeA. 
-<dl><dd><a  class="image"><img alt="DOE RSD Analyze Plot.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Plot.png?v=70758" width="600"   /></a></dd></dl></li>
+<ol>
+<li> Add two new columns on the design table and fill in response data. Use PH and Conductivity as Long Name.
+<dl><dd><a  class="image"><img alt="DOE RSD Analyze Input.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Input.png?v=75087" width="600"   /></a></dd></dl>
+
+<li> Click the <b>Design of Experiments</b> icon <a  class="image"><img alt="DOEAPP.png" src="../images/Design_of_Experiments/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b>
+
+<li> Activate the design table and click <b>Analyze Design</b> button <a  class="image"><img alt="DOE RSD Analyze Button.png" src="../images/Design_of_Experiments/80px-DOE_RSD_Analyze_Button.png?v=70745" width="80"   /></a>
+
+<li>In the the <b>Model</b> tab, select <b>PH</b> for <b>Response</b>. Then select <b>Linear + Squares</b> from <b>Model Type</b> drop-down list. Turn on <b>Include Blocks in the Model</b> button.
+<dl><dd><a  class="image"><img alt="DOE RSD Analyze Model.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Model.png?v=78853" width="600"   /></a></dd></dl>
+
+<li> In the <b>Quantities</b> tab, select <b>Coefficients</b>, <b>Standard Error</b>, <b>Confidence Limits</b>, <b>t-Value</b> and <b>Prob&gt;|t|</b> from <b>Coefficients Table</b> drop-down list
+
+<li> In the <b>Plots</b> tab, select <b>Contour Plot</b>, <b>Surface Plot</b>.  In the <b>Settings of Contour and Surface Plots</b> group, select Time and Temp as factors for X and Y axis. In the row for Catalyst, under Value, enter <i>0.02</i>. In the row for Reagent, under Value, select <i>TypeA</i>. 
+<dl><dd><a  class="image"><img alt="DOE RSD Analyze Plot.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Plot.png?v=70758" width="600"   /></a></dd></dl>
+
 <li> Click <b>OK</b> to create analysis results.
-<dl><dd><a  class="image"><img alt="DOE RSD Analyze Results.png" src="../images/Design_of_Experiments/700px-DOE_RSD_Analyze_Results.png?v=75088" width="700"   /></a></dd></dl></li></ol>
+<dl><dd><a  class="image"><img alt="DOE RSD Analyze Results.png" src="../images/Design_of_Experiments/700px-DOE_RSD_Analyze_Results.png?v=75088" width="700"   /></a></dd></dl>
+
+<li>Click <b>Analyze Design</b> button again, and then select <b>Conductivity</b> for <b>Response</b> in the the <b>Model</b> tab.
+<dl><dd><a  class="image"><img alt="DOE RSD Analyze Model 2.png" src="../images/Design_of_Experiments/600px-DOE_RSD_Analyze_Model_2.png?v=78860" width="600"   /></a></dd></dl>
+
+<li>Other setting follow the above step5 and step6. Click <b>OK</b> to create analysis results.
+
+</ol>
 <h4><a name="Optimize_Response_2"></a><span class="mw-headline">Optimize Response</span></h4>
 <ol><li> Click the Design of Experiments icon <a  class="image"><img alt="DOEAPP.png" src="../images/Design_of_Experiments/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b></li>
 <li> Activate the analysis workbook we got in last section and click Optimize Response button <a  class="image"><img alt="DOE Optimize Icon.png" src="../images/Design_of_Experiments/80px-DOE_Optimize_Icon.png?v=70727" width="80"   /></a></li>

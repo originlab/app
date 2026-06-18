@@ -28,6 +28,13 @@
 <li class="toclevel-2 tocsection-21"><a href="#Uniform_distribution"><span class="tocnumber">4.12</span> <span class="toctext">Uniform distribution</span></a></li>
 <li class="toclevel-2 tocsection-22"><a href="#Binomial_distribution"><span class="tocnumber">4.13</span> <span class="toctext">Binomial distribution</span></a></li>
 <li class="toclevel-2 tocsection-23"><a href="#Poisson_distribution"><span class="tocnumber">4.14</span> <span class="toctext">Poisson distribution</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Smallest_Extreme_Value_distribution"><span class="tocnumber">4.15</span> <span class="toctext">Smallest Extreme Value distribution</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Largest_Extreme_Value_distribution"><span class="tocnumber">4.16</span> <span class="toctext">Largest Extreme Value distribution</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Logistic_distribution"><span class="tocnumber">4.17</span> <span class="toctext">Logistic distribution</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Log-logistic_distribution"><span class="tocnumber">4.18</span> <span class="toctext">Log-logistic distribution</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Folded_Normal_distribution"><span class="tocnumber">4.19</span> <span class="toctext">Folded Normal distribution</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Rayleigh_distribution"><span class="tocnumber">4.20</span> <span class="toctext">Rayleigh distribution</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Gaussian_Mixture_distribution"><span class="tocnumber">4.21</span> <span class="toctext">Gaussian Mixture distribution</span></a></li>
 </ul>
 </li>
 </ul>
@@ -39,7 +46,8 @@
 <h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
 <p>We want to calculate cumulative probability of Normal distribution at <img src="../images/Probability_Distribution_Calculator/math-566162f3afaf9f5f67e7d7ca7a4b424e.png?v=0" title="x=2" alt="x=2" class="tex"/> with parameters mean = 4 and standard deviation = 1.
 </p>
-<ol><li>Install the tool if you haven't, then run script:<pre class="lt" style="font-family:monospace;">prob_dist_cal <span style="color: #000080;">-</span>d;</pre> or click the app icon Constrained Multiple Regression in App Gallery to open the app dialog</li>
+<ol><li> This is a build-in App with Origin. If you haven't this tool, you can search the <b>Probability Distribution Calculator</b> in App Center to install it.</li>
+<li> Select <b>Statistics: Descriptive Statistics: Probability Distribution Calculator</b> or click the <b>Probability Distribution Calculator</b> app icon in App Galler to open the app dialog</li>
 <li>Choose <b>Normal</b> for the Distribution;</li>
 <li>Choose <b>Cumulative Probability</b> for the Calculation;</li>
 <li>In the part of Parameter Settings: let <b>Mean</b> = 4 and <b>Standard Deviation</b>=1, and then choose <b>Lower Tail</b> for the Tail Type;</li>
@@ -146,6 +154,34 @@
 </p><p><img src="../images/Probability_Distribution_Calculator/math-3836b4c8d5a96110e672c477f4c5372e.png?v=0" title="f(x)=\frac{\theta^x}{x!}e^{-\theta}," alt="f(x)=\frac{\theta^x}{x!}e^{-\theta}," class="tex"/>
 </p><p>where <img src="../images/Probability_Distribution_Calculator/math-195eaa6f24ce8f721729d5115bae0fd2.png?v=0" title="\theta&gt;0" alt="\theta&gt;0" class="tex"/> is mean; and <img src="../images/Probability_Distribution_Calculator/math-3bc9933ae854b4bd708e8bfab8c589e2.png?v=0" title="x \in \{0,1,2,\cdots\} " alt="x \in \{0,1,2,\cdots\} " class="tex"/>.
 <a class="external text" href="http://www.example.com" target="_blank">link title</a>
+</p>
+<h3><a name="Smallest_Extreme_Value_distribution"></a><span class="mw-headline">Smallest Extreme Value distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-46bbb87b956380158812cebb26ffc329.png?v=0" title=" f(x) = \frac{1}{\beta } e^{ \frac{x- \alpha}{\beta}} e^{ - e^{ \frac{x- \alpha}{\beta} } } \; \beta&gt;0" alt=" f(x) = \frac{1}{\beta } e^{ \frac{x- \alpha}{\beta}} e^{ - e^{ \frac{x- \alpha}{\beta} } } \; \beta&gt;0" class="tex"/>
+</p>
+<h3><a name="Largest_Extreme_Value_distribution"></a><span class="mw-headline">Largest Extreme Value distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-00e7dbc870f5f8362befaebd5bd0b0b4.png?v=0" title="f(x) = \frac{1}{\beta } e^{- \frac{x- \alpha}{\beta}} e^{ - e^{ -\frac{x- \alpha}{\beta} } }, \; \beta&gt;0" alt="f(x) = \frac{1}{\beta } e^{- \frac{x- \alpha}{\beta}} e^{ - e^{ -\frac{x- \alpha}{\beta} } }, \; \beta&gt;0" class="tex"/>
+</p>
+<h3><a name="Logistic_distribution"></a><span class="mw-headline">Logistic distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-4a565083b8ed828c2e2119ae1d6de162.png?v=0" title="f(x) = \frac{\exp\left(\frac{x-\mu}{\sigma}\right)}{\sigma\left[1+\exp\left(\frac{x-\mu}{\sigma}\right)\right]^2}, \quad -\infty &lt; x &lt; \infty \quad \sigma &gt; 0" alt="f(x) = \frac{\exp\left(\frac{x-\mu}{\sigma}\right)}{\sigma\left[1+\exp\left(\frac{x-\mu}{\sigma}\right)\right]^2}, \quad -\infty &lt; x &lt; \infty \quad \sigma &gt; 0" class="tex"/>
+</p>
+<h3><a name="Log-logistic_distribution"></a><span class="mw-headline">Log-logistic distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-abe2ef3d26b3521b2e615e9c51d68f6b.png?v=0" title="f(x) = \frac{\exp\left(\frac{\ln x-\mu}{\sigma}\right)}{x\sigma\left[1+\exp\left(\frac{\ln x-\mu}{\sigma}\right)\right]^2}, \quad x &gt; 0 , \sigma &gt; 0" alt="f(x) = \frac{\exp\left(\frac{\ln x-\mu}{\sigma}\right)}{x\sigma\left[1+\exp\left(\frac{\ln x-\mu}{\sigma}\right)\right]^2}, \quad x &gt; 0 , \sigma &gt; 0" class="tex"/>
+</p>
+<h3><a name="Folded_Normal_distribution"></a><span class="mw-headline">Folded Normal distribution</span></h3>
+<p>The probability density function is
+</p><p><img src="../images/Probability_Distribution_Calculator/math-17faf6c96dad3d9464dc5860930dea25.png?v=0" title=" f(x)= \frac{1}{ \sqrt{ 2 \pi } \sigma} e^{ - \frac{(x - \mu)^2}{ 2 \sigma^2 } } + \frac{1}{ \sqrt{ 2 \pi } \sigma} e^{ - \frac{(x + \mu)^2}{ 2 \sigma^2 } }, \; x \geqslant 0" alt=" f(x)= \frac{1}{ \sqrt{ 2 \pi } \sigma} e^{ - \frac{(x - \mu)^2}{ 2 \sigma^2 } } + \frac{1}{ \sqrt{ 2 \pi } \sigma} e^{ - \frac{(x + \mu)^2}{ 2 \sigma^2 } }, \; x \geqslant 0" class="tex"/>
+</p>
+<h3><a name="Rayleigh_distribution"></a><span class="mw-headline">Rayleigh distribution</span></h3>
+<p>The probability density function is
+<img src="../images/Probability_Distribution_Calculator/math-81951d7d10e3f1de6ca95093ae7793f2.png?v=0" title="f(x) = \frac{x}{\sigma^2} \exp\left(-\frac{x^2}{2\sigma^2}\right), \quad x \geq 0, \quad \sigma &gt; 0" alt="f(x) = \frac{x}{\sigma^2} \exp\left(-\frac{x^2}{2\sigma^2}\right), \quad x \geq 0, \quad \sigma &gt; 0" class="tex"/>
+</p>
+<h3><a name="Gaussian_Mixture_distribution"></a><span class="mw-headline">Gaussian Mixture distribution</span></h3>
+<p>The probability density function is
+<img src="../images/Probability_Distribution_Calculator/math-3e0271667659147b3f1423bc6fcb0860.png?v=0" title="f(x) = \sum_{k=1}^{K} \pi_k \cdot \frac{1}{\sigma_k\sqrt{2\pi}} \exp\left(-\frac{(x-\mu_k)^2}{2\sigma_k^2}\right)" alt="f(x) = \sum_{k=1}^{K} \pi_k \cdot \frac{1}{\sigma_k\sqrt{2\pi}} \exp\left(-\frac{(x-\mu_k)^2}{2\sigma_k^2}\right)" class="tex"/>
 </p>
 
 

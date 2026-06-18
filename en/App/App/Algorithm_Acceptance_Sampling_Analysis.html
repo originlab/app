@@ -1,0 +1,194 @@
+<h1 class="firstHeading">2.78.2 Algorithm for Acceptance Sampling Analysis</h1><p class='urlname' style='display: none'>ASA-Algorithm</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Attributes_Acceptance_Sampling"><span class="tocnumber">1</span> <span class="toctext">Attributes Acceptance Sampling</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Sample_size_and_acceptance_number"><span class="tocnumber">1.1</span> <span class="toctext">Sample size and acceptance number</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Probability_of_acceptance"><span class="tocnumber">1.2</span> <span class="toctext">Probability of acceptance</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Probability_of_rejecting"><span class="tocnumber">1.3</span> <span class="toctext">Probability of rejecting</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Average_outgoing_quality_.28AOQ.29"><span class="tocnumber">1.4</span> <span class="toctext">Average outgoing quality (AOQ)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Average_total_inspection_.28ATI.29"><span class="tocnumber">1.5</span> <span class="toctext">Average total inspection (ATI)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Variables_Acceptance_Sampling_.28Create.2FCompare.29"><span class="tocnumber">2</span> <span class="toctext">Variables Acceptance Sampling (Create/Compare)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Sample_size_and_critical_distance"><span class="tocnumber">2.1</span> <span class="toctext">Sample size and critical distance</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Single_specification_limit_and_known_standard_deviation"><span class="tocnumber">2.1.1</span> <span class="toctext">Single specification limit and known standard deviation</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Single_specification_limit_and_unknown_standard_deviation"><span class="tocnumber">2.1.2</span> <span class="toctext">Single specification limit and unknown standard deviation</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Double_specification_limits_and_known_standard_deviation"><span class="tocnumber">2.1.3</span> <span class="toctext">Double specification limits and known standard deviation</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Double_specification_limits_and_unknown_standard_deviation"><span class="tocnumber">2.1.4</span> <span class="toctext">Double specification limits and unknown standard deviation</span></a>
+<ul>
+<li class="toclevel-4 tocsection-13"><a href="#Calculation_of_Maximum_Standard_Deviation_.28MSD.29"><span class="tocnumber">2.1.4.1</span> <span class="toctext">Calculation of Maximum Standard Deviation (MSD)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Probability_of_acceptance_2"><span class="tocnumber">2.2</span> <span class="toctext">Probability of acceptance</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Single_specification_limit_and_known_standard_deviation_2"><span class="tocnumber">2.2.1</span> <span class="toctext">Single specification limit and known standard deviation</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Single_specification_limit_and_unknown_standard_deviation_2"><span class="tocnumber">2.2.2</span> <span class="toctext">Single specification limit and unknown standard deviation</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Double_specification_limits_and_known_standard_deviation_2"><span class="tocnumber">2.2.3</span> <span class="toctext">Double specification limits and known standard deviation</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Double_specification_limits_and_unknown_standard_deviation_2"><span class="tocnumber">2.2.4</span> <span class="toctext">Double specification limits and unknown standard deviation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#Probability_of_rejecting_2"><span class="tocnumber">2.3</span> <span class="toctext">Probability of rejecting</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Average_outgoing_quality_.28AOQ.29_2"><span class="tocnumber">2.4</span> <span class="toctext">Average outgoing quality (AOQ)</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Average_total_inspection_.28ATI.29_2"><span class="tocnumber">2.5</span> <span class="toctext">Average total inspection (ATI)</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Acceptance_region_.28AR.29"><span class="tocnumber">2.6</span> <span class="toctext">Acceptance region (AR)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Variables_Acceptance_Sampling_.28Accept.2FReject_Lot.29"><span class="tocnumber">3</span> <span class="toctext">Variables Acceptance Sampling (Accept/Reject Lot)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Single_specification_limit"><span class="tocnumber">3.1</span> <span class="toctext">Single specification limit</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Double_specification_limits_and_known_standard_deviation_3"><span class="tocnumber">3.2</span> <span class="toctext">Double specification limits and known standard deviation</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Double_specification_limits_and_unknown_standard_deviation_3"><span class="tocnumber">3.3</span> <span class="toctext">Double specification limits and unknown standard deviation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Reference"><span class="tocnumber">4</span> <span class="toctext">Reference</span></a></li>
+</ul>
+</div>
+
+<h1><a name="Attributes_Acceptance_Sampling"></a><span class="mw-headline">Attributes Acceptance Sampling</span></h1>
+<h2><a name="Sample_size_and_acceptance_number"></a><span class="mw-headline">Sample size and acceptance number</span></h2>
+<dl><dt> Sample size (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/>) and acceptance number (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4a8a08f09d37b73795649038408b5f33.png?v=0" title="c" alt="c" class="tex"/>) are the minimum values that satisfy the following inequality</dt>
+<dd></dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0fb7bc2d5c75fd550b714fde032cbe68.png?v=0" title=" \text{CDF}(c, n, p_1) &lt; \alpha " alt=" \text{CDF}(c, n, p_1) &lt; \alpha " class="tex"/></dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-3a3dd4410e5f155d99f070de4d2f9282.png?v=0" title=" \text{CDF}(c, n, p_2) &lt; \beta " alt=" \text{CDF}(c, n, p_2) &lt; \beta " class="tex"/></dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0446b5170252839089893d3dbc37ba48.png?v=0" title=" 0 &lt; p_1 &lt; p_2 &lt; 1 " alt=" 0 &lt; p_1 &lt; p_2 &lt; 1 " class="tex"/></dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7d32ab245717ed02fdff4cc01ae27ce6.png?v=0" title=" 0 &lt; \beta &lt; 1 - \alpha &lt; 1 " alt=" 0 &lt; \beta &lt; 1 - \alpha &lt; 1 " class="tex"/></dd>
+<dt> where</dt></dl>
+<ul><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-03b632315ee5bee654b60a6bd902a249.png?v=0" title="p_1" alt="p_1" class="tex"/>: acceptable quality level (AQL)</li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-6fe97b358b528edc477ba63d50b652af.png?v=0" title="p_2" alt="p_2" class="tex"/>: rejectable quality level (RQL or LTPD)</li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: producer's risk</li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>: consumer's risk</li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-36823a717d6a3c7ae6c380fa4741689a.png?v=0" title=" \text{CDF}(c, n, p) " alt=" \text{CDF}(c, n, p) " class="tex"/>: the cdf function of 
+<ul><li> <a class="external text" href="https://docs.originlab.com/labtalk/ref/binocdf-func/" target="_blank">Binomial distribution</a> (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-e271d23a9ed06f838bfaaf92698279b1.png?v=0" title=" binocdf(c, n, p) " alt=" binocdf(c, n, p) " class="tex"/>)</li>
+<li> <a class="external text" href="https://docs.originlab.com/labtalk/ref/poisscdf-func/" target="_blank">Poisson distribution</a> (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-98d25723ab9eb38a068312e48ad4a67b.png?v=0" title=" poisscdf(c, np) " alt=" poisscdf(c, np) " class="tex"/>) </li>
+<li> <a class="external text" href="https://docs.originlab.com/labtalk/ref/hygecdf-func/" target="_blank">hypergeometric distribution</a> (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-63b880a71352081cc4c3577a6dcd98d7.png?v=0" title="  hygecdf(c, Np, N, n) " alt="  hygecdf(c, Np, N, n) " class="tex"/>) if the lot size <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-8d9c307cb7f3c4a32822a51922d1ceaa.png?v=0" title="N" alt="N" class="tex"/> is provided.</li></ul></li></ul>
+<h2><a name="Probability_of_acceptance"></a><span class="mw-headline">Probability of acceptance</span></h2>
+<dl><dt> The probability that a lot will be accepted, given a specific sampling plan (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4a8a08f09d37b73795649038408b5f33.png?v=0" title="c" alt="c" class="tex"/> and <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/>) and the incoming proportion defective or number of defects (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>).</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-8d3eca2d24cdd6ea0a474933fadd0b7d.png?v=0" title=" P_a = \text{CDF}(c, n, p) " alt=" P_a = \text{CDF}(c, n, p) " class="tex"/></dd></dl>
+<h2><a name="Probability_of_rejecting"></a><span class="mw-headline">Probability of rejecting</span></h2>
+<dl><dt> The probability that a lot will be rejected, given a specific sampling plan and the incoming proportion defective or number of defects.</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-b16e72dcaeb45f41d11c237fe4643350.png?v=0" title="P_r = 1 - P_a" alt="P_r = 1 - P_a" class="tex"/></dd></dl>
+<h2><a name="Average_outgoing_quality_.28AOQ.29"></a><span class="mw-headline">Average outgoing quality (AOQ)</span></h2>
+<dl><dt> The quality level of the product based on the incoming proportion defective or number of defects.</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-3bca99b8cf8b09dbc43f67475e590921.png?v=0" title="AOQ = \frac{P_ap(N-n)}{N}" alt="AOQ = \frac{P_ap(N-n)}{N}" class="tex"/></dd></dl>
+<h2><a name="Average_total_inspection_.28ATI.29"></a><span class="mw-headline">Average total inspection (ATI)</span></h2>
+<dl><dt> The average number of units to be inspected for a certain sampling plan and probability of acceptance.</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-3d986cde43b1db34ed2255d50dd40fa0.png?v=0" title="ATI = n + (1 - P_a)(N-n)" alt="ATI = n + (1 - P_a)(N-n)" class="tex"/></dd></dl>
+<h1><a name="Variables_Acceptance_Sampling_.28Create.2FCompare.29"></a><span class="mw-headline">Variables Acceptance Sampling (Create/Compare)</span></h1>
+<h2><a name="Sample_size_and_critical_distance"></a><span class="mw-headline">Sample size and critical distance</span></h2>
+<p>The sample size (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/>) and critical distance (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-8ce4b16b22b58894aa86c421e8759df3.png?v=0" title="k" alt="k" class="tex"/>) depend on the provided specification and whether the standard devidation is known.
+</p>
+<h3><a name="Single_specification_limit_and_known_standard_deviation"></a><span class="mw-headline">Single specification limit and known standard deviation</span></h3>
+<dl><dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-5fa64af9d47430b8c9db46afc0aae6fc.png?v=0" title="n=(\frac{Z_\beta+Z_\alpha}{Z_1-Z_2})^2" alt="n=(\frac{Z_\beta+Z_\alpha}{Z_1-Z_2})^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-2adf4cba8cd47b9c62b61c9de6c499b0.png?v=0" title="k = \frac{K_1+K_2}{2}" alt="k = \frac{K_1+K_2}{2}" class="tex"/></dd>
+<dt>where</dt>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-6d0143143b77b2a804be526c6d51058d.png?v=0" title="K_1 = Z_1 - \frac{Z_\alpha}{\sqrt{n}}" alt="K_1 = Z_1 - \frac{Z_\alpha}{\sqrt{n}}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a3aa4c5257791dfb5a377c8fb3e5cfb8.png?v=0" title="K_2 = Z_2 + \frac{Z_\beta}{\sqrt{n}}" alt="K_2 = Z_2 + \frac{Z_\beta}{\sqrt{n}}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-c6847901dd09a7efd9dd75477a521329.png?v=0" title="Z_1" alt="Z_1" class="tex"/>: the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-fc13200132fcfb589094752822743cbe.png?v=0" title="(1-p_1)*100" alt="(1-p_1)*100" class="tex"/> percentile of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-1f76fb19d415dc27bc9b2c96e86d4275.png?v=0" title="Z_2" alt="Z_2" class="tex"/>: the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-32c1aba78ef59847a903ca2950d27270.png?v=0" title="(1-p_2)*100" alt="(1-p_2)*100" class="tex"/> percentile of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-d27c7bb83828abf01906a77414eae835.png?v=0" title="Z_\alpha" alt="Z_\alpha" class="tex"/>: the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-f9570332113932b8ad361101c86cdc5c.png?v=0" title="(1-\alpha)*100" alt="(1-\alpha)*100" class="tex"/> percentile of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-ca33eb54790fa773acd739aee87fcc49.png?v=0" title="Z_\beta" alt="Z_\beta" class="tex"/>: the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-f200306f70ad706bd178709721c148c5.png?v=0" title="(1-\beta)*100" alt="(1-\beta)*100" class="tex"/> percentile of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-03b632315ee5bee654b60a6bd902a249.png?v=0" title="p_1" alt="p_1" class="tex"/>: acceptable quality level (AQL)</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-6fe97b358b528edc477ba63d50b652af.png?v=0" title="p_2" alt="p_2" class="tex"/>: rejectable quality level (RQL or LTPD)</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>: producer's risk</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-b0603860fcffe94e5b8eec59ed813421.png?v=0" title="\beta" alt="\beta" class="tex"/>: consumer's risk</dd></dl>
+<h3><a name="Single_specification_limit_and_unknown_standard_deviation"></a><span class="mw-headline">Single specification limit and unknown standard deviation</span></h3>
+<dl><dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-f1af41f31ab020e1768c3d646625e07e.png?v=0" title="n = (1 + \frac{k^2}{2})(\frac{Z_\alpha + Z_\beta}{Z_1 - Z_2})^2" alt="n = (1 + \frac{k^2}{2})(\frac{Z_\alpha + Z_\beta}{Z_1 - Z_2})^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-b13d3c2c10fc13295f73699166806532.png?v=0" title="k = \frac{Z_\alpha Z_2 + Z_\beta Z_1}{Z_\alpha + Z_\beta}" alt="k = \frac{Z_\alpha Z_2 + Z_\beta Z_1}{Z_\alpha + Z_\beta}" class="tex"/></dd></dl>
+<h3><a name="Double_specification_limits_and_known_standard_deviation"></a><span class="mw-headline">Double specification limits and known standard deviation</span></h3>
+<dl><dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-ca43749c7b3bdfe4d6338ec4c6d56ef1.png?v=0" title="n=(\frac{Z_\beta+Z_\alpha}{Z_{p_L}-Z_2})^2" alt="n=(\frac{Z_\beta+Z_\alpha}{Z_{p_L}-Z_2})^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-2adf4cba8cd47b9c62b61c9de6c499b0.png?v=0" title="k = \frac{K_1+K_2}{2}" alt="k = \frac{K_1+K_2}{2}" class="tex"/></dd>
+<dt>where</dt>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-057822c8d27dbb1aa7341aa6d25e698a.png?v=0" title="K_1 = Z_{p_L} - \frac{Z_\alpha}{\sqrt{n}}" alt="K_1 = Z_{p_L} - \frac{Z_\alpha}{\sqrt{n}}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a3aa4c5257791dfb5a377c8fb3e5cfb8.png?v=0" title="K_2 = Z_2 + \frac{Z_\beta}{\sqrt{n}}" alt="K_2 = Z_2 + \frac{Z_\beta}{\sqrt{n}}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-f0c8ef9385bef337ed3386985aee1f57.png?v=0" title="Z_{p_L}" alt="Z_{p_L}" class="tex"/>: the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-779222e71be1dfbf97cf6e7d004a753e.png?v=0" title="(1 &#8211; p_L) * 100" alt="(1 &#8211; p_L) * 100" class="tex"/> percentile of the standard normal distribution</dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-59b475e165fafc6726d0335b32619573.png?v=0" title="p_L" alt="p_L" class="tex"/>: determined using the following procedure:
+<ul><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-11dd0f4cee2cd4bd846541621f38b8ac.png?v=0" title="p_L = \text{max}\left\{ \Phi(\frac{L-\mu}{\sigma}), 1 - \Phi(\frac{U-\mu}{\sigma})\right\}" alt="p_L = \text{max}\left\{ \Phi(\frac{L-\mu}{\sigma}), 1 - \Phi(\frac{U-\mu}{\sigma})\right\}" class="tex"/>, where <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> is chosen such that <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-ec0d77b6b4a2ac3ac91640cac10d38ac.png?v=0" title="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma}) = p_1" alt="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma}) = p_1" class="tex"/> </li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4cc9f21ca26a00d18c6b41c466f7077a.png?v=0" title=" p_L = p_1 " alt=" p_L = p_1 " class="tex"/>, if <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7eaf8369acd6a71d822c4824f5a077f9.png?v=0" title="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma})" alt="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma})" class="tex"/> deviates substantially from <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-03b632315ee5bee654b60a6bd902a249.png?v=0" title="p_1" alt="p_1" class="tex"/></li></ul>
+<dl><dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-2f51310acab41649af988ccebfe4186d.png?v=0" title="\Phi" alt="\Phi" class="tex"/>: the cdf of the <a class="external text" href="https://docs.originlab.com/originc/ref/normcdf/" target="_blank">standard normal distribution</a></dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-d20caec3b48a1eef164cb4ca81ba2587.png?v=0" title="L" alt="L" class="tex"/>: the lower spec</dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4c614360da93c0a041b22e537de151eb.png?v=0" title="U" alt="U" class="tex"/>: the upper spec</dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/>: the historical standard deviation</dd></dl></dd></dl>
+<h3><a name="Double_specification_limits_and_unknown_standard_deviation"></a><span class="mw-headline">Double specification limits and unknown standard deviation</span></h3>
+<dl><dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-f1af41f31ab020e1768c3d646625e07e.png?v=0" title="n = (1 + \frac{k^2}{2})(\frac{Z_\alpha + Z_\beta}{Z_1 - Z_2})^2" alt="n = (1 + \frac{k^2}{2})(\frac{Z_\alpha + Z_\beta}{Z_1 - Z_2})^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-b13d3c2c10fc13295f73699166806532.png?v=0" title="k = \frac{Z_\alpha Z_2 + Z_\beta Z_1}{Z_\alpha + Z_\beta}" alt="k = \frac{Z_\alpha Z_2 + Z_\beta Z_1}{Z_\alpha + Z_\beta}" class="tex"/></dd>
+<dd></dd></dl>
+<h4><a name="Calculation_of_Maximum_Standard_Deviation_.28MSD.29"></a><span class="mw-headline">Calculation of Maximum Standard Deviation (MSD)</span></h4>
+<dl><dt><b>Default Method</b>[<a href="#Ref1">1</a>]
+<ol><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-baeab1d74a6f2048c9320c83a8512c7a.png?v=0" title="v_1 = \max\left\{0, \frac{1}{2} - \frac{1}{2}k\frac{\sqrt{n}}{n-1}\right\}" alt="v_1 = \max\left\{0, \frac{1}{2} - \frac{1}{2}k\frac{\sqrt{n}}{n-1}\right\}" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-534915f3f21c01586585ab9c632b1840.png?v=0" title="p = Beta(v_1, a, b)" alt="p = Beta(v_1, a, b)" class="tex"/>, where <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-59d194dce2aa7c61c6b483274c35c18a.png?v=0" title="a = b = \frac{n-2}{2}" alt="a = b = \frac{n-2}{2}" class="tex"/> and <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0b87d66b88c72957dfea8c9605016442.png?v=0" title="Beta" alt="Beta" class="tex"/> is the CDF of <a class="external text" href="https://docs.originlab.com/originc/ref/betacdf/" target="_blank">beta distribution.</a></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-f7dd0d0cea6326659817aed73eee763e.png?v=0" title="v_2 = Beta^{-1}(p/2,a,b)" alt="v_2 = Beta^{-1}(p/2,a,b)" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0808c5415183e297fc606ec3486f842f.png?v=0" title="k^* = \frac{(n-1)(1-2v_2)}{\sqrt{n}}" alt="k^* = \frac{(n-1)(1-2v_2)}{\sqrt{n}}" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-9085fb7ea6574de2369be2b4c07bd3db.png?v=0" title="MSD = \frac{U-L}{2*k^*}" alt="MSD = \frac{U-L}{2*k^*}" class="tex"/></li></ol></dt></dl>
+<dl><dt><b>Wallis Method</b>[<a href="#Ref2">2</a>]
+<ol><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-05accdfee6e15e10af40b5716a2d2788.png?v=0" title="p = 1 - \Phi(k)" alt="p = 1 - \Phi(k)" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-47af27f0731f4fbd734c0a1f507c81ab.png?v=0" title="Z_p = \Phi^{-1}(1-p/2)" alt="Z_p = \Phi^{-1}(1-p/2)" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-2d03c15d7fdec6cb17cbec354bb0b745.png?v=0" title="MSD = \frac{U-L}{2*Z_p}" alt="MSD = \frac{U-L}{2*Z_p}" class="tex"/></li></ol></dt></dl>
+<h2><a name="Probability_of_acceptance_2"></a><span class="mw-headline">Probability of acceptance</span></h2>
+<dl><dt> The probability that a lot will be accepted, given a specific sampling plan (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> and <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-8ce4b16b22b58894aa86c421e8759df3.png?v=0" title="k" alt="k" class="tex"/>) and the incoming proportion defective (<img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>).</dt></dl>
+<h3><a name="Single_specification_limit_and_known_standard_deviation_2"></a><span class="mw-headline">Single specification limit and known standard deviation</span></h3>
+<dl><dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-fda7b69f65167398cb16aa8af2526af0.png?v=0" title=" P_a = \Phi(\sqrt{n}(Z_p-k)) " alt=" P_a = \Phi(\sqrt{n}(Z_p-k)) " class="tex"/></dd>
+<dt> where </dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-5c3bc7216a39c8f0899d0153ef6761d4.png?v=0" title="Z_p" alt="Z_p" class="tex"/>: the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-ac7bf0b55f39eb39c4c10ce6e2f13693.png?v=0" title="(1-p)*100" alt="(1-p)*100" class="tex"/> percentile of the standard normal distribution</dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/>: probability of defective</dd></dl>
+<h3><a name="Single_specification_limit_and_unknown_standard_deviation_2"></a><span class="mw-headline">Single specification limit and unknown standard deviation</span></h3>
+<dl><dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-9be571ffcd63a1d4e7e61266ebbc0646.png?v=0" title=" P_a = 1 - nctcdf(\sqrt{n}k, n-1, \sqrt{n}Z_p) " alt=" P_a = 1 - nctcdf(\sqrt{n}k, n-1, \sqrt{n}Z_p) " class="tex"/>, where <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-059cf5e78ac11277e50023cf1a88e1da.png?v=0" title="nctcdf" alt="nctcdf" class="tex"/> is the CDF of <a class="external text" href="https://docs.originlab.com/originc/ref/ocmath_nctcdf/" target="_blank">non-central t distribution</a>.</dd></dl>
+<h3><a name="Double_specification_limits_and_known_standard_deviation_2"></a><span class="mw-headline">Double specification limits and known standard deviation</span></h3>
+<dl><dt>Use the following procedure</dt>
+<dd></dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-84c350a804242634d152c99ee81b3738.png?v=0" title="P_a = \Phi(\sqrt{n}(\frac{U-\mu}{\sigma}-k)) - \Phi(\sqrt{n}(\frac{L-\mu}{\sigma}+k))" alt="P_a = \Phi(\sqrt{n}(\frac{U-\mu}{\sigma}-k)) - \Phi(\sqrt{n}(\frac{L-\mu}{\sigma}+k))" class="tex"/>, where <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-c9faf6ead2cd2c2187bd943488de1d0a.png?v=0" title="\mu" alt="\mu" class="tex"/> is chosen such that <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a33e2e0d13b0be4a0588c596ee44b619.png?v=0" title="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma}) = p" alt="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma}) = p" class="tex"/> </dd>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-fe8bf1d39ace260899a8a938ba4a85ec.png?v=0" title="P_a = \Phi(\sqrt{n}(Z_p-k))" alt="P_a = \Phi(\sqrt{n}(Z_p-k))" class="tex"/>, if <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-7eaf8369acd6a71d822c4824f5a077f9.png?v=0" title="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma})" alt="\Phi(\frac{L-\mu}{\sigma}) + 1 - \Phi(\frac{U-\mu}{\sigma})" class="tex"/> deviates substantially from <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/></dd></dl>
+<h3><a name="Double_specification_limits_and_unknown_standard_deviation_2"></a><span class="mw-headline">Double specification limits and unknown standard deviation</span></h3>
+<dl><dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-9be571ffcd63a1d4e7e61266ebbc0646.png?v=0" title=" P_a = 1 - nctcdf(\sqrt{n}k, n-1, \sqrt{n}Z_p) " alt=" P_a = 1 - nctcdf(\sqrt{n}k, n-1, \sqrt{n}Z_p) " class="tex"/></dd></dl>
+<h2><a name="Probability_of_rejecting_2"></a><span class="mw-headline">Probability of rejecting</span></h2>
+<dl><dt> The probability that a lot will be rejected, given a specific sampling plan and the incoming proportion defective.</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-b16e72dcaeb45f41d11c237fe4643350.png?v=0" title="P_r = 1 - P_a" alt="P_r = 1 - P_a" class="tex"/></dd></dl>
+<h2><a name="Average_outgoing_quality_.28AOQ.29_2"></a><span class="mw-headline">Average outgoing quality (AOQ)</span></h2>
+<dl><dt> The quality level of the product based on the incoming proportion defective or number of defects.</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-3bca99b8cf8b09dbc43f67475e590921.png?v=0" title="AOQ = \frac{P_ap(N-n)}{N}" alt="AOQ = \frac{P_ap(N-n)}{N}" class="tex"/></dd></dl>
+<h2><a name="Average_total_inspection_.28ATI.29_2"></a><span class="mw-headline">Average total inspection (ATI)</span></h2>
+<dl><dt> The average number of units to be inspected for a certain sampling plan and probability of acceptance.</dt>
+<dd> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-3d986cde43b1db34ed2255d50dd40fa0.png?v=0" title="ATI = n + (1 - P_a)(N-n)" alt="ATI = n + (1 - P_a)(N-n)" class="tex"/></dd></dl>
+<h2><a name="Acceptance_region_.28AR.29"></a><span class="mw-headline">Acceptance region (AR)</span></h2>
+<dl><dt><b>Default Method</b>
+<ol><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-baeab1d74a6f2048c9320c83a8512c7a.png?v=0" title="v_1 = \max\left\{0, \frac{1}{2} - \frac{1}{2}k\frac{\sqrt{n}}{n-1}\right\}" alt="v_1 = \max\left\{0, \frac{1}{2} - \frac{1}{2}k\frac{\sqrt{n}}{n-1}\right\}" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-534915f3f21c01586585ab9c632b1840.png?v=0" title="p = Beta(v_1, a, b)" alt="p = Beta(v_1, a, b)" class="tex"/>, where <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-59d194dce2aa7c61c6b483274c35c18a.png?v=0" title="a = b = \frac{n-2}{2}" alt="a = b = \frac{n-2}{2}" class="tex"/> and <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0b87d66b88c72957dfea8c9605016442.png?v=0" title="Beta" alt="Beta" class="tex"/> is the CDF of <a class="external text" href="https://docs.originlab.com/originc/ref/betacdf/" target="_blank">beta distribution.</a></li>
+<li> for each pair of <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-9faa3ff0e5c17b25a0f2111666eb37fb.png?v=0" title="(v_{01}, v_{02})" alt="(v_{01}, v_{02})" class="tex"/> so that <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-ea0644de63d5e204cc25e9aabaf6f4ba.png?v=0" title="Beta(v_{01},a,b) + Beta(v_{02},a,b) = p" alt="Beta(v_{01},a,b) + Beta(v_{02},a,b) = p" class="tex"/></li></ol>
+<dl><dd><ul><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0e485cc3c5f513a1a4f5814a512206db.png?v=0" title="\bar{x} = \frac{U(1-2v_{01})-L(2v_{02}-1)}{2(1-v_{01}-v_{02})}" alt="\bar{x} = \frac{U(1-2v_{01})-L(2v_{02}-1)}{2(1-v_{01}-v_{02})}" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-c570309a0f99c8369ba16e99c27ba910.png?v=0" title="s = \frac{U-L}{2(1-v_{01}-v_{02})}(\frac{\sqrt{n}}{n-1})" alt="s = \frac{U-L}{2(1-v_{01}-v_{02})}(\frac{\sqrt{n}}{n-1})" class="tex"/></li></ul></dt></dl></dd></dl>
+<dl><dt><b>Wallis Method</b>
+<ol><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-05accdfee6e15e10af40b5716a2d2788.png?v=0" title="p = 1 - \Phi(k)" alt="p = 1 - \Phi(k)" class="tex"/></li>
+<li> for each pair of <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-0fa70128ce9e6dfdd2e6185db3c16c44.png?v=0" title="(p_{01}, p_{02})" alt="(p_{01}, p_{02})" class="tex"/> so that <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-014afb49e344ebccf301990eaece3e36.png?v=0" title="p_{01} + p_{02} = p" alt="p_{01} + p_{02} = p" class="tex"/></li></ol>
+<dl><dd><ul><li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-76cdfec2c4ce2a0da53de3fec3fb5c1f.png?v=0" title="\bar{x} = \frac{UZ_{p_{01}}+LZ_{p_{02}}}{Z_{p_{01}}+Z_{p_{02}}}" alt="\bar{x} = \frac{UZ_{p_{01}}+LZ_{p_{02}}}{Z_{p_{01}}+Z_{p_{02}}}" class="tex"/></li>
+<li> <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-ad0eca9e3642026e5a914e098b694efb.png?v=0" title="s = \frac{U-L}{Z_{p_{01}}+Z_{p_{02}}}" alt="s = \frac{U-L}{Z_{p_{01}}+Z_{p_{02}}}" class="tex"/></li></ul></dt></dl></dd></dl>
+<h1><a name="Variables_Acceptance_Sampling_.28Accept.2FReject_Lot.29"></a><span class="mw-headline">Variables Acceptance Sampling (Accept/Reject Lot)</span></h1>
+<dl><dt>Mean and standard deviation are first calculated from the data. </dt>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-702617308d5cac6ac2828e24751c8bfd.png?v=0" title="\bar{X} = \frac{\sum X_i}{n}" alt="\bar{X} = \frac{\sum X_i}{n}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-25d150659ebaf25ff8d5fe81529312c0.png?v=0" title="s = \sqrt{\frac{\sum (X_i-\bar{X})^2}{n-1}}" alt="s = \sqrt{\frac{\sum (X_i-\bar{X})^2}{n-1}}" class="tex"/></dd>
+<dt>Then calculate the acceptance criteria</dt>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-1b8a370181cc96b542791b2453917777.png?v=0" title="Z_L = \frac{\bar{X}-L}{s}" alt="Z_L = \frac{\bar{X}-L}{s}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-8c7a630869a088a3400c2f18de653c6a.png?v=0" title="Z_U = \frac{U-\bar{X}}{s}" alt="Z_U = \frac{U-\bar{X}}{s}" class="tex"/></dd>
+<dt>Note that if historical standard deviation is provided, then <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a2ab7d71a0f07f388ff823293c147d21.png?v=0" title="\sigma" alt="\sigma" class="tex"/> is used for the <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-21c2e59531c8710156d34a3c30ac81d5.png?v=0" title="Z" alt="Z" class="tex"/> calculation.</dt></dl>
+<h3><a name="Single_specification_limit"></a><span class="mw-headline">Single specification limit</span></h3>
+<dl><dd>If only lower spec is provided, then accept the lot if <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4f2c1805d37b52c5402203a3152bd6bd.png?v=0" title="Z_L \ge k " alt="Z_L \ge k " class="tex"/></dd>
+<dd>If only upper spec is provided, then accept the lot if <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a36272c84879fdfc89a0f74fb1ad5bae.png?v=0" title="Z_U \ge k " alt="Z_U \ge k " class="tex"/></dd></dl>
+<h3><a name="Double_specification_limits_and_known_standard_deviation_3"></a><span class="mw-headline">Double specification limits and known standard deviation</span></h3>
+<dl><dd>Accept the lot if <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4f2c1805d37b52c5402203a3152bd6bd.png?v=0" title="Z_L \ge k " alt="Z_L \ge k " class="tex"/> and  <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a36272c84879fdfc89a0f74fb1ad5bae.png?v=0" title="Z_U \ge k " alt="Z_U \ge k " class="tex"/></dd></dl>
+<h3><a name="Double_specification_limits_and_unknown_standard_deviation_3"></a><span class="mw-headline">Double specification limits and unknown standard deviation</span></h3>
+<dl><dd>Accept the lot if <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-47d8f953508c898551f3d4ec87852b80.png?v=0" title="s \le MSD " alt="s \le MSD " class="tex"/>, <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-4f2c1805d37b52c5402203a3152bd6bd.png?v=0" title="Z_L \ge k " alt="Z_L \ge k " class="tex"/> and  <img src="../images/Algorithm_Acceptance_Sampling_Analysis/math-a36272c84879fdfc89a0f74fb1ad5bae.png?v=0" title="Z_U \ge k " alt="Z_U \ge k " class="tex"/></dd></dl>
+<h1><a name="Reference"></a><span class="mw-headline">Reference</span></h1>
+<ol><li> <span id="Ref1"><span> Duncan, A. J. (1986). "Quality Control and Industrial Statistics (5th ed.)". <i>Homewood</i>, Ill: Irwin</li>
+<li> <span id="Ref2"><span> Schilling and Neubauer (2009). "Acceptance Sampling in Quailty Control (2nd ed.)"</span></li></ol>
+<p></span>
+</span>
+</span>
+</p>
+
+
+
+
+
