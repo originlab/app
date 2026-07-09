@@ -1,0 +1,34 @@
+﻿<h1 class="firstHeading">Tutorial f&uuml;r Datentransformation</h1><p class='urlname' style='display: none'>Tutorial-DT</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Starthinweise</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#User_Story"><span class="tocnumber">2</span> <span class="toctext">Anwenderbericht</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Steps_in_Origin"><span class="tocnumber">3</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Interpreting_the_Results"><span class="tocnumber">4</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Notes_for_Starting"></a><span class="mw-headline">Starthinweise</span></h2>
+<ul><li>Laden Sie die Datei des Beispielprojekts <a class="external text" href="https://blog.originlab.com/wp-content/uploads/2023/10/SPCData.zip" target="_blank">hier</a> herunter und &ouml;ffnen Sie sie in Origin.</li></ul>
+<ul><li>Starten Sie dieses Tutorial mit der installierten App <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=934" target="_blank"><b>Statistical Process Control</b></a>. Wenn Sie die App nicht installiert haben, siehe <a class="external text" href="https://www.originlab.com/doc/User-Guide/Apps" target="_blank">Apps f&uuml;r Origin</a>, um die App zu finden und zu installieren.</li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_DT/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><a href="../../Tutorial/Category/Data_Transformation(App).html" title="Category:Data Transformation(App)">Introduction:Data Transformation</a></li>
+<li><a href="../../Tutorial/App/Algorithm_DT.html" title="App:Algorithm DT">Algorithms:Data Transformation</a></li></ul>
+</td></tr></table>
+<h2><a name="User_Story"></a><span class="mw-headline">Anwenderbericht</span></h2>
+<p>Ein Bauherr verf&uuml;gt &uuml;ber Hausverkaufsdaten aus der Umgebung. Er hat die Verteilung der Daten, die keiner Normlaverteilung folgen, herausgefunden und daf&uuml;r das Hilfsmittel <a href="../../Tutorial/App/Tutorial_IDD.html" title="App:Tutorial IDD">Datenverteilung identifizieren</a> verwendet.</p><p>Er m&ouml;chte die Daten transformieren, um die Daten f&uuml;r Folgeanalysen einer Normalverteilung anzun&auml;hern.</p>
+<h2><a name="Steps_in_Origin"></a><span class="mw-headline">Schritte in Origin</span></h2>
+<ol><li>&Ouml;ffnen Sie die Beispielprojektdatei in Origin und gehen Sie zum Ordner <b>3. Nonnormal</b> mit Hilfe des <b>Projekt Explorers</b>. Aktivieren Sie die Arbeitsmappe <b>House Sold</b>.</li>
+<li>Markieren Sie Spalte B im Arbeitsblatt. Klicken Sie auf das Symbol Statistical Process Control <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_DT/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Datentransformation</b> alle Daten gr&ouml;&szlig;er als 0. Wir sollten aus dem Entscheidungsbaum die Methode <b>Box-Cox</b> verwenden. Klicken Sie auf das Symbol <b>Box-Cox-Transformation</b>, um den Dialog zu &ouml;ffnen.</li>
+<li>Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs wird Spalte B automatisch als Messdaten ausgew&auml;hlt. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Konstant</b> und setzen Sie die <b>Teilgruppengr&ouml;&szlig;enkonstante</b> auf 1.<dl><dd><a  class="image"><img alt="DT Input.png" src="../images/Tutorial_DT/500px-DT_Input.png" width="500"   /></a></dd></dl></li>
+<li>&Uuml;bernehmen Sie alle anderen Standardeinstellungen und klicken Sie auf <b>OK</b>.</li></ol>
+<h2><a name="Interpreting_the_Results"></a><span class="mw-headline">Ergebnisse interpretieren</span></h2>
+<ol><li>Klicken Sie doppelt auf das eingebettete Diagramm im Berichtsblatt.<ul><li>Das Konfidenzintervall f&uuml;r <img src="../images/Tutorial_DT/math-c6a6eb61fd9c6c913da73b3642ca147d.png" title="\lambda" alt="\lambda" class="tex"/> ist [0.11, 0.52]. Es schlie&szlig;t 1 nicht ein. Das bedeutet, dass eine Transformation angemessen ist.</li>
+<li>Das Histogramm und Wahrscheinlichkeitsdiagramm der transformierten Daten zeigt uns, dass die Daten nach der Transformation ann&auml;hernd normalverteilt sind.</li></ul></li></ol>
+<dl><dd><a  class="image"><img alt="DT Results.png" src="../images/Tutorial_DT/700px-DT_Results.png" width="700"   /></a></dd></dl>
+
+
+
+    

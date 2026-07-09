@@ -1,0 +1,132 @@
+﻿<h1 class="firstHeading">Tutorial zur F&auml;higkeitsanalyse</h1><p class='urlname' style='display: none'>Tutorial-CA</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Starthinweise</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Normal_Capability_Analysis"><span class="tocnumber">2</span> <span class="toctext">F&auml;higkeitsanalyse f&uuml;r Normalverteilung</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Background"><span class="tocnumber">2.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps_in_Origin"><span class="tocnumber">2.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Interpreting_the_Results"><span class="tocnumber">2.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Between_Within_Capability_Analysis"><span class="tocnumber">3</span> <span class="toctext">F&auml;higkeitsanalyse zwischen/innerhalb</span></a><ul>
+<li class="toclevel-2 tocsection-7"><a href="#Background_2"><span class="tocnumber">3.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Steps_in_Origin_2"><span class="tocnumber">3.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Interpreting_the_Results_2"><span class="tocnumber">3.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Non-normal_Capability_Analysis"><span class="tocnumber">4</span> <span class="toctext">F&auml;higkeitsanalyse f&uuml;r Nicht-Normal</span></a><ul>
+<li class="toclevel-2 tocsection-11"><a href="#Background_3"><span class="tocnumber">4.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Steps_in_Origin_3"><span class="tocnumber">4.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Interpreting_the_Results_3"><span class="tocnumber">4.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Binomial_Capability_Analysis"><span class="tocnumber">5</span> <span class="toctext">F&auml;higkeitsanalyse f&uuml;r Binomial</span></a><ul>
+<li class="toclevel-2 tocsection-15"><a href="#Background_4"><span class="tocnumber">5.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Steps_in_Origin_4"><span class="tocnumber">5.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Interpreting_the_Results_4"><span class="tocnumber">5.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Poisson_Capability_Analysis"><span class="tocnumber">6</span> <span class="toctext">F&auml;higkeitsanalyse f&uuml;r Poisson</span></a><ul>
+<li class="toclevel-2 tocsection-19"><a href="#Background_5"><span class="tocnumber">6.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Steps_in_Origin_5"><span class="tocnumber">6.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Interpreting_the_Results_5"><span class="tocnumber">6.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Multiple_Variables"><span class="tocnumber">7</span> <span class="toctext">Mehrere Variablen</span></a><ul>
+<li class="toclevel-2 tocsection-23"><a href="#Background_6"><span class="tocnumber">7.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Steps_in_Origin_6"><span class="tocnumber">7.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Interpreting_the_Results_6"><span class="tocnumber">7.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2><a name="Notes_for_Starting"></a><span class="mw-headline">Starthinweise</span></h2>
+<ul><li>Laden Sie die Datei des Beispielprojekts <a class="external text" href="https://blog.originlab.com/wp-content/uploads/2023/10/SPCData.zip" target="_blank">hier</a> herunter und &ouml;ffnen Sie sie in Origin.</li></ul>
+<ul><li>Starten Sie dieses Tutorial mit der installierten App <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=934" target="_blank"><b>Statistical Process Control</b></a>. Wenn Sie die App nicht installiert haben, siehe <a class="external text" href="https://www.originlab.com/doc/User-Guide/Apps" target="_blank">Apps f&uuml;r Origin</a>, um die App zu finden und zu installieren.</li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_CA/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><a href="../../Tutorial/Category/Capability_Analysis(App).html" title="Category:Capability Analysis(App)">Introduction:Capability Analysis</a></li>
+<li><a href="../../Tutorial/App/Algorithm_CA.html" title="App:Algorithm CA">Algorithms:Capability Analysis</a></li></ul>
+</td></tr></table>
+<h2><a name="Normal_Capability_Analysis"></a><span class="mw-headline">F&auml;higkeitsanalyse f&uuml;r Normalverteilung</span></h2>
+<h5><a name="Background"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Qualit&auml;tsingenieur m&ouml;chte den R&ouml;hrenproduktionsprozess bewerten. Er erfasste Daten f&uuml;r die H&ouml;he (Fu&szlig;) der R&ouml;hre bei 150 Stichproben.</p><p>Er m&ouml;chte pr&uuml;fen, ob der Mittelwert der R&ouml;hrenh&ouml;he 5 ist. Die Differenz der H&ouml;he soll nicht mehr als 0,02 (4,98, 5,02) abweichen.</p>
+<h5><a name="Steps_in_Origin"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Normal</b>. Aktivieren Sie die Arbeitsmappe <b>Height of Pipe</b>.</li>
+<li>Markieren Sie Spalte A im Arbeitsblatt. Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Registerkarte <b>F&auml;higkeitsanalyse</b> und dann <b>F&auml;higkeitsanalyse f&uuml;r Normalverteilung</b>.<dl><dd><a  class="image"><img alt="NPA GUI.png" src="../images/Tutorial_CA/700px-NPA_GUI.png" width="700"   /></a></dd></dl></li>
+<li>Auf der Registerkarte <b>Eingabe</b> im ge&ouml;ffneten Dialog wird Spalte A automatisch als <b>Messdaten</b> ausgew&auml;hlt. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Konstante</b> und setzen Sie die <b>Konstante der Teilgruppengr&ouml;&szlig;e</b> auf <b>1</b>.<dl><dd><a  class="image"><img alt="NPA Input.png" src="../images/Tutorial_CA/380px-NPA_Input.png" width="380"   /></a></dd></dl></li>
+<li>Geben Sie auf der Registerkarte <b>Grenzen</b> f&uuml;r die <b>Untere Spez.</b> <b>4,98</b>, f&uuml;r die <b>Obere Spez.</b> <b>5,02</b> und f&uuml;r das <b>Soll</b> <b>5</b> ein.<dl><dd><a  class="image"><img alt="NPA Limit.png" src="../images/Tutorial_CA/380px-NPA_Limit.png" width="380"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsblatt erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Der Prozess ist ann&auml;hernd zentriert und alle beobachteten Messungen liegen innerhalb der Spezifikationsgrenzen. Die F&auml;higkeitskennwerte Cpk, Ppk und Cpm sind alle gr&ouml;&szlig;er als 1,33, ein allgemein akzeptierter Wert f&uuml;r das Minimum eines f&auml;higen Prozesses. Daher erf&uuml;llt die Breite die Produktionsanforderungen. </p>
+<dl><dd><a  class="image"><img alt="NPA Report.png" src="../images/Tutorial_CA/600px-NPA_Report.png" width="600"   /></a></dd></dl>
+<h2><a name="Between_Within_Capability_Analysis"></a><span class="mw-headline">F&auml;higkeitsanalyse zwischen/innerhalb</span></h2>
+<h5><a name="Background_2"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Ingenieur m&ouml;chte Zugriff in den Produktionsprozess von Edelstahlblechen erhalten.</p><p>Er erfasst 4 Messungen der Dicke von 20 aufeinanderfolgenden Stahlblechen. Die Dicke muss 3 ± 0,1 mm sein.</p>
+<h5><a name="Steps_in_Origin_2"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>2. Between-Within</b> und aktivieren Sie die Arbeitsmappe <b>Steel Sheet</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Registerkarte <b>F&auml;higkeitsanalyse</b> und w&auml;hlen Sie <b>F&auml;higkeitsanalyse zwischen/innerhalb</b>.</li>
+<li>Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs wird Spalte A automatisch als <b>Messdaten</b> ausgew&auml;hlt. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte B.<dl><dd><a  class="image"><img alt="BCA Input.png" src="../images/Tutorial_CA/380px-BCA_Input.png" width="380"   /></a></dd></dl></li>
+<li>Geben Sie auf der Registerkarte <b>Grenzen</b> f&uuml;r die <b>Untere Spez.</b> <b>2,9</b>, f&uuml;r die <b>Obere Spez.</b> <b>3,1</b> und f&uuml;r das <b>Soll</b> <b>3</b> ein.<dl><dd><a  class="image"><img alt="BCA limit.png" src="../images/Tutorial_CA/380px-BCA_limit.png" width="380"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsblatt erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Nicht alle Messungen liegen innerhalb der Spezifikationsgrenzen. F&uuml;r die F&auml;higkeitsanalyse zwischen/innerhalb betr&auml;gt der Cp 1,188, was darauf hindeutet, dass die Spezifikationsstreubreite 1,19 mal gr&ouml;&szlig;er ist als die 6-σ-Streubreite im Prozess. Cp und Cpk unterscheiden sich etwas, was darauf hindeutet, dass der Prozess leicht dezentriert ist. In Hinblick auf die Gesamtf&auml;higkeit liegen Pp, Ppk und Cpm sehr nah beieinander, was darauf hindeutet, dass der Prozess zentriert und das Ziel erreicht wird. Der Ppk ist jedoch kleiner als 1,33, ein allgemein akzeptierter Wert f&uuml;r das Minimum eines f&auml;higen Prozesses. Wir k&ouml;nnen schlussfolgern, dass der Prozess gut ist, aber dass seine F&auml;higkeit noch verbessert werden k&ouml;nnte.</p>
+<dl><dd><a  class="image"><img alt="BCA Results.png" src="../images/Tutorial_CA/600px-BCA_Results.png" width="600"   /></a></dd></dl>
+<h2><a name="Non-normal_Capability_Analysis"></a><span class="mw-headline">F&auml;higkeitsanalyse f&uuml;r Nicht-Normal</span></h2>
+<h5><a name="Background_3"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Es gibt einen Datensatz der Gewichtswerte, der der Weibull-Verteilung folgt. Wir hoffen, dass die Daten nicht gr&ouml;&szlig;er als 1 sind.</p>
+<h5><a name="Steps_in_Origin_3"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>3. Nonnormal</b>. Aktivieren Sie die Arbeitsmappe <b>Weibull</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Registerkarte <b>F&auml;higkeitsanalyse</b> und w&auml;hlen Sie <b>F&auml;higkeitsanalyse f&uuml;r Nicht-Normal</b>.</li>
+<li>Legen Sie auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs die <b>Messdaten</b> mit Spalte A fest.</li>
+<li>Setzen Sie auf der Registerkarte <b>Verteilung<i> die </i></b><i>Verteilung<b> auf </b>Weibull<b> und die </b>Methode<b> auf </b>Parameter sch&auml;tzen<b>. Lassen Sie das Feld </b>Feste Form bei</i> leer.<dl><dd><a  class="image"><img alt="NCA Distribution.png" src="../images/Tutorial_CA/250px-NCA_Distribution.png" width="250"   /></a></dd></dl></li>
+<li>Setzen Sie auf der Registerkarte <b>Grenzen</b> die <b>Obere Spez.</b> auf <b>1</b>.Lassen Sie alle anderen Textfelder leer.<dl><dd><a  class="image"><img alt="NCA Limit.png" src="../images/Tutorial_CA/250px-NCA_Limit.png" width="250"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsblatt erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_3"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Der Datensatz scheint, der angepassten Kurve der Weibull-Verteilung zu folgen. Alle Messungen liegen unter der oberen Spezifikationsgrenze. Wir k&ouml;nnen sagen, dass der Prozess die Anforderungen erf&uuml;llt.</p>
+<dl><dd><a  class="image"><img alt="NCA Results.png" src="../images/Tutorial_CA/600px-NCA_Results.png" width="600"   /></a></dd></dl>
+<h2><a name="Binomial_Capability_Analysis"></a><span class="mw-headline">F&auml;higkeitsanalyse f&uuml;r Binomial</span></h2>
+<p>Die F&auml;higkeitsanalyse f&uuml;r eine Binomialverteilung wird verwendet, um zu bestimmen, ob der Prozentanteil der fehlerhaften Einheiten in einem Prozess die Kundenspezifikationen erf&uuml;llt. Es gibt nur zwei m&ouml;gliche Ergebnisse, wenn Sie eine Einheit untersuchen: Entweder ist sie fehlerhaft oder nicht fehlerhaft.</p>
+<h5><a name="Background_4"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Der Manager eines Shops f&uuml;hrt eine Umfrage zur Kundenzufriedenheit durch und zwar jeden Tag f&uuml;r 25 Tage. Er notiert die Anzahl der unzufriedenen Kunden.</p><p>Er m&ouml;chte wissen, wie gut der Service die Spezifikationen erf&uuml;llt.</p>
+<h5><a name="Steps_in_Origin_4"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>4. Binomial</b> und aktivieren Sie die Arbeitsmappe <b>Survey</b>..</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Registerkarte <b>F&auml;higkeitsanalyse</b> und w&auml;hlen Sie <b>F&auml;higkeitsanalyse f&uuml;r Binomial</b>.</li>
+<li>Legen Sie auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs die <b>Fehlerhaften Einheiten</b> mit Spalte B fest. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.<dl><dd><a  class="image"><img alt="BinCA Input.png" src="../images/Tutorial_CA/380px-BinCA_Input.png" width="380"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsblatt erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_4"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Wir k&ouml;nnen aus der p-Karte ablesen, dass alle Stichproben innerhalb der Linie der Eingriffsgrenzen liegen, das hei&szlig;t, insgesamt scheint der Prozess unter Kontrolle. Die Karte Kumulative&nbsp;% fehlerhafte Einheiten zeigt, dass der gesch&auml;tzte durchschnittliche Prozentanteil der Fehler sich um 20 % stabilisiert. Im Diagramm Rate der fehlerhaften Einheiten sind die Punkte zuf&auml;llig um die Linie des Durchschnitts verteilt. In der Tabelle <b>Zusammenfassungsstatistik (Summary Stats)</b> betr&auml;gt der Wert von Prozess-Z 0,853 und ist damit viel kleiner als 2. Er weist darauf hin, dass der Service die Spezifikationen nicht erf&uuml;llt. Um die 20 % der Benutzer sind unzufrieden mit dem Service.</p>
+<dl><dd><a  class="image"><img alt="BinCA Results.png" src="../images/Tutorial_CA/600px-BinCA_Results.png" width="600"   /></a></dd></dl>
+<h2><a name="Poisson_Capability_Analysis"></a><span class="mw-headline">F&auml;higkeitsanalyse f&uuml;r Poisson</span></h2>
+<h5><a name="Background_5"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Wir m&ouml;chten den Herstellungsprozess von Kunststofffolien untersuchen. Die Daten werden einmal pro Stunde auf der Kunststofffolie erfasst. Ein Bereich wird ausgeschnitten und die M&auml;ngel werden gez&auml;hlt. Der Bereich wird in cm<sup>2</sup> angegeben und die Anzahl der M&auml;ngel wird aufgezeichnet. Wir haben die Daten f&uuml;r die letzten 100 Stunden aufgezeichnet. Wir m&ouml;chten wissen, ob die Produktion die Anforderungen erf&uuml;llt.</p>
+<h5><a name="Steps_in_Origin_5"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>W&auml;hlen Sie den Ordner <b>5. Poisson</b> im <b>Projekt Explorer</b> aus und aktivieren Sie die Arbeitsmappe <b>Plastic Film</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Registerkarte <b>F&auml;higkeitsanalyse</b> und w&auml;hlen Sie <b>F&auml;higkeitsanalyse f&uuml;r Poisson</b>.</li>
+<li>Legen Sie auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs die <b>Fehlerhaften Einheiten</b> mit Spalte B fest. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.<dl><dd><a  class="image"><img alt="PoiCA Input.png" src="../images/Tutorial_CA/380px-PoiCA_Input.png" width="380"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsblatt erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_5"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Die u-Karte bewertet den Zustand der statistischen Kontrolle der Ergebnisse. Es gibt einen Punkt auf der u-Karte der au&szlig;er Kontrolle ist. Allgemein k&ouml;nnen wir sagen, dass der Prozess stabil ist. Das Diagramm des kumulierten DPU wird verwendet, um zu bestimmen, ob Sie ausreichend Stichproben f&uuml;r eine valide Sch&auml;tzung des durchschnittlichen DPU haben. Im Diagramm des kumulierten DPU k&ouml;nnen wir sehen, dass die Daten entlang der DPU-Linie abgeflacht sind. Das bedeutet, dass wir haben gen&uuml;gend Stichproben, um sicher zu sein, dass der gesch&auml;tzte mittlere DPU g&uuml;ltig ist.</p><p>Aus der Tabelle Zusammenfassungsstatistik k&ouml;nnen wir ablesen, dass der mittlere DPU (Defects Per Unit) 0,115 betr&auml;gt. Das hei&szlig;t, dass es alle 8,69 cm^2(1/0,115) einen Fehler gibt. Die UKG und OKG betragen 0,108 bzw. 0,121. Das hei&szlig;t, wir k&ouml;nnen mit einer Konfidenz von 95 % sicher sein, dass der mittlere DPU innerhalb des Intervalls (0,108; 0,121) liegt.</p>
+<dl><dd><a  class="image"><img alt="PoiCA Results 01.png" src="../images/Tutorial_CA/600px-PoiCA_Results_01.png" width="600"   /></a></dd></dl>
+<h2><a name="Multiple_Variables"></a><span class="mw-headline">Mehrere Variablen</span></h2>
+<h5><a name="Background_6"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Hersteller stellt Schraubenmuttern von hoher Qualit&auml;t her, die einem Durchmesser von 21 Millimetern entsprechen m&uuml;ssen.</p><p>Die Abteilung f&uuml;r Qualit&auml;tskontrolle zog aus den fertigen Produkten von zwei Maschinen pro Tag f&uuml;r 20 Tage 4 Muttern und ma&szlig; jeweils den Durchmesser.</p><p>Die Analyse zielt darauf ab: (1) zu testen, ob der mittlere Durchmesser gleich 21 mm ist, (2) zu verifizieren, dass die Ausgaben von Maschine 1 die Spezifikationen (20,99&ndash;21,02 mm) erf&uuml;llen, (3) zu verifizieren, dass die Ausgaben von Maschine 2 die Spezifikationen (20,95&ndash;21,05 mm) erf&uuml;llen, und (4) die Performance beider Maschinen zu &uuml;berwachen.</p>
+<h5><a name="Steps_in_Origin_6"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Normal</b>. Aktivieren Sie die Arbeitsmappe <b>Durchmesser</b>.</li>
+<li>Markieren Sie die Spalten B und C im Arbeitsblatt. Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Registerkarte <b>F&auml;higkeitsanalyse</b>, aktivieren Sie <b>Mehrere Variablen</b> und w&auml;hlen Sie <b>F&auml;higkeitsanalyse f&uuml;r Normalverteilung</b>.<dl><dd><a  class="image"><img alt="Mulvar NPA GUI.png" src="../images/Tutorial_CA/700px-Mulvar_NPA_GUI.png" width="700"   /></a></dd></dl></li>
+<li>Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs werden die Spalten B und C automatisch als <b>Messdaten</b> ausgew&auml;hlt. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.</li>
+<li>Erweitern Sie den Zweig <b>Spezifikationen</b>, geben Sie <b>20,99 20,95</b> im Feld <b>Untere Spez.</b> und <b>21,02 21,05</b> im Feld <b>Obere Spez.</b> ein. Geben Sie <b>21</b> im Feld <b>Soll</b> ein.<dl><dd><a  class="image"><img alt="Mulvar NPA Input.png" src="../images/Tutorial_CA/380px-Mulvar_NPA_Input.png" width="380"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsblatt erstellt.</li></ol>
+<p><br /></p>
+<h5><a name="Interpreting_the_Results_6"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Der Prozess ist ann&auml;hernd zentriert und alle beobachteten Messungen liegen innerhalb der Spezifikationsgrenzen. Die F&auml;higkeitskennwerte Cpk, Ppk und Cpm sind alle gr&ouml;&szlig;er als 1,33, ein allgemein akzeptierter Wert f&uuml;r das Minimum eines f&auml;higen Prozesses. Daher erf&uuml;llt die Breite die Produktionsanforderungen.</p><p><a  class="image"><img alt="Multivar Report.png" src="../images/Tutorial_CA/700px-Multivar_Report.png" width="700"   /></a></p>
+
+
+    

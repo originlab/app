@@ -1,0 +1,119 @@
+﻿<h1 class="firstHeading">Tutorial zu den Regelkarten</h1><p class='urlname' style='display: none'>Tutorial-Control-Charts</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Starthinweise</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Variables_Charts_for_Subgroups:_Xbar-R"><span class="tocnumber">2</span> <span class="toctext">Regelkarten f&uuml;r Variablen - Teilgruppen: X-quer/R</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Background"><span class="tocnumber">2.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps_in_Origin"><span class="tocnumber">2.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Interpreting_the_Results"><span class="tocnumber">2.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables_Chart_for_Individuals:_I-MR"><span class="tocnumber">3</span> <span class="toctext">Regelkarten f&uuml;r Variablen - Einzelwerte: I/MR</span></a><ul>
+<li class="toclevel-2 tocsection-7"><a href="#Background_2"><span class="tocnumber">3.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Steps_in_Origin_2"><span class="tocnumber">3.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Interpreting_the_Results_2"><span class="tocnumber">3.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Attributes_Charts:_P_Chart_Diagnostic_and_P"><span class="tocnumber">4</span> <span class="toctext">Regelkarten f&uuml;r attributive Daten: p-Karten-Diagnose und p-Karte</span></a><ul>
+<li class="toclevel-2 tocsection-11"><a href="#Background_3"><span class="tocnumber">4.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Steps_in_Origin_3"><span class="tocnumber">4.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Interpreting_the_Results_3"><span class="tocnumber">4.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Time-Weighted_Charts:_CUSUM"><span class="tocnumber">5</span> <span class="toctext">Regelkarten f&uuml;r zeitlich gewichtete Daten: CUSUM</span></a><ul>
+<li class="toclevel-2 tocsection-15"><a href="#Background_4"><span class="tocnumber">5.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Steps_in_Origin_4"><span class="tocnumber">5.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Interpreting_the_Results_4"><span class="tocnumber">5.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Multivariate_Charts:_T.C2.B2-Generalized_Variance"><span class="tocnumber">6</span> <span class="toctext">Multivariate Regelkarten: T²-Verallgemeinerte Varianz</span></a><ul>
+<li class="toclevel-2 tocsection-19"><a href="#Background_5"><span class="tocnumber">6.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Steps_in_Origin_5"><span class="tocnumber">6.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Interpreting_the_Results_5"><span class="tocnumber">6.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Notes_for_Starting"></a><span class="mw-headline">Starthinweise</span></h2>
+<ul><li>Laden Sie die Datei des Beispielprojekts <a class="external text" href="https://blog.originlab.com/wp-content/uploads/2023/10/SPCData.zip" target="_blank">hier</a> herunter und &ouml;ffnen Sie sie in Origin.</li></ul>
+<ul><li>Starten Sie dieses Tutorial mit der installierten App <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=934" target="_blank"><b>Statistical Process Control</b></a>. Wenn Sie die App nicht installiert haben, siehe <a class="external text" href="https://www.originlab.com/doc/User-Guide/Apps" target="_blank">Apps f&uuml;r Origin</a>, um die App zu finden und zu installieren.</li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_Control_Charts/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><a href="../../Tutorial/Category/Control_Charts(App).html" title="Category:Control Charts(App)">Introduction:Control Charts</a></li>
+<li><a href="../../Tutorial/App/Algorithm_Control_Charts.html" title="App:Algorithm Control Charts">Algorithms:Control Charts</a></li></ul>
+</td></tr></table>
+<p><br /></p>
+<h2><a name="Variables_Charts_for_Subgroups:_Xbar-R"></a><span class="mw-headline">Regelkarten f&uuml;r Variablen - Teilgruppen: X-quer/R</span></h2>
+<h5><a name="Background"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Hersteller stellt Schraubenmuttern von hoher Qualit&auml;t her, die einem Durchmesser von 21 Millimetern entsprechen m&uuml;ssen.</p><p>Die Abteilung f&uuml;r Qualit&auml;tskontrolle zog aus den fertigen Produkten von zwei Maschinen pro Tag f&uuml;r 20 Tage 4 Muttern und ma&szlig; jeweils den Durchmesser.</p><p>Sie wollten pr&uuml;fen, ob der mittlere Durchmesser der Muttern 21 entsprach. Die Differenz ihrer Durchmesser sollte nicht mehr als 0,05 (20,95, 21,05) betragen, und die Operation beider Maschinen wurde &uuml;berwacht.</p>
+<h5><a name="Steps_in_Origin"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Normal</b> und aktivieren Sie die Arbeitsmappe <b>Diameter</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Registerkarte <b>Regelkarten</b>, die Option <b>Teilgruppen bei Regelkarten f&uuml;r Variablen</b> im Auswahlmen&uuml; und dann <b>X-quer/R</b>.<dl><dd><a  class="image"><img alt="XbarR GUI.png" src="../images/Tutorial_Control_Charts/700px-XbarR_GUI.png" width="700"   /></a></dd></dl></li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Eingabe</b> im ge&ouml;ffneten Dialog die Spalten B und C als <b>Messdaten</b> aus. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.<dl><dd><a  class="image"><img alt="XbarR Input.png" src="../images/Tutorial_Control_Charts/450px-XbarR_Input.png" width="450"   /></a></dd></dl></li>
+<li>Setzen Sie auf der Registerkarte <b>Parameter</b> den <b>Historischen Mittelwert</b> auf <b>21</b>.<dl><dd><a  class="image"><img alt="XbarR Parameters.png" src="../images/Tutorial_Control_Charts/400px-XbarR_Parameters.png" width="400"   /></a></dd></dl></li>
+<li>Erweitern Sie auf der Registerkarte <b>Grenzen</b> den Zweig <b>Beschr&auml;nkungen f&uuml;r Eingriffsgrenzen von X-Quer-Regelkarte</b>. Geben Sie f&uuml;r <b>Untere Spez.</b> <b>20,95</b> und f&uuml;r <b>Obere Spez.</b> <b>21,05</b> ein.<dl><dd><a  class="image"><img alt="XbarR Limits.png" src="../images/Tutorial_Control_Charts/450px-XbarR_Limits.png" width="450"   /></a></dd></dl></li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Tests</b> die folgenden Tests aus:<ul><li><b>1 Punkt mehr als K Standardabweichung von Mittellinie</b></li>
+<li><b>K Punkte in einer Zeile auf der gleichen Seite von Mittellinie</b></li>
+<li><b>K Punkte in einer Zeile innerhalb 1 Standardabweichung von Mittellinie (beide Seiten)</b></li></ul>
+<dl><dd><a  class="image"><img alt="XbarR Tests.png" src="../images/Tutorial_Control_Charts/500px-XbarR_Tests.png" width="500"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Untersuchen Sie zuerst die R-Karte. Wenn die Prozessstreuung nicht unter Kontrolle ist, k&ouml;nnte das Ergebnis der X-quer-Karte ungenau sein.. Alle Punkte liegen innerhalb der Eingriffsgrenzen auf der R-Karte der zwei Maschinen. Die Prozessstreuung der Maschinen ist unter Kontrolle.</p><p>Die Maschine hat 1 Punkt, der au&szlig;er Kontrolle ist. Die X-quer-Karte von Maschine 1 zeigt, dass es einen Punkt gibt, der sich au&szlig;erhalb der Eingriffsgrenzen f&uuml;r Maschine 1 befindet. Das Testergebnis von TEST 1 gibt ebenfalls an, dass Test 1 bei Punkt 18 einen Fehler anzeigt.</p><p>Maschine 2 ist noch unter Kontrolle. Alle Punkte liegen innerhalb der Eingriffsgrenzen der X-quer-Karte von Maschine 2.</p><p><a  class="image"><img alt="XbarR Results.png" src="../images/Tutorial_Control_Charts/900px-XbarR_Results.png" width="900"   /></a></p>
+<h2><a name="Variables_Chart_for_Individuals:_I-MR"></a><span class="mw-headline">Regelkarten f&uuml;r Variablen - Einzelwerte: I/MR</span></h2>
+<h5><a name="Background_2"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Qualit&auml;tsingenieur m&ouml;chte den R&ouml;hrenproduktionsprozess bewerten. Er erfasste Daten f&uuml;r die H&ouml;he (Fu&szlig;) der R&ouml;hre bei 150 Stichproben. Er m&ouml;chte wissen, ob die H&ouml;he der R&ouml;hren noch unter Kontrolle ist.</p>
+<h5><a name="Steps_in_Origin_2"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Normal</b>. Aktivieren Sie die Arbeitsmappe <b>Height of Pipe</b>.</li>
+<li>Markieren Sie Spalte A im Arbeitsblatt. Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Registerkarte <b>Regelkarten</b>, die Option <b>Einzelwerte bei Regelkarten f&uuml;r Variablen</b> im Auswahlmen&uuml; und dann <b>I/MR</b>.</li>
+<li># Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs wird Spalte A automatisch als <b>Messdaten</b> ausgew&auml;hlt.</li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Tests</b> die folgenden Tests aus:<ul><li><b>1 Punkt mehr als K Standardabweichung von Mittellinie</b></li>
+<li><b>K Punkte in einer Zeile auf der gleichen Seite von Mittellinie</b></li></ul>
+<dl><dd><a  class="image"><img alt="IMR Tests.png" src="../images/Tutorial_Control_Charts/500px-IMR_Tests.png" width="500"   /></a></dd></dl></li></ol>
+<h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Pr&uuml;fen Sie zuerst die MR-Karte. Die Hinweise geben an, dass Punkt 82 und 133 beim Test 1 durchgefallen sind und Punkt 105 beim Test 2. Die Prozessstreuung k&ouml;nnte also nicht so stabil sein.</p><p><a  class="image"><img alt="IMR Results.png" src="../images/Tutorial_Control_Charts/800px-IMR_Results.png" width="800"   /></a></p>
+<h2><a name="Attributes_Charts:_P_Chart_Diagnostic_and_P"></a><span class="mw-headline">Regelkarten f&uuml;r attributive Daten: p-Karten-Diagnose und p-Karte</span></h2>
+<h5><a name="Background_3"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Der Manager eines Shops f&uuml;hrt eine Umfrage zur Kundenzufriedenheit durch und zwar jeden Tag f&uuml;r 25 Tage. Er notiert die Anzahl der unzufriedenen Kunden.</p><p>Er m&ouml;chte wissen, wie gut der Service die Spezifikationen erf&uuml;llt.</p>
+<h5><a name="Steps_in_Origin_3"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>4. Binomial</b> und aktivieren Sie die Arbeitsmappe <b>Survey</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Regelkarte <b>Regelkarten</b> und w&auml;hlen Sie <b>Regelkarten f&uuml;r attributive Daten</b> in der Auswahlliste und dann <b>p-Karten-Diagnose</b>.<dl><dd><a  class="image"><img alt="Attribute GUI.png" src="../images/Tutorial_Control_Charts/700px-Attribute_GUI.png" width="700"   /></a></dd></dl></li>
+<li>Legen Sie auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs die <b>Messdaten</b> mit Spalte B fest. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.<dl><dd><a  class="image"><img alt="P Input.png" src="../images/Tutorial_Control_Charts/380px-P_Input.png" width="380"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm erzeugt.<dl><dd><a  class="image"><img alt="PDiagnostic.png" src="../images/Tutorial_Control_Charts/400px-PDiagnostic.png" width="400"   /></a></dd>
+<dd>Wie in den Hinweise der <b>p-Karten-Diagnose</b> erw&auml;hnt. Die <b>p&lsquo;-Karte nach Laney</b> sollte verwendet werden. Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</dd></dl></li>
+<li>Bleiben Sie auf der Registerkarte <b>Regelkarten</b> und w&auml;hlen Sie <b>p&lsquo; nach Laney</b>.</li>
+<li>Legen Sie auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs die <b>Messdaten</b> mit Spalte B fest. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.<dl><dd><a  class="image"><img alt="LaneyP Input.png" src="../images/Tutorial_Control_Charts/400px-LaneyP_Input.png" width="400"   /></a></dd></dl></li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Tests</b> die Option <b>Alle Tests durchf&uuml;hren</b> in der Auswahlliste <b>Tests</b>.<dl><dd><a  class="image"><img alt="LaneyP Tests.png" src="../images/Tutorial_Control_Charts/500px-LaneyP_Tests.png" width="500"   /></a></dd></dl></li></ol>
+<h5><a name="Interpreting_the_Results_3"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Alle Datenpunkte liegen innerhalb der Eingriffsgrenzen. Die Hinweise enthalten nichts &uuml;ber die fehlgeschlagenen Punkte, was bedeutet, dass alle Tests bestanden wurden. Der Prozess ist unter Kontrolle.</p>
+<dl><dd><a  class="image"><img alt="LaneyP Results.png" src="../images/Tutorial_Control_Charts/500px-LaneyP_Results.png" width="500"   /></a></dd></dl>
+<h2><a name="Time-Weighted_Charts:_CUSUM"></a><span class="mw-headline">Regelkarten f&uuml;r zeitlich gewichtete Daten: CUSUM</span></h2>
+<h5><a name="Background_4"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Hersteller stellt Schraubenmuttern von hoher Qualit&auml;t her, die einem Durchmesser von 21 Millimetern entsprechen m&uuml;ssen.</p><p>Die Abteilung f&uuml;r Qualit&auml;tskontrolle zog aus den fertigen Produkten von zwei Maschinen pro Tag f&uuml;r 20 Tage 4 Muttern und ma&szlig; jeweils den Durchmesser.</p><p>Sie wollten pr&uuml;fen, ob der mittlere Durchmesser der Muttern 21 entsprach. Die Differenz ihrer Durchmesser sollte nicht mehr als 0,05 (20,95, 21,05) betragen, und die Operation beider Maschinen wurde &uuml;berwacht.</p><p>Die Abteilung der Qualit&auml;tskontrolle hat bereits eine X-quer-Regelkarte im <a href="../../Tutorial/App/Tutorial_Control_Charts.html#Variables_Charts_for_Subgroups:_Xbar-R" title="App:Tutorial Control Charts">Teil X-quer-Karte</a> erstellt. Sie wollen jedoch auch die Maschinenabnutzung dieser Maschinen &uuml;berwachen.</p>
+<h5><a name="Steps_in_Origin_4"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Normal</b> und aktivieren Sie die Arbeitsmappe <b>Diameter</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Registerkarte <b>Regelkarten</b>, die Option <b>Regelkarten f&uuml;r zeitlich gewichtete Daten</b> im Auswahlmen&uuml; und dann <b>CUSUM</b>.<dl><dd><a  class="image"><img alt="CUSUM GUI.png" src="../images/Tutorial_Control_Charts/700px-CUSUM_GUI.png" width="700"   /></a></dd></dl></li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Eingabe</b> im ge&ouml;ffneten Dialog die Spalten B und C als <b>Messdaten</b> aus. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A. Setzen Sie  <b>Ziel</b> auf <b>21</b>.<dl><dd><a  class="image"><img alt="CUSUM Input.png" src="../images/Tutorial_Control_Charts/500px-CUSUM_Input.png" width="500"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm erzeugt.</li></ol>
+<h5><a name="Interpreting_the_Results_4"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Bei Maschine 2 sind alle Punkte auf der CUSUM-Regelkarte unter Kontrolle.</p><p>Bei Maschine 1 beginnt der Prozess, ab Punkt 17 einen kleinen Shift zu haben. Der Hersteller sollte pr&uuml;fen, ob Maschine 1 sich mit der Zeit abgenutzt hat.</p><p><br /> <a  class="image"><img alt="CUSUM Results.png" src="../images/Tutorial_Control_Charts/900px-CUSUM_Results.png" width="900"   /></a></p>
+<h2><a name="Multivariate_Charts:_T.C2.B2-Generalized_Variance"></a><span class="mw-headline">Multivariate Regelkarten: T²-Verallgemeinerte Varianz</span></h2>
+<h5><a name="Background_5"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Bei einem Pr&auml;zisionsspritzgussverfahren werden drei miteinander in Zusammenhang stehende Ma&szlig;e (L&auml;nge, Breite, H&ouml;he) von Kunststoffgeh&auml;usen &uuml;berwacht, um Prozessabweichungen zu erkennen.</p>
+<h5><a name="Steps_in_Origin_5"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>6. Multivariate</b> und aktivieren Sie die Arbeitsmappe <b>PlasticHousings</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Regelkarte <b>Regelkarten</b>, die Option <b>Multivariate Regelkarten</b> in der Auswahlliste und dann <b>T²-Verallgemeinerte Varianz</b>.<dl><dd><a  class="image"><img alt="Multivar GUI.png" src="../images/Tutorial_Control_Charts/700px-Multivar_GUI.png" width="700"   /></a></dd></dl></li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs die Spalten B, C und D als <b>Messdaten</b>. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte A.<dl><dd><a  class="image"><img alt="T2 Var Input.png" src="../images/Tutorial_Control_Charts/400px-T2_Var_Input.png" width="400"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Ein Berichtsblatt wird erzeugt.</li></ol>
+<h5><a name="Interpreting_the_Results_5"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Das Kartenmuster zeigt einen tempor&auml;ren Shift im Vektor des Prozessmittelwerts bei Teilgruppe 19. Die Streuung (Kovarianzstruktur) ist dabei w&auml;hrend des gesamten &Uuml;berwachungszeitraums stabil geblieben.</p>
+<dl><dd><a  class="image"><img alt="T2 Var Result.png" src="../images/Tutorial_Control_Charts/600px-T2_Var_Result.png" width="600"   /></a></dd></dl>
+
+
+
+    

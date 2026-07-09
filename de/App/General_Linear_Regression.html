@@ -1,0 +1,66 @@
+﻿<h1 class="firstHeading">Allgemeine lineare Regression (Pro)</h1><p class='urlname' style='display: none'>GLR</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Zusammenfassung</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tutorial"><span class="tocnumber">2</span> <span class="toctext">Tutorial</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Sample_Data"><span class="tocnumber">2.1</span> <span class="toctext">Beispieldaten</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps"><span class="tocnumber">2.2</span> <span class="toctext">Schritte</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Results_and_Explanations"><span class="tocnumber">2.3</span> <span class="toctext">Ergebnisse und Erkl&auml;rungen</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Post-process:_Optimize"><span class="tocnumber">2.4</span> <span class="toctext">Nachbearbeitung: Optimieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Summary"></a><span class="mw-headline">Zusammenfassung</span></h2>
+<p>Die App <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=336" target="_blank">General Linear Regression</a> wird verwendet, um das klassische lineare Modell an eine Reihe stetiger, normalverteilter, homoskedastischer und unabh&auml;ngiger Beobachtungen (abh&auml;ngige Variablen) gegen eine Kombination der kategorialen oder stetige Pr&auml;diktoren (abh&auml;ngige Variablen) anzupassen, wobei der lineare Zusammenhang zwischen ihnen &uuml;ber die gew&ouml;hnliche Methode der kleinsten Quadrate gesch&auml;tzt wird.</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/General_Linear_Regression/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Verwandte Themen:</b></i></p>
+<ul><li><a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=567" target="_blank">Lineares Modell mit gemischen Effekten</a></li>
+<li><a href="../../Tutorial/App/Generalized_Linear_Mixed_Model.html" title="Apps: Generalized Linear Mixed Model">Verallgemeinertes lineares Modell mit gemischten Effekten</a></li></ul>
+</td></tr></table>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<h3><a name="Sample_Data"></a><span class="mw-headline">Beispieldaten</span></h3>
+<p>Dieses Tutorial verwendet eine .csv-Datei, die online abgelegt ist. Bitte verwenden Sie den <b>Web-Konnektor</b>, um die Beispieldaten zu importieren:</p>
+<ol>
+<li>W&auml;hlen Sie im Men&uuml; <b>Daten: Mit Web verbinden</b>.<li>Kopieren Sie den folgenden Link und f&uuml;gen Sie ihn in das Bearbeitungsfeld <b>URL</b> im Dialog <b>Mit Web verbinden</b> ein.<pre class="lt" style="font-family:monospace;">https<span style="color: #000000;">:</span><span style="color: #008000;">//blog.originlab.com/wp-content/uploads/2026/01/GLRSampleData.csv</span></pre>
+<dl><dd><a  class="image"><img alt="GLR Connector.png" src="../images/General_Linear_Regression/GLR_Connector.png" width="535"  /></a></li></dd></dl>
+<li>Klicken Sie zum Importieren auf <b>OK</b>.</ol>
+<dl><dd><a  class="image"><img alt="GLR Sample Data.png" src="../images/General_Linear_Regression/GLR_Sample_Data.png" width="578"  /></a></dd></dl>
+<p><br />Um die wirksamsten Hebel zur Steigerung des Drehmoments zu ermitteln, f&uuml;hrten die Antriebsstrangingenieure Pr&uuml;fstandtests durch, bei denen zwei Kraftstoffe (Spalte A), zwei Ansaugarten (Spalte B), f&uuml;nf Ventiltrieb-Architekturen (Spalte C) sowie eine kontinuierliche Abtastung der Bohrungsdurchmesser (Spalte D) und Hubl&auml;ngen (Spalte E) kombiniert wurden. Sie verwenden dann die <b>allgemeine lineare Regression</b>, um die Daten anzupassen und den marginalen Beitrag jedes Faktors zum Spitzendrehmoment zu quantifizieren.</p>
+<h3><a name="Steps"></a><span class="mw-headline">Schritte</span></h3>
+<ol>
+<li>Klicken Sie auf das Symbol <b>General Linear Regression</b> <a  class="image"><img alt="GLMApp.png" src="../images/General_Linear_Regression/GLMApp.png" width="32"  /></a> in der <b>Apps-Galerie</b> (verankert auf der rechten Seite des Arbeitsbereichs), um den Dialog zu &ouml;ffnen.<li>Legen Sie auf der Registerkarte Eingabe Folgendes fest:<ul>
+<li><b>Abh&auml;ngige Variablen</b> = col(F)&quot;Torque&quot;,<li><b>Stetig</b> = col(D)&quot;Bore Diameter&quot; und col(E)&quot;Stroke&quot;<li><b>Kategorial</b> = col(A)&quot;Fuel&quot;, col(B)&quot;Aspiration&quot; und col(C)&quot;Engine&quot;.<ul><li>Stellen Sie im Unterzweig <b>Referenz Faktorstufe</b> sicher, dass &quot;GAS&quot; f&uuml;r <b>Fuel</b>, &ldquo;TURBO&rdquo; f&uuml;r <b>Aspiration</b> bzw. &quot;OHCV&quot; f&uuml;r <b>Engine</b> gesetzt ist.</li></ul>
+<dl><dd><a  class="image"><img alt="GLM Input.png" src="../images/General_Linear_Regression/GLM_Input.png" width="460"  /></a></ul></li></dd></dl>
+<li>Auf der Registerkarte Einstellungen<ul><li>stellen Sie sicher, dass <b>Modelltyp</b> auf <b>Haupteffekte</b> gesetzt ist, um nur die Haupteffekte anzupassen (Bohrungsdurchmesser, Hub, Kraftstoff, Ansaugung, Motor - Bore Diameter, Stroke, Fuel, Aspiration, Engine) und alle Wechselwirkungen ausgelassen werden.</li>
+<li>belassen Sie den <b>Kodierungstyp</b> auf <b>(1,0)</b>, um die Mittelwertdifferenz zwischen jeder Stufe und der <b>Referenz Faktorstufe</b> zu sch&auml;tzen.</li></ul>
+<dl><dd><a  class="image"><img alt="GLM Settings.png" src="../images/General_Linear_Regression/GLM_Settings.png" width="802"  /></a></li></dd></dl>
+<li>&Uuml;bernehmen Sie alle anderen Standardeinstellungen und klicken Sie auf <b>OK</b>.<dl><dd><a  class="image"><img alt="GLM Custom Model.png" src="../images/General_Linear_Regression/GLM_Custom_Model.png" width="751"  /></a></dd></dl>
+</ol>
+<h3><a name="Results_and_Explanations"></a><span class="mw-headline">Ergebnisse und Erkl&auml;rungen</span></h3>
+<dl><dd><a  class="image"><img alt="GLR Report.png" src="../images/General_Linear_Regression/GLR_Report.png" width="653"  /></a></dd></dl>
+<ul>
+<li>Tabelle <b>Parameter</b><ul>
+<li><b>Schnittpunkt mit der Y-Achse</b> (Intercept) <code>-88.68576</code> N·m stellt das prognostizierte mittlere Drehmoment (Torque) dar, das als &quot;Referenz&ldquo; genutzt wird, wenn Kraftstoff = GAS, Ansaugung = TURBO, Motor = OHCV, Bohrungsdurchmesser = 0 mm und Hub = 0 mm (0 ist eine rein mathematische Null). Dieser <b>Schnittpunkt mit der Y-Achse</b> wird als &quot;Basislinie&quot; betrachtet, und alle anderen unten aufgef&uuml;hrten Effekte sind Abweichungen von ihr.<li>Alle <code>p &lt; 0.05</code>. Auf dem Niveau von 0,05 beeinflussen alle Variablen das Drehmoment signifikant. Dies kann auch durch die Tabelle <b>Tests auf Effekte</b> best&auml;tigt werden.<li>Bei stetige Variablen: <b>Bohrungsdurchmesser</b>: <code>2.54975</code>. Jede Vergr&ouml;&szlig;erung von 1 mm des Bohrungsdurchmessers erh&ouml;ht das mittlere Drehmoment um 2,55 N·m. Entsprechend erh&ouml;ht jede Vergr&ouml;&szlig;erung von 1 mm des Hubs ihn um 0,68 N·m.<li>Bei kategorialen Variablen: <b>Kraftstoff = DIESEL</b>: <code>&ndash;33.4472</code>. Dies zeigt, dass Diesel den Mittelwert des Drehmoments um -33,45 N·m reduziert. Entsprechend zeigen alle Nicht-Referenzstufen von <b>Ansaugung</b> (= STD) und <b>Motor</b> (= OHC, OHCF, DOHC und L) negative Koeffizienten versus Referenzstufe. Daher ergibt die Kombination der Referenzstufen Kraftstoff =GAS, Ansaugung = TURBO, Motor = OHCV das h&ouml;chste prognostizierte Drehmoment.</ul>
+<li>Tabellen <b>Tests auf Effekte</b><ul><li>Die Tabelle <b>Parameter</b> gibt die Drehmomentsteigerung pro 1 mm Bohrungsdurchmesser/Hubl&auml;nge an und zeigt den starken R&uuml;ckgang beim Wechsel des Kraftstoffs, der Ansaugart oder des Motortyps. Zusammen mit dem <b>F-Wert</b> in der Tabelle <b>Tests auf Effekte</b> f&uuml;hrt der Bohrungsdurchmesser zu dem st&auml;rksten marginalen Anstieg, w&auml;hrend kategoriale Variablen das Drehmoment in etwa um denselben Betrag verschieben. Dies w&uuml;rde eine wertvolle Referenz f&uuml;r zuk&uuml;nftige Konstruktionsnpassungen ergeben.</li></ul>
+</li></ul>
+<h3><a name="Post-process:_Optimize"></a><span class="mw-headline">Nachbearbeitung: Optimieren</span></h3>
+<p>Nach der GLR-Analyse bietet Origin ein <b>Optimierungs</b>hilfsmittel, um die besten Faktoreinstellungen f&uuml;r den Sollwert zu finden, basierend auf dem angepassten Modell.</p><p>Beispielsweise m&ouml;chten Ingenieure die Kombination aus Bohrungsdurchmesser und Hubl&auml;nge ermitteln, die das Drehmoment maximiert, w&auml;hrend der Motor weiterhin als GAS-Turbo-OHCV-Motor konzipiert bleibt.</p>
+<ol>
+<li>Aktivieren Sie das Blatt <i><b>GLR Report</b></i>. Bewegen Sie die Maus an den Seitenrand, bis der Cursor sich in <a  class="image"><img alt="Mini toolbar cursor icon.png" src="../images/General_Linear_Regression/Mini_toolbar_cursor_icon.png" width="30"  /></a> verwandelt. Klicken Sie mit der linken Maustaste und w&auml;hlen Sie in der aufgerufenen Minisymbolleiste die Schaltfl&auml;che <b>Zielgr&ouml;&szlig;enoptimierung</b>.<dl><dd><a  class="image"><img alt="GLR Optimizer mini toolbar.png" src="../images/General_Linear_Regression/GLR_Optimizer_mini_toolbar.png" width="510"  /></a></dd></dl>
+<li>Im Dialog <b>Zielgr&ouml;&szlig;enoptimierung</b> legen Sie folgende Einstellungen fest:<ul>
+<li>Setzen Sie auf der Registerkarte Ziel das <b>Ziel f&uuml;r Drehmoment</b> auf <b>Maximieren</b>. Legen Sie die die <b>Untere Grenze</b> = 50 und die <b>Obere Grenze</b> = 220 fest.<dl><dd><a  class="image"><img alt="GLR Optimizer Goal tab.png" src="../images/General_Linear_Regression/GLR_Optimizer_Goal_tab.png" width="715"  /></a></dd></dl>
+<li>Sperren oder begrenzen Sie jeden Faktor auf der Registerkarte Einstellungen:<ul><li><b>Kraftstoff: Werte beschr&auml;nken</b> = GAS</li>
+<li><b>Ansaugung: Werte beschr&auml;nken</b> = TURBO</li>
+<li><b>Motor: Werte beschr&auml;nken</b> = OHCV</li>
+<li><b>Bohrungsdurchmesser: Auf Bereich beschr&auml;nken</b> = [75, 95]</li>
+<li><b>Hub: Auf Bereich beschr&auml;nken</b> = [55, 80]</li></ul>
+<dl><dd><a  class="image"><img alt="GLR Optimizer Settings tab.png" src="../images/General_Linear_Regression/GLR_Optimizer_Settings_tab.png" width="675"  /></a></li></ul></dd></dl>
+<li>Klicken Sie auf <b>OK</b>, um den Bericht zu erzeugen.<dl><dd><a  class="image"><img alt="GLR Optimizer Report.png" src="../images/General_Linear_Regression/GLR_Optimizer_Report.png" width="559"  /></a></dd></dl>
+<ul>
+<li><b>L&ouml;sungs</b>tabelle: Innerhalb des festgelegten ausf&uuml;hrbaren Fensters (Bohrung 75&ndash;95 mm, Hub 55&ndash;80 mm, Kraftstoff = GAS, Ansaugung = TURBO, Motor = OHCV) findet das Drehmoment seine Spitze in der oberen rechten Ecke der Zielgr&ouml;&szlig;enoptimierung: Bohrung = 90 mm, Hub = 80 mm.<br /> Da beide stetigen Faktoren positive, nahezu lineare Koeffizienten zeigen (was durch das <b>Optimierungsdiagramm</b> best&auml;tigt wird), folgt der Algorithmus einfach dem Gradienten, bis er bei einer Bohrungstiefe von 90 mm an die Grenze des Datenbereichs st&ouml;&szlig;t (begrenzt durch den von uns festgelegten Drehmomentgrenzwert, obwohl die von uns festgelegte obere Bohrungstiefe 95 mm betr&auml;gt).<li>Die <b>Prognose</b>tabelle gibt den maximalen angepassten Drehmomentwert <code>195.34575</code> N·m unter der Konfiguration der <b>L&ouml;sung</b> aus.<li>Durch Doppelklick auf das <b>Optimierungsdiagramm</b> wird es in einem separaten Fenster ge&ouml;ffnet. Ziehen Sie den roten Schieber in jedes Faktorfeld, um zu sehen, wie das Drehmoment sich in Echtzeit ver&auml;ndert.</ul></li></ol>
+
+
+
+    

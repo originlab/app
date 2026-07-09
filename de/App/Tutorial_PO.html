@@ -1,0 +1,78 @@
+﻿<h1 class="firstHeading">Tutorial zur Prozess&uuml;bersicht</h1><p class='urlname' style='display: none'>Tutorial-PO</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Starthinweise</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Normal_Process_Overview"><span class="tocnumber">2</span> <span class="toctext">Prozess&uuml;bersicht Normal</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Background"><span class="tocnumber">2.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps_in_Origin"><span class="tocnumber">2.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Interpreting_the_Results"><span class="tocnumber">2.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Between_Within_Process_Overview"><span class="tocnumber">3</span> <span class="toctext">Prozess&uuml;bersicht Zwischen/Innerhalb</span></a><ul>
+<li class="toclevel-2 tocsection-7"><a href="#Background_2"><span class="tocnumber">3.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Steps_in_Origin_2"><span class="tocnumber">3.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Interpreting_the_Results_2"><span class="tocnumber">3.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Non-normal_Process_Overview"><span class="tocnumber">4</span> <span class="toctext">Prozess&uuml;bersicht Nicht-Normal</span></a><ul>
+<li class="toclevel-2 tocsection-11"><a href="#Background_3"><span class="tocnumber">4.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Steps_in_Origin_3"><span class="tocnumber">4.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Interpreting_the_Results_3"><span class="tocnumber">4.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Notes_for_Starting"></a><span class="mw-headline">Starthinweise</span></h2>
+<ul><li>Laden Sie die Datei des Beispielprojekts <a class="external text" href="https://blog.originlab.com/wp-content/uploads/2023/10/SPCData.zip" target="_blank">hier</a> herunter und &ouml;ffnen Sie sie in Origin.</li></ul>
+<ul><li>Starten Sie dieses Tutorial mit der installierten App <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=934" target="_blank"><b>Statistical Process Control</b></a>. Wenn Sie die App nicht installiert haben, siehe <a class="external text" href="https://www.originlab.com/doc/User-Guide/Apps" target="_blank">Apps f&uuml;r Origin</a>, um die App zu finden und zu installieren.</li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_PO/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><a href="../../Tutorial/Category/Process_Overview(App).html" title="Category:Process Overview(App)">Introduction:Process Overview</a></li>
+<li><a href="../../Tutorial/App/Algorithm_PO.html" title="App:Algorithm PO">Algorithms:Process Overview</a></li></ul>
+</td></tr></table>
+<p><br /></p>
+<h2><a name="Normal_Process_Overview"></a><span class="mw-headline">Prozess&uuml;bersicht Normal</span></h2>
+<h5><a name="Background"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Qualit&auml;tsingenieur m&ouml;chte den Kapselabf&uuml;llprozess der Maschine bewerten. Das Kapselgewicht muss 215 ± 17 mg betragen.</p><p>Er erfasste das F&uuml;llgewicht von 8 Kapseln alle 10 Minuten von 8:30 bis 12:00. Er m&ouml;chte auswerten, wie gut das Gewicht der Kapself&uuml;llungen die Anforderungen erf&uuml;llt.</p>
+<h5><a name="Steps_in_Origin"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Normal</b> und aktivieren Sie die Arbeitsmappe <b>Capsule Weight</b>.</li>
+<li>Markieren Sie die Spalten B ~ I im Arbeitsblatt. Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_PO/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>W&auml;hlen Sie die Registerkarte <b>Prozess&uuml;bersicht</b>  und dort die <b>Prozess&uuml;bersicht f&uuml;r Normal</b>.<dl><dd><a  class="image"><img alt="PO Normal GUI.png" src="../images/Tutorial_PO/700px-PO_Normal_GUI.png" width="700"   /></a></dd></dl></li>
+<li>Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs werden die Spalten B ~ I automatisch als <b>Messdaten</b> ausgew&auml;hlt. Aktivieren Sie das Kontrollk&auml;stchen <b>Teilgruppen in Zeilen quer &uuml;ber Spalten angeordnet</b>.<dl><dd><a  class="image"><img alt="PO Normal Input.png" src="../images/Tutorial_PO/PO_Normal_Input.png" width="540"  /></a></dd></dl></li>
+<li>Geben Sie auf der Registerkarte <b>Grenzen</b> f&uuml;r die <b>Untere Spez.</b> <b>198</b>, f&uuml;r die <b>Obere Spez.</b> <b>232</b> und f&uuml;r das <b>Soll</b> <b>215</b> ein.<dl><dd><a  class="image"><img alt="PO Normal Limit.png" src="../images/Tutorial_PO/PO_Normal_Limit.png" width="424"  /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Aus der X-quer-Karte und dem Abschluss von Test1 k&ouml;nnen wir ablesen, dass Punkt 5 au&szlig;erhalb der OKG liegt.</p><p>Das F&auml;higkeitshistogramm zeigt, dass nicht alle Beobachtungen innerhalb der USG und OSG liegen.</p><p>Au&szlig;erdem ist der Cpk gleich 0.837, was weniger ist als 1.</p><p>Der Prozess ist nicht f&auml;hig.</p>
+<dl><dd><a  class="image"><img alt="PO Normal Results.png" src="../images/Tutorial_PO/600px-PO_Normal_Results.png" width="600"   /></a></dd></dl>
+<h2><a name="Between_Within_Process_Overview"></a><span class="mw-headline">Prozess&uuml;bersicht Zwischen/Innerhalb</span></h2>
+<h5><a name="Background_2"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Ingenieur m&ouml;chte Zugriff in den Produktionsprozess von Edelstahlblechen erhalten.</p><p>Er erfasst 4 Messungen der Dicke von 20 aufeinanderfolgenden Stahlblechen. Die Dicke muss 3 ± 0,1 mm sein.</p>
+<h5><a name="Steps_in_Origin_2"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>2. Between-Within</b> und aktivieren Sie die Arbeitsmappe <b>Steel Sheet</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_PO/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Registerkarte <b>Prozess&uuml;bersicht</b> und w&auml;hlen Sie <b>Prozess&uuml;bersicht Zwischen/Innerhalb</b>.</li>
+<li>Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs wird Spalte A automatisch als <b>Messdaten</b> ausgew&auml;hlt. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Spalte</b> und setzen Sie die <b>Spalte der Teilgruppengr&ouml;&szlig;e</b> auf Spalte B.<dl><dd><a  class="image"><img alt="BCA Input.png" src="../images/Tutorial_PO/BCA_Input.png" width="540"  /></a></dd></dl></li>
+<li>Geben Sie auf der Registerkarte <b>Grenzen</b> f&uuml;r die <b>Untere Spez.</b> <b>2,9</b>, f&uuml;r die <b>Obere Spez.</b> <b>3,1</b> und f&uuml;r das <b>Soll</b> <b>3</b> ein.<dl><dd><a  class="image"><img alt="BCA limit.png" src="../images/Tutorial_PO/BCA_limit.png" width="422"  /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Auf der Einzelwertregelkarte, der Regelkarte der gleitenden Spannweite und der Regelkarte der Spannweite liegen keine Punkte au&szlig;erhalb der Eingriffsgrenzen. Das deutet darauf hin, dass der Prozess stabil ist.</p><p>Die Datenpunkte liegen nah bei der Referenzlinie im Wahrscheinlichkeitsdiagramm, was bedeutet, dass die Daten normalverteilt sind.</p><p>Im F&auml;higkeitshistogramm liegen alle Beobachtungen innerhalb der Spezifikationsgrenzen.</p><p>Der Cp betr&auml;gt 1,188, was darauf hindeutet, dass die Spezifikationsstreubreite 1,19 mal gr&ouml;&szlig;er ist als die 6-σ-Streubreite im Prozess. Cp (1,188) und Cpk (1,093) liegen nicht so nah beieinander, was darauf hindeutet, dass der Prozess leicht dezentriert ist. In Hinblick auf die Gesamtf&auml;higkeit sind Pp (1,046), Ppk,(0,962) und Cpm (1,02) alle kleiner als 1,33, ein allgemein akzeptierter Wert f&uuml;r das Minimum eines f&auml;higen Prozesses.</p><p>Wir k&ouml;nnen schlussfolgern, dass der Prozess gut ist, aber dass seine F&auml;higkeit noch verbessert werden k&ouml;nnte.</p>
+<dl><dd><a  class="image"><img alt="PO BW Results.png" src="../images/Tutorial_PO/600px-PO_BW_Results.png" width="600"   /></a></dd></dl>
+<h2><a name="Non-normal_Process_Overview"></a><span class="mw-headline">Prozess&uuml;bersicht f&uuml;r Nicht-Normal</span></h2>
+<h5><a name="Background_3"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Es gibt einen Datensatz der Gewichtswerte, der der Weibull-Verteilung folgt. Wir hoffen, dass die Daten nicht gr&ouml;&szlig;er als 1 sind.</p>
+<h5><a name="Steps_in_Origin_3"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>3. Nonnormal</b>. Aktivieren Sie die Arbeitsmappe <b>Weibull</b>.</li>
+<li>Klicken Sie auf das Symbol <b>Statistical Process Control</b> <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_PO/SPC_Icon.png" width="32"  /></a> im Fenster der <b>Apps-Galerie</b>.</li>
+<li>Bleiben Sie auf der Registerkarte <b>Prozess&uuml;bersicht</b> und w&auml;hlen Sie <b>Prozess&uuml;bersicht Nicht-Normal</b>.</li>
+<li>Auf der Registerkarte <b>Eingabe</b> des ge&ouml;ffneten Dialogs wird Spalte A automatisch als <b>Messdaten</b> ausgew&auml;hlt. W&auml;hlen Sie f&uuml;r <b>Teilgruppengr&ouml;&szlig;e nach</b> die Option <b>Konstant</b> und setzen Sie die <b>Teilgruppengr&ouml;&szlig;enkonstante</b> auf 1.<dl><dd><a  class="image"><img alt="PO nonnormal input.png" src="../images/Tutorial_PO/PO_nonnormal_input.png" width="540"  /></a></dd></dl></li>
+<li>Setzen Sie auf der Registerkarte <b>Grenzen</b> die <b>Obere Spez.</b> auf <b>1</b>.Lassen Sie alle anderen Textfelder leer.<dl><dd><a  class="image"><img alt="NCA Limit.png" src="../images/Tutorial_PO/NCA_Limit.png" width="338"  /></a></dd></dl></li>
+<li>Setzen Sie auf der Registerkarte <b>Verteilung</b> die <b>Verteilung</b> auf <b>Auto</b>. Dies bedeutet, dass die laut AD-Werten beste Verteilung automatisch gesucht und gemeldet wird.<dl><dd><a  class="image"><img alt="PO nonnormal distribution.png" src="../images/Tutorial_PO/PO_nonnormal_distribution.png" width="519"  /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_3"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<p>Das Wahrscheinlichkeitsdiagramm zeigt, dass der Datensatz einer Weibull-Verteilung mit 3 Parametern folgt.</p><p>Auf der Einzelwertregelkarte und der Regelkarte der gleitenden Spannweite liegen keine Punkte au&szlig;erhalb der Eingriffsgrenzen. Das deutet darauf hin, dass der Prozess stabil ist.</p><p>Im F&auml;higkeitshistogramm liegen alle Beobachtungen unter der oberen Spezifikationsgrenze.</p><p>Der Prozess erf&uuml;llt die Anforderungen.</p>
+<dl><dd><a  class="image"><img alt="PO Nonnormal Results.png" src="../images/Tutorial_PO/600px-PO_Nonnormal_Results.png" width="600"   /></a></dd></dl>
+
+
+
+    
