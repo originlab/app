@@ -1,0 +1,317 @@
+﻿<h1 class="firstHeading">Regelkarten</h1><p class='urlname' style='display: none'>Control-Charts</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Processing"><span class="tocnumber">1</span> <span class="toctext">Verarbeitung</span></a><ul>
+<li class="toclevel-2 tocsection-2"><a href="#Variables_Charts_for_Subgroups"><span class="tocnumber">1.1</span> <span class="toctext">Regelkarten f&uuml;r Variablen - Teilgruppen</span></a><ul>
+<li class="toclevel-3 tocsection-3"><a href="#Combination_Charts"><span class="tocnumber">1.1.1</span> <span class="toctext">Kombinationsregelkarten</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Basic_Charts"><span class="tocnumber">1.1.2</span> <span class="toctext">Einfache Regelkarten</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Variables_Chart_for_Individuals"><span class="tocnumber">1.2</span> <span class="toctext">Regelkarten f&uuml;r Variablen - Einzelwerte</span></a><ul>
+<li class="toclevel-3 tocsection-6"><a href="#Combination_Charts_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Kombinationsregelkarten</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Basic_Charts_2"><span class="tocnumber">1.2.2</span> <span class="toctext">Einfache Regelkarten</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Attributes_Charts"><span class="tocnumber">1.3</span> <span class="toctext">Regelkarten f&uuml;r attributive Daten</span></a><ul>
+<li class="toclevel-3 tocsection-9"><a href="#know_only_whether_each_item_is_defective_or_not"><span class="tocnumber">1.3.1</span> <span class="toctext">Nur bekannt, ob die einzelnen Einheiten fehlerhaft sind oder nicht</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#know_the_number_of_defects_on_each_item"><span class="tocnumber">1.3.2</span> <span class="toctext">Die Anzahl der Fehler bei jeder Einheit ist bekannt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Time-Weighted_Charts"><span class="tocnumber">1.4</span> <span class="toctext">Regelkarten f&uuml;r zeitlich gewichtete Daten</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Multivariate_Charts"><span class="tocnumber">1.5</span> <span class="toctext">Multivariate Regelkarten</span></a><ul>
+<li class="toclevel-3 tocsection-13"><a href="#Combination_Charts_3"><span class="tocnumber">1.5.1</span> <span class="toctext">Kombinationsregelkarten</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Basic_Charts_3"><span class="tocnumber">1.5.2</span> <span class="toctext">Einfache Regelkarten</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<p><i><b>Mehr Informationen:</b></i></p>
+<ul><li><a href="../../Tutorial/App/Tutorial_Control_Charts.html" title="App:Tutorial Control Charts">Tutorial: Regelkarten</a></li>
+<li><a href="../../Tutorial/App/Algorithm_Control_Charts.html" title="App:Algorithm Control Charts">Algorithmus: Regelkarten</a></li></ul>
+<p><br /> Regelkarten erstellen ein Diagramm, das verwendet wird, um zu bestimmen, ob ein Prozess unter stabilen Bedingungen unter Kontrolle ist. Origin bietet, basierend auf den erfassten Daten, verschiedene Arten der Regelkarten.</p>
+<h2><a name="Processing"></a><span class="mw-headline">Verarbeitung</span></h2>
+<p>W&auml;hlen Sie in der Auswahlliste und klicken Sie auf das Symbol, um den Dialog zu &ouml;ffnen:</p><p><a  class="image"><img alt="CC GUI.png" src="../images/Control_Charts(App)/700px-CC_GUI.png" width="700"   /></a></p>
+<h3><a name="Variables_Charts_for_Subgroups"></a><span class="mw-headline">Regelkarten f&uuml;r Variablen - Teilgruppen</span></h3>
+<p>Die Regelkarten in dieser Liste dienen dazu, die Prozessperformance der stetigen Daten, die unter den Teilgruppen erfasst werden, zu &uuml;berwachen. Es stehen sechs (6) Typen von Regelkarten zur Verf&uuml;gung:</p>
+<table class="tbl">
+
+<tr>
+<td>
+<ul><li>X-quer/R</li></ul>
+</td>
+<td>
+<ul><li>X-quer/S</li></ul>
+</td>
+<td>
+<ul><li>I/MR-R/S</li></ul>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+<ul><li>X-quer</li></ul>
+</td>
+<td>
+<ul><li>R</li></ul>
+</td>
+<td>
+<ul><li>S</li></ul>
+</td>
+<td>
+</td></tr></table>
+<p>In der untenstehenden Tabelle k&ouml;nnen Sie nachlesen, wann und wie Sie die verschiedenen Regelkarten verwenden sollten:</p>
+<h5><a name="Combination_Charts"></a><span class="mw-headline">Kombinationsregelkarten</span></h5>
+<table class="simple">
+<tr>
+<th>Regelkarten</th>
+<th>Komponenten</th>
+<th>Zweck</th>
+<th>Verwendung</th>
+<th>Kommentare</th></tr>
+<tr>
+<td><b>X-quer/R</b></td>
+<td>Eine X-quer- und eine R-Karte</td>
+<td>Bestimmt, ob Ihr Prozess stabil ist</td>
+<td>F&uuml;r Teilgruppen mit 2~8 Beobachtungen</td>
+<td>Untersuchen Sie zuerst die R-Karte, um sicherzustellen, dass die Prozessstreuung unter Kontrolle ist; ansonsten k&ouml;nnte das Ergebnis der X-quer-Karte ungenau sein.</td></tr>
+<tr>
+<td><b>X-quer/S</b></td>
+<td>Eine X-quer- und eine S-Karte</td>
+<td>Bestimmt, ob Ihr Prozess stabil ist</td>
+<td>F&uuml;r Teilgruppen mit 9 oder mehr Beobachtungen</td>
+<td>Untersuchen Sie zuerst die S-Karte, um sicherzustellen, dass die Prozessstreuung unter Kontrolle ist; ansonsten k&ouml;nnte das Ergebnis der X-quer-Karte ungenau sein.</td></tr>
+<tr>
+<td><b>I/MR-R/S</b></td>
+<td>Eine Einzelwertkarte, eine Karte der gleitenden Spannweite und eine R- oder S-Karte</td>
+<td>Bewertet die Streuung innerhalb und untereinander von Teilgruppen</td>
+<td>Konsistente Quelle der Variation innerhalb der Teilgruppen</td>
+<td>Die Karte der gleitenden Spannweite zeigt, ob die Streuung zwischen den Teilgruppen unter Kontrolle ist. Die R- oder S-Karte zeigt, ob die Streuung innerhalb der Teilgruppen unter Kontrolle ist.</td></tr></table>
+<h5><a name="Basic_Charts"></a><span class="mw-headline">Einfache Regelkarten</span></h5>
+<table class="simple">
+<tr>
+<th>Regelkarten</th>
+<th>Beschreibung</th></tr>
+<tr>
+<td><b>X-quer</b></td>
+<td>Zeichnet den Prozessmittelwert &uuml;ber die Zeit f&uuml;r Variablen in Teilgruppen</td></tr>
+<tr>
+<td><b>R</b></td>
+<td>Zeichnet den Prozessbereich &uuml;ber die Zeit f&uuml;r Variablen in Teilgruppen</td></tr>
+<tr>
+<td><b>S</b></td>
+<td>Zeichnet die Prozessstandardabweichung &uuml;ber die Zeit f&uuml;r Variablen in Teilgruppen</td></tr></table>
+<h3><a name="Variables_Chart_for_Individuals"></a><span class="mw-headline">Regelkarten f&uuml;r Variablen - Einzelwerte</span></h3>
+<p>Die Regelkarten in dieser Liste dienen dazu, die Prozessperformance der stetigen Daten, die nicht in Teilgruppen erfasst werden, zu &uuml;berwachen. Es stehen (4) Typen von Regelkarten zur Verf&uuml;gung:</p>
+<table class="tbl">
+
+<tr>
+<td>
+<ul><li>I-MR</li></ul>
+</td>
+<td>
+<ul><li>Z-MR</li></ul>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+<ul><li>Einzelwerte</li></ul>
+</td>
+<td>
+<ul><li>Gleitende Spannweite</li></ul>
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<p>In der untenstehenden Tabelle k&ouml;nnen Sie nachlesen, wann und wie Sie die verschiedenen Regelkarten verwenden sollten:</p>
+<h5><a name="Combination_Charts_2"></a><span class="mw-headline">Kombinationsregelkarten</span></h5>
+<table class="simple">
+<tr>
+<th>Regelkarten</th>
+<th>Komponenten</th>
+<th>Verwendung</th></tr>
+<tr>
+<td><b>I/MR</b></td>
+<td>Eine Einzelwertregelkarte und eine Regelkarte der gleitenden Spannweite</td>
+<td>F&uuml;r stetige Daten, die Einzelbeobachtungen darstellen, nicht in Teilgruppen</td></tr>
+<tr>
+<td><b>Z/MR</b></td>
+<td>Eine standardisierte Regelkarte f&uuml;r den Prozessmittelwert und eine Regelkarte der gleitenden Spannweite</td>
+<td>F&uuml;r kurzfristige Prozesse, bei denen wenige Daten verf&uuml;gbar sind</td></tr></table>
+<h5><a name="Basic_Charts_2"></a><span class="mw-headline">Einfache Regelkarten</span></h5>
+<table class="simple">
+<tr>
+<th>Charts</th>
+<th>Komponenten</th>
+<th>Verwendung</th></tr>
+<tr>
+<td><b>Einzelwerte</b></td>
+<td>Auch als I-Regelkarte bezeichnet Zeichnet Einzelbeobachtungen &uuml;ber die Zeit f&uuml;r Variablen</td>
+<td>&Uuml;berwacht die Mitte des Prozesses f&uuml;r Einzelbeobachtungen</td></tr>
+<tr>
+<td><b>Gleitende Spannweite</b></td>
+<td>Auch als MR-Regelkarte bezeichnet Zeichnet die gleitende Spannweite &uuml;ber die Zeit f&uuml;r Einzelbeobachtungen</td>
+<td>&Uuml;berwacht die Prozessstreuung</td></tr></table>
+<h3><a name="Attributes_Charts"></a><span class="mw-headline">Regelkarten f&uuml;r attributive Daten</span></h3>
+<p>Die Regelkarten in dieser Liste dienen dazu, die Prozessperformance der attributiven Daten, wie die Anzahlen von fehlerhaften Einheiten oder Fehlern, zu &uuml;berwachen. Es stehen (8) Typen von Regelkarten zur Verf&uuml;gung:</p>
+<table class="tbl">
+
+<tr>
+<td>
+<ul><li>p-Karten-Diagnose</li></ul>
+</td>
+<td>
+<ul><li>P</li></ul>
+</td>
+<td>
+<ul><li>p&lsquo; nach Laney</li></ul>
+</td>
+<td>
+<ul><li>NP</li></ul>
+</td></tr>
+<tr>
+<td>
+<ul><li>u-Karten-Diagnose</li></ul>
+</td>
+<td>
+<ul><li>U</li></ul>
+</td>
+<td>
+<ul><li>u&lsquo; nach Laney</li></ul>
+</td>
+<td>
+<ul><li>C</li></ul>
+</td></tr></table>
+<p>In der untenstehenden Tabelle k&ouml;nnen Sie nachlesen, wann und wie Sie die verschiedenen Regelkarten verwenden sollten:</p>
+<h5><a name="know_only_whether_each_item_is_defective_or_not"></a><span class="mw-headline">Nur bekannt, ob die einzelnen Einheiten fehlerhaft sind oder nicht.</span></h5>
+<table class="simple">
+<tr>
+<th>Verwenden, wenn ...</th>
+<th>Regelkarten</th>
+<th>Beschreibung</th></tr>
+<tr>
+<td rowspan="3">Teilgruppengr&ouml;&szlig;e ist nicht gleich</td>
+<td><b>p-Karten-Diagnose</b></td>
+<td>Test f&uuml;r &Uuml;berdispersion oder Unterdispersion in den Fehlerdaten</td></tr>
+<tr>
+<td><b>P</b></td>
+<td>Zeichnet Bruchteil, Prozent oder Anteil der nicht spezifikationsgerechten Einheiten</td></tr>
+<tr>
+<td><b>p&lsquo; nach Laney</b></td>
+<td>Variante der p-Karte, kann &Uuml;ber- oder Unterdispersion in den Daten korrigieren</td></tr>
+<tr>
+<td>Teilgruppengr&ouml;&szlig;e ist gleich</td>
+<td><b>NP</b></td>
+<td>Zeichnet die Anzahl der nicht spezifikationsgerechten Einheiten, wenn die Teilgruppengr&ouml;&szlig;en gleich sind</td></tr></table>
+<h5><a name="know_the_number_of_defects_on_each_item"></a><span class="mw-headline">Die Anzahl der Fehler bei jeder Einheit ist bekannt.</span></h5>
+<table class="simple">
+<tr>
+<th>Verwenden, wenn ...</th>
+<th>Regelkarten</th>
+<th>Beschreibung</th></tr>
+<tr>
+<td rowspan="3">Teilgruppengr&ouml;&szlig;e ist nicht gleich</td>
+<td><b>u-Karten-Diagnose</b></td>
+<td>Test f&uuml;r &Uuml;berdispersion oder Unterdispersion in den Fehlerdaten</td></tr>
+<tr>
+<td><b>U</b></td>
+<td>Zeichnet die Anzahl der mangelnden &Uuml;bereinstimmungen bzw. Fehler pro Einheit</td></tr>
+<tr>
+<td><b>u&lsquo; nach Laney</b></td>
+<td>Variante der U-Karte, kann &Uuml;ber- oder Unterdispersion in den Daten korrigieren</td></tr>
+<tr>
+<td>Teilgruppengr&ouml;&szlig;e ist gleich</td>
+<td><b>C</b></td>
+<td>Zeichnet die Anzahl der mangelnden &Uuml;bereinstimmungen bzw. Fehler, wenn die Teilgruppengr&ouml;&szlig;en gleich sind</td></tr></table>
+<h3><a name="Time-Weighted_Charts"></a><span class="mw-headline">Regelkarten f&uuml;r zeitlich gewichtete Daten</span></h3>
+<p>Regelkarten f&uuml;r zeitlich gewichtete Daten sind n&uuml;tzlich zum Erkennen von kleinen Shifts im Prozess. Es stehen (3) Typen von Regelkarten zur Verf&uuml;gung:</p>
+<table class="tbl">
+
+<tr>
+<td>
+<ul><li>Gleitender Durchschnitt</li></ul>
+</td>
+<td>
+<ul><li>EWMA</li></ul>
+</td>
+<td>
+<ul><li>CUSUM</li></ul>
+</td>
+<td>
+</td></tr></table>
+<p>In der untenstehenden Tabelle k&ouml;nnen Sie nachlesen, wann und wie Sie die verschiedenen Regelkarten verwenden sollten:</p>
+<table class="simple">
+<tr>
+<th>Diagramm</th>
+<th>Beschreibung</th>
+<th>Kommentare</th></tr>
+<tr>
+<td><b>Gleitender Durchschnitt</b></td>
+<td>Auch als MA-Regelkarte bezeichnet Zeichnet die ungewichtete gleitende Spannweite &uuml;ber die Zeit f&uuml;r Einzelbeobachtungen</td>
+<td>N&uuml;tzlich zum Erkennen kleiner Shifts im Prozess</td></tr>
+<tr>
+<td><b>EWMA</b></td>
+<td>Zeichnet die exponentiell gewichtete gleitende Spannweite Jeder EWMA-Punkt enth&auml;lt Informationen aus all den vorhergehenden Teilgruppen bzw. Beobachtungen, basierend auf einem benutzerdefinierten Gewichtungsfaktor</td>
+<td>Wird im Allgemeinen der MA-Karte vorgezogen, da alle vorhergehenden Beobachtungen ber&uuml;cksichtigt werden</td></tr>
+<tr>
+<td><b>CUSUM</b></td>
+<td>Zeigt die kumulativen Summen (CUSUMs) der Abwweichungen von jedem Stichprobenwert vom Sollwert an</td>
+<td>N&uuml;tzlich zum Erkennen von Prozessen, die sich langsam vom Sollwert entfernen aufgrund von Maschinenabnutzung, Kalibrierungsproblemen etc.</td></tr></table>
+<p><br /></p>
+<h3><a name="Multivariate_Charts"></a><span class="mw-headline">Multivariate Regelkarten</span></h3>
+<p>Multivariate Regelkarten &uuml;berwachen mehrere verwandte Prozessvariablen gleichzeitig, um ungew&ouml;hnliches Verhalten auszumachen. Sie sind die multivariate Version der X-quer/R- oder I-MR-Karten und essenziell, wenn Variablen miteinander verbunden sind. Es stehen (4) Typen von Regelkarten zur Verf&uuml;gung:</p>
+<table class="tbl">
+
+<tr>
+<td>
+<ul><li>T²-Verallgemeinerte Varianz</li></ul>
+</td>
+<td>
+<ul><li>T²</li></ul>
+</td>
+<td>
+<ul><li>Verallgemeinerte Varianz</li></ul>
+</td>
+<td>
+<ul><li>Multivariate EWMA-Regelkarte</li></ul>
+</td></tr></table>
+<p>In der untenstehenden Tabelle k&ouml;nnen Sie nachlesen, wann und wie Sie die verschiedenen Regelkarten verwenden sollten:</p>
+<h5><a name="Combination_Charts_3"></a><span class="mw-headline">Kombinationsregelkarten</span></h5>
+<table class="simple">
+<tr>
+<th>Diagramm</th>
+<th>Beschreibung</th>
+<th>Verwendung</th></tr>
+<tr>
+<td><b>T²-Verallgemeinerte Varianz</b></td>
+<td>Mittelwert + Streuung</td>
+<td>Verwenden, um zu erkennen, ob der Prozess stabil ist</td></tr>
+<tr>
+<td><b>Multivariate EWMA</b></td>
+<td>Mittelwertvektor (gegl&auml;ttet)</td>
+<td>Sensibel f&uuml;r kleine Mittelwert-Shifts</td></tr></table>
+<h5><a name="Basic_Charts_3"></a><span class="mw-headline">Einfache Regelkarten</span></h5>
+<table class="simple">
+<tr>
+<th>Diagramm</th>
+<th>Beschreibung</th></tr>
+<tr>
+<td><b>T²</b></td>
+<td>&Uuml;berwacht nur den Prozessmittelwertvektor (Lage) mit Hilfe von Hotellings T²-Statistik</td></tr>
+<tr>
+<td><b>Verallgemeinerte Varianz</b></td>
+<td>&Uuml;berwacht nur die Prozessstreuung (Kovarianzmatrix &Icirc;£) mit Hilfe des Determinanten der Kovarianzmatrix der Stichprobe</td></tr></table>
+
+
+
+
+
+
+
+    
