@@ -973,6 +973,36 @@
     <toc_src>App:Design_of_Experiments</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments</toc_name>
+    <toc_link>Category/Design_of_Experiments(App).html</toc_link>
+    <toc_url>App/Design-of-Experiments</toc_url>
+    <toc_src>Category:Design_of_Experiments(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define Custom Designs</toc_name>
+    <toc_link>Category/Custom_Designs(App).html</toc_link>
+    <toc_url>App/Custom-Designs</toc_url>
+    <toc_src>Category:Custom_Designs(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define Custom Designs &gt; The Define Custom Design Dialog Box</toc_name>
+    <toc_link>App/The_Define_Custom_Design_Dialog_Box.html</toc_link>
+    <toc_url>App/Custom-Design-Dialog</toc_url>
+    <toc_src>App:The_Define_Custom_Design_Dialog_Box</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Select Optimal Design</toc_name>
+    <toc_link>Category/Select_Optimal_Design(App).html</toc_link>
+    <toc_url>App/Select-Optimal-Design</toc_url>
+    <toc_src>Category:Select_Optimal_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Select Optimal Design &gt; The Select Optimal Design Dialog Box</toc_name>
+    <toc_link>App/Select_Optimal_Design_Dialog.html</toc_link>
+    <toc_url>App/Optimal-Design-Dialog</toc_url>
+    <toc_src>App:Select_Optimal_Design_Dialog</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Correlation Shift</toc_name>
     <toc_link>App/Correlation_Shift.html</toc_link>
     <toc_url>App/Correlation-Shift</toc_url>
