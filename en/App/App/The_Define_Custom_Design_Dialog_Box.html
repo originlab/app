@@ -1,0 +1,96 @@
+<h1 class="firstHeading">2.43.1.1 The Define Custom Design Dialog Box</h1><p class='urlname' style='display: none'>Custom-Design-Dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Factors"><span class="tocnumber">2</span> <span class="toctext">Factors</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Low.2FHigh"><span class="tocnumber">3</span> <span class="toctext">Low/High</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Designs"><span class="tocnumber">4</span> <span class="toctext">Designs</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Response"><span class="tocnumber">5</span> <span class="toctext">Response</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Define Custom Design</b> dialog
+</p>
+<ul><li> Activate a worksheet with your experimental design data</li>
+<li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the icon and choose the desired design from the list
+<dl><dd><a  class="image"><img alt="Define custom design.png" src="../images/The_Define_Custom_Design_Dialog_Box/600px-Define_custom_design.png?v=79708" width="600"   /></a></dd></dl></li></ul>
+<h2><a name="Factors"></a><span class="mw-headline">Factors</span></h2>
+<p>The Column Long Names from the active worksheet are displayed in the list box. Select the desired factors and add them to the right panel.
+</p><p><a  class="image"><img alt="Custom Design DLG Factors.png" src="../images/The_Define_Custom_Design_Dialog_Box/500px-Custom_Design_DLG_Factors.png?v=79641" width="500"   /></a>
+</p><p>Note: For <b>Factorial Design</b> you can select the design you want to define. 
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>2-Level Factorial
+</th>
+<td>Define a 2-level factorial design from data in the worksheet.
+</td></tr>
+<tr>
+<th>General Full Factorial
+</th>
+<td> Define a general full factorial design from data in the worksheet.
+</td></tr></table>
+<h2><a name="Low.2FHigh"></a><span class="mw-headline">Low/High</span></h2>
+<p>After defining the factors in the <b>Factors</b> tab, enter design information of factors in the <b>Low/High</b> tab
+</p><p><a  class="image"><img alt="Custom Design DLG LowHigh.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_LowHigh.png?v=79648" width="420"   /></a>
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Type
+</th>
+<td>Factors can be text or numeric. If you want to treat a numeric column as text, right-click the column and select <b>Set as Categorical</b> from the context menu.
+</td></tr>
+<tr>
+<th>Low
+</th>
+<td> Display the minimum value of the numeric column or the first text of the categorial/text column by default. You can enter another desired value in it
+</td></tr>
+<tr>
+<th>High
+</th>
+<td>Display the maximum value of the numeric column or the second text of the categorial/text column by default. You can enter another desired value in it
+</td></tr></table>
+<h2><a name="Designs"></a><span class="mw-headline">Designs</span></h2>
+<p>Click the triangle button to specify which column in the active worksheet will contain the design information. If not specified, a new column will be created automatically in the result worksheet.
+</p><p><a  class="image"><img alt="Custom Design DLG Designs.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_Designs.png?v=79661" width="420"   /></a>
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Run Order
+</th>
+<td>The order that the experimental runs should be done
+</td></tr>
+<tr>
+<th>Standard Order
+</th>
+<td>The standard order of the runs
+</td></tr>
+<tr>
+<th>Point Type
+</th>
+<td>The type of point
+<ul><li> <b>0</b>: Indicates center points</li>
+<li> <b>1</b>: Indicates factorial points</li></ul>
+<p>If no column of point type is specified, a column with all values set to 1 will be created automatically.
+</p>
+</td></tr>
+<tr>
+<th>Blocks
+</th>
+<td>If no block column is specified, a column with all values set to 1 will be created automatically, indicating no blocking.
+</td></tr></table>
+<p><br />
+If keep all options to be &lt;optional&gt;
+</p><p><a  class="image"><img alt="Custom Design DLG Output.png" src="../images/The_Define_Custom_Design_Dialog_Box/600px-Custom_Design_DLG_Output.png?v=79649" width="600"   /></a>
+</p>
+<h2><a name="Response"></a><span class="mw-headline">Response</span></h2>
+<p>After specifying factors in the <b>Factors</b> tab, the remaining columns will be shown in the available list in the <b>Response</b> tab. Select the desired response and add it to the right panel.
+</p><p><a  class="image"><img alt="Custom Design DLG Response.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_Response.png?v=79669" width="420"   /></a>
+</p>
+
+
+
+
+
