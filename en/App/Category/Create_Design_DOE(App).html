@@ -1,0 +1,168 @@
+<h1 class="firstHeading">2.43.2 Create Design</h1><p class='urlname' style='display: none'>Create-Design-DOE</p>
+<p><br />
+</p>
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<p>Use this feature to generate a new experimental design based on your study objectives and constraints. 5 design type is provided in Origin
+</p>
+<ul><li><a href="../../App/Category/Definitive_Screening_Design(App).html" title="Category:Definitive Screening Design(App)">Definitive Screening Design</a></li>
+<li><a href="../../App/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Factorial Design</a></li>
+<li><a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Response Surface Design</a></li>
+<li><a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture Design</a></li>
+<li><a href="../../App/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Taguchi Design</a></li></ul>
+<p><br />
+</p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>Definitive Screening Design
+</th>
+<th>Factorial Design
+</th>
+<th>Response Surface Design
+</th>
+<th>Mixture Design
+</th>
+<th>Taguchi Design
+</th></tr>
+<tr>
+<td><b>Primary Purpose</b>
+</td>
+<td>Screen many factors with minimal runs while detecting curvature
+</td>
+<td>Identify which factors significantly affect the response and estimate their interactions
+</td>
+<td>Model curvature and find optimal factor settings
+</td>
+<td>Optimize component proportions that must sum to 100%
+</td>
+<td>Make processes robust to noise (minimize variation)
+</td></tr>
+<tr>
+<td><b>Number of Factors</b>
+</td>
+<td>6+ factors (typically 6-20)
+</td>
+<td>2-15 factors
+</td>
+<td>2-6 factors (typically 3-5)
+</td>
+<td>2-10 components
+</td>
+<td>2-15+ control factors
+</td></tr>
+<tr>
+<td><b>Runs Required</b>
+</td>
+<td>Minimal (2k + 1 for k factors)
+</td>
+<td>Moderate (2^k for full factorial, fewer for fractional)
+</td>
+<td>Moderate to high (depends on model complexity)
+</td>
+<td>Moderate (depends on model order and constraints)
+</td>
+<td>Moderate to high (depends on inner/outer array)
+</td></tr>
+<tr>
+<td><b>Can Detect Curvature</b>
+</td>
+<td>Yes (quadratic effects estimable)
+</td>
+<td>No (unless center points added)
+</td>
+<td>Yes (primary purpose)
+</td>
+<td>Yes (can fit quadratic models)
+</td>
+<td>No (linear models only)
+</td></tr>
+<tr>
+<td><b>Can Estimate Interactions?</b>
+</td>
+<td>Limited (two-factor interactions partially confounded)
+</td>
+<td>Yes (full factorial) or partially (fractional)
+</td>
+<td>Yes
+</td>
+<td>Special mixture terms, not standard interactions
+</td>
+<td>Limited (focus on main effects)
+</td></tr>
+<tr>
+<td><b>Factor Types</b>
+</td>
+<td>Continuous
+</td>
+<td>Categorical or continuous
+</td>
+<td>Continuous (typically)
+</td>
+<td>Continuous components
+</td>
+<td>Categorical or continuous
+</td></tr>
+<tr>
+<td><b>Key Constraint</b>
+</td>
+<td>None specific
+</td>
+<td>None specific
+</td>
+<td>None specific
+</td>
+<td>Components must sum to 1 (100%)
+</td>
+<td>Separates control and noise factors
+</td></tr>
+<tr>
+<td><b>Optimization Focus</b>
+</td>
+<td>Screening + curvature detection
+</td>
+<td>Effect identification
+</td>
+<td>Finding optimal settings
+</td>
+<td>Optimal blend proportions
+</td>
+<td>Robustness to external variation
+</td></tr>
+<tr>
+<td><b>Typical Follow-up</b>
+</td>
+<td>Response surface design on significant factors
+</td>
+<td>Full factorial or response surface design
+</td>
+<td>Confirmation runs
+</td>
+<td>None (often standalone)
+</td>
+<td>Confirmation runs
+</td></tr></table>
+<h2><a name="Processing"></a><span class="mw-headline">Processing</span></h2>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose a desired design from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Create_Design_DOE(App)/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Topics covered in this section:</b></i>
+</p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li> <a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../App/Category/Definitive_Screening_Design(App).html">Definitive Screening Design</a></li>
+		
+		<li> <a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../App/Category/Factorial_Design(App).html">Factorial Design</a></li>
+		
+		<li> <a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../App/Category/Response_Surface_Design(App).html">Response Surface Design</a></li>
+		
+		<li> <a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../App/Category/Mixture_Design(App).html">Mixture Design</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+

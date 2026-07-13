@@ -1,0 +1,90 @@
+<h1 class="firstHeading">2.43.2.1.1 The Definitive Screening Design Dialog Box</h1><p class='urlname' style='display: none'>Definitive-Screening-Dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Display_Available_Designs"><span class="tocnumber">2</span> <span class="toctext">Display Available Designs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Factors"><span class="tocnumber">3</span> <span class="toctext">Factors</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Settings"><span class="tocnumber">4</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Output"><span class="tocnumber">5</span> <span class="toctext">Output</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Dialog_Theme"><span class="tocnumber">6</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Definitive Screening Design</b> dialog
+</p>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Definitive Screening Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Definitive_Screening_Design_Dialog/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<p><br />
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Definitive_Screening_Design_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../App/Category/Definitive_Screening_Design(App).html" title="Category:Definitive Screening Design(App)">Introduction:Definitive Screening Design</a></li></ul>
+</td></tr></table>
+<h2><a name="Display_Available_Designs"></a><span class="mw-headline">Display Available Designs</span></h2>
+<p>Click the button for information to select an appropriate design. The table shows the number of factors and runs
+</p>
+<h2><a name="Factors"></a><span class="mw-headline">Factors</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Number of Continuous Factors
+</th>
+<td> Specify the number of continuous factors you want to include in the design
+</td></tr>
+<tr>
+<th>Number of Categorical Factors
+</th>
+<td>Specify the number of categorical  factors you want to include in the design
+</td></tr>
+<tr>
+<th>Continuous Factors table
+</th>
+<td>Change the factor name if needed and specify the low and high levels for each factor. The base design includes 1 center point per replicate.
+</td></tr>
+<tr>
+<th>Categorical Factors table
+</th>
+<td>If you select at least 1 categorical factor, the table will be shown. Enter a text factor as either low or high.
+</td></tr></table>
+<h2><a name="Settings"></a><span class="mw-headline">Settings</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Number of Replicates
+</th>
+<td>Select the number of replicates. Replicates are multiple runs with the same factor settings. One replicate runs each combination once; two replicates run each combination twice
+<p>Adding replicates can increase the statistical power to detect effects but also increase total runs and resource cost.
+</p>
+</td></tr>
+<tr>
+<th>Block on Replicates
+</th>
+<td>Turn the option on means treating each replicate as a separate block. Use this when you suspect systematic differences between replicate sets and want to isolate those effects from the factor effects.
+</td></tr>
+<tr>
+<th>Randomize Runs
+</th>
+<td>Randomize the order of all experimental runs. This distributes nuisance factors
+</td></tr>
+<tr>
+<th>Random Seed
+</th>
+<td>Enter a non-negative integer to control the random number generator
+</td></tr></table>
+<h2><a name="Output"></a><span class="mw-headline">Output</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Design Table
+</th>
+<td>The design table shows the factor settings for each experimental run in the design
+</td></tr>
+<tr>
+<th>Coded Design
+</th>
+<td>Use the option to display the design in coded units (typically –1, 0, +1), where –1 represents the low level, 0 the center point, and +1 the high level.
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.
+</p>
+

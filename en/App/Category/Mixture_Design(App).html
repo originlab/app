@@ -1,0 +1,119 @@
+<h1 class="firstHeading">2.43.2.4 Mixture Design</h1><p class='urlname' style='display: none'>Mixture-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Simplex_Centroid_Design"><span class="tocnumber">1.1</span> <span class="toctext">Simplex Centroid Design</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Simplex_Lattice_Design"><span class="tocnumber">1.2</span> <span class="toctext">Simplex Lattice Design</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Extreme_Vertices_Design"><span class="tocnumber">1.3</span> <span class="toctext">Extreme Vertices Design</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#How_to_create_the_Design"><span class="tocnumber">2</span> <span class="toctext">How to create the Design</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Create_Mixture_Design"><span class="tocnumber">2.1</span> <span class="toctext">Create Mixture Design</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Create_Custom_Mixture_Design"><span class="tocnumber">2.2</span> <span class="toctext">Create Custom Mixture Design</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<table class="tbl">
+
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="/images/howto/thumb/4/4c/Simplex_centroid.png/150px-Simplex_centroid.png" width="150" height="150" class="thumbimage" srcset="/images/howto/thumb/4/4c/Simplex_centroid.png/225px-Simplex_centroid.png 1.5x, /images/howto/4/4c/Simplex_centroid.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a  class="internal" title="Enlarge"></a></div>3-component simplex centroid design</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="/images/howto/thumb/4/47/Simplex_lattice.png/150px-Simplex_lattice.png" width="150" height="150" class="thumbimage" srcset="/images/howto/thumb/4/47/Simplex_lattice.png/225px-Simplex_lattice.png 1.5x, /images/howto/4/47/Simplex_lattice.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a  class="internal" title="Enlarge"></a></div>3-component simplex lattice design with 3 levels</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="/images/howto/thumb/4/40/Extreme_vertices.png/150px-Extreme_vertices.png" width="150" height="150" class="thumbimage" srcset="/images/howto/thumb/4/40/Extreme_vertices.png/225px-Extreme_vertices.png 1.5x, /images/howto/4/40/Extreme_vertices.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a  class="internal" title="Enlarge"></a></div>3-component extreme vertices design</div></div></div>
+</td></tr></table>
+<p>A mixture design is used when your experimental factors are proportions of components in a blend that must sum to a fixed total (typically 100%). Unlike standard factorial designs, the levels of mixture components are dependent on each other —changing one proportion automatically changes the others. These designs are commonly applied in product formulation, such as optimizing food recipes, pharmaceutical compositions, paint ingredients, or fuel blends, to find the combination that yields the best response.
+</p><p>Origin provides 3 types of mixture design
+</p>
+<h5><a name="Simplex_Centroid_Design"></a><span class="mw-headline">Simplex Centroid Design</span></h5>
+<p>When you want a comprehensive, balanced design that includes all possible mixture orders (pure, binary, ternary, etc.) and need to fit special cubic or higher-order Scheffé models.
+</p>
+<h5><a name="Simplex_Lattice_Design"></a><span class="mw-headline">Simplex Lattice Design</span></h5>
+<p>When you need a structured grid of points to fit a specific polynomial degree (linear, quadratic, or cubic) and want control over model complexity through the degree parameter.
+</p>
+<h5><a name="Extreme_Vertices_Design"></a><span class="mw-headline">Extreme Vertices Design</span></h5>
+<p>When your mixture components have practical constraints (e.g., minimum 5% binder, maximum 30% filler) that define an irregular feasible region, and you need points at the boundaries of that region.
+</p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>Simplex Centroid Design
+</th>
+<th>Simplex Lattice Design
+</th>
+<th>Extreme Vertices Design
+</th></tr>
+<tr>
+<td><b>Structure</b>
+</td>
+<td>Includes all pure blends, all binary mixtures, all ternary mixtures, etc., up to the full centroid
+</td>
+<td>Grid of points at equally spaced proportions across the simplex
+</td>
+<td>Points placed at the vertices and edges of the constrained region
+</td></tr>
+<tr>
+<td><b>Best When</b>
+</td>
+<td>You want to explore all possible mixture orders (pure, binary, ternary, etc.) with a balanced, symmetric design
+</td>
+<td>You need a systematic grid of points to fit a polynomial model of specific degree across the full simplex
+</td>
+<td>Your components have upper and/or lower constraints that restrict the feasible region
+</td></tr>
+<tr>
+<td><b>Component Constraints</b>
+</td>
+<td>None (full simplex, 0-100% for all components)
+</td>
+<td>None (full simplex, 0-100% for all components)
+</td>
+<td>Required (upper, lower, or both bounds on components)
+</td></tr>
+<tr>
+<td><b>Prediction Quality</b>
+</td>
+<td>Excellent near centroids; good balance
+</td>
+<td>Uniform across grid
+</td>
+<td>Best near vertices and edges of constrained region
+</td></tr>
+<tr>
+<td><b>Run Efficiency</b>
+</td>
+<td>Moderate (increases rapidly with components)
+</td>
+<td>Moderate (controlled by degree)
+</td>
+<td>Efficient for constrained spaces
+</td></tr></table>
+<h2><a name="How_to_create_the_Design"></a><span class="mw-headline">How to create the Design</span></h2>
+<h4><a name="Create_Mixture_Design"></a><span class="mw-headline">Create Mixture Design</span></h4>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Mixture Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Mixture_Design(App)/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<h4><a name="Create_Custom_Mixture_Design"></a><span class="mw-headline">Create Custom Mixture Design</span></h4>
+<p>Please refer to the <a href="../../App/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">define custom design</a> page for instructions
+</p><p><br />
+</p>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Topics covered in this section:</b></i>
+</p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li> <a class="CategoryTreeLabel  CategoryTreeLabelNs122 CategoryTreeLabelPage" href="../../App/App/Mixture_Design_Dialog.html">The Mixture Design Dialog Box</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+

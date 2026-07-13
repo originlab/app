@@ -991,6 +991,60 @@
     <toc_src>App:The_Define_Custom_Design_Dialog_Box</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design</toc_name>
+    <toc_link>Category/Create_Design_DOE(App).html</toc_link>
+    <toc_url>App/Create-Design-DOE</toc_url>
+    <toc_src>Category:Create_Design_DOE(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Definitive Screening Design</toc_name>
+    <toc_link>Category/Definitive_Screening_Design(App).html</toc_link>
+    <toc_url>App/Definitive-Screening-Design</toc_url>
+    <toc_src>Category:Definitive_Screening_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Definitive Screening Design &gt; The Definitive Screening Design Dialog Box</toc_name>
+    <toc_link>App/Definitive_Screening_Design_Dialog.html</toc_link>
+    <toc_url>App/Definitive-Screening-Dialog</toc_url>
+    <toc_src>App:Definitive_Screening_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Factorial Design</toc_name>
+    <toc_link>Category/Factorial_Design(App).html</toc_link>
+    <toc_url>App/Factorial-Design</toc_url>
+    <toc_src>Category:Factorial_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Factorial Design &gt; The Factorial Design Dialog Box</toc_name>
+    <toc_link>App/Factorial_Design_Dialog.html</toc_link>
+    <toc_url>App/Factorial-Dialog</toc_url>
+    <toc_src>App:Factorial_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Response Surface Design</toc_name>
+    <toc_link>Category/Response_Surface_Design(App).html</toc_link>
+    <toc_url>App/Response-Surface-Design</toc_url>
+    <toc_src>Category:Response_Surface_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Response Surface Design &gt; The Response Surface Design Dialog Box</toc_name>
+    <toc_link>App/Response_Surface_Design_Dialog.html</toc_link>
+    <toc_url>App/response-surface-design-dialog</toc_url>
+    <toc_src>App:Response_Surface_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Mixture Design</toc_name>
+    <toc_link>Category/Mixture_Design(App).html</toc_link>
+    <toc_url>App/Mixture-Design</toc_url>
+    <toc_src>Category:Mixture_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Mixture Design &gt; The Mixture Design Dialog Box</toc_name>
+    <toc_link>App/Mixture_Design_Dialog.html</toc_link>
+    <toc_url>App/mixture-dialog</toc_url>
+    <toc_src>App:Mixture_Design_Dialog</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Select Optimal Design</toc_name>
     <toc_link>Category/Select_Optimal_Design(App).html</toc_link>
     <toc_url>App/Select-Optimal-Design</toc_url>

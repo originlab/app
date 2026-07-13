@@ -1,0 +1,133 @@
+<h1 class="firstHeading">2.43.2.4.1 The Mixture Design Dialog Box</h1><p class='urlname' style='display: none'>mixture-dialog</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Design_Selection"><span class="tocnumber">2</span> <span class="toctext">Design Selection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Type_of_Design"><span class="tocnumber">2.1</span> <span class="toctext">Type of Design</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Display_Available_Designs"><span class="tocnumber">2.2</span> <span class="toctext">Display Available Designs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Components"><span class="tocnumber">3</span> <span class="toctext">Components</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Process_Variables"><span class="tocnumber">4</span> <span class="toctext">Process Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Settings"><span class="tocnumber">5</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Output"><span class="tocnumber">6</span> <span class="toctext">Output</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Dialog_Theme"><span class="tocnumber">7</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Mixture Design</b> dialog
+</p>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Mixture Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Mixture_Design_Dialog/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<p><br />
+</p>
+<h2><a name="Design_Selection"></a><span class="mw-headline">Design Selection</span></h2>
+<h4><a name="Type_of_Design"></a><span class="mw-headline">Type of Design</span></h4>
+<p>Select a response surface type from the list below. Refer to <a href="../../App/Category/Mixture_Design(App).html#Introduction" title="Category:Mixture Design(App)">the introduction and comparison</a> for which type should be used for your design
+</p>
+<ul><li> Simplex Centroid</li>
+<li> Simplex Lattice</li>
+<li> Extreme Vertices</li></ul>
+<h4><a name="Display_Available_Designs"></a><span class="mw-headline">Display Available Designs</span></h4>
+<p>Click the button for information to select an appropriate design. The table shows the number of factors and runs
+</p>
+<h2><a name="Components"></a><span class="mw-headline">Components</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Total Amount
+</th>
+<td>Select whether the mixture formulations in your experiment use one fixed total quantity or vary across runs.
+<p>Choose <b>Single Total</b> for standard mixture designs where only component proportions matter. Choose <b>Multiple Total</b> when the overall scale of the mixture is an additional experimental factor.
+</p>
+<ul><li> <b>Single Total</b>
+<dl><dd> All experimental runs share the same total amount.</dd></dl></li>
+<li> <b>Multiple Totals</b>
+<dl><dd> Runs use two or more different total amounts.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Number of Components
+</th>
+<td>The count of ingredients or factors in the mixture.
+</td></tr>
+<tr>
+<th>Number of Levels per Component
+</th>
+<td>Available only for <b>Simplex Lattice</b> design
+<p>The distinct proportions tested for each component. Higher levels increase design resolution but also the number of runs. 
+</p>
+</td></tr>
+<tr>
+<th>Component Table
+</th>
+<td>Displays and defines each mixture ingredient and its quantitative bounds.
+<ul><li> Name</li>
+<li> Low</li>
+<li> High</li></ul>
+</td></tr></table>
+<h2><a name="Process_Variables"></a><span class="mw-headline">Process Variables</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Number of Process Variables
+</th>
+<td>The count of process factors to include in the experiment. Enter 0 if the experiment contains only mixture components.
+</td></tr>
+<tr>
+<th>Type of Design
+</th>
+<td>Select the structure for the process variable portion of the experiment. Provides fractional and full factorial design
+</td></tr>
+<tr>
+<th>Fraction Number
+</th>
+<td>Defines the fraction of the full factorial to run. Lower fractions reduce runs but increase confounding among effects.
+</td></tr>
+<tr>
+<th>Process Variable Table
+</th>
+<td>Displays and defines each process variable and its settings
+<ul><li> Name</li>
+<li> Type</li>
+<li> Low</li>
+<li> High</li></ul>
+</td></tr></table>
+<h2><a name="Settings"></a><span class="mw-headline">Settings</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Number of Replicates
+</th>
+<td>Select the number of replicates. Replicates are multiple runs with the same factor settings. One replicate runs each combination once; two replicates run each combination twice
+<p>Adding replicates can increase the statistical power to detect effects but also increase total runs and resource cost.
+</p>
+</td></tr>
+<tr>
+<th>Randomize Runs
+</th>
+<td>Randomize the order of all experimental runs. This distributes nuisance factors
+</td></tr>
+<tr>
+<th>Random Seed
+</th>
+<td>Enter a non-negative integer to control the random number generator
+</td></tr></table>
+<h2><a name="Output"></a><span class="mw-headline">Output</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Design Table
+</th>
+<td>The design table shows the factor settings for each experimental run in the design
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.
+</p>
+
+
+
+
+

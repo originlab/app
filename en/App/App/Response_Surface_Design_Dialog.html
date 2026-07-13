@@ -1,0 +1,143 @@
+<h1 class="firstHeading">2.43.2.3.1 The Response Surface Design Dialog Box</h1><p class='urlname' style='display: none'>response-surface-design-dialog</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Design_Selection"><span class="tocnumber">2</span> <span class="toctext">Design Selection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Response_Surface_Type"><span class="tocnumber">2.1</span> <span class="toctext">Response Surface Type</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Display_Available_Designs"><span class="tocnumber">2.2</span> <span class="toctext">Display Available Designs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Factors"><span class="tocnumber">3</span> <span class="toctext">Factors</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Setttings"><span class="tocnumber">4</span> <span class="toctext">Setttings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#For_Central_Composite"><span class="tocnumber">4.1</span> <span class="toctext">For Central Composite</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#For_Box-Behnken"><span class="tocnumber">4.2</span> <span class="toctext">For Box-Behnken</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Output"><span class="tocnumber">5</span> <span class="toctext">Output</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Dialog_Theme"><span class="tocnumber">6</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Response Surface Design</b> dialog
+</p>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Response Surface Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Response_Surface_Design_Dialog/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Response_Surface_Design_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Introduction:Response Surface Design</a></li></ul>
+</td></tr></table>
+<h2><a name="Design_Selection"></a><span class="mw-headline">Design Selection</span></h2>
+<h4><a name="Response_Surface_Type"></a><span class="mw-headline">Response Surface Type</span></h4>
+<p>Select a response surface type from the list below. Refer to <a href="../../App/Category/Response_Surface_Design(App).html#Introduction" title="Category:Response Surface Design(App)">the introduction and comparison</a> for which type should be used for your design
+</p>
+<ul><li> Central Composite</li>
+<li> Box-Behnken</li></ul>
+<h4><a name="Display_Available_Designs"></a><span class="mw-headline">Display Available Designs</span></h4>
+<p>Click the button for information to select an appropriate design. The table shows the number of factors and runs
+</p><p><br />
+</p>
+<h2><a name="Factors"></a><span class="mw-headline">Factors</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Number of Continuous Factors
+</th>
+<td> Specify the number of continuous factors you want to include in the design
+</td></tr>
+<tr>
+<th>Number of Categorical Factors
+</th>
+<td>Specify the number of categorical factors you want to include in the design
+</td></tr>
+<tr>
+<th>Continuous Factors table
+</th>
+<td>Displays and defines the properties of each continuous factor — typically including name, low level, high level — establishing the experimental range for the numeric variables.
+</td></tr>
+<tr>
+<th>Categorical Factors table
+</th>
+<td>If you select at least 1 categorical factor, the table will be shown. Displays and defines the properties of each categorical factor—typically including name, number of levels, and level labels — establishing the discrete settings for the qualitative variables.
+</td></tr></table>
+<h2><a name="Setttings"></a><span class="mw-headline">Setttings</span></h2>
+<h5><a name="For_Central_Composite"></a><span class="mw-headline">For Central Composite</span></h5>
+<table class="dialogcontroltable">
+<tr>
+<th>Design Selection Table
+</th>
+<td>Displays available design configurations based on the specified factors, showing options such as full factorial, fractional factorial, or hybrid designs with their corresponding run counts and resolution properties.
+</td></tr>
+<tr>
+<th>Number of Replicates
+</th>
+<td>Sets how many times the entire design (or each run) is repeated to improve precision and estimate pure experimental error
+</td></tr>
+<tr>
+<th>Customize Number of center points
+</th>
+<td>Enables manual override of the default center point allocation, allowing control over how many center points are placed in specific blocks
+</td></tr>
+<tr>
+<th>Number of Center Points per Block
+</th>
+<td>Available only when <b>Customize Number of center points</b> is selected
+<ul><li> Cube Block: Number of center points added to the factorial (cube) portion of the design.</li>
+<li> Axial Block: Number of center points added to the axial (star) point block.</li></ul>
+</td></tr>
+<tr>
+<th>Customize Value of Alpha
+</th>
+<td>Enables manual specification of the axial point distance
+</td></tr>
+<tr>
+<th>Alpha
+</th>
+<td>Available only when <b>Customize Value of Alpha</b> is selected
+<p>The coded distance from the design center to each axial point, determining whether the design is rotatable, Spherical, face-centered or orthogonal, and even user-defined
+</p>
+</td></tr>
+<tr>
+<th>Randomize Runs
+</th>
+<td>Randomizes run order to eliminate bias from time trends or lurking variables.
+</td></tr></table>
+<h5><a name="For_Box-Behnken"></a><span class="mw-headline">For Box-Behnken</span></h5>
+<table class="dialogcontroltable">
+<tr>
+<th>Number of Blocks
+</th>
+<td>Divides the design into homogeneous groups to account for nuisance variables (e.g., different days, batches, or operators); Box-Behnken designs can often be arranged in orthogonal blocks to separate block effects from factor effects.
+</td></tr>
+<tr>
+<th>Number of Center Points per Block
+</th>
+<td>Specifies how many center point runs are included in each block to test for curvature and provide a check on the consistency of response across blocks.
+</td></tr>
+<tr>
+<th>Number of Replicates
+</th>
+<td>Sets how many times the entire design (or each run) is repeated to improve precision and estimate pure experimental error
+</td></tr></table>
+<h2><a name="Output"></a><span class="mw-headline">Output</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Design Table
+</th>
+<td>Displays the complete experimental design matrix showing the factor level settings for each run
+</td></tr>
+<tr>
+<th>Coded Design
+</th>
+<td>Shows the design matrix using coded units (-1 for low level, +1 for high level) rather than actual factor values. Useful for understanding the underlying structure and for standardized analysis.
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.
+</p>
+

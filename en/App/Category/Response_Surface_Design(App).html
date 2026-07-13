@@ -1,0 +1,101 @@
+<h1 class="firstHeading">2.43.2.3 Response Surface Design</h1><p class='urlname' style='display: none'>Response-Surface-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Central_Composite"><span class="tocnumber">1.1</span> <span class="toctext">Central Composite</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Box-Behnken"><span class="tocnumber">1.2</span> <span class="toctext">Box-Behnken</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#How_to_create_the_Design"><span class="tocnumber">2</span> <span class="toctext">How to create the Design</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Create_Response_Surface_Design_Design"><span class="tocnumber">2.1</span> <span class="toctext">Create Response Surface Design Design</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Create_Custom_Response_Surface_Design"><span class="tocnumber">2.2</span> <span class="toctext">Create Custom Response Surface Design</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<p>Once significant factors that affect the response are found using a factorial design experiment, you can use response surface design to estimate a second-degree model. It gives a better approximation if there is curvature in the response by adding squared terms to the model.
+</p><p>Origin provides two types of response surface design
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="/images/howto/thumb/f/f7/Rsm.png/150px-Rsm.png" width="150" height="150" class="thumbimage" srcset="/images/howto/thumb/f/f7/Rsm.png/225px-Rsm.png 1.5x, /images/howto/f/f7/Rsm.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a  class="internal" title="Enlarge"></a></div>3-factor central composite deisgn cube points(red), axial points (blue)</div></div></div> <div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="/images/howto/thumb/5/52/Bbd.png/150px-Bbd.png" width="150" height="150" class="thumbimage" srcset="/images/howto/thumb/5/52/Bbd.png/225px-Bbd.png 1.5x, /images/howto/5/52/Bbd.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a  class="internal" title="Enlarge"></a></div>3-factor Box-Behnken design</div></div></div>
+<h5><a name="Central_Composite"></a><span class="mw-headline">Central Composite</span></h5>
+<p>The central composite design consists of two blocks of experimental runs: 
+</p>
+<ul><li> Cube block: a set of factorial (full or fractional) points. </li>
+<li> Axial block: a set of axial points, establishing new extremes for the low and high settings for all factors. </li></ul>
+<p>Center points can be included in both cube block and axial block to better estimate curvature.
+</p><p>Central Composit design is recommededed when you need to explore the full experimental region including corners, want the flexibility to augment from a factorial screening design, or require precise estimation of quadratic effects across the entire factor space.
+</p>
+<h5><a name="Box-Behnken"></a><span class="mw-headline">Box-Behnken</span></h5>
+<p>The Box-Behnken design does not contain an embedded factorial design. It has treatment combinations that are at the midpoints of edges of the experimental space and at the center. Its primary advantage is avoiding treatment combinations that are extreme, because there are no corner points or axial points in it. This could be useful when the points on the corners of the cube represent level combinations that are expensive or impossible to test because of physical process constraints.
+</p><p>Box-Behnken should be chosen when corner point combinations are impractical or impossible to run, you want fewer runs with good prediction quality, or you prefer a design with only three levels per factor for simpler implementation.
+</p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>Central Composite Design (CCD)
+</th>
+<th>Box-Behnken Design (BBD)
+</th></tr>
+<tr>
+<td><b>Structure</b>
+</td>
+<td>Factorial points + axial (star) points + center points
+</td>
+<td>Incomplete three-level factorial with points at mid-edges + center points
+</td></tr>
+<tr>
+<td><b>Best When</b>
+</td>
+<td>You need high predictive capability across the entire design space, including the corners and axial regions
+</td>
+<td>You want to avoid extreme corner points due to practical constraints (e.g., cost, safety, or physical impossibility)
+</td></tr>
+<tr>
+<td><b>Number of Levels per Factor</b>
+</td>
+<td>5 (typically -alpha-1, 0, +1, +alpha)
+</td>
+<td>3 (-1, 0, +1)
+</td></tr>
+<tr>
+<td><b>Total Runs</b>
+</td>
+<td>Higher (2^k + 2k + n0 for full factorial base)
+</td>
+<td>Lower (fewer runs than CCD for same factor count)
+</td></tr>
+<tr>
+<td><b>Run Efficiency</b>
+</td>
+<td>Less efficient (more runs required)
+</td>
+<td>More efficient (fewer runs for same factor count)
+</td></tr></table>
+<h2><a name="How_to_create_the_Design"></a><span class="mw-headline">How to create the Design</span></h2>
+<h4><a name="Create_Response_Surface_Design_Design"></a><span class="mw-headline">Create Response Surface Design Design</span></h4>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Response Surface Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Response_Surface_Design(App)/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<h4><a name="Create_Custom_Response_Surface_Design"></a><span class="mw-headline">Create Custom Response Surface Design</span></h4>
+<p>Please refer to the <a href="../../App/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">define custom design</a> page for instructions
+</p><p><br />
+</p>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Topics covered in this section:</b></i>
+</p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li> <a class="CategoryTreeLabel  CategoryTreeLabelNs122 CategoryTreeLabelPage" href="../../App/App/Response_Surface_Design_Dialog.html">The Response Surface Design Dialog Box</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+

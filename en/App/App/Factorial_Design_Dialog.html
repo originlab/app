@@ -1,0 +1,181 @@
+<h1 class="firstHeading">2.43.2.2.1 The Factorial Design Dialog Box</h1><p class='urlname' style='display: none'>Factorial-Dialog</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Design_Selection"><span class="tocnumber">2</span> <span class="toctext">Design Selection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Factorial_Type"><span class="tocnumber">2.1</span> <span class="toctext">Factorial Type</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Generators"><span class="tocnumber">2.2</span> <span class="toctext">Generators</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Display_Available_Designs"><span class="tocnumber">2.3</span> <span class="toctext">Display Available Designs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Factors"><span class="tocnumber">3</span> <span class="toctext">Factors</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Setttings"><span class="tocnumber">4</span> <span class="toctext">Setttings</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Output"><span class="tocnumber">5</span> <span class="toctext">Output</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Dialog_Theme"><span class="tocnumber">6</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Definitive Screening Design</b> dialog
+</p>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Factorial Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Factorial_Design_Dialog/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Factorial_Design_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../App/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Introduction:Factorial Design</a></li></ul>
+</td></tr></table>
+<h2><a name="Design_Selection"></a><span class="mw-headline">Design Selection</span></h2>
+<h4><a name="Factorial_Type"></a><span class="mw-headline">Factorial Type</span></h4>
+<p>Select a factorial type from the list below. Refer to <a href="../../App/Category/Factorial_Design(App).html#Design_Type_Comparison" title="Category:Factorial Design(App)">the comparison table</a> for which type should be used for your design
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>2-Level Factorial
+</th>
+<td>A design where every factor has exactly two levels (low and high). Examines all combinations or a fraction thereof to estimate main effects and interactions.
+</td></tr>
+<tr>
+<th>Plackett-Burman
+</th>
+<td>A screening design with two levels per factor and run counts in multiples of 4 (e.g., 12, 20, 28). Each run changes roughly half the factors.
+</td></tr>
+<tr>
+<th>General Full Factorial
+</th>
+<td>A design where factors can have any number of levels (not restricted to two). Examines all possible combinations of all factor levels.
+</td></tr></table>
+<h4><a name="Generators"></a><span class="mw-headline">Generators</span></h4>
+<p>Only available when <b>2-Level Factorial</b> is selected in the <b>Factorial Type</b>
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Default
+</th>
+<td>Create a standard 2-level factorial designed
+</td></tr>
+<tr>
+<th>Custom
+</th>
+<td>Use this when you need a specific alias structure, want to avoid confounding certain effects
+</td></tr></table>
+<h4><a name="Display_Available_Designs"></a><span class="mw-headline">Display Available Designs</span></h4>
+<p>Click the button for information to select an appropriate design. The table shows the number of factors and runs
+</p>
+<h2><a name="Factors"></a><span class="mw-headline">Factors</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Number of Factors
+</th>
+<td> Specify the number of continuous factors you want to include in the design
+</td></tr>
+<tr>
+<th>Factor Table
+</th>
+<td>Enter the design information of factors. That includes
+<ul><li> <b>Name</b></li>
+<li> <b>Type</b> </li>
+<li> <b>Low</b></li>
+<li> <b>High</b></li></ul>
+</td></tr></table>
+<h2><a name="Setttings"></a><span class="mw-headline">Setttings</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Design Selection Table
+</th>
+<td>Available only for <b>2-level factorial</b> designs. Proivdes fractional and full factorial design
+</td></tr>
+<tr>
+<th>Generators
+</th>
+<td>Available only when <b>fractional factorial design</b> is selected for <b>custom 2-level factorial</b> design.
+<p>Defines how additional factors are created from base factor interactions; determines the alias structure and resolution of the design.
+</p>
+</td></tr>
+<tr>
+<th>Number of Center Points per Block
+</th>
+<td>Available only for <b>2-level factorial</b> and <b>Plackett-Burman</b> design
+<p>Specifies the number of center points (runs with all factors at their mid-levels) to include in the design. Center points detect curvature in the response without affecting the estimation of main effects or interactions; set to 0 if curvature is not a concern.
+</p>
+</td></tr>
+<tr>
+<th>Number of Replicates
+</th>
+<td>Available only for <b>2-level factorial</b> and <b>Plackett-Burman</b> design
+<p>Sets how many times each factorial combination is repeated
+</p><p>Adding replicates can increase the statistical power to detect effects but also increase total runs and resource cost. 
+</p>
+</td></tr>
+<tr>
+<th>Number of Runs
+</th>
+<td>Available only for <b>Plackett-Burman</b> designs.
+<p>Specifies the total number of experimental runs to include in the design.
+</p><p>Plackett-Burman designs are available for run counts that are multiples of 4 (e.g., 12, 20, 24, 28, 36, 40, 44, 48 runs). Select the run count that accommodates your number of factors while minimizing experimental effort.
+</p>
+</td></tr>
+<tr>
+<th>Number of Blocks
+</th>
+<td>Available only for <b>2-level factorial</b> designs.
+<p>Divides runs into groups to account for nuisance factors like different days or operators.
+</p>
+</td></tr>
+<tr>
+<th>Define Block by Generators
+</th>
+<td>Available only for <b>2-level factorial</b> designs.
+<p>Lets you specify which interactions are confounded with blocks when using multiple blocks.
+</p>
+</td></tr>
+<tr>
+<th>Fold Design
+</th>
+<td>Available only for <b>2-level factorial</b> designs.
+<p>Reverses signs of selected factors. This technique de-aliases specific effects in a fractional factorial design. For example, folding on factor A makes all two-factor interactions involving A estimable (aliased only with higher-order interactions), effectively increasing resolution for those terms
+</p>
+</td></tr>
+<tr>
+<th>Randomize Runs
+</th>
+<td> Randomizes run order to eliminate bias from time trends or lurking variables.
+</td></tr>
+<tr>
+<th>Ransom Seed
+</th>
+<td>Enter a non-negative integer to control the random number generator
+</td></tr></table>
+<h2><a name="Output"></a><span class="mw-headline">Output</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Design Table
+</th>
+<td>Displays the complete experimental design matrix showing the factor level settings for each run
+</td></tr>
+<tr>
+<th>Coded Design
+</th>
+<td>Shows the design matrix using coded units (-1 for low level, +1 for high level) rather than actual factor values. Useful for understanding the underlying structure and for standardized analysis.
+</td></tr>
+<tr>
+<th>Alias Table
+</th>
+<td>Displays the confounding (aliasing) structure of fractional factorial designs, showing which effects are confounded with each other. Critical for interpreting results from fractional designs where not all effects can be estimated independently.
+</td></tr>
+<tr>
+<th>Interaction Order for Alias
+</th>
+<td>Specifies the maximum order of interactions to display in the alias table.
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.
+</p>
+
