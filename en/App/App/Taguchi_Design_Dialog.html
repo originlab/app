@@ -1,0 +1,83 @@
+<h1 class="firstHeading">2.43.2.5.2 The Taguchi Design Dialog Box</h1><p class='urlname' style='display: none'>taguchi-dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Display_Available_Designs"><span class="tocnumber">2</span> <span class="toctext">Display Available Designs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Design"><span class="tocnumber">3</span> <span class="toctext">Design</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Dialog_Theme"><span class="tocnumber">4</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Response Surface Design</b> dialog
+</p>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Create Design</b> icon and choose <b>Taguchi Design</b> from the list
+<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Taguchi_Design_Dialog/650px-Create_Design.png?v=79707" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Taguchi_Design_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../App/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Introduction:Taguchi Design</a></li>
+<li> <a href="../../App/App/Key_Concepts_Taguchi.html" title="App:Key Concepts Taguchi">Key Concepts of Taguchi Design</a></li>
+<li> <a href="../../App/App/Tutorial_Taguchi.html" title="App:Tutorial Taguchi">Tutorial of the Taguchi Design</a></li></ul>
+</td></tr></table>
+<h2><a name="Display_Available_Designs"></a><span class="mw-headline">Display Available Designs</span></h2>
+<p>Click the button for information to select an appropriate design. The table shows the number of factors and runs
+</p>
+<h2><a name="Design"></a><span class="mw-headline">Design</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Design Type
+</th>
+<td>Select the level structure for your <a href="../../App/App/Key_Concepts_Taguchi.html#Orthogonal_Arrays" title="App:Key Concepts Taguchi">orthogonal array</a>. Origin provides
+<ul><li>2-level designs (e.g., L4, L8, L12, L16)</li>
+<li>3-level designs (e.g., L9, L18, L27)</li>
+<li>4-level designs (e.g., L16)</li>
+<li>5-level designs (e.g., L25)</li>
+<li>Mixed-level designs (e.g., L18 with both 2-level and 3-level factors)</li></ul>
+</td></tr>
+<tr>
+<th>Number of Factors
+</th>
+<td>Choose how many control factors you want to study. The available options depend on the <b>Design Type</b> selected
+</td></tr>
+<tr>
+<th>Design
+</th>
+<td>After selecting the design type and number of factors, select from the <b>Design</b> dropdown list for the specific orthogonal array (e.g., L9 [3^3], L18 [2^1 × 3^7], L27 [3^13]).
+</td></tr>
+<tr>
+<th>Add Dynamic Signal Factor
+</th>
+<td>Check this option to convert a static design into a <a href="../../App/App/Key_Concepts_Taguchi.html#Static_vs._Dynamic_Designs" title="App:Key Concepts Taguchi">dynamic response experiment</a>. In a dynamic experiment, the quality characteristic operates over a range of values, and the goal is to improve the relationship between an input signal factor and an output response. When enabled, you can name the signal factor and define its levels in the <b>Factors table</b> below.
+</td></tr>
+<tr>
+<th>Interactions
+</th>
+<td>Click the <b>+</b> button to specify which interactions you want to estimate. Origin can assign factors to specific columns of the orthogonal array to allow estimation of selected two-way interactions. Note that Taguchi designs primarily emphasize main effects; only certain arrays (such as L18 or modified L16) support interaction estimation, and higher-order interactions are typically confounded with main effects.
+</td></tr>
+<tr>
+<th>Factor Table
+</th>
+<td>Display and define the factor details of the factors you will study. It includes the following columns
+<ul><li><b>Name</b>
+<dl><dd> The factor labels. </dd></dl></li>
+<li><b>Type</b>
+<dl><dd>Indicates whether the factor is a <b>Control</b> factor (default) or a <b>Signal</b> factor (if <b>Add Dynamic Signal Factor</b> is checked).</dd></dl></li>
+<li><b>Levels</b>
+<dl><dd> Enter the actual settings for each level. The number of available levels for the factor is determined by the design type selected (2, 3, 4, or 5).</dd></dl></li>
+<li><b>Column</b>
+<dl><dd>Shows which column of the orthogonal array each factor is assigned to. This assignment determines how main effects and interactions are estimated and whether they are confounded with each other.</dd></dl></li></ul>
+<p>If you want to modify the column assignments
+</p>
+<ul><li> View the <b>interaction</b> box for the selected array</li>
+<li> Reassign factors to different columns to preserve estimability of desired interactions</li>
+<li> See which columns are reserved for interactions and which are free for main effects</li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.
+</p>
+
