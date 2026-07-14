@@ -1,0 +1,206 @@
+<h1 class="firstHeading">2.43.2.5.2 Tutorial of Taguchi Design</h1><p class='urlname' style='display: none'>Tutorial-Taguchi-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Static_Taguchi_Design"><span class="tocnumber">1</span> <span class="toctext">Static Taguchi Design</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Create_Design"><span class="tocnumber">1.1</span> <span class="toctext">Create Design</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Analyze_Design"><span class="tocnumber">1.2</span> <span class="toctext">Analyze Design</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Dynamic_Taguchi_Design"><span class="tocnumber">2</span> <span class="toctext">Dynamic Taguchi Design</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Create_Design_2"><span class="tocnumber">2.1</span> <span class="toctext">Create Design</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Analyze_Design_2"><span class="tocnumber">2.2</span> <span class="toctext">Analyze Design</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Static_Taguchi_Design"></a><span class="mw-headline">Static Taguchi Design</span></h2>
+<p>An engineering team is working on optimizing the process of producing biodiesel from waste cooking oil. Their goal is to maximize biodiesel Yield. They identified three factors that impact biodiesel production:
+</p>
+<ol><li> Catalyst Type: Sodium hydroxide (NaOH) and Potassium hydroxide (KOH)</li>
+<li> Reaction Temperature: 60°C and 75°C</li>
+<li> Solvent Type: Methanol and Ethanol</li></ol>
+<p>They also identified Humidity as a Noise factor that impacts Yield. Therefore, the experiment will be done at three humidity levels: low, medium, and high.
+</p>
+<h4><a name="Create_Design"></a><span class="mw-headline">Create Design</span></h4>
+<ol>
+<li> Select menu <b>Statistics: Quality Improvement: Design of Experiment</b>
+<li>Click <b>Create Design</b> button and select <b>Taguchi Design</b>.
+<dl><dd><a  class="image"><img alt="Create Taguchi Design TB.png" src="../images/Tutorial_Taguchi/600px-Create_Taguchi_Design_TB.png?v=78231" width="600"   /></a></dd></dl>
+
+<li> We have 3 factors and the levels are 2, and select <b>L8(2^3)</b> for <b>Design</b>.  In the opened dialog, fill in the table as below. 
+<dl><dd><a  class="image"><img alt="Create Taguchi Design dialog.png" src="../images/Tutorial_Taguchi/700px-Create_Taguchi_Design_dialog.png?v=78321" width="700"   /></a></dd></dl>
+
+<li>Click on the <b>+</b> sign next to interaction and add <b>Catalyst Type*Temperature</b> to <b>Selected Term</b>
+<dl><dd><a  class="image"><img alt="Taguchi Static Design Interactions.png" src="../images/Tutorial_Taguchi/700px-Taguchi_Static_Design_Interactions.png?v=78320" width="700"   /></a></dd></dl>
+
+<li> Click <b>OK</b> to generate the design table
+<dl><dd><a  class="image"><img alt="Taguchi Static Design Table.png" src="../images/Tutorial_Taguchi/600px-Taguchi_Static_Design_Table.png?v=78260" width="600"   /></a></dd></dl>
+</ol>
+<h4><a name="Analyze_Design"></a><span class="mw-headline">Analyze Design</span></h4>
+<ol>
+<li> In the <b>DesignTable</b>, enter response data under columns <b>D</b>, <b>E</b>, and <b>F</b> for the three humidity levels (Yield1, Yield2, Yield3)
+<dl><dd> <a  class="image"><img alt="Taguchi Static Design Table response data.png" src="../images/Tutorial_Taguchi/600px-Taguchi_Static_Design_Table_response_data.png?v=78263" width="600"   /></a></dd></dl>
+
+<li>Click <b>Analyze Design</b> button.
+<dl><dd><a  class="image"><img alt="Analyze Design Button.png" src="../images/Tutorial_Taguchi/600px-Analyze_Design_Button.png?v=78324" width="600"   /></a></dd></dl>
+
+<li>Add <b>Yield1</b>, <b>Yield2</b>, <b>Yield3</b> to <b>Response</b> in the dialog.
+<dl><dd><a  class="image"><img alt="Analyze Design Response.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Response.png?v=78302" width="700"   /></a></dd></dl>
+
+<li>Click the <b>+</b> sign next to Model Terms. The interaction is already included under <b>Selected Terms</b> since it was prespecified under <b>Create Design</b>.
+<dl><dd><a  class="image"><img alt="Analyze Design Model Terms.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Model_Terms.png?v=78297" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Settings</b> tab and select <b>Larger is better</b> in the <b>Signal to Noise Ratios</b> since we are looking to maximize Yield.
+<dl><dd><a  class="image"><img alt="Analyze Design Settings.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Settings.png?v=78298" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Quantities</b> tab and select all options.
+<dl><dd><a  class="image"><img alt="Analyze Design Quantities.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Quantities.png?v=78339" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Response Summary</b> tab and select all options too.
+<dl><dd><a  class="image"><img alt="Analyze Design Response Summary.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Response_Summary.png?v=78299" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Fits and Diagnostics</b> tab and select <b>Hi(Leverage)</b>
+<dl><dd><a  class="image"><img alt="Analyze Design Fits and Diagnostics.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Fits_and_Diagnostics.png?v=78304" width="700"   /></a></dd></dl>
+
+<li>Go to <b> Plots</b> tab and select All. Keep <b>Residual Type</b> is <b>Regular</b>. Click <b>OK</b>
+<dl><dd><a  class="image"><img alt="Analyze Design Plots.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Plots.png?v=78303" width="700"   /></a></dd></dl>
+
+<li>In the <b>DOEAnalysis</b> result sheet, under the node <b>Linear Model Analysis</b>, you will find the <b>Signal to Noise Ratios</b>, <b>Means</b> and <b>Standard Deviations</b> tables show that the interaction term is not significant. 
+<dl><dd><a  class="image"><img alt="Analyze Design Result.png" src="../images/Tutorial_Taguchi/Analyze_Design_Result.png?v=78307" width="546"  /></a></dd></dl>
+
+<li>Let's rerun the analysis by removing the interaction term. Click on the Green Lock and select <b>Duplicate this Operation</b>. In the duplicated result <b>DOEAnalysis1</b> sheet, click on the Green Lock and  <b>Change Parameters</b>.
+<dl><dd><a  class="image"><img alt="Analyze Design Duplicate Operation.png" src="../images/Tutorial_Taguchi/Analyze_Design_Duplicate_Operation.png?v=78308" width="359"  /></a></dd></dl>
+
+<li>In the <b>Model</b> tab, click the <b>+</b> of <b>Model Terms</b> and remove the <b>Catalyst Type*Temperature</b> interaction.
+Click <b>OK</b>
+<dl><dd><a  class="image"><img alt="Analyze Design Model Terms Remove.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Model_Terms_Remove.png?v=78309" width="700"   /></a></dd></dl>
+
+<li>In the result sheet, the <b>Signal to Noise Ratios</b> is used to identify the optimal factor settings that maximize Yield while minimizing variability. The <b>Mean</b> represents the average Yield across different factor settings, while the <b>Standard Deviation</b> indicates how consistent and stable the process is. 
+<ul>
+<li>Let's look at the <b>Signal to Noise ratios</b> under <b>Linear Model Analysis</b>. We can see that two factors, Catalyst Type and Temperature, are significant at the 5% level. This means that different levels of Catalyst Type and Temperature will provide different values of Yield. 
+<dl><dd><a  class="image"><img alt="Analyze Design Signal to Noise Ratios 1.png" src="../images/Tutorial_Taguchi/Analyze_Design_Signal_to_Noise_Ratios_1.png?v=78310" width="680"  /></a></dd></dl>
+<br />The coefficient estimates show the magnitude and direction of the effect.
+<dl><dd><a  class="image"><img alt="Analyze Design Signal to Noise Ratios 2.png" src="../images/Tutorial_Taguchi/Analyze_Design_Signal_to_Noise_Ratios_2.png?v=78311" width="504"  /></a></dd></dl>
+
+<li>In the Response Tables, the goal is to maximize the Signal to Noise ratios and Means, while minimizing the Standard Deviation. Let's look at the <b>Signal to Noise ratios</b> under the <b>Response Table</b>.
+These are the average Responses for each factor across 2 different levels. The coefficient estimate for Catalyst Type is positive, and Response at Level 1 of Catalyst Type is greater than Response at Level 2.  The coefficient estimates for Temperature and Solvent are negative, and Response at Level 2 of Temperature and Solvent is greater than the Response at Level 1. Delta is the absolute difference between Level 1 and Level 2, and rank is assigned by ordering Delta values from largest to smallest. Signal to Noise ratios are maximized under the following settings: <i>Catalyst Type is NaOH</i>, <i>Temperature is 75</i>, and <i>Solvent is Ethanol</i>.
+<dl><dd><a  class="image"><img alt="Analyze Design Response Tables.png" src="../images/Tutorial_Taguchi/Analyze_Design_Response_Tables.png?v=78312" width="969"  /></a></dd></dl>
+
+<li>
+Similar inferences can also be made for Means and the Standard Deviation. Let's look at the <b>Means</b> table under <b>Linear Model Analysis</b>. The p-value for Solvent is 0.60182. 
+<dl><dd><a  class="image"><img alt="Analyze Design Means Tables.png" src="../images/Tutorial_Taguchi/Analyze_Design_Means_Tables.png?v=78313" width="521"  /></a></dd></dl>
+
+<li>Go to the <b>Main Effects Plots</b> for <b>Means</b>. The lines for Catalyst Type and Temperature show steep slopes, indicating a strong influence on the average Yield. 
+<br />The slope for Solvent is flat, indicating that the different factor levels, Methanol and Ethanol, do not have a significant effect on the average Yield.
+<dl><dd><a  class="image"><img alt="Analyze Design Main Effects Plots.png" src="../images/Tutorial_Taguchi/Analyze_Design_Main_Effects_Plots.png?v=78317" width="800"  /></a></dd></dl>
+
+<li>Go to the Residual Plots for the three measures. The residual plots do not show any patterns.
+<dl><dd><a  class="image"><img alt="Analyze Design Residual Plots.png" src="../images/Tutorial_Taguchi/800px-Analyze_Design_Residual_Plots.png?v=78315" width="800"   /></a></dd></dl>
+</ul>
+<li>The next step is to determine fitted values for the three characteristics, Signal to Noise ratios, Means, and Standard Deviation. 
+<br />Click on <b>DOEFindYfromX1</b> sheet. Enter different levels for the three factors, Catalyst Type, Temperature, and Solvent and values for the three characteristics will automatically populate.
+<dl><dd><a  class="image"><img alt="Analyze Design Determine Fitted Values.png" src="../images/Tutorial_Taguchi/Analyze_Design_Determine_Fitted_Values.png?v=78326" width="498"  /></a></dd></dl>
+
+</ol>
+<h2><a name="Dynamic_Taguchi_Design"></a><span class="mw-headline">Dynamic Taguchi Design</span></h2>
+<p>An engineering team is interested in reducing Image Blur for photos taken by a drone. They identified three control factors that impact Image Blur:
+</p>
+<ol><li> Gimbal stiffness: Low and High</li>
+<li> Damping algorithm: Light filtering and Aggressive filtering</li>
+<li> Shutter speed: Fast and Slow</li></ol>
+<p>They also identified a Signal Factor, Drone Speed, which varies over three levels, 2, 4, and 6 meters per second.
+</p><p><br />
+</p>
+<h4><a name="Create_Design_2"></a><span class="mw-headline">Create Design</span></h4>
+<ol>
+<li> Select menu <b>Statistics: Quality Improvement: Design of Experiment</b>
+<li> Click <b>Create Design</b> button and select <b>Taguchi Design</b>.
+<dl><dd><a  class="image"><img alt="Create Taguchi Design TB.png" src="../images/Tutorial_Taguchi/600px-Create_Taguchi_Design_TB.png?v=78231" width="600"   /></a></dd></dl>
+
+<li> We have 3 factors and the levels are 2, and select <b>L8(2^3)</b> for <b>Design</b>.  And turn on <b>Add Dynamic Signal Factor</b> option. Click the <b>+</b> sign next to <b>Signal</b> to add one. 
+
+<li>In the opened dialog, fill in the table as below. 
+<dl><dd><a  class="image"><img alt="S2 Create Taguchi Design dialog.png" src="../images/Tutorial_Taguchi/700px-S2_Create_Taguchi_Design_dialog.png?v=78328" width="700"   /></a></dd></dl>
+
+<li>Click on the <b>+</b> sign next to interaction and add <b>Gimbal stiffness * Damping algorithm</b> to <b>Selected Term</b>
+<dl><dd><a  class="image"><img alt="S2 Taguchi Static Design Interactions.png" src="../images/Tutorial_Taguchi/700px-S2_Taguchi_Static_Design_Interactions.png?v=78329" width="700"   /></a></dd></dl>
+
+<li> Click <b>OK</b> to generate the design table.
+<dl><dd><a  class="image"><img alt="S2 Taguchi Static Design Table.png" src="../images/Tutorial_Taguchi/600px-S2_Taguchi_Static_Design_Table.png?v=78330" width="600"   /></a></dd></dl>
+
+</ol>
+<p><br />
+</p>
+<h4><a name="Analyze_Design_2"></a><span class="mw-headline">Analyze Design</span></h4>
+<ol>
+<li> In the <b>DesignTable</b>, enter <b>Image Blur</b> values in column E.
+<dl><dd> <a  class="image"><img alt="S2 Taguchi Static Design Table response data.png" src="../images/Tutorial_Taguchi/600px-S2_Taguchi_Static_Design_Table_response_data.png?v=78332" width="600"   /></a></dd></dl>
+
+<li>Click <b>Analyze Design</b> button.
+<dl><dd><a  class="image"><img alt="Analyze Design Button.png" src="../images/Tutorial_Taguchi/600px-Analyze_Design_Button.png?v=78324" width="600"   /></a></dd></dl>
+
+<li>Add <b>Image_blur </b> to <b>Response</b> in the dialog.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Response.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Response.png?v=78338" width="700"   /></a></dd></dl>
+
+<li>Click the <b>+</b> sign next to Model Terms. The interaction is already included under <b>Selected Terms</b> since it was prespecified under <b>Create Design</b>.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Model Terms.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Model_Terms.png?v=78333" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Settings</b> tab. In a <b>Dynamic Taguchi</b> design, the goal is to optimize the Signal to Response relationship by fitting an appropriate model:
+<ul><li><font color="blue"><b>Through Fixed Point</b></font>. This option is not recommended for this analysis, since it forces the fit through a predefined Signal and Response value. The default values for Signal and Response are zero, but this should not be used since Image Blur can still be present even when the drone is stationary.</li></ul>
+
+<ul><li><font color="blue"><b>Through Average Response at Fixed Signa</b></font>l. This anchors the average observed Response at a chosen Signal Level. One option is to anchor the fit at a Signal Factor of 4, which represents the average drone speed. This option will limit the range of the Response variable, Image Blur.</li></ul>
+
+<ul><li> <font color="blue"><b>Without Fixed Point</b></font>. This is the most flexible and preferred option. Both intercept and slope are estimated freely. This option is suitable for processes that have a nonzero Response at zero, or when there is no clear anchor point.</li></ul>
+<br />
+We’ll select Without a Fixed Point.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Settings.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Settings.png?v=78335" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Quantities</b> tab and select all options.
+<dl><dd><a  class="image"><img alt="Analyze Design Quantities.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Quantities.png?v=78339" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Response Summary</b> tab and select all options.
+<dl><dd><a  class="image"><img alt="Analyze Design Response Summary.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Response_Summary.png?v=78299" width="700"   /></a></dd></dl>
+
+<li>Go to <b>Fits and Diagnostics</b> tab and select all options.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Fits and Diagnostics.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Fits_and_Diagnostics.png?v=78336" width="700"   /></a></dd></dl>
+
+<li>Go to <b> Plots</b> tab and select All. Keep <b>Residual Type</b> is <b>Regular</b>. Click <b>OK</b>
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Plots.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Plots.png?v=78337" width="700"   /></a></dd></dl>
+
+<li>In the <b>DOEAnalysis</b> result shee, under the node <b>Linear Model Analysis</b>, the <b>Signal to Noise Ratios</b>, <b>Means</b>, and <b>Standard Deviations</b> tables show that the interaction term is not significant.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Result.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Result.png?v=78340" width="543"  /></a></dd></dl>
+
+<li>Let's rerun the analysis by removing the interaction term. Click on the Green Lock and select <b>Duplicate this Operation</b>. In the duplicated result <b>DOEAnalysis1</b> sheet, click on the Green Lock and  <b>Change Parameters</b>.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Duplicate Operation.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Duplicate_Operation.png?v=78341" width="356"  /></a></dd></dl>
+
+<li>In the <b>Model</b> tab, click the <b>+</b> of <b>Model Terms</b> and remove the <b>Gimbal stiffness*Damping algorithm</b> interaction.
+Click <b>OK</b>
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Model Terms Remove.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Model_Terms_Remove.png?v=78343" width="700"   /></a></dd></dl>
+
+<li>In a Dynamic Taguchi Design, the characteristic, <b>Slope</b>, measures the rate of change in the Response variable relative to the Signal Factor level.
+
+<ul>
+<li>Let's look at <b>Slope</b> under <b>Linear Model Analysis</b>. We can see that all three factors: <i><b>Gimbal stiffness</b></i>, <i><b>Damping algorithm</b></i> and <i><b>Shutter Speed</b></i> are significant at the 5% level. The coefficient estimates provide the magnitude and direction of the effect. The absolute value for Damping algorithm is the largest.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Slope 1.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Slope_1.png?v=78344" width="741"  /></a></dd></dl>
+
+
+<li>Let's look at Slope under Response Table. These are the average Responses for each factor across 2 different levels. The coefficient estimate for all three factors are positive, and Response at Level 1 is greater than Response at Level 2. Delta is the absolute difference between Level 1 and Level 2, and rank is assigned by ordering Delta values from largest to smallest. Damping algorithm has a rank of 1. 
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Slope 2.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Slope_2.png?v=78345" width="691"  /></a></dd></dl>
+
+<br />Ideally, we would target slope to be zero. There should be no relationship between drone speed and Image Blur. Slope is closest to zero under the following factor levels: <i>Gimbal stiffness is High, Damping algorithm is Aggressive filtering, and Shutter speed is Slow</i>. Keep in mind that these settings come at the cost of a lower Signal to Noise ratio and higher Standard Deviation.
+
+<li>Go to Scatter Plots with Fitted Lines. The scatterplots are arranged in decreasing order of Signal to Noise ratio. Response is on the y-axis, and the three levels of the Signal Factor are on the x-axis. Ideally, the fitted line should pass closely through the blue points.
+<dl><dd><a  class="image"><img alt="S2 Analyze Design Scatter Plots.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Scatter_Plots.png?v=78346" width="604"  /></a></dd></dl>
+</ul>
+<p><br />
+</p>
+</ol>
+
+
+
+
+
+

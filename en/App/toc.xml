@@ -1045,6 +1045,24 @@
     <toc_src>App:Mixture_Design_Dialog</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design</toc_name>
+    <toc_link>Category/Taguchi_Design(App).html</toc_link>
+    <toc_url>App/Taguchi-Design</toc_url>
+    <toc_src>Category:Taguchi_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Key Concepts of Taguchi Design</toc_name>
+    <toc_link>App/Key_Concepts_Taguchi.html</toc_link>
+    <toc_url>App/Key=Concepts-Taguchi</toc_url>
+    <toc_src>App:Key_Concepts_Taguchi</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Tutorial of Taguchi Design</toc_name>
+    <toc_link>App/Tutorial_Taguchi.html</toc_link>
+    <toc_url>App/Tutorial-Taguchi-Design</toc_url>
+    <toc_src>App:Tutorial_Taguchi</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Select Optimal Design</toc_name>
     <toc_link>Category/Select_Optimal_Design(App).html</toc_link>
     <toc_url>App/Select-Optimal-Design</toc_url>
