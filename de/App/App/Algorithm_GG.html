@@ -1,0 +1,322 @@
+﻿<h1 class="firstHeading">Algorithmus zur Messsystemanalyse</h1><p class='urlname' style='display: none'>Algorithm-GG</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Type_1_Gage_Study"><span class="tocnumber">1</span> <span class="toctext">Messsystemanalyse Typ 1</span></a><ul>
+<li class="toclevel-2 tocsection-2"><a href="#Basic_Statistics"><span class="tocnumber">1.1</span><span class="toctext">Grundlagen der Statistik</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Bias"><span class="tocnumber">1.2</span> <span class="toctext">Systematische Messabweichung (Bias)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Capability"><span class="tocnumber">1.3</span> <span class="toctext">F&auml;higkeit</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Gage_Linear_Bias_Analysis"><span class="tocnumber">2</span> <span class="toctext">Analyse von Linearit&auml;t und systematischer Messabweichung</span></a><ul>
+<li class="toclevel-2 tocsection-6"><a href="#Gage_Linearity"><span class="tocnumber">2.1</span> <span class="toctext">Analyse von Linearit&auml;t</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Gage_Bias"><span class="tocnumber">2.2</span> <span class="toctext">Systematische Messabweichung des Messger&auml;ts</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Methods_to_estimate_repeatability_standard_deviation"><span class="tocnumber">2.3</span> <span class="toctext">Methoden zum Sch&auml;tzen der Wiederholbarkeit der Standardabweichung</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Crossed_Gage_R.26R_Study"><span class="tocnumber">3</span> <span class="toctext">Gekreuzte Messsystemanalyse</span></a><ul>
+<li class="toclevel-2 tocsection-10"><a href="#ANOVA_Table"><span class="tocnumber">3.1</span> <span class="toctext">ANOVA-Tabelle</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Number_of_Distinct_Categories"><span class="tocnumber">3.2</span> <span class="toctext">Anzahl der eindeutigen Kategorien</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Gge_R.26R_Table"><span class="tocnumber">3.3</span> <span class="toctext">Tabelle Gage R&amp;R</span></a><ul>
+<li class="toclevel-3 tocsection-13"><a href="#Variance_for_ANOVA_method"><span class="tocnumber">3.3.1</span> <span class="toctext">Varianz f&uuml;r ANOVA-Methode</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Variance_for_Xbar_and_R_method"><span class="tocnumber">3.3.2</span> <span class="toctext">Varianz f&uuml;r X-quer- und R-Methode</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#.25Contribution"><span class="tocnumber">3.3.3</span> <span class="toctext">%Contribution (%Beitrag)</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#StdDev"><span class="tocnumber">3.3.4</span> <span class="toctext">StdDev (Std.Abw.)</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Study_Var"><span class="tocnumber">3.3.5</span> <span class="toctext">Study Var (Streuung in Unters.)</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#.25Study_Var"><span class="tocnumber">3.3.6</span> <span class="toctext">%Study Var (%Streuung in Unters.)</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#.25Tolerance"><span class="tocnumber">3.3.7</span> <span class="toctext">%Tolerance (%Toleranz)</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#.25Process"><span class="tocnumber">3.3.8</span> <span class="toctext">%Process (%Prozess)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Nested_Gage_R.26R_Study"><span class="tocnumber">4</span> <span class="toctext">Geschachtelte Messsystemanalyse</span></a><ul>
+<li class="toclevel-2 tocsection-22"><a href="#ANOVA_Table_2"><span class="tocnumber">4.1</span> <span class="toctext">ANOVA-Tabelle</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Gge_R.26R_Table_2"><span class="tocnumber">4.2</span> <span class="toctext">Tabelle Gage R&amp;R</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Expanded_Gage_R.26R_Study"><span class="tocnumber">5</span> <span class="toctext">Erweiterte Messsystemanalyse</span></a><ul>
+<li class="toclevel-2 tocsection-25"><a href="#Variance_Components_for_random_effects"><span class="tocnumber">5.1</span> <span class="toctext">Varianzkomponenten f&uuml;r zuf&auml;llige Effekte</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Variance_Components_for_fixed_effects"><span class="tocnumber">5.2</span> <span class="toctext">Varianzkomponenten f&uuml;r feste Effekte</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Attribute_Gage_Study"><span class="tocnumber">6</span> <span class="toctext">Messsystemanalyse f&uuml;r attributive Daten</span></a><ul>
+<li class="toclevel-2 tocsection-28"><a href="#Bias_2"><span class="tocnumber">6.1</span> <span class="toctext">Systematische Messabweichung (Bias)</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Test_of_Bias_.3D_0"><span class="tocnumber">6.2</span> <span class="toctext">Test of Bias = 0 (Test der systematischen Messabweichung = 0)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Reference"><span class="tocnumber">7</span> <span class="toctext">Referenz</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Type_1_Gage_Study"></a><span class="mw-headline">Messsystemanalyse Typ 1</span></h2>
+<h3><a name="Basic_Statistics"></a><span class="mw-headline">Grundlagen der Statistik</span></h3>
+<dl><dd><ul><li>Mittelwert<dl><dd><img src="../images/Algorithm_GG/math-61efc06ae738acc4468136d94e4b524b.png" title="\bar{X} = \frac{1}{N}\sum_{i=1}^{N}x_i" alt="\bar{X} = \frac{1}{N}\sum_{i=1}^{N}x_i" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Std.Abw.<dl><dd><img src="../images/Algorithm_GG/math-ffcb52c423010a796febe7ab5a4791a1.png" title="S = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(x_i-\bar{x})^2}" alt="S = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(x_i-\bar{x})^2}" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Streuung in der Untersuchung (SV)<dl><dd><img src="../images/Algorithm_GG/math-e349ca5754836a31a026c6d7929ccd22.png" title="SV = k_1 * S" alt="SV = k_1 * S" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-5816a3210bbbab1d8dc57a0850a78101.png" title="k_1" alt="k_1" class="tex"/> die Zahl der Standardabweichung ist, die im Dialog festgelegt ist. Der Standardwert ist 6.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Toleranz<dl><dd>Toleranz = OSG &ndash; USG, die im Dialog festgelegt sind</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>&nbsp;% der Toleranz: Es wird berechnet, ob die (im Dialog festgelegte) Messaufl&ouml;sung kleiner als (gut), gr&ouml;&szlig;er als (schlecht) oder gleich 5 % der Toleranz ist.</li></ul></dd></dl>
+<h3><a name="Bias"></a><span class="mw-headline">Systematische Messabweichung (Bias)</span></h3>
+<dl><dd><ul><li>Systematische Messabweichung (Bias)<dl><dd><img src="../images/Algorithm_GG/math-a01163ed3143fb7406f7b8da6a75d63c.png" title="\bar{X} - X_m" alt="\bar{X} - X_m" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-f4900ade35345f4f5979cd75352b1f3d.png" title="X_m" alt="X_m" class="tex"/> der Referenzmittelwert ist, der im Dialog festgelegt ist.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>T<dl><dd>t-Statistik zum Pr&uuml;fen von Nullhypothese <img src="../images/Algorithm_GG/math-1bec43458e78e9f243dd4aec005d6f20.png" title="bias = 0" alt="bias = 0" class="tex"/> vs. Alternativhypothese <img src="../images/Algorithm_GG/math-92be6cf4fd090fdd1b0c12efef54b3b6.png" title="bias \neq 0" alt="bias \neq 0" class="tex"/>:</dd>
+<dd><img src="../images/Algorithm_GG/math-3fc47124160680b906ed9c9aa6df4cea.png" title="t = \frac{\sqrt{N}|\bar{X} - X_m|}{S}" alt="t = \frac{\sqrt{N}|\bar{X} - X_m|}{S}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h3><a name="Capability"></a><span class="mw-headline">F&auml;higkeit</span></h3>
+<dl><dd><ul><li>Cg<dl><dd>Die F&auml;higkeit des Messger&auml;ts: <img src="../images/Algorithm_GG/math-b6a79a811747c2c138927a7c1f6ecd32.png" title="C_g = \frac{K/100*Tolerance}{SV}" alt="C_g = \frac{K/100*Tolerance}{SV}" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-a5f3c6a11b03839d46af9fb43c97c188.png" title="K" alt="K" class="tex"/> die Prozent der Toleranz zum Berechen von <img src="../images/Algorithm_GG/math-fdfe1ec8bbc5fafeb808d07eab501f8a.png" title="C_g" alt="C_g" class="tex"/> sind, wie im Dialog festgelegt.</dd>
+<dd><i>Hinweis</i>: Der Standardwert von <img src="../images/Algorithm_GG/math-a5f3c6a11b03839d46af9fb43c97c188.png" title="K" alt="K" class="tex"/> ist auf 20 gesetzt; dies ist ein zul&auml;ssiger, durch Messstreuung bedingter Toleranzprozentsatz. Der Wert wurde vom Verband der Automobilindustrie (German Association of the Automotive Industry) vorgeschlagen.</dd></dl></li>
+<li>Cgk<dl><dd>Die F&auml;higkeit des Messger&auml;ts, wobei sowohl die Messger&auml;testreuung als auch die systematische Messabweichung betrachtet werden: <img src="../images/Algorithm_GG/math-7b7997a2599d909a78a06dea104faa1b.png" title="C_{gk} = \frac{(K/200*Tolerance) - |\bar{X} - X_m|}{SV/2}" alt="C_{gk} = \frac{(K/200*Tolerance) - |\bar{X} - X_m|}{SV/2}" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>&nbsp;%Var (Repeatability) <dl><dd>Vergleich der Messger&auml;tewiederholbarkeit mit der Toleranz: <img src="../images/Algorithm_GG/math-61b94912c47b4ac68570ee4794136daa.png" title="\frac{SV}{Tolerance}*100" alt="\frac{SV}{Tolerance}*100" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>&nbsp;%Var (Repeatability and Bias) <dl><dd>Vergleich der Wiederholbarkeit und systematische Messabweichung des Messger&auml;ts mit der Toleranz: <img src="../images/Algorithm_GG/math-f92aac3091e11c4c20aeb479930c2635.png" title="\frac{(K*SV)/2}{(K/200*Tolerance) - |\bar{X} - X_m|}" alt="\frac{(K*SV)/2}{(K/200*Tolerance) - |\bar{X} - X_m|}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h2><a name="Gage_Linear_Bias_Analysis"></a><span class="mw-headline">Analyse von Linearit&auml;t und systematischer Messabweichung</span></h2>
+<p>Verwenden Sie die Bias versus den Referenzwert, um die Streuung in den Bias-Werten <img src="../images/Algorithm_GG/math-61457deeed942b12a6b12018ce237a46.png" title="x_{ij}-ref_i" alt="x_{ij}-ref_i" class="tex"/> f&uuml;r jedes Teil zu beobachten. F&uuml;hren Sie anschlie&szlig;end eine lineare Regression auf das Diagramm Bias versus Reference Value (systematische Messabweichung versus Referenzwert) durch, um die Steigung und den Schnittpunkt mit der Y-Achse zu sch&auml;tzen.</p>
+<h3><a name="Gage_Linearity"></a><span class="mw-headline">Linearit&auml;t des Messger&auml;ts</span></h3>
+<dl><dd><ul><li>S<dl><dd><img src="../images/Algorithm_GG/math-5dbc98dcc983a70728bd082d1a47546e.png" title="S" alt="S" class="tex"/> sch&auml;tzt die Standardabweichung um die Regressionslinie. <img src="../images/Algorithm_GG/math-4109e729770408486f2906398eb399f6.png" title="S = sqrt(RSS/df)" alt="S = sqrt(RSS/df)" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-bf1981220040a8ac147698c85d55334f.png" title="RSS" alt="RSS" class="tex"/> die Summe der Quadrate der Residuen und <img src="../images/Algorithm_GG/math-eff7d5dba32b4da32d9a67a519434d3f.png" title="Freiheitsgrade" alt="Freiheitsgrade" class="tex"/> der Freiheitsgrad der Fehlerterme der linearen Regression ist.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Linearit&auml;t<dl><dd>Die Linearit&auml;t gibt an, ob das Messger&auml;t bei den zu messenden Objekten aller Gr&ouml;&szlig;en eine gleichbleibende Genauigkeit aufweist.</dd>
+<dd><img src="../images/Algorithm_GG/math-24e060507476b6eab599a5be2c371b21.png" title="Linearity = |slope| * PV" alt="Linearity = |slope| * PV" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-a565153df227b0510b1c789d5cdc39ec.png" title="PV" alt="PV" class="tex"/> <img src="../images/Algorithm_GG/math-c718b3a5d4e1ad519689b0e3d249fc78.png" title="Process\;Variation" alt="Process\;Variation" class="tex"/> ist, was 6 * die Prozessstandardabweichung darstellt und im Dialog angegeben wird, falls der Benutzer den Wert hat.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>&nbsp;%Linearity<dl><dd>&nbsp;%Linearity stellt die Linearit&auml;t als einen Prozentsatz der Prozessstreuung dar.</dd>
+<dd><img src="../images/Algorithm_GG/math-cf230df8447132f23508361360c9149d.png" title="\% Linearity = \frac{Linearity}{PV}*100" alt="\% Linearity = \frac{Linearity}{PV}*100" class="tex"/></dd></dl></li></ul></dd></dl>
+<h3><a name="Gage_Bias"></a><span class="mw-headline">Systematische Messabweichung des Messger&auml;ts</span></h3>
+<dl><dd><ul><li>Bias<dl><dd>Unter Bias, das hei&szlig;t die systematische Messabweichung, wird die Abweichung zwischen dem Referenzwert des Teils und den vom Bediener durchgef&uuml;hrten Messungen verstanden.</dd>
+<dd><img src="../images/Algorithm_GG/math-0190a393c7dc708a4a457861aef467ee.png" title="Average\;Bias = \frac{\sum_{i=1}^{r}\sum_{j=1}^{N_i}(x_{ij}-ref_i)}{\sum_{i=1}^{r}N_i}" alt="Average\;Bias = \frac{\sum_{i=1}^{r}\sum_{j=1}^{N_i}(x_{ij}-ref_i)}{\sum_{i=1}^{r}N_i}" class="tex"/></dd>
+<dd>wobei <img src="../images/Algorithm_GG/math-875a419bb0507ba4a52426c52163635b.png" title="x_{ij}" alt="x_{ij}" class="tex"/> die <img src="../images/Algorithm_GG/math-d6c87401ed2f8589600d6db807438139.png" title="j^{th}" alt="j^{th}" class="tex"/> Messung des <img src="../images/Algorithm_GG/math-97361f12a3555fc4fc4e2ffce1799ac3.png" title="i^{th}" alt="i^{th}" class="tex"/> Teils, <img src="../images/Algorithm_GG/math-a7d7dd513ab38d516269b5ae3735adfb.png" title="ref_i" alt="ref_i" class="tex"/> der Referenzwert des <img src="../images/Algorithm_GG/math-97361f12a3555fc4fc4e2ffce1799ac3.png" title="i^{th}" alt="i^{th}" class="tex"/> Teils, <img src="../images/Algorithm_GG/math-173eda91467d59e92b43f2a1d21ee177.png" title="N_i" alt="N_i" class="tex"/> die Anzahl der Replikationen des <img src="../images/Algorithm_GG/math-97361f12a3555fc4fc4e2ffce1799ac3.png" title="i^{th}" alt="i^{th}" class="tex"/> Teils und <img src="../images/Algorithm_GG/math-4b43b0aee35624cd95b910189b3dc231.png" title="r" alt="r" class="tex"/> die Anzahl der Teile ist.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>&nbsp;%Bias<dl><dd>&nbsp;%Bias stellt die systematische Messabweichung als einen Prozentsatz der Prozessstreuung dar.</dd>
+<dd><img src="../images/Algorithm_GG/math-da783d986818a4b33cc6e386b9676af3.png" title="\% Bias= \frac{|Average\;Bias|}{PV}*100" alt="\% Bias= \frac{|Average\;Bias|}{PV}*100" class="tex"/></dd></dl></li></ul></dd></dl>
+<h3><a name="Methods_to_estimate_repeatability_standard_deviation"></a><span class="mw-headline">Methoden zum Sch&auml;tzen der Standardabweichung der Wiederholbarkeit</span></h3>
+<dl><dd><ul><li>Verwenden Sie die p-Werte, um zu testen, ob die systematische Messabweichung bei jedem Referenzwert 0 ist und ob die mittlere systematische Messabweichung 0 ist.</li>
+<li>Methode Spannweite der Stichprobe</li></ul>
+<dl><dd>Falls jeder Referenzwert einen eindeutigen Teil entspricht, <img src="../images/Algorithm_GG/math-f5e349b6bc46285f355b8103268bd24a.png" title="s = \frac{max(X_i) - min(X_i)}{d_2}" alt="s = \frac{max(X_i) - min(X_i)}{d_2}" class="tex"/>.</dd>
+<dd>Falls mehr als ein Teil (<img src="../images/Algorithm_GG/math-865c0c0b4ab0e063e5caa3387c1a8741.png" title="i" alt="i" class="tex"/>) den gleichen Referenzwert hat, <img src="../images/Algorithm_GG/math-d36ec057027156d6383c8f7205e331cd.png" title="s = \frac{\bar{R}}{d_2}" alt="s = \frac{\bar{R}}{d_2}" class="tex"/>.<ul><li><img src="../images/Algorithm_GG/math-d0a1c0fe9e89a6da32863b8bee9491f1.png" title="\bar{R}" alt="\bar{R}" class="tex"/> ist die durchschnittliche Spannweite der systematischen Messabweichung von jedem Teil.</li>
+<li><img src="../images/Algorithm_GG/math-ce14b7f39fed905b076a31778737229e.png" title="d_2 = d_2^*[m_i, i]" alt="d_2 = d_2^*[m_i, i]" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-980687d8d961d3ec8039ea0ea5ef1404.png" title="d_2^*" alt="d_2^*" class="tex"/> eine Referenztabelle in Appendix C von AIAG MSA-4 [<a href="#Ref1">1</a>] ist. <img src="../images/Algorithm_GG/math-342e772474b691ac87dac30aeef596c0.png" title="m_i" alt="m_i" class="tex"/> ist die Teilgruppengr&ouml;&szlig;e.</li></ul></dd>
+<dd>Die t-Statistik zum Pr&uuml;fen der systematischen Messabweichung ist <img src="../images/Algorithm_GG/math-f3ba3287c03cc0521ba9678a17e3d663.png" title="\frac{(average\;bias\;at\;a\;reference\;value)}{\frac{s}{\sqrt{r}}}" alt="\frac{(average\;bias\;at\;a\;reference\;value)}{\frac{s}{\sqrt{r}}}" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-4b43b0aee35624cd95b910189b3dc231.png" title="r" alt="r" class="tex"/> die Anzahl der Teile ist.</dd></dl></dd></dl>
+<dl><dd><ul><li>Methode Standardabweichung der Stichprobe</li></ul>
+<dl><dd>Falls jeder Referenzwert einem eindeutigen Teil entspricht, <img src="../images/Algorithm_GG/math-3e2b79d143ce3f0c3d7132ae5602ed40.png" title="s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(x_i-\bar{x})^2}" alt="s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(x_i-\bar{x})^2}" class="tex"/>. Die t-Statistik zum Pr&uuml;fen der systematischen Messabweichung ist <img src="../images/Algorithm_GG/math-f3ba3287c03cc0521ba9678a17e3d663.png" title="\frac{(average\;bias\;at\;a\;reference\;value)}{\frac{s}{\sqrt{r}}}" alt="\frac{(average\;bias\;at\;a\;reference\;value)}{\frac{s}{\sqrt{r}}}" class="tex"/>.</dd>
+<dd>Falls mehr als ein Teil den gleichen Referenzwert hat, <img src="../images/Algorithm_GG/math-0eb0b201fd112038dd48fe22ff015bc9.png" title="s = \sqrt{\frac{(N_1-1)*S_1^2 + ...+ (N_r-1)*S_r^2}{(N_1-1)+ ...+ (N_r-1)}}" alt="s = \sqrt{\frac{(N_1-1)*S_1^2 + ...+ (N_r-1)*S_r^2}{(N_1-1)+ ...+ (N_r-1)}}" class="tex"/>. Die t-Statistik zum Pr&uuml;fen der systematischen Messabweichung ist <img src="../images/Algorithm_GG/math-c7ea955967154bd228dc892f3bed3d12.png" title="\frac{(average\;bias\;at\;a\;reference\;value)}{{s}*{\sqrt{1/N_1 + ...+ 1/N_r}}}" alt="\frac{(average\;bias\;at\;a\;reference\;value)}{{s}*{\sqrt{1/N_1 + ...+ 1/N_r}}}" class="tex"/>.</dd></dl></dd></dl>
+<h2><a name="Crossed_Gage_R.26R_Study"></a><span class="mw-headline">Gekreuzte Messsystemanalyse</span></h2>
+<h3><a name="ANOVA_Table"></a><span class="mw-headline">ANOVA-Tabelle</span></h3>
+<dl><dd><ul><li>Wenn Sie Operators und Parts eingeben (Bediener und Teile), werden die Daten mit einem balancierten zweifaktoriellen Versuchsplan analysiert. Beide Faktoren werden als zuf&auml;llig betrachtet. Die Wechselwirkung Operator by Part ist zuerst im Modell enthalten:<dl><dd><img src="../images/Algorithm_GG/math-a6ec1618115231d4fea6e0ab669ed435.png" title="SS_{Total}=SS_{Rep eatability}+SS_{Part}+SS_{Operator}+SS_{Part*Operator} \,\!" alt="SS_{Total}=SS_{Rep eatability}+SS_{Part}+SS_{Operator}+SS_{Part*Operator} \,\!" class="tex"/></dd></dl></li>
+<li>Falls der p-Wert f&uuml;r die Wechselwirkung gr&ouml;&szlig;er ist als das Signifikanzniveau, wird der Wechselwirkungsterm ignoriert und die Daten dann mit einem reduzierten Modell, das nur Hauptterme enth&auml;lt, angepasst.<dl><dd><img src="../images/Algorithm_GG/math-a606b5a13903762c7948a63dbfe8c97b.png" title="SS_{Total}=SS_{Rep eatability}+SS_{Part}+SS_{Operator} \,\!" alt="SS_{Total}=SS_{Rep eatability}+SS_{Part}+SS_{Operator} \,\!" class="tex"/>,</dd>
+<dd>wobei</dd>
+<dd><img src="../images/Algorithm_GG/math-ba7a425df382853065e4847bb822d3ef.png" title="SS_{Total}=\sum_{i=1}^r\sum_{j=1}^s\sum_{k=1}^t(y_{ijk}-\bar y)^2" alt="SS_{Total}=\sum_{i=1}^r\sum_{j=1}^s\sum_{k=1}^t(y_{ijk}-\bar y)^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-bbc6dd190ea02340c6de620e8caa7b6e.png" title="SS_{Part}=st\sum_{i=1}^r(\bar y_{i\cdot\cdot}-\bar y)^2" alt="SS_{Part}=st\sum_{i=1}^r(\bar y_{i\cdot\cdot}-\bar y)^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-45a1d492eb1d856c8fa5169f02c31339.png" title="SS_{Operator}=rt\sum_{j=1}^s(\bar y_{\cdot j\cdot}-\bar y)^2" alt="SS_{Operator}=rt\sum_{j=1}^s(\bar y_{\cdot j\cdot}-\bar y)^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-3e03aa56708cfcc48c18eb200a8984b2.png" title="SS_{Part*Operator}=t\sum_{i=1}^r\sum_{j=1}^s(\bar y_{ij\cdot}-\bar y_{i\cdot\cdot}-\bar y_{\cdot j\cdot}+\bar y)^2" alt="SS_{Part*Operator}=t\sum_{i=1}^r\sum_{j=1}^s(\bar y_{ij\cdot}-\bar y_{i\cdot\cdot}-\bar y_{\cdot j\cdot}+\bar y)^2" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Wenn der Wechselwirkungsterm im ANOVA-Modell enthalten ist:<dl><dd><img src="../images/Algorithm_GG/math-b76a9da5f6b54528e437da87e7630fbe.png" title="SS_{Rep eatability} = SS_{Total} - SS_{Part} - SS_{Operator} - SS_{Part*Operator}" alt="SS_{Rep eatability} = SS_{Total} - SS_{Part} - SS_{Operator} - SS_{Part*Operator}" class="tex"/></dd></dl></li>
+<li>Wenn der Wechselwirkungsterm nicht im ANOVA-Modell enthalten ist:<dl><dd><img src="../images/Algorithm_GG/math-67512575d479c04fdfa78b3f67aeead9.png" title="SS_{Rep eatability} = SS_{Total} - SS_{Part} - SS_{Operator}" alt="SS_{Rep eatability} = SS_{Total} - SS_{Part} - SS_{Operator}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-100f5db42fc55631c7b4e798218f6a8f.png" title="SS_{Total}" alt="SS_{Total}" class="tex"/> Ist die Gesamtsumme der Quadrate, <img src="../images/Algorithm_GG/math-c3d19b3c039aefab3e4c6970862155de.png" title="SS_{Part}" alt="SS_{Part}" class="tex"/> stellt die Variabilit&auml;t der mittleren Differenzen aus dem Faktor <i>Part</i> dar, <img src="../images/Algorithm_GG/math-f23df915e00819f0789b30be12dc8152.png" title="SS_{Operator}" alt="SS_{Operator}" class="tex"/> stellt die Variabilit&auml;t der mittleren Differenzen aus dem Faktor <i>Operator</i> dar, <img src="../images/Algorithm_GG/math-30457d1b34b52180b04d6873ac912c29.png" title="SS_{Part*Operator}" alt="SS_{Part*Operator}" class="tex"/> stellt die Variabilit&auml;t der Wechselwirkung dar und <img src="../images/Algorithm_GG/math-347756b91753bfa8d1f6a3ef01f01613.png" title="SS_{Rep eatability}" alt="SS_{Rep eatability}" class="tex"/> stellt die Variabilit&auml;t von allen Einzelstichproben dar. <img src="../images/Algorithm_GG/math-4b43b0aee35624cd95b910189b3dc231.png" title="r" alt="r" class="tex"/> stellt die Anzahl der Teile dar. <img src="../images/Algorithm_GG/math-03c7c0ace395d80182db07ae2c30f034.png" title="s" alt="s" class="tex"/> stellt die Anzahl der Bediener dar. <img src="../images/Algorithm_GG/math-e358efa489f58062f10dd7316b65649e.png" title="t" alt="t" class="tex"/> stellt die Anzahl der Replikationen dar.</dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Tabelle der zweifachen ANOVA mit Wechselwirkung:</li></ul></dd></dl>
+<table class="simple">
+<tr>
+<th>Quelle der Variation</th>
+<th>Freiheitsgrade (DF)</th>
+<th>Summe der Quadrate (SS)</th>
+<th>Mittel der Quadrate (MS)</th>
+<th><i>F</i>-Wert</th>
+<th><i>Wahrsch. &gt; F</i></th></tr>
+<tr>
+<th>Teil</th>
+<td><i>r</i> - 1</td>
+<td><img src="../images/Algorithm_GG/math-c3d19b3c039aefab3e4c6970862155de.png" title="SS_{Part}" alt="SS_{Part}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-0eb7ad1d136ad21d0dd6da2055c5c537.png" title="MS_{Part}" alt="MS_{Part}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-e76a74ceb390d24bf82da17fe66aceb0.png" title="\frac{MS_{Part}}{MS_{Part*Operator}}" alt="\frac{MS_{Part}}{MS_{Part*Operator}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-1c15673f684da95417925210061ac869.png" title="P\{F\geq F_{(r-1,(r-1)(s-1),\alpha )}\}" alt="P\{F\geq F_{(r-1,(r-1)(s-1),\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Operator</th>
+<td>s - 1</td>
+<td><img src="../images/Algorithm_GG/math-f23df915e00819f0789b30be12dc8152.png" title="SS_{Operator}" alt="SS_{Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-4bba478097395bb3afb789a9dbb3051b.png" title="MS_{Operator}" alt="MS_{Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-8a54b47f52dd0f9f982332d601ee2bbd.png" title="\frac{MS_{Operator}}{MS_{Part*Operator}}" alt="\frac{MS_{Operator}}{MS_{Part*Operator}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-090658327723249970e70315821fabba.png" title="P\{F\geq F_{(s-1,(r-1)(s-1),\alpha )}\}" alt="P\{F\geq F_{(s-1,(r-1)(s-1),\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Teil*Bediener</th>
+<td>(<i>r</i>- 1) (<i>s </i>- 1)</td>
+<td><img src="../images/Algorithm_GG/math-30457d1b34b52180b04d6873ac912c29.png" title="SS_{Part*Operator}" alt="SS_{Part*Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-644ba0f765cd6d4b74159946ab5abf7b.png" title="MS_{Part*Operator}" alt="MS_{Part*Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-69bf2ce6bce12b8bcf5cbd5d9f6d8692.png" title="\frac{MS_{Part*Operator}}{MS_{Rep eatability}}" alt="\frac{MS_{Part*Operator}}{MS_{Rep eatability}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-50ceeeecbb0c9e5fec9e00f101ebad0c.png" title="P\{F\geq F_{((r-1)(s-1),rs(t-1),\alpha )}\}" alt="P\{F\geq F_{((r-1)(s-1),rs(t-1),\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Wiederholbarkeit</th>
+<td>rs (t - 1)</td>
+<td><img src="../images/Algorithm_GG/math-347756b91753bfa8d1f6a3ef01f01613.png" title="SS_{Rep eatability}" alt="SS_{Rep eatability}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-bcf7a96de01c7699dcd6c6521aa3d415.png" title="MS_{Rep eatability}" alt="MS_{Rep eatability}" class="tex"/></td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th>Gesamt</th>
+<td>rst - 1</td>
+<td><img src="../images/Algorithm_GG/math-100f5db42fc55631c7b4e798218f6a8f.png" title="SS_{Total}" alt="SS_{Total}" class="tex"/></td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<dl><dd><ul><li>Tabelle der zweifachen ANOVA ohne Wechselwirkung:</li></ul></dd></dl>
+<table class="simple">
+<tr>
+<th>Quelle der Variation</th>
+<th>Freiheitsgrade (DF)</th>
+<th>Summe der Quadrate (SS)</th>
+<th>Mittel der Quadrate (MS)</th>
+<th><i>F</i>-Wert</th>
+<th><i>Wahrsch. &gt; F</i></th></tr>
+<tr>
+<th>Teil</th>
+<td><i>r</i> - 1</td>
+<td><img src="../images/Algorithm_GG/math-c3d19b3c039aefab3e4c6970862155de.png" title="SS_{Part}" alt="SS_{Part}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-0eb7ad1d136ad21d0dd6da2055c5c537.png" title="MS_{Part}" alt="MS_{Part}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-7f9cf9ab0e3662dfe38b0e364bb5b442.png" title="\frac{MS_{Part}}{MS_{Rep eatability}}" alt="\frac{MS_{Part}}{MS_{Rep eatability}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-3e5596036f0a1d501dad577dc9c09b0c.png" title="P\{F\geq F_{(r-1,rst - r - s + 1,\alpha )}\}" alt="P\{F\geq F_{(r-1,rst - r - s + 1,\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Operator</th>
+<td>s - 1</td>
+<td><img src="../images/Algorithm_GG/math-f23df915e00819f0789b30be12dc8152.png" title="SS_{Operator}" alt="SS_{Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-4bba478097395bb3afb789a9dbb3051b.png" title="MS_{Operator}" alt="MS_{Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-357a69077346cc036d9ac43d9248f4a4.png" title="\frac{MS_{Operator}}{MS_{Rep eatability}}" alt="\frac{MS_{Operator}}{MS_{Rep eatability}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-9e75bbf63c72d97fd33998d93c2616ee.png" title="P\{F\geq F_{(s-1,rst - r - s + 1,\alpha )}\}" alt="P\{F\geq F_{(s-1,rst - r - s + 1,\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Wiederholbarkeit</th>
+<td>rst - r - s + 1</td>
+<td><img src="../images/Algorithm_GG/math-347756b91753bfa8d1f6a3ef01f01613.png" title="SS_{Rep eatability}" alt="SS_{Rep eatability}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-bcf7a96de01c7699dcd6c6521aa3d415.png" title="MS_{Rep eatability}" alt="MS_{Rep eatability}" class="tex"/></td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th>Gesamt</th>
+<td>rst - 1</td>
+<td><img src="../images/Algorithm_GG/math-100f5db42fc55631c7b4e798218f6a8f.png" title="SS_{Total}" alt="SS_{Total}" class="tex"/></td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><a name="Number_of_Distinct_Categories"></a><span class="mw-headline">Anzahl der eindeutigen Kategorien</span></h3>
+<dl><dd><ul><li>Die <b>Anzahl der eindeutigen Kategorien</b> (Number of Distinct Categories) stellt die Anzahl der Gruppen dar, die das Messsystem differenzieren kann.<dl><dd><img src="../images/Algorithm_GG/math-e895cf87817b83206f2efb7976c1d26c.png" title="Number\;of\;distinct\;categories\;=\;\frac{Stddev\;for\;Parts}{Stddev\;for\;Gage}*1.41" alt="Number\;of\;distinct\;categories\;=\;\frac{Stddev\;for\;Parts}{Stddev\;for\;Gage}*1.41" class="tex"/></dd></dl></li></ul></dd></dl>
+<h3><a name="Gge_R.26R_Table"></a><span class="mw-headline">Tabelle Gage R&amp;R Table (Messsystemanalyse)</span></h3>
+<h4><a name="Variance_for_ANOVA_method"></a><span class="mw-headline">Varianz f&uuml;r ANOVA-Methode</span></h4>
+<p>Die Varianzkomponenten werden basierend auf der ANOVA-Tabelle berechnet. Der Wert wird als Null angegeben, falls er negativ ist.</p>
+<dl><dd><ul><li>Mit Wechselwirkung:<dl><dd><img src="../images/Algorithm_GG/math-8330b96939a2711e1df040a23366a04b.png" title="VARCOMP_{Rep eatability} = MS_{Rep eatability}" alt="VARCOMP_{Rep eatability} = MS_{Rep eatability}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-763352e16cb34f22c2d38033ab83a54c.png" title="VARCOMP_{Operator} = \frac{MS_{Operator} - MS_{Operator*Part}}{rt}" alt="VARCOMP_{Operator} = \frac{MS_{Operator} - MS_{Operator*Part}}{rt}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-c7a335a667ba0b43565dc95c9a0368bc.png" title="VARCOMP_{Operator*Part} = \frac{MS_{Operator*Part} - MS_{Rep eatability}}{t}" alt="VARCOMP_{Operator*Part} = \frac{MS_{Operator*Part} - MS_{Rep eatability}}{t}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-8c54fbfe4548033e3b8e947189331f16.png" title="VARCOMP_{Part-to-Part} = \frac{MS_{Part} - MS_{Operator*Part}}{st}" alt="VARCOMP_{Part-to-Part} = \frac{MS_{Part} - MS_{Operator*Part}}{st}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-45295d3871dc505616fa9f759dcace3f.png" title="VARCOMP_{Reproducibility} = VARCOMP_{Operator} + VARCOMP_{Operator*Part}" alt="VARCOMP_{Reproducibility} = VARCOMP_{Operator} + VARCOMP_{Operator*Part}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-fe51b121534e85ec5cab9717a075a973.png" title="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" alt="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-9b44c78e6198fc318eb82baee4045713.png" title="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" alt="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" class="tex"/></dd></dl></li></ul></dd></dl>
+<dl><dd><ul><li>Ohne Wechselwirkung:<dl><dd><img src="../images/Algorithm_GG/math-8330b96939a2711e1df040a23366a04b.png" title="VARCOMP_{Rep eatability} = MS_{Rep eatability}" alt="VARCOMP_{Rep eatability} = MS_{Rep eatability}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-221d6c07d21a90458d461382376db6b1.png" title="VARCOMP_{Operator} = \frac{MS_{Operator} - MS_{Rep eatability}}{rt}" alt="VARCOMP_{Operator} = \frac{MS_{Operator} - MS_{Rep eatability}}{rt}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-ce3b593e707de6bdd2eee44606ca9eb0.png" title="VARCOMP_{Part-to-Part} = \frac{MS_{Part} - MS_{Rep eatability}}{st}" alt="VARCOMP_{Part-to-Part} = \frac{MS_{Part} - MS_{Rep eatability}}{st}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-4b3f1da1299cf263ab42efe9875f7fff.png" title="VARCOMP_{Reproducibility} = VARCOMP_{Operator}" alt="VARCOMP_{Reproducibility} = VARCOMP_{Operator}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-fe51b121534e85ec5cab9717a075a973.png" title="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" alt="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-9b44c78e6198fc318eb82baee4045713.png" title="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" alt="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h4><a name="Variance_for_Xbar_and_R_method"></a><span class="mw-headline">Varianz f&uuml;r X-quer- und R-Methode</span></h4>
+<dl><dd><ul><li>F&uuml;r die von jeder Quelle beigetragene Varianz wird die Standardabweichung berechnet mit:<dl><dd><img src="../images/Algorithm_GG/math-985dc6a48860f71823712ee84e45b93f.png" title="STDDEV_{Rep eatability} = (\sum_{i=1}^r\sum_{j=1}^s\frac{R_{ij}}{rs})\times \frac{1}{d_2}" alt="STDDEV_{Rep eatability} = (\sum_{i=1}^r\sum_{j=1}^s\frac{R_{ij}}{rs})\times \frac{1}{d_2}" class="tex"/></dd>
+<dd>wobei <img src="../images/Algorithm_GG/math-c6a107300a285e5c9da6797a614c1882.png" title="R_{ij}" alt="R_{ij}" class="tex"/> die Spannweite der Messungen nach Bediener j f&uuml;r Teil i ist. <img src="../images/Algorithm_GG/math-c9cea6c72205e7b899dac4b370f5ba7d.png" title="d_2 = d_2^*[rs, t]" alt="d_2 = d_2^*[rs, t]" class="tex"/>.</dd>
+<dd><img src="../images/Algorithm_GG/math-2097f3d11b92a95d4e77ca82b7172fce.png" title="STDDEV_{Reproducibility} = \sqrt{\biggr[\bar{X}_{diff}*\frac{1}{d_2}\biggr]^2 - \biggr[\frac{(STDDEV_{repe atability})^2}{rt}\biggr]}" alt="STDDEV_{Reproducibility} = \sqrt{\biggr[\bar{X}_{diff}*\frac{1}{d_2}\biggr]^2 - \biggr[\frac{(STDDEV_{repe atability})^2}{rt}\biggr]}" class="tex"/></dd>
+<dd>wobei <img src="../images/Algorithm_GG/math-5888e40f9b24d35c585dda7de4157b19.png" title="\bar{X}_{diff} = max(\bar{X}_1, ..., \bar{X}_k) - min(\bar{X}_1, ..., \bar{X}_k)" alt="\bar{X}_{diff} = max(\bar{X}_1, ..., \bar{X}_k) - min(\bar{X}_1, ..., \bar{X}_k)" class="tex"/>, <img src="../images/Algorithm_GG/math-abde0a119eb3a64014f6b6e55debbb71.png" title="d_2 = d_2^*[1, s]" alt="d_2 = d_2^*[1, s]" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-19eb77a5f8e8c98089138b8067a68ed5.png" title="STDDEV_{Part-to-Part} = R_p\frac{1}{d_2}" alt="STDDEV_{Part-to-Part} = R_p\frac{1}{d_2}" class="tex"/></dd>
+<dd>wobei <img src="../images/Algorithm_GG/math-c582d73695f0e113ce86f955d16d3202.png" title="R_p" alt="R_p" class="tex"/> der Bereich der Durchschnittswerte der Teile ist, <img src="../images/Algorithm_GG/math-04e70a9af64720988e508fc2804114fe.png" title="d_2 = d_2^*[1, r]" alt="d_2 = d_2^*[1, r]" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-fe9998d84a9d96a077b465d84267b4c9.png" title="STDDEV_{Total-Gage} = \sqrt{(STDDEV_{Rep eatability})^2 + (STDDEV_{Reproducibility})^2}" alt="STDDEV_{Total-Gage} = \sqrt{(STDDEV_{Rep eatability})^2 + (STDDEV_{Reproducibility})^2}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-7f7f3cab5c7230317f75956fec4536e7.png" title="STDDEV_{Total-Variation} = \sqrt{(STDDEV_{Total-Gage})^2 + (STDDEV_{Part-to-Part})^2}" alt="STDDEV_{Total-Variation} = \sqrt{(STDDEV_{Total-Gage})^2 + (STDDEV_{Part-to-Part})^2}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h4><a name=".25Contribution"></a><span class="mw-headline">%Beitrag</span></h4>
+<p><img src="../images/Algorithm_GG/math-14f4507d8ab50d07c106ea866b027abd.png" title="\% Contribution = \frac{VARCOMP}{VARCOMP_{Total-Variation}}" alt="\% Contribution = \frac{VARCOMP}{VARCOMP_{Total-Variation}}" class="tex"/></p>
+<h4><a name="StdDev"></a><span class="mw-headline">StdAbw.</span></h4>
+<p>Falls die historische Standardabweichung <img src="../images/Algorithm_GG/math-a2ab7d71a0f07f388ff823293c147d21.png" title="\sigma" alt="\sigma" class="tex"/> festgelegt und gr&ouml;&szlig;er als die Standardabweichung des Messger&auml;ts ist <img src="../images/Algorithm_GG/math-f2ce3bfe5ab3e395570f8f84f4cfd239.png" title="\hat{\sigma}_{Gage}" alt="\hat{\sigma}_{Gage}" class="tex"/>, ist die Gesamtstandardabweichung <img src="../images/Algorithm_GG/math-a2ab7d71a0f07f388ff823293c147d21.png" title="\sigma" alt="\sigma" class="tex"/> und <img src="../images/Algorithm_GG/math-1bc2c1119fd84c2c4cc375c7affeb99b.png" title="\hat{\sigma}_{Part} = \sqrt{\sigma^2 - \hat{\sigma}^2_{Gage}}" alt="\hat{\sigma}_{Part} = \sqrt{\sigma^2 - \hat{\sigma}^2_{Gage}}" class="tex"/>. Ansonsten wird die aus den Daten berechnete Gesamtstandardabweichung verwendet: <img src="../images/Algorithm_GG/math-65d968235cdebd0c13808bdfcc6d7c84.png" title="StdDev = \sqrt{VarComp}" alt="StdDev = \sqrt{VarComp}" class="tex"/></p>
+<h4><a name="Study_Var"></a><span class="mw-headline">Study Var (Streuung in Unters.)</span></h4>
+<p>Die Streuung in Untersuchung wird als Standardabweichung f&uuml;r jede Streuungsquelle multipliziert mit 6 oder dem in Streuung in Untersuchung angegebenen Multiplikator berechnet <img src="../images/Algorithm_GG/math-1f38c3a72ca5c11efa3cc076451fb0fa.png" title="Study\;Var\;=\;k\;*\;StdDev" alt="Study\;Var\;=\;k\;*\;StdDev" class="tex"/>.</p>
+<h4><a name=".25Study_Var"></a><span class="mw-headline">%Study Var</span></h4>
+<p><img src="../images/Algorithm_GG/math-7aae673026566a501c387528d9021f0c.png" title="\%StudyVar = \frac{Study\;Var}{Total\;Variation}*100" alt="\%StudyVar = \frac{Study\;Var}{Total\;Variation}*100" class="tex"/></p>
+<h4><a name=".25Tolerance"></a><span class="mw-headline">%Toleranz</span></h4>
+<p><img src="../images/Algorithm_GG/math-dc2785d4a3becf3efcf8db721ad0782d.png" title="\%Tolerance = \frac{Study\;Var}{Tolerance}*100" alt="\%Tolerance = \frac{Study\;Var}{Tolerance}*100" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-38a4462de8ef7234a58e8f0798e29d04.png" title="Toleranz" alt="Toleranz" class="tex"/> vom Benutzer eingegeben ist.</p>
+<h4><a name=".25Process"></a><span class="mw-headline">%Prozess</span></h4>
+<p><img src="../images/Algorithm_GG/math-8e33584c8c5293a8f373b7fea1cbdf11.png" title="\%Process = \frac{Study\;Var}{6 * (Historical\;Stddev)}*100" alt="\%Process = \frac{Study\;Var}{6 * (Historical\;Stddev)}*100" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-fe1df50d1dcf991c0ea532c83798b55b.png" title="Historical\;Stddev" alt="Historical\;Stddev" class="tex"/> vom Benutzer eingegeben ist.</p>
+<h2><a name="Nested_Gage_R.26R_Study"></a><span class="mw-headline">Geschachtelte Messsystemanalyse</span></h2>
+<h3><a name="ANOVA_Table_2"></a><span class="mw-headline">ANOVA-Tabelle</span></h3>
+<dl><dd><ul><li>Aufteilen der Streuung in Komponenten f&uuml;r die ANOVA-Tabelle:<dl><dd><img src="../images/Algorithm_GG/math-97e18eb1c8bf6db1a4dcc0357f66f6f3.png" title="SS_{Total}=SS_{Rep eatability} + SS_{Operator}+SS_{Part(Operator)} \,\!" alt="SS_{Total}=SS_{Rep eatability} + SS_{Operator}+SS_{Part(Operator)} \,\!" class="tex"/></dd>
+<dd>wobei</dd>
+<dd><img src="../images/Algorithm_GG/math-ba7a425df382853065e4847bb822d3ef.png" title="SS_{Total}=\sum_{i=1}^r\sum_{j=1}^s\sum_{k=1}^t(y_{ijk}-\bar y)^2" alt="SS_{Total}=\sum_{i=1}^r\sum_{j=1}^s\sum_{k=1}^t(y_{ijk}-\bar y)^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-45a1d492eb1d856c8fa5169f02c31339.png" title="SS_{Operator}=rt\sum_{j=1}^s(\bar y_{\cdot j\cdot}-\bar y)^2" alt="SS_{Operator}=rt\sum_{j=1}^s(\bar y_{\cdot j\cdot}-\bar y)^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-943d2c56ee5417ad7a915ed546816342.png" title="SS_{Part(Operator)}=t\sum_{i=1}^r\sum_{j=1}^s(\bar y_{ij\cdot}-\bar y_{\cdot j\cdot})^2" alt="SS_{Part(Operator)}=t\sum_{i=1}^r\sum_{j=1}^s(\bar y_{ij\cdot}-\bar y_{\cdot j\cdot})^2" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-323a30dd89ff0100dadd5af1bb74118b.png" title="SS_{Rep eatability} = \sum_{i=1}^r\sum_{j=1}^s\sum_{k=1}^t(y_{ijk}-\bar y_{ij\cdot})^2" alt="SS_{Rep eatability} = \sum_{i=1}^r\sum_{j=1}^s\sum_{k=1}^t(y_{ijk}-\bar y_{ij\cdot})^2" class="tex"/></dd></dl></li></ul></dd></dl>
+<p><img src="../images/Algorithm_GG/math-100f5db42fc55631c7b4e798218f6a8f.png" title="SS_{Total}" alt="SS_{Total}" class="tex"/> ist die Gesamtsumme der Quadrate, <img src="../images/Algorithm_GG/math-f23df915e00819f0789b30be12dc8152.png" title="SS_{Operator}" alt="SS_{Operator}" class="tex"/> stellt die Variabilit&auml;t der durchschnittlichen Differenzen von Faktor <i>Operator</i> dar, <img src="../images/Algorithm_GG/math-d582f01471805915bb43ebd613acef69.png" title="SS_{Part(Operator)}" alt="SS_{Part(Operator)}" class="tex"/> stellt die Variabilit&auml;t der geschachtelten Faktoren dar  und <img src="../images/Algorithm_GG/math-347756b91753bfa8d1f6a3ef01f01613.png" title="SS_{Rep eatability}" alt="SS_{Rep eatability}" class="tex"/> stellt die Variabilit&auml;t aller einzelnen Stichproben dar. <img src="../images/Algorithm_GG/math-4b43b0aee35624cd95b910189b3dc231.png" title="r" alt="r" class="tex"/> stellt die Anzahl der Teile dar. <img src="../images/Algorithm_GG/math-03c7c0ace395d80182db07ae2c30f034.png" title="s" alt="s" class="tex"/> stellt die Anzahl der Bediener dar. <img src="../images/Algorithm_GG/math-e358efa489f58062f10dd7316b65649e.png" title="t" alt="t" class="tex"/> stellt die Anzahl der Replikationen dar.</p><p>ANOVA-Tabelle mit dem geschachtelten Term:</p>
+<table class="simple">
+<tr>
+<th>Quelle der Variation</th>
+<th>Freiheitsgrade (DF)</th>
+<th>Summe der Quadrate (SS)</th>
+<th>Mittel der Quadrate (MS)</th>
+<th><i>F</i>-Wert</th>
+<th><i>Wahrsch. &gt; F</i></th></tr>
+<tr>
+<th>Operator</th>
+<td>s - 1</td>
+<td><img src="../images/Algorithm_GG/math-f23df915e00819f0789b30be12dc8152.png" title="SS_{Operator}" alt="SS_{Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-4bba478097395bb3afb789a9dbb3051b.png" title="MS_{Operator}" alt="MS_{Operator}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-8a54b47f52dd0f9f982332d601ee2bbd.png" title="\frac{MS_{Operator}}{MS_{Part*Operator}}" alt="\frac{MS_{Operator}}{MS_{Part*Operator}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-090658327723249970e70315821fabba.png" title="P\{F\geq F_{(s-1,(r-1)(s-1),\alpha )}\}" alt="P\{F\geq F_{(s-1,(r-1)(s-1),\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Part(Operator)</th>
+<td>(<i>r</i>- 1) <i>s</i></td>
+<td><img src="../images/Algorithm_GG/math-d582f01471805915bb43ebd613acef69.png" title="SS_{Part(Operator)}" alt="SS_{Part(Operator)}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-3e30d799ac6b5dd647c4dc89c6a31bcc.png" title="MS_{Part(Operator)}" alt="MS_{Part(Operator)}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-ecbb00221de442ec9c42f14bc201a685.png" title="\frac{MS_{Part(Operator)}}{MS_{Rep eatability}}" alt="\frac{MS_{Part(Operator)}}{MS_{Rep eatability}}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-eee884cba1be9b6b707487bdc371ff90.png" title="P\{F\geq F_{((r-1)s,rs(t-1),\alpha )}\}" alt="P\{F\geq F_{((r-1)s,rs(t-1),\alpha )}\}" class="tex"/></td></tr>
+<tr>
+<th>Wiederholbarkeit</th>
+<td>rs (t - 1)</td>
+<td><img src="../images/Algorithm_GG/math-347756b91753bfa8d1f6a3ef01f01613.png" title="SS_{Rep eatability}" alt="SS_{Rep eatability}" class="tex"/></td>
+<td><img src="../images/Algorithm_GG/math-bcf7a96de01c7699dcd6c6521aa3d415.png" title="MS_{Rep eatability}" alt="MS_{Rep eatability}" class="tex"/></td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th>Gesamt</th>
+<td>rst - 1</td>
+<td><img src="../images/Algorithm_GG/math-100f5db42fc55631c7b4e798218f6a8f.png" title="SS_{Total}" alt="SS_{Total}" class="tex"/></td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><a name="Gge_R.26R_Table_2"></a><span class="mw-headline">Tabelle der Messsystemanalyse</span></h3>
+<dl><dd><ul><li>Die Varianzkomponenten werden basierend auf der ANOVA-Tabelle berechnet. Der Wert wird als Null angegeben, falls er negativ ist.<dl><dd><img src="../images/Algorithm_GG/math-8330b96939a2711e1df040a23366a04b.png" title="VARCOMP_{Rep eatability} = MS_{Rep eatability}" alt="VARCOMP_{Rep eatability} = MS_{Rep eatability}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-163ca600129b5c79991d96b96d425822.png" title="VARCOMP_{Reproducibility} = \frac{MS_{Operator} - MS_{Part(Operator)}}{rt}" alt="VARCOMP_{Reproducibility} = \frac{MS_{Operator} - MS_{Part(Operator)}}{rt}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-d9a33a9e5b855b027c3d48d1cf1be438.png" title="VARCOMP_{Part-to-Part} = \frac{MS_{Part(Operator)} - MS_{Rep eatability}}{t}" alt="VARCOMP_{Part-to-Part} = \frac{MS_{Part(Operator)} - MS_{Rep eatability}}{t}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-fe51b121534e85ec5cab9717a075a973.png" title="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" alt="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-9b44c78e6198fc318eb82baee4045713.png" title="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" alt="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h2><a name="Expanded_Gage_R.26R_Study"></a><span class="mw-headline">Erweiterte Messsystemanalyse</span></h2>
+<p>Die App verwendet das Modell der allgemeinen linearen Regression, um die Messsystemanalyse mit drei ANOVA-Modelltypen durchzuf&uuml;hren: das Modell mit zuf&auml;lligen Effekten, das Modell mit gemischten Effekten und das geschachtelte Modell. Standardm&auml;&szlig;ig wird das Modell mit den zuf&auml;lligen Effekten verwendet. Das Modell mit gemischten Effekten wird verwendet, falls ein fester Faktor festgelegt ist. Der geschachtelte Term wird eingebunden, falls der geschachtelte Term festgelegt ist.</p><p>Das f&uuml;r die Messsystemanalyse verwendete Modell beinhaltet die Haupteffekte und die signifikanten Wechselwirkungen der h&ouml;chsten Ordnung und die relevanten Wechselwirkungen zwischen ihnen. Die App verwendet das allgemeine lineare Modell, um die ANOVA-Tabelle zu erzeugen und die Varianzkomponenten der Faktoren und ihre Wechselwirkungen zu sch&auml;tzen.</p>
+<h3><a name="Variance_Components_for_random_effects"></a><span class="mw-headline">Varianzkomponenten f&uuml;r zuf&auml;llige Effekte</span></h3>
+<dl><dd><ul><li>Aufteilen der Streuung in Komponenten f&uuml;r die ANOVA-Tabelle:<dl><dd><img src="../images/Algorithm_GG/math-8330b96939a2711e1df040a23366a04b.png" title="VARCOMP_{Rep eatability} = MS_{Rep eatability}" alt="VARCOMP_{Rep eatability} = MS_{Rep eatability}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-d4d14d2538a8af0f756bdbf795c7e1a4.png" title="VARCOMP_{Reproducibility} = VARCOMP_{Operator}\;+\;VarComp\;of\;other\;factors\;and\;interactions" alt="VARCOMP_{Reproducibility} = VARCOMP_{Operator}\;+\;VarComp\;of\;other\;factors\;and\;interactions" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-4af2ddce09a7ef073373d51d8dd034bb.png" title="VARCOMP_{Part-to-Part} = VARCOMP_{Part}" alt="VARCOMP_{Part-to-Part} = VARCOMP_{Part}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-fe51b121534e85ec5cab9717a075a973.png" title="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" alt="VARCOMP_{Total-Gage} = VARCOMP_{Rep eatability} + VARCOMP_{Reproducibility}" class="tex"/></dd>
+<dd><img src="../images/Algorithm_GG/math-9b44c78e6198fc318eb82baee4045713.png" title="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" alt="VARCOMP_{Total-Variation} = VARCOMP_{Total-Gage} + VARCOMP_{Part-to-Part}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h3><a name="Variance_Components_for_fixed_effects"></a><span class="mw-headline">Varianzkomponenten f&uuml;r feste Effekte</span></h3>
+<dl><dd><ul><li>Bei festen Termen wird gesch&auml;tzt, dass die Variabilit&auml;t &uuml;ber die verschiedenen Stufen des Terms hinweg die Varianzkomponenten darstellt. Nach Anpassen mit dem allgemeinen linearen Modell werden die angepassten Koeffizienten f&uuml;r die ersten <img src="../images/Algorithm_GG/math-8e7adb2ee596e3a1dac8e465ed6a0158.png" title="J-1" alt="J-1" class="tex"/> Stufen des Faktors berechnet. Der Koeffizient f&uuml;r die J-te Stufe ist <img src="../images/Algorithm_GG/math-eb0fbdfc81e8a43af0087a90945085a3.png" title="Coef_J = &ndash;\sum_{j=1}^{J-1}coef_j" alt="Coef_J = &ndash;\sum_{j=1}^{J-1}coef_j" class="tex"/>. Anschlie&szlig;end: <img src="../images/Algorithm_GG/math-3f8e086a792cad8621a750464692df0c.png" title="VARCOMP = \sum{coef_j}^2" alt="VARCOMP = \sum{coef_j}^2" class="tex"/>.</li></ul></dd></dl>
+<h2><a name="Attribute_Gage_Study"></a><span class="mw-headline">Messsystemanalyse f&uuml;r attributive Daten</span></h2>
+<h3><a name="Bias_2"></a><span class="mw-headline">Bias</span></h3>
+<dl><dd><ul><li>Bias<dl><dd><img src="../images/Algorithm_GG/math-0baa4828fdc9777e0e69b00495ca5109.png" title="limit + b/a" alt="limit + b/a" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-aa9f73eea60a006820d0f8768bc8a3fc.png" title="limit" alt="limit" class="tex"/> die vom Benutzer angegebene Toleranzgrenze ist. <img src="../images/Algorithm_GG/math-92eb5ffee6ae2fec3ad71c777531578f.png" title="b" alt="b" class="tex"/> und <img src="../images/Algorithm_GG/math-0cc175b9c0f1b6a831c399e269772661.png" title="a" alt="a" class="tex"/> sind der Schnittpunkt mit der Y-Achse und die Steigung von der angepassten Linie im Wahrscheinlichkeitsdiagramm.</dd></dl></li>
+<li>Voreingestellte Wiederholbarkeit<dl><dd><img src="../images/Algorithm_GG/math-2b0be55a7263fce22b81a448b28d01f7.png" title="X_t(P_a0.995)-X_t(P_a0.005)" alt="X_t(P_a0.995)-X_t(P_a0.005)" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-ff41056dec337b31678a729b1ecfcfb4.png" title="X_t" alt="X_t" class="tex"/> die gesch&auml;tzten Referenzwerte bei Annahmewahrscheinlichkeiten von 0,995 und 0,005 auf der angepassten Linie sind.</dd></dl></li>
+<li>Wiederholbarkeit<dl><dd><img src="../images/Algorithm_GG/math-09455baf62f46a21b1e79e96334b3d0a.png" title="\frac{X_t(P_a0.995)-X_t(P_a0.005)}{1.08}" alt="\frac{X_t(P_a0.995)-X_t(P_a0.005)}{1.08}" class="tex"/></dd></dl></li></ul></dd></dl>
+<h3><a name="Test_of_Bias_.3D_0"></a><span class="mw-headline">Test der Bias = 0</span></h3>
+<dl><dd><ul><li>AIAG-Methode<dl><dd>T: <img src="../images/Algorithm_GG/math-de0e7a18bbd5bc79159a2b6077d69301.png" title="\frac{6.078 \times |bias|}{\sigma_{Repea tability}}" alt="\frac{6.078 \times |bias|}{\sigma_{Repea tability}}" class="tex"/></dd></dl></li></ul>
+<dl><dd><dl><dd>wobei <img src="../images/Algorithm_GG/math-8b9c02383fbb637f624fc519b395070f.png" title="\sigma_{Repea tability}" alt="\sigma_{Repea tability}" class="tex"/> mit <img src="../images/Algorithm_GG/math-299ba8d162de5bcd463e2cc1ae0c63c2.png" title="{Repea tability} / 5.15" alt="{Repea tability} / 5.15" class="tex"/> gesch&auml;tzt wird.</dd>
+<dd>Die Konstante <img src="../images/Algorithm_GG/math-4d3bfbc9eb982e9479274bba714a06a6.png" title="1,08" alt="1,08" class="tex"/> und der Anpassungsfaktor (erwartungstreue Sch&auml;tzung) <img src="../images/Algorithm_GG/math-01acd361abfb05acb3b758c9f8c68328.png" title="6,078" alt="6,078" class="tex"/> gelten speziell f&uuml;r einen Stichprobenumfang von 20 und wurden durch eine Simulation dieses Ansatzes mit einem Wiederholbarkeitsbereich von 99 % ermittelt. [<a href="#Ref1">1</a>].</dd></dl></dd></dl>
+<ul><li><dl><dd>DF: <img src="../images/Algorithm_GG/math-2101faf5535187deafb25b1f29820a5b.png" title="N - 1" alt="N - 1" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-8d9c307cb7f3c4a32822a51922d1ceaa.png" title="N" alt="N" class="tex"/> die Anzahl der Versuche ist.</dd></dl></li>
+<li>Regressionsmethode<dl><dd>T: <img src="../images/Algorithm_GG/math-724cc64a8d70782e6994a721dc733283.png" title="\frac{a + b \times LL}{s\sqrt{\frac{1}{K}+\frac{(LL - \bar{x})^2}{\sum(x_i-\bar{x})^2}}}" alt="\frac{a + b \times LL}{s\sqrt{\frac{1}{K}+\frac{(LL - \bar{x})^2}{\sum(x_i-\bar{x})^2}}}" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-67824ecf84f5816f07b74fa956bdbcd2.png" title="LL" alt="LL" class="tex"/> die untere Toleranzgrenze ist, <img src="../images/Algorithm_GG/math-03c7c0ace395d80182db07ae2c30f034.png" title="s" alt="s" class="tex"/> die Standardabweichung des Feglers von der angepassten Linie ist, <img src="../images/Algorithm_GG/math-a5f3c6a11b03839d46af9fb43c97c188.png" title="K" alt="K" class="tex"/> die Anzahl der Teile ist, <img src="../images/Algorithm_GG/math-1ba8aaab47179b3d3e24b0ccea9f4e30.png" title="x_i" alt="x_i" class="tex"/> der Referenzwert von jedem Teil ist, <img src="../images/Algorithm_GG/math-6fbdf291cda891b99cf211417ad1df18.png" title="\bar{x}" alt="\bar{x}" class="tex"/> der Mittelwert der Referenzwerte ist.</dd>
+<dd>DF: <img src="../images/Algorithm_GG/math-a7f91f62adbaa21218e5066f035c8f53.png" title="N - 2" alt="N - 2" class="tex"/>, wobei <img src="../images/Algorithm_GG/math-8d9c307cb7f3c4a32822a51922d1ceaa.png" title="N" alt="N" class="tex"/> die Anzahl der f&uuml;r die Anpassung verwendeten Punkte ist.</dd></dl></li></ul></dd></dl>
+<h1><a name="Reference"></a><span class="mw-headline">Referenz</span></h1>
+<ol><li><span id="Ref1"><span>&quot;AIAG MSA-4:2010, Measurement Systems Analysis (MSA), 4. Auflage&quot;. <i>Chrysler, Ford, General Motors Supplier Quality Requirements Task Force</i></span></li></ol>
+<p></span>
+</p>
+
+
+
+
+
+
+    

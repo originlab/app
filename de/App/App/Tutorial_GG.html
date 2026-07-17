@@ -1,0 +1,165 @@
+﻿<h1 class="firstHeading">Tutorial zur Messsystemanalyse</h1><p class='urlname' style='display: none'>Tutorial-GG</p>
+<div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Starthinweise</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Type_1_Gage_Study"><span class="tocnumber">2</span> <span class="toctext">Messsystemanalyse Typ 1</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Background"><span class="tocnumber">2.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Steps_in_Origin"><span class="tocnumber">2.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Interpreting_the_Results"><span class="tocnumber">2.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Gage_Linear_Bias_Analysis"><span class="tocnumber">3</span> <span class="toctext">Analyse von Linearit&auml;t und systematischer Messabweichung</span></a><ul>
+<li class="toclevel-2 tocsection-7"><a href="#Background_2"><span class="tocnumber">3.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Steps_in_Origin_2"><span class="tocnumber">3.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Interpreting_the_Results_2"><span class="tocnumber">3.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Crossed_Gage_R.26R_Study"><span class="tocnumber">4</span> <span class="toctext">Gekreuzte Messsystemanalyse</span></a><ul>
+<li class="toclevel-2 tocsection-11"><a href="#Background_3"><span class="tocnumber">4.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Steps_in_Origin_3"><span class="tocnumber">4.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Interpreting_the_Results_3"><span class="tocnumber">4.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Nested_Gage_R.26R_Study"><span class="tocnumber">5</span> <span class="toctext">Geschachtelte Messsystemanalyse</span></a><ul>
+<li class="toclevel-2 tocsection-15"><a href="#Background_4"><span class="tocnumber">5.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Steps_in_Origin_4"><span class="tocnumber">5.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Interpreting_the_Results_4"><span class="tocnumber">5.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Expanded_Gage_R.26R_Study"><span class="tocnumber">6</span> <span class="toctext">Erweiterte Messsystemanalyse</span></a><ul>
+<li class="toclevel-2 tocsection-19"><a href="#Background_5"><span class="tocnumber">6.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Steps_in_Origin_5"><span class="tocnumber">6.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Interpreting_the_Results_5"><span class="tocnumber">6.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Attribute_Gage_Study"><span class="tocnumber">7</span> <span class="toctext">Messsystemanalyse f&uuml;r attributive Daten</span></a><ul>
+<li class="toclevel-2 tocsection-23"><a href="#Background_6"><span class="tocnumber">7.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Steps_in_Origin_6"><span class="tocnumber">7.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Interpreting_the_Results_6"><span class="tocnumber">7.3</span> <span class="toctext">Ergebnisse interpretieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Create_Gage_Worksheet"><span class="tocnumber">8</span> <span class="toctext">Arbeitsblatt f&uuml;r Messsystemanalyse erstellen</span></a><ul>
+<li class="toclevel-2 tocsection-27"><a href="#Background_7"><span class="tocnumber">8.1</span> <span class="toctext">Hintergrund</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Steps_in_Origin_7"><span class="tocnumber">8.2</span> <span class="toctext">Schritte in Origin</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2><a name="Notes_for_Starting"></a><span class="mw-headline">Starthinweise</span></h2>
+<ul><li>Starten Sie dieses Tutorial mit der installierten App <a class="external text" href="https://www.originlab.com/FileExchange/details.aspx?fid=354" target="_blank"><b>Gage Study</b></a>. Wenn Sie die App nicht installiert haben, siehe <a class="external text" href="https://www.originlab.com/doc/User-Guide/Apps" target="_blank">Apps f&uuml;r Origin</a>, um die App zu finden und zu installieren. Suchen Sie nach dem App-Symbol <a  class="image"><img alt="GageIcon.png" src="../images/Tutorial_GG/30px-GageIcon.png" width="30"   /></a> im Fenster der <b>Apps-Galerie</b>.</li></ul>
+<ul><li>Klicken Sie mit der rechten Maustaste auf das App-Symbol und w&auml;hlen Sie <b>Beispielordner zeigen</b>, um auf das in diesem Tutorial verwendete Beispielprojekt zuzugreifen.</li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_GG/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><i><a href="../../Tutorial/App/Algorithm_GG.html" title="App:Algorithm GG">Algorithmus</a></i></li></ul>
+</td></tr></table>
+<h2><a name="Type_1_Gage_Study"></a><span class="mw-headline">Messsystemanalyse Typ 1</span></h2>
+<h5><a name="Background"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Der Ingenieur m&ouml;chte die Eignung des Messsystems beurteilen, Teile innerhalb eines Toleranzbereichs von 0,1 konsistent und genau zu messen.</p>
+<ul><li><i><a href="../../Tutorial/App/Algorithm_GG.html#Type_1_Gage_Study" title="App:Algorithm GG">Algorithm: Type 1 Gage Study</a></i></li></ul>
+<h5><a name="Steps_in_Origin"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>1. Type 1 Gage Study</b>.</li>
+<li>Markieren Sie Spalte A im Arbeitsblatt. Klicken Sie auf das Symbol <b>Messsystemanalyse, Typ 1</b> <a  class="image"><img alt="Type 1.png" src="../images/Tutorial_GG/32px-Type_1.png" width="32"   /></a>.</li>
+<li>Auf der Registerkarte <b>Eingabe</b> im ge&ouml;ffneten Dialog wird Spalte A automatisch als <b>Messdaten</b> ausgew&auml;hlt. Setzen Sie den <b>Referenzwert</b> auf <b>5</b>. Setzen Sie die <b>Messtoleranz</b> auf <b>0,1</b>. Stellen Sie sicher, dass der <b>Grenztyp</b> auf <b>Obere - Untere</b> gesetzt ist.<dl><dd><a  class="image"><img alt="Type GUI.png" src="../images/Tutorial_GG/480px-Type_GUI.png" width="480"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<dl><dd><ul><li>Im Verlaufsdiagramm befinden sich alle Messungen innerhalb des Toleranzbereichs von±10 %. Der p-Wert f&uuml;r die systematische Messabweichung liegt bei 0,2969 und &uuml;berschreitet damit den Schwellenwert der Signifikanz von 0,05. Dies weist auf die Abwesenheit einer signifikanten Standardabweichung innerhalb des Messsystems hin.</li>
+<li>Die F&auml;higkeitsindizes Cg = 1,00436 und Cgk = 0,95512 liegen unter dem Standard-Benchmarkwert von 1,33, was darauf hinweist, dass die Leistung des Messsystems suboptimal ist und verbessert werden sollte. Der Prozentanteil der Streuung, der auf die Wiederholbarkeit zur&uuml;ckzuf&uuml;hren ist, liegt bei 19,9132 % und die kombinierte Streuung aufgrund von Wiederholbarkeit und systematischer Messabweichung betr&auml;gt 20,9397 %. Beide Prozentanteile &uuml;berschreiten die 15-%-Benchmark, was auf einen beachtenswerten Anteil an Streuung durch das Messsystem hindeutet.</li></ul></dd></dl>
+<dl><dd><a  class="image"><img alt="Type Graph.png" src="../images/Tutorial_GG/620px-Type_Graph.png" width="620"   /></a></dd></dl>
+<h2><a name="Gage_Linear_Bias_Analysis"></a><span class="mw-headline">Analyse von Linearit&auml;t und systematischer Messabweichung</span></h2>
+<h5><a name="Background_2"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Ingenieur m&ouml;chte die Linearit&auml;t und die systematische Messabweichung eines Messinstruments bewerten. Es wurden 7 Teile ausgew&auml;hlt, indikativ f&uuml;r der erwarteten Bereich der Messungen. Jeder Bediener ma&szlig; jedes Teil zuf&auml;llig 4-mal.</p>
+<ul><li><i><a href="../../Tutorial/App/Algorithm_GG.html#Gage_Linear_Bias_Analysis" title="App:Algorithm GG">Algorithm: Gage Linear Bias Analysis</a></i></li></ul>
+<h5><a name="Steps_in_Origin_2"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>2. Gage Linear Bias Analysis</b>.</li>
+<li>Markieren Sie Spalte A im Arbeitsblatt. Klicken Sie auf das Symbol <b>Untersuchung von Linearit&auml;t und systematischer Messabweichung</b> <a  class="image"><img alt="Gage Linear Bias Analysis.png" src="../images/Tutorial_GG/32px-Gage_Linear_Bias_Analysis.png" width="32"   /></a>.</li>
+<li>Setzen Sie Spalte A als <b>Teilenummern</b>. Setzen Sie Spalte B als <b>Referenzwerte</b>. Setzen Sie Spalte C als <b>Messdaten</b>. Setzen Sie die <b>Prozessstreuung</b> auf <b>23</b>.<dl><dd><a  class="image"><img alt="LinearBiasGageGUI.png" src="../images/Tutorial_GG/LinearBiasGageGUI.png" width="610"  /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<dl><dd><ul><li>&nbsp;Der %Linearity-Wert von 11,6 deutet darauf hin, dass die Linearit&auml;t des Messinstruments 11 % der Gesamtprozessstreuung erkl&auml;rt. Dass der p-Wert f&uuml;r die Steigung 0,000 betr&auml;gt, l&auml;sst vermuten, dass die Steigung signifikant ist.</li></ul></dd></dl>
+<dl><dd><ul><li>Die Einzelwerte von %Bias variieren zwischen 0,3 und 3,7 und ihre p-Werte zwischen 0,000 und 0,56. Der Referenzwert 8 hat keine systematische Messabweichung (Bias).</li></ul></dd></dl>
+<dl><dd><a  class="image"><img alt="LinearBiasGageGraph.png" src="../images/Tutorial_GG/LinearBiasGageGraph.png" width="783"  /></a></dd></dl>
+<h2><a name="Crossed_Gage_R.26R_Study"></a><span class="mw-headline">Gekreuzte Messsystemanalyse</span></h2>
+<h5><a name="Background_3"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Ein Ingenieur w&auml;hlt 10 Teile, die die zu erwartende Prozessstreuung abdecken. Drei Bediener messen diese 10 Teile dreimal in zuf&auml;lliger Abfolge. Eine gekreuzte Messsystemanalyse wird durchgef&uuml;hrt, um die auf das Messsystem zur&uuml;ckzuf&uuml;hrende Variabilit&auml;t innerhalb der Messungen zu bewerten.</p>
+<ul><li><i><a href="../../Tutorial/App/Algorithm_GG.html#Crossed_Gage_R.26R_Study" title="App:Algorithm GG">Algorithm: Crossed Gage R&amp;R Study</a></i></li></ul>
+<h5><a name="Steps_in_Origin_3"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>3. Crossed Gage R&amp;R Study</b> und aktivieren Sie die enthaltene Arbeitsmappe.</li>
+<li>Klicken Sie auf das Symbol <b>Gekreuzte Messsystemanalyse</b> <a  class="image"><img alt="Crossed.png" src="../images/Tutorial_GG/32px-Crossed.png" width="32"   /></a>.</li>
+<li>W&auml;hlen Sie Spalte A als <b>Teilenummern</b>. W&auml;hlen Sie Spalte B als <b>Bediener</b>. W&auml;hlen Sie Spalte C als <b>Messdaten</b>. Setzen Sie die <b>Prozesstoleranz (Spezifikationsgrenze)</b> auf der Registerkarte Optionen auf <b>20</b>.<dl><dd><a  class="image"><img alt="CrossGageGUI.png" src="../images/Tutorial_GG/480px-CrossGageGUI.png" width="480"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsarbeitsblatt mit ANOVA-Tabelle und einem Diagramm erzeugt.</li></ol>
+<h5><a name="Interpreting_the_Results_3"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<dl><dd><ul><li>Die Tabelle der zweifachen ANOVA deckt die Terme f&uuml;r den Teil, den Bediener und die Wechselwirkung zwischen Teil und Bediener ab. Da der p-Wert f&uuml;r den Wechselwirkungsterm 0,82062 ist, was gr&ouml;&szlig;er als oder gleich 0,05 ist, wird der Wechselwirkungsterm als nicht signifikant betrachtet und wird in der Folge ausgeschlossen. Eine revidierte ANOVA-Tabelle, die den Wechselwirkungsterm ausl&auml;sst, wird f&uuml;r die Durchf&uuml;hrung der Messsystemanalyse vorbereitet.</li></ul></dd></dl>
+<dl><dd><ul><li>Um den Beitrag von jeder Quelle der Messstreuung relativ zur Gesamtstreuung zu bewerten, werden die Varianzkomponenten (VarComp) verwendet. Gem&auml;&szlig; der Spalte %Contribution (%Beitrag) in der Tabelle der Varianzkomponenten ist die Streuung durch Part-To-Part, also zwischen den Teilen, signifikant und macht 92,56 % der Gesamtstreuung aus. Es ist offensichtlich, dass der gr&ouml;&szlig;te Anteil der Streuung durch die Differenzen der Teile untereinander verursacht wird.<dl><dd><a  class="image"><img alt="CrossGageReport.png" src="../images/Tutorial_GG/620px-CrossGageReport.png" width="620"   /></a></dd></dl></li></ul></dd></dl>
+<p>Die Diagramme bieten weitere Informationen zum Messsystem:</p>
+<dl><dd><ul><li>Im Diagramm <b>Components of Variation</b> (Streuungskomponenten) ist der Beitrag&nbsp;%Contribution von Part-To-Part viel gr&ouml;&szlig;er als der von Total Gage R&amp;R (Gesamtstreuung), was darauf schlie&szlig;en l&auml;sst, dass die meiste Streuung durch die Differenzen zwischen den Teilen verusacht wird.</li>
+<li>Die <b>R Chart by Operator</b> (R-Karte nach Bediener) zeigt, dass Bediener C die Teile uneinheitlich misst.</li>
+<li>In der <b>Xbar Chart by Operator</b> (X-quer-Karte nach Bediener) liegen die meisten Punkte au&szlig;erhalb der Eingriffsgrenzen. Daraus schlie&szlig;en wir, dass ein gro&szlig;er Anteil der Streuung auf die Streuung der Teile untereinander zur&uuml;ckzuf&uuml;hren ist.</li>
+<li>Im Diagramm <b>Measurement By Operator</b> (Messung nach Bediener) sind die Differenzen zwischen den Bedienern klein.</li>
+<li>Im Diagramm <b>Operator* Part Interaction</b> (Wechselwirkung Bediener*Teil) sind die Linien ann&auml;hernd parallel, was darauf hindeutet, dass es keine signifikante Wechselwirkung zwischen jedem Teil und Bediener gibt.<dl><dd><a  class="image"><img alt="CrossGageGraph.png" src="../images/Tutorial_GG/620px-CrossGageGraph.png" width="620"   /></a></dd></dl></li></ul></dd></dl>
+<h2><a name="Nested_Gage_R.26R_Study"></a><span class="mw-headline">Geschachtelte Messsystemanalyse</span></h2>
+<h5><a name="Background_4"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Wenn 3 Bediener 30 Teile messen, wobei jeder Bediener jeweils 10 Teile misst, ist eine geschachtelte Messsystemanalyse geeignet, um die Streuung im Messsystem zu bewerten, insbesondere wenn nicht jeder Bediener alle Teile messen kann.</p>
+<ul><li><i><a href="../../Tutorial/App/Algorithm_GG.html#Nested_Gage_R.26R_Study" title="App:Algorithm GG">Algorithm: Nested Gage R&amp;R Study</a></i></li></ul>
+<h5><a name="Steps_in_Origin_4"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>4. Nested Gage R&amp;R Study</b> und aktivieren Sie die enthaltene Arbeitsmappe.</li>
+<li>Klicken Sie auf das Symbol <b>Geschachtelte Messsystemanalyse</b> <a  class="image"><img alt="Nested.png" src="../images/Tutorial_GG/32px-Nested.png" width="32"   /></a>.</li>
+<li>W&auml;hlen Sie Spalte A als <b>Teilenummern</b>. W&auml;hlen Sie Spalte B als <b>Bediener</b>. W&auml;hlen Sie Spalte C als <b>Messdaten</b>.<dl><dd><a  class="image"><img alt="NestedGageGUI.png" src="../images/Tutorial_GG/480px-NestedGageGUI.png" width="480"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsarbeitsblatt mit ANOVA-Tabelle und einem Diagramm erzeugt.</li></ol>
+<h5><a name="Interpreting_the_Results_4"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<dl><dd><ul><li>In der ANOVA-Tabelle liegt der p-Wert f&uuml;r Bediener bei 0,04863. Da dieser Wert kleiner als 0,05 ist, kann der Ingenieur daraus schlie&szlig;en, dass die durchschnittliche Messung durch den Bediener, der die Messungen durchf&uuml;hrt, beeinflusst wird. Zus&auml;tzlich liegt der p-Wert f&uuml;r Part(Operator) (Teil(Bediener)) nah bei 0 und ist kleiner als 0,05. Dies l&auml;sst vermuten, dass die mittleren Messungen der verschiedenen Teile, geschachtelt innerhalb jedes Bedieners, sich signifikant unterscheiden.</li></ul></dd></dl>
+<dl><dd><ul><li>Um den Beitrag von jeder Quelle der Messstreuung relativ zur Gesamtstreuung zu bewerten, werden die Varianzkomponenten (VarComp) verwendet. Gem&auml;&szlig; der Spalte %Contribution (%Beitrag) in der Tabelle der Varianzkomponenten tr&auml;gt die Streuung f&uuml;r Total Gage R&amp;R, dem Messsystem, 53,73 % zur Gesamtstreuung bei. Dies l&auml;sst vermuten, dass die Streuung, die auf das Messinstrument zur&uuml;ckzuf&uuml;hren ist, betr&auml;chtlich ist und die akzeptablen Grenzen &uuml;berschreitet.</li></ul></dd></dl>
+<dl><dd><a  class="image"><img alt="NestedGageReport.png" src="../images/Tutorial_GG/620px-NestedGageReport.png" width="620"   /></a></dd></dl>
+<p>Die Diagramme bieten weitere Informationen zum Messsystem:</p>
+<dl><dd><ul><li>Im Diagramm <b>Components of Variation</b> (Streuungskomponenten) liegen der Beitrag %Contribution von Part-To-Part und Total Gage R&amp;R nah beieinander.</li>
+<li>Die <b>R Chart by Operator</b> (R-Karte nach Bediener) zeigt, dass Bediener A die Teile einheitlich misst. Bediener B und C messen uneinheitlicher.</li>
+<li>In der <b>Xbar Chart by Operator</b> (X-quer-Karte nach Bediener) liegen mehrere Punkte jenseits der Eingriffsgrenzen. Daraus schlie&szlig;en wir, dass ein Anteil der Streuung auf die Differenzen der Teile untereinander zur&uuml;ckzuf&uuml;hren ist. Ein weiterer Anteil stammt aus anderen Quellen wie dem Messinstrument.</li>
+<li>Das Diagramm <b>Measurement By Operator</b> (Messung nach Bediener) zeigt signifikante Unterschiede zwischen den Bedienern.</li></ul></dd></dl>
+<dl><dd><a  class="image"><img alt="NestedGageGraph.png" src="../images/Tutorial_GG/620px-NestedGageGraph.png" width="620"   /></a></dd></dl>
+<h2><a name="Expanded_Gage_R.26R_Study"></a><span class="mw-headline">Erweiterte Messsystemanalyse</span></h2>
+<h5><a name="Background_5"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Der Ingenieur beabsichtigt, das Messsystem zu bewerten, und gibt dazu drei Bedienern die Anweisung, die L&auml;nge von 15 Teilen mithilfe von Werkzeugen aus zwei Abteilungen zu messen. Diese Untersuchung beinhaltet einen festen Faktor (Abteilung = Department), Der Ingenieur f&uuml;hrt eine erweiterte Messsystemanalyse durch, um die Variabilit&auml;t in Messungen zu bewerten, die potenziell auf das Messsystem zur&uuml;ckzuf&uuml;hren ist.</p>
+<ul><li><i><a href="../../Tutorial/App/Algorithm_GG.html#Expanded_Gage_R.26R_Study" title="App:Algorithm GG">Algorithm: Expanded Gage R&amp;R Study</a></i></li></ul>
+<h5><a name="Steps_in_Origin_5"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>5. Expanded Gage R&amp;R Study</b> und aktivieren Sie die enthaltene Arbeitsmappe.</li>
+<li>Klicken Sie auf das Symbol <b>Erweiterte Messsystemanalyse</b> <a  class="image"><img alt="Expanded.png" src="../images/Tutorial_GG/32px-Expanded.png" width="32"   /></a>.</li>
+<li>W&auml;hlen Sie Spalte A als <b>Teilenummern</b>. W&auml;hlen Sie Spalte B als <b>Bediener</b>. W&auml;hlen Sie Spalte C als <b>Zus&auml;tzliche Faktoren</b>. W&auml;hlen Sie Spalte D als <b>Messdaten</b>.</li>
+<li>W&auml;hlen Sie auf der Registerkarte Modell <b>Benutzerdefiniertes Modell</b> f&uuml;r <b>Modelltyp</b>. Klicken Sie auf die Schaltfl&auml;che recht von <b>Modell</b>, um den Unterdialog <b>Benutzerdefiniertes Modell</b> zu &ouml;ffnen, und f&uuml;gen Sie alle Wechselwirkungen zweiter Ordnung zum Modell hinzu.</li>
+<li>Klicken Sie auf die Schaltfl&auml;che rechts von <b>Fester Faktor</b> und setzen Sie <b>Department</b> als <b>Festen Faktor</b>.<dl><dd><a  class="image"><img alt="ExpandedGageGUI.png" src="../images/Tutorial_GG/720px-ExpandedGageGUI.png" width="720"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Berichtsarbeitsblatt mit ANOVA-Tabelle und einem Diagramm erzeugt.</li></ol>
+<h5><a name="Interpreting_the_Results_5"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<dl><dd><ul><li>Die Tabelle Factor Information (Faktorinformationen) zeigt den Hauptfaktornamen, den Typ der Faktoren Random oder Fixed (Zuf&auml;llig oder Fest), die Anzahl der Levels (Stufen) und die entsprechenden Stufennamen.</li></ul></dd></dl>
+<dl><dd><ul><li>In der anf&auml;nglichen ANOVA-Tabelle sind alle p-Werte f&uuml;r alle Wechselwirkungen gr&ouml;&szlig;er als 0,05 und werden daher ausgeschlossen. In der Folge wird ein reduziertes Modell angewendet, um die zweite ANOVA-Tabelle f&uuml;r die Messsystemanalyse zu erzeugen. Beachtenswert ist, dass der p-Wert f&uuml;r <b>Department</b> nahe Null liegt, was auf die Signifikanz des Faktors <b>Department</b> schlie&szlig;en l&auml;sst und Aufmerksamkeit erfordert.</li></ul></dd></dl>
+<dl><dd><ul><li>In der Tabelle der Varianzkomponenten (VarComp): Die Streuung zwischen den Teilen, Part-To-Part, betr&auml;gt nur 31,22 % der Gesamtstreuung. Dies l&auml;sst vermuten, dass die Streuung, die auf das Messinstrument zur&uuml;ckzuf&uuml;hren ist, betr&auml;chtlich und nicht akzeptabel ist.</li></ul></dd></dl>
+<dl><dd><a  class="image"><img alt="ExpanGageUpdated1.png" src="../images/Tutorial_GG/620px-ExpanGageUpdated1.png" width="620"   /></a></dd></dl>
+<p>Die Diagramme bieten weitere Informationen zum Messsystem:</p>
+<dl><dd><ul><li>Im Diagramm <b>Components of Variation</b> (Streuungskomponenten) istder Beitrag %Contribution von Part-To-Part kleiner als der von Total Gage R&amp;R.</li>
+<li>Die <b>R Chart by Operator</b> (R-Karte nach Bediener) zeigt, dass alle drei Bediener einheitlich messen.</li>
+<li>In der <b>Xbar Chart by Operator</b> (X-quer-Karte nach Bediener) liegen nur wenige Punkte jenseits der Eingriffsgrenzen, was darauf hindeutet, dass die Streuung aus Differenzen zwischen den Teilen nicht signifikant ist.</li>
+<li>Das Diagramm <b>Measurement By Operator</b> (Messung nach Bediener) zeigt signifikante Unterschiede zwischen den Bedienern.</li></ul></dd></dl>
+<dl><dd><a  class="image"><img alt="ExpandedGageGraph.png" src="../images/Tutorial_GG/620px-ExpandedGageGraph.png" width="620"   /></a></dd></dl>
+<h2><a name="Attribute_Gage_Study"></a><span class="mw-headline">Messsystemanalyse f&uuml;r attributive Daten</span></h2>
+<h5><a name="Background_6"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Der Ingenieur bewertet die systematische Messabweichung (Bias) und Wiederholbarkeit (Repeatability) mit einer attributiven Messsystemanalyse, die eine bin&auml;re Antwort gibt. Er w&auml;hlt 11 Teile mit bekannten Referenzwerten, pr&uuml;ft jedes Teil 20-mal mit einer Grenzlehre und erfasst die Anzahl der Annahmen f&uuml;r jedes Teil.</p>
+<h5><a name="Steps_in_Origin_6"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>&Ouml;ffnen Sie den Ordner <b>6. Attribute Gage Study</b> und aktivieren Sie die Arbeitsmappe.</li>
+<li>Klicken Sie auf das Symbol Messsystemanalyse, attributive Daten <a  class="image"><img alt="Attribute Gage Study.png" src="../images/Tutorial_GG/32px-Attribute_Gage_Study.png" width="32"   /></a>.</li>
+<li>W&auml;hlen Sie Spalte A als <b>Teilenummern</b>. W&auml;hlen Sie Spalte B als <b>Referenzwerte</b>. W&auml;hlen Sie Spalte C als <b>Zusammengefasste Anzahl der Annahmen</b>.</li>
+<li>Setzen Sie den <b>Grenzwert</b> auf 0,08.</li>
+<li>W&auml;hlen Sie die <b>AIAG-Methode</b> als Pr&uuml;fmethode.<dl><dd><a  class="image"><img alt="AttrGage1.png" src="../images/Tutorial_GG/360px-AttrGage1.png" width="360"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>. Es wird ein Diagramm mit Berichtstabellen erstellt.</li></ol>
+<h5><a name="Interpreting_the_Results_6"></a><span class="mw-headline">Ergebnisse interpretieren</span></h5>
+<dl><dd><ul><li>Der p-Wert f&uuml;r <b>AIAG Test of Bias = 0</b> (AIAG-Test der systematischen Messabweichung) ist kleiner als das Signifikanzniveau von 0,05. Wir verwerfen die Nullhypothese und schlussfolgern, dass das attributive Messsystem wahrscheinlich eine systematische Messabweichung hat.</li></ul></dd></dl>
+<ol><li><dl><dd><a  class="image"><img alt="AttrGage2.png" src="../images/Tutorial_GG/540px-AttrGage2.png" width="540"   /></a></dd></dl></li></ol>
+<h2><a name="Create_Gage_Worksheet"></a><span class="mw-headline">Arbeitsblatt f&uuml;r Messsystemanalyse erstellen</span></h2>
+<h5><a name="Background_7"></a><span class="mw-headline">Hintergrund</span></h5>
+<p>Der Ingenieur beabsichtigt, ein Datenblatt zu erstellen, in dem die Messwerte der Bediener in zuf&auml;lliger Reihenfolge erfasst werden k&ouml;nnen.</p>
+<h5><a name="Steps_in_Origin_7"></a><span class="mw-headline">Schritte in Origin</span></h5>
+<ol><li>Klicken Sie auf das Symbol <b>Arbeitsblatt f&uuml;r Messsystemanalyse erstellen</b> <a  class="image"><img alt="Create Gage Worksheet.png" src="../images/Tutorial_GG/32px-Create_Gage_Worksheet.png" width="32"   /></a>.</li>
+<li>Setzen Sie die <b>Anzahl der Teile</b> auf <b>10</b>. Setzen Sie die <b>Anzahl der Bediener</b> auf <b>3</b>. Setzen Sie die <b>Anzahl der Replikationen</b> auf <b>3</b>.</li>
+<li>Aktivieren Sie die Option <b>Alls Durchl&auml;ufe randomisieren</b>.<dl><dd><a  class="image"><img alt="GageWorksheet.png" src="../images/Tutorial_GG/360px-GageWorksheet.png" width="360"   /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>.</li></ol>
+
+
+
+    
