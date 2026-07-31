@@ -1,0 +1,105 @@
+﻿<h1 class="firstHeading">Der Dialog Mischungsversuchsplan</h1><p class='urlname' style='display: none'>mixture-dialog</p>
+<p><br /></p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Hilfreiche Informationen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Design_Selection"><span class="tocnumber">2</span> <span class="toctext">Versuchsplanauswahl</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Type_of_Design"><span class="tocnumber">2.1</span> <span class="toctext">Typ des Versuchsplans</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Display_Available_Designs"><span class="tocnumber">2.2</span> <span class="toctext">Verf&uuml;gbare Versuchspl&auml;ne anzeigen</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Components"><span class="tocnumber">3</span> <span class="toctext">Komponenten</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Process_Variables"><span class="tocnumber">4</span> <span class="toctext">Prozessvariablen</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Settings"><span class="tocnumber">5</span> <span class="toctext">Einstellungen</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Output"><span class="tocnumber">6</span> <span class="toctext">Ausgabe</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Dialog_Theme"><span class="tocnumber">7</span> <span class="toctext">Dialogdesign</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Hilfreiche Informationen</span></h2>
+<p>Um den Dialog <b>Mischungsversuchsplan</b> zu &ouml;ffnen:</p>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und aus der Liste <b>Mischungsversuchsplan</b>.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Mixture_Design_Dialog/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<p><br /></p>
+<h2><a name="Design_Selection"></a><span class="mw-headline">Versuchsplanauswahl</span></h2>
+<h4><a name="Type_of_Design"></a><span class="mw-headline">Typ des Versuchsplans</span></h4>
+<p>W&auml;hlen Sie unten aus der Liste einen Wirkungsfl&auml;chentyp. Lesen Sie in <a href="../../Tutorial/Category/Mixture_Design(App).html#Introduction" title="Category:Mixture Design(App)">der Einf&uuml;hrung und dem Vergleich</a> nach, welcher Typ f&uuml;r Ihren Versuchsplan verwendet werden sollte.</p>
+<ul><li>Simplex-Zentroid</li>
+<li>Simplexgitter</li>
+<li>Extreme Eckpunkte</li></ul>
+<h4><a name="Display_Available_Designs"></a><span class="mw-headline">Verf&uuml;gbare Versuchspl&auml;ne anzeigen</span></h4>
+<p>Klicken Sie auf die Schaltfl&auml;che, um Informationen zu erhalten, wie Sie einen geeigneten Versuchsplan ausw&auml;hlen. Die Tabelle zeigt die Anzahl von Faktoren und Durchl&auml;ufen.</p>
+<h2><a name="Components"></a><span class="mw-headline">Komponenten</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Gesamtmenge</th>
+<td>W&auml;hlen Sie, ob die Mischungsformulierungen in Ihrem Versuch nur eine feste Gesamtmenge verwenden oder &uuml;ber mehrere Durchl&auml;ufe variieren.<p>W&auml;hlen Sie <b>Eine Gesamtmenge</b> f&uuml;r die Standardmischungsversuchspl&auml;ne, bei denen nur Komponentenanteile von Bedeutung sind. W&auml;hlen Sie <b>Mehrere Gesamtmengen</b>, wenn die Gesamtmenge der Mischung einen zus&auml;tzlichen Versuchsfaktor darstellt.</p>
+<ul><li><b>Eine Gesamtmenge</b><dl><dd>Alle Versuchsdurchl&auml;ufe teilen die gleiche Gesamtmenge.</dd></dl></li>
+<li><b>Mehrere Gesamtmengen</b><dl><dd>Die Durchl&auml;ufe verwenden zwei oder mehrere verschiedene Gesamtmengen.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Anzahl der Komponenten</th>
+<td>Die Anzahl der Zutaten oder Faktoren in der Mischung.</td></tr>
+<tr>
+<th>Anzahl der Stufen pro Komponente</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>Simplexgitter</b>-Versuchsplan<p>Die f&uuml;r jede Komponente eindeutig getesteten Anteile. H&ouml;here Stufen erh&ouml;hen die Versuchsplanaufl&ouml;sung, aber auch die Anzahl der Durchl&auml;ufe.</p>
+</td></tr>
+<tr>
+<th>Komponententabelle</th>
+<td>Zeigt und definiert jede Mischungszutat und ihre quantitativen Grenzen.<ul><li>Name</li>
+<li>Niedrig</li>
+<li>Hoch</li></ul>
+</td></tr></table>
+<h2><a name="Process_Variables"></a><span class="mw-headline">Prozessvariablen</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Anzahl der Prozessvariablen</th>
+<td>Die Anzahl der im Versuch einzubindenden Prozessfaktoren. Geben Sie 0 ein, wenn der Versuch nur Mischungskomponenten enth&auml;lt.</td></tr>
+<tr>
+<th>Typ des Versuchsplans</th>
+<td>W&auml;hlen Sie die Struktur f&uuml;r den Prozessvariablenanteil des Versuchs. Bietet teilfaktoriellen und vollfaktoriellen Versuchsplan.</td></tr>
+<tr>
+<th>Fraktionsanzahl</th>
+<td>Definiert die auszuf&uuml;hrende Fraktion des vollfaktoriellen Versuchsplan. Niedrigere Fraktionen reduzieren die Durchl&auml;ufe, erh&ouml;hen aber die Vermengung unter den Effekten.</td></tr>
+<tr>
+<th>Tabelle der Prozessvariablen</th>
+<td>Zeigt und definiert jede Prozessvariable und ihre Einstellungen.<ul><li>Name</li>
+<li>Typ</li>
+<li>Niedrig</li>
+<li>Hoch</li></ul>
+</td></tr></table>
+<h2><a name="Settings"></a><span class="mw-headline">Einstellungen</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Anzahl der Replikationen</th>
+<td>W&auml;hlen Sie die Anzahl der Replikationen. Die Replikationen sind mehrere Durchl&auml;ufe mit den gleichen Faktoreinstellungen. Eine Replikation durchl&auml;uft jede Kombination einmal; zwei Replikationen durchl&auml;uft jede Kombination zweimal.<p>Das Hinzuf&uuml;gen von Replikationen kann die statistische Trennsch&auml;rfe zum Erkennen von Effekten erh&ouml;hen, aber damit auch die Anzahl der Durchl&auml;ufe insgesamt und die Kosten f&uuml;r die Ressourcen.</p>
+</td></tr>
+<tr>
+<th>Lineare Nebenbedingungen</th>
+<td>Nur verf&uuml;gbar f&uuml;r Versuchsplan mit <b>extremen Eckpunkten</b>.<p>Erm&ouml;glicht Ihnen das Hinzuf&uuml;gen von zus&auml;tzlichen linearen Nebenbedingungen f&uuml;r Komponentenanteile &uuml;ber einfach obere und untere Grenzen hinaus.</p><p>Falls ausgew&auml;hlt, k&ouml;nnen Sie jede lineare Nebenbedingungsgleichung in der <b>Tabelle Nebenbedingungen</b>, die unten angezeigt wurd, definieren.</p>
+</td></tr>
+<tr>
+<th>Anzahl der Nebenbedingungen</th>
+<td>Geben Sie die Anzahl der anzuwendenden linearen Nebenbedingungsgleichungen ein. Origin erzeugt eine entsprechende Anzahl von Zeilen in der Nebenbedingungstabelle. Setzen Sie eine 0, falls keine lineare Nebenbedingungen erforderlich sind.</td></tr>
+<tr>
+<th>Durchl&auml;ufe randomisieren</th>
+<td>Randomisieren Sie die Ordnung aller Versuchsdurchl&auml;ufe. Dies verteilt die St&ouml;rfaktoren.</td></tr>
+<tr>
+<th>Zufallszahl</th>
+<td>Geben Sie eine nicht-negative ganze Zahl ein, um den Zufallszahlengenerator zu steuern.</td></tr></table>
+<h2><a name="Output"></a><span class="mw-headline">Ausgabe</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Versuchsplantabelle</th>
+<td>Die Versuchsplantabelle zeigt die Faktoreinstellungen f&uuml;r jeden Versuchsdurchlauf im Versuchsplan.</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialogdesign</span></h2>
+<p>Speichern und laden Sie die Einstellungen des Dialogs. Verwenden Sie dies, um h&auml;ufig verwendete Faktorkonfigurationen, Versuchsplanoptionen oder Ausgabeeinstellungen zu speichern, und rufen Sie sie f&uuml;r zuk&uuml;nftige Versuchspl&auml;ne wieder auf, ohne alle Werte erneut einzugeben.</p>
+
+
+
+
+
+
+    

@@ -1,0 +1,73 @@
+﻿<h1 class="firstHeading">Wirkungsfl&auml;chenversuchsplan</h1><p class='urlname' style='display: none'>Response-Surface-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Einf&uuml;hrung</span></a><ul>
+<li class="toclevel-2 tocsection-2"><a href="#Central_Composite"><span class="tocnumber">1.1</span> <span class="toctext">Zentral zusammengesetzt</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Box-Behnken"><span class="tocnumber">1.2</span> <span class="toctext">Box-Behnken</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#How_to_create_the_Design"><span class="tocnumber">2</span> <span class="toctext">Versuchsplan erstellen</span></a><ul>
+<li class="toclevel-2 tocsection-5"><a href="#Create_Response_Surface_Design_Design"><span class="tocnumber">2.1</span> <span class="toctext">Wirkungsfl&auml;chenversuchsplan erstellen</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Create_Custom_Response_Surface_Design"><span class="tocnumber">2.2</span> <span class="toctext">Benutzerdefinierten Wirkungsfl&auml;chenversuchsplan erstellen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Einf&uuml;hrung</span></h2>
+<p>Sobald mithilfe eines faktoriellen Versuchsplans die signifikanten Faktoren ermittelt wurden, die die Antwortvariable beeinflussen, k&ouml;nnen Sie mithilfe eines Wirkungsfl&auml;chenversuchsplans ein Modell zweiten Grades sch&auml;tzen. Durch Hinzuf&uuml;gen von quadratischen Termen zum Modell l&auml;sst sich eine bessere Ann&auml;herung erzielen, wenn die Antwortvariable eine Kr&uuml;mmung aufweist.</p><p>Origin bietet zwei Typen von Wirkungsfl&auml;chenversuchspl&auml;nen.</p>
+<div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Response_Surface_Design(App)/150px-Rsm.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Zentral zusammengesetzter Versuchsplan mit 3 Faktoren, W&uuml;rfelpunkte (rot), Gitterpunkte (blau)</div></div></div><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Response_Surface_Design(App)/150px-Bbd.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Box-Behnken-Versuchsplan mit 3 Faktoren</div></div></div>
+<h5><a name="Central_Composite"></a><span class="mw-headline">Zentral zusammengesetzt</span></h5>
+<p>Der zentral zusammengesetzte Versuchsplan besteht aus zwei Bl&ouml;cken von Versuchsdurchl&auml;ufen:</p>
+<ul><li>W&uuml;rfelblock: Eine Reihe von faktoriellen (voll oder teil) Punkten.</li>
+<li>Achsenblock: Eine Reihe von Gitterpunkten, die neue Extremwerte f&uuml;r die niedrigen und hohen Einstellungen aller Faktoren festlegen.</li></ul>
+<p>Zentralpunkte k&ouml;nnen sowohl in W&uuml;rfel- als auch in Achsenbl&ouml;cken eingebunden werden, um die Kr&uuml;mmung besser sch&auml;tzen zu k&ouml;nnen.</p><p>Ein zentral zusammengesetzter Versuchsplan wird empfohlen, wenn Sie den gesamten Versuchsbereich, einschlie&szlig;lich der Eckpunkte, untersuchen m&ouml;chten, die Flexibilit&auml;t w&uuml;nschen, von einem faktoriellen Screening-Versuchsplan aus zu erweitern, oder eine pr&auml;zise Sch&auml;tzung der quadratischen Effekte &uuml;ber den gesamten Faktorraum ben&ouml;tigen.</p>
+<h5><a name="Box-Behnken"></a><span class="mw-headline">Box-Behnken</span></h5>
+<p>Der Box-Behnken-Versuchsplan enth&auml;lt keinen eingebetteten faktoriellen Versuchsplan. Es enth&auml;lt Behandlungskombinationen, die sich an den Mittelpunkten der Kanten des Versuchsraums sowie in dessen Zentrum befinden. Sein Hauptvorteil besteht darin, dass extreme Behandlungskombinationen vermieden werden, da es in ihm keine Eck- oder Achsenpunkte gibt. Dies k&ouml;nnte n&uuml;tzlich sein, wenn die Punkte an den Ecken des W&uuml;rfels Stufenkombinationen darstellen, deren Testung aufgrund physikalischer Prozessbeschr&auml;nkungen aufwendig oder unm&ouml;glich ist.</p><p>Box-Behnken sollte gew&auml;hlt werden, wenn die Kombinationen der Eckpunkte nicht praktikabel oder nicht durchf&uuml;hrbar sind, wenn Sie weniger Durchl&auml;ufe bei guter Prognosequalit&auml;t w&uuml;nschen oder wenn Sie aus Gr&uuml;nden der einfacheren Umsetzung einen Versuchsplan mit nur drei Stufen pro Faktor bevorzugen.</p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>Zentral zusammengesetzter Versuchsplan (CCD)</th>
+<th>Box-Behnken-Versuchsplan (BBD)</th></tr>
+<tr>
+<td><b>Struktur</b></td>
+<td>Faktorielle Punkte + Achsenpunkte (Sternpunkte) + Zentralpunkte</td>
+<td>Unvollst&auml;ndig 3-stufig faktoriell mit Kantenmittelpunkten + Zentralpunkten</td></tr>
+<tr>
+<td><b>Am besten wenn</b></td>
+<td>Sie eine hohe pr&auml;diktive F&auml;higkeit &uuml;ber den gesamten Versuchsplanraum brauchen, einschlie&szlig;lich der Eck- und Achsenbereiche.</td>
+<td>Sie extreme Eckpunkte aufgrund praktische Bedingungen (z. B. Kosten, Sicherheit oder physikalische Unm&ouml;glichkeit) vermeiden wollen.</td></tr>
+<tr>
+<td><b>Anzahl der Stufen pro Faktor</b></td>
+<td>5 (in der Regel -Alpha, -1, 0, +1, +Alpha)</td>
+<td>3 (-1, 0, +1)</td></tr>
+<tr>
+<td><b>Durchl&auml;ufe insgesamt</b></td>
+<td>H&ouml;her (2^k + 2k + n0 f&uuml;r vollfaktorielle Basis)</td>
+<td>Niedriger (weniger Durchl&auml;ufe als CCD f&uuml;r gleiche Faktoranzahl)</td></tr>
+<tr>
+<td><b>Durchlaufeffizienz</b></td>
+<td>Weniger effizient (mehr Durchl&auml;ufe erforderlich)</td>
+<td>Effizienter (weniger Durchl&auml;ufe f&uuml;r gleiche Faktoranzahl)</td></tr></table>
+<h2><a name="How_to_create_the_Design"></a><span class="mw-headline">Versuchsplan erstellen</span></h2>
+<h4><a name="Create_Response_Surface_Design_Design"></a><span class="mw-headline">Wirkungsfl&auml;chenversuchsplan erstellen</span></h4>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und w&auml;hlen Sie <b>Wirkungsfl&auml;chenversuchsplan</b> aus der Liste.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Response_Surface_Design(App)/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<h4><a name="Create_Custom_Response_Surface_Design"></a><span class="mw-headline">Benutzerdefinierten Wirkungsfl&auml;chenversuchsplan erstellen</span></h4>
+<p>Bitte lesen Sie die Anweisungen auf der Seite <a href="../../Tutorial/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">Benutzerdefinierte Versuchspl&auml;ne definieren</a>.</p><p><br /></p>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Themen, die in diesem Abschnitt behandelt werden:</b></i></p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li><a class="CategoryTreeLabel  CategoryTreeLabelNs122 CategoryTreeLabelPage" href="../../Tutorial/App/Response_Surface_Design_Dialog.html">Der Dialog Wirkungsfl&auml;chenversuchsplan</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+
+
+    

@@ -1,0 +1,92 @@
+﻿<h1 class="firstHeading">Tutorial zur &Uuml;bereinstimmungsanalyse bei attributiven Date</h1><p class='urlname' style='display: none'>Tutorial-Attribute-Agreement-Analysis</p>
+<p>Die <a class="external text" href="https://www.originlab.com/FileExchange/details.aspx?fid=1018" target="_blank">App Attribute Agreement Analysis</a> wird verwendet, um zu bewerten, ob Pr&uuml;fer mit sich, untereinander und hinsichtlich bekannter Standards konsistent sind.</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Sample_Data"><span class="tocnumber">1</span> <span class="toctext">Beispieldaten</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Download_and_install_the_app"><span class="tocnumber">2</span> <span class="toctext">App herunterladen und installieren</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Steps"><span class="tocnumber">3</span> <span class="toctext">Schritte</span></a><ul>
+<li class="toclevel-2 tocsection-4"><a href="#Multiple_Columns_for_Rating_Data"><span class="tocnumber">3.1</span> <span class="toctext">Mehrere Spalten f&uuml;r Bewertungsdaten</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Single_Column_for_Rating_Data"><span class="tocnumber">3.2</span> <span class="toctext">Einzelne Spalte f&uuml;r Bewertungsdaten</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Analyze_the_Results"><span class="tocnumber">4</span> <span class="toctext">Ergebnisse analysieren</span></a><ul>
+<li class="toclevel-2 tocsection-7"><a href="#Within_Appraisers"><span class="tocnumber">4.1</span> <span class="toctext">Innerhalb Pr&uuml;fer</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Each_Appraiser_vs_Standard"><span class="tocnumber">4.2</span> <span class="toctext">Jeder Pr&uuml;fer vs. Standard</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Between_Appraisers"><span class="tocnumber">4.3</span> <span class="toctext">Zwischen Pr&uuml;fern</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#All_Appraisers_vs_Standard"><span class="tocnumber">4.4</span> <span class="toctext">Alle Pr&uuml;fer vs. Standard</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Summary_of_Assessment_Disagreement_with_Standard"><span class="tocnumber">4.5</span> <span class="toctext">Zusammenfassung der Nicht&uuml;bereinstimmung der Bewertungen mit dem Standard</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Assessment_Agreement_Plot"><span class="tocnumber">4.6</span> <span class="toctext">Diagramm zur &Uuml;bereinstimmung der Bewertungen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Sample_Data"></a><span class="mw-headline">Beispieldaten</span></h2>
+<p>F&uuml;nf Stoffpr&uuml;fer in einer Textilf&auml;rberei bewerteten die Farbqualit&auml;t von blauem Stoff. Der Ingenieur f&uuml;r die Qualit&auml;tskontrolle m&ouml;chte die Konsistenz und Richtigkeit der Bewertungen der Pr&uuml;fer beurteilen.</p><p>Bitte laden Sie zuerst die <a class="external text" href="https://blog.originlab.com/wp-content/uploads/2024/06/SampleData_AttributeAgreementAnalysis.zip" target="_blank">Beispieldaten f&uuml;r die Bewertung</a> herunter. Der Download enth&auml;lt eine Origin-Arbeitsmappendatei, die Sie erst extrahieren und dann die enthaltene .ogwu-Datei per Drag&amp;Drop in Origin ziehen, um sie zu &ouml;ffnen.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 00.png" src="../images/Attribute_Agreement_Analysis/AAA_Tutorial_00.png" width="744"  /></a></dd></dl>
+<p>Es sind zwei Arbeitsbl&auml;tter vorhanden. Daraus k&ouml;nnen Sie schlie&szlig;en, dass dieses Werkzeug zwei Datenanordnungen unterst&uuml;tzt. Im ersten Blatt gibt es 10 Spalten f&uuml;r Bewertungsdaten, 40 Zeilen f&uuml;r 40 Stichproben.</p>
+<ul><li>Jede Stichprobe wurde zweimal durch einen Pr&uuml;fer in zuf&auml;lliger Reihenfolge bewertet.</li>
+<li>Die Bewertungsskala reicht von -2 bis 2 und umfasst insgesamt 5 Stufen, die die Farbqualit&auml;t der blauen Stoffe angeben. Negative Bewertungen weisen auf hellere Farben hin, positive Bewertungen auf dunklere Farben.</li>
+<li>Alle Stichproben haben ihre Standardbewertung.</li></ul>
+<p>Das zweite Blatt enth&auml;lt ebenfalls all diese Daten, alle Bewertungsdaten sind aber in einer einzelnen Spalte angeordnet.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 00a.png" src="../images/Attribute_Agreement_Analysis/AAA_Tutorial_00a.png" width="435"  /></a></dd></dl>
+<h2><a name="Download_and_install_the_app"></a><span class="mw-headline">App herunterladen und installieren</span></h2>
+<ul><li>Klicken Sie auf die Schaltfl&auml;che <b>Apps hinzuf&uuml;gen</b> in der <b>Apps-Galerie</b>, um das <b>App-Center</b> zu &ouml;ffnen, suchen Sie &quot;<b>Attribute Agreement Analysis</b>&ldquo; (&Uuml;bereinstimmungsanalyse bei attributiven Daten) und installieren Sie die App.</li></ul>
+<dl><dd>ODER</dd></dl>
+<ul><li>Laden Sie die App von der Webseite <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=1018" target="_blank">OriginLab Dateiaustausch</a> herunter und ziehen Sie die OPX-Datei per Drag&amp;Drop in Origin, um sie zu installieren.</li></ul>
+<h2><a name="Steps"></a><span class="mw-headline">Schritte</span></h2>
+<h3><a name="Multiple_Columns_for_Rating_Data"></a><span class="mw-headline">Mehrere Spalten f&uuml;r Bewertungsdaten</span></h3>
+<ol><li>Aktivieren Sie das erste Blatt und klicken Sie dann auf das App-Symbol <a  class="image"><img alt="Attribute Agreement Analysis icon.png" src="../images/Attribute_Agreement_Analysis/Attribute_Agreement_Analysis_icon.png" width="32"  /></a> in der <b>Apps-Galerie</b>, um den Dialog der App zu &ouml;ffnen.<dl><dd><a  class="image"><img alt="AAA Tutorial 01.png" src="../images/Attribute_Agreement_Analysis/650px-AAA_Tutorial_01.png" width="650"   /></a></dd></dl></li>
+<li>Legen Sie die Einstellungen in diesem Dialog, wie unten zu sehen, fest:<ul><li>W&auml;hlen Sie <b>Mehrere Spalten</b> in der Auswahlliste <b>Attributive Daten/Bewertungsdaten angeordnet als</b>.</li>
+<li>W&auml;hlen Sie <b>Col(B)~Col(K)</b> als <b>Attributive Daten/Bewertungsdaten</b>. Setzen Sie die <b>Anzahl der Pr&uuml;fer</b> auf <i>5</i> und die <b>Anzahl der Versuche</b> auf <i>2</i>.<dl><dd><b>Hinweis:</b> Die Anzahl der Spalten f&uuml;r <b>Attributive Daten/Bewertungsdaten</b> sollte die <b>Anzahl der Pr&uuml;fer</b> mal die <b>Anzahl der Versuche</b> sein. In diesem Beispiel gibt es 5 Pr&uuml;fer. Jeder Pr&uuml;fer f&uuml;hrt 2 Versuche bei allen Stichproben durch. Die Anzahl der Spalten f&uuml;r <b>Attributive Daten/Bewertungsdaten</b> sollte also <i>5*2=10</i> sein, was den 10 Spalten der Eingabedaten entspricht, die wir ausgew&auml;hlt haben.</dd></dl></li>
+<li>W&auml;hlen Sie Col(&quot;Appraiser&quot;) als Pr&uuml;fernamen und Col(&quot;Standad Rate&quot;) als <b>Bekannter/s Standard/Attribut</b>.</li>
+<li>Aktivieren Sie das Kontrollk&auml;stchen <b>Kategorien der ordinalen Daten</b>, da der Rangbereich -2 bis 2 ist.</li></ul>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 02.gif" src="../images/Attribute_Agreement_Analysis/AAA_Tutorial_02.gif" width="786"  /></a></dd></dl></li>
+<li>Klicken Sie auf <b>OK</b>, um die Analyse durchzuf&uuml;hren. Sie erhalten zwei Ergebnisbl&auml;tter.</li></ol>
+<h3><a name="Single_Column_for_Rating_Data"></a><span class="mw-headline">Einzelne Spalte f&uuml;r Bewertungsdaten</span></h3>
+<ol><li>Wechseln Sie zum zweiten Blatt &quot;Summary&quot; und klicken Sie dann auf das App-Symbol, um den Dialog der App zu &ouml;ffnen.</li>
+<li>Legen Sie im Dialog folgende Einstellungen fest:<ul><li>Setzen Sie <b>Attributive Daten/Bewertungsdaten angeordnet als</b> auf <b>Einzelne Spalte</b>.</li>
+<li>W&auml;hlen Sie Col(&quot;Rating&quot;) als <b>Attributive Daten/Bewertungsdaten</b>, Col(&quot;Sample Index&quot;) als <b>Stichproben</b>, Col(&quot;Appraiser&quot;) als <b>Pr&uuml;fer</b>, Col(&quot;Standard Rate&quot;) als <b>Bekannter/s Standard/Attribut</b>.</li>
+<li>Aktivieren Sie das Kontrollk&auml;stchen <b>Kategorien der ordinalen Daten</b>. Behalten Sie die Standardeinstellungen f&uuml;r die Gruppe <b>Optionen</b> bei.</li></ul>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 03.png" src="../images/Attribute_Agreement_Analysis/AAA_Tutorial_03.png" width="537"  /></a></dd></dl></li>
+<li>Klicken Sie auf die Schaltfl&auml;che OK, um die Ergebnisbl&auml;tter zu erstellen.</li></ol>
+<h2><a name="Analyze_the_Results"></a><span class="mw-headline">Ergebnisse analysieren</span></h2>
+<h3><a name="Within_Appraisers"></a><span class="mw-headline">Innerhalb Pr&uuml;fer</span></h3>
+<p>Diese Tabelle wird verwendet, um die Konsistenz der Antwortvariablen f&uuml;r jeden Pr&uuml;fer zu bewerten.</p><p><b>Hinweis:</b> Diese Tabelle zeigt, ob die Bewertungen des Pr&uuml;fer f&uuml;r ihn selbst konsistent sind, aber nicht, ob die Bewertungen mit den Referenzwerten &uuml;bereinstimmen. Konsistente Bewertungen sind nicht unbedingt korrekte Bewertungen.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 04.png" src="../images/Attribute_Agreement_Analysis/400px-AAA_Tutorial_04.png" width="400"   /></a></dd></dl>
+<ul><li>In der Tabelle &quot;&Uuml;bereinstimmung der Bewertungen&quot; k&ouml;nnen wir uns die &quot;&Uuml;bereinstimmungs&quot;-Spalte ansehen, in der die Anzahl der Vorkommnisse aufgef&uuml;hrt ist, wenn der Pr&uuml;fer mit sich selbst &uuml;ber zwei Versuche &uuml;bereingestimmt hat. Wir k&ouml;nnen sehen, dass Pr&uuml;fer &quot;C&quot; die meisten &Uuml;bereinstimmungen hat.</li>
+<li>In der Tabelle &quot;Kappa-Statistik&quot; sind einige Kappa-Werte 1, was die perfekte &Uuml;bereinstimmung innerhalb eines Pr&uuml;fers zwischen zwei Versuchen zeigt. Alle Kappa-Werte waren gr&ouml;&szlig;er als 0,82, was zeigt, dass es eine gute &Uuml;bereinstimmung innerhalb eines Pr&uuml;fers zwischen zwei Versuchen insgesamt gibt. Die p-Werte waren viel kleiner als 0,05. Das bedeutet, dass die &Uuml;bereinstimmung nicht auf Zufall zur&uuml;ckgef&uuml;hrt werden kann.</li>
+<li>Da die Bewertungsdaten ordinal sind, wurden die Werte f&uuml;r Kendalls Konkordanzkoeffizient ausgegeben. Diese Werte sind alle gr&ouml;&szlig;er als 0,98, was auf eine sehr starke Verbindung innerhalb von zwei Bewertungen f&uuml;r jeden Pr&uuml;fer hindeutet.</li></ul>
+<h3><a name="Each_Appraiser_vs_Standard"></a><span class="mw-headline">Jeder Pr&uuml;fer vs. Standard</span></h3>
+<p>Diese Tabelle wird verwendet, um die Richtigkeit der Antwortvariablen f&uuml;r jeden Pr&uuml;fer zu bewerten.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 05.png" src="../images/Attribute_Agreement_Analysis/350px-AAA_Tutorial_05.png" width="350"   /></a></dd></dl>
+<ul><li>In der Tabelle &quot;&Uuml;bereinstimmung der Bewertungen&quot; k&ouml;nnen Sie die &quot;&Uuml;bereinstimmungs&quot;-Spalte pr&uuml;fen, ob die Bewertungen der Pr&uuml;fer &uuml;ber die Versuche mit dem bekannten Standard &uuml;bereinstimmen. Wie wir sehen k&ouml;nnen, haben Pr&uuml;fer &quot;C&quot; und &quot;E&quot; ein Maximum. Das bedeutet, sie haben mehr richtige Bewertungen.</li>
+<li>In der Tabelle &quot;Kappa-Statistik&ldquo; sind alle Kappa-Werte gr&ouml;&szlig;er als 0,83, was eine sehr gute &Uuml;bereinstimmung zwischen jedem Pr&uuml;fer und dem Standard zeigt. Die p-Werte waren viel kleiner als 0,05. Das bedeutet, dass die Konsistenz nicht auf Zufall zur&uuml;ckgef&uuml;hrt werden kann.</li>
+<li>Da die Daten ordinal sind, wurden die Werte f&uuml;r Kendalls Konkordanzkoeffizient ausgegeben. Diese Werte sind gr&ouml;&szlig;er als 0,95, was auf eine starke Verbindung zwischen den Bewertungen und den Standardwerten hindeutet.</li></ul>
+<h3><a name="Between_Appraisers"></a><span class="mw-headline">Zwischen Pr&uuml;fern</span></h3>
+<p>Diese Tabelle wird verwendet, um die Konsistenz der Antwortvariablen zwischen den Pr&uuml;fern zu bewerten.</p><p><b>Hinweis:</b> Diese Tabelle zeigt, ob die Bewertungen der Pr&uuml;fer untereinander konsistent sind, aber nicht, ob die Bewertungen mit den Referenzwerten &uuml;bereinstimmen. Konsistente Bewertungen sind nicht unbedingt korrekte Bewertungen.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 06.png" src="../images/Attribute_Agreement_Analysis/300px-AAA_Tutorial_06.png" width="300"   /></a></dd></dl>
+<ul><li>In der Tabelle &quot;&Uuml;bereinstimmung der Bewertungen&quot; k&ouml;nnen wir in der &quot;&Uuml;bereinstimmungs&quot;-Spalte sehen, dass die Pr&uuml;fer miteinander bei 32 Stichproben &uuml;ber zwei Versuche &uuml;bereinstimmen.</li>
+<li>Alle Kappa-Werte sind gr&ouml;&szlig;er als 0,81. Das weist darauf hin, dass alle Bewertungen eine gute &Uuml;bereinstimmung zwischen den Pr&uuml;fern haben. Die p-Werte waren fast 0. Das bedeutet, dass die &Uuml;bereinstimmung nicht auf Zufall zur&uuml;ckgef&uuml;hrt werden konnte. Die Pr&uuml;fer haben die meisten &Uuml;bereinstimmungen f&uuml;r die Stichproben auf Stufe -2 und 2 und die wenigsten &Uuml;bereinstimmungen f&uuml;r die Stichproben auf Stufe -1 und 0.<dl><dd>Da es f&uuml;nf Pr&uuml;fer und zwei Versuche pro Pr&uuml;fer gibt, was nicht mit der Regel zum Berechnen der Werte von Cohens Kappa &uuml;bereinstimmt, gibt es keine Ausgabewerte in der Tabelle von Cohens Kappa-Statistik.</dd></dl></li>
+<li>Da die Daten ordinal sind, wird Kendalls Konkordanzkoeffizient (0,97965) ausgegeben, was auf eine starke Verbindung zwischen den Pr&uuml;ferbewertungen hinweist.</li></ul>
+<h3><a name="All_Appraisers_vs_Standard"></a><span class="mw-headline">Alle Pr&uuml;fer vs. Standard</span></h3>
+<p>Diese Tabelle wird verwendet, um die Richtigkeit der Antwortvariablen f&uuml;r alle Pr&uuml;fer zu bewerten.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 07.png" src="../images/Attribute_Agreement_Analysis/300px-AAA_Tutorial_07.png" width="300"   /></a></dd></dl>
+<ul><li>In der Tabelle &quot;&Uuml;bereinstimmung der Bewertungen&quot; k&ouml;nnen wir in der &quot;&Uuml;bereinstimmungs&quot;-Spalte sehen, dass die Bewertungen aller Pr&uuml;fer mit dem bekannten Standard bei 32 Stichproben &uuml;bereinstimmt.</li>
+<li>Der Kappa-Wert insgesamt  betr&auml;gt 0,93096/0.93104. Das weist darauf hin, dass es eine starke &Uuml;bereinstimmung mit den Standardwerten gibt. Die p-Werte waren fast 0. Das bedeutet, dass die &Uuml;bereinstimmung nicht auf den Zufall zur&uuml;ckgef&uuml;hrt werden konnte.</li>
+<li>Da die Daten ordinal sind, wird Kendalls Konkordanzkoeffizient (0,97243) ausgegeben, was auf eine starke Verbindung zwischen den Bewertungen von allen Pr&uuml;fern und den Standardwerten hinweist.</li></ul>
+<h3><a name="Summary_of_Assessment_Disagreement_with_Standard"></a><span class="mw-headline">Zusammenfassung der Nicht&uuml;bereinstimmung der Bewertungen mit dem Standard</span></h3>
+<p>Diese Tabelle listet die Vorkommnisse falscher Bewertungen f&uuml;r jeden Pr&uuml;fer auf.</p><p>Da jeder Pr&uuml;fer jede Stichprobe zweimal bewertet, erh&auml;lt eine falsche Bewertung 50 % und zwei falsche 100 %.</p>
+<h3><a name="Assessment_Agreement_Plot"></a><span class="mw-headline">Diagramm zur &Uuml;bereinstimmung der Bewertungen</span></h3>
+<p>Dieser Zweig wird verwendet, um die Pr&uuml;fer&uuml;bereinstimmung visuell zu bewerten.</p>
+<dl><dd><a  class="image"><img alt="AAA Tutorial 08.png" src="../images/Attribute_Agreement_Analysis/450px-AAA_Tutorial_08.png" width="450"   /></a></dd></dl>
+<ul><li>Das Diagramm &quot;Innerhalb Pr&uuml;fer&quot; wird verwendet, um die Konsistenz der Bewertungen von jedem Pr&uuml;fer anzuzeigen. Wie Sie sehen k&ouml;nnen, hat Pr&uuml;fer C die meisten konsistenten Bewertungen und Pr&uuml;fer D die wenigsten konsistenten Bewertungen. Hinweis: Dieses Diagramm wird nur ausgegeben, wenn jeder Pr&uuml;fer mehrere Versuche hat.</li>
+<li>Das Diagramm &quot;Pr&uuml;fer vs. Standard&quot; wird verwendet, um die Richtigkeit der Bewertungen von jedem Pr&uuml;fer anzuzeigen. Wie Sie sehen k&ouml;nnen, haben Pr&uuml;fer C und E die meisten korrekten Bewertungen und Pr&uuml;fer D die wenigsten korrekten Bewertungen.</li></ul>
+
+
+
+
+
+
+
+    

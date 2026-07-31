@@ -1,0 +1,108 @@
+﻿<h1 class="firstHeading">Versuchsplan erstellen</h1><p class='urlname' style='display: none'>Create-Design-DOE</p>
+<p><br /></p>
+<h2><a name="Introduction"></a><span class="mw-headline">Einf&uuml;hrung</span></h2>
+<p>Verwenden Sie diese Funktion, um einen neuen Versuchsplan auf Grundlage Ihrer Untersuchungsziele und Nebenbedingungen zu erzeugen. Origin bietet 5 Versuchsplantypen.</p>
+<ul><li><a href="../../Tutorial/Category/Definitive_Screening_Design(App).html" title="Category:Definitive Screening Design(App)">Definitiver Screening-Versuchsplan</a></li>
+<li><a href="../../Tutorial/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Faktorieller Versuchsplan</a></li>
+<li><a href="../../Tutorial/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Wirkungsfl&auml;chenversuchsplan</a></li>
+<li><a href="../../Tutorial/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mischungsversuchsplan</a></li>
+<li><a href="../../Tutorial/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Taguchi-Versuchsplan</a></li></ul>
+<p><br /></p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>Definitiver Screening-Versuchsplan</th>
+<th>Faktorieller Versuchsplan</th>
+<th>Wirkungsfl&auml;chenversuchsplan</th>
+<th>Mischungsversuchsplan</th>
+<th>Taguchi-Versuchsplan</th></tr>
+<tr>
+<td><b>Vorrangiger Zweck</b></td>
+<td>Zahlreiche Faktoren mit minimaler Durchlaufanzahl pr&uuml;fen und dabei Kr&uuml;mmungen erkennen</td>
+<td>Identifizieren, welche Faktoren signifikant die Antwortvariable beeinflussen, und ihre Wechselwirkungen sch&auml;tzen</td>
+<td>Modellkr&uuml;mmung berechnen und optimale Faktoreinstellungen ermitteln</td>
+<td>Komponentenanteile optimieren, die sich auf 100 % summieren</td>
+<td>Prozesse robust gegen&uuml;ber Rauschen machen (Variation minimieren)</td></tr>
+<tr>
+<td><b>Anzahl der Faktoren</b></td>
+<td>6+ Faktoren (in der Regel 6-20)</td>
+<td>2-15 Faktoren</td>
+<td>2-6 Faktoren (in der Regel 3-5)</td>
+<td>2-10 Komponenten</td>
+<td>2-15+ Steuerfaktoren</td></tr>
+<tr>
+<td><b>Erforderliche Durchl&auml;ufe</b></td>
+<td>Minimal (2k + 1 f&uuml;r k Faktoren)</td>
+<td>Moderat (2^k f&uuml;r vollfaktoriell, weniger f&uuml;r teilfaktoriell)</td>
+<td>Moderat bis hoch (h&auml;ngt von der Modellkomplexit&auml;t ab)</td>
+<td>Moderat (h&auml;ngt von der Modellordnung und den Nebenbedingungen ab)</td>
+<td>Moderat bis hoch (h&auml;ngt vom inneren/&auml;u&szlig;eren Feld ab)</td></tr>
+<tr>
+<td><b>Kann Kr&uuml;mmung erkennen</b></td>
+<td>Ja (quadratische Effekte sch&auml;tzbar)</td>
+<td>Nein (es sein denn, es wurden Zentralpunkte hinzugef&uuml;gt)</td>
+<td>Ja (prim&auml;rer Zweck)</td>
+<td>Ja (kann quadratische Modelle anpassen)</td>
+<td>Nein (nur lineare Modelle)</td></tr>
+<tr>
+<td><b>Kann Wechselwirkungen sch&auml;tzen?</b></td>
+<td>Begrenzt (Zwei-Faktor-Wechselwirkungen teilweise vermengt)</td>
+<td>Ja (vollfaktoriell) oder teilweise (teilfaktoriell)</td>
+<td>Ja</td>
+<td>Spezielle Mischungsterme, keine Standardwechselwirkungen</td>
+<td>Begrenzt (Fokus auf Haupteffekten)</td></tr>
+<tr>
+<td><b>Faktortypen</b></td>
+<td>Stetig</td>
+<td>Kategorial oder stetig</td>
+<td>Stetig (in der Regel)</td>
+<td>Stetige Komponenten</td>
+<td>Kategorial oder stetig</td></tr>
+<tr>
+<td><b>Wichtige Nebenbedingung</b></td>
+<td>Keine Spezifischen</td>
+<td>Keine Spezifischen</td>
+<td>Keine Spezifischen</td>
+<td>Komponenten m&uuml;ssen sich auf 1 (100 %) summieren</td>
+<td>Trennt Steuer- und Rauschfaktoren</td></tr>
+<tr>
+<td><b>Optimierungsfokus</b></td>
+<td>Screening + Kr&uuml;mmungserkennung</td>
+<td>Effektidentifikation</td>
+<td>Optimale Einstellungen finden</td>
+<td>Optimale Mischungsanteile</td>
+<td>Robustheit gegen&uuml;ber externer Variation</td></tr>
+<tr>
+<td><b>Typische Folgeschritte</b></td>
+<td>Wirkungsfl&auml;chenversuchsplan f&uuml;r signifikante Faktoren</td>
+<td>Vollfaktorieller Versuchsplan oder Wirkungsfl&auml;chenversuchsplan</td>
+<td>Best&auml;tigungsdurchl&auml;ufe</td>
+<td>Keine (oft alleinstehend)</td>
+<td>Best&auml;tigungsdurchl&auml;ufe</td></tr></table>
+<h2><a name="Processing"></a><span class="mw-headline">Verarbeitung</span></h2>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und w&auml;hlen Sie den gew&uuml;nschten Versuchsplan aus der Liste.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Create_Design_DOE(App)/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Themen, die in diesem Abschnitt behandelt werden:</b></i></p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li><a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../Tutorial/Category/Definitive_Screening_Design(App).html">Definitiver Screening-Versuchsplan</a></li>
+		
+		<li><a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../Tutorial/Category/Factorial_Design(App).html">Faktorieller Versuchsplan</a></li>
+		
+		<li><a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../Tutorial/Category/Response_Surface_Design(App).html">Wirkungsfl&auml;chenversuchsplan</a></li>
+		
+		<li><a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../Tutorial/Category/Mixture_Design(App).html">Mischungsversuchsplan</a></li>
+		
+		<li><a class="CategoryTreeLabel  CategoryTreeLabelNs14 CategoryTreeLabelCategory" href="../../Tutorial/Category/Taguchi_Design(App).html">Taguchi-Versuchsplan</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+
+
+    

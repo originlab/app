@@ -1,0 +1,80 @@
+﻿<h1 class="firstHeading">Der Dialog Benutzerdefinierten Versuchsplan definieren</h1><p class='urlname' style='display: none'>Custom-Design-Dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Hilfreiche Informationen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Factors.2FComponents"><span class="tocnumber">2</span> <span class="toctext">Faktoren/Komponenten</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Process_Variables"><span class="tocnumber">3</span> <span class="toctext">Prozessvariablen</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Signal_Factor"><span class="tocnumber">4</span> <span class="toctext">Signalfaktor</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Low.2FHigh"><span class="tocnumber">5</span> <span class="toctext">Niedrig/Hoch</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Designs"><span class="tocnumber">6</span> <span class="toctext">Versuchspl&auml;ne</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Response"><span class="tocnumber">7</span> <span class="toctext">Antwortvariable</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Hilfreiche Informationen</span></h2>
+<p>Um den Dialog <b>Benutzerdefinierten Versuchsplan definieren</b> zu &ouml;ffnen:</p>
+<ul><li>Aktivieren Sie ein Arbeitsblatt mit Ihren Versuchsdaten f&uuml;r den Versuchsplan.</li>
+<li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol und aus der Liste den gew&uuml;nschten Versuchsplan.<dl><dd><a  class="image"><img alt="Define custom design.png" src="../images/The_Define_Custom_Design_Dialog_Box/600px-Define_custom_design.png" width="600"   /></a></dd></dl></li></ul>
+<h2><a name="Factors.2FComponents"></a><span class="mw-headline">Faktoren/Komponenten</span></h2>
+<p>Die Spaltenlangnamen aus dem aktiven Arbeitsblatt werden im Listenfeld angezeigt. W&auml;hlen Sie die gew&uuml;nschten Faktoren und f&uuml;gen Sie sie zum rechten Bedienfeld hinzu.</p><p><a  class="image"><img alt="Custom Design DLG Factors.png" src="../images/The_Define_Custom_Design_Dialog_Box/500px-Custom_Design_DLG_Factors.png" width="500"   /></a></p><p>Hinweis: Sie k&ouml;nnen unter <b>Faktorieller Versuchsplan</b> den Versuchsplan ausw&auml;hlen, den Sie definieren m&ouml;chten.</p>
+<table class="dialogcontroltable">
+<tr>
+<th>2-stufig faktoriell</th>
+<td>Definieren Sie einen 2-stufigen faktoriellen Versuchsplan aus Daten im Arbeitsblatt.</td></tr>
+<tr>
+<th>Allgemein vollfaktoriell</th>
+<td>Definieren Sie einen allgemeinen vollfaktoriellen Versuchsplan aus Daten im Arbeitsblatt.</td></tr></table>
+<p><br /></p>
+<h2><a name="Process_Variables"></a><span class="mw-headline">Prozessvariablen</span></h2>
+<p>Nur verf&uuml;gbar f&uuml;r <a href="../../Tutorial/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mischungsversuchsplan</a>.</p><p>Verschieben Sie die Variablen ins rechte Bedienfeld, um Prozessvariablen in Ihren Mischungsversuchsplan aufzunehmen. Die Prozessvariablen sind Versuchsfaktoren, die kein Teil der Mischung sind, aber Einfluss auf die Antwortvariable haben.</p>
+<h2><a name="Signal_Factor"></a><span class="mw-headline">Signalfaktor</span></h2>
+<p>Nur verf&uuml;gbar f&uuml;r <a href="../../Tutorial/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Taguchi-Versuchsplan</a>.</p><p>&Uuml;ber die Registerkarte Signalfaktor k&ouml;nnen Sie einen Signalfaktor einbinden, um einen statischen Taguchi-Versuchsplan in eine dynamische Antwortvariable zu konvertieren. Wenn Sie einen Versuchsplan definiert haben, k&ouml;nnen Sie mithilfe von Taguchi-Versuchsplan analysieren (dynamisch) eine Analyse durchf&uuml;hren, um Signal-Rausch-Verh&auml;ltnisse, Steigungen und Standardabweichungen zu bewerten.</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Dynamischen Signalfaktor hinzuf&uuml;gen</th>
+<td>F&uuml;hren Sie einen Signalfaktor in Ihren Versuchsplan ein. Dies ver&auml;ndert den Versuch von statisch (einzelne Antwortvariable) zu dynamisch (Antwortvariable variiert mit Signaleingabe).</td></tr>
+<tr>
+<th>Signalfaktor</th>
+<td>W&auml;hlen Sie die Spalte, die die Werte des Signalfaktors enth&auml;lt, aus.</td></tr></table>
+<p><br /></p>
+<h2><a name="Low.2FHigh"></a><span class="mw-headline">Niedrig/Hoch</span></h2>
+<p>Nach Definieren der Faktoren auf der Registerkarte <b>Faktoren</b> geben Sie die Versuchsplaninformationen der Faktoren auf der Registerkarte <b>Niedrig/Hoch</b> ein.</p><p><a  class="image"><img alt="Custom Design DLG Factors.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_LowHigh.png" width="420"   /></a></p>
+<table class="dialogcontroltable">
+<tr>
+<th>Typ</th>
+<td>Faktoren k&ouml;nnen Text oder numerisch sein. Wenn Sie eine numerische Spalte als Text behandeln m&ouml;chten, klicken Sie mit der rechten Maustaste auf die Spalte und w&auml;hlen Sie <b>Als Kategorisch setzen</b> im Kontextmen&uuml;.</td></tr>
+<tr>
+<th>Niedrig</th>
+<td>Zeigen Sie den minimalen Wert der numerischen Spalte oder den ersten Text der kategorialen/Textspalte standardm&auml;&szlig;ig an. Sie k&ouml;nnen einen anderen Wert nach Wunsch eingeben.</td></tr>
+<tr>
+<th>Hoch</th>
+<td>Zeigen Sie den maximalen Wert der numerischen Spalte oder den zweiten Text der kategorialen/Textspalte standardm&auml;&szlig;ig an. Sie k&ouml;nnen einen anderen Wert nach Wunsch eingeben.</td></tr></table>
+<h2><a name="Designs"></a><span class="mw-headline">Versuchspl&auml;ne</span></h2>
+<p>Klicken Sie auf eine dreieckige Schaltfl&auml;che, um festzulegen, welche Spalte im aktiven Arbeitsblatt die Versuchsplaninformationen enth&auml;lt. Falls dies nicht festgelegt ist, wird automatisch eine neue Spalte im Ergebnisblatt erzeugt.</p><p><a  class="image"><img alt="Custom Design DLG Designs.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_Designs.png" width="420"   /></a></p>
+<table class="dialogcontroltable">
+<tr>
+<th>Durchlaufreihenfolge</th>
+<td>Die Reihenfolge, in der die Versuchsdurchl&auml;ufe durchgef&uuml;hrt werden sollten.</td></tr>
+<tr>
+<th>Standardreihenfolge</th>
+<td>Die Standardreihenfolge der Durchl&auml;ufe</td></tr>
+<tr>
+<th>Punkttyp</th>
+<td>Der Typ des Punkts<ul><li><b>0</b>: Weist auf Zentralpunkte hin.</li>
+<li><b>1</b>: Weist auf faktorielle Punkte hin.</li></ul>
+<p>Wenn keine Spalte des Punkttyps festgelegt ist, wird automatisch eine Spalte, in der alle Werte auf 1 gesetzt sind, erzeugt.</p>
+</td></tr>
+<tr>
+<th>Bl&ouml;cke</th>
+<td>Wenn keine Blockspalte festgelegt ist, wird automatisch eine Spalte, in der alle Werte auf 1 gesetzt sind, erzeugt, was darauf hindeutet, dass es keine Bl&ouml;cke gibt.</td></tr></table>
+<p><br /> Wenn f&uuml;r alle Optionen &lt;optional&gt; steht</p><p><a  class="image"><img alt="Custom Design DLG Output.png" src="../images/The_Define_Custom_Design_Dialog_Box/600px-Custom_Design_DLG_Output.png" width="600"   /></a></p>
+<h2><a name="Response"></a><span class="mw-headline">Antwortvariable</span></h2>
+<p>Nach Festlegen der Faktoren auf der Registerkarte <b>Faktoren</b> werden die restlichen Spalten in der verf&uuml;gbaren Liste auf der Registerkarte <b>Antwortvariable</b> gezeigt. W&auml;hlen Sie die gew&uuml;nschte Antwortvariable und f&uuml;gen Sie sie zum rechten Bedienfeld hinzu.</p><p><a  class="image"><img alt="Custom Design DLG Response.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_Response.png" width="420"   /></a></p>
+
+
+
+
+
+
+    

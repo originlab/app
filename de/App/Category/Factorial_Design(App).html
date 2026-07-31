@@ -1,0 +1,95 @@
+﻿<h1 class="firstHeading">Faktorieller Versuchsplan</h1><p class='urlname' style='display: none'>Factorial-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Einf&uuml;hrung</span></a><ul>
+<li class="toclevel-2 tocsection-2"><a href="#2-Level_Factorial"><span class="tocnumber">1.1</span> <span class="toctext">2-stufig faktoriell</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Plackett-Burman"><span class="tocnumber">1.2</span> <span class="toctext">Plackett-Burman</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#General_Full_Factorial"><span class="tocnumber">1.3</span> <span class="toctext">Allgemein vollfaktoriell</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Create_the_Design"><span class="tocnumber">2</span> <span class="toctext">Versuchsplan erstellen</span></a><ul>
+<li class="toclevel-2 tocsection-6"><a href="#Create_Factorial_Design"><span class="tocnumber">2.1</span> <span class="toctext">Faktoriellen Versuchsplan erstellen</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Create_Custom_Factorial_Design"><span class="tocnumber">2.2</span> <span class="toctext">Benutzerdefinierten faktoriellen Versuchsplan erstellen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Einf&uuml;hrung</span></h2>
+<p>Faktorielle Versuchspl&auml;ne variieren systematisch mehrere Faktoren gleichzeitig, um ihre individuellen Effekte und gemeinsamen Einfl&uuml;sse zu untersuchen. Anders als der Ein-Faktor-gleichzeitig-Ansatz zeigen sie Wechselwirkungen auf, wobei der Effekt eines Faktors von der Stufe eines anderen abh&auml;ngt, und liefern effiziente, statistisch robuste Ergebnisse.</p><p>Origin bietet drei g&auml;ngige faktorielle Versuchsplantypen, die jeweils f&uuml;r unterschiedliche Ziele und Nebenbedingungen eines Versuchs geeignet sind.</p>
+<div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Factorial_Design(App)/150px-3_factor_full_factorial_design.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Vollfaktorieller 3-Faktor-Versuchsplan mit 2 Stufen</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Factorial_Design(App)/150px-3_factor_half_fraction_factorial_design.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Teilfaktorieller 3-Faktor-Versuchsplan mit 1/2 Fraktion und 2 Stufen</div></div></div>
+<h5><a name="2-Level_Factorial"></a><span class="mw-headline">2-stufig faktoriell</span></h5>
+<p>In einem 2-stufigen faktoriellen Versuchsplan hat jeder Faktor 2 Stufen. Falls Antwortvariablen bei allen Kombinationen der experimentellen Faktorstufen gemessen werden, wird der Versuchsplan als vollfaktoriell (oder mit voller Aufl&ouml;sung) bezeichnet. Dies kann jedoch eine &uuml;berm&auml;&szlig;ig hohe Anzahl von Durchl&auml;ufen nach sich ziehen und Ihren Zeit- und Kostenaufwand erh&ouml;hen. Stattdessen k&ouml;nnen Sie teilfaktorielle Versuchspl&auml;ne verwenden, die einige der Faktorstufenkombinationen ausschlie&szlig;en. Teilfaktorielle Versuchspl&auml;ne teilen die Anzahl der Durchl&auml;ufe in einem vollfaktoriellen Versuchsplan in der Regel durch eine Potenz von 2. Wenn alle Faktoren numerisch sind, k&ouml;nnen Sie dem Versuchsplan eine Reihe von Zentralpunkten hinzuf&uuml;gen, deren Werte den Mittelwerten der im faktoriellen Teil verwendeten Werte entsprechen.</p>
+<h5><a name="Plackett-Burman"></a><span class="mw-headline">Plackett-Burman</span></h5>
+<p>Der Plackett-Burman-Versuchsplan ist ein spezieller Typ des 2-stufigen faktoriellen Versuchsplans mit Aufl&ouml;sung III. Er wird verwendet, um die wichtigsten Faktoren zu einem fr&uuml;hen Zeitpunkt des Experiments zu identifizieren. &Uuml;blicherweise werden 2-Faktor-Wechselwirkungen in Plackett-Burman-Versuchspl&auml;nen vernachl&auml;ssigt. Die Anzahl der Durchl&auml;ufe sollte ein Mehrfaches von 4 und nicht kleiner als 12 sein.</p>
+<h5><a name="General_Full_Factorial"></a><span class="mw-headline">Allgemein vollfaktoriell</span></h5>
+<p>Der allgemeine vollfaktorielle Versuchsplan hat eine volle Aufl&ouml;sung. Faktoren k&ouml;nnen mehr als 2 Stufen (diskrete Werte) haben. Der Versuchsplan wird mit allen m&ouml;glichen Kombinationen dieser Stufen &uuml;ber alle Faktoren erstellt.</p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>2-stufig faktoriell</th>
+<th>Plackett-Burman</th>
+<th>Allgemein vollfaktoriell</th></tr>
+<tr>
+<td><b>Faktorstufen</b></td>
+<td>2</td>
+<td>2</td>
+<td>Beliebig (≥ 2)</td></tr>
+<tr>
+<td><b>Prim&auml;re Verwendung</b></td>
+<td>Screening und Modellierung</td>
+<td>Nur Screening</td>
+<td>Kategoriale Faktoren</td></tr>
+<tr>
+<td><b>Wechselwirkungen</b></td>
+<td>Sch&auml;tzbar (voll) oder teilweise vermengt (teilfaktoriell)</td>
+<td>Vermengt mit Haupteffekten</td>
+<td>Voll sch&auml;tzbar</td></tr>
+<tr>
+<td><b>Kr&uuml;mmung</b></td>
+<td>Erkennbar mit Zentralpunkten</td>
+<td>Nicht erkennbar</td>
+<td>Erkennbar, falls Stufen den Bereich abdecken</td></tr>
+<tr>
+<td><b>Durchlaufeffizienz</b></td>
+<td>Moderat</td>
+<td>Hoch</td>
+<td>Niedrig</td></tr>
+<tr>
+<td><b>Aliasstruktur</b></td>
+<td>Sauber und vorhersehbar</td>
+<td>Komplex</td>
+<td>Keine (vollfaktoriell)</td></tr>
+<tr>
+<td><b>Durchl&auml;ufe</b></td>
+<td>2^k oder 2^(k-p)</td>
+<td>N&auml;chstes Mehrfaches von 4 &gt; Faktoren</td>
+<td>Produkt aller Stufenanzahlen</td></tr>
+<tr>
+<td><b>Am besten wenn</b></td>
+<td>Sch&auml;tzwerte f&uuml;r Wechselwirkungen erforderlich; Erstellen von pr&auml;diktiven Modellen</td>
+<td>Viele Faktoren, begrenzte Durchl&auml;ufe, Wechselwirkungen werden als vernachl&auml;ssigbar angenommen</td>
+<td>Faktoren haben nat&uuml;rliche kategoriale Stufen; vollst&auml;ndige Abdeckung erforderlich</td></tr></table>
+<h2><a name="Create_the_Design"></a><span class="mw-headline">Versuchsplan erstellen</span></h2>
+<h4><a name="Create_Factorial_Design"></a><span class="mw-headline">Faktoriellen Versuchsplan erstellen</span></h4>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und w&auml;hlen Sie <b>Faktorieller Versuchsplan</b> aus der Liste.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Factorial_Design(App)/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<h4><a name="Create_Custom_Factorial_Design"></a><span class="mw-headline">Benutzerdefinierten faktoriellen Versuchsplan erstellen</span></h4>
+<p>Bitte lesen Sie die Anweisungen auf der Seite <a href="../../Tutorial/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">Benutzerdefinierte Versuchspl&auml;ne definieren</a>.</p><p><br /></p>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Themen, die in diesem Abschnitt behandelt werden:</b></i></p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li><a class="CategoryTreeLabel  CategoryTreeLabelNs122 CategoryTreeLabelPage" href="../../Tutorial/App/Factorial_Design_Dialog.html">Der Dialog Faktorieller Versuchsplan</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+
+
+    

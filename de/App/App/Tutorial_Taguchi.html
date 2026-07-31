@@ -1,0 +1,136 @@
+﻿<h1 class="firstHeading">Tutorial zum Taguchi-Versuchsplan</h1><p class='urlname' style='display: none'>Tutorial-Taguchi-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Static_Taguchi_Design"><span class="tocnumber">1</span> <span class="toctext">Statischer Taguchi-Versuchsplan</span></a><ul>
+<li class="toclevel-2 tocsection-2"><a href="#Create_Design"><span class="tocnumber">1.1</span> <span class="toctext">Versuchsplan erstellen</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Analyze_Design"><span class="tocnumber">1.2</span> <span class="toctext">Versuchsplan analysieren</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Dynamic_Taguchi_Design"><span class="tocnumber">2</span> <span class="toctext">Dynamischer Taguchi-Versuchsplan</span></a><ul>
+<li class="toclevel-2 tocsection-5"><a href="#Create_Design_2"><span class="tocnumber">2.1</span> <span class="toctext">Versuchsplan erstellen</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Analyze_Design_2"><span class="tocnumber">2.2</span> <span class="toctext">Versuchsplan analysieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Static_Taguchi_Design"></a><span class="mw-headline">Statischer Taguchi-Versuchsplan</span></h2>
+<p>Ein Ingenieurteam arbeitet daran, das Verfahren zur Herstellung von Biodiesel aus gebrauchtem Speise&ouml;l zu optimieren. Ihr Ziel ist es, die Biodieselausbeute zu maximieren. Sie identifizierten drei Faktoren, die sich auf die Biodieselproduktion auswirken:</p>
+<ol><li>Katalysatortyp (Catalyst Type): Natriumhydroxid (NaOH) und Kaliumhydroxid (KOH)</li>
+<li>Reaktionstemperatur (Temperature): 60 °C und 75 °C</li>
+<li>L&ouml;sungsmitteltyp (Solvent Type): Methanol und Ethanol</li></ol>
+<p>Sie identifizierten auch Feuchtigkeit (Humidity) als einen Rauschfaktor, der die Ausbeute beeinflusst. Daher wird der Versuch auf drei Feuchtigkeitsstufen durchgef&uuml;hrt: niedrig, mittel und hoch.</p>
+<h4><a name="Create_Design"></a><span class="mw-headline">Versuchsplan erstellen</span></h4>
+<ol>
+<li>W&auml;hlen Sie im Men&uuml; <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b>.<li>Klicken Sie auf die Schaltfl&auml;che <b>Versuchsplan erstellen</b> und w&auml;hlen Sie <b>Taguchi-Versuchsplan</b>.<dl><dd><a  class="image"><img alt="Create Taguchi Design TB.png" src="../images/Tutorial_Taguchi/600px-Create_Taguchi_Design_TB.png" width="600"   /></a></dd></dl>
+
+<li>Wir haben 3 Faktoren und 2 Stufen. W&auml;hlen Sie <b>L8(2^3)</b> unter <b>Versuchsplan</b>. F&uuml;llen Sie im ge&ouml;ffneten Dialog Folgendes in die Tabelle ein.<dl><dd><a  class="image"><img alt="Create Taguchi Design dialog.png" src="../images/Tutorial_Taguchi/700px-Create_Taguchi_Design_dialog.png" width="700"   /></a></dd></dl>
+
+<li>Klicken Sie auf das Vorzeichen <b>+</b> neben der Wechselwirkung und f&uuml;gen Sie <b>Catalyst Type*Temperature</b> zu den <b>Ausgew&auml;hlten Termen</b> hinzu.<dl><dd><a  class="image"><img alt="Taguchi Static Design Interactions.png" src="../images/Tutorial_Taguchi/700px-Taguchi_Static_Design_Interactions.png" width="700"   /></a></dd></dl>
+
+<li>Klicken Sie auf <b>OK</b>, um die Versuchsplantabelle zu erzeugen.<dl><dd><a  class="image"><img alt="Taguchi Static Design Table.png" src="../images/Tutorial_Taguchi/600px-Taguchi_Static_Design_Table.png" width="600"   /></a></dd></dl>
+</ol>
+<h4><a name="Analyze_Design"></a><span class="mw-headline">Versuchsplan analysieren</span></h4>
+<ol>
+<li>Geben Sie in der <b>Versuchsplantabelle</b> die Daten der Antwortvariablen unter den Spalten <b>D</b>, <b>E</b> und <b>F</b> f&uuml;r die drei Feuchtigkeitsstufen (Yield1, Yield2, Yield3) ein.<dl><dd><a  class="image"><img alt="Taguchi Static Design Table response data.png" src="../images/Tutorial_Taguchi/600px-Taguchi_Static_Design_Table_response_data.png" width="600"   /></a></dd></dl>
+
+<li>Klicken Sie auf die Schaltfl&auml;che <b>Versuchsplan analysieren</b>.<dl><dd><a  class="image"><img alt="Analyze Design Button.png" src="../images/Tutorial_Taguchi/600px-Analyze_Design_Button.png" width="600"   /></a></dd></dl>
+
+<li>F&uuml;gen Sie im Dialog <b>Yield1</b>, <b>Yield2</b>, <b>Yield3</b> in <b>Antwortvariable</b> ein.<dl><dd><a  class="image"><img alt="Analyze Design Response.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Response.png" width="700"   /></a></dd></dl>
+
+<li>Klicken Sie auf das Vorzeichen <b>+</b> neben den Modelltermen. Die Wechselwirkung ist bereits unter den <b>Ausgew&auml;hlten Termen</b> enthalten, da sie zuvor unter <b>Versuchsplan erstellen</b> festgelegt wurde.<dl><dd><a  class="image"><img alt="Analyze Design Model Terms.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Model_Terms.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Einstellungen</b> und w&auml;hlen Sie <b>Gr&ouml;&szlig;er ist besser</b> unter <b>Signal-Rausch-Verh&auml;ltnis</b>, da wir versuchen, die Ausbeute (Yield) zu maximieren.<dl><dd><a  class="image"><img alt="Analyze Design Settings.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Settings.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Eigenschaften</b> und w&auml;hlen Sie alle Optionen.<dl><dd><a  class="image"><img alt="Analyze Design Quantities.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Quantities.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Zusammenfassung der Antwortvariable</b> und w&auml;hlen Sie ebenfalls alle Optionen.<dl><dd><a  class="image"><img alt="Analyze Design Response Summary.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Response_Summary.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Anpassungen und Diagnosen</b> und w&auml;hlen Sie <b>Hi(Hebelwirkung)</b>.<dl><dd><a  class="image"><img alt="Analyze Design Fits and Diagnostics.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Fits_and_Diagnostics.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Diagramme</b> und w&auml;hlen Sie Alle. Belassen Sie den <b>Residuentyp</b> bei <b>Regul&auml;r</b>. Klicken Sie auf <b>OK</b>.<dl><dd><a  class="image"><img alt="Analyze Design Plots.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Plots.png" width="700"   /></a></dd></dl>
+
+<li>Im Ergebnisblatt <b>DOEAnalysis</b> sehen Sie unter dem Knoten <b>Lineare Modellanalyse</b> in den Tabellen f&uuml;r <b>Signal-Rausch-Verh&auml;ltnis</b>, <b>Mittelwerte</b> und <b>Standardabweichungen</b>, dass der Wechselwirkungsterm nicht signifikant ist.<dl><dd><a  class="image"><img alt="Analyze Design Result.png" src="../images/Tutorial_Taguchi/Analyze_Design_Result.png" width="546"  /></a></dd></dl>
+
+<li>Wir wiederholen die Analyse, wobei wir den Wechselwirkungsterm entfernen. Klicken Sie auf das gr&uuml;ne Schloss und w&auml;hlen Sie <b>Diese Operation duplizieren</b>. Klicken Sie im duplizierten Ergebnisblatt <b>DOEAnalysis1</b> auf das gr&uuml;ne Schloss und <b>Parameter &auml;ndern</b>.<dl><dd><a  class="image"><img alt="Analyze Design Duplicate Operation.png" src="../images/Tutorial_Taguchi/Analyze_Design_Duplicate_Operation.png" width="359"  /></a></dd></dl>
+
+<li>Klicken Sie auf der Registerkarte <b>Modell</b> auf das <b>+</b> der <b>Modellterme</b> und entfernen Sie die Wechselwirkung <b>Catalyst Type*Temperature</b>. Klicken Sie auf <b>OK</b>.<dl><dd><a  class="image"><img alt="Analyze Design Model Terms Remove.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Model_Terms_Remove.png" width="700"   /></a></dd></dl>
+
+<li>Im Ergebnisblatt wird das <b>Signal-Rausch-Verh&auml;ltnis</b> verwendet, um die optimalen Faktoreinstellungen zu identifizieren, die die Ausbeute (Yield) maximieren, w&auml;hrend die Variabilit&auml;t minimiert wird. Der <b>Mittelwert</b> stellt die durchschnittliche Ausbeute &uuml;ber verschiedene Faktoreinstellungen dar, w&auml;hrend die <b>Standardabweichung</b> darauf hinweist, wie konsistent und stabil der Prozess ist.<ul>
+<li>Sehen wir uns das <b>Signal-Rausch-Verh&auml;ltnis</b> unter <b>Lineare Modellanalyse</b> an. Wir k&ouml;nnen sehen, dass die zwei Faktoren Catalyst Type und Temperature, also Katalysatortyp und Temperatur, bei einem Niveau von 5 % signifikant sind. Das bedeutet, dass verschiedene Stufen von Katalysatortyp und Temperatur f&uuml;r unterschiedliche Werte der Ausbeute sorgen.<dl><dd><a  class="image"><img alt="Analyze Design Signal to Noise Ratios 1.png" src="../images/Tutorial_Taguchi/Analyze_Design_Signal_to_Noise_Ratios_1.png" width="680"  /></a></dd></dl><br />Die Koeffizientensch&auml;tzwerte zeigen den Betrag und die Richtung des Effekts.<dl><dd><a  class="image"><img alt="Analyze Design Signal to Noise Ratios 2.png" src="../images/Tutorial_Taguchi/Analyze_Design_Signal_to_Noise_Ratios_2.png" width="504"  /></a></dd></dl>
+
+<li>In der Tabelle der Antwortvariablen besteht das Ziel darin, das Signal-Rausch-Verh&auml;ltnis und die Mittelwerte zu maximieren und die Standardabweichung zu minimieren. Sehen wir uns das <b>Signal-Rausch-Verh&auml;ltnis</b> in der <b>Tabelle der Antwortvariablen</b> an. Dies sind die durchschnittlichen Antwortvariablen f&uuml;r jeden Faktor &uuml;ber 2 verschiedene Stufen. Der Koeffizientensch&auml;tzwert f&uuml;r Catalyst Type ist positiv, und die Antwortvariable auf Stufe 1 von Catalyst Type ist gr&ouml;&szlig;er als die Antwortvariable auf Stufe 2. Die Koeffizientensch&auml;tzwerte f&uuml;r Temperature und Solvent (L&ouml;sungsmittel) sind negativ, und die Antwortvariable auf Stufe 2 von Temperature und Solvent ist gr&ouml;&szlig;er als die Antwortvariable auf Stufe 1. Delta ist die absolute Differenz zwischen Stufe 1 und Stufe 2. Rang wird zugewiesen, indem Delta-Werte vom gr&ouml;&szlig;sten zum kleinsten geordnet werden. Signal-Rausch-VErh&auml;ltnisse werden unter den folgenden Einstellungen maximiert: <i>Catalyst Type ist NaOH</i>, <i>Temperature ist 75</i> und <i>Solvent ist Ethanol</i>.<dl><dd><a  class="image"><img alt="Analyze Design Response Tables.png" src="../images/Tutorial_Taguchi/Analyze_Design_Response_Tables.png" width="969"  /></a></dd></dl>
+
+<li>&Auml;hnliche Inferenzen k&ouml;nnen auch f&uuml;r Mittelwerte und Standardabweichungen gezogen werden. Sehen wir uns die Tabelle <b>Mittelwerte</b> unter <b>Lineare Modellanalyse</b> an. Der p-Wert f&uuml;r Solvent ist 0,60182.<dl><dd><a  class="image"><img alt="Analyze Design Means Tables.png" src="../images/Tutorial_Taguchi/Analyze_Design_Means_Tables.png" width="521"  /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Haupteffektediagramme</b> f&uuml;r <b>Mittelwerte</b>. Die Linien f&uuml;r Catalyst Type und Temperature zeigen steile Steigungen, was auf einen starken Einfluss auf die durchschnittlichen Ausbeute hindeutet. <br />Die Steigung f&uuml;r Solvent ist flach, was darauf hindeutet, dass die unterschiedlichen Faktorstufen, Methanol und Ethanol, keinen signifikanten Effekt auf die durchschnittliche Ausbeute hat.<dl><dd><a  class="image"><img alt="Analyze Design Main Effects Plots.png" src="../images/Tutorial_Taguchi/Analyze_Design_Main_Effects_Plots.png" width="800"  /></a></dd></dl>
+
+<li>Gehen Sie zu den Residuendiagrammen f&uuml;r die drei Messungen. Die Residuendiagramme zeigen keinerlei Muster.<dl><dd><a  class="image"><img alt="Analyze Design Residual Plots.png" src="../images/Tutorial_Taguchi/800px-Analyze_Design_Residual_Plots.png" width="800"   /></a></dd></dl>
+</ul>
+<li>Der n&auml;chste Schritt besteht im Bestimmen der angepassten Werte f&uuml;r die drei Merkmale Signal-Rausch-Verh&auml;ltnisse, Mittelwerte und Standardabweichung. <br />Klicken Sie auf das Blatt <b>DOEFindYfromX1</b>. Geben Sie verschiedene Stufen f&uuml;r die drei Faktoren - Catalyst Type, Temperature und Solvent - ein und die Werte f&uuml;r die drei Merkmale werden automatisch eingetragen.<dl><dd><a  class="image"><img alt="Analyze Design Determine Fitted Values.png" src="../images/Tutorial_Taguchi/Analyze_Design_Determine_Fitted_Values.png" width="498"  /></a></dd></dl>
+
+</ol>
+<h2><a name="Dynamic_Taguchi_Design"></a><span class="mw-headline">Dynamisches Taguchi-Versuchsplan</span></h2>
+<p>Ein Ingenieurteam m&ouml;chte die Unsch&auml;rfe bei Fotos, die mit einer Drohne aufgenommen wurden, reduzieren. Sie identifizierten drei Steuerfaktoren, die sich auf die Unsch&auml;rfe der Bilder auswirken:</p>
+<ol><li>Steifigkeit des Kardanrings (Gimbal stiffness): Niedrig und Hoch</li>
+<li>D&auml;mpfungsalgorithmus (Damping algorithm): Leichte Filterung und aggressive Filterung</li>
+<li>Verschlusszeit (Shutter speed): Kurz und lang</li></ol>
+<p>Sie identifizierten auch ein Signalfaktor, die Drohnengeschwindigkeit, die &uuml;ber drei Stufen - 2, 4 und 6 Meter pro Sekunden - variiert.</p><p><br /></p>
+<h4><a name="Create_Design_2"></a><span class="mw-headline">Versuchsplan erstellen</span></h4>
+<ol>
+<li>W&auml;hlen Sie im Men&uuml; <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b>.<li>Klicken Sie auf die Schaltfl&auml;che <b>Versuchsplan erstellen</b> und w&auml;hlen Sie <b>Taguchi-Versuchsplan</b>.<dl><dd><a  class="image"><img alt="Create Taguchi Design TB.png" src="../images/Tutorial_Taguchi/600px-Create_Taguchi_Design_TB.png" width="600"   /></a></dd></dl>
+
+<li>Wir haben 3 Faktoren und 2 Stufen. W&auml;hlen Sie <b>L8(2^3)</b> unter <b>Versuchsplan</b>. Aktivieren Sie die Option <b>Dynamischen Signalfaktor hinzuf&uuml;gen</b>. Klicken Sie auf das Zeichen <b>+</b> neben dem <b>Signal</b>, um eines hinzuzuf&uuml;gen.<li>F&uuml;len Sie im ge&ouml;ffneten Dialog Folgendes in die Tabelle ein.<dl><dd><a  class="image"><img alt="S2 Create Taguchi Design dialog.png" src="../images/Tutorial_Taguchi/700px-S2_Create_Taguchi_Design_dialog.png" width="700"   /></a></dd></dl>
+
+<li>Klicken Sie auf das Vorzeichen <b>+</b> neben der Wechselwirkung und f&uuml;gen Sie <b>Gimbal stiffness * Damping algorithm</b> zu den <b>Ausgew&auml;hlten Termen</b> hinzu.<dl><dd><a  class="image"><img alt="S2 Taguchi Static Design Interactions.png" src="../images/Tutorial_Taguchi/700px-S2_Taguchi_Static_Design_Interactions.png" width="700"   /></a></dd></dl>
+
+<li>Klicken Sie auf <b>OK</b>, um die Versuchsplantabelle zu erzeugen..<dl><dd><a  class="image"><img alt="S2 Taguchi Static Design Table.png" src="../images/Tutorial_Taguchi/600px-S2_Taguchi_Static_Design_Table.png" width="600"   /></a></dd></dl>
+
+</ol>
+<p><br /></p>
+<h4><a name="Analyze_Design_2"></a><span class="mw-headline">Versuchsplan analysieren</span></h4>
+<ol>
+<li>Geben Sie in der <b>Versuchsplantabelle</b> die Werte der Bildunsch&auml;rfe, <b>Image Blur</b>, in Spalte E ein.<dl><dd><a  class="image"><img alt="S2 Taguchi Static Design Table response data.png" src="../images/Tutorial_Taguchi/600px-S2_Taguchi_Static_Design_Table_response_data.png" width="600"   /></a></dd></dl>
+
+<li>Klicken Sie auf die Schaltfl&auml;che <b>Versuchsplan analysieren</b>.<dl><dd><a  class="image"><img alt="Analyze Design Button.png" src="../images/Tutorial_Taguchi/600px-Analyze_Design_Button.png" width="600"   /></a></dd></dl>
+
+<li>F&uuml;gen Sie <b>Image_blur</b> zur <b>Antwortvariablen</b> im Dialog hinzu.<dl><dd><a  class="image"><img alt="S2 Analyze Design Response.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Response.png" width="700"   /></a></dd></dl>
+
+<li>Klicken Sie auf das Vorzeichen <b>+</b> neben den Modelltermen. Die Wechselwirkung ist bereits unter den <b>Ausgew&auml;hlten Termen</b> enthalten, da sie zuvor unter <b>Versuchsplan erstellen</b> festgelegt wurde.<dl><dd><a  class="image"><img alt="S2 Analyze Design Model Terms.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Model_Terms.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Einstellungen</b>. Das Ziel in einem <b>Dynamischen Taguchi</b>-Versuchsplan besteht darin, das Signal-Rausch-Verh&auml;ltnis durch Anpassen an das geeignete Modell zu optimieren:<ul><li><font color="blue"><b>Durch festen Punkt</b></font>. Diese Option wird f&uuml;r diese Analyse nicht empfohlen, da sie den Fit durch einen vordefinierten Wert f&uuml;r Signal und Antwortvariable zwingt. Die Standardwerte f&uuml;r Signal und Antwortvariable sind null, aber dies sollte nicht verwendet werden, das die Bildunsch&auml;rfe noch immer pr&auml;sent sein kann, auch wenn die Drohne feststehend ist.</li></ul>
+
+<ul><li><font color="blue"><b>Durch die durchschnittliche Antwortvariable bei festem Signal</b></font>l. Dies verankert die durchschnittliche beobachtete Antwortvariable bei einer gew&auml;hlten Signalstufe. Eine Option besteht im Ankern der Anpassung bei einem Signalfaktor von 4, was die durchschnittliche Drohnengeschwindigkeit darstellt. Diese Option begrenzt den Bereich der Antwortvariable, Image Blur (Bildunsch&auml;rfe).</li></ul>
+
+<ul><li><font color="blue"><b>Ohne festen Punkt</b></font>. Dies ist die flexibelste und bevorzugte Option. Sowohl der Schnittpunkt mit der Y-Achse als auch die Steigung werden frei gesch&auml;tzt. Diese Option eignet sich f&uuml;r Prozesse, die eine Nicht-Null-Antwortvariable bei null haben oder wenn es keinen eindeutigen Ankerpunkt gibt.</li></ul><br /> Wir w&auml;hlen die Option Ohne festen Punkt.<dl><dd><a  class="image"><img alt="S2 Analyze Design Settings.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Settings.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Eigenschaften</b> und w&auml;hlen Sie alle Optionen.<dl><dd><a  class="image"><img alt="Analyze Design Quantities.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Quantities.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Zusammenfassung der Antwortvariable</b> und w&auml;hlen Sie alle Optionen.<dl><dd><a  class="image"><img alt="Analyze Design Response Summary.png" src="../images/Tutorial_Taguchi/700px-Analyze_Design_Response_Summary.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur <b>Anpassungen und Diagnosen</b> und w&auml;hlen Sie alle Optionen.<dl><dd><a  class="image"><img alt="S2 Analyze Design Fits and Diagnostics.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Fits_and_Diagnostics.png" width="700"   /></a></dd></dl>
+
+<li>Gehen Sie zur Registerkarte <b>Diagramme</b> und w&auml;hlen Sie Alle. Belassen Sie den <b>Residuentyp</b> bei <b>Regul&auml;r</b>. Klicken Sie auf <b>OK</b>.<dl><dd><a  class="image"><img alt="S2 Analyze Design Plots.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Plots.png" width="700"   /></a></dd></dl>
+
+<li>Im Ergebnisblatt <b>DOEAnalysis</b> unter dem Knoten <b>Lineare Modellanalyse</b> zeigen die Tabellen <b>Signal-Rausch-Verh&auml;ltnisse</b>, <b>Mittelwerte</b> und <b>Standardabweichungen</b>, dass der Wechselwirkungsterm nicht signifikant ist.<dl><dd><a  class="image"><img alt="S2 Analyze Design Result.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Result.png" width="543"  /></a></dd></dl>
+
+<li>Wir wiederholen die Analyse, wobei wir den Wechselwirkungsterm entfernen. Klicken Sie auf das gr&uuml;ne Schloss und w&auml;hlen Sie <b>Diese Operation duplizieren</b>. Klicken Sie im duplizierten Ergebnisblatt <b>DOEAnalysis1</b> auf das gr&uuml;ne Schloss und <b>Parameter &auml;ndern</b>.<dl><dd><a  class="image"><img alt="S2 Analyze Design Duplicate Operation.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Duplicate_Operation.png" width="356"  /></a></dd></dl>
+
+<li>Klicken Sie auf der Registerkarte <b>Modell</b> auf das <b>+</b> der <b>Modellterme</b> und entfernen Sie die Wechselwirkung <b>Gimbal stiffness*Damping algorithm</b>. Klicken Sie auf <b>OK</b>.<dl><dd><a  class="image"><img alt="S2 Analyze Design Model Terms Remove.png" src="../images/Tutorial_Taguchi/700px-S2_Analyze_Design_Model_Terms_Remove.png" width="700"   /></a></dd></dl>
+
+<li>In einem dynamischem Taguchi-Versuchsplan misst das Merkmal <b>Steigung</b> die &Auml;nderungsrate in der Antwortvariable relativ zur Stufe des Signalfaktors.<ul>
+<li>Werfen wir einen Blick auf die <b>Steigung</b> unter <b>Lineare Modellanalyse</b>. Wir k&ouml;nnen alle drei Faktoren sehen: <i><b>Gimbal stiffness</b></i>, <i><b>Damping algorithm</b></i> und <i><b>Shutter Speed</b></i> sind bei einem Niveau von 5 % signifikant. Die Koeffizientensch&auml;tzwerte liefern den Betrag und die Richtung des Effekts. Der absolute Wert f&uuml;r den D&auml;mpfungsalgorithmus ist am gr&ouml;&szlig;ten.<dl><dd><a  class="image"><img alt="S2 Analyze Design Slope 1.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Slope_1.png" width="741"  /></a></dd></dl>
+
+
+<li>Sehen wir uns die Steigung in der Tabelle der Antwortvariablen an. Dies sind die durchschnittlichen Antwortvariablen f&uuml;r jeden Faktor &uuml;ber 2 verschiedene Stufen. Der Koeffizientensch&auml;tzwert f&uuml;r alle drei Faktoren ist positiv, und die Antwortvariable auf Stufe 1 ist gr&ouml;&szlig;er als die Antwortvariable auf Stufe 2. Delta ist die absolute Differenz zwischen Stufe 1 und Stufe 2. Rang wird zugewiesen, indem Delta-Werte vom gr&ouml;&szlig;sten zum kleinsten geordnet werden. Der D&auml;mpfungsalgorithmus hat einen Rang von 1.<dl><dd><a  class="image"><img alt="S2 Analyze Design Slope 2.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Slope_2.png" width="691"  /></a></dd></dl><br />Idealerweise peilen wir eine Steigung von null an. Es sollte keine Beziehung zwischen Drohnengeschwindigkeit und Bildunsch&auml;rfe geben. Die Steigung ist null unter den folgenden Faktorstufen am n&auml;chsten: <i>Steifigkeit des Kardanrings ist hoch, D&auml;mpfungsalgorithmus ist aggressive Filterung und Verschlusszeit ist lang</i>. Denken Sie daran, dass diese Einstellungen auf Kosten eines niedrigeren Signal-Rausch-Verh&auml;ltnisses und einer h&ouml;heren Standardabweichung erreicht werden.<li>Gehen Sie zu Punktdiagramme mit angepassten Linien. Die Punktdiagramme werden in absteigender Reihenfolge des Signal-Rausch-Verh&auml;ltnisses angeordnet. Die Antwortvariable befindet sich auf der Y-Achse, und die drei Stufen des Signalfaktors befinden sich auf der X-Achse. Idealerweise sollte die angepasste Linien so gut wie durch die blauen Punkte f&uuml;hren.<dl><dd><a  class="image"><img alt="S2 Analyze Design Scatter Plots.png" src="../images/Tutorial_Taguchi/S2_Analyze_Design_Scatter_Plots.png" width="604"  /></a></dd></dl>
+</ul>
+<p><br /></p>
+</ol>
+
+
+
+
+
+
+
+    

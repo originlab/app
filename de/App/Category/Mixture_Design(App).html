@@ -1,0 +1,87 @@
+﻿<h1 class="firstHeading">Mischungsversuchsplan</h1><p class='urlname' style='display: none'>Mixture-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Einf&uuml;hrung</span></a><ul>
+<li class="toclevel-2 tocsection-2"><a href="#Simplex_Centroid_Design"><span class="tocnumber">1.1</span> <span class="toctext">Simplex-Zentroid-Versuchsplan</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Simplex_Lattice_Design"><span class="tocnumber">1.2</span> <span class="toctext">Simplex-Gitter-Versuchsplan</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Extreme_Vertices_Design"><span class="tocnumber">1.3</span> <span class="toctext">Mischungsversuchsplan mit Begrenzungen</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#How_to_create_the_Design"><span class="tocnumber">2</span> <span class="toctext">Versuchsplan erstellen</span></a><ul>
+<li class="toclevel-2 tocsection-6"><a href="#Create_Mixture_Design"><span class="tocnumber">2.1</span> <span class="toctext">Mischungsversuchsplan erstellen</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Create_Custom_Mixture_Design"><span class="tocnumber">2.2</span> <span class="toctext">Benutzerdefinierten Mischungsversuchsplan erstellen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Einf&uuml;hrung</span></h2>
+<table class="tbl">
+
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Mixture_Design(App)/150px-Simplex_centroid.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Simplex-Zentroid-Versuchsplan mit 3 Komponenten</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Mixture_Design(App)/150px-Simplex_lattice.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Simplex-Gitter-Versuchsplan mit  3 Komponenten und 3 Stufen</div></div></div>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:152px;"><a  class="image"><img alt="" src="../images/Mixture_Design(App)/150px-Extreme_vertices.png" width="150"  class="thumbimage"  /></a><div class="thumbcaption"><div class="magnify"><a  class="internal" title="Vergr&ouml;&szlig;ern"></a></div>Mischungsversuchsplan mit Begrenzungen mit 3 Komponenten</div></div></div>
+</td></tr></table>
+<p>Ein Mischungsversuchsplan kommt zum Einsatz, wenn es sich bei den Versuchsfaktoren um Anteile von Komponenten in einer Mischung handelt, deren Summe einen festen Gesamtwert (in der Regel 100 %) ergeben muss. Im Gegensatz zu herk&ouml;mmlichen faktoriellen Versuchspl&auml;nen sind die Stufen der Mischungskomponenten voneinander abh&auml;ngig &ndash; eine &Auml;nderung eines Anteils wirkt sich automatisch auf die anderen aus. Diese Versuchspl&auml;ne werden h&auml;ufig bei der Produktformulierung eingesetzt, beispielsweise zur Optimierung von Lebensmittelrezepturen, pharmazeutischen Zusammensetzungen, Lackbestandteilen oder Kraftstoffmischungen, um die Kombination zu finden, die das beste Ergebnis liefert.</p><p>Origin bietet 3 Typen von Mischungsversuchspl&auml;nen.</p>
+<h5><a name="Simplex_Centroid_Design"></a><span class="mw-headline">Simplex-Zentroid-Versuchsplan</span></h5>
+<p>Wenn Sie einen umfassenden, ausgewogenen Versuchsplan w&uuml;nschen, der alle m&ouml;glichen Mischungsordnungen (rein, bin&auml;r, tern&auml;r usw.) umfasst, und spezielle kubische oder Scheff&eacute;-Modelle h&ouml;herer Ordnung anpassen m&uuml;ssen.</p>
+<h5><a name="Simplex_Lattice_Design"></a><span class="mw-headline">Simplex-Gitter-Versuchsplan</span></h5>
+<p>Wenn Sie ein strukturiertes Punktgitternetz ben&ouml;tigen, das einem bestimmten Polynomgrad (linear, quadratisch oder kubisch) entspricht, und die Komplexit&auml;t des Modells &uuml;ber den Gradparameter steuern m&ouml;chten.</p>
+<h5><a name="Extreme_Vertices_Design"></a><span class="mw-headline">Mischungsversuchsplan mit Begrenzungen</span></h5>
+<p>Wenn f&uuml;r die Komponenten Ihrer Mischung praktische Nebenbedingungen (z. B. mindestens 5 % Bindemittel, h&ouml;chstens 30 % F&uuml;llstoff), die einen unregelm&auml;&szlig;igen Bereich der Machbarkeit definieren, und Sie Punkte an den Grenzen dieses Bereichs ben&ouml;tigen.</p>
+<table class="simple">
+<tr>
+<th>
+</th>
+<th>Simplex-Zentroid-Versuchsplan</th>
+<th>Simplex-Gitter-Versuchsplan</th>
+<th>Mischungsversuchsplan mit Begrenzungen</th></tr>
+<tr>
+<td><b>Struktur</b></td>
+<td>Umfasst alle reinen Mischungen, alle bin&auml;ren Mischungen, alle tern&auml;ren Mischungen etc. bis zum vollen Zentroid.</td>
+<td>Punktgitternetz mit gleichm&auml;&szlig;ig verteilten Punkten &uuml;ber das Simplex</td>
+<td>Punkte, die an den Eckpunkten und Kanten des begrenzten Bereichs liegen</td></tr>
+<tr>
+<td><b>Am besten wenn</b></td>
+<td>Sie alle m&ouml;glichen Mischungsordnungen (reine, bin&auml;re, tern&auml;re etc.) mit einem balancierten, symmetrischen Versuchsplan untersuchen m&ouml;chten.</td>
+<td>Sie ben&ouml;tigen ein systematisches Punktgitternetz, um ein polynomielles Modell bestimmten Grades &uuml;ber den gesamten Simplex anzupassen.</td>
+<td>Ihre Komponenten unterliegen oberen und/oder unteren Nebenbedingungen, die den zul&auml;ssigen Bereich einschr&auml;nken.</td></tr>
+<tr>
+<td><b>Nebenbedingungen f&uuml;r Komponenten</b></td>
+<td>Keine (voller Simplex, 0-100 % f&uuml;r alle Komponenten)</td>
+<td>Keine (voller Simplex, 0-100 % f&uuml;r alle Komponenten)</td>
+<td>Erforderlich (obere, untere oder beide Grenzen f&uuml;r Komponenten)</td></tr>
+<tr>
+<td><b>Prognosequalit&auml;t</b></td>
+<td>Exzellent in der N&auml;he von Zentroiden; gute Balance</td>
+<td>Einheitlich &uuml;ber das Gitternetz</td>
+<td>Am besten in der N&auml;he von Eckpunkten und Kanten des begrenzten Bereichs</td></tr>
+<tr>
+<td><b>Durchlaufeffizienz</b></td>
+<td>Moderat (steigt schnell mit Komponenten an)</td>
+<td>Moderat (durch Grad gesteuert)</td>
+<td>Effizient f&uuml;r beschr&auml;nkte R&auml;ume</td></tr></table>
+<h2><a name="How_to_create_the_Design"></a><span class="mw-headline">Versuchsplan erstellen</span></h2>
+<h4><a name="Create_Mixture_Design"></a><span class="mw-headline">Mischungsversuchsplan erstellen</span></h4>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und aus der Liste <b>Mischungsversuchsplan</b>.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Mixture_Design(App)/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<h4><a name="Create_Custom_Mixture_Design"></a><span class="mw-headline">Benutzerdefinierten Mischungsversuchsplan erstellen</span></h4>
+<p>Bitte lesen Sie die Anweisungen auf der Seite <a href="../../Tutorial/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">Benutzerdefinierte Versuchspl&auml;ne definieren</a>.</p><p><br /></p>
+<table class="topiclist">
+
+<tr>
+<td>
+<p><i><b>Themen, die in diesem Abschnitt behandelt werden:</b></i></p>
+<div class="CategoryTreeTag" data-ct-mode="20" data-ct-options="{&quot;mode&quot;:20,&quot;hideprefix&quot;:10,&quot;showcount&quot;:false,&quot;namespaces&quot;:false}"><li><a class="CategoryTreeLabel  CategoryTreeLabelNs122 CategoryTreeLabelPage" href="../../Tutorial/App/Mixture_Design_Dialog.html">Der Dialog Mischungsversuchsplan</a></li>
+		
+		</div>
+</td></tr></table>
+
+
+
+
+
+    

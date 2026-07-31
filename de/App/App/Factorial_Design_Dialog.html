@@ -1,0 +1,129 @@
+﻿<h1 class="firstHeading">Der Dialog Faktorieller Versuchsplan</h1><p class='urlname' style='display: none'>Factorial-Dialog</p>
+<p><br /></p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Hilfreiche Informationen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Design_Selection"><span class="tocnumber">2</span> <span class="toctext">Versuchsplanauswahl</span></a><ul>
+<li class="toclevel-2 tocsection-3"><a href="#Factorial_Type"><span class="tocnumber">2.1</span> <span class="toctext">Faktorieller Typ</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Generators"><span class="tocnumber">2.2</span> <span class="toctext">Generatoren</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Display_Available_Designs"><span class="tocnumber">2.3</span> <span class="toctext">Verf&uuml;gbare Versuchspl&auml;ne anzeigen</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Factors"><span class="tocnumber">3</span> <span class="toctext">Faktoren</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Setttings"><span class="tocnumber">4</span> <span class="toctext">Einstellungen</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Output"><span class="tocnumber">5</span> <span class="toctext">Ausgabe</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Dialog_Theme"><span class="tocnumber">6</span> <span class="toctext">Dialogdesign</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Hilfreiche Informationen</span></h2>
+<p>Um den Dialog <b>Definitiver Screening-Versuchsplan</b> zu &ouml;ffnen:</p>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und w&auml;hlen Sie <b>Faktorieller Versuchsplan</b> aus der Liste.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Factorial_Design_Dialog/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Factorial_Design_Dialog/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><a href="../../Tutorial/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Einf&uuml;hrung: Faktorieller Versuchsplan</a></li></ul>
+</td></tr></table>
+<h2><a name="Design_Selection"></a><span class="mw-headline">Versuchsplanauswahl</span></h2>
+<h4><a name="Factorial_Type"></a><span class="mw-headline">Faktorieller Typ</span></h4>
+<p>W&auml;hlen Sie einen faktoriellen Typen aus der Liste unten. Lesen Sie in <a href="../../Tutorial/Category/Factorial_Design(App).html#Design_Type_Comparison" title="Category:Factorial Design(App)">der Vergleichstabelle</a> nach, welcher Typ f&uuml;r Ihren Versuchsplan verwendet werden sollte.</p>
+<table class="dialogcontroltable">
+<tr>
+<th>2-stufig faktoriell</th>
+<td>Ein Versuchsplan, in dem jeder Faktor genau zwei Stufen (niedrig und hoch) hat. Untersucht alle Kombinationen oder eine Fraktion von ihnen, um die Haupteffekte und Wechselwirkungen zu sch&auml;tzen.</td></tr>
+<tr>
+<th>Plackett-Burman</th>
+<td>Ein Screening-Versuchsplan mit zwei Stufen pro Faktor und Durchlaufanzahlen, die ein Mehrfaches von 4 sind (z. B. 12, 20, 28). Jeder Durchlauf &auml;ndert ca. die H&auml;lfte der Faktoren.</td></tr>
+<tr>
+<th>Allgemein vollfaktoriell</th>
+<td>Ein Versuchsplan, bei dem die Faktoren eine beliebige Anzahl von Stufen haben kann (nicht auf zwei beschr&auml;nkt). Untersucht alle m&ouml;glichen Kombinationen aller Faktorstufen.</td></tr></table>
+<h4><a name="Generators"></a><span class="mw-headline">Generatoren</span></h4>
+<p>Nur verf&uuml;gbar, wenn <b>2-stufig faktoriell</b> unter <b>Faktorieller Typ</b> ausgew&auml;hlt ist.</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Standard</th>
+<td>Erstellen Sie einen 2-stufigen faktoriellen Standardversuchsplan.</td></tr>
+<tr>
+<th>Benutzerdefiniert</th>
+<td>Verwenden Sie diese Option, wenn Sie eine spezifische Alias-Struktur brauchen, um die Vermengung bestimmter Effekte zu verhindern.</td></tr></table>
+<h4><a name="Display_Available_Designs"></a><span class="mw-headline">Verf&uuml;gbare Versuchspl&auml;ne anzeigen</span></h4>
+<p>Klicken Sie auf die Schaltfl&auml;che, um Informationen zu erhalten, wie Sie einen geeigneten Versuchsplan ausw&auml;hlen. Die Tabelle zeigt die Anzahl von Faktoren und Durchl&auml;ufen.</p>
+<h2><a name="Factors"></a><span class="mw-headline">Faktoren</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Anzahl der Faktoren</th>
+<td>Legen Sie die Anzahl der stetigen Faktoren fest, die Sie in den Versuchsplan einbinden m&ouml;chten.</td></tr>
+<tr>
+<th>Faktortabelle</th>
+<td>Geben Sie die Versuchsplaninformationen der Faktoren ein. Das schlie&szlig;t ein:<ul><li><b>Name</b></li>
+<li><b>Typ</b></li>
+<li><b>Niedrig</b></li>
+<li><b>Hoch</b></li></ul>
+</td></tr></table>
+<h2><a name="Setttings"></a><span class="mw-headline">Einstellungen</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Versuchsplanauswahl</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne. Bietet teil- und vollfaktorielle Versuchspl&auml;ne.</td></tr>
+<tr>
+<th>Generatoren</th>
+<td>Nur verf&uuml;gbar, wenn <b>teilfaktioneller/faktorieller Versuchsplan</b> unter <b>benutzerdefinierter 2-stufiger faktorieller</b> Versuchsplan ausgew&auml;hlt ist.<p>Definiert, wie zus&auml;tzliche Faktoren aus einfachen Faktorwechselwirkungen erstellt werden; bestimmt die Alias-Struktur und Aufl&ouml;sung des Versuchsplans.</p>
+</td></tr>
+<tr>
+<th>Anzahl der Zentralpunkte pro Block</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne.<p>Legt die Anzahl der im Versuchsplan einzubindenden Zentralpunkte fest (Durchl&auml;ufe mit allen Faktoren auf mittlerer Stufe). Zentralpunkte erkennen Kr&uuml;mmung in der Antwortvariablen, ohne die Sch&auml;tzung der Haupteffekte oder Wechselwirkungen zu beeintr&auml;chtigen; auf 0 setzen, falls die Kr&uuml;mmung kein Problem darstellt.</p>
+</td></tr>
+<tr>
+<th>Anzahl der Replikationen</th>
+<td>Legt fest, wie oft jede faktorielle Kombination wiederholt wird.<p>Das Hinzuf&uuml;gen von Replikationen kann die statistische Trennsch&auml;rfe zum Erkennen von Effekten erh&ouml;hen, aber damit auch die Anzahl der Durchl&auml;ufe insgesamt und die Kosten f&uuml;r die Ressourcen.</p>
+</td></tr>
+<tr>
+<th>Anzahl der Durchl&auml;ufe</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>Plackett-Burman</b>-Versuchspl&auml;ne.<p>Legt die Gesamtanzahl der im Versuchsplan enthaltenen Versuchsdurchl&auml;ufe fest.</p><p>Plackett-Burman-Versuchspl&auml;ne sind f&uuml;r Durchlaufanzahlen verf&uuml;gbar, die ein Mehrfaches von 4  sind (z. B, 12, 20, 24, 28, 36, 40, 44, 48 Durchl&auml;ufe). W&auml;hlen Sie die Anzahl der Durchl&auml;ufe, die Ihrer Anzahl an Faktoren entspricht und gleichzeitig den experimentellen Aufwand minimiert.</p>
+</td></tr>
+<tr>
+<th>Anzahl der Zentralpunkte pro Replikation</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>Plackett-Burman</b>-Versuchspl&auml;ne.<p>Geben Sie eine nicht-negative ganze Zahl ein, um die Anzahl der Zentralpunkte festzulegen, die zu jeder Replikation des Versuchsplans hinzugef&uuml;gt werden.</p>
+</td></tr>
+<tr>
+<th>Anzahl der Bl&ouml;cke</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne.<p>Teilt die Durchl&auml;ufe in Gruppen auf, um St&ouml;rfaktoren wie unterschiedliche Tage oder Bediener zu ber&uuml;cksichtigen.</p>
+</td></tr>
+<tr>
+<th>Block nach Generatoren definieren</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne.<p>Hier k&ouml;nnen Sie festlegen, welche Wechselwirkungen mit Bl&ouml;cken vermengt sind, wenn mehrere Bl&ouml;cke verwendet werden.</p>
+</td></tr>
+<tr>
+<th>Versuchsplan falten</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne.<p>Kehrt Vorzeichen der ausgew&auml;hlten Faktoren um. Diese Technik beseitigt Aliasing-Effekte in einem teilfaktoriellen Versuchsplan. Beispielsweise f&uuml;hrt das Falten nach Faktor A dazu, dass alle Zwei-Faktor-Wechselwirkungen, an denen A beteiligt ist, sch&auml;tzbar werden (mit Aliasing nur bei Wechselwirkungen h&ouml;herer Ordnung), wodurch die Aufl&ouml;sung f&uuml;r diese Terme effektiv erh&ouml;ht wird.</p>
+</td></tr>
+<tr>
+<th>Durchl&auml;ufe randomisieren</th>
+<td>Randomisiert die Durchlaufreihenfolge, um Verzerrungen aus Zeittrends oder versteckten Variablen zu vermeiden.</td></tr>
+<tr>
+<th>Zufallszahl Seed</th>
+<td>Geben Sie eine nicht-negative ganze Zahl ein, um den Zufallszahlengenerator zu steuern.</td></tr></table>
+<h2><a name="Output"></a><span class="mw-headline">Ausgabe</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Versuchsplantabelle</th>
+<td>Zeigt die vollst&auml;ndige Versuchsplanmatrix mit den Faktorstufeneinstellungen f&uuml;r jeden Durchlauf an.</td></tr>
+<tr>
+<th>Kodierter Versuchsplan</th>
+<td>Zeigt die Versuchsplanmatrix mit kodierten Einheiten (-1 f&uuml;r niedrige Stufe, +1 f&uuml;r hohe Stufe) statt der tats&auml;chlichen Faktorwerte an. N&uuml;tzlich zum Verstehen zu zugrundeliegenden Struktur und f&uuml;r die standardisierte Analyse.</td></tr>
+<tr>
+<th>Alias-Tabelle</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne.<p>Bildet die Vermengungsstruktur (Aliasing) der teilfaktoriellen Versuchspl&auml;ne ab, wobei gezeigt wird, welche Effekte miteinander vermengt sind. Kritisch zum Interpretieren der Ergebnisse aus teilfaktoriellen Versuchspl&auml;nen, bei denen nicht alle Effekte unabh&auml;ngig voneinander gesch&auml;tzt werden k&ouml;nnen.</p>
+</td></tr>
+<tr>
+<th>Wechselwirkungsordnung f&uuml;r Alias</th>
+<td>Nur verf&uuml;gbar f&uuml;r <b>2-stufige faktorielle</b> Versuchspl&auml;ne.<p>Legt die maximale Ordnung der in der Alias-Tabelle anzuzeigenden Wechselwirkungen fest.</p>
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialogdesign</span></h2>
+<p>Speichern und laden Sie die Einstellungen des Dialogs. Verwenden Sie dies, um h&auml;ufig verwendete Faktorkonfigurationen, Versuchsplanoptionen oder Ausgabeeinstellungen zu speichern, und rufen Sie sie f&uuml;r zuk&uuml;nftige Versuchspl&auml;ne wieder auf, ohne alle Werte erneut einzugeben.</p>
+
+
+    

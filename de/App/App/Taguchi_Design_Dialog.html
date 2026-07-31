@@ -1,0 +1,62 @@
+﻿<h1 class="firstHeading">Der Dialog Taguchi-Versuchsplan</h1><p class='urlname' style='display: none'>taguchi-dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Hilfreiche Informationen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Display_Available_Designs"><span class="tocnumber">2</span> <span class="toctext">Verf&uuml;gbare Versuchspl&auml;ne anzeigen</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Design"><span class="tocnumber">3</span> <span class="toctext">Versuchsplan</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Dialog_Theme"><span class="tocnumber">4</span> <span class="toctext">Dialogdesign</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Hilfreiche Informationen</span></h2>
+<p>Um den Dialog <b>Wirkungsfl&auml;chenversuchsplan</b> zu &ouml;ffnen:</p>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Versuchsplan erstellen</b> und aus der Liste <b>Taguchi-Versuchsplan</b>.<dl><dd><a  class="image"><img alt="Create Design.png" src="../images/Taguchi_Design_Dialog/650px-Create_Design.png" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Taguchi_Design_Dialog/Tip_icon.png" width="57"  border="0" /></td><td><p><i><b>Weiterf&uuml;hrende Themen</b></i>:</p>
+<ul><li><a href="../../Tutorial/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Einf&uuml;hrung: Taguchi-Versuchsplan</a></li>
+<li><a href="../../Tutorial/App/Key_Concepts_Taguchi.html" title="App:Key Concepts Taguchi">Schl&uuml;sselkonzepte des Taguchi-Versuchsplans</a></li>
+<li><a href="../../Tutorial/App/Tutorial_Taguchi.html" title="App:Tutorial Taguchi">Tutorial zum Taguchi-Versuchsplan</a></li></ul>
+</td></tr></table>
+<h2><a name="Display_Available_Designs"></a><span class="mw-headline">Verf&uuml;gbare Versuchspl&auml;ne anzeigen</span></h2>
+<p>Klicken Sie auf die Schaltfl&auml;che, um Informationen zu erhalten, wie Sie einen geeigneten Versuchsplan ausw&auml;hlen. Die Tabelle zeigt die Anzahl von Faktoren und Durchl&auml;ufen.</p>
+<h2><a name="Design"></a><span class="mw-headline">Design</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Typ des Versuchsplans</th>
+<td>W&auml;hlen Sie die Stufenstruktur f&uuml;r Ihr <a href="../../Tutorial/App/Key_Concepts_Taguchi.html#Orthogonal_Arrays" title="App:Key Concepts Taguchi">orthogonales Feld</a>. Origin bietet:<ul><li>2-stufige Versuchspl&auml;ne (z. B. L4, L8, L12, L16)</li>
+<li>3-stufige Versuchspl&auml;ne (z. B. L9, L18, L27)</li>
+<li>4-stufige Versuchspl&auml;ne (z. B. L16)</li>
+<li>5-stufige Versuchspl&auml;ne (z. B. L25)</li>
+<li>Versuchspl&auml;ne mit gemischten Stufen (z. B. L18 mit sowohl 2-stufigen als auch 3-stufigen Faktoren)</li></ul>
+</td></tr>
+<tr>
+<th>Anzahl der Faktoren</th>
+<td>W&auml;hlen Sie, wie viele Steuerfaktoren Sie untersuchen m&ouml;chten. Die verf&uuml;gbaren Optionen h&auml;ngen vom ausgew&auml;hlten <b>Typ des Versuchsplans</b> ab.</td></tr>
+<tr>
+<th>Design</th>
+<td>Nach Auswahl des Versuchsplantyps und der Anzahl der Faktoren w&auml;hlen Sie in der Auswahlliste <b>Versuchsplan</b> das spezifische orthogonale Feld aus (z. B. L9 [3^3], L18 [2^1 × 3^7], L27 [3^13]).</td></tr>
+<tr>
+<th>Dynamischen Signalfaktor hinzuf&uuml;gen</th>
+<td>Aktivieren Sie diese Option, um einen statischen Versuchsplan in einen <a href="../../Tutorial/App/Key_Concepts_Taguchi.html#Static_vs._Dynamic_Designs" title="App:Key Concepts Taguchi">Versuch mit dynamischer Antwortvariable</a> zu konvertieren. Bei einem dynamischen Versuch variiert das Qualit&auml;tsmerkmal &uuml;ber einen bestimmten Wertebereich, und das Ziel besteht darin, die Beziehung zwischen einem eingegebenen Signalfaktor und einer ausgegebenen Antwortvariablen zu verbessern. Wenn die Option aktiviert ist, k&ouml;nnen Sie dem Signalfaktor einen Namen geben und seine Stufen in der <b>Faktortabelle</b> unten definieren.</td></tr>
+<tr>
+<th>Wechselwirkungen</th>
+<td>Klicken Sie auf die Schaltfl&auml;che <b>+</b>, um festzulegen, welche Wechselwirkungen Sie sch&auml;tzen m&ouml;chten. Origin kann spezifischen Spalten des orthogonalen Felds Faktoren zuweisen, um die Sch&auml;tzung der ausgew&auml;hlten Zwei-Faktor-Wechselwirkungen zuzulassen. Beachten Sie, dass Taguchi-Versuchspl&auml;ne ihren Schwerpunkt prim&auml;r auf Haupteffekten haben; nur bestimmte Felder (wie L18 oder modifiziertes L16) unterst&uuml;tzen die Sch&auml;tzung von Wechselwirkungen, und Wechselwirkungen h&ouml;herer Ordnung werden typischerweise mit Haupteffekten vermengt.</td></tr>
+<tr>
+<th>Faktortabelle</th>
+<td>Zeigt und definiert die Faktordetails der zu untersuchenden Faktoren. Sie enth&auml;lt die folgenden Spalten.<ul><li><b>Name</b><dl><dd>Die Faktorbeschriftungen.</dd></dl></li>
+<li><b>Typ</b><dl><dd>Kennzeichnet, ob der Faktor ein <b>Steuer</b>faktor (Standard) oder ein <b>Signal</b>faktor ist (falls <b>Dynamischen Signalfaktor hinzuf&uuml;gen</b> aktiviert ist).</dd></dl></li>
+<li><b>Stufen</b><dl><dd>Geben Sie die tats&auml;chlichen Einstellungen f&uuml;r jede Stufe ein. Die Anzahl der verf&uuml;gbaren Stufen f&uuml;r den Faktor wird vom ausgew&auml;hlten Versuchsplantyp (2, 3, 4 oder 5) bestimmt.</dd></dl></li>
+<li><b>Spalte</b><dl><dd>Zeigt, zu welcher Spalte des orthogonalen Felds jeder Faktor zugewiesen wurde. Diese Zuweisung bestimmt, wie Haupteffekte und Wechselwirkungen gesch&auml;tzt werden und ob sie miteinander vermengt werden.</dd></dl></li></ul>
+<p>Wenn Sie die Spaltenzuweisungen modifizieren m&ouml;chten:</p>
+<ul><li>Zeigen Sie das Feld <b>Wechselwirkung</b> f&uuml;r das ausgew&auml;hlte Feld an.</li>
+<li>Weisen Sie die Faktoren neu zu und zwar zu unterschiedlichen Spalten, um die Sch&auml;tzbarkeit der gew&uuml;nschten Wechselwirkungen zu bewahren.</li>
+<li>Pr&uuml;fen Sie, welche Spalten f&uuml;r Wechselwirkungen reserviert sind und welche frei f&uuml;r Haupteffekte sind.</li></ul>
+</td></tr></table>
+<p><br /></p>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialogdesign</span></h2>
+<p>Speichern und laden Sie die Einstellungen des Dialogs. Verwenden Sie dies, um h&auml;ufig verwendete Faktorkonfigurationen, Versuchsplanoptionen oder Ausgabeeinstellungen zu speichern, und rufen Sie sie f&uuml;r zuk&uuml;nftige Versuchspl&auml;ne wieder auf, ohne alle Werte erneut einzugeben.</p>
+
+
+    

@@ -1,0 +1,96 @@
+﻿<h1 class="firstHeading">Der Dialog Optimalen Versuchsplan ausw&auml;hlen</h1><p class='urlname' style='display: none'>Optimal-Design-Dialog</p>
+<p><br /></p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Hilfreiche Informationen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Task"><span class="tocnumber">2</span> <span class="toctext">Aufgabe</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Method"><span class="tocnumber">3</span> <span class="toctext">Methode</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Settings"><span class="tocnumber">4</span> <span class="toctext">Einstellungen</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Dialog_Theme"><span class="tocnumber">5</span> <span class="toctext">Dialogdesign</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Hilfreiche Informationen</span></h2>
+<p>Um den Dialog <b>Optimalen Versuchsplan ausw&auml;hlen</b> zu &ouml;ffnen:</p>
+<ul><li>W&auml;hlen Sie <b>Statistik: Qualit&auml;tsverbesserung: Versuchspl&auml;ne DoE</b> im Origin-Men&uuml;.</li>
+<li>W&auml;hlen Sie das Symbol <b>Optimalen Versuchsplan ausw&auml;hlen</b>.<dl><dd><a  class="image"><img alt="Select Optimal Design.png" src="../images/Select_Optimal_Design_Dialog/650px-Select_Optimal_Design.png" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder">
+	<tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Select_Optimal_Design_Dialog/Alert_icon.png" width="57"  border="0" /></td><td><p><i><b>Die Funktion ist nur verf&uuml;gbar f&uuml;r</b></i></p>
+<ul><li><a href="../../Tutorial/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Allgemeinen vollfaktoriellen Versuchsplan</a></li>
+<li><a href="../../Tutorial/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Wirkungsfl&auml;chenversuchsplan</a></li>
+<li><a href="../../Tutorial/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mischungsversuchsplan</a></li></ul>
+<p><br /></p>
+	</td>
+	</tr>
+	</table>
+<h2><a name="Task"></a><span class="mw-headline">Aufgabe</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Aufgabe</th>
+<td>Sie enth&auml;lt drei Optionen.<ul><li><b>Optimalen Versuchsplan ausw&auml;hlen</b><dl><dd>W&auml;hlt den besten Satz der Versuchsdurchl&auml;ufe aus dem Kandidatensatz aus, basierend auf dem Kriterium und Modell der D-Optimalit&auml;t. Sie maximiert die Pr&auml;zision der Parametersch&auml;tzwerte des Modells und stellt auf diese Weise sicher, dass Sie die m&ouml;glichst wertvollsten Daten innerhalb eines strengen Durchlaufbudgets erfassen.</dd></dl></li>
+<li><b>Versuchsplan erweitern</b><dl><dd>F&uuml;gt zus&auml;tzliche Durchl&auml;ufe zu einem vorhandenen Versuchsplan hinzu. Verwenden Sie diese Option, wenn Sie bereits einige Versuche durchgef&uuml;hrt haben und mehr Punkte hinzuf&uuml;gen m&uuml;ssen, um die Sch&auml;tzungspr&auml;zision zu verbessern, Ambiguit&auml;ten zu l&ouml;sen (z. B. Durchl&auml;ufe hinzuzuf&uuml;gen, um Alias-Effekte zu beseitigen) oder den Raum des Versuchsplans zu erweitern. Die Software behandelt vorhandene Durchl&auml;ufe als festgelegt und w&auml;hlt neue Durchl&auml;ufe aus, um den kombinierten Versuchsplan zu optimieren.</dd></dl></li>
+<li><b>Versuchsplan auswerten</b><dl><dd>Bewertet die Eigenschaften eines vorhandenen Versuchsplans (einen, den Sie bereits hatten oder zuvor generiert haben), ohne neue Durchl&auml;ufe zu erzeugen.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Anzahl der Punkte im optimalen Versuchsplan</th>
+<td>Legt die Gesamtanzahl der Versuchsdurchl&auml;ufe fest, die der Algorithmus ausw&auml;hlen wird. Sie sollte gr&ouml;&szlig;er sein als die Anzahl der Modellterme (einschlie&szlig;lich dem Schnittpunkt mit der Y-Achse), um das Modell sch&auml;tzbar zu machen.</td></tr>
+<tr>
+<th>Modellterme</th>
+<td>Definiert das mathematische Modell, das Sie an die Daten anpassen m&ouml;chten. Der Algorithmus des optimalen Versuchsplans w&auml;hlt die Durchl&auml;ufe speziell so aus, dass diese Terme mit minimaler Varianz gesch&auml;tzt werden.<p><b>Um die Modellterme zu konfigurieren:</b></p>
+<ul><li>Klicken Sie auf die Schaltfl&auml;che <b>+</b>, um einen Dialog zu &ouml;ffnen und die Modellterme auszuw&auml;hlen.</li>
+<li>W&auml;hlen Sie eine vordefinierte Modellstruktur aus der Auswahlliste <b>Terme nach Modelltyp generieren</b>.</li>
+<li>Die ausgew&auml;hlten Terme werden im rechten Bedienfeld angezeigt. F&uuml;gen Sie einzelne Terme manuell hinzu oder entfernen Sie sie, um die Modellstruktur benutzerdefiniert anzupassen.</li>
+<li>Klicken Sie auf <b>OK</b>, um zu best&auml;tigen und zur Registerkarte Aufgabe zur&uuml;ckzukehren.</li></ul>
+</td></tr>
+<tr>
+<th>Bl&ouml;cke in das Modell einbinden</th>
+<td>F&uuml;gt Blockeffekte zum Modell hinzu.</td></tr>
+<tr>
+<th>Komponenten analysieren in</th>
+<td>Nur verf&uuml;gbar f&uuml;r <a href="../../Tutorial/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mischungsversuchsplan</a>.<p>Legt das Koordinatensystem fest, das zum Modellieren und Analysieren der Mischungskomponenten verwendet wird.</p>
+<ul><li><b>Anteile</b><dl><dd>Komponenten werden in ihrer urspr&uuml;nglichen Anteilsmenge (Werte zwischen 0 und 1, summiert auf 1) analysiert. Das Modell passt direkt an die tats&auml;chlichen Komponentenanteile an. Verwenden Sie diese Option, wenn Komponenten keine Nebenbedingungen f&uuml;r die untere Grenze haben (oder die Grenzen vernachl&auml;ssigbar sind) und Sie die Interpretierbarkeit in den urspr&uuml;nglichen Messeinheiten vorziehen.</dd></dl></li>
+<li><b>Pseudo-Komponenten</b><dl><dd>Die Komponenten werden vor der Analyse in Pseudo-Komponenten transformiert. Dadurch wird der beschr&auml;nkte Mischungsraum durch Aufheben der Nebendingungen der unteren Grenze auf einen regul&auml;ren Simplex umskaliert. Das Modell wird auf die transformierten Koordinaten angepasst, und die Prognosen werden zur Auswertung wieder in die tats&auml;chlichen Anteile umgerechnet. Verwenden Sie diese Option, wenn Komponenten untere Grenzen haben, die nicht Null sind und ansonsten einen eingeschr&auml;nkten, irregul&auml;ren Raum f&uuml;r den Versuchsplan erzeugen w&uuml;rden.</dd></dl></li></ul>
+</td></tr></table>
+<h2><a name="Method"></a><span class="mw-headline">Methode</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Anf&auml;nglicher Versuchsplan</th>
+<td>Legt fest, wie der urspr&uuml;ngliche Versuchsplan aufgebaut wird, bevor die Verbesserungsalgorithmen eingesetzt werden.<dl><dd><ul><li><b>Erzeugt durch sequenzielle Optimierung</b><dl><dd>Der urspr&uuml;ngliche Versuchsplan basiert auf einem sequenziellen (greedy) Algorithmus, der Punkte nacheinander hinzuf&uuml;gt und dabei jedes Mal den Kandidaten ausw&auml;hlt, der das Optimalit&auml;tskriterium am st&auml;rksten verbessert. Dies f&uuml;hrt in der Regel zu einem besseren Ausgangspunkt als eine reine Zufallsauswahl und erm&ouml;glicht oft eine schnellere Konvergenz zu einem hochwertigen finalen Versuchsplan.</dd></dl></li>
+<li><b>Prozentsatz der zuf&auml;llig auszuw&auml;hlenden Versuchsplanpunkte</b><dl><dd>Ein festgelegter Prozentsatz der Punkte im urspr&uuml;nglichen Versuchsplan zuf&auml;llig aus der Kandidatenmenge ausgew&auml;hlt, w&auml;hrend der Rest sequenziell oder nach einer anderen Regel besetzt werden kann. Eine h&ouml;here Zuf&auml;lligkeit erh&ouml;ht die Wahrscheinlichkeit, vielf&auml;ltige Bereiche des Versuchsplanraums zu erkunden und lokale Optima zu vermeiden, kann jedoch dazu f&uuml;hren, dass von einem weniger effizienten Ausgangsversuchsplan ausgegangen wird.</dd></dl></li></ul></dd></dl>
+<ul><li><b>Anzahl der Zufallsversuche</b><dl><dd>Legt fest, wie viele unabh&auml;ngige urspr&uuml;ngliche Versuchspl&auml;ne erzeugt und optimiert werden.</dd></dl></li>
+<li><b>Zufallszahl Seed</b><dl><dd>Geben Sie eine ganze Zahl ein, um die Reproduzierbarkeit des Zufallszahlengenerators zu steuern, der verwendet wird, um die Ausgangsversuchspl&auml;ne zu erstellen.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Spalte zum Kennzeichnen des anf&auml;nglichen Versuchsplans</th>
+<td>Diese Option wird nur angezeigt, wenn <b>Versuchsplan erweitern</b> auf der Registerkarte <b>Aufgabe</b> ausgew&auml;hlt ist.<p>Legt fest, welche Spalte im Quellarbeitsblatt die Durchl&auml;ufe identifiziert, die zum vorhandenen (urspr&uuml;nglichen) Versuchsplan geh&ouml;ren versus der Kandidatenmenge f&uuml;r die Erweiterung.</p><p><b>Workflow</b></p>
+<dl><dd><ul><li>Erstellen Sie in Ihrem Quellarbeitsblatt eine Spalte, die jede Zeile als Teil des anf&auml;nglichen Versuchsplans oder als einen Kandidaten zur Erweiterung markiert.</li>
+<li>W&auml;hlen Sie <b>Versuchsplan erweitern</b> auf der Registerkarte <b>Aufgabe</b>.</li>
+<li>W&auml;hlen Sie auf der Registerkarte <b>Methode</b> diese Spalte in der Auswahlliste Spalte zum Kennzeichnen des anf&auml;nglichen Versuchsplans.</li>
+<li>Der Algorithmus sperrt die gekennzeichneten urspr&uuml;nglichen Durchl&auml;ufe und optimiert nur die Auswahl der neuen Durchl&auml;ufe.</li></ul></dd></dl>
+<p><b>Regel der Spaltenwerte</b></p>
+<dl><dd><ul><li><b>-2</b>: Der Versuchsdurchlauf ist erforderlich. Der optimale Versuchsplan muss mindestens zwei Replikationen dieses Durchlaufs enthalten.</li>
+<li><b>-1</b>: Der Versuchsdurchlauf ist erforderlich. Der optimale Versuchsplan muss mindestens eine Replikation dieses Durchlaufs enthalten.</li>
+<li><b>0</b>: Der Versuchsdurchlauf ist nicht im anf&auml;nglichen Versuchsplan enthalten. Der optimale Versuchsplan kann diesen Durchlauf ein- oder ausschlie&szlig;en.</li>
+<li><b>1</b>: Der anf&auml;ngliche Versuchsplan enth&auml;lt eine Replikation dieses Versuchsdurchlaufs. Der optimale Versuchsplan kann Replikationen dieses Durchlaufs behalten, entfernen oder hinzuf&uuml;gen basierend auf dem ausgew&auml;hlten Optimalit&auml;tskriterium.</li>
+<li><b>3</b>: Der anf&auml;ngliche Versuchsplan enth&auml;lt drei Replikationen dieses Versuchsdurchlaufs. Der optimale Versuchsplan kann Replikationen dieses Durchlaufs behalten, entfernen oder hinzuf&uuml;gen basierend auf dem ausgew&auml;hlten Optimalit&auml;tskriterium.</li></ul></dd></dl>
+</td></tr>
+<tr>
+<th>Verbesserung des anf&auml;nglichen Versuchsplans</th>
+<td>Legt den Algorithmus fest, der verwendet wird, um den anf&auml;nglichen Versuchsplan hinsichtlich des optimalen Kriteriums zu verfeinern.<ul><li><b>Austauschmethode mit Anzahl von Austauschpunkten</b><dl><dd>Verbessert den Versuchsplan iterativ, indem N Kandidatenpunkte hinzugef&uuml;gt werden, die die D-Optimalit&auml;t maximieren, und anschlie&szlig;end N vorhandene Punkte entfernt werden, die am wenigsten zu diesem Kriterium beitragen.</dd></dl></li>
+<li><b>Fedorovs Methode</b><dl><dd>Ein klassischer Algorithmus f&uuml;r optimale Versuchspl&auml;ne, der eine Strategie des vollst&auml;ndigen Austauschs verwendet, bei der alle m&ouml;glichen Punktaustausche bewertet und bei jeder Iteration der global beste Austausch ausgew&auml;hlt wird.</dd></dl></li>
+<li><b>Kein</b></li></ul>
+</td></tr></table>
+<h2><a name="Settings"></a><span class="mw-headline">Einstellungen</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Auswahlkennzeichen im Quellarbeitsblatt speichern</th>
+<td>F&uuml;gen Sie durch Auswahl dieser Option neue Spalten zum Quellarbeitsblatt, das die Kandidatenmenge enth&auml;lt, hinzu.</td></tr>
+<tr>
+<th>Ausgew&auml;hlte Zeilen in Spalten kopieren</th>
+<td>Legt fest, welche Spalten aus dem Quellarbeitsblatt in die Ausgabe des erzeugten optimalen Versuchsplans kopiert werden. Werte aus den ausgew&auml;hlten Spalten werden Zeile f&uuml;r Zeile mit den vom Algorithmus ausgew&auml;hlten Versuchsdurchl&auml;ufen abgeglichen.</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialogdesign</span></h2>
+<p>Speichern und laden Sie die Einstellungen des Dialogs. Verwenden Sie dies, um h&auml;ufig verwendete Faktorkonfigurationen, Versuchsplanoptionen oder Ausgabeeinstellungen zu speichern, und rufen Sie sie f&uuml;r zuk&uuml;nftige Versuchspl&auml;ne wieder auf, ohne alle Werte erneut einzugeben.</p>
+
+
+    
