@@ -17,11 +17,18 @@
 <ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
 <li> Select the <b>Select Optimal Design</b> icon
 <dl><dd><a  class="image"><img alt="Select Optimal Design.png" src="../images/Select_Optimal_Design_Dialog/650px-Select_Optimal_Design.png?v=79929" width="650"   /></a></dd></dl></li></ul>
-<table class="noborder"><tr>
-	<td style="vertical-align:top" width="60"><img src="../images/Select_Optimal_Design_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+<table class="noborder">
+	<tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Select_Optimal_Design_Dialog/Alert_icon.png?v=0" width="57"  border="0" /></td><td><p><i><b>The feature is available only for</b></i>
 </p>
-<ul><li> <a href="../../App/Category/Select_Optimal_Design(App).html" title="Category:Select Optimal Design(App)">Select Optimal Design</a></li></ul>
-</td></tr></table>
+<ul><li> <a href="../../App/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">General full factorial design</a></li>
+<li> <a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Response surface design</a></li>
+<li> <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture design</a></li></ul>
+<p><br />
+</p>
+	</td>
+	</tr>
+	</table>
 <h2><a name="Task"></a><span class="mw-headline">Task</span></h2>
 <table class="dialogcontroltable">
 <tr>
@@ -43,19 +50,29 @@
 <tr>
 <th>Model Terms
 </th>
-<td>Defines the mathematical model you intend to fit to the data. The optimal design algorithm selects runs specifically to estimate these terms with minimal variance. Click the <b>+</b> button to open a dialog to select model terms
-<p>The dialog include <b>Generate Terms by Model Type</b> dropdown list with following options
+<td>Defines the mathematical model you intend to fit to the data. The optimal design algorithm selects runs specifically to estimate these terms with minimal variance.
+<p><b>To configure model terms:</b>
 </p>
-<dl><dd><ul><li>Linear</li>
-<li>Linear +Squares</li>
-<li>Linear  + Interactions</li>
-<li>Full Quafratic</li></ul></dd>
-<dd>Add or remove the terms from the right panel and click the <b>OK</b> button to define the model.</dd></dl>
+<ul><li> Click the <b>+</b> button to open a dialog to select model terms</li>
+<li> Select a predefined model structure from the <b>Generate Terms by Model Type</b> dropdown list</li>
+<li> The selected terms appear in the right panel. Add or remove individual terms manually to customize the model structure.</li>
+<li> Click <b>OK</b> to confirm and return to the Task tab.</li></ul>
 </td></tr>
 <tr>
 <th>Include Blocks in the Model
 </th>
 <td>Adds block effects to the model.
+</td></tr>
+<tr>
+<th>Analyze Components in
+</th>
+<td>Available only for <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">mixture design</a>
+<p>Specifies the coordinate system used for modeling and analyzing mixture components. 
+</p>
+<ul><li> <b>Proportions</b>
+<dl><dd> Components are analyzed in their original proportion scale (values between 0 and 1, summing to 1). The model is fit directly on the actual component proportions. Use this when components have no lower bound constraints (or bounds are negligible) and you prefer interpretability in the original measurement units.</dd></dl></li>
+<li><b>Pseudo-components</b>
+<dl><dd>Components are transformed into pseudo-components before analysis. This rescales the constrained mixture space to a regular simplex by removing lower bound constraints. The model is fit on the transformed coordinates, and predictions are converted back to actual proportions for interpretation. Use this when components have nonzero lower bounds that would otherwise create a restricted, irregular design space</dd></dl></li></ul>
 </td></tr></table>
 <h2><a name="Method"></a><span class="mw-headline">Method</span></h2>
 <table class="dialogcontroltable">
@@ -71,6 +88,25 @@
 <dl><dd> Specifies how many independent initial designs are generated and optimized.</dd></dl></li>
 <li> <b>Random Seed</b>
 <dl><dd> Enter an integer to control the reproducibility of the random number generator used to create initial designs.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Column to Indicate Initial Design
+</th>
+<td>This option appears only when <b>Augment design</b> is selected in the <b>Task</b> tab.
+<p>Specifies which column in the source worksheet identifies the runs that belong to the existing (initial) design versus the candidate pool for augmentation.
+</p><p><b>Workflow</b>
+</p>
+<dl><dd><ul><li> In your source worksheet, create a column that flags each row as part of the initial design or as a candidate for augmentation.</li>
+<li> Select <b>Augment design</b> in the <b>Task</b> tab.</li>
+<li> In the <b>Method</b> tab, select this column from the Column to Indicate Initial Design dropdown.</li>
+<li> The algorithm locks the indicated initial runs and optimizes only the selection of new runs.</li></ul></dd></dl>
+<p><b>Rule of the Column Values</b>
+</p>
+<dl><dd><ul><li> <b>-2</b>: The experimental run is required. The optimal design must include at least two replicates of this run.</li>
+<li> <b>-1</b>: The experimental run is required. The optimal design must include at least one replicate of this run.</li>
+<li> <b>0</b>: The experimental run is not included in the initial design. The optimal design may include or exclude this run.</li>
+<li> <b>1</b>:The initial design includes one replicate of this experimental run. The optimal design may retain, remove, or add replicates of this run based on the selected optimality criterion.</li>
+<li> <b>3</b>:The initial design includes three replicates of this experimental run. The optimal design may retain, remove, or add replicates of this run based on the selected optimality criterion.</li></ul></dd></dl>
 </td></tr>
 <tr>
 <th>Improvement of Initial Design
@@ -90,9 +126,9 @@
 <td>Select to add new columns to the source worksheet containing the candidate set.
 </td></tr>
 <tr>
-<th>Improvement of Initial Design
+<th>Copy Selected Rows in Columns
 </th>
-<td>Select to output the selected experimental runs as columns
+<td>Specifies which columns from the source worksheet are copied into the generated optimal design output. Values from the selected columns are aligned row-for-row with the experimental runs chosen by the algorithm.
 </td></tr></table>
 <h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
 <p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.

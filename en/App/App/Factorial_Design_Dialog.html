@@ -101,16 +101,15 @@
 <tr>
 <th>Number of Center Points per Block
 </th>
-<td>Available only for <b>2-level factorial</b> and <b>Plackett-Burman</b> design
+<td>Available only for <b>2-level factorial</b> designs
 <p>Specifies the number of center points (runs with all factors at their mid-levels) to include in the design. Center points detect curvature in the response without affecting the estimation of main effects or interactions; set to 0 if curvature is not a concern.
 </p>
 </td></tr>
 <tr>
 <th>Number of Replicates
 </th>
-<td>Available only for <b>2-level factorial</b> and <b>Plackett-Burman</b> design
-<p>Sets how many times each factorial combination is repeated
-</p><p>Adding replicates can increase the statistical power to detect effects but also increase total runs and resource cost. 
+<td>Sets how many times each factorial combination is repeated
+<p>Adding replicates can increase the statistical power to detect effects but also increase total runs and resource cost. 
 </p>
 </td></tr>
 <tr>
@@ -119,6 +118,13 @@
 <td>Available only for <b>Plackett-Burman</b> designs.
 <p>Specifies the total number of experimental runs to include in the design.
 </p><p>Plackett-Burman designs are available for run counts that are multiples of 4 (e.g., 12, 20, 24, 28, 36, 40, 44, 48 runs). Select the run count that accommodates your number of factors while minimizing experimental effort.
+</p>
+</td></tr>
+<tr>
+<th>Number of Center Points per Replicate
+</th>
+<td>Available only for <b>Plackett-Burman</b> designs.
+<p>Enter a non-negative integer to specify the number of center points added to each replicate of the design
 </p>
 </td></tr>
 <tr>
@@ -168,12 +174,16 @@
 <tr>
 <th>Alias Table
 </th>
-<td>Displays the confounding (aliasing) structure of fractional factorial designs, showing which effects are confounded with each other. Critical for interpreting results from fractional designs where not all effects can be estimated independently.
+<td>Available only for <b>2-level factorial</b> designs
+<p>Displays the confounding (aliasing) structure of fractional factorial designs, showing which effects are confounded with each other. Critical for interpreting results from fractional designs where not all effects can be estimated independently.
+</p>
 </td></tr>
 <tr>
 <th>Interaction Order for Alias
 </th>
-<td>Specifies the maximum order of interactions to display in the alias table.
+<td>Available only for <b>2-level factorial</b> designs
+<p>Specifies the maximum order of interactions to display in the alias table. 
+</p>
 </td></tr></table>
 <h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
 <p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.

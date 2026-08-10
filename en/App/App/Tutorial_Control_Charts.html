@@ -1,4 +1,4 @@
-<h1 class="firstHeading">2.76.5.1 Tutorial for Control Charts</h1><p class='urlname' style='display: none'>Tutorial-Control-Charts</p>
+<h1 class="firstHeading">2.76.6.1 Tutorial for Control Charts</h1><p class='urlname' style='display: none'>Tutorial-Control-Charts</p>
 <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Notes for Starting</span></a></li>
@@ -47,7 +47,8 @@
 	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_Control_Charts/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
 </p>
 <ul><li> <a href="../../App/Category/Control_Charts(App).html" title="Category:Control Charts(App)">Introduction:Control Charts</a></li>
-<li> <a href="../../App/App/Algorithm_Control_Charts.html" title="App:Algorithm Control Charts">Algorithms:Control Charts</a></li></ul>
+<li> <a href="../../App/App/Algorithm_Control_Charts.html" title="App:Algorithm Control Charts">Algorithms:Control Charts</a></li>
+<li> <a href="../../App/App/Specify_Input_Data_SPC.html" title="App:Specify Input Data SPC">Specifying Input for SPC Tools</a></li></ul>
 </td></tr></table>
 <p><br />
 </p>
@@ -62,8 +63,8 @@
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Select the <b>Control Charts</b> tab, select <b>Variables Charts for Subgroups</b> from the dropdown list, select <b>Xbar-R</b>
 <dl><dd><a  class="image"><img alt="XbarR GUI.png" src="../images/Tutorial_Control_Charts/700px-XbarR_GUI.png?v=73908" width="700"   /></a></dd></dl></li>
-<li> In the <b>Input</b> tab of the opened dialog, select column B and C to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column A
-<dl><dd><a  class="image"><img alt="XbarR Input.png" src="../images/Tutorial_Control_Charts/450px-XbarR_Input.png?v=73910" width="450"   /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, select column B and C to be <b>Measurement Data</b>. Set the <b>Subgroup Size Column</b> to be Column A
+<dl><dd><a  class="image"><img alt="XbarR Input.png" src="../images/Tutorial_Control_Charts/450px-XbarR_Input.png?v=80326" width="450"   /></a></dd></dl></li>
 <li> In the <b>Parameters</b> tab, set <b>Historical Mean</b> to be <b>21</b>
 <dl><dd> <a  class="image"><img alt="XbarR Parameters.png" src="../images/Tutorial_Control_Charts/400px-XbarR_Parameters.png?v=73914" width="400"   /></a></dd></dl></li>
 <li> In the <b>Limits</b> tab, expand the <b>Bounds on Control Limits for Xbar Chart</b> branch. Set <b>Lower Spec</b> to be <b>20.95</b>, <b>Upper Spec</b> to be <b>21.05</b>
@@ -78,7 +79,7 @@
 <p>Examine the R chart first, if the process variations are not in control, the Xbar Chart may be inaccurate. All the points are within the control limits in the R chart of the two machines, the process variation of the two machines are in control. 
 </p><p>Machine has 1 out-of-control points. The Xbar chart of machine 1 indicate that there is a point is beyond the control limits for Machine 1. The test result of TEST 1 also reported that Test 1 is fail at point 18 
 </p><p>Machine 2 is still in control. All the points are within the control limit of Xbar chart of machine 2.
-</p><p><a  class="image"><img alt="XbarR Results.png" src="../images/Tutorial_Control_Charts/900px-XbarR_Results.png?v=73918" width="900"   /></a>
+</p><p><a  class="image"><img alt="XbarR Results.png" src="../images/Tutorial_Control_Charts/900px-XbarR_Results.png?v=80328" width="900"   /></a>
 </p>
 <h2><a name="Variables_Chart_for_Individuals:_I-MR"></a><span class="mw-headline">Variables Chart for Individuals: I-MR</span></h2>
 <h5><a name="Background_2"></a><span class="mw-headline">Background</span></h5>
@@ -95,7 +96,7 @@
 <dl><dd> <a  class="image"><img alt="IMR Tests.png" src="../images/Tutorial_Control_Charts/500px-IMR_Tests.png?v=73924" width="500"   /></a></dd></dl></li></ol>
 <h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>Check the MR chart first. In addition the notes says point 82 and 133 failed Test 1, and point 105 failed Test 2. The process variation may be not so stable. 
-</p><p><a  class="image"><img alt="IMR Results.png" src="../images/Tutorial_Control_Charts/800px-IMR_Results.png?v=73928" width="800"   /></a>
+</p><p><a  class="image"><img alt="IMR Results.png" src="../images/Tutorial_Control_Charts/700px-IMR_Results.png?v=80329" width="700"   /></a>
 </p>
 <h2><a name="Attributes_Charts:_P_Chart_Diagnostic_and_P"></a><span class="mw-headline">Attributes Charts: P Chart Diagnostic and P</span></h2>
 <h5><a name="Background_3"></a><span class="mw-headline">Background</span></h5>
@@ -107,14 +108,14 @@
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Control Charts</b> tab, select <b>Attribute Charts</b> from the dropdown list, select <b>P-Chart Diagnostic</b>
 <dl><dd><a  class="image"><img alt="Attribute GUI.png" src="../images/Tutorial_Control_Charts/700px-Attribute_GUI.png?v=73934" width="700"   /></a></dd></dl></li>
-<li> In the <b>Input</b> tab of the opened dialog, set <b>Measurement Data</b> to be column B. Choose <b>Sample Size By</b> to be <b>Column</b> and set the <b>Sample Size Column</b> to be Column A
-<dl><dd><a  class="image"><img alt="P Input.png" src="../images/Tutorial_Control_Charts/380px-P_Input.png?v=73936" width="380"   /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, set <b>Measurement Data</b> to be column B. Set the <b>Sample Size Column</b> to be Column A
+<dl><dd><a  class="image"><img alt="P Input.png" src="../images/Tutorial_Control_Charts/380px-P_Input.png?v=80330" width="380"   /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A graph is created
-<dl><dd> <a  class="image"><img alt="PDiagnostic.png" src="../images/Tutorial_Control_Charts/400px-PDiagnostic.png?v=73938" width="400"   /></a></dd>
+<dl><dd> <a  class="image"><img alt="PDiagnostic.png" src="../images/Tutorial_Control_Charts/400px-PDiagnostic.png?v=80331" width="400"   /></a></dd>
 <dd> As mentioned in the notes of the <b>P Diagnostic</b> chart. <b>Laney P' chart</b> should be used. Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</dd></dl></li>
 <li> Keep in the <b>Control Charts</b> tab, select <b>Laney P'</b></li>
-<li> In the <b>Input</b> tab of the opened dialog, set <b>Measurement Data</b> to be column B. Choose <b>Sample Size By</b> to be <b>Column</b> and set the <b>Sample Size Column</b> to be Column A
-<dl><dd><a  class="image"><img alt="LaneyP Input.png" src="../images/Tutorial_Control_Charts/400px-LaneyP_Input.png?v=73939" width="400"   /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, set <b>Measurement Data</b> to be column B. Set the <b>Sample Size Column</b> to be Column A
+<dl><dd><a  class="image"><img alt="LaneyP Input.png" src="../images/Tutorial_Control_Charts/400px-LaneyP_Input.png?v=80332" width="400"   /></a></dd></dl></li>
 <li> In the <b>Tests</b> tab, select <b>Perform All Tests</b> from the <b>Tests</b> drop-down list
 <dl><dd><a  class="image"><img alt="LaneyP Tests.png" src="../images/Tutorial_Control_Charts/500px-LaneyP_Tests.png?v=73940" width="500"   /></a></dd></dl></li></ol>
 <h5><a name="Interpreting_the_Results_3"></a><span class="mw-headline">Interpreting the Results</span></h5>
@@ -133,14 +134,14 @@
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Select the <b>Control Charts</b> tab, select <b>Time-Weighted Charts</b> from the dropdown list, select <b>CUSUM</b>
 <dl><dd><a  class="image"><img alt="CUSUM GUI.png" src="../images/Tutorial_Control_Charts/700px-CUSUM_GUI.png?v=73949" width="700"   /></a></dd></dl></li>
-<li> In the <b>Input</b> tab of the opened dialog, select column B and C to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column A. Set <b>Target</b> to be <b>21</b>
-<dl><dd><a  class="image"><img alt="CUSUM Input.png" src="../images/Tutorial_Control_Charts/500px-CUSUM_Input.png?v=73952" width="500"   /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, select column B and C to be <b>Measurement Data</b>.Set the <b>Subgroup Size Column</b> to be Column A. Set <b>Target</b> to be <b>21</b>
+<dl><dd><a  class="image"><img alt="CUSUM Input.png" src="../images/Tutorial_Control_Charts/CUSUM_Input.png?v=80333" width="500"  /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A graph is created</li></ol>
 <h5><a name="Interpreting_the_Results_4"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>For machine 2, all points are in control in the CUSUM chart. 
 </p><p>For machine 1, the process starts to have small shift from points 17. The manufacturer should check whether machine 1 is worn out during time. 
 </p><p><br />
-<a  class="image"><img alt="CUSUM Results.png" src="../images/Tutorial_Control_Charts/900px-CUSUM_Results.png?v=73954" width="900"   /></a>
+<a  class="image"><img alt="CUSUM Results.png" src="../images/Tutorial_Control_Charts/900px-CUSUM_Results.png?v=80335" width="900"   /></a>
 </p>
 <h2><a name="Multivariate_Charts:_T.C2.B2-Generalized_Variance"></a><span class="mw-headline">Multivariate Charts: T²-Generalized Variance</span></h2>
 <h5><a name="Background_5"></a><span class="mw-headline">Background</span></h5>
@@ -151,8 +152,8 @@
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_Control_Charts/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Select the <b>Control Charts</b> tab, select <b>Multivariate Charts</b> from the dropdown list, select <b>T²-Generalized Variance</b>
 <dl><dd><a  class="image"><img alt="Multivar GUI.png" src="../images/Tutorial_Control_Charts/700px-Multivar_GUI.png?v=77847" width="700"   /></a></dd></dl></li>
-<li> In the <b>Input</b> tab of the opened dialog, select column B,C, D to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column A.
-<dl><dd><a  class="image"><img alt="T2 Var Input.png" src="../images/Tutorial_Control_Charts/400px-T2_Var_Input.png?v=77848" width="400"   /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, select column B,C, D to be <b>Measurement Data</b>. Set the <b>Subgroup Size Column</b> to be Column A.
+<dl><dd><a  class="image"><img alt="T2 Var Input.png" src="../images/Tutorial_Control_Charts/400px-T2_Var_Input.png?v=80336" width="400"   /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A report sheet is generated</li></ol>
 <h5><a name="Interpreting_the_Results_5"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>The chart pattern indicates a temporary shift in the process mean vector at Subgroup 19, while the variability (covariance structure) remained stable throughout the entire monitoring period.

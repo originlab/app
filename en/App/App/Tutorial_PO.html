@@ -1,4 +1,4 @@
-<h1 class="firstHeading">2.76.3.1 Tutorial for Process Overview</h1><p class='urlname' style='display: none'>Tutorial-PO</p>
+<h1 class="firstHeading">2.76.4.1 Tutorial for Process Overview</h1><p class='urlname' style='display: none'>Tutorial-PO</p>
 <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Notes for Starting</span></a></li>
@@ -33,10 +33,9 @@
 	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_PO/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
 </p>
 <ul><li> <a href="../../App/Category/Process_Overview(App).html" title="Category:Process Overview(App)">Introduction:Process Overview</a></li>
-<li> <a href="../../App/App/Algorithm_PO.html" title="App:Algorithm PO">Algorithms:Process Overview</a></li></ul>
+<li> <a href="../../App/App/Algorithm_PO.html" title="App:Algorithm PO">Algorithms:Process Overview</a></li>
+<li> <a href="../../App/App/Specify_Input_Data_SPC.html" title="App:Specify Input Data SPC">Specifying Input for SPC Tools</a></li></ul>
 </td></tr></table>
-<p><br />
-</p>
 <h2><a name="Normal_Process_Overview"></a><span class="mw-headline">Normal Process Overview</span></h2>
 <h5><a name="Background"></a><span class="mw-headline">Background</span></h5>
 <p>A quality engineer wants to evaluate the capsule filling process of the machine. The capsule weight needs to be 215 ± 17 mg
@@ -47,11 +46,9 @@
 <li> Highlight column B ~ I in worksheet. Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_PO/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Select the <b>Process Overview</b> tab, select <b>Normal Process Overview</b>
 <dl><dd><a  class="image"><img alt="PO Normal GUI.png" src="../images/Tutorial_PO/700px-PO_Normal_GUI.png?v=73651" width="700"   /></a></dd></dl></li>
-<li> In the <b>Input</b> tab of the opened dialog, column B ~ I is selected automatically as <b>Measurement Data</b>. Select the check box <b>Subgroups Arranged in Rows Across Columns</b>
-<dl><dd><a  class="image"><img alt="PO Normal Input.png" src="../images/Tutorial_PO/PO_Normal_Input.png?v=73881" width="540"  /></a></dd></dl></li>
-<li> In the <b>Limits</b> tab, set <b>Lower Spec</b> to be <b>198</b>, <b>Upper Spec</b> to be <b>232</b> and <b>Target</b> to be <b>215</b>
-<dl><dd><a  class="image"><img alt="PO Normal Limit.png" src="../images/Tutorial_PO/PO_Normal_Limit.png?v=73882" width="424"  /></a></dd></dl></li>
-<li> Click <b>OK</b> button. A graph with report tables will be created</li></ol>
+<li> In the <b>Input</b> tab of the opened dialog, column B ~ I is selected automatically as <b>Measurement Data</b>. Select the <b>Each Subgroup in a Separate Row</b> radio box. In the <b>Specifications</b> branch, set <b>Lower Spec</b> to be <b>198</b>, <b>Upper Spec</b> to be <b>232</b> and <b>Target</b> to be <b>215</b></li></ol>
+<ol><li><dl><dd><a  class="image"><img alt="PO Normal Input.png" src="../images/Tutorial_PO/PO_Normal_Input.png?v=80318" width="461"  /></a></dd></dl></li></ol>
+<ol><li> Click <b>OK</b> button. A graph with report tables will be created</li></ol>
 <h5><a name="Interpreting_the_Results"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>From the Xbar chart and conclusion of Test1, we can see the point 5 falls out of the UCL. 
 </p><p>The Capability Histogram shows not all the observations fall within the LSL and USL. 
@@ -68,11 +65,9 @@
 <ol><li> Open folder <b>2. Between-Within</b>, activate the workbook <b>Steel Sheet</b></li>
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_PO/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Process Overview</b> tab, select <b>Between/Within Process Overview</b></li>
-<li> In the <b>Input</b> tab of the opened dialog, select column A to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column B
-<dl><dd><a  class="image"><img alt="BCA Input.png" src="../images/Tutorial_PO/BCA_Input.png?v=73836" width="540"  /></a></dd></dl></li>
-<li> In the <b>Limits</b> tab, set <b>Lower Spec</b> to be <b>2.9</b>, <b>Upper Spec</b> to be <b>3.1</b> and <b>Target</b> to be <b>3</b>
-<dl><dd><a  class="image"><img alt="BCA limit.png" src="../images/Tutorial_PO/BCA_limit.png?v=76914" width="422"  /></a></dd></dl></li>
-<li> Click <b>OK</b> button. A graph with report tables will be created</li></ol>
+<li> In the <b>Input</b> tab of the opened dialog, select column A to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column B. In the <b>Specifications</b> tab, set <b>Lower Spec</b> to be <b>2.9</b>, <b>Upper Spec</b> to be <b>3.1</b> and <b>Target</b> to be <b>3</b>
+<dl><dd><a  class="image"><img alt="BCA Input.png" src="../images/Tutorial_PO/BCA_Input.png?v=80307" width="461"  /></a></dd></dl></li></ol>
+<ol><li> Click <b>OK</b> button. A graph with report tables will be created</li></ol>
 <h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>No points fall beyond the control limits in the Individuals, Moving Range, and Range charts, it indicates that the process is stable. 
 </p><p>Data points are close to the reference line in the Probability plot, that means the data are normally distributed. 
@@ -89,10 +84,8 @@
 <ol><li> Opened folder <b>3. Nonnormal</b>. Activate the workbook <b>Weibull</b></li>
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_PO/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Process Overview</b> tab, select <b>Non-normal Process Overview</b></li>
-<li> In the <b>Input</b> tab of the opened dialog, column A will be selected automatically as <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Constant</b> and set the <b>Subgroup Size Constant</b> to be 1
-<dl><dd> <a  class="image"><img alt="PO nonnormal input.png" src="../images/Tutorial_PO/PO_nonnormal_input.png?v=73899" width="540"  /></a></dd></dl></li>
-<li> In the <b>Limits</b> tab, set <b>Upper Spec</b> to be <b>1</b>, keep all other text box to be empty.
-<dl><dd><a  class="image"><img alt="NCA Limit.png" src="../images/Tutorial_PO/NCA_Limit.png?v=78838" width="338"  /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, column A will be selected automatically as <b>Measurement Data</b>. Enter <b>1</b> in the <b>Subgroup Size Constant</b>box. In the <b>Specifications</b> tab, set <b>Upper Spec</b> to be <b>1</b>, keep all other text box to be empty.
+<dl><dd> <a  class="image"><img alt="PO nonnormal input.png" src="../images/Tutorial_PO/PO_nonnormal_input.png?v=80322" width="461"  /></a></dd></dl></li>
 <li> In the <b>Distribution</b> tab, set <b>Distribution</b> to be <b>Auto</b>. It means it will automatically find and report the best distribution according the AD values
 <dl><dd><a  class="image"><img alt="PO nonnormal distribution.png" src="../images/Tutorial_PO/PO_nonnormal_distribution.png?v=73662" width="519"  /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A graph with report tables will be created</li></ol>

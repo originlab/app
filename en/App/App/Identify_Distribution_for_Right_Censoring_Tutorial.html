@@ -1,0 +1,109 @@
+<h1 class="firstHeading">2.5.4.1 Tutorial for Identify Distribution (Right Censoring)</h1><p class='urlname' style='display: none'>Tutorial-Indentify-Distribution-Right-Censoring</p>
+<p><b>Indentify Distributjion</b> creates probability plots for up to 7 distributions simultaneously, allowing you to visually compare which distribution fits your data best. The tool is used when you have incomplete observations - some units failed during testing while others were still available when data collection ended (right-censored).
+</p><p><br />
+In this example, a battery factory collected the battery lifetime from after-sales service data, defining lifetime as the elapsed time until capacity drops below 70&#160;% (i.e., a 30&#160;% loss). Engineers need to decide which distribution is the best before running post-precessing such as Parametric Distribution Analysis. 
+</p>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>1. Distribution Analysis (Right Censoring)</i>.
+</p><p>[Book1]Sheet1 shows a typical right-censored dataset.
+</p>
+<ul><li> Each row represents one unit. </li>
+<li> "Time " column contains the exact failure time or the last recorded time if the unit is still working. </li>
+<li> "Event " column contains the censoring values: in this example, 0 = right-censored (unit still working at the record time); 1 = failure.</li></ul>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 00.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_00.png?v=80241" width="684"  /></a></dd></dl>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book1]Sheet1 active, select <b>Statistics: Survival Analysis: Reliability and Survival Analysis</b>. In the opened panel, choose <b>Distribution Analysis for Right Censoring</b> block and click <b>Identify Distribution</b> icon.
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 01.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_01.png?v=80242" width="500"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings as follow:
+<ul>
+<li>On Input tab, select column A for <b>Time</b>. Make sure <b>Define Censoring by</b> is set to <b>Censoring Columns</b>. Select column B for <b>Censoring Columns</b> and 0 for <b>Censoring Value</b>, which means any row where Event = 0 represents a unit that was still functioning at the observed time. 
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 02 Input.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_02_Input.png?v=80243" width="409"  /></a></dd></dl>
+<table class="simple">
+<tr>
+<th>Data Layout
+</th>
+<td>How your data are organized. If your data contains multiple groups (e.g., different types or conditions):
+<ul><li> <b>Multiple Columns</b>: each group has its separate time &amp; censoring column pair; </li>
+<li> <b>One Column with Grouping Variables</b>: all groups are stacked in one pair of time &amp; censoring columns, with a separate grouping column. </li></ul>
+<p>The tool will process each group in sequence, and export all results in a single report.
+</p>
+</td></tr>
+<tr>
+<th>Time
+</th>
+<td>The column containing the observed lifetimes.
+</td></tr>
+<tr>
+<th>Frequency (<i>Optional</i>)
+</th>
+<td>When multiple units share the same observed time, you can streamline data entry by providing a frequency column rather than repeating rows. Refer to <a href="../../App/App/SA_Nonparametric_Dist_Tutorial.html#Sample_Data" title="App:SA Nonparametric Dist Tutorial">this page</a> for "repeating rows" <i>vs.</i> "frequency column".
+</td></tr>
+<tr>
+<th>Define Censoring by
+</th>
+<td>How to distinguish failure from right-censored observations.
+<ul><li> <b>Censoring Columns</b>: an explicit indicator column flagging the status of each observation. The <b>Censoring Value</b> identifies which code means "still running". All other codes are treated as exact failure events.</li>
+<li> <b>Time when censoring begins</b> (Type I): units in Time column that equal or exceed the <b>Time Value</b> is treated as censored at exactly that time.</li>
+<li> <b>Number of failures when censoring begins</b> (Type II): monitoring continues until the <b>Number of Failures</b> have been observed. The rest are censored at that point.</li></ul>
+</td></tr></table>
+</li>
+<li>On Settings tab, choose <b>All</b> for <b>Number of Distribution</b>. <b>Estimation Method</b> defaults to <b>Maximum Likelihood</b>. Leave all other settings unchanged.
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 02 Settings.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_02_Settings.png?v=80259" width="332"  /></a></dd></dl>
+<table class="simple">
+<tr>
+<th>Number of Distributions
+</th>
+<td>Choose the distributions to compare simultaneously. Choose <b>All</b> to compare up to 7 distributions: Normal, Lognormal, Exponential, Smallest Extreme Value, Weibull, Logistic, Loglogistic.<br />Refer to <a href="../../App/App/SA_Parametric_Dist_Algorithm.html#Distributions" title="App:SA Parametric Dist Algorithm">this page</a> for information about 7 distributions
+</td></tr>
+<tr>
+<th>Estimation Method
+</th>
+<td>Choose the algorithm used to calculate the parameters (e.g., shape and scale for Weibull, location and scale for Normal) from your data. Refer to <a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">this page</a> for algorithm of 2 methods.
+<ul><li> <b>Maximum Likelihood</b> (MLE): recommended for moderate to large samples (&gt;30), or data with  heavy censoring. <b>Maximum Number of Iterations</b> determine how many times the algorithm will attempt for parameter value optimization.</li>
+<li> <b>Least Squares</b> (Rank Regression): more stable for very small samples (&lt;15). Does not require iterative optimization</li></ul>
+</td></tr></table>
+</li>
+<li>On Display tab, determine which results are output alongside the probability plots. Leave it as default.
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 02 Display.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_02_Display.png?v=80260" width="401"  /></a></dd></dl>
+Refer to <a href="#Results_and_Interpretation">"Results and Interpretation" section</a> to see how these options work together to help you evaluate and compare candidate distributions. </li>
+<li>Click <b>OK</b> button to generate report sheets.
+</ul>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<p><span class='headerInParagraph'>Goodness of Fit</span>
+</p>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 03 Goodness of Fit.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_03_Goodness_of_Fit.png?v=80275" width="299"  /></a></dd></dl>
+<ul><li> The Anderson-Darling statistic quantifies the discrepancy between the empirical cumulative distirbution and the fitted theoretical distribution. Smaller value indicates better fit.</li>
+<li> The Exponential distribution is strongly rejected. The Loglogistic and Lognormal models yield the lowest AD; however, the difference is too small to declare a statistically meaningful advantage. The Weibull, Normal, and Logistic distributions also produce acceptable fits. The SEV model occupies an intermediate position, suggesting less representative of the underlying failure mechanism.</li></ul>
+<p><br />
+<span class='headerInParagraph'>Table of Percentiales</span>
+</p>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 03 Percentiales.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_03_Percentiales.png?v=80276" width="567"  /></a></dd></dl>
+<ul><li> The percentile life estimates provide the time at which a specified cumulative percentage (st, 5th, 10th, and 50th) of the population is expected to fail. These values are particularly sensitive to distributional assumptions in the tails and often serve as the tie-breaker when AD statistics are nearly identical.</li>
+<li> Candidated distributions diverge in the early-life predictions but converge to a median life of approximately 21-23 months. This consensus confirms that the choice of distribution primarily affects tail predictions (e.g., warranty forecasting)</li>
+<li> The SEV model is rejected due to a negative lifetime estimate at 1st Percentile. The Exponential model is also rejected due to the near-zero estimate which is physically meaningless for a lifetime value. While the Logistic model’s 95% CI crosses 0, indicating this model is instable in the tail. </li></ul>
+<p><br />
+<span class='headerInParagraph'>Statistics for Mean Time to Failure</span>
+</p>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 03 MTTF.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_03_MTTF.png?v=80277" width="488"  /></a></dd></dl>
+<ul><li> The Mean Time-to-Failure (MTTF) estimates with 95% Confidence Intervals provide a check on the central location of each distribution. </li>
+<li> All candidates except Exponential produce MTTF estimates clustered around 22 months, though the SEV model shows modestly weaker performance. </li></ul>
+<p><br />
+<span class='headerInParagraph'>Probability Plot</span>
+</p>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 03 PP Plots.png" src="../images/Identify_Distribution_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_03_PP_Plots.png?v=80278" width="697"  /></a></dd></dl>
+<ul><li> The probability plots provide the primary visual diagnostic. Under a correct model, the points should scatter randomly about the reference line without systematic curvature.</li>
+<li> Exponential displays pronounced curvature, confirming the quantitative rejection by the AD statistic. SEV also shows systematic deviation in the upper tail.</li>
+<li> The remaining 5 distributions (Loglogistic, Lognormal, Weibull, Logistic, Normal) all produce broadly linear patterns. </li></ul>
+<p><br />
+<span class='headerInParagraph'>Conclusion</span> 
+</p>
+<dl><dd>Both Loglogistic and Lognormal are the leading candidates based on the statstistical assessments in the report. If institutional preference or engineering judgment is considered, Weibull is the pragmatic choice given its acceptablel performance, superior physical interpretability and broader industry adoption.</li></dd></dl>
+</li>
+</ol>
+
+
+
+
+
+

@@ -637,6 +637,12 @@
     <toc_src>Category:Identify_Distribution_for_Right_Censoring(APP)</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Identify Distribution for Right Censoring(Pro) &gt; Tutorial for Identify Distribution (Right Censoring)</toc_name>
+    <toc_link>App/Identify_Distribution_for_Right_Censoring_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-Indentify-Distribution-Right-Censoring</toc_url>
+    <toc_src>App:Identify_Distribution_for_Right_Censoring_Tutorial</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Transform Warranty Data</toc_name>
     <toc_link>Category/Transform_Warranty_Data(App).html</toc_link>
     <toc_url>App/SA-Transform-Warranty</toc_url>
@@ -683,6 +689,12 @@
     <toc_link>Category/Distribution_Overview_for_Right_Censoring(APP).html</toc_link>
     <toc_url>App/RC-Dist-Overview</toc_url>
     <toc_src>Category:Distribution_Overview_for_Right_Censoring(APP)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Distribution Overview for Right Censoring (Pro) &gt; Tutorial for Distribution Overview (Right Censoring)</toc_name>
+    <toc_link>App/Distribution_Overview_for_Right_Censoring_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-Distribution-Overview-Right-Censoring</toc_url>
+    <toc_src>App:Distribution_Overview_for_Right_Censoring_Tutorial</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Nonparametric Distribution Analysis (Arbitrary Censoring) (Pro)</toc_name>
@@ -883,13 +895,13 @@
     <toc_src>Category:Gage_Study(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Gage Study (Pro) &gt; Tutorial for Gage R&amp;R Study</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Gage Study (Pro) &gt; Tutorial for Gage Study</toc_name>
     <toc_link>App/Tutorial_GG.html</toc_link>
     <toc_url>App/Tutorial-GG</toc_url>
     <toc_src>App:Tutorial_GG</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Gage Study (Pro) &gt; Algorithm for Gage R&amp;R Study</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Gage Study (Pro) &gt; Algorithm for Gage Study</toc_name>
     <toc_link>App/Algorithm_GG.html</toc_link>
     <toc_url>App/Algorithm-GG</toc_url>
     <toc_src>App:Algorithm_GG</toc_src>
@@ -1279,6 +1291,12 @@
     <toc_src>Category:Statistical_Process_Control(App)</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Statistical Process Control (Pro) &gt; Specifying Input Data for SPC Tools</toc_name>
+    <toc_link>App/Specify_Input_Data_SPC.html</toc_link>
+    <toc_url>App/SPC-Inpuyh</toc_url>
+    <toc_src>App:Specify_Input_Data_SPC</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Statistical Process Control (Pro) &gt; Identify Data Distribution</toc_name>
     <toc_link>Category/Identify_Data_Distribution(App).html</toc_link>
     <toc_url>App/IDD</toc_url>
@@ -1379,24 +1397,6 @@
     <toc_link>App/Sparse_Principal_Components_Analysis.html</toc_link>
     <toc_url>App/Sparse-PCA</toc_url>
     <toc_src>App:Sparse_Principal_Components_Analysis</toc_src>
-  </toc>
-  <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Acceptance Sampling Analysis</toc_name>
-    <toc_link>Category/Acceptance_Sampling_Analysis(App).html</toc_link>
-    <toc_url>App/ASA</toc_url>
-    <toc_src>Category:Acceptance_Sampling_Analysis(App)</toc_src>
-  </toc>
-  <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Acceptance Sampling Analysis &gt; Tutorial for Acceptance Sampling Analysis</toc_name>
-    <toc_link>App/Tutorial_Acceptance_Sampling_Analysis.html</toc_link>
-    <toc_url>App/ASA-Tutorial</toc_url>
-    <toc_src>App:Tutorial_Acceptance_Sampling_Analysis</toc_src>
-  </toc>
-  <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Acceptance Sampling Analysis &gt; Algorithm for Acceptance Sampling Analysis</toc_name>
-    <toc_link>App/Algorithm_Acceptance_Sampling_Analysis.html</toc_link>
-    <toc_url>App/ASA-Algorithm</toc_url>
-    <toc_src>App:Algorithm_Acceptance_Sampling_Analysis</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Handling</toc_name>

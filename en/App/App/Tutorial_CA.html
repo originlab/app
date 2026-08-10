@@ -1,4 +1,4 @@
-<h1 class="firstHeading">2.76.2.1 Tutorial for Capability Analysis</h1><p class='urlname' style='display: none'>Tutorial-CA</p>
+<h1 class="firstHeading">2.76.3.1 Tutorial for Capability Analysis</h1><p class='urlname' style='display: none'>Tutorial-CA</p>
 <div class="toclimit-2"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Notes_for_Starting"><span class="tocnumber">1</span> <span class="toctext">Notes for Starting</span></a></li>
@@ -54,7 +54,8 @@
 	<td style="vertical-align:top" width="60"><img src="../images/Tutorial_CA/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
 </p>
 <ul><li> <a href="../../App/Category/Capability_Analysis(App).html" title="Category:Capability Analysis(App)">Introduction:Capability Analysis</a></li>
-<li> <a href="../../App/App/Algorithm_CA.html" title="App:Algorithm CA">Algorithms:Capability Analysis</a></li></ul>
+<li> <a href="../../App/App/Algorithm_CA.html" title="App:Algorithm CA">Algorithms:Capability Analysis</a></li>
+<li> <a href="../../App/App/Specify_Input_Data_SPC.html" title="App:Specify Input Data SPC">Specifying Input for SPC Tools</a></li></ul>
 </td></tr></table>
 <h2><a name="Normal_Capability_Analysis"></a><span class="mw-headline">Normal Capability Analysis</span></h2>
 <h5><a name="Background"></a><span class="mw-headline">Background</span></h5>
@@ -66,11 +67,9 @@
 <li> Highlight column A in worksheet. Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Select the <b>Capability Analysis</b> tab, select <b>Normal Capability Analysis</b>
 <dl><dd><a  class="image"><img alt="NPA GUI.png" src="../images/Tutorial_CA/700px-NPA_GUI.png?v=73648" width="700"   /></a></dd></dl></li>
-<li> In the <b>Input</b> tab of the opened dialog, column A is selected automatically as <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Constant</b> and set the <b>Subgroup Size Constant</b> to be <b>1</b>
-<dl><dd><a  class="image"><img alt="NPA Input.png" src="../images/Tutorial_CA/380px-NPA_Input.png?v=73880" width="380"   /></a></dd></dl></li>
-<li> In the <b>Limits</b> tab, set <b>Lower Spec</b> to be <b>4.98</b>, <b>Upper Spec</b> to be <b>5.02</b> and <b>Target</b> to be <b>5</b>
-<dl><dd><a  class="image"><img alt="NPA Limit.png" src="../images/Tutorial_CA/380px-NPA_Limit.png?v=73830" width="380"   /></a></dd></dl></li>
-<li> Click <b>OK</b> button. A report sheet will be created</li></ol>
+<li> In the <b>Input</b> tab of the opened dialog, column A is selected automatically as <b>Measurement Data</b>. Set  <b>Subgroup Size</b>  as <b>1</b> by typing it. And set <b>Lower Spec</b> to be <b>4.98</b>, <b>Upper Spec</b> to be <b>5.02</b> and <b>Target</b> to be <b>5</b>
+<dl><dd><a  class="image"><img alt="NPA Input.png" src="../images/Tutorial_CA/400px-NPA_Input.png?v=80306" width="400"   /></a></dd></dl></li></ol>
+<ol><li> Click <b>OK</b> button. A report sheet will be created</li></ol>
 <h5><a name="Interpreting_the_Results"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>The process is approximately centered and all observed measurements are within the specification limits. The capability indices Cpk, Ppk, and Cpm are all greater than 1.33, which is a generally accepted minimum value for a capable process. Therefore, the width meets the production requirements
 </p>
@@ -84,10 +83,8 @@
 <ol><li> Open folder <b>2. Between-Within</b>, activate the workbook <b>Steel Sheet</b></li>
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Capability Analysis</b> tab, select <b>Between/Within Capability Analysis</b></li>
-<li> In the <b>Input</b> tab of the opened dialog, select column A to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column B
-<dl><dd><a  class="image"><img alt="BCA Input.png" src="../images/Tutorial_CA/380px-BCA_Input.png?v=73836" width="380"   /></a></dd></dl></li>
-<li> In the <b>Limits</b> tab, set <b>Lower Spec</b> to be <b>2.9</b>, <b>Upper Spec</b> to be <b>3.1</b> and <b>Target</b> to be <b>3</b>
-<dl><dd><a  class="image"><img alt="BCA limit.png" src="../images/Tutorial_CA/380px-BCA_limit.png?v=76914" width="380"   /></a></dd></dl></li>
+<li> In the <b>Input</b> tab of the opened dialog, select column A to be <b>Measurement Data</b>. Choose <b>Subgroup Size By</b> to be <b>Column</b> and set the <b>Subgroup Size Column</b> to be Column B. Set <b>Lower Spec</b> to be <b>2.9</b>, <b>Upper Spec</b> to be <b>3.1</b> and <b>Target</b> to be <b>3</b> by typing
+<dl><dd><a  class="image"><img alt="BCA Input.png" src="../images/Tutorial_CA/400px-BCA_Input.png?v=80307" width="400"   /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A report sheet will be created</li></ol>
 <h5><a name="Interpreting_the_Results_2"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>Not all the measurements are within the specification limits. For between/within capability, Cp is 1.188, which indicates that the specification spread is 1.19 times greater than the 6-σ spread in the process. Cp and Cpk is a slightly different, indicating that the process is slightly off centered. For overall capability, Pp, Ppk, and Cpm are very close to each other, indicating that the process is centered and on target. However, Ppk is less than 1.33, which is a generally accepted minimum value for a capable process. We can conclude that the process is good but its capability still could be improved.
@@ -101,12 +98,11 @@
 <ol><li> Opened folder <b>3. Nonnormal</b>. Activate the workbook <b>Weibull</b></li>
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Capability Analysis</b> tab, select <b>Non-normal Capability Analysis</b></li>
-<li> In the <b>Input</b> tab of the opened dialog, <b>Measurement Data</b> to be column A.</li>
-<li> In the <b>Distribution'<i> tab, set </i></b><i>Distribution<b> to be </b>Weibull<b>, set </b>Method<b> to be </b>Estimate Parameters<b>.  Keep </b>Fix Shape At</i> box to be empty.
-<dl><dd><a  class="image"><img alt="NCA Distribution.png" src="../images/Tutorial_CA/250px-NCA_Distribution.png?v=73844" width="250"   /></a></dd></dl></li>
-<li> In the <b>Limits</b> tab, set <b>Upper Spec</b> to be <b>1</b>, keep all other text box to be empty.
-<dl><dd><a  class="image"><img alt="NCA Limit.png" src="../images/Tutorial_CA/250px-NCA_Limit.png?v=78838" width="250"   /></a></dd></dl></li>
-<li> Click <b>OK</b> button. A report sheet will be created</li></ol>
+<li> In the <b>Input</b> tab of the opened dialog, <b>Measurement Data</b> to be column A. Set <b>Upper Spec</b> to be <b>1</b> by typing, keep all other text box to be empty.
+<dl><dd><a  class="image"><img alt="NCA Limit.png" src="../images/Tutorial_CA/400px-NCA_Limit.png?v=80310" width="400"   /></a></dd></dl></li>
+<li> In the <b>Distribution</b> tab, set <b>Distribution</b> to be <b>Weibull</b>, keep all other box to be empty.
+<dl><dd><a  class="image"><img alt="NCA Distribution.png" src="../images/Tutorial_CA/300px-NCA_Distribution.png?v=80312" width="300"   /></a></dd></dl></li></ol>
+<ol><li> Click <b>OK</b> button. A report sheet will be created</li></ol>
 <h5><a name="Interpreting_the_Results_3"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>The dataset appear to follow  the fitted curve of weibull distribution. All the measurements falls below the upper specification limits. We can say the process meets requirements
 </p>
@@ -123,7 +119,7 @@
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Capability Analysis</b> tab, select <b>Binnomial Capability Analysis</b></li>
 <li> In the <b>Input</b> tab of the opened dialog, set <b>Defectives</b> to be column B. Choose <b>Sample Size By</b> to be <b>Column</b> and set the <b>Sample Size Column</b> to be Column A
-<dl><dd><a  class="image"><img alt="BinCA Input.png" src="../images/Tutorial_CA/380px-BinCA_Input.png?v=73849" width="380"   /></a></dd></dl></li>
+<dl><dd><a  class="image"><img alt="BinCA Input.png" src="../images/Tutorial_CA/300px-BinCA_Input.png?v=80313" width="300"   /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A report sheet will be created</li></ol>
 <h5><a name="Interpreting_the_Results_4"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>From the P chart we can see  all samples fall within the control limit line, so overall it appears the process is in control.  The Cumulative&#160;%Defactive Chart shows that,  the estimated average percent of defects stabilizes at around 20%. In the Rate of Defectives plot, the points are randomly distributed around the average line.
@@ -140,7 +136,7 @@ cm2 and the number of blemishes are recorded. We have recorded the data for the 
 <li> Click the <b>Statistical Process Control</b> icon <a  class="image"><img alt="SPC Icon.png" src="../images/Tutorial_CA/SPC_Icon.png?v=73813" width="32"  /></a> in the <b>Apps Gallery</b> window.</li>
 <li> Keep in the <b>Capability Analysis</b> tab, select <b>Poisson Capability Analysis</b></li>
 <li> In the <b>Input</b> tab of the opened dialog, set <b>Defectives</b> to be column B. Choose <b>Sample Size By</b> to be <b>Column</b> and set the <b>Sample Size Column</b> to be Column A
-<dl><dd><a  class="image"><img alt="PoiCA Input.png" src="../images/Tutorial_CA/380px-PoiCA_Input.png?v=73855" width="380"   /></a></dd></dl></li>
+<dl><dd><a  class="image"><img alt="PoiCA Input.png" src="../images/Tutorial_CA/300px-PoiCA_Input.png?v=80314" width="300"   /></a></dd></dl></li>
 <li> Click <b>OK</b> button. A report sheet will be created</li></ol>
 <h5><a name="Interpreting_the_Results_5"></a><span class="mw-headline">Interpreting the Results</span></h5>
 <p>The U Chart assesses the state of statistical control of the results. There is one out-of-control point in the U Chart. Generally we can say the process is stable. The Cumulative DPU chart is used to determine if you have enough samples for a valid estimate of the average DPU. In the Cumulative DPU graph we can see data are flatten out along the average DPU line. That means we have enough samples to be sure that the estimated mean DPU is valid. 

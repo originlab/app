@@ -2,10 +2,12 @@
 <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Factors"><span class="tocnumber">2</span> <span class="toctext">Factors</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Low.2FHigh"><span class="tocnumber">3</span> <span class="toctext">Low/High</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="#Designs"><span class="tocnumber">4</span> <span class="toctext">Designs</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="#Response"><span class="tocnumber">5</span> <span class="toctext">Response</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Factors.2FComponents"><span class="tocnumber">2</span> <span class="toctext">Factors/Components</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Process_Variables"><span class="tocnumber">3</span> <span class="toctext">Process Variables</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Signal_Factor"><span class="tocnumber">4</span> <span class="toctext">Signal Factor</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Low.2FHigh"><span class="tocnumber">5</span> <span class="toctext">Low/High</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Designs"><span class="tocnumber">6</span> <span class="toctext">Designs</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Response"><span class="tocnumber">7</span> <span class="toctext">Response</span></a></li>
 </ul>
 </div>
 
@@ -16,7 +18,7 @@
 <li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
 <li> Select the icon and choose the desired design from the list
 <dl><dd><a  class="image"><img alt="Define custom design.png" src="../images/The_Define_Custom_Design_Dialog_Box/600px-Define_custom_design.png?v=79708" width="600"   /></a></dd></dl></li></ul>
-<h2><a name="Factors"></a><span class="mw-headline">Factors</span></h2>
+<h2><a name="Factors.2FComponents"></a><span class="mw-headline">Factors/Components</span></h2>
 <p>The Column Long Names from the active worksheet are displayed in the list box. Select the desired factors and add them to the right panel.
 </p><p><a  class="image"><img alt="Custom Design DLG Factors.png" src="../images/The_Define_Custom_Design_Dialog_Box/500px-Custom_Design_DLG_Factors.png?v=79641" width="500"   /></a>
 </p><p>Note: For <b>Factorial Design</b> you can select the design you want to define. 
@@ -32,6 +34,29 @@
 </th>
 <td> Define a general full factorial design from data in the worksheet.
 </td></tr></table>
+<p><br />
+</p>
+<h2><a name="Process_Variables"></a><span class="mw-headline">Process Variables</span></h2>
+<p>Available only for <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture Design</a>.
+</p><p>Move the variables to the right panel to incorporate process variables into your mixture design. Process variables are experimental factors that are not part of the mixture itself but may still influence the response.
+</p>
+<h2><a name="Signal_Factor"></a><span class="mw-headline">Signal Factor</span></h2>
+<p>Available only for <a href="../../App/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Taguchi Design</a>.
+</p><p>The Signal Factor tab lets you incorporate a signal factor to convert a static Taguchi design into a dynamic response. With a dynamic design defined, you can analyze using Analyze Taguchi Design (Dynamic) to evaluate signal-to-noise ratios, slopes, and standard deviationsexperiment
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Add Dynamic Signal Factor
+</th>
+<td>Introduce a signal factor into your design, This changes the experiment from static (single target response) to dynamic (response varies with signal input)
+</td></tr>
+<tr>
+<th>Signal Factor
+</th>
+<td>Select the column containing the signal factor values.
+</td></tr></table>
+<p><br />
+</p>
 <h2><a name="Low.2FHigh"></a><span class="mw-headline">Low/High</span></h2>
 <p>After defining the factors in the <b>Factors</b> tab, enter design information of factors in the <b>Low/High</b> tab
 </p><p><a  class="image"><img alt="Custom Design DLG LowHigh.png" src="../images/The_Define_Custom_Design_Dialog_Box/420px-Custom_Design_DLG_LowHigh.png?v=79648" width="420"   /></a>

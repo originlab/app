@@ -1,0 +1,90 @@
+<h1 class="firstHeading">2.5.8.1 Tutorial for Distribution Overview (Right Censoring)</h1><p class='urlname' style='display: none'>Tutorial-Distribution-Overview-Right-Censoring</p>
+<p><b>Distribution Overview</b> takes your chosen model and draws its complete graphical profile by parametric or nonparametric analysis. It generates Probability Plot, Probability Density Funtion plot, Survival Plot, Hazard Plot, and key quantities, from which you can confirm that the fitted parameters tell a sensible story before moving on to formal predictions.
+</p><p><br />
+Engineers in a battery factory used <a href="../../App/App/Identify_Distribution_for_Right_Censoring_Tutorial.html" title="App:Identify Distribution for Right Censoring Tutorial"><b>Identify Distribution</b></a> to scan 7 candidate distributions on the collected battery lifetime data, and arrived to a conclusion that while Loglogistic and Lognormal achieved the smallest Anderson-Darling values, Weibull also produced an acceptable fit with an AD value within the same competitive cluster. Considering reliability and industry adoption, engneers prefer Weibull for the post-precessing such as Parametric Distribution Analysis. 
+</p><p>In this example, engneers choose Weibull as distribution and perform <b>Distribution Overview</b> to closely validate the model visually and physically across the full time domain.
+</p>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>1. Distribution Analysis (Right Censoring)</i>.
+</p><p>[Book1]Sheet1 shows a typical right-censored dataset.
+</p>
+<ul><li> Each row represents one unit. </li>
+<li> "Time " column contains the exact failure time or the last recorded time if the unit is still working. </li>
+<li> "Event " column contains the censoring values: in this example, 1 = failure (capacity drops below 70%); 0 = right-censored (unit still working at the record time).</li></ul>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 00.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_00.png?v=80241" width="684"  /></a></dd></dl>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book1]Sheet1 active, select <b>Statistics: Survival Analysis: Reliability and Survival Analysis</b>. In the opened panel, choose <b>Distribution Analysis for Right Censoring</b> block and click <b>Distribution Overview</b> icon.
+<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Distribution_Overview_Right_Censoring_Tutorial_01.png" class="new" title="File:Distribution Overview Right Censoring Tutorial 01.png">File:Distribution Overview Right Censoring Tutorial 01.png</a></dd></dl>
+<li>In the dialog that opens, specify the settings as follow:
+<ul>
+<li>On Input tab, select column A for <b>Time</b>. Make sure <b>Define Censoring by</b> is set to <b>Censoring Columns</b>. Select column B for <b>Censoring Columns</b> and 0 for <b>Censoring Value</b>, which means any row where Event = 0 represents a unit that was still functioning at the observed time. 
+<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Distribution_Overview_Right_Censoring_Tutorial_02_Input.png" class="new" title="File:Distribution Overview Right Censoring Tutorial 02 Input.png">File:Distribution Overview Right Censoring Tutorial 02 Input.png</a></dd></dl>
+<table class="simple">
+<tr>
+<th>Data Layout
+</th>
+<td>How your data are organized. If your data contains multiple groups (e.g., different types or conditions):
+<ul><li> <b>Multiple Columns</b>: each group has its separate time &amp; censoring column pair; </li>
+<li> <b>One Column with Grouping Variables</b>: all groups are stacked in one pair of time &amp; censoring columns, with a separate grouping column. </li></ul>
+<p>The tool will process each group in sequence, and export all results in a single report.
+</p>
+</td></tr>
+<tr>
+<th>Time
+</th>
+<td>The column containing the observed lifetimes.
+</td></tr>
+<tr>
+<th>Frequency (<i>Optional</i>)
+</th>
+<td>When multiple units share the same observed time, you can streamline data entry by providing a frequency column rather than repeating rows. Refer to <a href="../../App/App/SA_Nonparametric_Dist_Tutorial.html#Sample_Data" title="App:SA Nonparametric Dist Tutorial">this page</a> for "repeating rows" <i>vs.</i> "frequency column".
+</td></tr>
+<tr>
+<th>Analysis<br />Parametric <i>vs.</i> Nonparametric
+</th>
+<td>
+<ul><li> Parametric: select an identified <b>Distribution</b> to see its fitted curves and parameter-based predictions.</li>
+<li> Nonparametric: not to assume any particular distribution. It will estimate survival probabilities directly from the data.</li></ul>
+</td></tr>
+<tr>
+<th>Define Censoring by
+</th>
+<td>How to distinguish failure from right-censored observations.
+<ul><li> <b>Censoring Columns</b>: an explicit indicator column flagging the status of each observation. The <b>Censoring Value</b> identifies which code means "still running". All other codes are treated as exact failure events.</li>
+<li> <b>Time when censoring begins</b> (Type I): units in Time column that equal or exceed the <b>Time Value</b> is treated as censored at exactly that time.</li>
+<li> <b>Number of failures when censoring begins</b> (Type II): monitoring continues until the <b>Number of Failures</b> have been observed. The rest are censored at that point.</li></ul>
+</td></tr></table>
+</li>
+<li>On Options tab, make sure <b>Maximum Likelihood</b> is selected for <b>Estimation Method</b>. Leave other settings unchanged.
+<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Distribution_Overview_Right_Censoring_Tutorial_02_Options.png" class="new" title="File:Distribution Overview Right Censoring Tutorial 02 Options.png">File:Distribution Overview Right Censoring Tutorial 02 Options.png</a></dd></dl>
+<table class="simple">
+<tr>
+<th>Estimation Method
+</th>
+<td>
+<ul><li>When <b>Parametric</b> anallysis is selected on Input tab, choose the algorithm used to calculate the parameters (e.g., shape and scale for Weibull, location and scale for Normal) from your data. Refer to <a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">this page</a> for algorithm of 2 methods. </li></ul>
+<dl><dd><ul><li> <b>Maximum Likelihood</b> (MLE): recommended for moderate to large samples (&gt;30), or data with  heavy censoring. </li>
+<li> <b>Least Squares</b> (Rank Regression): more stable for very small samples (&lt;15). Computes parameters by fitting the reference line directly on the probability plot.</li></ul></dd></dl>
+<ul><li>When <b>Nonparametric</b> analysis is selected on Input tab, </li></ul>
+<dl><dd><ul><li> <a href="../../App/App/NPDA_Right_Censoring_Algorithm.html#Kaplan-Meier_method" title="App:NPDA Right Censoring Algorithm"><b>Kaplan-Meier</b></a>: Computes survival probability at each exact failure time. Use this when you have precise failure times and want the most detailed, step-by-step survival curve.</li>
+<li> <a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html#Actuarial_estimation_method" title="App:SA Nonparametric Dist Algorithm"><b>Actuarial</b></a>: Groups data into time intervals (by <b>Interval End</b> and <b>Interval Width</b>) and computes survival probability at each interval boundary. Use this when your data are already grouped, or when you have so many failure times that a step-for-step KM curve becomes unreadable. </li></ul></dd></dl>
+</td></tr>
+<tr>
+<th>Graph Settings
+</th>
+<td>
+<ul><li><b>Multiple Columns</b>: If your data contains multiple time&amp;event pairs, you can choose whether to plot all pairs <b>Overlay on Same Graph</b>, or in <b>Separate Graphs</b>.</li>
+<li><b>X Scale</b>: If you want to inspect a specific time window closely, e.g., early-life behavior, set <b>From</b> and <b>To</b> to zoom in to that time interval for all output plots.<br />Note: this setting does not change the underlying calculation; it only adjusts the display window. </li></ul>
+</td></tr></table>
+</li>
+<li>Click <b>OK</b> button to generate report sheets.
+</ul></li>
+</li>
+</ol>
+
+
+
+
+
+

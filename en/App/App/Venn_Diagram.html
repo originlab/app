@@ -1,35 +1,69 @@
 <h1 class="firstHeading">1.19 Venn Diagram</h1><p class='urlname' style='display: none'>Venn-Diagram</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Dialog_Options"><span class="tocnumber">2</span> <span class="toctext">Dialog Options</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Tutorial"><span class="tocnumber">3</span> <span class="toctext">Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Results_and_Interpretation"><span class="tocnumber">3.1</span> <span class="toctext">Results and Interpretation</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
 <h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
 <p>The <a class="external text" href="https://www.originlab.com/fileExchange/details.aspx?fid=425" target="_blank">Venn Diagram app</a> is used to show all overlaps among a collection of different group columns, and reveal the possible logic relationships.
 </p>
-<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
-<ol>
-<li> Create a new worksheet. Import the sample file <i>&lt;Origin Porgram Folder&gt;\Samples\Statistics\Fisher's Iris Data.dat</i> by selelcting <b>Data: Connect to File: Text/CSV</b> menu.
-<dl><dd><a  class="image"><img alt="Venn Diagram 01.png" src="../images/Venn_Diagram/Venn_Diagram_01.png?v=71532" width="492"  /></a></dd></dl>
-<li> Highlight Col(A)~Col(D) to click on the Venn Diagram app icon <a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Venn_Diagram_icon.png" class="new" title="File:Venn Diagram icon.png">File:Venn Diagram icon.png</a> to open the dilaog.
-<dl><dd><a  class="image"><img alt="Venn Diagram 02.png" src="../images/Venn_Diagram/Venn_Diagram_02.png?v=71533" width="656"  /></a></dd></dl>
+<h2><a name="Dialog_Options"></a><span class="mw-headline">Dialog Options</span></h2>
+<dl><dd><a  class="image"><img alt="Venn Diagram 02.png" src="../images/Venn_Diagram/Venn_Diagram_02.png?v=80129" width="429"  /></a></dd></dl>
 <table class="simple">
 <tr>
-<th>Export Detailed Overlap List
+<th width="15%">Data
 </th>
-<td>Check it to generate a detailed breakdown, (“<i>VennData</i>” worksheet) of which data points fall into each unique overlap region of the Venn diagram. See <a href="#Results_and_Interpretation">Results and Interpretation section</a> for explanation of binary codes.
+<td>Supports the number of input <b>Data</b> columns &lt;= 5.
+</td></tr>
+<tr>
+<th>Export Detaled Overlap List
+</th>
+<td>Select this checkbox to generate a detailed breakdown (“VennData” worksheet) of which data points fall into each unique overlap region and add binary codes (in parentheses) representing region(s) in the Venn diagram. Refer to <a href="#Results_and_Interpretation">this section</a> for detailed explanation of the binary codes.
 </td></tr>
 <tr>
 <th>Use Classic Background
 </th>
-<td>Classic circular Venn diagram with overlapping circles (standard colors), on a white or plain background.
-<ul><li>For 4-way or 5-way plot, a static(classic) background must be used. The tutorial shows you a 4-way diagram: <a class="external free" href="https://docs.originlab.com/app/venn-diagram/" target="_blank">https://docs.originlab.com/app/venn-diagram/</a></li>
-<li>For 3-way plot, the Venn diagram can have classic background checked or unchecked. See the difference in the image below.</li></ul>
-<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=3_way_Classic_Background_Comparison.png" class="new" title="File:3 way Classic Background Comparison.png">File:3 way Classic Background Comparison.png</a></dd></dl>
+<td>Controls the visual style and shape of the Venn diagram based on the number of input groups.
+<ul><li> For 4- and 5-set of groups, a classic style is always used. That is, the overlapping ellipsoids with fixed geometry are drawn on a plain, solid white background. </li>
+<li> For 3-set of groups, you can check this checkbox to draw the overlapping circles with fixed geometry, or uncheck this to draw proportional rectangles with area sizes dynamically linked to actual data counts.</li></ul>
+<dl><dd><a  class="image"><img alt="Venn Diagram Classic Background.png" src="../images/Venn_Diagram/Venn_Diagram_Classic_Background.png?v=80133" width="622"  /></a></dd></dl>
+<ul><li> For 2-set groups, always draw the overlapping circles on white backgroundthe, and the sizes of circles are proportionally linked to actual counts.</li></ul>
 </td></tr></table>
+<h2><a name="Tutorial"></a><span class="mw-headline">Tutorial</span></h2>
+<ol>
+<li> Create a new worksheet. Import the sample file <i>&lt;Origin Porgram Folder&gt;\Samples\Statistics\Fisher's Iris Data.dat</i> by selelcting <b>Data: Connect to File: Text/CSV</b> menu.
+<dl><dd><a  class="image"><img alt="Venn Diagram 01.png" src="../images/Venn_Diagram/Venn_Diagram_01.png?v=80128" width="500"  /></a></dd></dl>
+<li> Highlight Col(A)~Col(D) to click on the Venn Diagram app icon <a  class="image"><img alt="Venn Diagram icon.png" src="../images/Venn_Diagram/Venn_Diagram_icon.png?v=80131" width="45"  /></a> to open the dilaog.
+<dl><dd><a  class="image"><img alt="Venn Diagram 02.png" src="../images/Venn_Diagram/Venn_Diagram_02.png?v=80129" width="429"  /></a></dd></dl>
 </li>
 <li> Keep the default settings and click <b>OK</b> button to create the venn diagram.
-<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Venn_Diagram_04.png" class="new" title="File:Venn Diagram 04.png">File:Venn Diagram 04.png</a></dd></dl>
+<dl><dd><a  class="image"><img alt="Venn Diagram 04.png" src="../images/Venn_Diagram/Venn_Diagram_04.png?v=80132" width="486"  /></a></dd></dl>
 </ol>
 <h3><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h3>
-<p>Each ellipsoid has its label and the counting value. The labels have their meanings: 0001 means the values only appear in col("Sepal Length"); 0011 means the values appear in col("Sepal Length") and col("Sepal Width") both; 0111 means the values appear in col("Sepal Length"), col("Sepal Width") and col("Petal Length")...
+<p>The source worksheet <i>Fisher's Iris Data</i> collects the four morphological properties (Sepal Length, Sepal Width, Petal Length, Petal Width) of 150 iris flower samples. 
+</p><p>The Venn diagram visualizes the overlap pattern of these properties across the samples, showing how many samples simultaneously satisfy the criteria for multiple properties. Each ellipsoid represents a property (group). The label shows the property name, the number inside shows the count of samples in that region, and the binary code in parentheses (if <b>Export Detaled Overlap List</b> is checked) identifies which properties the region belongs to.
 </p>
-<dl><dd><a  class="image"><img alt="Venn Diagram 03.png" src="../images/Venn_Diagram/800px-Venn_Diagram_03.png?v=71534" width="800"   /></a></dd></dl>
+<ul>
+<li> The binary codes (e.g., <i>0001</i>, <i>0100</i>, <i>1100</i>) indicate which group or intersected groups a region belongs to. The code is read from right to left, where each bit corresponds to a data column from left to right in the source worksheet. For example,  
+<ul><li> <i>0001</i>: the region only belongs to "Sepal Length" group; </li>
+<li> <i>0011</i>: the intersection region of group "Sepal Length" and "Sepal Width"; </li>
+<li> <i>0111</i>: the intersection region of group "Sepal Length", "Sepal Width" and "Petal Length"; </li>
+<li> <i>1111</i>: the intersection region of all four groups.</li></ul>
+<dl><dd><a  class="image"><img alt="Venn Diagram 05.png" src="../images/Venn_Diagram/Venn_Diagram_05.png?v=80134" width="638"  /></a></li></dd></dl>
+<li> The counting number displayed in each region indicates how many data points fall within that specific overlap. For example, 
+<ul><li> The region labeled 11 with code <i>(0001)</i> contains 11 data points that belong only to the "Sepal Length" group; </li>
+<li> The region labeled 1 with code <i>(0111)</i> contains 1 data point that belongs to "Sepal Length", "Sepal Width", and "Petal Length" simultaneously, but not "Petal Width".</li>
+<li> The region labeled 0 with code <i>(0011)</i> contains no data points satisfying the conditions for intersection of "Sepal Length" and "Sepal Width", but keeping intentionally the empty intersection.</li></ul>
+Use the <i>VennData</i> worksheet to trace which specific data points contribute to each region.
+<dl><dd><a  class="image"><img alt="Venn Diagram 03.png" src="../images/Venn_Diagram/Venn_Diagram_03.png?v=80135" width="765"  /></a></dd></dl>
+</li></ul>
 
 
 

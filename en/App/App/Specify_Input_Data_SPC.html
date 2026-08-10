@@ -1,0 +1,87 @@
+<h1 class="firstHeading">2.76.1 Specifying Input Data for SPC Tools</h1><p class='urlname' style='display: none'>SPC-Inpuyh</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Specify_Input_Data"><span class="tocnumber">2</span> <span class="toctext">Specify Input Data</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Specify_Specifications"><span class="tocnumber">3</span> <span class="toctext">Specify Specifications</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Enter_a_number"><span class="tocnumber">3.1</span> <span class="toctext">Enter a number</span></a></li>
+<li class="toclevel-2"><a href="#Enter_space-separated_values"><span class="tocnumber">3.2</span> <span class="toctext">Enter space-separated values</span></a></li>
+<li class="toclevel-2"><a href="#Enter_values_in_header_rows"><span class="tocnumber">3.3</span> <span class="toctext">Enter values in header rows</span></a></li>
+<li class="toclevel-2"><a href="#Enter_values_in_columns"><span class="tocnumber">3.4</span> <span class="toctext">Enter values in columns</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><a name="Introduction"></a><span class="mw-headline">Introduction</span></h3>
+<p>This chapter guides you through selecting measurement data, handling subgroup structures, and applying specification limits—such as Lower Specification Limit (LSL), Upper Specification Limit (USL), and Target values—across different data layouts for the SPC tools
+</p><p><br />
+</p>
+<h3><a name="Specify_Input_Data"></a><span class="mw-headline">Specify Input Data</span></h3>
+<p>Select the options in <b>Input</b> tab of the dialog according to how your data arranged
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Data Arrangement
+</th>
+<th>Options to specify
+</th></tr>
+<tr>
+<td><b>One dataset</b>
+<center><a  class="image"><img alt="OneData.png" src="../images/Specify_Input_Data_SPC/OneData.png?v=73247" width="68"  /></a></center>
+</td>
+<td>
+<ul><li> Select <b>All Subgroups in a Single Column</b> radio box</li>
+<li>Specify the data in columns as <b>Measurement Data</b></li>
+<li>Enter <b>1</b> in the <b>Subgroup Size</b>  box</li></ul>
+<dl><dd><b>Note:</b> If you have data with subgroups and each subgroup size are the same, you can also use this option and set a proper value for the <b>Subgroup Size</b></dd></dl>
+<p><a  class="image"><img alt="Input OneData.png" src="../images/Specify_Input_Data_SPC/Input_OneData.png?v=80298" width="414"  /></a>
+</p>
+</td></tr>
+<tr>
+<td><b>All Subgroups in a Single Column</b>
+<center><a  class="image"><img alt="IndexedData.png" src="../images/Specify_Input_Data_SPC/IndexedData.png?v=73248" width="138"  /></a></center>
+</td>
+<td>
+<ul><li>Select <b>All Subgroups in a Single Column</b> radio box</li>
+<li>Specify the data in columns as <b>Measurement Data</b></li>
+<li>Specify the column with group info to be <i>Subgroup Size Column'</i></li></ul>
+<p><a  class="image"><img alt="Input IndexedData.png" src="../images/Specify_Input_Data_SPC/Input_IndexedData.png?v=80299" width="414"  /></a>
+</p>
+</td></tr>
+<tr>
+<td><b>Each Subgroup in a Separate Row</b>
+<center><a  class="image"><img alt="RawData.png" src="../images/Specify_Input_Data_SPC/RawData.png?v=73272" width="269"  /></a></center>
+<p><a  class="image"><img alt="Mini bulb.png" src="../images/Specify_Input_Data_SPC/Mini_bulb.png?v=44828" width="24"  /></a>
+If the columns have different data size, right click on the row header of last row and select <b>Set as End</b> to push all the column having the same size
+</p>
+</td>
+<td>
+<ul><li>Select <b>Each Subgroup in a Separate Row</b> radio box</li>
+<li>Specify data in multiple columns as <b>Measurement Data</b></li>
+<li>Select <b>Subgroups Arranged in Rows Across Columns</b> check box</li></ul>
+<p><a  class="image"><img alt="Input RawData.png" src="../images/Specify_Input_Data_SPC/Input_RawData.png?v=80300" width="414"  /></a>
+</p>
+</td></tr></table>
+<h3><a name="Specify_Specifications"></a><span class="mw-headline">Specify Specifications</span></h3>
+<h5><a name="Enter_a_number"></a><span class="mw-headline">Enter a number</span></h5>
+<ul><li> The value applies to all variables or groups
+<dl><dd><a  class="image"><img alt="Spec a number.png" src="../images/Specify_Input_Data_SPC/350px-Spec_a_number.png?v=80296" width="350"   /></a></dd></dl></li></ul>
+<h5><a name="Enter_space-separated_values"></a><span class="mw-headline">Enter space-separated values</span></h5>
+<ul><li> The values apply sequentially to each measurement column
+<dl><dd> <a  class="image"><img alt="Spec space separated numbers.png" src="../images/Specify_Input_Data_SPC/350px-Spec_space_separated_numbers.png?v=80292" width="350"   /></a></dd></dl></li></ul>
+<p><br />
+</p>
+<h5><a name="Enter_values_in_header_rows"></a><span class="mw-headline">Enter values in header rows</span></h5>
+<ul><li> The values stored in header rows are applied to the corresponding columns.
+<dl><dd> <a  class="image"><img alt="Spec header.png" src="../images/Specify_Input_Data_SPC/350px-Spec_header.png?v=80295" width="350"   /></a></dd></dl></li></ul>
+<h5><a name="Enter_values_in_columns"></a><span class="mw-headline">Enter values in columns</span></h5>
+<ul><li>The values stored in column are applied sequentially to each measurement column
+<dl><dd><a  class="image"><img alt="Spec columns.png" src="../images/Specify_Input_Data_SPC/650px-Spec_columns.png?v=80291" width="650"   /></a></dd></dl></li></ul>
+
+
+
+
+
+
