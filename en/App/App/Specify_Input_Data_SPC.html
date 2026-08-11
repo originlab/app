@@ -2,23 +2,34 @@
 <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Specify_Input_Data"><span class="tocnumber">2</span> <span class="toctext">Specify Input Data</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Specify_Specifications"><span class="tocnumber">3</span> <span class="toctext">Specify Specifications</span></a>
+<li class="toclevel-1 tocsection-2"><a href="#Specifying_Input_Data"><span class="tocnumber">2</span> <span class="toctext">Specifying Input Data</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Setting_up_Specifications_and_Parameters"><span class="tocnumber">3</span> <span class="toctext">Setting up Specifications and Parameters</span></a>
 <ul>
-<li class="toclevel-2"><a href="#Enter_a_number"><span class="tocnumber">3.1</span> <span class="toctext">Enter a number</span></a></li>
-<li class="toclevel-2"><a href="#Enter_space-separated_values"><span class="tocnumber">3.2</span> <span class="toctext">Enter space-separated values</span></a></li>
-<li class="toclevel-2"><a href="#Enter_values_in_header_rows"><span class="tocnumber">3.3</span> <span class="toctext">Enter values in header rows</span></a></li>
-<li class="toclevel-2"><a href="#Enter_values_in_columns"><span class="tocnumber">3.4</span> <span class="toctext">Enter values in columns</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Single_Variable"><span class="tocnumber">3.1</span> <span class="toctext">Single Variable</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Enter_a_number"><span class="tocnumber">3.1.1</span> <span class="toctext">Enter a number</span></a></li>
+<li class="toclevel-3"><a href="#Enter_values_in_header_rows"><span class="tocnumber">3.1.2</span> <span class="toctext">Enter values in header rows</span></a></li>
+<li class="toclevel-3"><a href="#Enter_name_range_and_project_variables"><span class="tocnumber">3.1.3</span> <span class="toctext">Enter name range and project variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Multiple_Variables"><span class="tocnumber">3.2</span> <span class="toctext">Multiple Variables</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Enter_a_number_2"><span class="tocnumber">3.2.1</span> <span class="toctext">Enter a number</span></a></li>
+<li class="toclevel-3"><a href="#Enter_values_in_header_rows_2"><span class="tocnumber">3.2.2</span> <span class="toctext">Enter values in header rows</span></a></li>
+<li class="toclevel-3"><a href="#Enter_space-separated_values"><span class="tocnumber">3.2.3</span> <span class="toctext">Enter space-separated values</span></a></li>
+<li class="toclevel-3"><a href="#Enter_values_in_columns"><span class="tocnumber">3.2.4</span> <span class="toctext">Enter values in columns</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 
-<h3><a name="Introduction"></a><span class="mw-headline">Introduction</span></h3>
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
 <p>This chapter guides you through selecting measurement data, handling subgroup structures, and applying specification limits—such as Lower Specification Limit (LSL), Upper Specification Limit (USL), and Target values—across different data layouts for the SPC tools
 </p><p><br />
 </p>
-<h3><a name="Specify_Input_Data"></a><span class="mw-headline">Specify Input Data</span></h3>
+<h2><a name="Specifying_Input_Data"></a><span class="mw-headline">Specifying Input Data</span></h2>
 <p>Select the options in <b>Input</b> tab of the dialog according to how your data arranged
 </p>
 <table class="dialogcontroltable">
@@ -64,18 +75,35 @@ If the columns have different data size, right click on the row header of last r
 <p><a  class="image"><img alt="Input RawData.png" src="../images/Specify_Input_Data_SPC/Input_RawData.png?v=80300" width="414"  /></a>
 </p>
 </td></tr></table>
-<h3><a name="Specify_Specifications"></a><span class="mw-headline">Specify Specifications</span></h3>
+<h2><a name="Setting_up_Specifications_and_Parameters"></a><span class="mw-headline">Setting up Specifications and Parameters</span></h2>
+<p>Origin provides flexible methods for entering specification limits in the <b>Input</b> tab and the historic parameters in the <b>Parameters</b> tab
+</p><p><a  class="image"><img alt="Specification Parameters.png" src="../images/Specify_Input_Data_SPC/800px-Specification_Parameters.png?v=80398" width="800"   /></a>
+</p>
+<h3><a name="Single_Variable"></a><span class="mw-headline">Single Variable</span></h3>
 <h5><a name="Enter_a_number"></a><span class="mw-headline">Enter a number</span></h5>
 <ul><li> The value applies to all variables or groups
+<dl><dd><a  class="image"><img alt="Spec a number one variable.png" src="../images/Specify_Input_Data_SPC/400px-Spec_a_number_one_variable.png?v=80392" width="400"   /></a></dd></dl></li></ul>
+<h5><a name="Enter_values_in_header_rows"></a><span class="mw-headline">Enter values in header rows</span></h5>
+<ul><li> The values stored in header rows are applied to the corresponding columns.
+<dl><dd> <a  class="image"><img alt="Spec Headers One Varaible.png" src="../images/Specify_Input_Data_SPC/500px-Spec_Headers_One_Varaible.png?v=80393" width="500"   /></a></dd></dl></li></ul>
+<p><br />
+</p>
+<h5><a name="Enter_name_range_and_project_variables"></a><span class="mw-headline">Enter name range and project variables</span></h5>
+<p>If you have defined <a class="external text" href="../../UserGuide/UserGuide/Named_Range.html">named range</a> or <a class="external text" href="../../QuickHelp/QuickHelp/How_to_quickly_define_and_access_Project_Variables_in_Set_Values_dialog.html">project variables</a> for the specification limits or historic parameters, you can enter them directly into the specification fields.
+</p>
+<dl><dd><a  class="image"><img alt="Spec Variables.png" src="../images/Specify_Input_Data_SPC/650px-Spec_Variables.png?v=80381" width="650"   /></a></dd></dl>
+<h3><a name="Multiple_Variables"></a><span class="mw-headline">Multiple Variables</span></h3>
+<p>The multiple variable tools in <a href="../../App/Category/Capability_Analysis(App).html" title="Category:Capability Analysis(App)">capability analysis</a> supports following specication methods
+</p>
+<h5><a name="Enter_a_number_2"></a><span class="mw-headline">Enter a number</span></h5>
+<ul><li> The value applies to all variables or groups
 <dl><dd><a  class="image"><img alt="Spec a number.png" src="../images/Specify_Input_Data_SPC/350px-Spec_a_number.png?v=80296" width="350"   /></a></dd></dl></li></ul>
+<h5><a name="Enter_values_in_header_rows_2"></a><span class="mw-headline">Enter values in header rows</span></h5>
+<ul><li> The values stored in header rows are applied to the corresponding columns.
+<dl><dd> <a  class="image"><img alt="Spec header.png" src="../images/Specify_Input_Data_SPC/650px-Spec_header.png?v=80295" width="650"   /></a></dd></dl></li></ul>
 <h5><a name="Enter_space-separated_values"></a><span class="mw-headline">Enter space-separated values</span></h5>
 <ul><li> The values apply sequentially to each measurement column
 <dl><dd> <a  class="image"><img alt="Spec space separated numbers.png" src="../images/Specify_Input_Data_SPC/350px-Spec_space_separated_numbers.png?v=80292" width="350"   /></a></dd></dl></li></ul>
-<p><br />
-</p>
-<h5><a name="Enter_values_in_header_rows"></a><span class="mw-headline">Enter values in header rows</span></h5>
-<ul><li> The values stored in header rows are applied to the corresponding columns.
-<dl><dd> <a  class="image"><img alt="Spec header.png" src="../images/Specify_Input_Data_SPC/350px-Spec_header.png?v=80295" width="350"   /></a></dd></dl></li></ul>
 <h5><a name="Enter_values_in_columns"></a><span class="mw-headline">Enter values in columns</span></h5>
 <ul><li>The values stored in column are applied sequentially to each measurement column
 <dl><dd><a  class="image"><img alt="Spec columns.png" src="../images/Specify_Input_Data_SPC/650px-Spec_columns.png?v=80291" width="650"   /></a></dd></dl></li></ul>
