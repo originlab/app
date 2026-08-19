@@ -1065,7 +1065,7 @@
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Key Concepts of Taguchi Design</toc_name>
     <toc_link>App/Key_Concepts_Taguchi.html</toc_link>
-    <toc_url>App/Key=Concepts-Taguchi</toc_url>
+    <toc_url>App/Key-Concepts-Taguchi</toc_url>
     <toc_src>App:Key_Concepts_Taguchi</toc_src>
   </toc>
   <toc>
@@ -1073,6 +1073,12 @@
     <toc_link>App/Taguchi_Design_Dialog.html</toc_link>
     <toc_url>App/taguchi-dialog</toc_url>
     <toc_src>App:Taguchi_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Interpreting Results of Taguchi Design</toc_name>
+    <toc_link>App/Results_Taguchi.html</toc_link>
+    <toc_url>App/Result-Taguchi</toc_url>
+    <toc_src>App:Results_Taguchi</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Tutorial of Taguchi Design</toc_name>

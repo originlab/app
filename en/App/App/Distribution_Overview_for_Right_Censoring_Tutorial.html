@@ -1,8 +1,8 @@
 <h1 class="firstHeading">2.5.8.1 Tutorial for Distribution Overview (Right Censoring)</h1><p class='urlname' style='display: none'>Tutorial-Distribution-Overview-Right-Censoring</p>
-<p><b>Distribution Overview</b> takes your chosen model and draws its complete graphical profile by parametric or nonparametric analysis. It generates Probability Plot, Probability Density Funtion plot, Survival Plot, Hazard Plot, and key quantities, from which you can confirm that the fitted parameters tell a sensible story before moving on to formal predictions.
+<p><b>Distribution Overview</b> takes your chosen model and draws its complete graphical profile, and you can confirm that the fit makes physical sense before moving on to formal prediction. 
 </p><p><br />
-Engineers in a battery factory used <a href="../../App/App/Identify_Distribution_for_Right_Censoring_Tutorial.html" title="App:Identify Distribution for Right Censoring Tutorial"><b>Identify Distribution</b></a> to scan 7 candidate distributions on the collected battery lifetime data, and arrived to a conclusion that while Loglogistic and Lognormal achieved the smallest Anderson-Darling values, Weibull also produced an acceptable fit with an AD value within the same competitive cluster. Considering reliability and industry adoption, engneers prefer Weibull for the post-precessing such as Parametric Distribution Analysis. 
-</p><p>In this example, engneers choose Weibull as distribution and perform <b>Distribution Overview</b> to closely validate the model visually and physically across the full time domain.
+Engineers in a battery factory used <a href="../../App/App/Identify_Distribution_for_Right_Censoring_Tutorial.html" title="App:Identify Distribution for Right Censoring Tutorial"><b>Identify Distribution</b></a> to scan 7 candidate distributions on the collected battery lifetime data, and arrived at a conclusion that while Loglogistic and Lognormal achieved the smallest Anderson-Darling values, Weibull also produced an acceptable fit with an AD value within the same competitive cluster. Considering reliability and industry adoption, engneers prefer Weibull for the post-precessing such as <a href="../../App/App/SA_Parametric_Dist_Right_Censoring_Tutorial.html" title="App:SA Parametric Dist Right Censoring Tutorial"><b>Parametric Distribution Analysis</b></a>. 
+</p><p>In this example, engneers choose Weibull distribution and perform <b>Distribution Overview</b> to closely validate the model visually and physically across the full time domain.
 </p>
 <h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
 <p>Right click on the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>1. Distribution Analysis (Right Censoring)</i>.
@@ -10,16 +10,16 @@ Engineers in a battery factory used <a href="../../App/App/Identify_Distribution
 </p>
 <ul><li> Each row represents one unit. </li>
 <li> "Time " column contains the exact failure time or the last recorded time if the unit is still working. </li>
-<li> "Event " column contains the censoring values: in this example, 1 = failure (capacity drops below 70%); 0 = right-censored (unit still working at the record time).</li></ul>
+<li> "Event " column contains the censoring values: in this example, 1 = failure (battery capacity drops below 70%); 0 = right-censored (battery still working at the record time).</li></ul>
 <dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 00.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_00.png?v=80241" width="684"  /></a></dd></dl>
 <h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
 <ol>
 <li>With [Book1]Sheet1 active, select <b>Statistics: Survival Analysis: Reliability and Survival Analysis</b>. In the opened panel, choose <b>Distribution Analysis for Right Censoring</b> block and click <b>Distribution Overview</b> icon.
-<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Distribution_Overview_Right_Censoring_Tutorial_01.png" class="new" title="File:Distribution Overview Right Censoring Tutorial 01.png">File:Distribution Overview Right Censoring Tutorial 01.png</a></dd></dl>
-<li>In the dialog that opens, specify the settings as follow:
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 01.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_01.png?v=80578" width="500"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings as follows:
 <ul>
-<li>On Input tab, select column A for <b>Time</b>. Make sure <b>Define Censoring by</b> is set to <b>Censoring Columns</b>. Select column B for <b>Censoring Columns</b> and 0 for <b>Censoring Value</b>, which means any row where Event = 0 represents a unit that was still functioning at the observed time. 
-<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Distribution_Overview_Right_Censoring_Tutorial_02_Input.png" class="new" title="File:Distribution Overview Right Censoring Tutorial 02 Input.png">File:Distribution Overview Right Censoring Tutorial 02 Input.png</a></dd></dl>
+<li>On the Input tab, select column A for <b>Time</b>.  Make sure <b>Paramatric Analysis</b> is selected and choose <b>Weibull Distribution</b> because <a href="../../App/App/Identify_Distribution_for_Right_Censoring_Tutorial.html" title="App:Identify Distribution for Right Censoring Tutorial"><b>Identify Distribution</b></a> has already validated Weibull as an acceptable model. Select column B for <b>Censoring Columns</b> and 0 for <b>Censoring Value</b>. 
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 02 Input.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_02_Input.png?v=80577" width="409"  /></a></dd></dl>
 <table class="simple">
 <tr>
 <th>Data Layout
@@ -38,14 +38,14 @@ Engineers in a battery factory used <a href="../../App/App/Identify_Distribution
 <tr>
 <th>Frequency (<i>Optional</i>)
 </th>
-<td>When multiple units share the same observed time, you can streamline data entry by providing a frequency column rather than repeating rows. Refer to <a href="../../App/App/SA_Nonparametric_Dist_Tutorial.html#Sample_Data" title="App:SA Nonparametric Dist Tutorial">this page</a> for "repeating rows" <i>vs.</i> "frequency column".
+<td>When multiple units fail at the same observed time, you can streamline data entry by providing a frequency column rather than repeating rows. Refer to <a href="../../App/App/SA_Nonparametric_Dist_Tutorial.html#Sample_Data" title="App:SA Nonparametric Dist Tutorial">this page</a> for "repeating rows" <i>vs.</i> "frequency column".
 </td></tr>
 <tr>
-<th>Analysis<br />Parametric <i>vs.</i> Nonparametric
+<th>Parametric Analysis<br /> <i>vs.</i> <br />Nonparametric Analysis
 </th>
 <td>
-<ul><li> Parametric: select an identified <b>Distribution</b> to see its fitted curves and parameter-based predictions.</li>
-<li> Nonparametric: not to assume any particular distribution. It will estimate survival probabilities directly from the data.</li></ul>
+<ul><li> <b>Parametric</b>: select an identified <b>Distribution</b> to see its fitted curves and estimated parameters.</li>
+<li> <b>Nonparametric</b>: makes no distributional assumption. Survival probabilities are estimated directly from the data.</li></ul>
 </td></tr>
 <tr>
 <th>Define Censoring by
@@ -56,30 +56,58 @@ Engineers in a battery factory used <a href="../../App/App/Identify_Distribution
 <li> <b>Number of failures when censoring begins</b> (Type II): monitoring continues until the <b>Number of Failures</b> have been observed. The rest are censored at that point.</li></ul>
 </td></tr></table>
 </li>
-<li>On Options tab, make sure <b>Maximum Likelihood</b> is selected for <b>Estimation Method</b>. Leave other settings unchanged.
-<dl><dd><a href="/howto/index.php?title=Special:Upload&amp;wpDestFile=Distribution_Overview_Right_Censoring_Tutorial_02_Options.png" class="new" title="File:Distribution Overview Right Censoring Tutorial 02 Options.png">File:Distribution Overview Right Censoring Tutorial 02 Options.png</a></dd></dl>
+<li>On the Options tab, make sure <b>Maximum Likelihood</b> is selected for <b>Estimation Method</b>. Leave other settings unchanged.
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 02 Options.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_02_Options.png?v=80579" width="300"  /></a></dd></dl>
 <table class="simple">
 <tr>
 <th>Estimation Method
 </th>
 <td>
-<ul><li>When <b>Parametric</b> anallysis is selected on Input tab, choose the algorithm used to calculate the parameters (e.g., shape and scale for Weibull, location and scale for Normal) from your data. Refer to <a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">this page</a> for algorithm of 2 methods. </li></ul>
+<ul><li>When <b>Parametric</b> anallysis is selected on the Input tab, choose the algorithm used to calculate the parameters (e.g., shape and scale for Weibull, location and scale for Normal) from your data. Refer to <a href="../../App/App/SA_Parametric_Dist_Algorithm.html" title="App:SA Parametric Dist Algorithm">this page</a> for algorithm of 2 methods. </li></ul>
 <dl><dd><ul><li> <b>Maximum Likelihood</b> (MLE): recommended for moderate to large samples (&gt;30), or data with  heavy censoring. </li>
-<li> <b>Least Squares</b> (Rank Regression): more stable for very small samples (&lt;15). Computes parameters by fitting the reference line directly on the probability plot.</li></ul></dd></dl>
-<ul><li>When <b>Nonparametric</b> analysis is selected on Input tab, </li></ul>
-<dl><dd><ul><li> <a href="../../App/App/NPDA_Right_Censoring_Algorithm.html#Kaplan-Meier_method" title="App:NPDA Right Censoring Algorithm"><b>Kaplan-Meier</b></a>: Computes survival probability at each exact failure time. Use this when you have precise failure times and want the most detailed, step-by-step survival curve.</li>
-<li> <a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html#Actuarial_estimation_method" title="App:SA Nonparametric Dist Algorithm"><b>Actuarial</b></a>: Groups data into time intervals (by <b>Interval End</b> and <b>Interval Width</b>) and computes survival probability at each interval boundary. Use this when your data are already grouped, or when you have so many failure times that a step-for-step KM curve becomes unreadable. </li></ul></dd></dl>
+<li> <b>Least Squares</b> (Rank Regression): more stable for very small samples (&lt;15). </li></ul></dd></dl>
+<ul><li>When <b>Nonparametric</b> analysis is selected on the Input tab, </li></ul>
+<dl><dd><ul><li> <a href="../../App/App/NPDA_Right_Censoring_Algorithm.html#Kaplan-Meier_method" title="App:NPDA Right Censoring Algorithm"><b>Kaplan-Meier</b></a>: Computes survival probability at each exact failure time. Recommended when you have precise failure times and want the most detailed, step-by-step survival curve.</li>
+<li> <a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html#Actuarial_estimation_method" title="App:SA Nonparametric Dist Algorithm"><b>Actuarial</b></a>: Groups data into time intervals by <b>Interval End</b> and <b>Interval Width</b>, and computes survival probability at each interval boundary. Recommended when your data are already grouped, or when you have so many data that a step-for-step KM curve becomes unreadable. </li></ul></dd></dl>
 </td></tr>
 <tr>
 <th>Graph Settings
 </th>
 <td>
 <ul><li><b>Multiple Columns</b>: If your data contains multiple time&amp;event pairs, you can choose whether to plot all pairs <b>Overlay on Same Graph</b>, or in <b>Separate Graphs</b>.</li>
-<li><b>X Scale</b>: If you want to inspect a specific time window closely, e.g., early-life behavior, set <b>From</b> and <b>To</b> to zoom in to that time interval for all output plots.<br />Note: this setting does not change the underlying calculation; it only adjusts the display window. </li></ul>
+<li><b>X Scale</b>: If you want to inspect a specific time window closely, e.g., early-life behavior, set <b>From</b> and <b>To</b> to zoom in on that time interval for all output plots.<br /><b>Note</b>: this setting does not change the underlying calculation; it only adjusts the graph display. </li></ul>
 </td></tr></table>
 </li>
 <li>Click <b>OK</b> button to generate report sheets.
-</ul></li>
+</ul>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<p><span class='headerInParagraph'>Parameters</span>
+</p>
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 03 Parameters.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_03_Parameters.png?v=80580" width="171"  /></a></dd></dl>
+<ul><li> This table lists the fitted parameters of Weibull distribution. Shape parameter <i>3.24</i> &gt; 1 indicates a wear-out failure mechanism, i.e., the longer a battery runs, the higher its instantaneous risk of failure. </li></ul>
+<p><br />
+<span class='headerInParagraph'>Quantities of Distribution</span>
+</p>
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 03 Quantities of Dist.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_03_Quantities_of_Dist.png?v=80581" width="487"  /></a></dd></dl>
+<ul><li> This table lists the key Times of survival rates. Roughly half of the population fails between Q1 (<i>16.73</i> months) and Q3 (<i>27.17</i> months). The first quartile Q1 (<i>16.73</i> months) tells us that about 25% of the population will fail before 17 months, a reference for warranty planning. </li>
+<li> The Mean (<i>22.02</i> months) and Median (<i>21.94</i> months) are nearly identical. This near-symmetry is consistent with the Shape parameter of <i>3.24</i> (reported in the <b>Parameters</b> table), approaching the near-symmetric region (Shape ≈ 3.4 – 3.6) of the Weibull distribution.</li></ul>
+<p><br />
+<span class='headerInParagraph'>Goodness of Fit</span>
+</p>
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 03 Goodness of Fit.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_03_Goodness_of_Fit.png?v=80583" width="158"  /></a></dd></dl>
+<ul><li> This table reports an acceptable Anderson-Darling statistic (<i>2.73</i>) of the Weibull distribution. This value is consistent with the result from <a href="../../App/App/Identify_Distribution_for_Right_Censoring_Tutorial.html" title="App:Identify Distribution for Right Censoring Tutorial"><b>Identify Distribution</b></a>.</li></ul>
+<p><br />
+<span class='headerInParagraph'>Distribution Overview Graphs</span>
+</p>
+<dl><dd><a  class="image"><img alt="Distribution Overview Right Censoring Tutorial 03 Graphs.png" src="../images/Distribution_Overview_for_Right_Censoring_Tutorial/Distribution_Overview_Right_Censoring_Tutorial_03_Graphs.png?v=80582" width="541"  /></a></dd></dl>
+<ul><li> <b>Probability Density Function</b>: A single, well-defined peak centered near 22–24 months with a moderate right tail, consistent with a wear-out process.</li>
+<li> <b>Probability Plot</b>: The points scatter randomly around the reference line without systematic curvature, validating the Weibull assumption.</li>
+<li> <b>Survival Plot</b>: The curve falls smoothly from 1.0. At 20 months, about 50% batteries are still working; by 30 months, only 10% remain.</li>
+<li> <b>Hazard Plot</b>: The curve rises monotonically from near-zero to over 0.35, confirming that failure risk accelerates with age.</li></ul>
+<p><br />
+<span class='headerInParagraph'>Conclusion</span>
+</p>
+<dl><dd>Taken together, all plots and the parameter estimates tell the same physically sensible story: battery capacity degrades through a wear-out process with a characteristic life near 25 months. The model is stable, the fit is acceptable, and the Weibull assumption is ready for <a href="../../App/App/SA_Parametric_Dist_Right_Censoring_Tutorial.html" title="App:SA Parametric Dist Right Censoring Tutorial"><b>Parametric Distribution Analysis</b></a>.</li></dd></dl>
 </li>
 </ol>
 
