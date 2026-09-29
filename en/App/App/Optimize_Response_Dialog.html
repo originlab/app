@@ -1,0 +1,176 @@
+<h1 class="firstHeading">2.43.6.1 The Optimize Response Dialog Box</h1><p class='urlname' style='display: none'>Optimize-Response-Dialog</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Goal"><span class="tocnumber">2</span> <span class="toctext">Goal</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Setup_Table"><span class="tocnumber">2.1</span> <span class="toctext">Setup Table</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Buttons"><span class="tocnumber">2.2</span> <span class="toctext">Buttons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Settings"><span class="tocnumber">3</span> <span class="toctext">Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Constraints_Table"><span class="tocnumber">3.1</span> <span class="toctext">Constraints Table</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Initial_Value"><span class="tocnumber">3.2</span> <span class="toctext">Initial Value</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Output"><span class="tocnumber">4</span> <span class="toctext">Output</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Optimize Response</b> dialog
+</p>
+<ul><li> Activate a report sheet generated from the <a href="../../App/Category/Analyze_Design(App).html" title="Category:Analyze Design(App)">Analyze Design</a>, <a href="../../App/Category/Analyze_Variability(App).html" title="Category:Analyze Variability(App)">Analyze Variability</a> or <a href="../../App/Category/Analyze_Binary_Response(App).html" title="Category:Analyze Binary Response(App)">Analyze Binary Response‎</a></li>
+<li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the <b>Optimize Response</b> icon
+<dl><dd><a  class="image"><img alt="DOE Optimize Response.png" src="../images/Optimize_Response_Dialog/650px-DOE_Optimize_Response.png?v=80983" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder">
+	<tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Optimize_Response_Dialog/Alert_icon.png?v=0" width="57"  border="0" /></td><td><p><i><b>The feature is available only for</b></i>
+</p>
+<ul><li> <a href="../../App/Category/Definitive_Screening_Design(App).html" title="Category:Definitive Screening Design(App)">Definitive Screening Design</a></li>
+<li> <a href="../../App/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Factorial designs</a></li>
+<li> <a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Response surface designs</a></li>
+<li> <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture Design</a></li></ul>
+	</td>
+	</tr>
+	</table>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Optimize_Response_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../App/Category/Optimize_Response(App).html" title="Category:Optimize Response(App)">Introduction: Optimize Response</a></li>
+<li> <a href="../../App/App/Optimize_Response_Results.html" title="App:Optimize Response Results">Overview of Optimize Response Results</a></li></ul>
+</td></tr></table>
+<h2><a name="Goal"></a><span class="mw-headline">Goal</span></h2>
+<h4><a name="Setup_Table"></a><span class="mw-headline">Setup Table</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Response
+</th>
+<td>The response(s) selected from your stored model; click the row to edit its settings
+</td></tr>
+<tr>
+<th>Goal
+</th>
+<td>
+<ul><li>Minimize</li>
+<li>Target</li>
+<li>Maximize</li></ul>
+</td></tr>
+<tr>
+<th>Target
+</th>
+<td>The value to hit - required and enabled only when Goal = Target
+</td></tr>
+<tr>
+<th>Lower Limit
+</th>
+<td>Boundary below which the response is unacceptable
+</td></tr>
+<tr>
+<th>Upper Limit
+</th>
+<td>Boundary above which the response is unacceptable
+</td></tr>
+<tr>
+<th>Weight
+</th>
+<td>Shape of the desirability curve within the limits
+</td></tr>
+<tr>
+<th>Importance
+</th>
+<td>Relative priority of this response vs. others (1 = equal) when multiple responses are optimized
+</td></tr></table>
+<h4><a name="Buttons"></a><span class="mw-headline">Buttons</span></h4>
+<table class="simple">
+
+<tr>
+<th>View Model
+</th>
+<td>Opens the stored model equation for the selected response so you can verify the fitted terms before optimizing
+</td></tr>
+<tr>
+<th>Set Lower/Upper Limits
+</th>
+<td>Automatically populates limits from the actual response data range
+</td></tr></table>
+<h2><a name="Settings"></a><span class="mw-headline">Settings</span></h2>
+<p>The Settings tab configures how the optimization algorithm searches for the best factor settings.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Optimize_Response_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p>For <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture Design</a>, only the <b>Iterations</b> setting is available - the Constraints Table and Initial Value options do not apply to mixture designs. All other design types have the full set of options described below.
+</p>
+<ul><li> <b>Iterations</b>:This sets the maximum number of iterations the optimization algorithm performs when searching for the best component proportions.</li></ul>
+</td></tr></table>
+<h4><a name="Constraints_Table"></a><span class="mw-headline">Constraints Table</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Factor
+</th>
+<td>Factor name from the stored model
+</td></tr>
+<tr>
+<th>Constraint
+</th>
+<td>Dropdown to choose how the factor participates in the search
+<ul><li> <b>No constraints</b>
+<dl><dd> Factor is free to vary over its full experimental range</dd></dl></li>
+<li> <b>Hold at value</b>
+<dl><dd>  Factor is fixed; enter the value in the <b>Hold Value</b> column. </dd>
+<dd> Note: The behavior for categorical factors depends on the design type
+<ul><li> <b>Response Surface / Definitive Screening Design</b>: A categorical factor can be held at multiple levels simultaneously (e.g., Reagent held at both TypeA and TypeB). The search evaluates each held level. To hold multiple levels, select them from the dropdown - multiple selection is supported.</li>
+<li> <b>Factorial</b>: A categorical factor can be held at only one level (e.g., Reagent held at TypeA or TypeB, but not both).</li></ul></dd></dl></li>
+<li> <b>Constrained to range</b> 
+<dl><dd> Enter <b>Lower Bound</b> / <b>Upper Bound</b> to restrict the search to a sub-region of the design space (e.g., for safety, equipment, or cost reasons)(Numeric factors only)</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Hold Value
+</th>
+<td>The fixed level for a factor that is not optimized
+</td></tr>
+<tr>
+<th>Lower Bound
+</th>
+<td>Lowest numeric value the optimizer may use (numeric factors only)
+</td></tr>
+<tr>
+<th>Upper Bound
+</th>
+<td>Highest numeric value the optimizer may use (numeric factors only)
+</td></tr></table>
+<h4><a name="Initial_Value"></a><span class="mw-headline">Initial Value</span></h4>
+<p>The toggle enables custom starting points for the optimization algorithm.
+</p>
+<ul><li> On: Enter an Initial Value for each free numeric factor. </li>
+<li> Off: Origin automatically selects starting values across the factor space</li></ul>
+<h2><a name="Output"></a><span class="mw-headline">Output</span></h2>
+<p>The tab controls which elements appear in the results. See <a href="../../App/App/Optimize_Response_Results.html" title="App:Optimize Response Results">Overview of Optimize Response Results</a> for guidance on interpreting the results.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>95% Confidence Limits
+</th>
+<td>Adds the <b>LCL/UCL</b> columns to the Prediction table
+</td></tr>
+<tr>
+<th>95% Prediction Limits
+</th>
+<td>Adds the <b>LPL/UPL</b> columns to the Prediction table - the interval for individual confirmation runs
+</td></tr>
+<tr>
+<th>Optimization Plot
+</th>
+<td>Generates the interactive optimization graph with factor sliders and fitted response curves
+</td></tr></table>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Optimize_Response_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p>Note: For <a href="../../App/Category/Analyze_Binary_Response(App).html" title="Category:Analyze Binary Response(App)">Analyze Binary Response</a> and <a href="../../App/Category/Analyze_Variability(App).html" title="Category:Analyze Variability(App)">Analyze Variability</a>,  the Prediction table does not include 95% LPL/UPL prediction limits - the 95% Prediction Limits option does not apply to these analysis types.
+</p></td></tr></table>
+
+

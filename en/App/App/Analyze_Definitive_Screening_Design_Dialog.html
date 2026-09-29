@@ -1,0 +1,222 @@
+<h1 class="firstHeading">2.43.3.1.1 The Analyze Definitive Screening Design Dialog Box</h1><p class='urlname' style='display: none'>Analyze-Definitive-Screening-Design-Dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supported_Information"><span class="tocnumber">1</span> <span class="toctext">Supported Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Model"><span class="tocnumber">2</span> <span class="toctext">Model</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Stepwise"><span class="tocnumber">3</span> <span class="toctext">Stepwise</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Quantities"><span class="tocnumber">4</span> <span class="toctext">Quantities</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Diagnotics"><span class="tocnumber">5</span> <span class="toctext">Diagnotics</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Prediction"><span class="tocnumber">6</span> <span class="toctext">Prediction</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Plots"><span class="tocnumber">7</span> <span class="toctext">Plots</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Dialog_Theme"><span class="tocnumber">8</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supported_Information"></a><span class="mw-headline">Supported Information</span></h2>
+<p>To open the <b>Analyze Design</b> dialog
+</p>
+<ul><li> Activate a worksheet with your design table ( or generated via <a href="../../App/Category/Create_Design_DOE(App).html" title="Category:Create Design DOE(App)">Generate Design</a> or <a href="../../App/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">Define Custom Design</a>)</li>
+<li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Analyze Design</b> icon
+<dl><dd><a  class="image"><img alt="Analyze Design.png" src="../images/Analyze_Definitive_Screening_Design_Dialog/600px-Analyze_Design.png?v=79976" width="600"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Analyze_Definitive_Screening_Design_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../GettingStarted/Category/Model_Fitting_and_Selection.html" title="Category:Model Fitting and Selection">Model Fitting and Selection</a></li>
+<li> <a href="../../App/App/DOE_Interpreting_Results.html" title="App:DOE Interpreting Results">Interpreting Results</a></li>
+<li> <a href="../../App/App/Plots_in_DOE.html" title="App:Plots in DOE">The Plots in DOE</a></li></ul>
+<p><br />
+</p></td></tr></table>
+<h2><a name="Model"></a><span class="mw-headline">Model</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Response
+</th>
+<td>Select the column containing the measured outcome variable.
+</td></tr>
+<tr>
+<th>Model Terms
+</th>
+<td>Specify which effects to include in the fitted model. Click the <b>+</b> button to open a dialog to select model terms
+<p>In the opened dialog you can choose from the term list below, add or remove the terms from the right panel and click the <b>OK</b> button to define the model.
+</p>
+<dl><dd><ul><li> Linear</li>
+<li> Linear + Squares</li>
+<li> Linear + Interactions</li>
+<li> Full Quadratic</li></ul></dd></dl>
+</td></tr>
+<tr>
+<th>Include Blocks in the Model
+</th>
+<td>Toggle whether block terms are included as fixed effects in the regression model.
+</td></tr></table>
+<h2><a name="Stepwise"></a><span class="mw-headline">Stepwise</span></h2>
+<p>Perform stepwise regression to identify the best subset of the model. Four selection methods are available. Please refer to the <a href="../../App/App/Stepwise_Analyze_Design.html" title="App:Stepwise Analyze Design">Stepwise Regression for Analyze Design</a> page for more details
+</p>
+<table class="dialogcontroltable">
+<tr>
+<th>Method
+</th>
+<td>Select the stepwise regression methods
+<ul><li> <b>None</b></li>
+<li> <b>Stepwise</b></li>
+<li> <b>Forward Selection</b></li>
+<li> <b>Backward Elimination</b></li></ul>
+</td></tr>
+<tr>
+<th>Alpha to Add
+</th>
+<td>The significance threshold for adding a term to the model. A candidate term enters the model only if its p-value is below this threshold.
+</td></tr>
+<tr>
+<th>Alpha to Remove
+</th>
+<td>The significance threshold for removing a term already in the model. A term is removed if its p-value exceeds this threshold.
+</td></tr>
+<tr>
+<th>Hierarchical Model
+</th>
+<td>Controls whether the final model respects the principle of hierarchy's lower-order terms (main effects) must be present when higher-order terms (interactions or quadratics) involving those factors are in the model.
+<ul><li> <b>Require a Hierarchical Model at Each Step</b></li>
+<li> <b>Add Terms at the End to Ensure a Hierarchical Model</b></li>
+<li> <b>Do Not Require a Hierarchical Model</b></li></ul>
+</td></tr>
+<tr>
+<th>Show Model Selection Details
+</th>
+<td>Displays the step-by-step log of the selection process in the output.
+</td></tr></table>
+<p><br />
+</p>
+<h2><a name="Quantities"></a><span class="mw-headline">Quantities</span></h2>
+<p>Select which numerical results are reported after fitting the model. Refer to the <a href="../../App/App/DOE_Interpreting_Results.html" title="App:DOE Interpreting Results">interpreting results page</a> for details of the statistics
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Coefficients Table
+</th>
+<td>Selects the statistics displayed for each model term. Refer to the <a href="../../App/App/DOE_Interpreting_Results.html" title="App:DOE Interpreting Results">interpreting results page</a> for details of the statistics
+<ul><li> Coefficients</li>
+<li> Standard Error</li>
+<li> Confidence Limits</li>
+<li> t-Value</li>
+<li> Prob&gt;|t|</li>
+<li> VIF</li></ul>
+</td></tr>
+<tr>
+<th>Coefficients Type
+</th>
+<td>Provides selection as below. Refer to the <a href="../../App/App/DOE_Interpreting_Results.html" title="App:DOE Interpreting Results">interpreting results page</a> for the difference of coded and uncoded coefficients
+<ul><li> Codes</li>
+<li> Uncoded</li>
+<li> Both</li></ul>
+</td></tr>
+<tr>
+<th>Confidence Level (%)
+</th>
+<td>Sets the confidence level for the interval estimates (default is 95%). A higher level produces wider intervals but greater confidence that the true value is captured.
+</td></tr>
+<tr>
+<th>Regression Equation
+</th>
+<td>When enabled, outputs the fitted regression equation. This lets you predict the response by plugging in factor values.
+</td></tr>
+<tr>
+<th>ANOVA Table
+</th>
+<td>When enabled, displays the Analysis of Variance table, which partitions the total variation into model, residual, and lack-of-fit components. It provides the overall F-test and p-value to assess whether the model explains a significant portion of the variation.
+</td></tr>
+<tr>
+<th>Fit Statistics
+</th>
+<td>These metrics summarize how well the model fits the data. Refer to the <a href="../../App/App/DOE_Interpreting_Results.html" title="App:DOE Interpreting Results">interpreting results page</a> for details of the fit statistics
+<ul><li> R-Sqaure</li>
+<li> Adj.R-Sqaure</li>
+<li> Residual Sum of Square</li>
+<li> Predicted R-Square</li>
+<li> PRESS</li>
+<li> Root-MSE (SD)</li></ul>
+</td></tr></table>
+<h2><a name="Diagnotics"></a><span class="mw-headline">Diagnotics</span></h2>
+<p>The Diagnostics tab controls which residual and fitted-value outputs are generated for checking model assumptions and spotting unusual observations. 
+</p><p>Refer to the <b>diagnotics</b> section in the <a href="../../App/App/DOE_Interpreting_Results.html#Standard_DOE_Diagnotics.2FFitted_Results" title="App:DOE Interpreting Results">interpreting results page</a> for details of the fitted results and residuals
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Fitted Values
+</th>
+<td>When enabled, reports the predicted response value for each run based on the fitted model. These are the values the model expects, used to compare against actual observations.
+</td></tr>
+<tr>
+<th>Residuals
+</th>
+<td>Select which type of residual values to be output
+<ul><li> Regular</li>
+<li> Standardized</li>
+<li> Studentized</li>
+<li> Studentized Deleted</li></ul>
+</td></tr></table>
+<h2><a name="Prediction"></a><span class="mw-headline">Prediction</span></h2>
+<p>The <b>Prediction</b> tab controls whether to generate the prediction worksheet for calculating response values and their associated uncertainty intervals from specified factor values.
+</p><p>Refer to the <a href="../../App/App/Find_Y_from_X.html" title="App:Find Y from X"><b>Model Prediction - Find Y from X</b> page</a> for details on the generated worksheet.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Find Y from X
+</th>
+<td>Toggles the prediction calculation on or off. When enabled, a worksheet named DOEFindYfromX is generated. In the worksheet, enter factor values into the respective columns, the predicted response (Y) are calculated automatically.
+</td></tr>
+<tr>
+<th>95% Confidence Limits for Predicted Y
+</th>
+<td>When checked, the report includes the 95% confidence interval for the mean response at each set of factor levels
+</td></tr>
+<tr>
+<th>95% Prediction Limits for Predicted Y
+</th>
+<td>When checked, the report includes the 95% prediction interval for an individual future observation.
+</td></tr></table>
+<h2><a name="Plots"></a><span class="mw-headline">Plots</span></h2>
+<p>The <b>Plots</b> tab lets you select which diagnostic and exploratory graphs to generate from the fitted model. 
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Plots
+</th>
+<td>Select the plots to generate from the fitted model. Refer to the <a href="../../App/App/Plots_in_DOE.html" title="App:Plots in DOE">Plots in DOE page</a> for details of the plots
+<ul><li> Fitted Plot</li>
+<li> Residual Plot</li>
+<li> Effects Plot</li>
+<li> Main Effect Plots</li>
+<li> 2-way interaction Plots</li>
+<li> Contour Plot</li>
+<li> Surface Plot</li></ul>
+</td></tr>
+<tr>
+<th>Residual Type
+</th>
+<td>Choose the residual type to be used for the residual plot. Refer to the <b>diagnotics</b> section in the <a href="../../App/App/DOE_Interpreting_Results.html#Standard_DOE_Diagnotics.2FFitted_Results" title="App:DOE Interpreting Results">interpreting results page</a> for details of the residuals
+<ul><li> Regular</li>
+<li> Standardized</li>
+<li> Studentized</li>
+<li> Studentized Deleted</li></ul>
+</td></tr>
+<tr>
+<th>Settings of Contour and Surface Plot
+</th>
+<td>Available only if <b>Contour Plot</b> or <b>Surface Plot</b> is selectedf from the <b>Plots</b> control
+<p>The section enables you to select which two continuous factors to be used as X/Y axes and define the specific operating conditions for the contour or surface slice
+</p>
+<ul><li> <b>Factor for X Axis / Y Axis</b>
+<dl><dd> Choose which two factors form the plot axes</dd></dl></li>
+<li> <b>Specify Value for Other Factors in Model</b>
+<dl><dd>Hold every other factor at a fixed value to generate a slice of the response contour/surface</dd></dl></li></ul>
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog. Use this to store frequently used factor configurations, design options, or output preferences, then recall them for future designs without re-entering all values.
+</p>
+

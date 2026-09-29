@@ -1,8 +1,133 @@
 <h1 class="firstHeading">2.5.2.1 Tutorial: Non-Parametric Distribution Analysis (Right Censoring)</h1><p class='urlname' style='display: none'>SA-NPDA-Right-Censoring-Tutorial</p>
-<h3><a name="Coming_Soon..."></a><span class="mw-headline"><font color="red">Coming Soon...</font></span></h3>
-
-
-
-
+<p>Nonparametric analysis estimates the survival function without any parametric distribution assumption. Therefore, it offers an unbiased, data-driven description of survival probabilities and serves as a robust tool for summarizing right-censored data and diagnosing which parametric models are visually and numerically validated.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/NPDA_Right_Censoring_Tutorial/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Nonparametric Distribution Analysis for Right Censoring</b></i>:
+</p>
+<ul><li> <i><a href="../../App/App/NPDA_Right_Censoring_Algorithm.html" title="App:NPDA Right Censoring Algorithm">Algorithm</a></i></li></ul>
+</td></tr></table>
+<p><br />
+</p><p>In this example, engneers in a battery factory will perform <b>Nonparametric Distribution Analysis</b> on the collected battery lifetime data to draw the depiction of survival probabilities across the observed time interval.
+</p>
+<h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
+<p>Right click on the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/NPDA_Right_Censoring_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>1. Distribution Analysis (Right Censoring)</i>.
+</p><p>[Book1]Sheet1 shows a typical right-censored dataset.
+</p>
+<ul><li> Each row represents one unit. </li>
+<li> "Time " column contains the exact failure time or the last recorded time if the unit is still working. </li>
+<li> "Event " column contains the censoring values: in this example, 1 = failure (battery capacity drops below 70%); 0 = right-censored (battery still working at the record time).</li></ul>
+<dl><dd><a  class="image"><img alt="Indentify Distribution Right Censoring Tutorial 00.png" src="../images/NPDA_Right_Censoring_Tutorial/Indentify_Distribution_Right_Censoring_Tutorial_00.png?v=80241" width="684"  /></a></dd></dl>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>With [Book1]Sheet1 active, select <b>Statistics: Survival Analysis: Reliability and Survival Analysis</b>. In the opened panel, choose <b>Distribution Analysis for Right Censoring</b> block and click <b>Nonparametric Distribution Analysis</b> icon.
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 01.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_01.png?v=80732" width="500"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings as follows:
+<ul>
+<li>On the Input tab, select column A for <b>Time</b>.  Make sure <b>Define Censoring by</b> is set to <b>Censoring Columns</b>. Select column B for <b>Censoring Columns</b> and 0 for <b>Censoring Value</b>. 
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 02 Input.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_02_Input.png?v=80733" width="409"  /></a></dd></dl>
+<table class="simple">
+<tr>
+<th width="14%">Data Layout
+</th>
+<td>How your data are organized. If your data contains multiple groups (e.g., different types or conditions):
+<ul><li> <b>Multiple Columns</b>: each group has its separate time &amp; censoring column pair; </li>
+<li> <b>One Column with Grouping Variables</b>: all groups are stacked in one pair of time &amp; censoring columns, with a separate grouping column. </li></ul>
+<p>The tool will process each group in sequence, and export all results in a single report.
+</p>
+</td></tr>
+<tr>
+<th>Time
+</th>
+<td>The column containing the observed lifetimes.
+</td></tr>
+<tr>
+<th>Frequency (<i>Optional</i>)
+</th>
+<td>When multiple units fail at the same observed time, you can streamline data entry by providing a frequency column rather than repeating rows. Refer to <a href="../../App/App/SA_Nonparametric_Dist_Tutorial.html#Sample_Data" title="App:SA Nonparametric Dist Tutorial">this page</a> for "repeating rows" <i>vs.</i> "frequency column".
+</td></tr>
+<tr>
+<th>Define Censoring by
+</th>
+<td>How to distinguish failure from right-censored observations.
+<ul><li> <b>Censoring Columns</b>: an explicit indicator column flagging the status of each observation. The <b>Censoring Value</b> identifies which code means "still running". All other codes are treated as exact failure events.</li>
+<li> <b>Time when censoring begins</b> (Type I): units in Time column that equal or exceed the <b>Time Value</b> is treated as censored at exactly that time.</li>
+<li> <b>Number of failures when censoring begins</b> (Type II): monitoring continues until the <b>Number of Failures</b> have been observed. The rest are censored at that point.</li></ul>
+</td></tr></table>
+</li>
+<li>On the Estimation tab, make sure <b>Kaplan-Meier</b> is selected for <b>Estimation Method</b>. Leave other settings unchanged.
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 02 Estimation.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_02_Estimation.png?v=80734" width="369"  /></a></dd></dl>
+<table class="simple">
+<tr>
+<th width="14%">Estimation Method
+</th>
+<td>
+<ul><li> <a href="../../App/App/NPDA_Right_Censoring_Algorithm.html#Kaplan-Meier_method" title="App:NPDA Right Censoring Algorithm"><b>Kaplan-Meier</b></a>: Computes survival probability at each exact failure time. Recommended when you have precise failure times and want the most detailed, step-by-step survival curve.</li>
+<li> <a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html#Actuarial_estimation_method" title="App:SA Nonparametric Dist Algorithm"><b>Actuarial</b></a>: Divide data into time intervals by specifying a column of <b>Endpoints of Intervals</b> (unevenly spacing intervals are supported), and computes survival probability at each interval boundary. Recommended when your data are already binned by time intervals, or when you have so many data that a step-for-step KM curve becomes unreadable. </li></ul>
+</td></tr></table>
+</li>
+<li>On the Survival Tables tab, select <b>Event and Censoring Information</b>, <b>Survival Probabilities</b>, <b>Cumulative Failure Probabiities</b> and <b>Hazard Estimates</b> checkboxes to export all of these tables. Refer to <a href="#Results_and_Interpretation">"Results and Interpretation" section</a> for details of these tables.
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 02 Survival Tables.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_02_Survival_Tables.png?v=80735" width="369"  /></a></dd></dl>
+<li>The Equality Test tab is available for comparing survival curves among multiple groups. This example has only one group so leave this tab untouched.
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 02 Equality Test.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_02_Equality_Test.png?v=80736" width="369"  /></a></dd></dl>
+<table class="simple">
+<tr>
+<th width="14%">Log Rank
+</th>
+<td>A rank-based test that weights all event times equally when accumulating group differences.
+<p>Suitable when group differences are expected to be consistent across the entire study duration, or the proportional hazards assumption is plausible. It is the defuault and most widely used test.
+</p>
+</td></tr>
+<tr>
+<th>Breslow
+</th>
+<td>A weighted rank test that assigns greater contribution to early event times.
+<p>Suitable when you suspect the strongest group separation occurs in the early period.
+</p>
+</td></tr>
+<tr>
+<th>Tarone-Ware
+</th>
+<td>A compromise test that down-weights late events less aggressively than Breslow but still emphasizes the early-to-mid period.
+<p>Suitable when you believe differences are concentrated in the early-to-middle period and you want a balanced alternative between the uniform weighting of Log Rank and the extreme early emphasis of Breslow.
+</p>
+</td></tr></table>
+<li>On the Plots tab, check to export <b>Survival Plot</b>, <b>Cumulative Failure Plot</b>, and <b>Hazard Plot</b> and <b>Show Confidence Band for applicable plots</b>. Refer to <a href="#Results_and_Interpretation">"Results and Interpretation" section</a> for details of these plots.
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 02 Plots.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_02_Plots.png?v=80737" width="413"  /></a></dd></dl>
+<li>Click <b>OK</b> button to generate report sheets.
+</ul>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<p><span class='headerInParagraph'>Characteristics of Variables</span>
+</p>
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 03 Characteristics of Variables.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_03_Characteristics_of_Variables.png?v=80738" width="558"  /></a></dd></dl>
+<ul><li> This table reports the descriptive statistics of the right censored data. The <b>MTTF</b> (<i>21.95</i> months) and <b>Median</b> (<i>21.69</i> months) are very close, indicating that the failure-time distribution is roughly symmetric. The typical lifetime of the battery is approximately 22 months. </li></ul>
+<p><br />
+<span class='headerInParagraph'>Survival Probabilities</span> &amp; <span class='headerInParagraph'>Survival Plot</span>
+</p>
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 03 Survival Probabilities.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_03_Survival_Probabilities.png?v=80741" width="809"  /></a></dd></dl>
+<ul><li> The numeric table outputs the survival probability and its precision metrics (standard error and confidence bands) at each observed event time, from which you can tell the survival patterns: survival probability drops monotonically from <i>0.977</i> at <i>11.91</i> months to <i>0.029</i> at <i>37.73</i> months. </li>
+<li> This pattern also visualizes in the Survival Plot: the Kaplan–Meier curve descends stepwise from approximately 100% before 10 months to near 0% after 37 months.</li>
+<li> The Survival Probabilities and Cumulative Failure Probabilities are mirrors of each other, so exporting the Survival Probabilities table alone is sufficient for most reporting purposes. And the Survival Probabilities and Hazard Estimates together depicts the whole picture of your right censored data.</li></ul>
+<p><br />
+<span class='headerInParagraph'>Hazard Estimates</span> &amp; <span class='headerInParagraph'>Hazard Plot</span>
+</p>
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 03 Hazard.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_03_Hazard.png?v=80742" width="598"  /></a></dd></dl>
+<p>The Hazard Estimates table is the most critical diagnostic if you want to select an appropriate parametric model in the subsequent process.
+</p>
+<ul><li> The hazard rate increases monotonically with time, indicating a classic wear-out failure mode: failure rate in early-life is low, but climbs continuously as aging progresses, reaching 0.5, a very high instantaneous failure intensity, by 37 months.</li>
+<li> This monotonically increasing hazard is fully consistent with a Weibull distribution with Shape parameter &gt; 1.</li>
+<li> Hazard plot visually confirms the monotonically increasing hazard identified in the numeric table. Note that estimates beyond 30 months (exaggerated step) are unstable due to sparse risk sets</li></ul>
+<p><br />
+<span class='headerInParagraph'>Cumulative Failure Plot</span>
+</p>
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 03 Cumulative Failure Plot.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_03_Cumulative_Failure_Plot.png?v=80743" width="310"  /></a></dd></dl>
+<ul><li> The mirror image of the Survival Plot. It shows, for example, that roughly 40% of units have failed by 20 months and approximately 90% have failed by 30 months.</li></ul>
+<p><br />
+<span class='headerInParagraph'>Conclusion</span>
+</p>
+<ul><li> The Wear-out failure mode read from hazard rate indicates that Weibull should be the primary candidate in the subsequent parametric analysis. </li>
+<li> After performing a <a href="../../App/App/SA_Parametric_Dist_Right_Censoring_Tutorial.html" title="App:SA Parametric Dist Right Censoring Tutorial">Weibull Parametric Distribution Analysis</a>, you can overlay the fitted curve (red line shown below) on the Kaplan–Meier plot to visually validate that the model captures the observed wear-out behavior.</li></ul>
+<dl><dd><a  class="image"><img alt="Nonparametric Distribution Analysis Right Censoring Tutorial 03 Conclusion.png" src="../images/NPDA_Right_Censoring_Tutorial/Nonparametric_Distribution_Analysis_Right_Censoring_Tutorial_03_Conclusion.png?v=80744" width="350"  /></a></li></dd></dl>
+</li>
+</ol>
 
 

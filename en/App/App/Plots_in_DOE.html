@@ -1,0 +1,69 @@
+<h1 class="firstHeading">2.43.3.3.2 The Plots for Analyze Design</h1><p class='urlname' style='display: none'>Plots-Analyze-Design</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Fitted_Plot"><span class="tocnumber">1</span> <span class="toctext">Fitted Plot</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Residual_Plot"><span class="tocnumber">2</span> <span class="toctext">Residual Plot</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Effect_Plot"><span class="tocnumber">3</span> <span class="toctext">Effect Plot</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Main_Effect_Plot"><span class="tocnumber">4</span> <span class="toctext">Main Effect Plot</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Interaction_Plot"><span class="tocnumber">5</span> <span class="toctext">Interaction Plot</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Scatter_Plots_with_Fitted_Lines"><span class="tocnumber">6</span> <span class="toctext">Scatter Plots with Fitted Lines</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Cube_Plot"><span class="tocnumber">7</span> <span class="toctext">Cube Plot</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Contour_Plot"><span class="tocnumber">8</span> <span class="toctext">Contour Plot</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Surface_Plot"><span class="tocnumber">9</span> <span class="toctext">Surface Plot</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Fitted_Plot"></a><span class="mw-headline">Fitted Plot</span></h2>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design Fitted Plot.png" src="../images/Plots_in_DOE/300px-DOE_Analyze_Design_Fitted_Plot.png?v=80572" width="300"   /></a></dd></dl>
+<p>The Fitted Plot compares the model's predicted values against the actual observed response values. It provides a direct visual check of how well the fitted model tracks the experimental data.
+</p>
+<h2><a name="Residual_Plot"></a><span class="mw-headline">Residual Plot</span></h2>
+<p>Residual plots evaluate model assumptions. It cludes 4 plots
+</p>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design Residual Plot.png" src="../images/Plots_in_DOE/500px-DOE_Analyze_Design_Residual_Plot.png?v=80441" width="500"   /></a></dd></dl>
+<ul><li> Residuals vs Order
+<dl><dd> Random distribution indicates no time-related effects. Trends suggest process drift.</dd></dl></li></ul>
+<ul><li> Residuals vs Fits
+<dl><dd> Random scatter indicates constant variance. Patterns suggest model inadequacy.</dd></dl></li></ul>
+<ul><li> Histogram
+<dl><dd>Should resemble a normal distribution.</dd></dl></li></ul>
+<ul><li>Normal Probability Plot
+<dl><dd> Points should follow a straight line. Deviation indicates non-normal residuals.</dd></dl></li></ul>
+<h2><a name="Effect_Plot"></a><span class="mw-headline">Effect Plot</span></h2>
+<p><a  class="image"><img alt="DOE Analyze Design Effect Plot.png" src="../images/Plots_in_DOE/300px-DOE_Analyze_Design_Effect_Plot.png?v=80444" width="300"   /></a>
+</p><p>The effect plot ranks the magnitude of factor effects. Large effects indicate influential factors. Effects crossing the significance line are statistically significant.
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Plots_in_DOE/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p>Note: The default alpha level for the Effect Plot is 0.05. If a <a href="../../App/App/Stepwise_Analyze_Design.html" title="App:Stepwise Analyze Design">stepwise method</a> is used, the Effect Plot uses the corresponding alpha level specified for the stepwise procedure: alpha to remove for Stepwise and Backward methods, and alpha to add for the Forward method. When no stepwise method is used, α is calculated as 1 − confidence level.
+</p></td></tr></table>
+<h2><a name="Main_Effect_Plot"></a><span class="mw-headline">Main Effect Plot</span></h2>
+<p><a  class="image"><img alt="DOE Analyze Design Main Effect Plot.png" src="../images/Plots_in_DOE/300px-DOE_Analyze_Design_Main_Effect_Plot.png?v=80447" width="300"   /></a>
+</p><p>The main effect plot illustrates how changing each factor individually affects the response. steep slope indicates strong effect, flat line indicates little or no effect.
+</p>
+<h2><a name="Interaction_Plot"></a><span class="mw-headline">Interaction Plot</span></h2>
+<p><a  class="image"><img alt="DOE Analyze Two Interaction Plot.png" src="../images/Plots_in_DOE/500px-DOE_Analyze_Two_Interaction_Plot.png?v=80459" width="500"   /></a>
+</p><p>The Interaction Plot shows how the effect of one factor on the response changes depending on the level of another factor. It is used to identify and interpret interaction effects between two factors
+</p>
+<ul><li> Parallel lines: Little or no interaction between the two factors.</li>
+<li> Non-parallel lines: Possible interaction between the two factors.</li>
+<li> Intersecting lines: Strong interaction; the effect of one factor depends substantially on the level of the other factor.</li>
+<li> Lines that diverge or converge: The magnitude of one factor's effect changes with the level of the other factor.</li></ul>
+<h2><a name="Scatter_Plots_with_Fitted_Lines"></a><span class="mw-headline">Scatter Plots with Fitted Lines</span></h2>
+<p><a  class="image"><img alt="DOE Scatter Plots with Fitted Lines.png" src="../images/Plots_in_DOE/500px-DOE_Scatter_Plots_with_Fitted_Lines.png?v=80724" width="500"   /></a>
+</p><p>The graph displays the response data together with fitted lines, providing a visual assessment of the relationship between the response and the relevant factor or signal.
+</p>
+<h2><a name="Cube_Plot"></a><span class="mw-headline">Cube Plot</span></h2>
+<p><a  class="image"><img alt="DOE Analyze Design Cube Plot.png" src="../images/Plots_in_DOE/300px-DOE_Analyze_Design_Cube_Plot.png?v=80449" width="300"   /></a>
+</p><p>The cube plot displays predicted responses at every combination of factor settings for three-factor experiments. Highest response corner identifies optimal settings.
+</p>
+<h2><a name="Contour_Plot"></a><span class="mw-headline">Contour Plot</span></h2>
+<p><a  class="image"><img alt="DOE Analyze Design Contour Plot.png" src="../images/Plots_in_DOE/300px-DOE_Analyze_Design_Contour_Plot.png?v=80450" width="300"   /></a>
+</p><p>The contour plot shows response values across two continuous factors while holding other factors constant. Closely spaced contours indicate rapid response changes, while widely spaced contours indicate gradual changes
+</p>
+<h2><a name="Surface_Plot"></a><span class="mw-headline">Surface Plot</span></h2>
+<p><a  class="image"><img alt="DOE Analyze Design Surface Plot.png" src="../images/Plots_in_DOE/300px-DOE_Analyze_Design_Surface_Plot.png?v=80451" width="300"   /></a>
+</p><p>The surface plot displays a three-dimensional relationship between two factors and the response.
+</p>
+

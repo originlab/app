@@ -1,0 +1,78 @@
+<h1 class="firstHeading">2.43.6.2 Overview of Optimize Response Results</h1><p class='urlname' style='display: none'>Optimize-Response-Results</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Input_Data"><span class="tocnumber">1</span> <span class="toctext">Input Data</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Goal"><span class="tocnumber">2</span> <span class="toctext">Goal</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Solution"><span class="tocnumber">3</span> <span class="toctext">Solution</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Factor_settings"><span class="tocnumber">3.1</span> <span class="toctext">Factor settings</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Composite_desirability_.28D.29"><span class="tocnumber">3.2</span> <span class="toctext">Composite desirability (D)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Prediction"><span class="tocnumber">4</span> <span class="toctext">Prediction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Fit"><span class="tocnumber">4.1</span> <span class="toctext">Fit</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#SE_of_Fit"><span class="tocnumber">4.2</span> <span class="toctext">SE of Fit</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#95.25_LCL_.2F_UCL"><span class="tocnumber">4.3</span> <span class="toctext">95% LCL / UCL</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#95.25_LPL_.2F_UPL"><span class="tocnumber">4.4</span> <span class="toctext">95% LPL / UPL</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Desirability"><span class="tocnumber">4.5</span> <span class="toctext">Desirability</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Optimization_Plot"><span class="tocnumber">5</span> <span class="toctext">Optimization Plot</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Input_Data"></a><span class="mw-headline">Input Data</span></h2>
+<p><a  class="image"><img alt="DOE Optimize InputData.png" src="../images/Optimize_Response_Results/220px-DOE_Optimize_InputData.png?v=80960" width="220"   /></a>
+</p><p>Lists the worksheet data behind the model
+</p>
+<ul><li> Design Matrix: the source design table</li>
+<li> Response:  the column(s) being optimized</li></ul>
+<h2><a name="Goal"></a><span class="mw-headline">Goal</span></h2>
+<p><a  class="image"><img alt="DOE Optimize Result Goal.png" src="../images/Optimize_Response_Results/400px-DOE_Optimize_Result_Goal.png?v=80966" width="400"   /></a>
+</p><p>Restates the optimization setup from the Goal tab. It helps to onfirm the settings match your intent before trusting the solution.
+</p>
+<h2><a name="Solution"></a><span class="mw-headline">Solution</span></h2>
+<p><a  class="image"><img alt="DOE Optimize Solution.png" src="../images/Optimize_Response_Results/180px-DOE_Optimize_Solution.png?v=80969" width="180"   /></a>
+</p><p>The recommended operating conditions
+</p>
+<h4><a name="Factor_settings"></a><span class="mw-headline">Factor settings</span></h4>
+<p>The numeric level for each continuous factor and the level for each categorical factor
+</p>
+<h4><a name="Composite_desirability_.28D.29"></a><span class="mw-headline">Composite desirability (D)</span></h4>
+<p>The overall optimization score (0–1, geometric mean of individual desirabilities). Higher = better overall satisfaction of all goals
+</p>
+<h2><a name="Prediction"></a><span class="mw-headline">Prediction</span></h2>
+<p><a  class="image"><img alt="DOE Optimize Prediction.png" src="../images/Optimize_Response_Results/500px-DOE_Optimize_Prediction.png?v=80971" width="500"   /></a>
+</p><p>Statistics for the response(s) at the solution:
+</p>
+<h4><a name="Fit"></a><span class="mw-headline">Fit</span></h4>
+<p>Predicted mean response at the recommended settings
+</p>
+<h4><a name="SE_of_Fit"></a><span class="mw-headline">SE of Fit</span></h4>
+<p>Standard error of that prediction
+</p>
+<h4><a name="95.25_LCL_.2F_UCL"></a><span class="mw-headline">95% LCL / UCL</span></h4>
+<p>Confidence interval - plausible range for the true mean
+</p>
+<h4><a name="95.25_LPL_.2F_UPL"></a><span class="mw-headline">95% LPL / UPL</span></h4>
+<p>Prediction interval - plausible range for individual confirmation runs
+</p>
+<h4><a name="Desirability"></a><span class="mw-headline">Desirability</span></h4>
+<p>Individual desirability (d) of each response at the solution
+</p>
+<h2><a name="Optimization_Plot"></a><span class="mw-headline">Optimization Plot</span></h2>
+<p><a  class="image"><img alt="DOE Optimize Optimization PLot.png" src="../images/Optimize_Response_Results/600px-DOE_Optimize_Optimization_PLot.png?v=81012" width="600"   /></a>
+</p><p>An interactive graph with:
+</p>
+<ul><li> <b>One column per factor</b> — top area showing each factor's optimal setting (drag the red lines to explore "what-if" scenarios; predictions update live)</li>
+<li> <b>One row per response</b> — fitted curves showing how the response changes with each factor, with:
+<ul><li> Red reference lines marking the optimal settings and predicted response</li>
+<li> A blue dashed line showing the fitted value</li></ul></li>
+<li> <b>Desirability readout</b> — current fit and composite desirability, updated as you move the red lines</li></ul>
+
+
+
+
+
+

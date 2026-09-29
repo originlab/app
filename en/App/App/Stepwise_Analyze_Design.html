@@ -1,0 +1,177 @@
+<h1 class="firstHeading">2.43.3.2.1 Stepwise Regression for Analyze Design</h1><p class='urlname' style='display: none'>DOE-Stepwise-Analyze-Design</p>
+<div class="toclimit-3"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Selection_Methods"><span class="tocnumber">2</span> <span class="toctext">Selection Methods</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#None"><span class="tocnumber">2.1</span> <span class="toctext">None</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Stepwise"><span class="tocnumber">2.2</span> <span class="toctext">Stepwise</span></a>
+<ul>
+<li class="toclevel-3"><a href="#How_to_work"><span class="tocnumber">2.2.1</span> <span class="toctext">How to work</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Forward_Selection"><span class="tocnumber">2.3</span> <span class="toctext">Forward Selection</span></a>
+<ul>
+<li class="toclevel-3"><a href="#How_to_work_2"><span class="tocnumber">2.3.1</span> <span class="toctext">How to work</span></a></li>
+<li class="toclevel-3"><a href="#When_to_Use"><span class="tocnumber">2.3.2</span> <span class="toctext">When to Use</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Backward_Selection"><span class="tocnumber">2.4</span> <span class="toctext">Backward Selection</span></a>
+<ul>
+<li class="toclevel-3"><a href="#How_to_work_3"><span class="tocnumber">2.4.1</span> <span class="toctext">How to work</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Dialog_Options"><span class="tocnumber">3</span> <span class="toctext">Dialog Options</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Results_of_the_Stepwise_Regression"><span class="tocnumber">4</span> <span class="toctext">Results of the Stepwise Regression</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Stepwise_table"><span class="tocnumber">4.1</span> <span class="toctext">Stepwise table</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Effect_Plot"><span class="tocnumber">4.2</span> <span class="toctext">Effect Plot</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2><a name="Overview"></a><span class="mw-headline">Overview</span></h2>
+<p>For Analyze Design, the following designs support stepwise regression, which iteratively removes and adds terms to identify the best subset:
+</p>
+<ul><li> Definitive Screening Design</li>
+<li> Factorial Design</li>
+<li> Response Surface Design</li>
+<li> Mixture Design</li></ul>
+<p>Origin provides 4 selection methods for stepwise regression
+</p>
+<table class="simple">
+<tr>
+<th>Method
+</th>
+<th>Starting Point
+</th>
+<th>Direction
+</th>
+<th>Best For
+</th></tr>
+<tr>
+<th>None
+</th>
+<td>Full model
+</td>
+<td>No selection
+</td>
+<td>Small designs; all terms significant
+</td></tr>
+<tr>
+<th>Stepwise
+</th>
+<td>Empty or base model
+</td>
+<td>Forward + Backward
+</td>
+<td>Screening; balancing fit and parsimony
+</td></tr>
+<tr>
+<th>Forward
+</th>
+<td>Empty model
+</td>
+<td>Add only
+</td>
+<td>Many candidate terms; sparse true
+</td></tr>
+<tr>
+<th>Backward
+</th>
+<td>Full model
+</td>
+<td>Remove only
+</td>
+<td>Near-full model; few non-significant term
+</td></tr></table>
+<h2><a name="Selection_Methods"></a><span class="mw-headline">Selection Methods</span></h2>
+<h3><a name="None"></a><span class="mw-headline">None</span></h3>
+<p>Fits the full model with all specified terms. No automatic term selection is performed.
+</p>
+<h3><a name="Stepwise"></a><span class="mw-headline">Stepwise</span></h3>
+<p>A hybrid approach that combines forward selection and backward elimination. Terms are added one at a time based on statistical significance, and previously added terms are re-evaluated for removal at each step
+</p>
+<h5><a name="How_to_work"></a><span class="mw-headline">How to work</span></h5>
+<ol><li>Start with no terms (or an initial model).</li>
+<li> At each step, evaluate all candidate terms not currently in the model. Add the term with the most significant p-value (below the entry threshold, typically α = 0.15 or 0.10).</li>
+<li>After each addition, re-evaluate all terms already in the model. Remove any term whose p-value exceeds the exit threshold (typically α = 0.15 or 0.20).</li>
+<li>Repeat steps 2–3 until no more terms meet the entry criteria and all terms in the model meet the exit criteria.</li></ol>
+<h3><a name="Forward_Selection"></a><span class="mw-headline">Forward Selection</span></h3>
+<p>Builds the model by adding terms one at a time, starting from an empty model (or a base model). Only the addition step is performed; once a term enters the model, it is never removed
+</p>
+<h5><a name="How_to_work_2"></a><span class="mw-headline">How to work</span></h5>
+<ol><li> Start with no terms (or specified base terms).</li>
+<li> Evaluate all candidate terms not in the model. Add the term with the lowest p-value that is below the entry threshold.</li>
+<li> Repeat step 2 until no remaining candidate term meets the entry criteria.</li></ol>
+<h5><a name="When_to_Use"></a><span class="mw-headline">When to Use</span></h5>
+<p>Use Forward Selection when you suspect only a small subset of terms are significant and want to build the model incrementally. It is computationally efficient and works well when the number of potential terms is large relative to the number of runs
+</p>
+<h3><a name="Backward_Selection"></a><span class="mw-headline">Backward Selection</span></h3>
+<p>Starts with the full model containing all specified terms and removes terms one at a time based on statistical significance. Only the removal step is performed; once a term is removed, it is not reconsidered.
+</p>
+<h5><a name="How_to_work_3"></a><span class="mw-headline">How to work</span></h5>
+<ol><li> Start with all terms specified in the Model Terms section.</li>
+<li> Evaluate all terms in the model. Remove the term with the highest p-value that exceeds the exit threshold (typically α = 0.10 or 0.15).</li>
+<li> Repeat step 2 until all remaining terms have p-values below the exit threshold.</li></ol>
+<h2><a name="Dialog_Options"></a><span class="mw-headline">Dialog Options</span></h2>
+<table class="dialogcontroltable">
+<tr>
+<th>Method
+</th>
+<td>Select the stepwise regression methods
+<ul><li> <b>None</b></li>
+<li> <b>Stepwise</b></li>
+<li> <b>Forward Selection</b></li>
+<li> <b>Backward Elimination</b></li></ul>
+</td></tr>
+<tr>
+<th>Alpha to Add
+</th>
+<td>The significance threshold for adding a term to the model. A candidate term enters the model only if its p-value is below this threshold.
+</td></tr>
+<tr>
+<th>Alpha to Remove
+</th>
+<td>The significance threshold for removing a term already in the model. A term is removed if its p-value exceeds this threshold.
+</td></tr>
+<tr>
+<th>Hierarchical Model
+</th>
+<td><a  class="image"><img alt="Bulb.png" src="../images/Stepwise_Analyze_Design/Bulb.png?v=80539" width="25"  /></a> <font color="blue">The option is not avaiable for anlyzing <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture Design</a></font>
+<p>Controls whether the final model respects the principle of hierarchy's lower-order terms (main effects) must be present when higher-order terms (interactions or quadratics) involving those factors are in the model.
+</p>
+<ul><li> <b>Require a Hierarchical Model at Each Step</b>
+<dl><dd> The algorithm enforces hierarchy throughout the selection process. An interaction or quadratic term cannot enter unless all its component main effects are already in the model; conversely, a main effect cannot be removed if a higher-order term containing it remains. This produces the most structurally sound models but may exclude marginally significant higher-order terms.</dd></dl></li>
+<li> <b>Add Terms at the End to Ensure a Hierarchical Model</b>
+<dl><dd> The algorithm runs freely during selection, then automatically adds any missing lower-order terms needed to make the final model hierarchical. This balances statistical freedom with interpretability — you get the data-driven selection first, then the structure is cleaned up.</dd></dl></li>
+<li> <b>Do Not Require a Hierarchical Model</b>
+<dl><dd> No hierarchy constraints are applied. Terms enter and leave purely based on their p-values. This can yield statistically optimal models but may produce uninterpretable structures (e.g., a two-factor interaction without its main effects), making the model harder to explain and less robust for prediction.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Show Model Selection Details
+</th>
+<td>Displays the step-by-step log of the selection process in the output.
+</td></tr></table>
+<h2><a name="Results_of_the_Stepwise_Regression"></a><span class="mw-headline">Results of the Stepwise Regression</span></h2>
+<h4><a name="Stepwise_table"></a><span class="mw-headline">Stepwise table</span></h4>
+<p>If <b>Show Model Selection Details</b> check box is selected from the dialog, the stepwise tables below will be displayed in the report sheet
+</p>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design stepwise.png" src="../images/Stepwise_Analyze_Design/350px-DOE_Analyze_Design_stepwise.png?v=80656" width="350"   /></a></dd></dl>
+<h4><a name="Effect_Plot"></a><span class="mw-headline">Effect Plot</span></h4>
+<dl><dd><a  class="image"><img alt="DOE Stepwise Effect Pot.png" src="../images/Stepwise_Analyze_Design/400px-DOE_Stepwise_Effect_Pot.png?v=80661" width="400"   /></a></dd></dl>
+<p>The default alpha level for the Effect Plot is 0.05. When the model is selected using a stepwise method, the alpha level specified for the stepwise procedure is used instead.
+</p>
+<ul><li>None: alpha = 1 − confidence level</li>
+<li>Stepwise: alpha = alpha to remove</li>
+<li>Forward: alpha = alpha to add</li>
+<li>Backward: alpha = alpha to remove</li></ul>
+
+
+
+
+
+

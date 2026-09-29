@@ -1,0 +1,342 @@
+<h1 class="firstHeading">2.43.3.3.1 Interpreting Results for Analyze Design</h1><p class='urlname' style='display: none'>DOE-Interpreting-Results</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Report_Sheet"><span class="tocnumber">1</span> <span class="toctext">Report Sheet</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Coded_Coefficients"><span class="tocnumber">1.1</span> <span class="toctext">Coded Coefficients</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Coefficients"><span class="tocnumber">1.1.1</span> <span class="toctext">Coefficients</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Standard_Error"><span class="tocnumber">1.1.2</span> <span class="toctext">Standard Error</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Confidence_Limits_.2895.25_LCL.2C_95.25_UCL.29"><span class="tocnumber">1.1.3</span> <span class="toctext">Confidence Limits (95% LCL, 95% UCL)</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#t-Value"><span class="tocnumber">1.1.4</span> <span class="toctext">t-Value</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Prob.3E.7Ct.7C"><span class="tocnumber">1.1.5</span> <span class="toctext">Prob&gt;|t|</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#VIF"><span class="tocnumber">1.1.6</span> <span class="toctext">VIF</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Example"><span class="tocnumber">1.1.7</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Regression_Equation_in_Coded_Units"><span class="tocnumber">1.2</span> <span class="toctext">Regression Equation in Coded Units</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Uncoded_Coefficients"><span class="tocnumber">1.3</span> <span class="toctext">Uncoded Coefficients</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Regression_Equation_in_Uncoded_Units"><span class="tocnumber">1.4</span> <span class="toctext">Regression Equation in Uncoded Units</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Statistics"><span class="tocnumber">1.5</span> <span class="toctext">Statistics</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#R-Square"><span class="tocnumber">1.5.1</span> <span class="toctext">R-Square</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Adj._R-Square"><span class="tocnumber">1.5.2</span> <span class="toctext">Adj. R-Square</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#PRESS"><span class="tocnumber">1.5.3</span> <span class="toctext">PRESS</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Residual_Sum_of_Square"><span class="tocnumber">1.5.4</span> <span class="toctext">Residual Sum of Square</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Root-MSE_.28SD.29"><span class="tocnumber">1.5.5</span> <span class="toctext">Root-MSE (SD)</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Pred._R-Square"><span class="tocnumber">1.5.6</span> <span class="toctext">Pred. R-Square</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#AIC"><span class="tocnumber">1.5.7</span> <span class="toctext">AIC</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#AICc"><span class="tocnumber">1.5.8</span> <span class="toctext">AICc</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#BIC"><span class="tocnumber">1.5.9</span> <span class="toctext">BIC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#ANOVA"><span class="tocnumber">1.6</span> <span class="toctext">ANOVA</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Lack_of_Fit"><span class="tocnumber">1.7</span> <span class="toctext">Lack of Fit</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#Lack_of_Fit_2"><span class="tocnumber">1.7.1</span> <span class="toctext">Lack of Fit</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Pure_Error"><span class="tocnumber">1.7.2</span> <span class="toctext">Pure Error</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Means_Table"><span class="tocnumber">1.8</span> <span class="toctext">Means Table</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Response_Table"><span class="tocnumber">1.9</span> <span class="toctext">Response Table</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#Diagnostics"><span class="tocnumber">2</span> <span class="toctext">Diagnostics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="#Standard_DOE_Diagnotics.2FFitted_Results"><span class="tocnumber">2.1</span> <span class="toctext">Standard DOE Diagnotics/Fitted Results</span></a>
+<ul>
+<li class="toclevel-3 tocsection-31"><a href="#Observation"><span class="tocnumber">2.1.1</span> <span class="toctext">Observation</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#Fitted_Values"><span class="tocnumber">2.1.2</span> <span class="toctext">Fitted Values</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#Regular_Residuals"><span class="tocnumber">2.1.3</span> <span class="toctext">Regular Residuals</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Standardized_Residuals"><span class="tocnumber">2.1.4</span> <span class="toctext">Standardized Residuals</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#Studentdized_Residuals"><span class="tocnumber">2.1.5</span> <span class="toctext">Studentdized Residuals</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#Studentized_Deleted_Residual"><span class="tocnumber">2.1.6</span> <span class="toctext">Studentized Deleted Residual</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-37"><a href="#Taguchi_Diagnotics.2FFitted_Results"><span class="tocnumber">2.2</span> <span class="toctext">Taguchi Diagnotics/Fitted Results</span></a>
+<ul>
+<li class="toclevel-3 tocsection-38"><a href="#Hi_.28Leverage.29"><span class="tocnumber">2.2.1</span> <span class="toctext">Hi (Leverage)</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#Cook.27s_Distance"><span class="tocnumber">2.2.2</span> <span class="toctext">Cook's Distance</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#DFITS"><span class="tocnumber">2.2.3</span> <span class="toctext">DFITS</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-41"><a href="#Response_Summary"><span class="tocnumber">3</span> <span class="toctext">Response Summary</span></a>
+<ul>
+<li class="toclevel-2 tocsection-42"><a href="#Static_Taguchi_Design"><span class="tocnumber">3.1</span> <span class="toctext">Static Taguchi Design</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#Dynamic_Taguchi_Design"><span class="tocnumber">3.2</span> <span class="toctext">Dynamic Taguchi Design</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Report_Sheet"></a><span class="mw-headline">Report Sheet</span></h2>
+<p>The tables in the section are included in the report sheet for <a href="../../App/Category/Analyze_Design(App).html" title="Category:Analyze Design(App)">analyze design</a>, which is named <b>DOEAnalysis</b>
+</p>
+<h3><a name="Coded_Coefficients"></a><span class="mw-headline">Coded Coefficients</span></h3>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design Coded Coeff Tbl.png" src="../images/DOE_Interpreting_Results/450px-DOE_Analyze_Design_Coded_Coeff_Tbl.png?v=80463" width="450"   /></a></dd></dl>
+<p>The coded coefficients table presents the regression coefficients using standardized (coded) factor levels, typically ranging from −1 to +1.
+</p>
+<h4><a name="Coefficients"></a><span class="mw-headline">Coefficients</span></h4>
+<p>The estimated model coefficients (slopes) for each factor and interaction. 
+</p>
+<ul><li> Larger absolute coefficient values indicate stronger effects.</li>
+<li> Significant interaction coefficients indicate the effect of one factor depends on the level of another factor.</li>
+<li> Positive coefficient → Increasing the factor increases the response.</li>
+<li> Negative coefficient → Increasing the factor decreases the response.</li></ul>
+<h4><a name="Standard_Error"></a><span class="mw-headline">Standard Error</span></h4>
+<p>The precision of each coefficient estimate. Smaller values mean more reliable estimates.
+</p>
+<h4><a name="Confidence_Limits_.2895.25_LCL.2C_95.25_UCL.29"></a><span class="mw-headline">Confidence Limits (95% LCL, 95% UCL)</span></h4>
+<p>The lower and upper bounds of the confidence interval for each coefficient, based on the chosen confidence level.
+</p>
+<h4><a name="t-Value"></a><span class="mw-headline">t-Value</span></h4>
+<p>The test statistic used to judge whether a coefficient is significantly different from zero.
+</p>
+<h4><a name="Prob.3E.7Ct.7C"></a><span class="mw-headline">Prob&gt;|t|</span></h4>
+<p>The p-value associated with the t-test. Values below your significance threshold (commonly 0.05) indicate significant terms.
+</p>
+<h4><a name="VIF"></a><span class="mw-headline">VIF</span></h4>
+<p>Variance Inflation Factor. Values much larger than 1 suggest multicollinearity among model terms.
+</p>
+<h4><a name="Example"></a><span class="mw-headline">Example</span></h4>
+<table class="simple">
+<tr>
+<th>Term
+</th>
+<th>Coefficient
+</th>
+<th>Interpretation
+</th></tr>
+<tr>
+<td><b>A</b>
+</td>
+<td>3.12
+</td>
+<td>Increasing factor A increases the response.
+</td></tr>
+<tr>
+<td><b>B</b>
+</td>
+<td>-1.75
+</td>
+<td>Increasing factor B decreases the response.
+</td></tr>
+<tr>
+<td><b>AB</b>
+</td>
+<td>2.05
+</td>
+<td>Factors A and B interact significantly.
+</td></tr></table>
+<h3><a name="Regression_Equation_in_Coded_Units"></a><span class="mw-headline">Regression Equation in Coded Units</span></h3>
+<p>The coded regression equation predicts the response using standardized factor levels.
+</p>
+<h3><a name="Uncoded_Coefficients"></a><span class="mw-headline">Uncoded Coefficients</span></h3>
+<p>The uncoded coefficients are expressed using the actual experimental units.
+</p><p><b>Example:</b>
+</p>
+<table class="simple">
+<tr>
+<th>Factor
+</th>
+<th>Coefficient
+</th></tr>
+<tr>
+<td><b>Temperature (°C)</b>
+</td>
+<td>0.42
+</td></tr>
+<tr>
+<td><b>Pressure (bar)</b>
+</td>
+<td>-0.18
+</td></tr></table>
+<h3><a name="Regression_Equation_in_Uncoded_Units"></a><span class="mw-headline">Regression Equation in Uncoded Units</span></h3>
+<p>Provides a prediction equation using actual operating conditions.
+</p>
+<h3><a name="Statistics"></a><span class="mw-headline">Statistics</span></h3>
+<h4><a name="R-Square"></a><span class="mw-headline">R-Square</span></h4>
+<p>Represents the percentage of response variation explained by the model.
+</p>
+<ul><li> &gt; 0.9： Excellent</li>
+<li> 0.8 ~ 0.9: Good</li>
+<li> 0.7 ~ 0.8: Acceptable</li>
+<li> &lt; 0.7: Model may require improvement</li></ul>
+<h4><a name="Adj._R-Square"></a><span class="mw-headline">Adj. R-Square</span></h4>
+<p>Adjusted R-square, which accounts for the number of predictors in the model. It penalizes over-fitting and is the preferred metric when comparing models with different numbers of terms
+</p>
+<h4><a name="PRESS"></a><span class="mw-headline">PRESS</span></h4>
+<p>Predicted Residual Sum of Squares. A measure of how well the model predicts new observations, calculated by iteratively leaving out one observation at a time. Smaller is better.
+</p>
+<h4><a name="Residual_Sum_of_Square"></a><span class="mw-headline">Residual Sum of Square</span></h4>
+<p>Residual Sum of Square is actually the sum of the square of the vertical deviations from each data point to the fitting regression line. It can be inferred that your data is perfect fit if the value of RSS is equal to zero
+</p>
+<h4><a name="Root-MSE_.28SD.29"></a><span class="mw-headline">Root-MSE (SD)</span></h4>
+<p>The square root of the mean square error. It estimates the standard deviation of the random error (noise) around the fitted model. Smaller is better.
+</p>
+<h4><a name="Pred._R-Square"></a><span class="mw-headline">Pred. R-Square</span></h4>
+<p>Predicted R-square. It estimates how well the model predicts future observations. A value close to the R-square indicates the model is not over-fitted and will generalize well
+</p>
+<h4><a name="AIC"></a><span class="mw-headline">AIC</span></h4>
+<p>Akaike Information Criterion. It evaluates model fit while penalizing model complexity. When comparing models fitted to the same data, a smaller AIC generally indicates a better balance between fit and complexity.
+</p>
+<h4><a name="AICc"></a><span class="mw-headline">AICc</span></h4>
+<p>Corrected Akaike Information Criterion. It applies an additional correction to AIC for smaller sample sizes. As with AIC, smaller values indicate a preferable model when comparing models fitted to the same data
+</p>
+<h4><a name="BIC"></a><span class="mw-headline">BIC</span></h4>
+<p>Bayesian Information Criterion. Like AIC, BIC balances model fit and complexity, but applies a stronger penalty for additional model terms. A smaller BIC generally indicates a better model when comparing competing models.
+</p>
+<h3><a name="ANOVA"></a><span class="mw-headline">ANOVA</span></h3>
+<p><a  class="image"><img alt="DOE Analyze Design ANOVA.png" src="../images/DOE_Interpreting_Results/450px-DOE_Analyze_Design_ANOVA.png?v=80628" width="450"   /></a>
+</p><p>The ANOVA (Analysis of Variance) table tests whether each term contributes significantly to explaining the response.
+</p>
+<ul><li> <b>Chi-Sqaure/F-Value</b>
+<dl><dd> Higher Chi-Sqaure/F-values indicate stronger factor effects.</dd></dl></li></ul>
+<ul><li> <b>Prob &lt; ChiSq/Prob &lt; F</b>
+<dl><dd> P &gt; 0.05: Good model fit.</dd>
+<dd> P &lt; 0.05: Model may not adequately represent the data.</dd></dl></li></ul>
+<p><br />
+</p>
+<h3><a name="Lack_of_Fit"></a><span class="mw-headline">Lack of Fit</span></h3>
+<p>The <b>Lack of Fit</b> test is used to determine whether the selected model adequately describes the relationship between the factors and the response.
+</p><p>The test separates the model error into two components:
+</p>
+<dl><dd><ul><li> Lack of Fit</li>
+<li> Pure Error</li></ul></dd></dl>
+<p>The Lack of Fit Test compares these two sources of variation using an F-test:
+</p><p><img src="../images/DOE_Interpreting_Results/math-812c1ac99003f1d52b5cda5ac7bf5a6b.png?v=0" title="&#10;F = \frac{\text{Mean Square of Lack of Fit}}{\text{Mean Square of Pure Error}}&#10;" alt="&#10;F = \frac{\text{Mean Square of Lack of Fit}}{\text{Mean Square of Pure Error}}&#10;" class="tex"/>
+</p><p><br />
+The test results are in the <b>ANOVA</b> table of report sheet.
+</p>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design Lack of fit.png" src="../images/DOE_Interpreting_Results/450px-DOE_Analyze_Design_Lack_of_fit.png?v=80632" width="450"   /></a></dd></dl>
+<h4><a name="Lack_of_Fit_2"></a><span class="mw-headline">Lack of Fit</span></h4>
+<p>Variation indicating that the model does not adequately capture the true relationship between the factors and the response
+</p><p>A small <b>p-value</b> indicates significant lack of fit
+</p>
+<dl><dd><ul><li> P &gt; 0.05: The model fits the data adequately</li>
+<li> P &lt; 0.05: Indicates significant lack of fit, suggesting that the model may be inadequate and that a different model or additional terms may be needed.</li></ul></dd></dl>
+<h4><a name="Pure_Error"></a><span class="mw-headline">Pure Error</span></h4>
+<p>Variation caused by random experimental error, estimated from replicated experimental runs.
+</p>
+<h3><a name="Means_Table"></a><span class="mw-headline">Means Table</span></h3>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design Means Tbl.png" src="../images/DOE_Interpreting_Results/250px-DOE_Analyze_Design_Means_Tbl.png?v=80437" width="250"   /></a></dd></dl>
+<p>The means table shows the average response at each factor level.
+</p>
+<h3><a name="Response_Table"></a><span class="mw-headline">Response Table</span></h3>
+<p><a  class="image"><img alt="DOE Analyze Design Taguchi Response Tbl.png" src="../images/DOE_Interpreting_Results/320px-DOE_Analyze_Design_Taguchi_Response_Tbl.png?v=80477" width="320"   /></a>
+</p><p>The response tables, available for <a href="../../App/Category/Taguchi_Design(App).html" title="Category:Taguchi Design(App)">Taguchi Design</a>, summarizes how each control factor affects the response at its different levels. It helps identify the optimal factor levels and rank the relative importance of the factors.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Signal to Noise Ratios (S/N)
+</th>
+<td>The S/N ratio combines the mean response and variation into a single metric. A higher S/N ratio indicates a more robust setting (better quality with less sensitivity to noise).
+</td></tr>
+<tr>
+<th>Means/Slope
+</th>
+<td>
+<ul><li> Means table: available in the <a href="../../App/App/Key_Concepts_Taguchi.html#Static_vs._Dynamic_Designs" title="App:Key Concepts Taguchi">statistic taguchi design</a>
+<dl><dd> shows the average response at each factor level</dd></dl></li>
+<li>Slope table: available in the <a href="../../App/App/Key_Concepts_Taguchi.html#Static_vs._Dynamic_Designs" title="App:Key Concepts Taguchi">dynamic taguchi design</a>. 
+<dl><dd> Shows the average slope of the response for each factor level</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Standard Deviations
+</th>
+<td>The table shows shows the average standard deviation of the response at each factor level. It helps identify which factor settings reduce process variation.
+</td></tr></table>
+<p>The tables include following results
+</p>
+<ul><li> <b>Level</b>
+<dl><dd> The setting of a factor (here, three levels per factor).</dd></dl></li>
+<li> <b>Delta</b>
+<dl><dd> The difference between the maximum and minimum level average for that factor. A larger Delta means greater influence.</dd></dl></li>
+<li> <b>Rank</b>
+<dl><dd> The relative importance ordering (1 = most important, 3 = least important).</dd></dl></li></ul>
+<h2><a name="Diagnostics"></a><span class="mw-headline">Diagnostics</span></h2>
+<p>The diagnostics are displayed in fitted result worksheet, named <b>DOEFittedResult</b>
+</p>
+<h3><a name="Standard_DOE_Diagnotics.2FFitted_Results"></a><span class="mw-headline">Standard DOE Diagnotics/Fitted Results</span></h3>
+<dl><dd><a  class="image"><img alt="DOE Fitted Results.png" src="../images/DOE_Interpreting_Results/300px-DOE_Fitted_Results.png?v=80489" width="300"   /></a></dd></dl>
+<p>The worksheet presents the fitted results from the standard factorial/RSM analysis
+</p>
+<h4><a name="Observation"></a><span class="mw-headline">Observation</span></h4>
+<p>Observed response values from the experiment.
+</p>
+<h4><a name="Fitted_Values"></a><span class="mw-headline">Fitted Values</span></h4>
+<p>Values predicted by the fitted model for each run.
+</p>
+<h4><a name="Regular_Residuals"></a><span class="mw-headline">Regular Residuals</span></h4>
+<p>The regular residuals also called ordinary or raw residuals, are the differences between the observed response and the fitted response
+</p>
+<h4><a name="Standardized_Residuals"></a><span class="mw-headline">Standardized Residuals</span></h4>
+<p>The Standardized Residuals express the residual relative to an estimate of its standard deviation. This puts residuals on a common scale and makes observations easier to compare.
+</p>
+<ul><li> Values close to 0 indicate a good fit for the observation.</li>
+<li> Values around +-2 or larger may warrant investigation.</li>
+<li> Values around +-3 or larger are often considered strong signals of a potential outlier.</li></ul>
+<h4><a name="Studentdized_Residuals"></a><span class="mw-headline">Studentdized Residuals</span></h4>
+<p>The Studentized Residuals are residuals scaled using an estimate of the residual standard deviation that accounts for the observation's leverage.
+</p>
+<h4><a name="Studentized_Deleted_Residual"></a><span class="mw-headline">Studentized Deleted Residual</span></h4>
+<p>The Studentized Deleted Residual measures how unusual an observation is after fitting the model without that observation. It is sometimes referred to as an externally studentized residual.
+</p><p>The observation is temporarily removed from the analysis, the model is refitted, and the residual for the omitted observation is then standardized using the resulting model.
+</p><p>Because the observation being evaluated is excluded when estimating the residual variation, the Studentized Deleted Residual can provide a more sensitive indication of potential outliers than the regular residual.
+</p>
+<h3><a name="Taguchi_Diagnotics.2FFitted_Results"></a><span class="mw-headline">Taguchi Diagnotics/Fitted Results</span></h3>
+<dl><dd><a  class="image"><img alt="DOE Taguchi Fitted Results.png" src="../images/DOE_Interpreting_Results/600px-DOE_Taguchi_Fitted_Results.png?v=80493" width="600"   /></a></dd></dl>
+<p>The worksheet shows how well the model predicts three Taguchi quality characteristics simultaneously: S/N ratio (robustness), mean (target performance), and standard deviation (consistency).
+</p><p>In addition to the fitted results and residuals in the standard DOE diagnotics, the taguchi design supports more diagnotics
+</p>
+<h4><a name="Hi_.28Leverage.29"></a><span class="mw-headline">Hi (Leverage)</span></h4>
+<p>How far a run's factor settings are from the design center. Higher values = more potential to pull the fit.
+</p>
+<h4><a name="Cook.27s_Distance"></a><span class="mw-headline">Cook's Distance</span></h4>
+<p>How much the fitted values change when that run is removed. Values &gt; 1 suggest a strongly influential point
+</p>
+<h4><a name="DFITS"></a><span class="mw-headline">DFITS</span></h4>
+<p>Combines leverage and residual size to measure overall influence on the fit. A large absolute DFITS value means the run pulls the fitted surface toward itself;
+</p>
+<h2><a name="Response_Summary"></a><span class="mw-headline">Response Summary</span></h2>
+<p>The response summary worksheet, named <b>DOERespondSummary</b>,  is the raw output used to compute the factor effect summaries that drive Taguchi optimization.
+</p>
+<h3><a name="Static_Taguchi_Design"></a><span class="mw-headline">Static Taguchi Design</span></h3>
+<dl><dd><a  class="image"><img alt="DOE Taguchi Respond Summary.png" src="../images/DOE_Interpreting_Results/350px-DOE_Taguchi_Respond_Summary.png?v=80518" width="350"   /></a></dd></dl>
+<ul><li><b>Signal to Noise Ratios</b>
+<dl><dd>The S/N ratio computed for each experimental run, combining the mean response and variation into a single robustness metric. Higher = better.</dd></dl></li></ul>
+<ul><li><b>Means</b>
+<dl><dd>The average response value for each run (across replicates).</dd></dl></li></ul>
+<ul><li><b>Standard Deviations</b>
+<dl><dd>The variability of the response within each run. Lower = more consistent.</dd></dl></li></ul>
+<ul><li><b>Coefficients of Variation</b>
+<dl><dd>Relative variability (SD/Mean), useful for comparing spread across runs with different means.</dd></dl></li></ul>
+<ul><li><b>Ln of Standard Deviations</b>
+<dl><dd>Natural log transformation of SD, often used in Taguchi analysis to stabilize variance when modeling dispersion effects.</dd></dl></li></ul>
+<ul><li><b>Linear Model Design Matrix</b>
+<dl><dd>The coded factor settings for each run (1 = high level, –1 = low level). The leftmost column of all 1s is the intercept.</dd></dl></li></ul>
+<h3><a name="Dynamic_Taguchi_Design"></a><span class="mw-headline">Dynamic Taguchi Design</span></h3>
+<dl><dd><a  class="image"><img alt="DOE Taguchi Response Summary Dynamic.png" src="../images/DOE_Interpreting_Results/350px-DOE_Taguchi_Response_Summary_Dynamic.png?v=80530" width="350"   /></a></dd></dl>
+<ul><li> <b>Signal to Noise Ratios</b>
+<dl><dd> Dynamic S/N ratio. It rewards a strong, stable, linear signal-response relationship and penalizes scatter and non-linearity. Higher is better.</dd></dl></li></ul>
+<ul><li><b>Slopes	</b>
+<dl><dd> The regression coefficient of response on the signal factor. This is the system's gain or sensitivity.</dd></dl></li></ul>
+<ul><li><b>Intercepts</b>
+<dl><dd> The baseline response when the signal factor is zero.</dd></dl></li></ul>
+<ul><li><b>Standard Deviations</b>
+<dl><dd> Variability around the fitted signal-response line (not around a target).</dd></dl></li></ul>
+<ul><li><b>Ln of Standard Deviations</b>
+<dl><dd> Log-transformed dispersion, used for modeling variance effects.</dd></dl></li></ul>
+<ul><li><b>Linear Model Design Matrix</b>
+<dl><dd> Coded control-factor settings (1 = high level, –1 = low level). The leading column of 1s is the intercept.</dd></dl></li></ul>
+
+
+
+
+
+

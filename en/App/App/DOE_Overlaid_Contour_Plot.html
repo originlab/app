@@ -1,0 +1,169 @@
+<h1 class="firstHeading">2.43.5 The Overlaid Contour Plot in DOE</h1><p class='urlname' style='display: none'>DOE-Overlaid-Contour-Plot</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#To_create_the_overlaid_contour_plot"><span class="tocnumber">2</span> <span class="toctext">To create the overlaid contour plot</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Understanding_the_Plot"><span class="tocnumber">3</span> <span class="toctext">Understanding the Plot</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#The_Overlaid_Contour_Plot_Dialog_Box"><span class="tocnumber">4</span> <span class="toctext">The Overlaid Contour Plot Dialog Box</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Overlaid_Contour_Plot_-_Standard"><span class="tocnumber">4.1</span> <span class="toctext">Overlaid Contour Plot - Standard</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Setup"><span class="tocnumber">4.1.1</span> <span class="toctext">Setup</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Hold_Values"><span class="tocnumber">4.1.2</span> <span class="toctext">Hold Values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Overlaid_Contour_Plot_-_Mixture_Design"><span class="tocnumber">4.2</span> <span class="toctext">Overlaid Contour Plot - Mixture Design</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Setup_2"><span class="tocnumber">4.2.1</span> <span class="toctext">Setup</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Hold_Values_2"><span class="tocnumber">4.2.2</span> <span class="toctext">Hold Values</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<p><a  class="image"><img alt="DOE Overlaid Contour.png" src="../images/DOE_Overlaid_Contour_Plot/400px-DOE_Overlaid_Contour.png?v=81057" width="400"   /></a>
+</p><p>The Overlaid Contour Plot lets you display contour lines for multiple responses from a designed experiment on a single graph, so you can find factor settings that satisfy all response requirements at once.
+</p><p><b>Supported design types</b>
+</p>
+<ul><li> <a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Response surface designs</a></li>
+<li> <a href="../../App/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Factorial designs</a></li>
+<li> <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Mixture Design</a></li></ul>
+<p><br />
+</p>
+<table class="noborder">
+	<tr>
+	<td style="vertical-align:top" width="60"><img src="../images/DOE_Overlaid_Contour_Plot/Alert_icon.png?v=0" width="57"  border="0" /></td><td><p>To create an overlaid contour plot, the design should include at least <b>2 numeric factors</b> and <b>2 responses</b> (a report must exist for each response)
+</p>
+	</td>
+	</tr>
+	</table>
+<h2><a name="To_create_the_overlaid_contour_plot"></a><span class="mw-headline">To create the overlaid contour plot</span></h2>
+<ol><li> <a href="../../App/Category/Create_Design_DOE(App).html" title="Category:Create Design DOE(App)">Create the design</a> with at least two numeric factors and 2 responses</li>
+<li> <a href="../../App/Category/Analyze_Design(App).html" title="Category:Analyze Design(App)">Analyse the design</a> for all responses (Perform <a href="../../App/Category/Analyze_Design(App).html" title="Category:Analyze Design(App)">analyse design</a> for each response one by one and create the reports)</li>
+<li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Overlaid Contour Plot</b> icon
+<dl><dd><a  class="image"><img alt="DOE Overlaid Contour tb.png" src="../images/DOE_Overlaid_Contour_Plot/600px-DOE_Overlaid_Contour_tb.png?v=81065" width="600"   /></a></dd></dl></li></ol>
+<h2><a name="Understanding_the_Plot"></a><span class="mw-headline">Understanding the Plot</span></h2>
+<p>An overlaid contour plot displays two or more fitted response surfaces in the same factor space—typically for two factors, with the remaining factors held constant. Each response is drawn with its own colored contour lines and bands, showing how its predicted value changes across the design region.
+</p><p>Origin draws a contour line at each response's Low and High acceptance limits and shades the region <b>outside</b> those limits. The plot is read as follows:
+</p>
+<ul><li> <b>Colored band (single color)</b>: the response of that color is <b>not</b> satisfied here - it lies outside its acceptance limits - while the other response(s) are satisfied.</li>
+<li> <b>White / unshaded region:</b> the feasible region, or "sweet spot"—every response is within its limits at once. This is the set of factor combinations that satisfies all response constraints simultaneously.</li>
+<li> <b>Overlapping colored bands:</b> all the overlapping responses are outside their limits—<b>none</b> is satisfied there.</li></ul>
+<p>In short, any shaded area means at least one response fails its requirement; only the white region meets all of them.
+</p>
+<h2><a name="The_Overlaid_Contour_Plot_Dialog_Box"></a><span class="mw-headline">The Overlaid Contour Plot Dialog Box</span></h2>
+<h3><a name="Overlaid_Contour_Plot_-_Standard"></a><span class="mw-headline">Overlaid Contour Plot - Standard</span></h3>
+<h4><a name="Setup"></a><span class="mw-headline">Setup</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Responses &amp; Limits
+</th>
+<td>
+<ul><li> Lists every response that has a fitted model, along with its Data Range (the observed min - max, shown as a slider).</li>
+<li> <b>Low / High</b>:  the acceptance limits for each response. Origin draws a contour line at each boundary and shades the region outside those limits. The feasible region is the unshaded (white) area where no response is out of spec—only that white overlap satisfies all responses simultaneously.</li>
+<li> Click the <a  class="image"><img alt="Doe overlaid contour dlg pencil.png" src="../images/DOE_Overlaid_Contour_Plot/Doe_overlaid_contour_dlg_pencil.png?v=81079" width="27"  /></a> (edit) button to set additional options per response, such as a target value or to select which individual contour plot to display.</li></ul>
+</td></tr>
+<tr>
+<th>Axes
+</th>
+<td>
+<ul><li> <b>X and Y</b>: the two factors plotted on the horizontal and vertical axes</li>
+<li> <b>Factor Scale</b>: choose Coded (-1 to +1) or Uncoded (actual units, e.g., minutes). </li></ul>
+</td></tr>
+<tr>
+<th>Gridding
+</th>
+<td>
+<ul><li><b>X / Y values</b>: the grid resolution - how many evaluation points Origin uses along each axis. Higher values (e.g., 50) give smoother contours but take longer to compute; 30 is a good default.</li></ul>
+</td></tr></table>
+<h4><a name="Hold_Values"></a><span class="mw-headline">Hold Values</span></h4>
+<p>This controls what happens to the factors <b>not</b> shown on the X and Y axes. Since an overlaid contour plot can only display two factors at a time, every other factor must be "held" at a fixed value while Origin computes the predicted responses across the plot grid.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Continuous Factors
+</th>
+<td>Choose the hold value for the continuous factor from the dropdown
+<ul><li> <b>&lt;Low&gt;</b>: The lowest level of the factor in the design (its -1 / minimum)</li>
+<li> <b>&lt;Middle&gt;</b>: The center level of factor(its 0 / midpoint)</li>
+<li> <b>&lt;High&gt;</b>: The highest level of factor in the design (its +1 / maximum)</li></ul>
+</td></tr>
+<tr>
+<th>Categorical Factors
+</th>
+<td>The fixed level of any categorical factor
+</td></tr></table>
+<h3><a name="Overlaid_Contour_Plot_-_Mixture_Design"></a><span class="mw-headline">Overlaid Contour Plot - Mixture Design</span></h3>
+<h4><a name="Setup_2"></a><span class="mw-headline">Setup</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Responses &amp; Limits
+</th>
+<td>
+<ul><li> Lists every response that has a fitted model, along with its Data Range (the observed min - max, shown as a slider).</li>
+<li> <b>Low / High</b>:the acceptance limits for each response. Origin draws a contour line at each boundary and shades the region outside those limits. The feasible region is the unshaded (white) area where no response is out of spec—only that white overlap satisfies all responses simultaneously.</li>
+<li> Click the <a  class="image"><img alt="Doe overlaid contour dlg pencil.png" src="../images/DOE_Overlaid_Contour_Plot/Doe_overlaid_contour_dlg_pencil.png?v=81079" width="27"  /></a> (edit) button to set additional options per response, such as a target value or to select which individual contour plot to display.</li></ul>
+</td></tr>
+<tr>
+<th>Axes Mode
+</th>
+<td>
+<ul><li> <b>3 Components</b>: Ternary mixture plot (X, Y, Z)</li>
+<li> <b>2 Process Variables</b>: Standard rectangular contour plot. (Available only when the number of process variables is &gt;= 2)</li>
+<li> <b>X / Y / Z dropdowns</b>: Select the variable mapped to each axis</li></ul>
+</td></tr>
+<tr>
+<th>Component Unit
+</th>
+<td>
+<ul><li> <b>Amount</b>
+<dl><dd>X + Y + Z = total amount − other components (ternary total is not 1). Divide-by factor for all ternary axes = 1 / (total amount − other components).</dd></dl></li>
+<li><b>Proportion</b>
+<dl><dd>total = 1; X+Y+Z = 1 − other components. Divide-by factor = total amount / (total amount − other components).</dd></dl></li>
+<li><b>Pseudo-component</b> 
+<dl><dd>Use the unit-transfer handling defined in Mixture Design analysis.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>Gridding
+</th>
+<td>
+<ul><li><b>X / Y values</b>: the grid resolution - how many evaluation points Origin uses along each axis. Higher values (e.g., 50) give smoother contours but take longer to compute; 30 is a good default.</li></ul>
+</td></tr></table>
+<h4><a name="Hold_Values_2"></a><span class="mw-headline">Hold Values</span></h4>
+<p>Set fixed (held) values for predictors not plotted on the contour axes, so the fitted model can be evaluated over the grid defined on the Setup tab.
+</p>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Components
+</th>
+<td>
+<ul><li>Lists only variables not assigned to X/Y/Z axes (e.g., Var 4, Var 5 when Var 1–3 are on axes).</li>
+<li> Each row: value dropdown (default &lt;Low&gt;, options Low/Middle/High) + numeric field for the resolved hold value (e.g., 0).</li>
+<li> Branch-level action applies to all options in the branch at once</li></ul>
+</td></tr>
+<tr>
+<th>Process Variables
+</th>
+<td>
+<ul><li> Lists held process variables</li>
+<li> For text (categorical) process variables, the dropdown lists category elements instead of Low/Middle/High</li></ul>
+</td>
+<td>
+</td></tr>
+<tr>
+<th>Mixture Amount
+</th>
+<td>Enable only when model terms include total amount
+<p>Select the fixed level for mixture amount
+</p>
+</td></tr></table>
+
+

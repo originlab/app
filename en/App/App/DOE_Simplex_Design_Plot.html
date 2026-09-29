@@ -1,0 +1,84 @@
+<h1 class="firstHeading">2.43.3.3.3 The Simplex Design Plot</h1><p class='urlname' style='display: none'>DOE-Simplex-Design-Plot</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#To_Create_the_Simplex_Design_Plot"><span class="tocnumber">2</span> <span class="toctext">To Create the Simplex Design Plot</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Understanding_the_Plot"><span class="tocnumber">3</span> <span class="toctext">Understanding the Plot</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#The_Simplex_Design_Plot_Dialog_Box"><span class="tocnumber">4</span> <span class="toctext">The Simplex Design Plot Dialog Box</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<p><a  class="image"><img alt="DOE Simplex Design Plot.png" src="../images/DOE_Simplex_Design_Plot/400px-DOE_Simplex_Design_Plot.png?v=81085" width="400"   /></a>
+</p><p>The Simplex Design Plot visualizes a mixture design by plotting design points on triangular (ternary) axes. Each axis represents one mixture component, and the three component proportions sum to 1. Use this plot to see where pure blends, binary blends, interior blends, the centroid, and axial points fall in the formulation space
+</p>
+<h2><a name="To_Create_the_Simplex_Design_Plot"></a><span class="mw-headline">To Create the Simplex Design Plot</span></h2>
+<ul><li> Activate a worksheet with your <b>mixture design</b> data, which is generated via <a href="../../App/Category/Mixture_Design(App).html" title="Category:Mixture Design(App)">Generate Mixture Design</a> or <a href="../../App/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">Define Custom Design</a></li>
+<li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Select the <b>Analyze Design</b> icon and choose <b>Simplex Design Plot</b> from the context menu
+<dl><dd><a  class="image"><img alt="DOE Simplex Design Plot tb.png" src="../images/DOE_Simplex_Design_Plot/600px-DOE_Simplex_Design_Plot_tb.png?v=81089" width="600"   /></a></dd></dl></li></ul>
+<h2><a name="Understanding_the_Plot"></a><span class="mw-headline">Understanding the Plot</span></h2>
+<ul><li> Vertices: Pure mixtures, where one component is at 100%.</li>
+<li> Edge midpoints/edges: Binary blends of two component.</li>
+<li> Interior points: Complete blends containing all components. The <b>centroid</b> is the equal-proportion blend. <b>Axial points</b> lie along the line from the centroid toward each vertex.</li></ul>
+<h2><a name="The_Simplex_Design_Plot_Dialog_Box"></a><span class="mw-headline">The Simplex Design Plot Dialog Box</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Plot Type
+</th>
+<td>Choose the plot layout.
+<ul><li> <b>Select a triplet of components for a single plot</b> 
+<dl><dd> One triangle using three components.</dd></dl></li>
+<li> <b>Select four components for a matrix plot</b>
+<dl><dd> Four simplex panels in one layout. </dd>
+<dd> <b>Note</b>: Requires at least 4 components in the design.</dd></dl></li>
+<li> <b>Generate plots for all triplets of components</b>
+<dl><dd> All 3-component projections</dd>
+<dd><b>Note</b>: Requires at least 4 components in the design.</dd></dl></li></ul>
+</td></tr>
+<tr>
+<th>X/Y/Z Axis
+</th>
+<td>Assign one component to each simplex axis.
+</td></tr>
+<tr>
+<th>Component Unit in Plot(s)
+</th>
+<td>Display components as amounts, proportions, or pseudocomponents
+</td></tr>
+<tr>
+<th>Hold Components at
+</th>
+<td>Fix process variables or mixture amount at chosen levels when those extra factors are present
+</td></tr>
+<tr>
+<th>Include Process Variables
+</th>
+<td>Select to include process-variable settings in the plot.
+</td></tr>
+<tr>
+<th>Hold Process Variables at
+</th>
+<td>Fixes process variables at chosen levels unless you choose to plot all level combinations.
+</td></tr>
+<tr>
+<th>Hold Mixture Amount at
+</th>
+<td>Available only when a mixture amount variable exists. (Select <b>Multiple Totals</b> on <a href="../../App/App/Mixture_Design_Dialog.html#Components" title="App:Mixture Design Dialog">the Components tab when creating mixture desgn</a>)
+<p>Fixes the total amount at one level and plots only runs at that amount
+</p>
+</td></tr>
+<tr>
+<th>Point Label
+</th>
+<td>Choose a label for plotted points:
+<ul><li> <b>None</b>: No point labels.</li>
+<li> <b>Run Order</b>:Label points by run order</li></ul>
+</td></tr></table>
+
+
+
+
+
+

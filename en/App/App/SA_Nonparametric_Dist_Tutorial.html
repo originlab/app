@@ -7,25 +7,25 @@
 <ul><li> <i><a href="../../App/App/SA_Nonparametric_Dist_Algorithm.html" title="App:SA Nonparametric Dist Algorithm">Algorithm</a></i></li></ul>
 </td></tr></table>
 <h2><a name="Sample_Data"></a><span class="mw-headline">Sample Data</span></h2>
-<p>Right click on the Reliability and Survival app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Nonparametric_Dist_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> and choose Show Sample Folder to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>2. Nonparametric Distribution Analysis (Arbitrary Censoring) </i>.
-</p><p>[Book2]Sheet1 shows a typical censored data for nonparametric distribution analysis - a combination of left-, right-, and interval censored observations. This example includes two groups, each group begins with a left-censored entry, continues with several interval censored entries, and end with a right-censored line.
-</p><p>Origin’s right-censoring analysis requires the censored data arranged in the following format: 
+<p>Right click on the Reliability and Survival app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Nonparametric_Dist_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the App Gallery and choose <b>Show Sample Folder</b> to open the sample project <i>RSASample.opju</i>. Go to sub-folder <i>2.2 Nonparametric Distribution Analysis (Arbitrary Censoring)</i>.
+</p><p>[Book2]Sheet1 shows a typical arbitrary censored data - a combination of left-, right-, and interval-censored observations. This example includes two groups, each group begins with a left-censored entry, continues with several interval censored entries, and end with a right-censored line.
+</p><p>Origin’s arbitrary censoring analysis requires the censored data arranged in the following format: 
 </p>
 <ul><li> Start time: beginning of the interval (months, weeks, seasons, etc.), </li>
 <li> End time: end of the interval (same unit as Start time), </li>
 <li> Frequencies: count of failures in the interval. </li>
-<li> For left-censored units (1st and 11th row in this example), the Start Time is missing. Frequencies counts units already failed by the End Time</li>
-<li> For right-censored units (10th and20th row), the End Time is missing. Frequencies counts units still surviving  at the Start Time.</li></ul>
+<li> For left-censored units (1st and 11th row in this example), the "Start Time" is missing. The "Frequency" counts units already failed by the "End Time".</li>
+<li> For right-censored units (10th and20th row), the "End Time" is missing. The "Frequency" counts units still surviving  at the "Start Time".</li></ul>
 <dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 00.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_00.png?v=77673" width="636"  /></a></dd></dl>
 <p>The Frequencies column is optional. If omitted, you can duplicate the interval and each duplicate represents one failure.
 </p>
 <dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 00a.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_00a.png?v=77672" width="651"  /></a></dd></dl>
-<p><b>Note:</b> If your data contain only exact failure times or right censored observations, please use <a href="../../App/Category/Parametric_Distribution_Analysis(App).html" title="Category:Parametric Distribution Analysis(App)">Parametric Distribution Analysis for Right Censoring</a> instead.
+<p><b>Note:</b> If your data contain only exact failure times or right censored observations, please use <a href="../../App/App/NPDA_Right_Censoring_Tutorial.html" title="App:NPDA Right Censoring Tutorial">Parametric Distribution Analysis for Right Censoring</a> instead.
 </p>
 <h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
 <ol>
 <li>With [Book2]Sheet1 active, click the <b>Reliability and Survival</b> app icon <a  class="image"><img alt="Reliability and Survival icon.png" src="../images/SA_Nonparametric_Dist_Tutorial/Reliability_and_Survival_icon.png?v=77611" width="31"  /></a> in the <b>App Gallery</b> . In the opened panel, choose <b>Nonparametric Distribution Analysis for Arbitrary Censoring</b>.
-<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 01.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_01.png?v=77674" width="565"  /></a></dd></dl>
+<dl><dd><a  class="image"><img alt="Nonparametric Dist Analysis Tutorial 01.png" src="../images/SA_Nonparametric_Dist_Tutorial/Nonparametric_Dist_Analysis_Tutorial_01.png?v=80770" width="500"  /></a></dd></dl>
 <li>In the dialog that opens, specify the settings as follow:
 <ul>
 <li>On Input tab, select column A for <b>Start Time</b>, column B for <b>End Time</b>, column C for <b>Frequency</b>, and column D for <b>Group</b>, respectively.

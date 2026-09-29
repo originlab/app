@@ -1,0 +1,87 @@
+<h1 class="firstHeading">2.5.10.1 Tutorial for Demonstration Test Plan</h1><p class='urlname' style='display: none'>Tutorial-Demonostration-Test-Plan</p>
+<p>The <b>Demonstration Test Plan</b> is a pre-test design tool for reliability validation. It translates a reliability target, a confidence level, and engineering assumptions into an actionable sampling rule: 
+</p><p>"<i>test this many units for this long, allow this many failures, and if the result passes, you may claim the target is met at the stated confidence.</i>"
+</p>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/SA_Demonstration_Test_Plan_Tutorial/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Demonstration</b></i>:
+</p>
+<ul><li> <i><a href="../../App/App/SA_Demonostration_Test_Plan_Algorithm&amp;action=edit&amp;redlink=1.html" class="new" title="App:SA Demonostration Test Plan Algorithm (page does not exist)">Algorithm</a></i></li></ul>
+</td></tr></table>
+<p><br />
+In this example, a Electric Vehicle factory enhanced the lifetime of their high-voltage battery, in which failure is defined as the battery capacity drops below 80%. Before mass production, engineers needs to design a substantiantion arming at a claim that the improved battery pack (Gen-2) is at least  as durable as the original pack (Gen-1). 
+</p><p>Engineers collected the neccessary historical data from Gen-1:
+</p>
+<ul><li> battery life time follows a Weibull distribution.</li>
+<li> Shape parameter = 2.8 (&gt;1, a wear-out failure mode).</li>
+<li> Scale parameter = 2400 equivalent full charge-discharge cycles (characteristic life), i.e., ~63.2% batteries lose more than 20% capacity before 2400 cycles.</li></ul>
+<p>Engineers sampled 15 battery pack from the prototypes of Gen-2 and use <b>Demonstration</b> to create a test plan that validates the characteristic life of Gen-2 is not less than that of Gen-1.
+</p>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol>
+<li>Select menu <b>Statistics: Survival Analysis: Reliability and Survival Analysis</b>. In the opened panel, click <b>Life Test Plans</b> block and then choose <b>Demonstration</b> icon.
+<dl><dd><a  class="image"><img alt="Demonstration Test Plan Tutorial 01.png" src="../images/SA_Demonstration_Test_Plan_Tutorial/Demonstration_Test_Plan_Tutorial_01.png?v=81156" width="500"  /></a></dd></dl>
+<li>In the dialog that opens, specify the settings on the Input tab as following&#160;: 
+<dl><dd><a  class="image"><img alt="Demonstration Test Plan Tutorial 02 Input.png" src="../images/SA_Demonstration_Test_Plan_Tutorial/Demonstration_Test_Plan_Tutorial_02_Input.png?v=81168" width="596"  /></a></dd></dl>
+<table class="simple">
+<tr>
+<th width="14%">Calculate
+</th>
+<td>Determines which quantity to be calculated, the test duration per unit or the sample sizes.
+</td></tr>
+<tr>
+<th>Minimum Value to be Demonstrated
+</th>
+<td>Specify the reliability target. Choose the statement that matches your spectification.
+<ul><li> <b>Scale (Weibull or Exponential) or Location (other distributions)</b>: <br />Demonstrate that the distribution's Scale parameter (characteristic life) for Weibull or exponential distribution or Location parameter for normal, lognormal, logistic, etc. distributions is at least the specified <b>Scale</b> or <b>Location</b> value.</li>
+<li> <b>Percentile and Percent</b>: <br />Demonstrate that no more than the <b>Percent</b> of units have failed by the <b>Percentile</b> time.</li>
+<li> <b>Reliability and Time</b>: <br />Demonstrate that at least the <b>Reliability</b> (survival probability) of units still run at the <b>Time</b>. It is mathematically equivalent to the <b>Percentile and Percent</b> option but may match your specification language better.</li>
+<li> <b>MTTF (mean time to fail)</b>: <br />Demonstrate that the <b>MTTF</b> is at least the entered value. It is usually used in an Exponential distribution, where MTTF equals the scale parameter and is the natural metric.</li></ul>
+</td></tr>
+<tr>
+<th>Maximum Number of Failures Allowed
+</th>
+<td>Specify the largest number of failures that still allows the test to be declared a pass.
+<p>0 states the strictest rule, i.e., any observed failure causes the demonstration to fail. It yields the largest required sample size or test time but provides the cleanest pass/fail statement. <br />Entering 1, 2, ... states a more tolerant rules. They reduce the required sample size or test time but make the test less decisive and may provide some failure-time data for further analysis.
+</p><p><b>Note</b>: You may enter multiple values separated by space (or a column of values) to compare how relaxing the acceptance rule affects the plan.
+</p>
+</td></tr>
+<tr>
+<th>Sample Sizes / Testing Times
+</th>
+<td>Specify the sample sizes when <b>Calculate</b> = <b>Time</b>, or test durations for each unit if <b>Calculate</b> = <b>Size</b>. Increasing sample size shortens the required test time per unit. vice versa.
+<p><b>Note</b>: You may enter multiple values separated by space (or a column of values) to compare sample size against test duration. 
+</p>
+</td></tr>
+<tr>
+<th>Distribution
+</th>
+<td>Select <a href="../../App/App/SA_Parametric_Dist_AC_Algorithm.html#Distributions" title="App:SA Parametric Dist AC Algorithm">the probability distribution</a> and the assumed Scale/Shape parameter value used to model failure times.
+<p>The test plan can be sensitive to the specified <b>Shape (Weibull) or Scale (other distributions)</b> so it is good to enter a range of plausible values and compare the results.
+</p>
+</td></tr></table>
+</li>
+<li>On the Plots tab, leave the default settings untouched. Refer to <a href="#Results_and_Interpretation">"Results and Interpretation"</a> section for the explanation of <b>Probability of passing the demonstration test</b>.
+<dl><dd><a  class="image"><img alt="Demonstration Test Plan Tutorial 02 Plots.png" src="../images/SA_Demonstration_Test_Plan_Tutorial/Demonstration_Test_Plan_Tutorial_02_Plots.png?v=81158" width="446"  /></a></dd></dl>
+</li>
+<li>Click <b>OK</b> button to generate report.
+</ol>
+<h2><a name="Results_and_Interpretation"></a><span class="mw-headline">Results and Interpretation</span></h2>
+<p><span class='headerInParagraph'>Test Plans</span>
+</p>
+<dl><dd><a  class="image"><img alt="Demonstration Test Plan Tutorial 03 Test Plans.png" src="../images/SA_Demonstration_Test_Plan_Tutorial/Demonstration_Test_Plan_Tutorial_03_Test_Plans.png?v=81285" width="269"  /></a></dd></dl>
+<ul><li>Take <i>15</i> Gen-2 battery packs and test each one to <i>1351</i> equivalent full cycles.</li></ul>
+<dl><dd><ul><li>If 0 packs fail before <i>1351</i> cycles: the demonstration passes. You may state "at 95% confidence that the Gen-2 meets or exceeds the Gen-1 characteristic life - <i>2400</i> cycles.</li>
+<li>If 1 or more packs fail before <i>1351</i> cycles: the demonstration does not pass. You cannot make the 95% confidence claim using this plan. This does NOT prove Gen-2 is worse; it only means the evidence is insufficient under the chosen (sample size, test time, and maximum number of failures allowed) scheme.</li></ul></dd></dl>
+<p><span class='headerInParagraph'>Likelihood of Passing Plot</span>
+</p>
+<dl><dd><a  class="image"><img alt="Demonstration Test Plan Tutorial 03 Likelihood of Passing Plot.png" src="../images/SA_Demonstration_Test_Plan_Tutorial/Demonstration_Test_Plan_Tutorial_03_Likelihood_of_Passing_Plot.png?v=81286" width="409"  /></a></dd></dl>
+<ul><li>The curve shows how likely this plan is to pass if the true Gen-2 characteristic life is <i>k</i> times the Gen-1 baseline.</li></ul>
+<dl><dd><ul><li><i>k</i> = 1.0: If the true characteristic lifetime of Gen-2 is exactly 2400 cycles, the plan has only a <i>5%</i> chance of passing — the specified lower confidence bound.</li>
+<li><i>k</i> = 2.0: If the true Gen-2 characteristic lifetime is twice as Gen-1, the plan has about a <i>65%</i> chance of passing - roughly one in three such tests would fail despite the product being truly better. <br />If the true improvement is about twice as durable and the team cannot accept a ~<i>35%</i> chance of failing the demonstration, allowing failures, e.g., <b>Maximum number of failures allowed</b> = 1 or 2, must be considered. Note that allowing a failure typically lengthens the per-unit test time.</li>
+<li><i>k</i> &#8805; 4.0: The plan is very likely (&gt;94%) to pass.</li></ul></dd></dl>
+<p><span class='headerInParagraph'>Conclusion</span>
+</p>
+<ul><li> Run <i>15</i> Gen-2 battery packs to <i>1351</i> equivalent full cycles; with <i>zero failures</i> you can claim <i>95%</i> confidence that the characteristic life is larger than <i>2400</i> cycles.</li>
+<li> A test of 1351 cycles for a battery pack is very long (several years). Accelerated aging methods, such as high temperatures or charge-discharge rates are typically used to compress the testing period into just a few months.</li></ul>
+
+

@@ -1,0 +1,84 @@
+<h1 class="firstHeading">2.43.4.2 Analyze Binary Response</h1><p class='urlname' style='display: none'>Analyze-Binary-Response</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Binary_response_data"><span class="tocnumber">2</span> <span class="toctext">Binary response data</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Processing"><span class="tocnumber">3</span> <span class="toctext">Processing</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Run_the_Analysis"><span class="tocnumber">4</span> <span class="toctext">Run the Analysis</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Results_of_Analyzing_Binary_Response"><span class="tocnumber">5</span> <span class="toctext">Results of Analyzing Binary Response</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Introduction"></a><span class="mw-headline">Introduction</span></h2>
+<p>Analyze Binary Response is the dedicated tool for DOE when your outcome has only two levels (pass/fail, defect/no defect, yes/no)
+</p><p>Use this analysis after creating or defining a design and collecting binary outcome data.
+Supported design types:
+</p>
+<ul><li> <a href="../../App/Category/Factorial_Design(App).html" title="Category:Factorial Design(App)">Factorial designs</a> (2-level, general full factorial, Plackett-Burman) </li>
+<li> <a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Response surface designs</a> (central composite, Box-Behnken) </li>
+<li> <a href="../../App/Category/Definitive_Screening_Design(App).html" title="Category:Definitive Screening Design(App)">Definitive screening designs</a></li></ul>
+<h2><a name="Binary_response_data"></a><span class="mw-headline">Binary response data</span></h2>
+<p>Binary response data must be organized into two worksheet columns
+</p>
+<dl><dd><table class="simple" style="width:40%;">
+<tr>
+<th>Number of events
+</th>
+<th>Number of trials
+</th></tr>
+<tr>
+<td>45 (success or failure)
+</td>
+<td>50 (total tested)
+</td></tr>
+<tr>
+<td>38 (success or failure)
+</td>
+<td>50 (total tested)
+</td></tr></table></dd></dl>
+<dl><dd>One column counts the events(success or failure); the other counts the total trials.</dd></dl>
+<h2><a name="Processing"></a><span class="mw-headline">Processing</span></h2>
+<ol><li> Activate the worksheet containing your experimental design data (generated via <a href="../../App/Category/Create_Design_DOE(App).html" title="Category:Create Design DOE(App)">Generate Design</a> or <a href="../../App/Category/Custom_Designs(App).html" title="Category:Custom Designs(App)">Define Custom Design</a>).</li>
+<li> Enter response data in event/trial format</li>
+<li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from the Origin menu</li>
+<li> Click the <b>Analyze Binary Response</b> icon
+<dl><dd><a  class="image"><img alt="DOE Analyze Binary Response.png" src="../images/Analyze_Binary_Response(App)/600px-DOE_Analyze_Binary_Response.png?v=80801" width="600"   /></a></dd></dl></li></ol>
+<h2><a name="Run_the_Analysis"></a><span class="mw-headline">Run the Analysis</span></h2>
+<ol><li> In the <b>Model</b> tab of the dialog, specify the <b>Number of events</b> column, and <b>Number of trials</b> column.
+<dl><dd><a  class="image"><img alt="DOE Analyze Binary Response dlg.png" src="../images/Analyze_Binary_Response(App)/600px-DOE_Analyze_Binary_Response_dlg.png?v=80826" width="600"   /></a></dd></dl></li>
+<li> Select a <b>Link Function</b>
+<ul><li> <b>Logit</b>: <img src="../images/Analyze_Binary_Response(App)/math-acdc3e1c194b035aed2713ecfe8356f1.png?v=0" title="\ln\left(\frac{p}{1-p}\right)" alt="\ln\left(\frac{p}{1-p}\right)" class="tex"/></li>
+<li> <b>Normit (probit)</b>: <img src="../images/Analyze_Binary_Response(App)/math-d7c1415601e7787706053f726d1823e2.png?v=0" title="\Phi^{-1}(p)" alt="\Phi^{-1}(p)" class="tex"/></li>
+<li> <b>Gompit</b>: <img src="../images/Analyze_Binary_Response(App)/math-b1c4a634327ecceeb36399f9dfca3f58.png?v=0" title="\ln\!\bigl(-\ln(1-p)\bigr) " alt="\ln\!\bigl(-\ln(1-p)\bigr) " class="tex"/></li></ul></li></ol>
+<p><br />
+The remaining options in the analysis dialog depend on the design type. See the corresponding dialog help:
+</p>
+<ul><li> <a href="../../App/App/Analyze_Definitive_Screening_Design_Dialog.html" title="App:Analyze Definitive Screening Design Dialog">Analyze Definitive Screening Design</a></li>
+<li> <a href="../../App/App/Analyze_Factorial_Design_Dialog.html" title="App:Analyze Factorial Design Dialog">Analyze Factorial Design</a></li>
+<li> <a href="../../App/App/Analyze_Response_Surface_Design_Dialog.html" title="App:Analyze Response Surface Design Dialog">Analyze Response Surface Design</a></li></ul>
+<h2><a name="Results_of_Analyzing_Binary_Response"></a><span class="mw-headline">Results of Analyzing Binary Response</span></h2>
+<p>Binary response analysis uses deviance (rather than standard sum-of-squares) to measure model fit, which introduces slight differences from standard design analysis. The output tables are otherwise largely similar, with the following exceptions.
+</p><p>For detailed guidance on interpreting results, see <a href="../../App/App/DOE_Interpreting_Results.html" title="App:DOE Interpreting Results">Interpreting DOE Results</a>
+</p><p><span class='headerInParagraph'>Coefficients Table</span>
+</p>
+<dl><dd><ul><li> <b>z-value</b>: The Wald test statistic, calculated as the estimated coefficient divided by its standard error. It tests whether the coefficient differs significantly from zero.</li>
+<li> <b>Prob &gt; |z|</b>:The p-value of the Wald test. Values below the significance threshold (typically 0.05) indicate statistically significant terms</li></ul></dd></dl>
+<p><span class='headerInParagraph'>Model Statistics</span>
+</p>
+<dl><dd><ul><li> <b>Deviance R-Sq</b>:  Measures model fit, analogous to R-Square. Higher values indicate better fit</li>
+<li> <b>Deviance R-Sq (adj)</b>:  Adjusted measure of model fit, analogous to Adj. R-Square. Higher is better. In regression, Deviance R-Sq always rises when you add terms. Deviance R-Sq (adj) does not — it can decrease if you add terms that do not meaningfully improve the model. Deviance R-Sq (adj)is preferred when comparing models that have different numbers of terms</li>
+<li> <b>AIC</b>: Akaike Information Criterion.It evaluates model fit while penalizing model complexity. When comparing models fitted to the same data, a smaller AIC generally indicates a better balance between fit and complexity.</li>
+<li> <b>AICc</b>: Adjusts AIC for small sample sizes.  As with AIC, smaller values indicate a preferable model when comparing models fitted to the same data</li>
+<li> <b>BIC</b>: Bayesian Information Criterion. Like AIC, BIC balances model fit and complexity, but applies a stronger penalty for additional model terms. A smaller BIC generally indicates a better model when comparing competing models.</li></ul></dd></dl>
+<p><span class='headerInParagraph'>ANOVA</span>
+</p>
+<dl><dd><ul><li> <b>Deviance</b>: The reduction in model deviance attributable to the term. Larger values indicate that the term explains more variation in the log-odds.</li>
+<li> <b>Mean Deviance</b>:  Deviance divided by degrees of freedom (DF). When DF = 1, it equals the Deviance.</li></ul></dd></dl>
+
+
+
+
+
+

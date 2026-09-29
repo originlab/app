@@ -715,6 +715,18 @@
     <toc_src>App:SA_Nonparametric_Dist_Algorithm</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Demonstration</toc_name>
+    <toc_link>Category/Demonstration(APP).html</toc_link>
+    <toc_url>App/SA-Demonstration</toc_url>
+    <toc_src>Category:Demonstration(APP)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Demonstration &gt; Tutorial for Demonstration Test Plan</toc_name>
+    <toc_link>App/SA_Demonstration_Test_Plan_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-Demonostration-Test-Plan</toc_url>
+    <toc_src>App:SA_Demonstration_Test_Plan_Tutorial</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Parametric Distribution Analysis (Arbitrary Censoring)</toc_name>
     <toc_link>Category/Parametric_Distribution_Analysis_AC(App).html</toc_link>
     <toc_url>App/SA-Parametric-Dist-Arbitrary-Censoring</toc_url>
@@ -987,116 +999,254 @@
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments</toc_name>
     <toc_link>Category/Design_of_Experiments(App).html</toc_link>
-    <toc_url>App/Design-of-Experiments</toc_url>
+    <toc_url>App/DOE</toc_url>
     <toc_src>Category:Design_of_Experiments(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define Custom Designs</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Power and Sample Size (DOE)</toc_name>
+    <toc_link>Category/Power_and_Sample_Size_DOE(App).html</toc_link>
+    <toc_url>App/Power-Sample-Size-DOE</toc_url>
+    <toc_src>Category:Power_and_Sample_Size_DOE(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs</toc_name>
+    <toc_link>Category/Define_and_Create_Designs.html</toc_link>
+    <toc_url>App/Define-Create-Designs</toc_url>
+    <toc_src>Category:Define_and_Create_Designs</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Define Custom Designs</toc_name>
     <toc_link>Category/Custom_Designs(App).html</toc_link>
     <toc_url>App/Custom-Designs</toc_url>
     <toc_src>Category:Custom_Designs(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define Custom Designs &gt; The Define Custom Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Define Custom Designs &gt; The Define Custom Design Dialog Box</toc_name>
     <toc_link>App/The_Define_Custom_Design_Dialog_Box.html</toc_link>
     <toc_url>App/Custom-Design-Dialog</toc_url>
     <toc_src>App:The_Define_Custom_Design_Dialog_Box</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design</toc_name>
     <toc_link>Category/Create_Design_DOE(App).html</toc_link>
     <toc_url>App/Create-Design-DOE</toc_url>
     <toc_src>Category:Create_Design_DOE(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Definitive Screening Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Definitive Screening Design</toc_name>
     <toc_link>Category/Definitive_Screening_Design(App).html</toc_link>
     <toc_url>App/Definitive-Screening-Design</toc_url>
     <toc_src>Category:Definitive_Screening_Design(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Definitive Screening Design &gt; The Definitive Screening Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Definitive Screening Design &gt; The Definitive Screening Design Dialog Box</toc_name>
     <toc_link>App/Definitive_Screening_Design_Dialog.html</toc_link>
     <toc_url>App/Definitive-Screening-Dialog</toc_url>
     <toc_src>App:Definitive_Screening_Design_Dialog</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Factorial Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Factorial Design</toc_name>
     <toc_link>Category/Factorial_Design(App).html</toc_link>
     <toc_url>App/Factorial-Design</toc_url>
     <toc_src>Category:Factorial_Design(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Factorial Design &gt; The Factorial Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Factorial Design &gt; The Factorial Design Dialog Box</toc_name>
     <toc_link>App/Factorial_Design_Dialog.html</toc_link>
     <toc_url>App/Factorial-Dialog</toc_url>
     <toc_src>App:Factorial_Design_Dialog</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Response Surface Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Response Surface Design</toc_name>
     <toc_link>Category/Response_Surface_Design(App).html</toc_link>
     <toc_url>App/Response-Surface-Design</toc_url>
     <toc_src>Category:Response_Surface_Design(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Response Surface Design &gt; The Response Surface Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Response Surface Design &gt; The Response Surface Design Dialog Box</toc_name>
     <toc_link>App/Response_Surface_Design_Dialog.html</toc_link>
     <toc_url>App/response-surface-design-dialog</toc_url>
     <toc_src>App:Response_Surface_Design_Dialog</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Mixture Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Mixture Design</toc_name>
     <toc_link>Category/Mixture_Design(App).html</toc_link>
     <toc_url>App/Mixture-Design</toc_url>
     <toc_src>Category:Mixture_Design(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Mixture Design &gt; The Mixture Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Mixture Design &gt; The Mixture Design Dialog Box</toc_name>
     <toc_link>App/Mixture_Design_Dialog.html</toc_link>
     <toc_url>App/mixture-dialog</toc_url>
     <toc_src>App:Mixture_Design_Dialog</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Taguchi Design</toc_name>
     <toc_link>Category/Taguchi_Design(App).html</toc_link>
     <toc_url>App/Taguchi-Design</toc_url>
     <toc_src>Category:Taguchi_Design(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Key Concepts of Taguchi Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Taguchi Design &gt; Key Concepts of Taguchi Design</toc_name>
     <toc_link>App/Key_Concepts_Taguchi.html</toc_link>
     <toc_url>App/Key-Concepts-Taguchi</toc_url>
     <toc_src>App:Key_Concepts_Taguchi</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; The Taguchi Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Taguchi Design &gt; The Taguchi Design Dialog Box</toc_name>
     <toc_link>App/Taguchi_Design_Dialog.html</toc_link>
     <toc_url>App/taguchi-dialog</toc_url>
     <toc_src>App:Taguchi_Design_Dialog</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Interpreting Results of Taguchi Design</toc_name>
-    <toc_link>App/Results_Taguchi.html</toc_link>
-    <toc_url>App/Result-Taguchi</toc_url>
-    <toc_src>App:Results_Taguchi</toc_src>
-  </toc>
-  <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Create Design &gt; Taguchi Design &gt; Tutorial of Taguchi Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Taguchi Design &gt; Tutorial of Taguchi Design</toc_name>
     <toc_link>App/Tutorial_Taguchi.html</toc_link>
     <toc_url>App/Tutorial-Taguchi-Design</toc_url>
     <toc_src>App:Tutorial_Taguchi</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Select Optimal Design</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Select Optimal Design</toc_name>
     <toc_link>Category/Select_Optimal_Design(App).html</toc_link>
     <toc_url>App/Select-Optimal-Design</toc_url>
     <toc_src>Category:Select_Optimal_Design(App)</toc_src>
   </toc>
   <toc>
-    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Select Optimal Design &gt; The Select Optimal Design Dialog Box</toc_name>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Select Optimal Design &gt; The Select Optimal Design Dialog Box</toc_name>
     <toc_link>App/Select_Optimal_Design_Dialog.html</toc_link>
     <toc_url>App/Optimal-Design-Dialog</toc_url>
     <toc_src>App:Select_Optimal_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design</toc_name>
+    <toc_link>Category/Analyze_Design(App).html</toc_link>
+    <toc_url>App/Analyze-Designs</toc_url>
+    <toc_src>Category:Analyze_Design(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; The Analyze Design Dialog Box</toc_name>
+    <toc_link>Category/Analyze_Design_Dialog(App).html</toc_link>
+    <toc_url>App/Analyze-Design-Dialog</toc_url>
+    <toc_src>Category:Analyze_Design_Dialog(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; The Analyze Design Dialog Box &gt; The Analyze Definitive Screening Design Dialog Box</toc_name>
+    <toc_link>App/Analyze_Definitive_Screening_Design_Dialog.html</toc_link>
+    <toc_url>App/Analyze-Definitive-Screening-Design-Dialog</toc_url>
+    <toc_src>App:Analyze_Definitive_Screening_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; The Analyze Design Dialog Box &gt; The Analyze Factorial Design Dialog Box</toc_name>
+    <toc_link>App/Analyze_Factorial_Design_Dialog.html</toc_link>
+    <toc_url>App/Analyze-Factorial-Design-Dialog</toc_url>
+    <toc_src>App:Analyze_Factorial_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; The Analyze Design Dialog Box &gt; The Analyze Response Surface Design Dialog Box</toc_name>
+    <toc_link>App/Analyze_Response_Surface_Design_Dialog.html</toc_link>
+    <toc_url>App/Analyze-Response-Surface-Design-Dialog</toc_url>
+    <toc_src>App:Analyze_Response_Surface_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; The Analyze Design Dialog Box &gt; The Analyze Mixure Design Dialog Box</toc_name>
+    <toc_link>App/Analyze_Mixure_Design_Dialog.html</toc_link>
+    <toc_url>App/Analyze-Mixure-Design-Dialog</toc_url>
+    <toc_src>App:Analyze_Mixure_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; The Analyze Design Dialog Box &gt; The Analyze Taguchi Design Dialog Box</toc_name>
+    <toc_link>App/Analyze_Taguchi_Design_Dialog.html</toc_link>
+    <toc_url>App/Analyze-Taguchi-Design-Dialog</toc_url>
+    <toc_src>App:Analyze_Taguchi_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Model Fitting and Selection</toc_name>
+    <toc_link>Category/Model_Fitting_and_Selection.html</toc_link>
+    <toc_url>App/DOE-Model-Fit-Select</toc_url>
+    <toc_src>Category:Model_Fitting_and_Selection</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Model Fitting and Selection &gt; Stepwise Regression for Analyze Design</toc_name>
+    <toc_link>App/Stepwise_Analyze_Design.html</toc_link>
+    <toc_url>App/DOE-Stepwise-Analyze-Design</toc_url>
+    <toc_src>App:Stepwise_Analyze_Design</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Model Fitting and Selection &gt; Lack of Fit Test</toc_name>
+    <toc_link>App/Lack_of_Fit_Test.html</toc_link>
+    <toc_url>App/DOE-Lack-of-Fit-Test</toc_url>
+    <toc_src>App:Lack_of_Fit_Test</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Model Fitting and Selection &gt; Model Prediction - Find Y from X</toc_name>
+    <toc_link>App/Find_Y_from_X.html</toc_link>
+    <toc_url>App/DOE-Find-Y-from-X</toc_url>
+    <toc_src>App:Find_Y_from_X</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Results and Plots for Analyze Design</toc_name>
+    <toc_link>Category/DOE_Analyze_Results_and_Plots.html</toc_link>
+    <toc_url>App/DOE-Analyze-Results-and-Plots</toc_url>
+    <toc_src>Category:DOE_Analyze_Results_and_Plots</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Results and Plots for Analyze Design &gt; Interpreting Results for Analyze Design</toc_name>
+    <toc_link>App/DOE_Interpreting_Results.html</toc_link>
+    <toc_url>App/DOE-Interpreting-Results</toc_url>
+    <toc_src>App:DOE_Interpreting_Results</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Results and Plots for Analyze Design &gt; The Plots for Analyze Design</toc_name>
+    <toc_link>App/Plots_in_DOE.html</toc_link>
+    <toc_url>App/Plots-Analyze-Design</toc_url>
+    <toc_src>App:Plots_in_DOE</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Results and Plots for Analyze Design &gt; The Simplex Design Plot</toc_name>
+    <toc_link>App/DOE_Simplex_Design_Plot.html</toc_link>
+    <toc_url>App/DOE-Simplex-Design-Plot</toc_url>
+    <toc_src>App:DOE_Simplex_Design_Plot</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Additional DOE Analysis</toc_name>
+    <toc_link>Category/Additional_DOE_Analysis(App).html</toc_link>
+    <toc_url>App/Add-DOE-Analysis</toc_url>
+    <toc_src>Category:Additional_DOE_Analysis(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Additional DOE Analysis &gt; Analyze Variability</toc_name>
+    <toc_link>Category/Analyze_Variability(App).html</toc_link>
+    <toc_url>App/Analyze-Variability</toc_url>
+    <toc_src>Category:Analyze_Variability(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Additional DOE Analysis &gt; Analyze Binary Response</toc_name>
+    <toc_link>Category/Analyze_Binary_Response(App).html</toc_link>
+    <toc_url>App/Analyze-Binary-Response</toc_url>
+    <toc_src>Category:Analyze_Binary_Response(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; The Overlaid Contour Plot in DOE</toc_name>
+    <toc_link>App/DOE_Overlaid_Contour_Plot.html</toc_link>
+    <toc_url>App/DOE-Overlaid-Contour-Plot</toc_url>
+    <toc_src>App:DOE_Overlaid_Contour_Plot</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Optimize Response</toc_name>
+    <toc_link>Category/Optimize_Response(App).html</toc_link>
+    <toc_url>App/Optimize-Response</toc_url>
+    <toc_src>Category:Optimize_Response(App)</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Optimize Response &gt; The Optimize Response Dialog Box</toc_name>
+    <toc_link>App/Optimize_Response_Dialog.html</toc_link>
+    <toc_url>App/Optimize-Response-Dialog</toc_url>
+    <toc_src>App:Optimize_Response_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Optimize Response &gt; Overview of Optimize Response Results</toc_name>
+    <toc_link>App/Optimize_Response_Results.html</toc_link>
+    <toc_url>App/Optimize-Response-Results</toc_url>
+    <toc_src>App:Optimize_Response_Results</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Correlation Shift</toc_name>

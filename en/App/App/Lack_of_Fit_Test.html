@@ -1,0 +1,52 @@
+<h1 class="firstHeading">2.43.3.2.2 Lack of Fit Test</h1><p class='urlname' style='display: none'>DOE-Lack-of-Fit-Test</p>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Oeverview"><span class="tocnumber">1</span> <span class="toctext">Oeverview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#To_perform_lack_of_fit_Test"><span class="tocnumber">2</span> <span class="toctext">To perform lack of fit Test</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Results_of_Lack_of_Fit_Test"><span class="tocnumber">3</span> <span class="toctext">Results of Lack of Fit Test</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Lack_of_Fit"><span class="tocnumber">3.1</span> <span class="toctext">Lack of Fit</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Pure_Error"><span class="tocnumber">3.2</span> <span class="toctext">Pure Error</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><a name="Oeverview"></a><span class="mw-headline">Oeverview</span></h2>
+<p>The <b>Lack of Fit</b> test is used to determine whether the selected model adequately describes the relationship between the factors and the response.
+</p><p>The test separates the model error into two components:
+</p>
+<dl><dd><ul><li> Lack of Fit</li>
+<li> Pure Error</li></ul></dd></dl>
+<p>The Lack of Fit Test compares these two sources of variation using an F-test:
+</p><p><img src="../images/Lack_of_Fit_Test/math-812c1ac99003f1d52b5cda5ac7bf5a6b.png?v=0" title="&#10;F = \frac{\text{Mean Square of Lack of Fit}}{\text{Mean Square of Pure Error}}&#10;" alt="&#10;F = \frac{\text{Mean Square of Lack of Fit}}{\text{Mean Square of Pure Error}}&#10;" class="tex"/>
+</p><p><b>Supported design types</b>
+</p>
+<ul><li> <a href="../../App/Category/Response_Surface_Design(App).html" title="Category:Response Surface Design(App)">Response surface designs</a></li></ul>
+<table class="noborder">
+	<tr>
+	<td style="vertical-align:top" width="60"><img src="../images/Lack_of_Fit_Test/Alert_icon.png?v=0" width="57"  border="0" /></td><td><p>To perform lack of fit test, the design data should include replicates (multiple observations with identical predictor/x-values)
+</p>
+	</td>
+	</tr>
+	</table>
+<h2><a name="To_perform_lack_of_fit_Test"></a><span class="mw-headline">To perform lack of fit Test</span></h2>
+<ol><li> <a href="../../App/Category/Create_Design_DOE(App).html" title="Category:Create Design DOE(App)">Create the design</a> with replicates or center points</li>
+<li> In the <b>Quantities</b> tab of the <a href="../../App/App/Analyze_Factorial_Design_Dialog.html" title="App:Analyze Factorial Design Dialog">analyze factorial design dialog box</a> or <a href="../../App/App/Analyze_Response_Surface_Design_Dialog.html" title="App:Analyze Response Surface Design Dialog">analyze response surface design dialog box</a>, make sure to select <b>Lack of Fit</b> test
+<dl><dd> <a  class="image"><img alt="DOE Lack of Fit DLG.png" src="../images/Lack_of_Fit_Test/600px-DOE_Lack_of_Fit_DLG.png?v=81189" width="600"   /></a></dd></dl></li></ol>
+<h2><a name="Results_of_Lack_of_Fit_Test"></a><span class="mw-headline">Results of Lack of Fit Test</span></h2>
+<p>The test results are in the <b>ANOVA</b> table of report sheet, which is u
+</p>
+<dl><dd><a  class="image"><img alt="DOE Analyze Design Lack of fit.png" src="../images/Lack_of_Fit_Test/450px-DOE_Analyze_Design_Lack_of_fit.png?v=80632" width="450"   /></a></dd></dl>
+<h4><a name="Lack_of_Fit"></a><span class="mw-headline">Lack of Fit</span></h4>
+<p>Variation indicating that the model does not adequately capture the true relationship between the factors and the response
+</p><p>A small <b>p-value</b> indicates significant lack of fit
+</p>
+<dl><dd><ul><li> P &gt; 0.05: The model fits the data adequately</li>
+<li> P &lt; 0.05: Indicates significant lack of fit, suggesting that the model may be inadequate and that a different model or additional terms may be needed.</li></ul></dd></dl>
+<h4><a name="Pure_Error"></a><span class="mw-headline">Pure Error</span></h4>
+<p>Variation caused by random experimental error, estimated from replicated experimental runs.
+</p>
+
