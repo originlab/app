@@ -6,23 +6,38 @@
 <br />where <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/> is the parameter to be demonstrated (scale, location, or an equivalent derived parameter), and <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dbc9011a370bca098d4752346ba71d5c.png?v=0" title="\theta_0" alt="\theta_0" class="tex"/> is the target value of <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/>; <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-6f8f57715090da2632453988d9a1501b.png?v=0" title="m" alt="m" class="tex"/> is the maximum number of failures allowed for a pass                                       
 <li> Solve the unknown <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/> or <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> using the reliability function <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-a07c5f9f75d841b8ee25a25fb9ba0707.png?v=0" title="R(t|\theta_0)" alt="R(t|\theta_0)" class="tex"/> of the selected distribution.
 </ol>
-<dl><dd>This procedure guarantees that a passing test supports the one-sided claim <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-697a9478876f4cfbb5057e99dd8a2313.png?v=0" title="\theta \geq \theta_0" alt="\theta \geq \theta_0" class="tex"/> with confidence <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dc530514a6c7f1d97356bc1048606cc3.png?v=0" title="1- \alpha " alt="1- \alpha " class="tex"/></dd></dl>
+<dl><dd>This procedure guarantees that a passing test supports the one-sided claim <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-697a9478876f4cfbb5057e99dd8a2313.png?v=0" title="\theta \geq \theta_0" alt="\theta \geq \theta_0" class="tex"/> with confidence <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dc530514a6c7f1d97356bc1048606cc3.png?v=0" title="1- \alpha " alt="1- \alpha " class="tex"/>.</dd></dl>
 <p><br />
 </p>
 <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
-<li class="toclevel-1 tocsection-1"><a href="#Failure_Count_as_a_Binomial_Random_Variable"><span class="tocnumber">1</span> <span class="toctext">Failure Count as a Binomial Random Variable</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Confidence-Bound_Construction_.28Exact_Binomial_Lower_Bound.29"><span class="tocnumber">2</span> <span class="toctext">Confidence-Bound Construction (Exact Binomial Lower Bound)</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Solving_the_Design_Equation"><span class="tocnumber">3</span> <span class="toctext">Solving the Design Equation</span></a>
+<li class="toclevel-1 tocsection-1"><a href="#Exact_Binomial_Lower-Confidence-Bound_Equation_Construction"><span class="tocnumber">1</span> <span class="toctext">Exact Binomial Lower-Confidence-Bound Equation Construction</span></a>
 <ul>
-<li class="toclevel-2 tocsection-4"><a href="#Zero-failure_plans_.28m_.3D_0.29"><span class="tocnumber">3.1</span> <span class="toctext">Zero-failure plans (m = 0)</span></a></li>
-<li class="toclevel-2 tocsection-5"><a href="#Plans_allowing_failures_.28m_.3E.3D_1.29"><span class="tocnumber">3.2</span> <span class="toctext">Plans allowing failures (m &gt;= 1)</span></a></li>
+<li class="toclevel-2 tocsection-2"><a href="#Converting_User_Goals_to_a_Common_Parameter"><span class="tocnumber">1.1</span> <span class="toctext">Converting User Goals to a Common Parameter</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Failure_Count_as_a_Binomial_Random_Variable"><span class="tocnumber">1.2</span> <span class="toctext">Failure Count as a Binomial Random Variable</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Confidence-Bound_Construction"><span class="tocnumber">1.3</span> <span class="toctext">Confidence-Bound Construction</span></a></li>
 </ul>
 </li>
+<li class="toclevel-1 tocsection-5"><a href="#Solving_the_Design_Equation"><span class="tocnumber">2</span> <span class="toctext">Solving the Design Equation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Zero-failure_plans_.28m_.3D_0.29"><span class="tocnumber">2.1</span> <span class="toctext">Zero-failure plans (m = 0)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Plans_allowing_failures_.28m_.3E.3D_1.29"><span class="tocnumber">2.2</span> <span class="toctext">Plans allowing failures (m &gt;= 1)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Probability_of_Passing_Curve"><span class="tocnumber">3</span> <span class="toctext">Probability of Passing Curve</span></a></li>
 </ul>
 </div>
 
-<h2><a name="Failure_Count_as_a_Binomial_Random_Variable"></a><span class="mw-headline">Failure Count as a Binomial Random Variable</span></h2>
+<h2><a name="Exact_Binomial_Lower-Confidence-Bound_Equation_Construction"></a><span class="mw-headline">Exact Binomial Lower-Confidence-Bound Equation Construction</span></h2>
+<h3><a name="Converting_User_Goals_to_a_Common_Parameter"></a><span class="mw-headline">Converting User Goals to a Common Parameter</span></h3>
+<p>The reliability target can be specified in 4 ways: scale/location, percentile, reliability at a time, or MTTF. Each of these is converted to a common target parameter <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dbc9011a370bca098d4752346ba71d5c.png?v=0" title="\theta_0" alt="\theta_0" class="tex"/> using the inverse relationships of the chosen distribution:
+</p>
+<ul><li> A reliability-at-time target <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-e1e1d3d40573127e9ee0480caf1283d6.png?v=0" title="R" alt="R" class="tex"/> at time <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-d81584f09e174eec259979ae8f92eb09.png?v=0" title="t_0" alt="t_0" class="tex"/> is converted to the parameter value <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dbc9011a370bca098d4752346ba71d5c.png?v=0" title="\theta_0" alt="\theta_0" class="tex"/> that satisfies <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-e48e36a2cc63c4e35ef8a72ac00a523d.png?v=0" title="R(t_0 \mid \theta_0) = R" alt="R(t_0 \mid \theta_0) = R" class="tex"/>.</li>
+<li> A percentile target <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-5c2423d9bb6800593fddead13d1534d3.png?v=0" title="t_p" alt="t_p" class="tex"/> at cumulative failure probability <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-83878c91171338902e0fe0fb97a8c47a.png?v=0" title="p" alt="p" class="tex"/> is converted to the parameter value <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dbc9011a370bca098d4752346ba71d5c.png?v=0" title="\theta_0" alt="\theta_0" class="tex"/> that satisfies <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-58d1092af7d43e80c7b62086a5835dd8.png?v=0" title="F(t_p \mid \theta_0) = p" alt="F(t_p \mid \theta_0) = p" class="tex"/>, where <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-beb24625e1c84598f1bec329490bb65e.png?v=0" title=" F=1-R " alt=" F=1-R " class="tex"/>.</li>
+<li> An MTT* target is converted to the corresponding scale or location parameter via the mean formula of the chosen distribution.</li></ul>
+<p>Once <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dbc9011a370bca098d4752346ba71d5c.png?v=0" title="\theta_0" alt="\theta_0" class="tex"/> is determined, the same binomial design equation is applied.
+</p>
+<h3><a name="Failure_Count_as_a_Binomial_Random_Variable"></a><span class="mw-headline">Failure Count as a Binomial Random Variable</span></h3>
 <p>Consider a test in which <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> units are each placed on test for a fixed duration <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/>. At the end of the test, each unit has either failed or survived.
 </p><p>The probability that a single unit fails during the test is:
 </p><p><img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-82bfc6015d48830a93af3fdf30dab278.png?v=0" title=" p(\theta) = 1 - R(t \mid \theta) " alt=" p(\theta) = 1 - R(t \mid \theta) " class="tex"/>
@@ -32,7 +47,7 @@
 </p><p><img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-c8ce585ee0b639a022b91846c370a120.png?v=0" title="X \le m" alt="X \le m" class="tex"/>
 </p><p>If <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-84e148ad02f27df1a43d20f9bb9c8bc9.png?v=0" title="X &gt; m" alt="X &gt; m" class="tex"/>, the demonstration fails and no claim is made.
 </p>
-<h2><a name="Confidence-Bound_Construction_.28Exact_Binomial_Lower_Bound.29"></a><span class="mw-headline">Confidence-Bound Construction (Exact Binomial Lower Bound)</span></h2>
+<h3><a name="Confidence-Bound_Construction"></a><span class="mw-headline">Confidence-Bound Construction</span></h3>
 <p>A one-sided lower confidence bound for the parameter <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-2554a2bb846cffd697389e5dc8912759.png?v=0" title="\theta" alt="\theta" class="tex"/> is constructed. The bound is obtained by inverting the binomial cumulative distribution function. Specifically, the lower bound <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-48b872ae711c898a4d2bbd6c5a2ffe19.png?v=0" title="\theta_L" alt="\theta_L" class="tex"/> is the parameter value such that, when the true parameter equals <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-48b872ae711c898a4d2bbd6c5a2ffe19.png?v=0" title="\theta_L" alt="\theta_L" class="tex"/>, the probability of observing a passing result is exactly equal to the lower-tail probability <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-7b7f9dbfea05c83784f8b85149852f08.png?v=0" title="\alpha" alt="\alpha" class="tex"/>:
 </p><p><img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-b43e3c45a75f266abf59f242c7885d15.png?v=0" title="P\big(X \le m \mid \theta = \theta_L\big) = \alpha" alt="P\big(X \le m \mid \theta = \theta_L\big) = \alpha" class="tex"/>
 </p><p>Expanding the binomial cumulative probability:
@@ -60,44 +75,15 @@
 </p><p>Because <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> must be an integer, the tool rounds up to the next whole unit. This upward rounding makes the achieved confidence slightly higher than the target.
 </p>
 <h3><a name="Plans_allowing_failures_.28m_.3E.3D_1.29"></a><span class="mw-headline">Plans allowing failures (m &gt;= 1)</span></h3>
-<p>When *m* ≥ 1, the full binomial sum must be used:
-</p><p>$$
-\sum_{k=0}^{m} \binom{n}{k} \, p(\theta_0)^k \, \big[1 - p(\theta_0)\big]^{n-k} = \alpha
-$$
-</p><p>This equation generally has no closed-form solution for *t* or *n*. The tool solves it numerically (for example, by bisection or Newton-type methods) after substituting the appropriate reliability function *R*(*t* | *θ*₀) for the selected distribution.
-</p><p>- If *n* is fixed, the unknown is *t*, which enters through *p*(*θ*₀) = 1 − *R*(*t* | *θ*₀).
-- If *t* is fixed, the unknown is *n*, which appears in the binomial coefficients and exponents. The solution is rounded up to the nearest integer.
-</p><p>---
+<p>When <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-88d65f39d4ea0f70f0d7fa840f904f66.png?v=0" title="m \leq 1" alt="m \leq 1" class="tex"/>, the full binomial sum must be used:
+</p><p><img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-f01181bfd5007f848cd4051ce513c01a.png?v=0" title="\sum_{k=0}^{m} \binom{n}{k} \, p(\theta_0)^k \, \big[1 - p(\theta_0)\big]^{n-k} = \alpha" alt="\sum_{k=0}^{m} \binom{n}{k} \, p(\theta_0)^k \, \big[1 - p(\theta_0)\big]^{n-k} = \alpha" class="tex"/>
+</p><p>When a sample size is computed, the result must be an integer. The theoretical <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/> is therefore rounded upward. Because a larger sample size increases the chance of a pass at any fixed true reliability, the actual confidence level is slightly greater than the target <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-dc530514a6c7f1d97356bc1048606cc3.png?v=0" title="1- \alpha " alt="1- \alpha " class="tex"/>.
+</p><p>When a test time <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-e358efa489f58062f10dd7316b65649e.png?v=0" title="t" alt="t" class="tex"/> is computed given an integer sample size <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-7b8b965ad4bca0e41ab51de7b31363a1.png?v=0" title="n" alt="n" class="tex"/>, no rounding is needed, and the actual confidence level equals the target exactly.
 </p>
-<ol><li><ol><li> 5. Role of the Life Distribution</li></ol></li></ol>
-<p>The algorithm is distribution-agnostic up to the definition of *R*(*t* | *θ*). The user’s choice of distribution provides the mapping between test time *t* and failure probability *p*(*θ*₀). For example:
-</p><p>- Exponential: *R*(*t* | *θ*) = exp(−*t* / *θ*)
-- Weibull: *R*(*t* | *η*) = exp[−(*t* / *η*)<sup>*β*</sup>]
-- Lognormal, normal, logistic, etc.: each has its own survival function.
-</p><p>Regardless of the distribution, the confidence-bound construction and the design equation remain the same.
-</p><p>---
-</p>
-<ol><li><ol><li> 6. Converting User Goals to a Common Parameter</li></ol></li></ol>
-<p>The tool allows the reliability target to be entered in four different ways (scale/location, percentile, reliability at a time, or MTTF). Each of these is converted to a common target parameter *θ*₀ using the inverse relationships of the chosen distribution. Only then is the binomial design equation applied.
-</p><p>For instance:
-</p><p>- A **reliability-at-time** target *R* at time *t*<sub>0</sub> is converted to the parameter value *θ*₀ that satisfies *R*(*t*<sub>0</sub> | *θ*₀) = *R*.
-- A **percentile** target *t*<sub>p</sub> at cumulative failure probability *p* is converted to the parameter value *θ*₀ that satisfies *F*(*t*<sub>p</sub> | *θ*₀) = *p*, where *F* = 1 − *R*.
-- An **MTTF** target is converted to the corresponding scale or location parameter via the mean formula of the chosen distribution.
-</p><p>Once *θ*₀ is determined, the same exact-binomial design equation is solved.
-</p><p>---
-</p>
-<ol><li><ol><li> 7. Actual Confidence Level</li></ol></li></ol>
-<p>When the tool computes a sample size, the result must be an integer. The theoretical *n* is therefore rounded upward. Because a larger sample size increases the chance of a pass at any fixed true reliability, the **actual confidence level** is slightly greater than the target 1 − *α*.
-</p><p>When the tool computes a test time *t* given an integer sample size *n*, no rounding is needed, and the actual confidence level equals the target exactly.
-</p><p>---
-</p>
-<ol><li><ol><li> 8. Probability of Passing Curve</li></ol></li></ol>
-<p>The Probability of Passing (POP) curve plots the probability of a pass as a function of the true parameter value. For a true parameter *θ*:
-</p><p>$$
-P_{\text{pass}}(\theta) = \sum_{k=0}^{m} \binom{n}{k} \, p(\theta)^k \, \big[1 - p(\theta)\big]^{n-k}
-$$
-</p><p>where *p*(*θ*) = 1 − *R*(*t* | *θ*).
-</p><p>By construction, at the target *θ* = *θ*₀, the pass probability equals *α* (typically 5%). As the true reliability improves (*θ* increases relative to *θ*₀), the pass probability rises. The POP curve therefore helps the user judge whether the chosen plan is practical: if even a substantially better-than-target product has only a modest chance of passing, the user may wish to increase *n*, increase *m*, or extend *t*.
+<h2><a name="Probability_of_Passing_Curve"></a><span class="mw-headline">Probability of Passing Curve</span></h2>
+<p>The Probability of Passing (POP) curve plots the probability of a pass as a function of the true parameter value. For a true parameter <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-f6c1ecf1eac0e783170156c3c4977728.png?v=0" title=" \theta " alt=" \theta " class="tex"/>:
+</p><p><img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-fe162599c3962f84d0100af657b5ae48.png?v=0" title="P_{\text{pass}}(\theta) = \sum_{k=0}^{m} \binom{n}{k} \, p(\theta)^k \, \big[1 - p(\theta)\big]^{n-k}" alt="P_{\text{pass}}(\theta) = \sum_{k=0}^{m} \binom{n}{k} \, p(\theta)^k \, \big[1 - p(\theta)\big]^{n-k}" class="tex"/>
+</p><p>where <img src="../images/SA_Demonostration_Test_Plan_Algorithm/math-4965ed900a73bce4085ccb49ca94a2e1.png?v=0" title=" p(\theta) = 1 - R(t \mid \theta)" alt=" p(\theta) = 1 - R(t \mid \theta)" class="tex"/>.
 </p>
 
 
