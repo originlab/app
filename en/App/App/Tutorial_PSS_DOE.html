@@ -1,0 +1,37 @@
+<h1 class="firstHeading">2.43.1.2 Tutorial of Power and Sample Size in DOE</h1><p class='urlname' style='display: none'>Tutorial-PSS-DOE</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Steps"><span class="tocnumber">2</span> <span class="toctext">Steps</span></a></li>
+</ul>
+</div>
+
+<p><br />
+</p>
+<table class="simple" style="width: 80%">
+
+<tr style="vertical-align: top;">
+<td style="width: 40%"><a  class="image"><img alt="Video Image.png" src="../images/Tutorial_PSS_DOE/Video_Image.png?v=58041" width="33"  /></a> <a  class="image"><img alt="Video Text Image.png" src="../images/Tutorial_PSS_DOE/Video_Text_Image.png?v=64565" width="135"  /></a>
+</td>
+<td style="width: 40%"><a  class="image"><img alt="Website blog icon circle.png" src="../images/Tutorial_PSS_DOE/Website_blog_icon_circle.png?v=64566" width="31"  /></a> <a  class="image"><img alt="Blog Image 33x33px.png" src="../images/Tutorial_PSS_DOE/Blog_Image_33x33px.png?v=64564" width="135"  /></a>
+<ul><li> <a class="external text" href="https://blog.originlab.com/doe-app-updates-for-originpro-2024" target="_blank">DOE App Updates for OriginPro 2024</a></li></ul>
+</td></tr></table>
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>Before running an experiment, it is important to know whether your design has enough data to detect the effects you care about. Power analysis helps answer this question: given factors, effect size, and variability, how many replicates do you need to achieve a desired statistical power?
+</p><p>This tutorial shows how to perform a <b>power and sample size</b> calculation for a <b>2-level factorial design</b> using the <b>Design of Experiments</b> app. You will set up a full factorial design with three factors and two blocks, then determine the number of replicates required to reach a power of approximately 0.93 for an effect size of 0.4 with a standard deviation of 0.2.
+</p>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol><li> Click the <b>Design of Experiments</b> icon <a  class="image"><img alt="DOEAPP.png" src="../images/Tutorial_PSS_DOE/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b></li>
+<li> Click the Power and Sample Size button <a  class="image"><img alt="DOE PSS Icon.png" src="../images/Tutorial_PSS_DOE/80px-DOE_PSS_Icon.png?v=70765" width="80"   /></a></li>
+<li> Select <b>2-Level Factorial</b>. In the <b>Design</b> tab, select 3 from <b>Number of Factors</b> drop-down list. Choose <b>Full factorial</b> from <b>Fraction</b> drop-down list. Select 2 for <b>Number of Blocks</b>. Enter 0 in <b>Number of Terms Omitted from Model</b>. Turn in <b>Include Blocks in Model</b> button.
+<dl><dd><a  class="image"><img alt="DOE PSS Design.png" src="../images/Tutorial_PSS_DOE/550px-DOE_PSS_Design.png?v=70766" width="550"   /></a></dd></dl></li>
+<li> In the <b>Settings</b> tab, choose <b>Power</b> to calculate. Click plus button to add 1 level to <b>Replicates</b>  and enter 1 and 2 in each level. Enter 0.4 in <b>Effects</b>. Enter 0 in <b>Number of Center Points per Block</b>. Enter 0.2 in <b>Standard Deviation</b>. Click <b>OK</b>.
+<dl><dd><a  class="image"><img alt="DOE PSS Settiings.png" src="../images/Tutorial_PSS_DOE/500px-DOE_PSS_Settiings.png?v=70767" width="500"   /></a></dd></dl></li>
+<li> The results in the report indicates that you should have 2 replicates in order to get a power value of 0.92679.
+<dl><dd><a  class="image"><img alt="DOE PSS Results.png" src="../images/Tutorial_PSS_DOE/480px-DOE_PSS_Results.png?v=70768" width="480"   /></a></dd></dl></li></ol>
+
+
+
+
+
+

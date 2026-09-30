@@ -1,0 +1,63 @@
+<h1 class="firstHeading">2.43.2.2.2.2 Tutorial of Factorial Design</h1><p class='urlname' style='display: none'>Tutorial-Factorial-Design</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Create_Design"><span class="tocnumber">1</span> <span class="toctext">Create Design</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Analyze_Design"><span class="tocnumber">2</span> <span class="toctext">Analyze Design</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Optimize_Response"><span class="tocnumber">3</span> <span class="toctext">Optimize Response</span></a></li>
+</ul>
+</div>
+
+<p><br />
+</p>
+<table class="simple" style="width: 80%">
+
+<tr style="vertical-align: top;">
+<td style="width: 40%"><a  class="image"><img alt="Video Image.png" src="../images/Tutorial_Factorial/Video_Image.png?v=58041" width="33"  /></a> <a  class="image"><img alt="Video Text Image.png" src="../images/Tutorial_Factorial/Video_Text_Image.png?v=64565" width="135"  /></a>
+<ul><li> <a class="external text" href="https://www.originlab.com/videos/details.aspx?id=653" target="_blank">Design of Experiment 1: 2-Level Factorial Design</a></li></ul>
+</td>
+<td style="width: 40%"><a  class="image"><img alt="Website blog icon circle.png" src="../images/Tutorial_Factorial/Website_blog_icon_circle.png?v=64566" width="31"  /></a> <a  class="image"><img alt="Blog Image 33x33px.png" src="../images/Tutorial_Factorial/Blog_Image_33x33px.png?v=64564" width="135"  /></a>
+<ul><li> <a class="external text" href="https://blog.originlab.com/doe-app-updates-for-originpro-2024" target="_blank">DOE App Updates for OriginPro 2024</a></li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h3><a name="Create_Design"></a><span class="mw-headline">Create Design</span></h3>
+<ol><li> Click the <b>Design of Experiments</b> icon <a  class="image"><img alt="DOEAPP.png" src="../images/Tutorial_Factorial/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b></li>
+<li> Click <b>Create Design</b> button and select <b>Factorial Design</b>.
+<dl><dd> <a  class="image"><img alt="Create Design.png" src="../images/Tutorial_Factorial/600px-Create_Design.png?v=79707" width="600"   /></a></dd></dl></li>
+<li> Make sure <b>2-Level Factorial</b> and <b>Default Generators</b> is selected. In <b>Factors</b> tab, select 3 from <b>Number of Factors</b>. Enter factor names Temp, Dens and Reagent and select factor types (Numeric, Numeric and Text). Then Enter low and high values (Temp:50, 80; Dens:20, 30; Reagent: TypeA, TypeB).
+<dl><dd> <a  class="image"><img alt="DOE Factorial Factors.png" src="../images/Tutorial_Factorial/650px-DOE_Factorial_Factors.png?v=74004" width="650"   /></a></dd></dl></li>
+<li> In the <b>Settings'<i> tab, select </i></b><i>Full factorial</i> design. Enter 2 in <b>Number of Replicates</b>. Select 2 from <b>Number of Blocks</b> drop-down list.
+<dl><dd><a  class="image" title="480"><img alt="480" src="../images/Tutorial_Factorial/DOE_Factorial_Settings.png?v=74006" width="752"  /></a></dd></dl></li>
+<li> In the <b>Miscellaneous</b> Tab, enter 5 in <b>Seed for Randomization</b> text box. </li>
+<li> Click <b>OK</b> to output the design table.
+<dl><dd><a  class="image"><img alt="DOE Factorial Results.png" src="../images/Tutorial_Factorial/500px-DOE_Factorial_Results.png?v=74007" width="500"   /></a></dd></dl></li></ol>
+<h3><a name="Analyze_Design"></a><span class="mw-headline">Analyze Design</span></h3>
+<ol><li> Add a new column on the design table and fill in response data. Use pH as <b>Long Name</b> 
+<dl><dd><a  class="image"><img alt="DOE Factorial Results response.png" src="../images/Tutorial_Factorial/500px-DOE_Factorial_Results_response.png?v=70708" width="500"   /></a></dd></dl></li>
+<li> Click the <b>Design of Experiments</b> icon <a  class="image"><img alt="DOEAPP.png" src="../images/Tutorial_Factorial/50px-DOEAPP.png?v=70668" width="50"   /></a> to bring up toolbar. Select <b>Analyze Design</b>
+<dl><dd><a  class="image"><img alt="Analyze Design.png" src="../images/Tutorial_Factorial/600px-Analyze_Design.png?v=79976" width="600"   /></a></dd></dl></li>
+<li> In the <b>Model</b> tab, select PH from <b>Response</b> drop-down list. Then select 2 from Model Order. Select <b>Include Blocks</b> in the Model.
+<dl><dd><a  class="image"><img alt="DOE Factorial. Analyze Model.png" src="../images/Tutorial_Factorial/500px-DOE_Factorial._Analyze_Model.png?v=70716" width="500"   /></a></dd></dl></li>
+<li> In the <b>Settings</b> tab, select <b>Main Effects</b> from the <b>Means Table</b> drop-down list.</li>
+<li> In the <b>Quantities</b> tab, select <b>Coefficients</b>, <b>Standard Error</b>, <b>Confidence Limits</b>, <b>t-Value</b> and <b>Prob&gt;|t|</b> from the <b>Coefficients Table</b> drop-down list.</li>
+<li> In the <b>Plots</b> tab, select <b>Cube Plot</b>, <b>Contour Plot</b>, <b>Surface Plot</b> and <b>2-way interaction plot</b>. In the <b>Settings of Cube Plot</b> group, choose Temp, Dens and Reagent as three factors. In the <b>Settings for Contour and Surface Plot</b> group, select Temp and Dens as factors for X and Y axis. Then select TypeA as value of Reagent. 
+<dl><dd> <a  class="image"><img alt="DOE Factorial. Analyze Plots.png" src="../images/Tutorial_Factorial/650px-DOE_Factorial._Analyze_Plots.png?v=70717" width="650"   /></a></dd></dl></li>
+<li> Click <b>OK</b> to create analysis results.
+<dl><dd><a  class="image"><img alt="DOE Factorial. Analyze Results.png" src="../images/Tutorial_Factorial/500px-DOE_Factorial._Analyze_Results.png?v=70722" width="500"   /></a></dd></dl></li></ol>
+<h3><a name="Optimize_Response"></a><span class="mw-headline">Optimize Response</span></h3>
+<ol><li> Click the Design of Experiments icon <a  class="image"><img alt="DOEAPP.png" src="../images/Tutorial_Factorial/50px-DOEAPP.png?v=70668" width="50"   /></a> in the <b>Apps Gallery</b></li>
+<li> Activate the analysis workbook we got in last section and click Optimize Response button <a  class="image"><img alt="DOE Optimize Icon.png" src="../images/Tutorial_Factorial/80px-DOE_Optimize_Icon.png?v=70727" width="80"   /></a></li>
+<li>  In the <b>Goal</b> tab, select <b>Minimize</b> as goal for PH. Enter 5 and 9 in Lower Limit and Upper Limit. 
+<dl><dd><a  class="image"><img alt="DOE Optimize Goal.png" src="../images/Tutorial_Factorial/600px-DOE_Optimize_Goal.png?v=80963" width="600"   /></a></dd></dl></li>
+<li> Go to the <b>Settings</b> tab. In the row for factor Reagent, select <b>Hold at Value</b> for <b>Constraint</b>, select TypeA for Hold Value. Enable <b>Initial Value</b> button. Enter 60 and 25 in the rows for Temp and Dens respectively.
+<dl><dd><a  class="image"><img alt="DOE Optimize Settings.png" src="../images/Tutorial_Factorial/600px-DOE_Optimize_Settings.png?v=70733" width="600"   /></a></dd></dl></li>
+<li> Click <b>OK</b> to generate optimization report.
+<dl><dd> <a  class="image"><img alt="DOE Optimize Results.png" src="../images/Tutorial_Factorial/600px-DOE_Optimize_Results.png?v=70735" width="600"   /></a></dd></dl></li>
+<li> Double-click <b>Optimization Plot</b> to bring up the graph window. Move vertical red lines to change factor values to view how they affect the composite desirability and the responses. Click the <b>Reset</b> button to set values to optimal solution.
+<dl><dd><a  class="image"><img alt="DOE Optimize Graph.png" src="../images/Tutorial_Factorial/600px-DOE_Optimize_Graph.png?v=70736" width="600"   /></a></dd></dl></li></ol>
+
+
+
+
+
+

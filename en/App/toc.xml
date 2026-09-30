@@ -727,6 +727,12 @@
     <toc_src>App:SA_Demonstration_Test_Plan_Tutorial</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Demonstration &gt; Algorithm: Demonostration Test Plan</toc_name>
+    <toc_link>App/SA_Demonostration_Test_Plan_Algorithm.html</toc_link>
+    <toc_url>App/Demonostration-Test-Plan-Algorithm</toc_url>
+    <toc_src>App:SA_Demonostration_Test_Plan_Algorithm</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Reliability and Survival Analysis (Pro) &gt; Parametric Distribution Analysis (Arbitrary Censoring)</toc_name>
     <toc_link>Category/Parametric_Distribution_Analysis_AC(App).html</toc_link>
     <toc_url>App/SA-Parametric-Dist-Arbitrary-Censoring</toc_url>
@@ -1009,10 +1015,22 @@
     <toc_src>Category:Power_and_Sample_Size_DOE(App)</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Power and Sample Size (DOE) &gt; The Power and Sample Size (DOE) Dialog Box</toc_name>
+    <toc_link>App/DOE_PSS_Dialog.html</toc_link>
+    <toc_url>App/DOE-PSS-Dialog</toc_url>
+    <toc_src>App:DOE_PSS_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Power and Sample Size (DOE) &gt; Tutorial of Power and Sample Size in DOE</toc_name>
+    <toc_link>App/Tutorial_PSS_DOE.html</toc_link>
+    <toc_url>App/Tutorial-PSS-DOE</toc_url>
+    <toc_src>App:Tutorial_PSS_DOE</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs</toc_name>
-    <toc_link>Category/Define_and_Create_Designs.html</toc_link>
+    <toc_link>Category/Define_and_Create_Designs(App).html</toc_link>
     <toc_url>App/Define-Create-Designs</toc_url>
-    <toc_src>Category:Define_and_Create_Designs</toc_src>
+    <toc_src>Category:Define_and_Create_Designs(App)</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Define Custom Designs</toc_name>
@@ -1057,6 +1075,12 @@
     <toc_src>App:Factorial_Design_Dialog</toc_src>
   </toc>
   <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Factorial Design &gt; Tutorial of Factorial Design</toc_name>
+    <toc_link>App/Tutorial_Factorial.html</toc_link>
+    <toc_url>App/Tutorial-Factorial-Design</toc_url>
+    <toc_src>App:Tutorial_Factorial</toc_src>
+  </toc>
+  <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Response Surface Design</toc_name>
     <toc_link>Category/Response_Surface_Design(App).html</toc_link>
     <toc_url>App/Response-Surface-Design</toc_url>
@@ -1067,6 +1091,12 @@
     <toc_link>App/Response_Surface_Design_Dialog.html</toc_link>
     <toc_url>App/response-surface-design-dialog</toc_url>
     <toc_src>App:Response_Surface_Design_Dialog</toc_src>
+  </toc>
+  <toc>
+    <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Response Surface Design &gt; Tutorial of Response Surface Design</toc_name>
+    <toc_link>App/Response_Surface_Design_Tutorial.html</toc_link>
+    <toc_url>App/Tutorial-Response-Surface-Design</toc_url>
+    <toc_src>App:Response_Surface_Design_Tutorial</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Define and Create Designs &gt; Create Design &gt; Mixture Design</toc_name>
@@ -1160,9 +1190,9 @@
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Model Fitting and Selection</toc_name>
-    <toc_link>Category/Model_Fitting_and_Selection.html</toc_link>
+    <toc_link>Category/Model_Fitting_and_Selection(App).html</toc_link>
     <toc_url>App/DOE-Model-Fit-Select</toc_url>
-    <toc_src>Category:Model_Fitting_and_Selection</toc_src>
+    <toc_src>Category:Model_Fitting_and_Selection(App)</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Model Fitting and Selection &gt; Stepwise Regression for Analyze Design</toc_name>
@@ -1184,9 +1214,9 @@
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Results and Plots for Analyze Design</toc_name>
-    <toc_link>Category/DOE_Analyze_Results_and_Plots.html</toc_link>
+    <toc_link>Category/DOE_Analyze_Results_and_Plots(App).html</toc_link>
     <toc_url>App/DOE-Analyze-Results-and-Plots</toc_url>
-    <toc_src>Category:DOE_Analyze_Results_and_Plots</toc_src>
+    <toc_src>Category:DOE_Analyze_Results_and_Plots(App)</toc_src>
   </toc>
   <toc>
     <toc_name>Apps &gt; Data Analysis &gt; Design of Experiments &gt; Analyze Design &gt; Results and Plots for Analyze Design &gt; Interpreting Results for Analyze Design</toc_name>

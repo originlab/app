@@ -1,0 +1,163 @@
+<h1 class="firstHeading">2.43.1.1 The Power and Sample Size (DOE) Dialog Box</h1><p class='urlname' style='display: none'>DOE-PSS-Dialog</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Supporting_Information"><span class="tocnumber">1</span> <span class="toctext">Supporting Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Factorial_Type"><span class="tocnumber">2</span> <span class="toctext">Factorial Type</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Design"><span class="tocnumber">3</span> <span class="toctext">Design</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#2-Level_Factorial"><span class="tocnumber">3.1</span> <span class="toctext">2-Level Factorial</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Plackett-Burman"><span class="tocnumber">3.2</span> <span class="toctext">Plackett-Burman</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#General_Full_Factorial"><span class="tocnumber">3.3</span> <span class="toctext">General Full Factorial</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Settings"><span class="tocnumber">4</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Dialog_Theme"><span class="tocnumber">5</span> <span class="toctext">Dialog Theme</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Supporting_Information"></a><span class="mw-headline">Supporting Information</span></h2>
+<p>To open the <b>Power and Sample Size</b> dialog
+</p>
+<ul><li> Select <b>Statistics: Quality Improvement: Design of Experiment</b> from Origin menu</li>
+<li> Select the <b>Power and Sample Size</b> icon
+<dl><dd><a  class="image"><img alt="DOE PSS.png" src="../images/DOE_PSS_Dialog/650px-DOE_PSS.png?v=81002" width="650"   /></a></dd></dl></li></ul>
+<table class="noborder"><tr>
+	<td style="vertical-align:top" width="60"><img src="../images/DOE_PSS_Dialog/Tip_icon.png?v=8477" width="57"  border="0" /></td><td><p><i><b>Topics for Further Reading</b></i>:
+</p>
+<ul><li> <a href="../../App/Category/Power_and_Sample_Size_DOE(App).html" title="Category:Power and Sample Size DOE(App)">Introduction:Power and Sample Size in DOE</a></li>
+<li> <a href="../../App/App/Tutorial_PSS_DOE.html" title="App:Tutorial PSS DOE">Tutorial:Power and Sample Size in DOE</a></li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h2><a name="Factorial_Type"></a><span class="mw-headline">Factorial Type</span></h2>
+<p>Select a factorial type from the list below.
+</p>
+<ul><li> 2-Level Factorial</li>
+<li> Plackett-Burman</li>
+<li> General Full Factorial</li></ul>
+<h2><a name="Design"></a><span class="mw-headline">Design</span></h2>
+<h4><a name="2-Level_Factorial"></a><span class="mw-headline">2-Level Factorial</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Number of Factors
+</th>
+<td>The number of factors. Together with the fraction, this determines the base number of corner-point runs.
+</td></tr>
+<tr>
+<th>Fraction
+</th>
+<td>The fraction of the full factorial to run.
+</td></tr>
+<tr>
+<th>Number of Blocks
+</th>
+<td>Blocks group runs performed under homogeneous conditions. Default is 1 (unblocked design).
+</td></tr>
+<tr>
+<th>Number of Terms Omitted from Model
+</th>
+<td>Terms deliberately left out of the fitted model; reducing model terms increases the available degrees of freedom for error and raises power. Default is 0.
+</td></tr>
+<tr>
+<th>Include Blocks in Model
+</th>
+<td>When ON, block effects are estimated and removed from the error term, protecting the analysis if block-to-block variation exists.
+</td></tr>
+<tr>
+<th>Include Term for Center Points in Model
+</th>
+<td>When ON, Origin fits a center-point (curvature) term, which slightly reduces power for factorial effects but allows a test for curvature.
+</td></tr></table>
+<h4><a name="Plackett-Burman"></a><span class="mw-headline">Plackett-Burman</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Number of Factors
+</th>
+<td>The number of factors.
+</td></tr>
+<tr>
+<th>Number of Corner Points
+</th>
+<td>The size of the Plackett-Burman design - must be a multiple of 4 and, as the note states, **no less than 12** (12 is the smallest standard Plackett-Burman design; the next sizes are 16, 20, 24, ...).
+</td></tr>
+<tr>
+<th>Number of Main Effect Terms Omitted from Model
+</th>
+<td>Main effects deliberately excluded from the fitted model (default 0). Omitting terms frees degrees of freedom for error, which raises power
+</td></tr>
+<tr>
+<th>Include Term for Center Points in Model
+</th>
+<td>When ON (as shown), Origin fits a center-point term so you can test for curvature across factors.
+</td></tr></table>
+<h4><a name="General_Full_Factorial"></a><span class="mw-headline">General Full Factorial</span></h4>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Number of Factors
+</th>
+<td>The number of factors.
+</td></tr>
+<tr>
+<th>Number of Levels for Each Factor
+</th>
+<td>One text box per factor - enter each factor's level count individually (e.g., 3, 2, 4 for a 3*2*4 design). The total base run count is the product of these values (3 * 2 * 4 = 24 runs before replication).
+</td></tr>
+<tr>
+<th>Model Order
+</th>
+<td>The highest-order interaction included in the model: 1 = main effects only, 2 = main effects + two-factor interactions, 3 = up to three-factor interactions, and so on.
+</td></tr>
+<tr>
+<th>Block on Replicates and Include Blocks in Model
+</th>
+<td>When ON, each replicate of the design is treated as a block, and block effects are estimated and removed from the error term.
+</td></tr></table>
+<h2><a name="Settings"></a><span class="mw-headline">Settings</span></h2>
+<table class="dialogcontroltable">
+
+<tr>
+<th>Calculate
+</th>
+<td>Select the quantity to compute:
+<ul><li> <b>Replicates</b></li>
+<li> <b>Effects</b></li>
+<li> <b>Power</b></li>
+<li> <b>Number of Center Points per Block</b></li></ul>
+</td></tr>
+<tr>
+<th>Replicates
+</th>
+<td>Number of repetitions of the entire design. Disabled when it is the calculated quantity.
+</td></tr>
+<tr>
+<th>Effects
+</th>
+<td>The minimum effect size to detect, in the response units of the measurement (can be a list of values).
+</td></tr>
+<tr>
+<th>Power
+</th>
+<td>Desired power for detecting the specified effect(s); values between 0 and 1. Common targets: 0.8 to 0.9 (can be a list).
+</td></tr>
+<tr>
+<th>Number of Center Points per Block
+</th>
+<td>Center-point runs added per block to estimate pure error and test for curvature.
+</td></tr>
+<tr>
+<th>Standard Deviation
+</th>
+<td>The estimate of experimental noise (sigma), from historical data
+</td></tr>
+<tr>
+<th>Significance Level
+</th>
+<td>Alpha - the risk of declaring an inactive effect significant. Default 0.05.
+</td></tr></table>
+<h2><a name="Dialog_Theme"></a><span class="mw-headline">Dialog Theme</span></h2>
+<p>Save and load the settings of the dialog.
+</p>
+
